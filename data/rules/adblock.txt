@@ -1,10 +1,10 @@
-[Adblock Plus 2.0]
-! Title: GOODBYEADS
-! Homepage: https://github.com/8680/GOODBYEADS
-! Expires: 12 Hours
-! Version: 2026-05-09 09:51:52（北京时间）
-! Description: 适用于AdGuard的去广告规则，合并优质上游规则并去重整理排列
-! Total count: 283078
+[天影 Adblock Plus 2.0]
+! Title: 天影-2026-05-09 10:07:51
+! 项目地址: https://github.com/xiaolei7172/ADS
+! 更新间隔: 12 Hours
+! 更新时间: 2026-05-09 10:07:51（北京时间）
+! 规则说明: 适用于AdGuard的去广告规则，合并优质上游规则并去重整理排列
+! Description:更新时间: 2026-05-09 10:07:51，规则数量: 283082条
 
 # 
 ###AC_ad
@@ -145036,6 +145036,7 @@ zzzyk.com###Tinfo
 ||cwxshavrhth.com^
 ||cwyvketbgfonh.com^
 ||cwyvnvawjstrr.online^
+||cwzkatxjqgeyz.space^
 ||cwzx.dengfenzhang.cn^
 ||cx.ifengbi.com^
 ||cx.j8y2r7y1.work^
@@ -152354,6 +152355,7 @@ zzzyk.com###Tinfo
 ||dpdvx.com^
 ||dpehzyosanbhl.website^
 ||dpeqm8xv96fuc.cloudfront.net^
+||dpeqsufixhtbg.online^
 ||dpf1rhxj9iavc.cloudfront.net^
 ||dpfantasy.org/k2s.gif
 ||dpfccivdvttx.com^
@@ -158917,6 +158919,7 @@ zzzyk.com###Tinfo
 ||evhtgmfimyw.com^
 ||evhvza.sodimac.com.br^
 ||eviafiegoxsru.space^
+||evidence20.com^
 ||evidencenulls.com^
 ||evidentlystraighteneddecimal.com^
 ||evidhjksdtgyxrh.xyz^
@@ -277718,6 +277721,7 @@ zzzyk.com###Tinfo
 ||yaodaipeishi.cn^
 ||yaojingweiba.com/inc/
 ||yaojiujiuyao-vip-26-2088948134.ap-northeast-2.elb.amazonaws.com^
+||yaokanwx.com/tongji/
 ||yaolan.com/ylk.mini.js
 ||yaolu.mh.163.com^
 ||yaolu.yuedu.163.com^
