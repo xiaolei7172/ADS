@@ -34,7 +34,7 @@ for file_path in file_list:
         f"! 更新间隔: 12 Hours\n"
         f"! 更新时间: {beijing_time}（北京时间）\n"
         f"! 规则说明: 适用于AdGuard的去广告规则，合并优质上游规则并去重整理排列\n"
-        f"! Description:更新时间: {beijing_time}，规则数量: {line_count}条\n"
+        f"! Description:更新时间: {beijing_time}（北京时间） ， 规则数量: {line_count}条\n"
         f"{content}"
     )
 
