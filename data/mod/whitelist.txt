@@ -41,6 +41,8 @@
 @@||reading.snssdk.com^
 @@||api-sinfnormal.fqnovel.com^
 @@||fqnovel.com^$app=com.dragon.read
+@@||reading.snssdk.com^$app=com.dragon.read
+@@||api*-sinfnormal.fqnovel.com^$app=com.dragon.read
 
 !===== 红果短剧（播放、核心接口）
 @@||hgdzj.com^$app=com.hgdzj
