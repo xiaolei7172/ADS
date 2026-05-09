@@ -45,7 +45,15 @@ adblock = [
     "https://raw.githubusercontent.com/sjhgvr/oisd/main/abp_small.txt",
     "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt",
     "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt",
-    "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt"
+    "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt",
+    "https://raw.githubusercontent.com/afwfv/DD-AD/main/rule/DD-AD.txt",
+    "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt",
+    "https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt",
+    "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt",
+    "https://raw.githubusercontent.com/changzhaoCZ/fqnovel-adrules/refs/heads/main/fqnovel-fxxk_ads",
+    "https://anti-ad.net/adguard.txt",
+    "https://raw.githubusercontent.com/2Gardon/SM-Ad-FuckU-hosts/master/SMAdHosts",
+    "https://raw.githubusercontent.com/VeleSila/yhosts/master/hosts.txt"
 ]
 
 # 白名单规则
