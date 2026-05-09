@@ -28,7 +28,6 @@ for file_path in file_list:
 
     # 在文件顶部插入内容
     new_content = (
-    [TianYing Adblock Plus 2.0]
     f"[TianYing Adblock Plus 2.0]\n"
     f"! ======================================================================\n"
     f"! Title: 📌 天影自用规则（每12小时更新一次）\n"
