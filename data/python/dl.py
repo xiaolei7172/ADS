@@ -51,8 +51,9 @@ adblock = [
 allow = [
     "https://raw.githubusercontent.com/qq5460168/dangchu/main/white.txt",  # 个人自定义白名单规则
     "https://raw.githubusercontent.com/xiaolei7172/ADS/refs/heads/master/data/mod/whitelist.txt",  # 自用补充规则
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/allowlist.txt",  # AdGuard 中文网站放行白名单
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/allowlist.txt"  # AdGuard 间谍软件/隐私防护放行白名单
+    "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt",  # 中文通用白名单
+    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/allowlist.txt",  # AdGuard 中文放行
+    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/allowlist.txt"  # 隐私拦截放行
 ]
 
 # 下载
