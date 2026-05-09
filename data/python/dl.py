@@ -58,6 +58,7 @@ adblock = [
 
 # 白名单规则
 allow = [
+    "https://raw.githubusercontent.com/qq5460168/dangchu/main/white.txt"
     "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/allowlist.txt",
     "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/GermanFilter/sections/allowlist.txt",
     "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/TurkishFilter/sections/allowlist.txt",
