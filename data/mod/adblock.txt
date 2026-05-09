@@ -14,13 +14,6 @@
 ||*track*^$app=com.dragon.read
 ||*stat*^$app=com.dragon.read
 
-! 放行必要功能（不误杀）
-@@||reading.snssdk.com^$app=com.dragon.read
-@@||api*-sinfnormal.fqnovel.com^$app=com.dragon.read
-vacations.ctrip.com##.side_function
-||push-ads-cn.heytapmobi.com^
-haokan.baidu.com##.tieba-pause-ad-container
-##.post-card-ads
 
 !========== 红果短剧 开屏/插屏/信息流/追踪广告 ==========
 ||hgdzj.com^
