@@ -2,7 +2,7 @@
 ! Title: 天影自用规则（每12小时更新一次）
 ! 项目地址: https://github.com/xiaolei7172/ADS
 ! 更新间隔: 12 Hours
-! Description:更新时间: 2026-05-09 10:24:32（北京时间） ， 规则数量: 14721条
+! Description:更新时间: 2026-05-09 10:30:55（北京时间） ， 规则数量: 14709条
 ! 规则说明: 适用于AdGuard的去广告规则，合并优质上游规则并去重整理排列
 @@#.banner%20ad.$image,domain=dokuo666.blog98.fc2.com
 @@$csp=worker-src 'none',domain=uptostream.com
@@ -1677,8 +1677,6 @@
 @@||aone-soft.com/style/images/ad2.jpg
 @@||ap6.ssl.msdk.qq.com^
 @@||aphim.co^$generichide
-@@||api*-normal-sinfonline*.fqnovel.com/reading/bookapi/$important,app=com.dragon.read
-@@||api*-sinfnormal.fqnovel.com^$important,app=com.dragon.read
 @@||api-*.cludo.com/api/$stealth=referrer
 @@||api-*.mappy.net^$stealth=referrer
 @@||api-*.netflix.com/win/uwa/$stealth=useragent
@@ -1886,7 +1884,6 @@
 @@||api.zeeg.me/api/analytics/events/$~third-party
 @@||api2.branch.io/v1/open$domain=flickplay.co
 @@||api2.branch.io^$app=net.booksy.customer
-@@||api5-normal-sinfonlinec.fqnovel.com/reading/bookapi/$important,app=com.dragon.read
 @@||apiavsee.com/player.php$stealth=referrer
 @@||apibhx.tgdd.vn^$domain=bachhoaxanh.com,stealth=3p-auth
 @@||apiblogger.xyz/blogger/video-play.mp4$stealth=referrer
@@ -8182,9 +8179,6 @@
 @@||lf*material.searchpstatp.com^
 @@||lf-c-flwb.bytetos.com^
 @@||lf-cdn-tos.bytescm.com^
-@@||lf-fe.fqnovelstatic.com^$important,app=com.dragon.read
-@@||lf-normal-gr-sourcecdn.bytegecko.com^$important,app=com.dragon.read
-@@||lf-sourcecdn-tos.bytegecko.com^$important,app=com.dragon.read
 @@||lf-webcast-gr-sourcecdn.bytegecko.com^
 @@||lf-webcast-sourcecdn-tos.bytegecko.com^
 @@||lf1-cdn-tos.bytegoofy.com^
@@ -9614,7 +9608,6 @@
 @@||p*-faceu-img-sign.byteimg.com^
 @@||p*-im.byteimg.com^
 @@||p*-img.searchpstatp.com^
-@@||p*-novel-sign.byteimg.com/novel-pic/$important,app=com.dragon.read
 @@||p*-novel-sign.byteimg.com^
 @@||p*-novel.byteimg.com^
 @@||p*-passport.byteacctimg.com^
@@ -9643,7 +9636,6 @@
 @@||p3-insurance.byteimg.com^
 @@||p3-iz-e-sign.byteimg.com^
 @@||p3-notice.byteimg.com^
-@@||p3-novel1-sign.byteimg.com^$app=com.dragon.read,important
 @@||p3-scmimg.bytescm.com^
 @@||p3-search.byteimg.com^
 @@||p3-tt.byteimg.com/obj/$domain=agedm.io
@@ -9651,12 +9643,10 @@
 @@||p6-dcd-sign.byteimg.com^
 @@||p6-dy-ipv6.byteimg.com^
 @@||p6-flow-imagex-sign.byteimg.com^
-@@||p6-novel1-sign.byteimg.com^$app=com.dragon.read,important
 @@||p9-dcd-sign.byteimg.com^
 @@||p9-dcd.byteimg.com^
 @@||p9-dy.byteimg.com
 @@||p9-flow-imagex-sign.byteimg.com^
-@@||p9-novel1-sign.byteimg.com^$app=com.dragon.read,important
 @@||pagead2.googleadservices.com^$domain=sportshub.to
 @@||pagead2.googleadservices.com^|$domain=topsporter.net
 @@||pagead2.googleadservices.com^|$xmlhttprequest,domain=werfgt.fun
@@ -11207,7 +11197,6 @@
 @@||read.amazon.co.jp/*/show_ad.js$script,~third-party
 @@||readcomicsonline.ru^$generichide
 @@||readfrom.net^$generichide
-@@||reading.snssdk.com^$important,app=com.dragon.read
 @@||readmng.com^$csp=script-src 'self' * 'unsafe-inline'
 @@||readmoo.com/images/social/
 @@||readpai.com^$stealth=referrer,image
@@ -11917,7 +11906,6 @@
 @@||securetoken.googleapis.com^$stealth=referrer
 @@||securevideotoken.tmgrup.com.tr/webtv/secure^$stealth=ip
 @@||securevideotoken.tmgrup.com.tr/webtv/secure^$stealth=referrer
-@@||security.snssdk.com^$important,app=com.dragon.read
 @@||securitykiss.com$document
 @@||securitytrails.com/app/api/$domain=securitytrails.com
 @@||securitytrails.com/domain/$domain=securitytrails.com
