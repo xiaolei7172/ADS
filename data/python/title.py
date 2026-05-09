@@ -29,12 +29,12 @@ for file_path in file_list:
     # 在文件顶部插入内容
     new_content = (
         f"[天影 Adblock Plus 2.0]\n"
-        f"! Title: 天影自用规则\n"
-        f"! Homepage: https://github.com/xiaolei7172/ADS\n"
-        f"! Expires: 12 Hours\n"
-        f"! Version: {beijing_time}（北京时间）\n"
-        f"! Description: 适用于AdGuard的去广告规则，合并优质上游规则并去重整理排列\n"
-        f"! Total count: {line_count}\n"
+        f"! Title: 天影-{beijing_time}\n"
+        f"! 项目地址: https://github.com/xiaolei7172/ADS\n"
+        f"! 更新间隔: 12 Hours\n"
+        f"! 更新时间: {beijing_time}（北京时间）\n"
+        f"! 规则说明: 适用于AdGuard的去广告规则，合并优质上游规则并去重整理排列\n"
+        f"! Description:更新时间: {beijing_time}，规则数量: {line_count}条\n"
         f"{content}"
     )
 
