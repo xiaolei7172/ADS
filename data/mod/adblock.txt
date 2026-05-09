@@ -841,7 +841,43 @@ edu.iask.sina.com.cn##.ad-screen
 www.9game.cn##.entry.qak_popup
 wkings.blog##.di7ubns5b2nz
 tuniu.com##.web_envelope_mod, .tuniu-assist-hide, .show
+!========== 番茄小说 去广告/开屏/插屏/金币短剧 ==========
+||snssdk.com^$app=com.dragon.read
+||zijieapi.com^$app=com.dragon.read
+||volces.com^$app=com.dragon.read
+||fqnovelpic.com^$app=com.dragon.read
+||fqnovel.com/ad/^$app=com.dragon.read
+||douyinpic.com^$app=com.dragon.read
+||ecombdimg.com^$app=com.dragon.read
+||bytegecko.com^$app=com.dragon.read
+
+! 屏蔽开屏、信息流、埋点统计
+||*toutiao*^$app=com.dragon.read
+||*static*^$app=com.dragon.read
+||*track*^$app=com.dragon.read
+||*stat*^$app=com.dragon.read
+
+! 放行必要功能（不误杀）
+@@||reading.snssdk.com^$app=com.dragon.read
+@@||api*-sinfnormal.fqnovel.com^$app=com.dragon.read
 vacations.ctrip.com##.side_function
 ||push-ads-cn.heytapmobi.com^
 haokan.baidu.com##.tieba-pause-ad-container
 ##.post-card-ads
+
+!========== 红果短剧 开屏/插屏/信息流/追踪广告 ==========
+||hgdzj.com^
+||ad.hgdzj.com^
+||sdk.hgdzj.com^
+||api-ad.hgdzj.com^
+||static-ad.hgdzj.com^
+||track.hgdzj.com^
+||stat.hgdzj.com^
+||hgdzj.com/ad/
+||hgdzj.com/sdk/ad/
+
+! 屏蔽广告元素弹窗
+hgdzj.com##.ad-popup
+hgdzj.com##.ad-banner
+hgdzj.com##.video-ad-card
+hgdzj.com##.recommend-ad
