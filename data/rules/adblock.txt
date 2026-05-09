@@ -1,10 +1,9 @@
 [天影 Adblock Plus 2.0]
-! Title: 天影-2026-05-09 10:17:31
+! Title: 天影自用规则（每12小时更新一次）
 ! 项目地址: https://github.com/xiaolei7172/ADS
 ! 更新间隔: 12 Hours
-! 更新时间: 2026-05-09 10:17:31（北京时间）
+! Description:更新时间: 2026-05-09 10:24:32（北京时间） ， 规则数量: 283087条
 ! 规则说明: 适用于AdGuard的去广告规则，合并优质上游规则并去重整理排列
-! Description:更新时间: 2026-05-09 10:17:31（北京时间） ， 规则数量: 283083条
 
 # 
 ###AC_ad
@@ -71088,9 +71087,11 @@ justdial.com###gptAds2
 justdial.com###gptAdsDiv
 justetf.com###brokerAd
 justetf.com##.borker-ad
+justetf.com##.etf-ad-row
 justetf.com##.m-sep-l:has(#partnerNewsBox)
 justetf.com##.wAd
 justetf.com##div[id^="shadow-teaser-"]:has(div[class="disclaimer mb-1"])
+justetf.com##tr[onclick^="gaW"]
 justfullporn.net##.order-1:has(> .video-block-happy)
 justinweather.com##.top-ad-banner-wrapper
 justjared.com#%#//scriptlet('abort-current-inline-script', 'document.readyState', 'getAttribute("abp")')
@@ -167098,6 +167099,7 @@ zzzyk.com###Tinfo
 ||girlsofdesire.org/images/girlsofdesire.org/analytics.js
 ||girlsofdesire.org/php/*_fl.js
 ||girlstaste.life^$popup
+||girlyfausantbowsing.cfd^
 ||girnalnemean.com^
 ||girnbait.qpon^
 ||girnicsbrybjhfp.com^
@@ -266845,6 +266847,7 @@ zzzyk.com###Tinfo
 ||vvexmpqyayjou.website^
 ||vvfht.fun^
 ||vvficvcvclphpyn.com^
+||vvfmrqnivrm.com^
 ||vvfyce.cyou^
 ||vvhp.net/read/view.gif
 ||vvhsnolupggve.space^
