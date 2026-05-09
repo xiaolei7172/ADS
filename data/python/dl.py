@@ -35,18 +35,16 @@ subprocess.run("cp ./data/mod/whitelist.txt ./tmp/allow01.txt", shell=True)
 
 # 拦截规则
 adblock = [
-    "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_2_Base/filter.txt",
-    "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_224_Chinese/filter.txt",
-    "https://perflyst.github.io/PiHoleBlocklist/SmartTV-AGH.txt",
-    "https://easylist-downloads.adblockplus.org/easylist.txt",
-    "https://easylist-downloads.adblockplus.org/easylistchina.txt",
-    "https://easylist-downloads.adblockplus.org/easyprivacy.txt",
-    "https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt",
-    "https://raw.githubusercontent.com/sjhgvr/oisd/main/abp_small.txt",
-    "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt",
-    "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt",
-    "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt",
-    "https://raw.githubusercontent.com/changzhaoCZ/fqnovel-adrules/refs/heads/main/fqnovel-fxxk_ads"
+    "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_2_Base/filter.txt",  # AdguardTeam 官方基础广告拦截规则
+    "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_224_Chinese/filter.txt",  # AdguardTeam 官方中文专属广告规则
+    "https://easylist-downloads.adblockplus.org/easyprivacy.txt",  # EasyPrivacy 隐私跟踪防护规则
+    "https://raw.githubusercontent.com/sjhgvr/oisd/main/abp_small.txt",  # sjhgvr OISD精简版广告规则
+    "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt",  # TG-Twilight 秋风广告规则
+    "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt",  # cjx82630 网页烦扰元素拦截规则
+    "https://raw.githubusercontent.com/afwfv/DD-AD/main/rule/DD-AD.txt",  # afwfv DD-AD 综合广告拦截规则
+    "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt",  # damengzhu 广告接口拦截规则
+    "https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt"  # HG 综合广告/弹窗拦截规则
+
 ]
 
 # 白名单规则
