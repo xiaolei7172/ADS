@@ -31,3 +31,9 @@ hgdzj.com##.ad-popup
 hgdzj.com##.ad-banner
 hgdzj.com##.video-ad-card
 hgdzj.com##.recommend-ad
+
+
+!===== 红果短剧（拦截开屏/中插/结尾广告、激励视频）
+||ad.hgdzj.com^$app=com.hgdzj
+||hgdzj-ad.xigua.com^$app=com.hgdzj
+||ssp.ad.xigua.com^$app=com.hgdzj
