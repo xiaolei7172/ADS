@@ -51,9 +51,9 @@ adblock = [
     "https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt",
     #"https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt",
     "https://raw.githubusercontent.com/changzhaoCZ/fqnovel-adrules/refs/heads/main/fqnovel-fxxk_ads",
-    #"https://anti-ad.net/adguard.txt",
+    "https://anti-ad.net/adguard.txt",
     #"https://raw.githubusercontent.com/2Gardon/SM-Ad-FuckU-hosts/master/SMAdHosts",
-    "https://raw.githubusercontent.com/VeleSila/yhosts/master/hosts.txt"
+    #"https://raw.githubusercontent.com/VeleSila/yhosts/master/hosts.txt"
 ]
 
 # 白名单规则
