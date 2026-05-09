@@ -1,6 +1,6 @@
 <div align="center">
-<h1 align="center">GOODBYEADS</h1>
-<h3 align="center">一个强力去广告的规则集合</h3>
+<h1 align="center">天影自用规则合集</h1>
+<h3 align="center">一个强力去广告的规则集合（取自8680大佬仓库）</h3>
 
 <p align="center">
   <a href="https://github.com/8680/GOODBYEADS">
@@ -53,8 +53,8 @@
 
 | 规则类型 | 📥 GitHub直链 | 🚀 国内加速链接 |
 | :---- | :---- | :---- |
-| AdGuard 拦截规则 | [adblock.txt](https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/adblock.txt) | [adblock.txt](https://ghfast.top/raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/adblock.txt) |
-| AdGuard Home DNS拦截规则 | [dns.txt](https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/dns.txt) | [dns.txt](https://ghfast.top/raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/dns.txt) |
+| AdGuard 拦截规则 | [adblock.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/adblock.txt) | [adblock.txt](https://ghfast.top/raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/adblock.txt) |
+| AdGuard Home DNS拦截规则 | [dns.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/dns.txt) | [dns.txt](https://ghfast.top/raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/dns.txt) |
 
 </details>
 
@@ -64,7 +64,7 @@
 
 | 规则类型 | 📥 GitHub直链 | 🚀 国内加速链接 |
 | :---- | :---- | :---- |
-| 黑名单域名列表 | [ad-domain.txt](https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/ad-domain.txt) | [ad-domain.txt](https://ghfast.top/raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/ad-domain.txt) |
+| 黑名单域名列表 | [ad-domain.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/ad-domain.txt) | [ad-domain.txt](https://ghfast.top/raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/ad-domain.txt) |
 
 </details>
 
@@ -74,7 +74,7 @@
 
 | 规则类型 | 📥 GitHub直链 | 🚀 国内加速链接 |
 | :---- | :---- | :---- |
-| Quantumult X规则 | [qx.list](https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/qx.list) | [qx.list](https://ghfast.top/raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/qx.list) |
+| Quantumult X规则 | [qx.list](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/qx.list) | [qx.list](https://ghfast.top/raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/qx.list) |
 
 </details>
 
@@ -84,8 +84,8 @@
 
 | 规则类型 | 📥 GitHub直链 | 🚀 国内加速链接 |
 | :---- | :---- | :---- |
-| SmartDNS拦截规则 | [smartdns.conf](https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/smartdns.conf) | [smartdns.conf](https://ghfast.top/raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/smartdns.conf) |
-| SmartDNS白名单 | [smartdns-whitelist.conf](https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/smartdns-whitelist.conf) | [smartdns-whitelist.conf](https://ghfast.top/raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/smartdns-whitelist.conf) |
+| SmartDNS拦截规则 | [smartdns.conf](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns.conf) | [smartdns.conf](https://ghfast.top/raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns.conf) |
+| SmartDNS白名单 | [smartdns-whitelist.conf](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns-whitelist.conf) | [smartdns-whitelist.conf](https://ghfast.top/raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns-whitelist.conf) |
 
 </details>
 
@@ -95,7 +95,7 @@
 
 | 规则类型 | 📥 GitHub直链 | 🚀 国内加速链接 |
 | :---- | :---- | :---- |
-| 白名单规则 | [allow.txt](https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/allow.txt) | [allow.txt](https://ghfast.top/raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/allow.txt) |
+| 白名单规则 | [allow.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/allow.txt) | [allow.txt](https://ghfast.top/raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/allow.txt) |
 </details>
 
 ## 📚 上游列表
