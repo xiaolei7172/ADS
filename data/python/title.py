@@ -28,9 +28,9 @@ for file_path in file_list:
 
     # 在文件顶部插入内容
     new_content = (
-        f"[Adblock Plus 2.0]\n"
-        f"! Title: GOODBYEADS\n"
-        f"! Homepage: https://github.com/8680/GOODBYEADS\n"
+        f"[天影 Adblock Plus 2.0]\n"
+        f"! Title: 天影自用规则\n"
+        f"! Homepage: https://github.com/xiaolei7172/ADS\n"
         f"! Expires: 12 Hours\n"
         f"! Version: {beijing_time}（北京时间）\n"
         f"! Description: 适用于AdGuard的去广告规则，合并优质上游规则并去重整理排列\n"
