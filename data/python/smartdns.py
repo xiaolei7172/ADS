@@ -1,8 +1,14 @@
 import os
 
-# 自动定位脚本根目录 + 自动创建 tmp
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
-os.makedirs('tmp', exist_ok=True)
+# ==========================================
+# 强制定位到【仓库根目录】，全局统一
+# ==========================================
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
+os.chdir(REPO_ROOT)
+
+# 自动创建目录
+os.makedirs(os.path.join(REPO_ROOT, "tmp"), exist_ok=True)
 
 def convert_to_smartdns_format(input_file, output_file):
     print("Generating SmartDNS rules...")
@@ -16,7 +22,6 @@ def convert_to_smartdns_format(input_file, output_file):
 
     count = 0
     with open(output_file, 'w', encoding='utf-8') as file:
-        # 标准表头
         file.write("# SmartDNS rules for 天影\n")
         file.write("# Homepage: https://github.com/xiaolei7172/ADS\n")
         file.write("# Format: address /domain/#\n\n")
@@ -26,7 +31,6 @@ def convert_to_smartdns_format(input_file, output_file):
             if not line:
                 continue
             
-            # 匹配 ||域名^ 格式
             if line.startswith("||") and line.endswith("^"):
                 domain = line[2:-1].strip()
                 if "*" in domain:
@@ -37,9 +41,10 @@ def convert_to_smartdns_format(input_file, output_file):
     
     print(f"✅ 生成完成！共 {count} 条 SmartDNS 规则")
 
-# 路径统一修复（绝对不会错）
-input_file_path = "./data/rules/dns.txt"
-output_file_path = "./data/rules/smartdns.conf"
+# ==========================================
+# 强制使用仓库根目录路径
+# ==========================================
+input_file_path = os.path.join(REPO_ROOT, "data", "rules", "dns.txt")
+output_file_path = os.path.join(REPO_ROOT, "data", "rules", "smartdns.conf")
 
-# 开始生成
 convert_to_smartdns_format(input_file_path, output_file_path)
