@@ -105,8 +105,8 @@
 <br>
 
 # 拦截规则
-📛 [AdguardTeam 官方基础广告拦截规则](https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_2_Base/filter.txt),
-📛 [AdguardTeam 官方中文专属广告规则](https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_224_Chinese/filter.txt),
+📛 [AdguardTeam 官方基础广告拦截规则](https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_2_Base/filter.txt)
+📛 [AdguardTeam 官方中文专属广告规则](https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_224_Chinese/filter.txt)
 📛 [EasyPrivacy 隐私跟踪防护规则](https://easylist-downloads.adblockplus.org/easyprivacy.txt),
 📛 [sjhgvr OISD精简版广告规则](https://raw.githubusercontent.com/sjhgvr/oisd/main/abp_small.txt),
 📛 [TG-Twilight 秋风广告规则](https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt),
