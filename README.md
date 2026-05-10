@@ -99,7 +99,7 @@
 
 <details>
 
-<summary><b>✅ DNS服务器</b></summary>
+<summary><b>🔄 DNS服务器</b></summary>
 <br>
 
 | 规则类型 | 
@@ -112,7 +112,7 @@ https://doh.pub/dns-query
 https://pub.xlxbk.cn/xlxbk/api 
 </details>
 
-<details>
+
 <br>
 ## 📚 上游列表
 
