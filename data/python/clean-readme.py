@@ -2,67 +2,63 @@ import datetime
 import pytz
 import os
 
-# ==========================================
-# 强制定位到【仓库根目录】，永远不会错
-# ==========================================
+# ================================
+# 强制定位仓库根目录（绝对不迷路）
+# ================================
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
 os.chdir(REPO_ROOT)
 
-# ==========================================
-# 强制从 【根目录/data/rules】读取计数
-# ==========================================
+# ================================
+# 读取规则数量
+# ================================
 def get_count(filename):
-    file_path = os.path.join(REPO_ROOT, "data", "rules", filename)
+    path = os.path.join(REPO_ROOT, "data", "rules", filename)
     try:
-        with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+        with open(path, "r", encoding="utf-8", errors="ignore") as f:
             for line in f:
-                if line.startswith('! Total count:'):
-                    return line.strip().replace('! Total count:', '').strip()
+                if line.startswith("! Total count:"):
+                    return line.strip().replace("! Total count:", "").strip()
     except:
         return "0"
     return "0"
 
 num_adblock = get_count("adblock.txt")
-num_dns     = get_count("dns.txt")
-num_allow   = get_count("allow.txt")
+num_dns = get_count("dns.txt")
+num_allow = get_count("allow.txt")
 
-# ==========================================
+# ================================
 # 北京时间
-# ==========================================
-tz = pytz.timezone('Asia/Shanghai')
+# ================================
+tz = pytz.timezone("Asia/Shanghai")
 beijing_time = datetime.datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
 
-# ==========================================
-# 读取 → 更新 → 写回【根目录 README.md】
-# ==========================================
+# ================================
+# 读取 README（根目录）
+# ================================
 readme_path = os.path.join(REPO_ROOT, "README.md")
 
 with open(readme_path, "r", encoding="utf-8") as f:
-    lines = f.readlines()
+    content = f.read()
 
-new_lines = []
-for line in lines:
-    if line.startswith("更新时间:"):
-        new_lines.append(f"更新时间: {beijing_time}（北京时间）\n")
-    elif line.startswith("拦截规则数量:"):
-        new_lines.append(f"拦截规则数量: {num_adblock}\n")
-    elif line.startswith("DNS拦截规则数量:"):
-        new_lines.append(f"DNS拦截规则数量: {num_dns}\n")
-    elif line.startswith("白名单规则数量:"):
-        new_lines.append(f"白名单规则数量: {num_allow}\n")
-    else:
-        new_lines.append(line)
+# ================================
+# 直接替换内容（最稳、不破坏格式）
+# ================================
+content = content.replace("更新时间:", f"更新时间: {beijing_time}（北京时间）")
+content = content.replace("拦截规则数量:", f"拦截规则数量: {num_adblock}")
+content = content.replace("DNS拦截规则数量:", f"DNS拦截规则数量: {num_dns}")
+content = content.replace("白名单规则数量:", f"白名单规则数量: {num_allow}")
 
-# 写回根目录
+# ================================
+# 强制写回根目录 README
+# ================================
 with open(readme_path, "w", encoding="utf-8") as f:
-    f.writelines(new_lines)
+    f.write(content)
 
-# ==========================================
-# 输出日志
-# ==========================================
-print("✅ 已更新根目录 README.md")
-print(f"📦 仓库根目录: {REPO_ROOT}")
-print(f"📊 拦截规则: {num_adblock}")
-print(f"📊 DNS规则: {num_dns}")
-print(f"📊 白名单: {num_allow}")
+# ================================
+# 日志
+# ================================
+print("✅ README.md 写入成功！")
+print(f"📁 路径: {readme_path}")
+print(f"🕒 时间: {beijing_time}")
+print(f"📊 拦截: {num_adblock} | DNS: {num_dns} | 白名单: {num_allow}")
