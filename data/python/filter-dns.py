@@ -1,15 +1,25 @@
 import os
 import datetime
 
-os.chdir('tmp')
+# 自动切换到脚本所在目录（最关键修复）
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+# 确保目录存在
+os.makedirs('./tmp', exist_ok=True)
+os.makedirs('./data/rules', exist_ok=True)
+
+print("正在从 adblock.txt 提取 DNS 规则...")
+
 # 打开原始文件和目标文件
-with open('.././data/rules/adblock.txt', 'r') as input_file, open('.././data/rules/dns.txt', 'w') as output_file:
+with open('./data/rules/adblock.txt', 'r', encoding='utf-8', errors='ignore') as input_file, \
+     open('./data/rules/dns.txt', 'w', encoding='utf-8') as output_file:
+
     # 逐行读取原始文件内容
     for line in input_file:
-        # 去除行尾的换行符
         line = line.strip()
-        
-        # 检查行长度是否大于等于2，并且首字符是"||"并且结尾是"^"
+
+        # 提取 ||域名^ 格式的 DNS 规则
         if len(line) >= 2 and line.startswith("||") and line.endswith("^"):
-            # 将满足条件的行写入目标文件
             output_file.write(line + '\n')
+
+print("✅ DNS 规则提取完成！已生成 dns.txt")
