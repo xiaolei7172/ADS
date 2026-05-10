@@ -1,9 +1,10 @@
 import datetime
 import pytz
 import os
+import re
 
 # ================================
-# 强制定位仓库根目录（绝对不迷路）
+# 强制定位仓库根目录
 # ================================
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
@@ -34,23 +35,31 @@ tz = pytz.timezone("Asia/Shanghai")
 beijing_time = datetime.datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
 
 # ================================
-# 读取 README（根目录）
+# 读取 README
 # ================================
 readme_path = os.path.join(REPO_ROOT, "README.md")
-
 with open(readme_path, "r", encoding="utf-8") as f:
     content = f.read()
 
 # ================================
-# 直接替换内容（最稳、不破坏格式）
+# 你要的格式：无代码块，纯文本
 # ================================
-content = content.replace("更新时间:", f"更新时间: {beijing_time}（北京时间）")
-content = content.replace("拦截规则数量:", f"拦截规则数量: {num_adblock}")
-content = content.replace("DNS拦截规则数量:", f"DNS拦截规则数量: {num_dns}")
-content = content.replace("白名单规则数量:", f"白名单规则数量: {num_allow}")
+new_stats = f"""## 📊 项目统计
+
+天影自用广告过滤规则
+
+更新时间: {beijing_time}（北京时间）
+拦截规则数量: {num_adblock}
+DNS 拦截规则数量: {num_dns}
+白名单规则数量: {num_allow}"""
 
 # ================================
-# 强制写回根目录 README
+# 匹配并替换整个统计区域
+# ================================
+content = re.sub(r"## 📊 项目统计[\s\S]*?(?=\n## |\Z)", new_stats, content)
+
+# ================================
+# 写回
 # ================================
 with open(readme_path, "w", encoding="utf-8") as f:
     f.write(content)
