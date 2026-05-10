@@ -35,13 +35,15 @@ subprocess.run("cp ./data/mod/whitelist.txt ./tmp/allow01.txt", shell=True)
 
 # 拦截规则
 adblock = [
-#"https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_2_Base/filter.txt",  # AdguardTeam 官方基础广告拦截规则
-#"https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_224_Chinese/filter.txt",  # AdguardTeam 官方中文专属广告规则
+"https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_2_Base/filter.txt",  # AdguardTeam 官方基础广告拦截规则
+"https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_224_Chinese/filter.txt",  # AdguardTeam 官方中文专属广告规则
 #"https://easylist-downloads.adblockplus.org/easyprivacy.txt",  # EasyPrivacy 隐私跟踪防护规则
-"https://raw.githubusercontent.com/sjhgvr/oisd/main/abp_small.txt",  # sjhgvr OISD精简版广告规则
-#"https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt",  # TG-Twilight 秋风广告规则
+#"https://raw.githubusercontent.com/sjhgvr/oisd/main/abp_small.txt",  # sjhgvr OISD精简版广告规则
+"https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt",  # TG-Twilight 秋风广告规则
+"https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/refs/heads/master/mv.txt",  #乘风 视频过滤规则
+"https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/refs/heads/master/rule.txt",  #乘风 广告过滤规则
 #"https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt",  # cjx82630 网页烦扰元素拦截规则
-"https://raw.githubusercontent.com/afwfv/DD-AD/main/rule/DD-AD.txt",  # afwfv DD-AD 综合广告拦截规则
+#"https://raw.githubusercontent.com/afwfv/DD-AD/main/rule/DD-AD.txt",  # afwfv DD-AD 综合广告拦截规则
 #"https://ghproxy.net/https://raw.githubusercontent.com/afwfv/DD-AD/main/rule/dns.txt",  # 消失的DD DNS精简版
 #"https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt",  # damengzhu 广告接口拦截规则
 "https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt",  # HG 综合广告/弹窗拦截规则
@@ -54,11 +56,13 @@ adblock = [
 #"https://raw.gitmirror.com/Cats-Team/dns-filter/main/abp.txt",  # AdRules DNS Filter 国内优化
 #"https://raw.hellogithub.com/hosts",  # GitHub加速Hosts
 #"https://raw.githubusercontent.com/entr0pia/fcm-hosts/fcm/fcm-hosts",  # FCM Hosts 隐私推送优化
-"https://www.xlxbk.cn/dns.txt",  # xlxbj_dns 国内短视频APP广告域名
+#"https://www.xlxbk.cn/dns.txt",  # xlxbj_dns 国内短视频APP广告域名
 #"https://raw.githubusercontent.com/Kuroba-Sayuki/FuLing-AdRules/Master/FuLingRules/FuLingBlockList.txt",  # 🌸茯苓广告规则
 #"https://raw.githubusercontent.com/qq5460168/dangchu/main/adhosts.txt",  # 当初 adhosts 域名拦截
-#"https://mirror.ghproxy.com/raw.githubusercontent.com/qq5460168/666/master/rules.txt",  # 群主合并规则
-#"https://get.66a.vip/https://raw.githubusercontent.com/sccheng460/me/master/rules.txt"  # 知还管理 合并规则
+#"raw.githubusercontent.com/qq5460168/666/master/rules.txt",  # 群主合并规则
+#"https://raw.githubusercontent.com/sccheng460/me/master/rules.txt",  # 知还管理 合并规则
+#"https://oss.xlxbk.cn/allow.txt",  # xlxbk合并规则
+"https://gh-proxy.com/raw.githubusercontent.com/changzhaoCZ/fqnovel-adrules/refs/heads/main/fqnovel-fxxk_ads"  # 番茄小说广告规则（提示版本不安全请删除此条）
 ]
 
 # 白名单规则
