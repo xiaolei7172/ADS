@@ -46,9 +46,12 @@ adblock = [
 #"https://raw.githubusercontent.com/afwfv/DD-AD/main/rule/DD-AD.txt",  # afwfv DD-AD 综合广告拦截规则
 #"https://ghproxy.net/https://raw.githubusercontent.com/afwfv/DD-AD/main/rule/dns.txt",  # 消失的DD DNS精简版
 #"https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt",  # damengzhu 广告接口拦截规则
-"https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt",  # HG 综合广告/弹窗拦截规则
+#"https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt",  # HG 综合广告/弹窗拦截规则
 "https://raw.githubusercontent.com/xiaolei7172/ADS/refs/heads/master/data/mod/adblock.txt",  # 天影自用补充规则
 "https://anti-ad.net/easylist.txt",  # anti-AD 命中率高、兼容性强
+"http://hgzs.uunat.com/hg1.txt", # 海哥改 经过优化的广告过滤方案，兼容性强
+"http://hgzs.uunat.com/yx.txt", # 海哥改 针对游戏应用的黑名单规则，拦截游戏的
+"https://raw.githubusercontent.com/qq5460168/666/master/rules.txt", # 那个谁520 多功能广告过滤规则集合
 #"https://raw.githubusercontent.com/qq5460168/dangchu/main/black.txt",  # 当初 综合黑名单
 #"https://adguardteam.github.io/HostlistsRegistry/assets/filter_29.txt",  # CHN: AdRules DNS List
 #"https://ghproxy.net/https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt",  # hagezi 轻量低误杀DNS规则
@@ -56,10 +59,8 @@ adblock = [
 #"https://raw.gitmirror.com/Cats-Team/dns-filter/main/abp.txt",  # AdRules DNS Filter 国内优化
 #"https://raw.hellogithub.com/hosts",  # GitHub加速Hosts
 #"https://raw.githubusercontent.com/entr0pia/fcm-hosts/fcm/fcm-hosts",  # FCM Hosts 隐私推送优化
-#"https://www.xlxbk.cn/dns.txt",  # xlxbj_dns 国内短视频APP广告域名
 #"https://raw.githubusercontent.com/Kuroba-Sayuki/FuLing-AdRules/Master/FuLingRules/FuLingBlockList.txt",  # 🌸茯苓广告规则
 #"https://raw.githubusercontent.com/qq5460168/dangchu/main/adhosts.txt",  # 当初 adhosts 域名拦截
-#"raw.githubusercontent.com/qq5460168/666/master/rules.txt",  # 群主合并规则
 #"https://raw.githubusercontent.com/sccheng460/me/master/rules.txt",  # 知还管理 合并规则
 #"https://oss.xlxbk.cn/allow.txt",  # xlxbk合并规则
 "https://gh-proxy.com/raw.githubusercontent.com/changzhaoCZ/fqnovel-adrules/refs/heads/main/fqnovel-fxxk_ads"  # 番茄小说广告规则（提示版本不安全请删除此条）
