@@ -3,9 +3,9 @@
 ! Title: 📌 天影自用规则（每12小时更新一次）
 ! Homepage:🌐 https://github.com/xiaolei7172/ADS 
 ! Expires: ⏰ 每 12 小时自动更新
-! Description: 📝 更新时间：2026-05-11 00:28:16（北京时间）｜📝 当前规则总数：5764 条｜
-! Total count:5764 
-! Version:2026-05-11 00:28:16（北京时间）
+! Description: 📝 更新时间：2026-05-11 06:08:05（北京时间）｜📝 当前规则总数：5762 条｜
+! Total count:5762 
+! Version:2026-05-11 06:08:05（北京时间）
 ! ======================================================================
 @@*.flyme.cn
 @@*.myapp.com
@@ -543,6 +543,7 @@
 @@||api3-normal-sinfonlineb.fqnovel.com^
 @@||api5-normal-sinfonlineb.fqnovel.com^
 @@||api5-normal-sinfonlinec.fqnovel.com/reading/bookapi/$important,app=com.dragon.read
+@@||apilocate.amap.com^
 @@||apimobile.meituan.com^
 @@||apis.google.com
 @@||apis.google.com^
@@ -583,7 +584,6 @@
 @@||appgoad.189.cn^
 @@||appimg-drcn.dbankcdn.com^
 @@||appimg.dbankcdn.com^
-@@||appldnld.apple.com^
 @@||apple.com/metrics/ac-analytics/*/scripts/$domain=apple.com
 @@||apple.com/metrics/data-relay/*/scripts/data-relay.js
 @@||apple.com/metrics/scripts/$domain=locate.apple.com
@@ -1591,6 +1591,8 @@
 @@||dtdc.in/tracking^
 @@||du.163.com^
 @@||dualstack-a.apilocate.amap.com^
+@@||dualstack-logs.amap.com^
+@@||dualstack-restapi.amap.com^
 @@||duapps.com^
 @@||duapps.com^$important
 @@||dubaji-api.zhhainiao.com^
@@ -1893,7 +1895,6 @@
 @@||gcable.com.cn^$important
 @@||gcore.jsdelivr.net^
 @@||gdfp.gifshow.com^
-@@||gdmf.apple.com^
 @@||gdown.baidu.com^
 @@||gdtimg.com^
 @@||geely.com/assets/plugins/sa-sdk-javascript-*/sensorsdata.min.js$domain=galaxy.geely.com|xingyue.geely.com
@@ -3539,7 +3540,6 @@
 @@||member.jiaoyimao.com^
 @@||members.bitcomet.com^
 @@||message.bilibili.com^
-@@||mesu.apple.com^
 @@||metok.sys.miui.com^
 @@||metok.sys.miui.com^$important
 @@||metrics.apple.com^
@@ -4862,7 +4862,6 @@
 @@||svtrd.com^$domain=moneyou.de|ns.nl
 @@||swa.mail.ru/cgi-bin/counters?$script
 @@||swap.stu.126.net^
-@@||swcdn.apple.com^
 @@||swimg1.hstdyf.com^
 @@||switch.atdmt.com/iaction/$subdocument,domain=bestbuy.com
 @@||swr3.de/static/swrplayer/web/plugins/ivw/ivw.js
@@ -5170,7 +5169,6 @@
 @@||update.miui.com^$important
 @@||update.vivo.com^
 @@||updateinfo.market.xiaomi.com^
-@@||updates.cdn-apple.com^
 @@||upgrade.ptmi.gitv.tv^
 @@||upgrade.ptmi.gitv.tv^$important
 @@||upgrade.vivo.com^
