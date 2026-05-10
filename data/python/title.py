@@ -35,6 +35,7 @@ for file_path in file_list:
     f"! Expires: ⏰ 每 12 小时自动更新\n"
     f"! Description: 📝 更新时间：{beijing_time}（北京时间）｜📝 当前规则总数：{line_count} 条｜\n"
     f"! Total count:{line_count}
+    f"! Version:{beijing_time}（北京时间）
     f"! ======================================================================\n"
         f"{content}"
     )
