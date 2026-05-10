@@ -28,7 +28,6 @@
   <a href="#-规则订阅">规则订阅</a> •
   <a href="#-上游列表">上游列表</a> •
   <a href="#-拦截效果">拦截效果</a> •
-  <a href="#-完善项目">完善项目</a>
 </p>
 
 ---
@@ -98,6 +97,25 @@
 | 白名单规则 | [allow.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/allow.txt) | [allow.txt](https://ghfast.top/raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/allow.txt) |
 </details>
 
+<summary><b>✅ 白名单规则</b></summary>
+<br>
+
+
+<summary><b>✅ DNS服务器</b></summary>
+<br>
+
+| 规则类型 | 
+| :---- |
+| DNS服务器:
+https://doh.18bit.cn/dns-query
+https://doh.360.cn/dns-query
+https://dns.alidns.com/dns-query
+https://doh.pub/dns-query
+https://pub.xlxbk.cn/xlxbk/api 
+</details>
+
+<summary><b>✅ DNS服务器</b></summary>
+<br>
 ## 📚 上游列表
 
 <details>
