@@ -47,10 +47,12 @@ adblock_urls = [
     "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt",
     "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt",
     "https://anti-ad.net/easylist.txt",
-    "https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt"
+    "https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt",
+    "https://raw.githubusercontent.com/xiaolei7172/ADS/refs/heads/master/data/mod/adblock.txt"
 ]
 
 allow_urls = [
+    "https://raw.githubusercontent.com/xiaolei7172/ADS/refs/heads/master/data/mod/whitelist.txt",
     "https://raw.githubusercontent.com/qq5460168/dangchu/main/white.txt",
     "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt",
     "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/allowlist.txt",
