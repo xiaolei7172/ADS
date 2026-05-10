@@ -42,5 +42,5 @@ def extract_domains(input_file, output_file):
 input_file_path = "./data/rules/dns.txt"
 output_file_path = "./data/rules/ad-domain.txt"
 
-# 开始提取
-extract_domains(input_file_path, output_file)
+# 开始提取 ↓↓↓ 这里修复了！！！
+extract_domains(input_file_path, output_file_path)
