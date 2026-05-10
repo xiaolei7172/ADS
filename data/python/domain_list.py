@@ -1,37 +1,46 @@
 import os
 
-# Change to the project root directory
-os.chdir('tmp')
+# 切换到脚本所在目录（保证路径正确）
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 def extract_domains(input_file, output_file):
-    print("Extracting domain list...")
-    
-    with open(input_file, 'r', encoding='utf-8', errors='ignore') as file:
-        lines = file.readlines()
-    
+    print("正在提取域名列表...")
+
+    try:
+        with open(input_file, 'r', encoding='utf-8', errors='ignore') as file:
+            lines = file.readlines()
+    except:
+        print(f"❌ 无法读取文件：{input_file}")
+        return
+
     count = 0
-    with open(output_file, 'w') as file:
-        # Add header comment
-        file.write("# 天影 Domain List\n")
-        file.write("# Homepage: https://github.com/xiaolei7172/ADS\n")
-        file.write("# Generated from 天影 DNS rules\n\n")
-        
-        for line in lines:
-            line = line.strip()
-            # Check if the line starts with "||" and ends with "^" (adblock DNS syntax)
-            if line.startswith("||") and line.endswith("^"):
-                # Extract domain from the rule (remove || prefix and ^ suffix)
-                domain = line[2:-1]
-                # Write only the domain name without any prefix or suffix
-                file.write(f"{domain}\n")
-                count += 1
-    
-    print(f"Extracted {count} domains to domain list")
+    try:
+        with open(output_file, 'w', encoding='utf-8') as file:
+            # 标准表头
+            file.write("[Host]\n")
+            file.write("# 天影 纯净域名黑名单\n")
+            file.write("# Github: https://github.com/xiaolei7172/ADS\n")
+            file.write("# 自动提取：只保留纯域名，适配 AdGuard Home / 路由器\n\n")
 
-# Input from current dns.txt file
-input_file_path = ".././data/rules/dns.txt"
-# Output to new ad-domain.txt file
-output_file_path = ".././data/rules/ad-domain.txt"
+            for line in lines:
+                line = line.strip()
+                # 提取 ||域名^ 格式
+                if line.startswith("||") and line.endswith("^"):
+                    domain = line[2:-1].strip()
+                    # 过滤无效域名
+                    if domain and "." in domain and not " " in domain:
+                        file.write(f"{domain}\n")
+                        count += 1
 
-# Generate domain list
-extract_domains(input_file_path, output_file_path) 
+        print(f"✅ 提取完成！共提取 {count} 个有效域名")
+        print(f"📁 输出文件：{output_file}")
+
+    except Exception as e:
+        print(f"❌ 写入失败：{str(e)}")
+
+# 输入输出路径（自动定位）
+input_file_path = "./data/rules/dns.txt"
+output_file_path = "./data/rules/ad-domain.txt"
+
+# 开始提取
+extract_domains(input_file_path, output_file)
