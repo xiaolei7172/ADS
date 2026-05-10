@@ -3,7 +3,7 @@
 ! Title: 📌 天影自用规则（每12小时更新一次）
 ! Homepage:🌐 https://github.com/xiaolei7172/ADS
 ! Expires: ⏰ 每 12 小时自动更新
-! Description: 📝 更新时间：2026-05-10 14:55:01（北京时间）｜📝 当前规则总数：17389 条｜
+! Description: 📝 更新时间：2026-05-10 17:17:08（北京时间）｜📝 当前规则总数：17382 条｜
 ! ======================================================================
 @@#.banner%20ad.$image,domain=dokuo666.blog98.fc2.com
 @@$csp=worker-src 'none',domain=uptostream.com
@@ -20,7 +20,6 @@
 @@*$app=viva.republica.toss,stealth=dpi
 @@*$generichide,domain=faqwiki.*
 @@*$image,domain=hardwareluxx.de,~third-party
-@@*$redirect-rule,domain=d3ward.github.io
 @@*$script,third-party,domain=embedme.*|filemoon.*|finfang.*|hellnaw.*|moonembed.*|z12z0vla.*|fmoonembed.*
 @@*$stealth=referrer,domain=cdnbuzz.buzz
 @@*.flyme.cn
@@ -197,7 +196,6 @@
 @@/adview_$domain=52xkdy.com|fydy8.com
 @@/adview_*_ads_300x250.js$domain=itbaoku.cn
 @@/adview_pic_$domain=bigpixel.cn|fffmo.com|itbaoku.cn|laimanhua.net|lfqie.com|lingjike.com|mahua.com|mati.hk|meiyouad.com|mh160.com|reh.tw|silisili.in|sssam.com|yanyue.cn|zaixianjisuan.com|zgpingshu.com
-@@/adview_pic_$domain=doutula.com|fastadmin.net|toolfk.com|xclient.info
 @@/advs/*$domain=ciros.com.cn|gotobuy.com.tw|sj-touch.com
 @@/advt.png$domain=freevpn4you.net
 @@/adx.$domain=tanx.com
@@ -5884,8 +5882,6 @@
 @@||flying-lines.com/banners/$image,~third-party
 @@||flyordie.com/games/online/iframeafg*.html
 @@||flysmartavia.com^$stealth=donottrack|java|location|push|useragent|webrtc
-@@||fm.ipinyou.$domain=ipinyou.com.cn
-@@||fm.p0y.cn^$domain=ipinyou.com.cn
 @@||fmip.icloud.com^
 @@||fnggcdn.com/items/$stealth=referrer
 @@||focus.ti.com^*/metrics-min.js
@@ -9338,7 +9334,6 @@
 @@||lamoda.ru^$elemhide,jsinject,extension,content,header=Set-Cookie:/qrator_jsr=/
 @@||lamoda.ru^$stealth=1p-cookie
 @@||lamycosphere.com/cdn/shop/*/assets/pixel.gif$image,~third-party
-@@||lancdn.com/landian/public/js/ads.js
 @@||landtop.com.tw/images/ad/
 @@||langsungviral.com^$generichide
 @@||languagecloud.sdl.com/node_modules/fingerprintjs2/dist/fingerprint2.min.js
@@ -12907,7 +12902,6 @@
 @@||q32.ru/themes/default/reklama/advertising.js
 @@||qa.smbc.co.jp^$stealth=dpi
 @@||qappcenterv6.3g.qq.com^
-@@||qbox.me/static/js/ads.js$domain=linux.cn
 @@||qcaptcha.so.com^
 @@||qccommunity.qcloudimg.com^$stealth=referrer,domain=cloud.tencent.com
 @@||qcheng.cc/x/statics/js/guanggao.
@@ -15299,7 +15293,6 @@
 @@||th.bing.com^
 @@||th.thgim.com/static/js/adsframe.min.js$domain=thehindu.com
 @@||th2plant.com^$generichide
-@@||th7.cn/sanda2015/css/ads.js
 @@||thaiairways.com/static/common/js/wt_js/webtrends.min.js$~third-party
 @@||thaudray.com^|$xmlhttprequest,domain=ipacrack.com
 @@||thdstatic.com/experiences/local-ad/$domain=homedepot.com
