@@ -13,7 +13,72 @@ jobs:
           fetch-depth: 0
 
       - name: Install Python dependencies
+        run: |name: TianYing Update Rules
+on: 
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */12 * * *'
+    
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: write
+      
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Python dependencies
         run: |
+          pip install pytz
+
+      - name: Download Rules
+        run: python ./data/python/dl.py
+
+      - name: Merge Rules
+        run: python ./data/python/merge.py
+
+      - name: Generate dns Rules
+        run: python ./data/python/filter-dns.py
+
+      - name: Generate qx Rules
+        run: python ./data/python/qx.py
+
+      - name: Generate SmartDNS Rules
+        run: python ./data/python/smartdns.py
+
+      - name: Generate SmartDNS Whitelist
+        run: python ./data/python/smartdns_whitelist.py
+
+      - name: Generate Domain List
+        run: python ./data/python/domain_list.py
+
+      - name: Update Title & ReadMe
+        run: |
+          python ./data/python/title.py
+          python ./data/python/clean-readme.py
+
+      - name: Git Push
+        run: |
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git add --all
+          git commit -m "✅ 规则自动更新 $(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M:%S')"
+          git push
+
+      # ==============================================
+      # 自动删除【所有历史运行记录】，只保留最新一条
+      # ==============================================
+      - name: Delete workflow runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          retain_days: 0
+          keep_minimum_runs: 1
           pip install pytz
 
       - name: Download Rules
