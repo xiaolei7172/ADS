@@ -1,11 +1,11 @@
 [TianYing Adblock Plus 2.0]
 ! ======================================================================
 ! Title: 📌 天影自用规则（每12小时更新一次）
-! Homepage:🌐 https://github.com/xiaolei7172/ADS
+! Homepage:🌐 https://github.com/xiaolei7172/ADS 
 ! Expires: ⏰ 每 12 小时自动更新
-! Description: 📝 更新时间：2026-05-10 22:25:32（北京时间）｜📝 当前规则总数：5794 条｜
-! Total count:5794
-! Version:2026-05-10 22:25:32（北京时间）
+! Description: 📝 更新时间：2026-05-11 00:15:03（北京时间）｜📝 当前规则总数：5764 条｜
+! Total count:5764 
+! Version:2026-05-11 00:15:03（北京时间）
 ! ======================================================================
 @@*.flyme.cn
 @@*.myapp.com
@@ -42,7 +42,6 @@
 @@analytics^$domain=wwe.com
 @@bit.ly
 @@cdn.*.qq.com
-@@down.360safe.com^
 @@goo.gl
 @@guoqiangti.cf
 @@jd.com/*ad_
@@ -58,6 +57,7 @@
 @@url.cn
 @@verify.sec.xiaomi.com
 @@|admin-oss-xlvip.a.88cdn.com^
+@@|https://media.amazon.map.fastly.net^$script
 @@|wxpaylogo.qpic.cn^
 @@||*-cf.xvideos-cdn.com^
 @@||*-open-sign.byteimg.com^
@@ -99,7 +99,6 @@
 @@||*.video.xiaomi.com^$important
 @@||*.xn--ngstr-lra8j.com^
 @@||*.y.qq.com^$important
-@@||*ad*.ksyungslb.com^
 @@||*m.chenzhongtech.com^
 @@||000714.xyz^
 @@||112.2o7.net/b/ss/$image,domain=espn.com.br
@@ -114,7 +113,6 @@
 @@||1tian.kuaishou.com^
 @@||2o7.net^$domain=audiusa.com
 @@||316.coolapk1s.com^
-@@||360.cn^
 @@||360buyimg.com^
 @@||360kuai.com^
 @@||3975.com^
@@ -193,6 +191,7 @@
 @@||accscdn.m.taobao.com^
 @@||accueil.banque-france.fr/uti/assets/atinternet/core/smarttag.js$domain=accueil.banque-france.fr
 @@||acg02.cc^
+@@||acs.m.taobao.com
 @@||acs.m.taobao.com^
 @@||acs.m.taobao.com^$important
 @@||acs.youku.com^
@@ -211,7 +210,6 @@
 @@||ad-block.dns.adguard.com^
 @@||ad-experience.bytedance.com^
 @@||ad-gone.com^
-@@||ad-log-upload.mihoyo.com^
 @@||ad-putting.gw.zt-express.com^
 @@||ad.adriver.ru/cgi-bin/rle.cgi$domain=mgts.ru
 @@||ad.azure.com^
@@ -229,7 +227,6 @@
 @@||ad.vivo.com.cn^
 @@||adac.de/_common/js/adac.webtrekk.js
 @@||adapi.zcool.com.cn/api/adstrategy/realtime/get_ad_info?location_id=$domain=zcool.com.cn
-@@||adash-emas.cn-hangzhou.aliyuncs.com^
 @@||adashx.ut.dingtalk.com^
 @@||adblockanalytics.com/ads.js|
 @@||adblockanalytics.com/wp-banners.js|
@@ -381,7 +378,9 @@
 @@||apd-pcdnwxstat.teg.tencent-cloud.net^
 @@||apd-ugcvlive.apdcdn.tc.qq.com^
 @@||apd-vlive.apdcdn.tc.qq.com^
+@@||api*-normal-sinfonline*.fqnovel.com/reading/bookapi/$important,app=com.dragon.read
 @@||api*-sinfnormal.fqnovel.com^$app=com.dragon.read
+@@||api*-sinfnormal.fqnovel.com^$important,app=com.dragon.read
 @@||api-album.quark.cn^
 @@||api-chat.soulapp.cn^
 @@||api-cmnt.wtzw.com^
@@ -413,7 +412,6 @@
 @@||api.cloud.huawei.com^
 @@||api.comm.miui.com^
 @@||api.comm.miui.com^$important
-@@||api.coolapk.com^
 @@||api.coolapk1s.com^
 @@||api.crashguard.me^
 @@||api.cxense.com/document/search?
@@ -544,6 +542,7 @@
 @@||api2.helper.qq.com^
 @@||api3-normal-sinfonlineb.fqnovel.com^
 @@||api5-normal-sinfonlineb.fqnovel.com^
+@@||api5-normal-sinfonlinec.fqnovel.com/reading/bookapi/$important,app=com.dragon.read
 @@||apimobile.meituan.com^
 @@||apis.google.com
 @@||apis.google.com^
@@ -569,7 +568,6 @@
 @@||app.message.sonicwall.com^
 @@||app.powerbi.com^
 @@||app.tirelocator.ca/static/scripts/google-analytics.js
-@@||app.toutiao.com^
 @@||app.zhuanzhuan.com^
 @@||app.zhuanzhuan.com^$important
 @@||appapi.inspsearchapi.com^$domain=search.pch.com
@@ -700,6 +698,7 @@
 @@||bdash-cloud.com/tracking-script/*/tracking.js$domain=junonline.jp
 @@||bdsmtest.org^
 @@||bdsmtv.cc^
+@@||bdstatic.com/static/common/widget/ui/admanager/$script,domain=image.baidu.com
 @@||beacon.cdn.qq.com/sdk/*/beacon_web.min.js$domain=guanjia.qq.com
 @@||beacon.guim.co.uk/accept-beacon?
 @@||beatthetraffic.com/traffic/?partner=$subdocument
@@ -712,13 +711,13 @@
 @@||bestbuy.com/*/vendor/analytics*/dist/analyticsQ.bundle.js
 @@||bettycrocker.com/Shared/Javascript/UnicaTag.js
 @@||bettycrocker.com/Shared/Javascript/ntpagetag.js
-@@||bgp.video-upload-v*.lf.bytelb.net^
 @@||bhg.com/web/js-min/common/js/dwr/RemoteTargetingService.js
 @@||bidobido.xyz^
 @@||big.bilibili.com^
 @@||bigota.d.miui.com^
 @@||bigota.d.miui.com^$important
 @@||bikeforums.net/clientscript/vbulletin_analytics.js
+@@||bikroy.com/neo/bikroy-contactUs*-ads-$script,1p
 @@||bild.met.vgwort.de/na^$domain=bild.de
 @@||bilibili.com^
 @@||billiger.de/js/emos2.js
@@ -746,6 +745,7 @@
 @@||bmap6.cn^
 @@||bmap6.cn^$important
 @@||bnc.lt/a/key_live$domain=pinterest.co.kr|pinterest.com|pinterest.de|pinterest.com.au|pinterest.com.mx|pinterest.es|pinterest.jp|pinterest.it|pinterest.ca|pinterest.co.uk|pinterest.ru|pinterest.ch|pinterest.fr|pinterest.cl|pinterest.at|pinterest.pt|pinterest.nz|pinterest.dk|pinterest.se|pinterest.ie|pinterest.ph|pinterest.info
+@@||bnet.163.com/
 @@||bolha.com/clicktracker/
 @@||bonuscloud.io^
 @@||bonuscloud.io^$important
@@ -772,7 +772,6 @@
 @@||browser.events.data.msn.com^
 @@||browser.pipe.aria.microsoft.com^
 @@||browserscope.org/user/beacon/*?callback=$script,domain=jsperf.com
-@@||bs-origin.pull.yximgs.com^
 @@||bs.nakanohito.jp/b3/bi.js$domain=nexon.com
 @@||bt.com^*/touchclarity/homepage/omtr_tc.js
 @@||btloader.com/tag?$domain=voici.fr
@@ -793,6 +792,7 @@
 @@||c.evidon.com^
 @@||c.fa.jd.com^
 @@||c.fantia.jp^
+@@||c.gdt.qq.com/gdt_click.
 @@||c.gj.qq.com^
 @@||c.pc.qq.com^
 @@||c.pc.qq.com^$important
@@ -959,6 +959,7 @@
 @@||cdn.dsmcdn.com/sfx/mergen/*/errors.$domain=trendyol.com
 @@||cdn.dsmcdn.com/sfx/mergen/*/index.js$domain=trendyol.com
 @@||cdn.dynamicyield.com^$domain=dafiti.com.co
+@@||cdn.exp.qq.com/img/
 @@||cdn.ferrari.com^
 @@||cdn.georiot.com/snippet.js$domain=techadvisor.co.uk
 @@||cdn.georiot.com/snippet.js$domain=webwereld.nl
@@ -1238,7 +1239,6 @@
 @@||cloudfront.net/libs/amplitude-*-min.gz.js$domain=elconfidencial.com
 @@||cloudfront.net/opentag*.js$domain=telegraph.co.uk
 @@||cloudfront.net^*/jquery.google-analytics.js$domain=homepath.com
-@@||cm-10-*.getui.com^
 @@||cm-beacon.nakanohito.jp/cm/comment_$xmlhttprequest
 @@||cm-h.phncdn.com^
 @@||cm-widget.nakanohito.jp/cm/$script,stylesheet
@@ -1359,6 +1359,7 @@
 @@||cros-updates-serving.appspot.com^
 @@||crowdscience.com/max-$script,domain=everydayhealth.com
 @@||crowdscience.com/start-$script,domain=everydayhealth.com
+@@||crsky.com/ggao/images/$image
 @@||crwdcntrl.net/*callback=setPIDForPlayer$domain=static.rtl.nl
 @@||csdata1.com/data/js/$domain=acehardware.com
 @@||csi.gstatic.com^
@@ -1432,7 +1433,6 @@
 @@||data.bilibili.com^
 @@||data.bilibili.com^$important
 @@||data.dangbei.com^
-@@||data.flurry.com^
 @@||data.mistat.*xiaomi.com^
 @@||data.mistat.intl.xiaomi.com^
 @@||data.mistat.intl.xiaomi.com^$important
@@ -1486,7 +1486,6 @@
 @@||dev.visualwebsiteoptimizer.com/server-side/settings?a=$domain=olx.co.id
 @@||dev.visualwebsiteoptimizer.com^$script,xmlhttprequest,domain=dominos.jp|dominos.com.my|dominos.com.sg|dominoslk.com
 @@||dev.visualwebsiteoptimizer.com^$stylesheet,script,domain=hancomdocs.com
-@@||develope-oss.lanzoug.com^
 @@||device-api.urbanairship.com^$app=com.caribou.caribouapp
 @@||devuploads.com^
 @@||dfcfw.com^
@@ -1499,7 +1498,6 @@
 @@||dig.lianjia.com^
 @@||dig.zjurl.cn^
 @@||dimg04.c-ctrip.com^
-@@||dinamicx.alibabausercontent.com^
 @@||dingtalk.com^
 @@||dir.minigame.qq.com^
 @@||direct.wap.zol.com.cn^
@@ -1615,6 +1613,7 @@
 @@||dw.com.com/js/dw.js$domain=cbsnews.com|cnet.com|gamespot.com|tv.com
 @@||dw.de/js/xtcore.js
 @@||dw.uptodown.com^
+@@||dwstatic.com/b=amkit
 @@||dwz.cn^
 @@||dx.10086.cn^
 @@||dxcloud.episerver.net^
@@ -1730,8 +1729,6 @@
 @@||f*.market.mi-img.com^$important
 @@||f*.market.xiaomi.com^
 @@||f*.market.xiaomi.com^$important
-@@||f-cashloan.snssdk.com^
-@@||f-cpay.snssdk.com^
 @@||f-tra.com^$script,domain=pokemoncenter-online.com
 @@||f-vali.cp31.ott.cibntv.net^
 @@||f.51240.com^
@@ -1899,7 +1896,6 @@
 @@||gdmf.apple.com^
 @@||gdown.baidu.com^
 @@||gdtimg.com^
-@@||gecko.zijieapi.com^
 @@||geely.com/assets/plugins/sa-sdk-javascript-*/sensorsdata.min.js$domain=galaxy.geely.com|xingyue.geely.com
 @@||geetest.com^  # 极验验证码
 @@||gelbooru.com^
@@ -2874,7 +2870,6 @@
 @@||i1.hdslb.com^
 @@||i2.chuimg.com^
 @@||i2.hdslb.com^
-@@||i2.y.qq.com^
 @@||i72.lanzoug.com^
 @@||i82.lanzoug.com^
 @@||ia.hit.interia.pl/*/date?$domain=interia.pl|pomponik.pl
@@ -2989,6 +2984,7 @@
 @@||img02.sogoucdn.com^
 @@||img03.sogoucdn.com^
 @@||img04.sogoucdn.com^
+@@||img05.zhaopin.cn/2014/common/js/za/ga.js
 @@||img1.360buyimg.com^
 @@||img1.qidian.com^
 @@||img10.360buyimg.com^
@@ -3085,6 +3081,7 @@
 @@||is-hl.snssdk.com^
 @@||is.snssdk.com^
 @@||is1-ssl.mzstatic.com^
+@@||isdspeed.qq.com/cgi-bin/r.cgi?flag1=
 @@||isee.weishi.qq.com^
 @@||iservice.10010.com^
 @@||isite.baidu.com^
@@ -3161,6 +3158,7 @@
 @@||js.monitor.azure.com^$app=com.microsoft.office.officehubrow
 @@||js.revsci.net/gateway/gw.js?$domain=t-online.de
 @@||js.t.sinajs.cn^
+@@||js.tv.itc.cn/gg.seed.js
 @@||js.tv.itc.cn^
 @@||js.vpro.nl/vpro/*/statcounter.js?
 @@||jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js$domain=suki-kira.com
@@ -3228,6 +3226,7 @@
 @@||lcdn-locator.apple.com^
 @@||lcs.naver.com/*?u=*service_id$image,domain=smartstore.naver.com
 @@||lcs.naver.com/m?u=$domain=smartstore.naver.com
+@@||learn.microsoft.com/video/media/*_960.jpg|$image,domain=learn.microsoft.com
 @@||leihuo.163.com^
 @@||lens.zhihu.com^
 @@||lequ-qfe.iqiyi.com^
@@ -3235,15 +3234,6 @@
 @@||letelegramme.fr/js/xtcore.js
 @@||level-plus.net^
 @@||levexis.com/nbty/$domain=puritan.com
-@@||lf*-baike.searchpstatp.com^
-@@||lf*-cdn-tos.bytegoofy.com^
-@@||lf*-dy-cdn-tos.bytegecko.com^
-@@||lf*-infras.bytetos.com^
-@@||lf*-static.bytednsdoc.com^
-@@||lf*-webcast-cdn-tos-ncdn.bytegecko.com^
-@@||lf*-webcast-cdn-tos.bytegecko.com^
-@@||lf*-webcastcdn-tos.douyinstatic.com^
-@@||lf*material.searchpstatp.com^
 @@||lf-ad-convert-feedback.oceanengine.com^
 @@||lf-c-flwb.bytetos.com^
 @@||lf-cdn-tos.bytescm.com^
@@ -3251,22 +3241,19 @@
 @@||lf-douyin-pc-web.douyinstatic.com^
 @@||lf-douyin-search-fe.bytetos.com^
 @@||lf-dy-sourcecdn-tos.bytegecko.com^
+@@||lf-fe.fqnovelstatic.com^$important,app=com.dragon.read
+@@||lf-normal-gr-sourcecdn.bytegecko.com^$important,app=com.dragon.read
 @@||lf-sourcecdn-tos.bytegecko.com^
-@@||lf-webcast-gr-sourcecdn.bytegecko.com^
+@@||lf-sourcecdn-tos.bytegecko.com^$important,app=com.dragon.read
 @@||lf-webcast-platform.bytetos.com^
-@@||lf-webcast-sourcecdn-tos.bytegecko.com^
 @@||lf1-cdn-tos.bytegoofy.com^
 @@||lf1-cdn-tos.bytescm.com^
 @@||lf3-card-system.searchpstatp.com^
-@@||lf3-cdn-tos.bytecdntp.com^
 @@||lf3-cdn-tos.bytegoofy.com^
 @@||lf3-cdn-tos.bytescm.com^
-@@||lf3-cdn2-tos.bytescm.com^
 @@||lf3-imcloud-file-sign.bytetos.com^
 @@||lf3-reading.fqnovelpic.com^
-@@||lf3-search.searchpstatp.com^
 @@||lf3-short.bytegoofy.com^
-@@||lf3-short.ibytedapm.com^
 @@||lf3-static.bytednsdoc.com^
 @@||lf6-cdn-tos.bytegoofy.com^
 @@||lf6-cdn2-tos.bytegoofy.com^
@@ -3315,12 +3302,11 @@
 @@||loc.map.baidu.com^
 @@||localads.chengzijianzhan.cn^
 @@||lockororder.netlify.app^
-@@||log-api.pangolin-sdk-toutiao-b.com^
-@@||log-api.pangolin-sdk-toutiao.com^
 @@||log-upload.mihoyo.com^
 @@||log.go.com/log$xmlhttprequest,domain=disneyvacationclub.disney.go.com
 @@||log.mmstat.com/eg.js$domain=v.youku.com
 @@||log.mmstat.com/eg.js$domain=youku.tv
+@@||log.mmstat.com/eg.js^$script
 @@||log.mmstat.com^
 @@||log.snssdk.com^
 @@||log.snssdk.com^$important
@@ -3433,7 +3419,6 @@
 @@||m7ee.adj.st/asset^$domain=google.*
 @@||m8.music.126.net^
 @@||m801.music.126.net^
-@@||ma*-normal-lf.zijieapi.com^
 @@||mac.bmcx.com^
 @@||mac.xunlei.com^
 @@||maedchen.de/sites/default/files/google_tag/google_tag_manager_fuersie/google_tag.script.js
@@ -3532,6 +3517,7 @@
 @@||media.bnd.com/mistats/products/escenic_s_code.js
 @@||media.ft.com/j/optimost-$domain=ft.com
 @@||media.kaspersky.com/tracking/omniture/s_code_single_suite.js
+@@||media.nintendo.com/share/nclood/stable/en-us/bundles/microsite.min.js$script
 @@||media.richrelevance.com/rrserver/$domain=askul.co.jp
 @@||media.sailthru.com^$image,domain=link.delish.com|link.ted.com
 @@||media.sosh.fr/includes/wtbase.js
@@ -3592,7 +3578,6 @@
 @@||migrate.driveapi.micloud.xiaomi.net^$important
 @@||milb.com/shared/scripts/bam.tracking.js
 @@||mime.baidu.com^
-@@||mimg.127.net^
 @@||mini-game-gl.heytapmobile.com^
 @@||mini2015.qq.com^
 @@||miniapp.gtimg.cn^
@@ -3662,7 +3647,6 @@
 @@||monetate.net/trk/$domain=consumerreports.org
 @@||moneypartners.co.jp/web/*/fingerprint.js$~third-party
 @@||mongoosemetrics.com/jsfiles/js-correlation/mm-rules.min.js$domain=subaru.com
-@@||monsetting.toutiao.com^
 @@||monsetting.toutiao.com^$important
 @@||mooc-image.nosdn.127.net^
 @@||mos.m.taobao.com^
@@ -3703,7 +3687,6 @@
 @@||msn.yidianzixun.com^
 @@||mss0.bdstatic.com^
 @@||mssdk.volces.com^$important
-@@||mssdk3-normal-lf.zijieapi.com^
 @@||msync-im1-vip6-std.easemob.com^
 @@||mtcs.nhk-ondemand.jp/b/ss/nhkodmain/$image,domain=nhk-ondemand.jp
 @@||mtvnetworks.tt.omtrdc.net^$script,domain=mtv.com
@@ -3731,8 +3714,6 @@
 @@||myquark.cn^
 @@||mystyle.archosaur.com^
 @@||myun.tenpay.com^
-@@||n*-lf*-dy-ncdn-tos-sub.bytegecko.com^
-@@||n*-lf-webcast-cdn-tos-ncdn.bytegecko.com^
 @@||n.163.com^
 @@||n.sinaimg.cn^
 @@||n0va-static.mihoyo.com^
@@ -3892,21 +3873,11 @@
 @@||outexp-beta.cdn.qq.com^
 @@||oxygenos.oneplus.com^
 @@||p**-ppx.byteimg.com^
-@@||p*-ecom-fe.byteimg.com^
-@@||p*-ecop-imagex.byteimg.com^
 @@||p*-faceu-img-sign.byteimg.com^
-@@||p*-im.byteimg.com^
-@@||p*-img.searchpstatp.com^
-@@||p*-novel-sign.byteimg.com^
-@@||p*-novel.byteimg.com^
+@@||p*-novel-sign.byteimg.com/novel-pic/$important,app=com.dragon.read
 @@||p*-passport.byteacctimg.com^
-@@||p*-piu.byteimg.com^
-@@||p*-ppx-report.byteimg.com^
-@@||p*-ppx-sign.byteimg.com^
-@@||p*-sdbk2-media.byteimg.com^
 @@||p*.music.126.net^
 @@||p*.qhimg.com^
-@@||p*.toutiaoimg.com^
 @@||p-l.play.aiseet.atianqi.com^
 @@||p.qlogo.cn^
 @@||p0.meituan.net^
@@ -3940,18 +3911,16 @@
 @@||p2p.huya.com^
 @@||p2p.huya.com^$important
 @@||p3-catpcha.byteimg.com^
-@@||p3-cpay.byteimg.com^
 @@||p3-dcd-sign.byteimg.com^
 @@||p3-dcd.byteimg.com^
 @@||p3-faceu-img-sign.byteimg.com^
 @@||p3-flow-download-sign.byteimg.com^
 @@||p3-flow-imagex-sign.byteimg.com^
 @@||p3-heycan-hgt-sign.byteimg.com^
-@@||p3-insurance.byteimg.com^
 @@||p3-iz-e-sign.byteimg.com^
-@@||p3-notice.byteimg.com^
 @@||p3-novel-sign.byteimg.com^
 @@||p3-novel.byteimg.com^
+@@||p3-novel1-sign.byteimg.com^$app=com.dragon.read,important
 @@||p3-novelfm-sign.novelfmpic.com^
 @@||p3-passport.byteacctimg.com^
 @@||p3-pc-weboff.byteimg.com^
@@ -3976,11 +3945,11 @@
 @@||p6-catpcha.byteimg.com^
 @@||p6-dcd-sign.byteimg.com^
 @@||p6-dcd.byteimg.com^
-@@||p6-dy-ipv6.byteimg.com^
 @@||p6-faceu-img-sign.byteimg.com^
 @@||p6-flow-imagex-sign.byteimg.com^
 @@||p6-heycan-hgt-sign.byteimg.com^
 @@||p6-novel.byteimg.com^
+@@||p6-novel1-sign.byteimg.com^$app=com.dragon.read,important
 @@||p6-novelfm-sign.novelfmpic.com^
 @@||p6-reading-sign.fqnovelpic.com^
 @@||p6-shortvideo-sign.toutiaoimg.com^
@@ -3990,10 +3959,10 @@
 @@||p9-catpcha.byteimg.com^
 @@||p9-dcd-sign.byteimg.com^
 @@||p9-dcd.byteimg.com^
-@@||p9-dy.byteimg.com
 @@||p9-faceu-img-sign.byteimg.com^
 @@||p9-flow-imagex-sign.byteimg.com^
 @@||p9-heycan-hgt-sign.byteimg.com^
+@@||p9-novel1-sign.byteimg.com^$app=com.dragon.read,important
 @@||p9-novelfm-sign.novelfmpic.com^
 @@||p9-pc-sign.douyinpic.com^
 @@||p9-reading-sign.fqnovelpic.com^
@@ -4077,7 +4046,6 @@
 @@||pic*.zhimg.com^
 @@||pic.baike.soso.com^
 @@||pic.iask.com.cn^
-@@||pic.imgdb.cn
 @@||pic.imgdb.cn^
 @@||pic.mairuan.com^
 @@||pic.mairuan.com^$important
@@ -4155,7 +4123,6 @@
 @@||podman.io^
 @@||pokemonblackwhite.com^*/jquery.google-analytics.js
 @@||polarbyte.com^$domain=cambridgeenglish.org
-@@||polaris.zijieapi.com^
 @@||polfan.pl/app/vendor/fingerprint2.min.js
 @@||policy.jd.com^
 @@||policy.video.iqiyi.com^
@@ -4239,6 +4206,7 @@
 @@||qdfepccdn.qidian.com^
 @@||qhres2.com^
 @@||qi.163.com^
+@@||qidian.gtimg.com/*/qd/js/component/ad_strategies.$script
 @@||qidian.gtimg.com^
 @@||qiye.163.com^
 @@||qlogo.cn^
@@ -4303,6 +4271,7 @@
 @@||reader.browser.miui.com^
 @@||reading.snssdk.com^
 @@||reading.snssdk.com^$app=com.dragon.read
+@@||reading.snssdk.com^$important,app=com.dragon.read
 @@||readstatic.zhulang.com^
 @@||real.de/fileadmin/template/javascript/emos2.js
 @@||realclearpolitics.com/esm/assets/js/admiral.js
@@ -4342,11 +4311,11 @@
 @@||res.imtt.qq.com^
 @@||res.imtt.qq.com^$important
 @@||res.mall.10010.cn^
-@@||res.mi.baidu.com^
 @@||res.openinstall.com^
 @@||res.qhmsg.com^
 @@||res.qiyukf.net^
 @@||res.vmallres.com^
+@@||res.wx.qq.com/mmbizwap/$script
 @@||res.xmcdn.com^
 @@||res.xunfei.cn^
 @@||research.hchs.hc.edu.tw/*/banner.php$domain=research.hchs.hc.edu.tw
@@ -4399,6 +4368,7 @@
 @@||s.163.com^
 @@||s.click.taobao.com^
 @@||s.click.taobao.com^$important
+@@||s.click.taobao.com^$popup
 @@||s.click.tmall.com^
 @@||s.go-mpulse.net/boomerang/$domain=royalmail.com
 @@||s.img.mix.sina.com.cn^
@@ -4445,8 +4415,7 @@
 @@||saomiao.51240.com^
 @@||saomiao.bmcx.com^
 @@||saucenao.com^
-@@||saveu*-normal-lf.zijieapi.com^
-@@||saveu.zijieapi.com^
+@@||sax.sina.com.cn/video/$script
 @@||sax.sina.com.cn^
 @@||sb.scorecardresearch.com/*/streamingtag_plugin_jwplayer.js$domain=nbcbayarea.com
 @@||sb.scorecardresearch.com/*/streamingtag_plugin_jwplayer.js$domain=nbclosangeles.com
@@ -4505,7 +4474,6 @@
 @@||sdk.live.360.cn^
 @@||sdk.mihoyo.com^
 @@||sdk.mrf.io/statics/marfeel-sdk.js$domain=mundodeportivo.com
-@@||sdk.open.talk.gepush.com^
 @@||sdk.ptqy.gitv.tv^
 @@||sdk.xyapi.game.qq.com^
 @@||sdkapi.sms.mob.com^
@@ -4548,6 +4516,7 @@
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices-gpt,domain=heise.de
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices-gpt,domain=parade.com
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices-gpt,domain=tf1info.fr
+@@||security.snssdk.com^$important,app=com.dragon.read
 @@||security.taobao.com^
 @@||security.vivo.com^
 @@||segmentify.com/*.json$domain=fisslermagaza.com.tr
@@ -4804,6 +4773,7 @@
 @@||static.parsely.com^$script,domain=dailystar.co.uk|express.co.uk|nydailynews.com
 @@||static.pddpic.com^
 @@||static.qiyi.com^
+@@||static.realme.net/v1/knowledge/images/banner.jpg$image
 @@||static.res.qq.com^
 @@||static.rpxnow.com/js/lib/rpx.js$domain=colbertnation.com|thedailyshow.com
 @@||static.spankbang.com^
@@ -4821,6 +4791,7 @@
 @@||static.yidianzixun.com^
 @@||static.youlai.cn^
 @@||static.yximgs.com^
+@@||static.zhihu.com/ad-raccoon-web/$script
 @@||static.zhihu.com^
 @@||static2.clips4sale.com^
 @@||staticimg.yidianzixun.com^
@@ -4887,7 +4858,6 @@
 @@||support.vivo.com^
 @@||support.weixin.qq.com^
 @@||surrit.com^
-@@||survey.feelgood.cn^
 @@||sv.map.baidu.com^
 @@||svtrd.com^$domain=moneyou.de|ns.nl
 @@||swa.mail.ru/cgi-bin/counters?$script
@@ -4984,6 +4954,8 @@
 @@||tataunistore.tt.omtrdc.net/rest/v1/mbox?client=tataunistore$xmlhttprequest,domain=tatacliq.com
 @@||taximaxim.com/assets/*/fingerprint2.min.js
 @@||tb.himg.baidu.com^
+@@||tb.mgtv.com/sdk/*/ad-sdk.js^$script
+@@||tb1.bdstatic.com/??/tb/_/*/ad_$script
 @@||tbi.sb-cd.com^
 @@||tbm-auth.alicdn.com^
 @@||tbs.imtt.qq.com^
@@ -5042,7 +5014,6 @@
 @@||tnc11-bjlgy.zijieapi.com^
 @@||tnc16-platform-useast1a.tiktokv.com^
 @@||tnc3-aliec2.snssdk.com^
-@@||tnc3-bjlgy.zijieapi.com^
 @@||tns-counter.ru/tcounter.js$domain=forbes.ru
 @@||tobapplog.ctobsnssdk.com^$important
 @@||toblog.ctobsnssdk.com^$important
@@ -5117,7 +5088,6 @@
 @@||ts4.tc.mm.bing.net^
 @@||tsis.jpush.cn^
 @@||tt.omtrdc.net/rest/$xmlhttprequest,domain=shop.shoppersdrugmart.ca
-@@||ttwid.bytedance.com^
 @@||tube.e.kuaishou.com^
 @@||tunion-api.m.taobao.com^
 @@||turing.captcha.gtimg.com^
@@ -5183,12 +5153,12 @@
 @@||ultimedia.com/js/common/jquery.gatracker.js
 @@||umeng.com/api/$domain=developer.umeng.com
 @@||umeng.com/college/$domain=developer.umeng.com
-@@||umengjmacs.m.taobao.com^
 @@||umiwi.com^
 @@||unet.ucweb.com^
 @@||unet.ucweb.com^$important
 @@||union-click.jd.com^
 @@||union.jd.com^
+@@||union.video.qq.com/fcgi-bin/$script,domain=qq.com
 @@||unisdk.update.netease.com^
 @@||unpkg.com^
 @@||unpkg.zhimg.com^
@@ -5235,9 +5205,8 @@
 @@||v*-dc-ad.ixigua.com^
 @@||v*-dc-ad.ixigua.com^$important
 @@||v*-fq-tts.fqnovelvod.com^
-@@||v*.douyinvod.com^
-@@||v*.kwaicdn.com^
 @@||v.douyin.com^
+@@||v.gdt.qq.com/gdt_stats.fcg?
 @@||v.gdt.qq.com^
 @@||v.gdt.qq.com^$important
 @@||v.me/personal/assets/ntpagetag-$script
@@ -5271,12 +5240,9 @@
 @@||valuecommerce.com^
 @@||vanclimg.com/js.ashx?*/google-analytics.js$domain=vancl.com
 @@||vansprint.de/theme/*/js/storefront/google-analytics.plugin.$domain=vansprint.de
-@@||vas.snssdk.com^
 @@||vast.com/vimpressions.js$domain=everycarlisted.com
 @@||vattastic.com/js/fp2/fingerprint2.min.js
-@@||vcs-quality.zijieapi.com^
 @@||vcs.snssdk.com^
-@@||vcs.zijieapi.com^
 @@||vd.l.qq.com^
 @@||vd0.market.xiaomi.com^
 @@||vd1.market.xiaomi.com^
@@ -5369,6 +5335,7 @@
 @@||w88.go.com/id?$domain=espn.com
 @@||w88.go.com^$domain=abc.go.com
 @@||waapdg.jd.com^
+@@||wago.io/js/118.$script
 @@||waimai-guide.ele.me^
 @@||waimai.ele.me^
 @@||wallpaper.cdn.pandora.xiaomi.com^
@@ -5530,7 +5497,6 @@
 @@||www.bmw.com^
 @@||www.bootcdn.cn^
 @@||www.bootcss.com^
-@@||www.bqgyy.com^
 @@||www.bytedance.com^
 @@||www.chemdraw.com.cn^
 @@||www.chemdraw.com.cn^$important
@@ -5558,6 +5524,7 @@
 @@||www.ero-labs.com^
 @@||www.fbsbx.com^
 @@||www.ferrari.com^
+@@||www.gamersky.com/gsinc/$subdocument
 @@||www.ghproxy.cn^
 @@||www.gitbook.com^
 @@||www.goofish.com^
@@ -5608,6 +5575,7 @@
 @@||www.mercedes-benz.com^
 @@||www.mhzd.net^
 @@||www.mi.com^
+@@||www.microsoft.com/onerfstatics/marketingsites-*/ad-$script
 @@||www.mimikko.cn^
 @@||www.mini1.cn^
 @@||www.mousouzoku-av.com^
@@ -5678,6 +5646,7 @@
 @@||www1.pconline.com.cn^
 @@||wx.17u.cn^
 @@||wx.qlogo.cn^
+@@||wx.qq.com/*/ad_$script
 @@||wx.tenpay.com^
 @@||wx1.sinaimg.cn^
 @@||wx2.sinaimg.cn^
@@ -5715,6 +5684,7 @@
 @@||xp.apple.com^
 @@||xqn.163.com^
 @@||xvideos.com^
+@@||xxxy.jnu.edu.cn/_upload/tpl/08/ad/2221/template2221/$script
 @@||xyq.163.com^
 @@||xzeepb2clookuppsta001.blob.core.windows.net/comed/src/js/google-analytics.js$domain=secure1.comed.com
 @@||xzz.xiaomin.tech^$important
