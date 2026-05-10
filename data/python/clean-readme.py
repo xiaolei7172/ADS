@@ -1,15 +1,19 @@
-import subprocess
 import datetime
 import pytz
 import os
 
-# 锁定脚本目录
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
+# ==========================================
+# 【核心修复】强制定位到仓库根目录（master 根）
+# ==========================================
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))  # 直接跳回仓库根目录！
+os.chdir(REPO_ROOT)
 
 # 获取规则数量
 def get_count(fpath):
+    full_path = os.path.join(REPO_ROOT, fpath)
     try:
-        with open(fpath, 'r', encoding='utf-8') as f:
+        with open(full_path, 'r', encoding='utf-8') as f:
             for line in f:
                 if line.startswith('! Total count:'):
                     return line.strip().replace('! Total count:', '').strip()
@@ -26,18 +30,34 @@ tz = pytz.timezone('Asia/Shanghai')
 now = datetime.datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
 beijing_time = f"{now}（北京时间）"
 
-# 直接重写 README（最稳，不会不生效）
-with open("README.md", "w", encoding="utf-8") as f:
-    f.write(f"""# 广告过滤规则
+# ==========================================
+# 读取并更新 【仓库根目录的 README.md】
+# ==========================================
+readme_path = os.path.join(REPO_ROOT, "README.md")
 
-更新时间: {beijing_time}
-拦截规则数量: {num_adblock}
-DNS拦截规则数量: {num_dns}
-白名单规则数量: {num_allow}
-""")
+with open(readme_path, "r", encoding="utf-8") as f:
+    lines = f.readlines()
 
-print("✅ 成功写入 README.md！")
-print(f"更新时间: {beijing_time}")
-print(f"拦截规则: {num_adblock}")
-print(f"DNS规则: {num_dns}")
-print(f"白名单: {num_allow}")
+new_lines = []
+for line in lines:
+    if line.startswith("更新时间:"):
+        new_lines.append(f"更新时间: {beijing_time}\n")
+    elif line.startswith("拦截规则数量:"):
+        new_lines.append(f"拦截规则数量: {num_adblock}\n")
+    elif line.startswith("DNS拦截规则数量:"):
+        new_lines.append(f"DNS拦截规则数量: {num_dns}\n")
+    elif line.startswith("白名单规则数量:"):
+        new_lines.append(f"白名单规则数量: {num_allow}\n")
+    else:
+        new_lines.append(line)
+
+# 写回根目录 README
+with open(readme_path, "w", encoding="utf-8") as f:
+    f.writelines(new_lines)
+
+print("✅ 已成功更新【仓库根目录】README.md ！")
+print(f"📁 路径: {readme_path}")
+print(f"⏰ 更新时间: {beijing_time}")
+print(f"📊 拦截规则: {num_adblock}")
+print(f"📊 DNS规则: {num_dns}")
+print(f"📊 白名单: {num_allow}")
