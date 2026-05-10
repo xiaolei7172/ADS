@@ -51,7 +51,7 @@ adblock = [
 "https://anti-ad.net/easylist.txt",  # anti-AD 命中率高、兼容性强
 "http://hgzs.uunat.com/hg1.txt", # 海哥改 经过优化的广告过滤方案，兼容性强
 "http://hgzs.uunat.com/yx.txt", # 海哥改 针对游戏应用的黑名单规则，拦截游戏的
-"https://raw.githubusercontent.com/qq5460168/666/master/rules.txt", # 那个谁520 多功能广告过滤规则集合
+#"https://raw.githubusercontent.com/qq5460168/666/master/rules.txt", # 那个谁520 多功能广告过滤规则集合
 #"https://raw.githubusercontent.com/qq5460168/dangchu/main/black.txt",  # 当初 综合黑名单
 #"https://adguardteam.github.io/HostlistsRegistry/assets/filter_29.txt",  # CHN: AdRules DNS List
 #"https://ghproxy.net/https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt",  # hagezi 轻量低误杀DNS规则
