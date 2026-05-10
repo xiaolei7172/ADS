@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-05-11 07:24:49（北京时间）
-! 📊 有效规则：4936 条
+! ⏰ 更新时间：2026-05-11 07:35:47（北京时间）
+! 📊 有效规则：4904 条
 ! 🔄 更新频率：每 12 小时自动更新
-! Description: ⏰ 更新时间：2026-05-11 07:24:49（北京时间）｜📊 当前规则总数：4936 条｜
-! Total count: 4936
-! Version: 2026-05-11 07:24:49
+! Description: ⏰ 更新时间：2026-05-11 07:35:47（北京时间）｜📊 当前规则总数：4904 条｜
+! Total count: 4904
+! Version: 2026-05-11 07:35:47
 ! ======================================================================
 @@*.flyme.cn
 @@*.myapp.com
@@ -243,7 +243,6 @@
 @@||alicdn.com^$important
 @@||alicdn.com^*yksdk/*sdk.js$script,domain=youku.com
 @@||aliexpress.*^$cookie=/^_ga_/
-@@||alipay.com^
 @@||alissl.ucdl.pp.uc.cn^
 @@||alissl.ucdl.pp.uc.cn^$important
 @@||aliunicorn.com^*/click_stat/
@@ -306,7 +305,6 @@
 @@||apd-pcdnwxstat.teg.tencent-cloud.net^
 @@||apd-ugcvlive.apdcdn.tc.qq.com^
 @@||apd-vlive.apdcdn.tc.qq.com^
-@@||api*-sinfnormal.fqnovel.com^$app=com.dragon.read
 @@||api-album.quark.cn^
 @@||api-chat.soulapp.cn^
 @@||api-cmnt.wtzw.com^
@@ -320,7 +318,6 @@
 @@||api-pda.jdl.com^
 @@||api-push.meizu.com^
 @@||api-shoulei-ssl.xunlei.com^
-@@||api-sinfnormal.fqnovel.com^
 @@||api-unionid.meituan.com^
 @@||api.account.xiaomi.com^
 @@||api.account.xiaomi.com^$important
@@ -386,7 +383,6 @@
 @@||api.ds.163.com^
 @@||api.flash.cn^
 @@||api.fw.tv/embed/$domain=filmibeat.com
-@@||api.hgdzj.com^
 @@||api.huangye.miui.com^
 @@||api.io.mi.com^
 @@||api.io.mi.com^$important
@@ -493,7 +489,6 @@
 @@||apple.com/metrics/ac-analytics/*/scripts/$domain=apple.com
 @@||apple.com/metrics/data-relay/*/scripts/data-relay.js
 @@||apple.com/metrics/scripts/$domain=locate.apple.com
-@@||apple.com^
 @@||appleid.apple.com^
 @@||applog.lc.quark.cn^
 @@||appmetrica.yandex.com^$domain=appmetrica.yandex.com
@@ -604,7 +599,6 @@
 @@||bigota.d.miui.com^$important
 @@||bikeforums.net/clientscript/vbulletin_analytics.js
 @@||bild.met.vgwort.de/na^$domain=bild.de
-@@||bilibili.com^
 @@||billiger.de/js/emos2.js
 @@||bing.com/fd/ls/GLinkPing.aspx?
 @@||bing.com^
@@ -700,7 +694,6 @@
 @@||canadiantire.ca^*/analytics.sitecatalyst.js
 @@||canadiantire.tt.omtrdc.net/rest/$domain=marks.com|partycity.ca|sportchek.ca|lequipeur.com|canadiantire.ca
 @@||canarytokens.com/nest/$domain=canarytokens.com
-@@||captcha.qq.com^
 @@||captive.apple.com^
 @@||card-paopao.iqiyi.com^
 @@||cards.iqiyi.com^
@@ -1081,7 +1074,6 @@
 @@||cloudflare.com/*/fingerprint2.min.js$domain=saavn.com
 @@||cloudflare.com/ajax/libs/fingerprintjs2/$script,domain=gamebox.gesoten.com
 @@||cloudflare.com/analytics?$domain=cloudflare.com
-@@||cloudflare.net^
 @@||cloudflareinsights.com^
 @@||cloudfront.net/atrk.js$domain=karnaval.com|livestream.com|luxuryrealestate.com
 @@||cloudfront.net/libs/amplitude-*-min.gz.js$domain=elconfidencial.com
@@ -1322,7 +1314,6 @@
 @@||dig.bdurl.net^
 @@||dig.lianjia.com^
 @@||dig.zjurl.cn^
-@@||dingtalk.com^
 @@||dir.minigame.qq.com^
 @@||direct.wap.zol.com.cn^
 @@||directline.com/touchclarity/$script
@@ -1363,7 +1354,6 @@
 @@||dot.360.cn^
 @@||doubleclick.net/activity$domain=northwell.edu
 @@||doubleclick.net/activityi;src=$domain=cicispizza.com
-@@||douyin.com^
 @@||douyincdn.com^
 @@||down-update.qq.com^
 @@||down.360safe.com^
@@ -1537,7 +1527,6 @@
 @@||fanqienovel.com^
 @@||fanyi.baidu.com^
 @@||fastconn-api.iot.360.cn^
-@@||fastly.net^
 @@||fc3tn.baidu.com^
 @@||fc5tn.baidu.com^
 @@||fccbrea.org^*/swfaddress.js
@@ -1597,7 +1586,6 @@
 @@||fp-upload.dun.163.com^
 @@||fp.tongdun.net^
 @@||fpnpmcdn.net/v*/*/loader_*.js$domain=member.neofinancial.com
-@@||fqnovel.com^$app=com.dragon.read
 @@||fr.register.xmpush.global.xiaomi.com^
 @@||franceculture.fr/static/vendor/js/xtcore
 @@||fraudmetrix.cn^
@@ -1654,12 +1642,10 @@
 @@||gaua.hit.gemius.pl/gplayer.js$domain=ovva.tv
 @@||gaua.hit.gemius.pl/gplayer.js$domain=tsn.ua
 @@||gcable.com.cn^$important
-@@||gcore.jsdelivr.net^
 @@||gdfp.gifshow.com^
 @@||gdown.baidu.com^
 @@||gdtimg.com^
 @@||geely.com/assets/plugins/sa-sdk-javascript-*/sensorsdata.min.js$domain=galaxy.geely.com|xingyue.geely.com
-@@||geetest.com^  # 极验验证码
 @@||gemius.pl/gstream.js$domain=player.antyradio.pl|player.radiozet.pl|player.chillizet.pl|player.meloradio.pl
 @@||geoplugin.net/javascript.gp$domain=uptime.community
 @@||geoplugin.net/javascript.gp$script,domain=christianhouseshare.com.au|gamemazing.com|soundsonline.com
@@ -2519,7 +2505,6 @@
 @@||hermes.hupu.com^
 @@||heute.de/zdf/flash/eplayer/player.swf?*/cgi-bin/ivw/
 @@||heyi-acs.cp31.ott.cibntv.net^
-@@||hgdzj.com^$app=com.hgdzj
 @@||hhgregg.com/wcsstore/MadisonsStorefrontAssetStore/javascript/Analytics/AnalyticsTagDataObject.js
 @@||hikmall.com/js/sensorsdata.min.js
 @@||hilink.huawei.com^
@@ -2549,7 +2534,6 @@
 @@||hr.163.com^
 @@||hse24.de^*/emos2.js
 @@||hsforms.net^
-@@||huawei.com^
 @@||hub.xunlei.com^
 @@||hub5btmain.sandai.net^
 @@||hub5btmain.v6.shub.sandai.net^
@@ -2753,7 +2737,6 @@
 @@||ipv4dns.com^
 @@||ipw.cn^
 @@||ipxx.pro^
-@@||iqiyi.com^
 @@||is-hl.snssdk.com^
 @@||is.snssdk.com^
 @@||is1-ssl.mzstatic.com^
@@ -2774,7 +2757,6 @@
 @@||ivwextern.prosieben.de/php-bin/functions/ivwbox/ivwbox_extern.php?path=$domain=galileo-videolexikon.de
 @@||ivwextern.prosieben.de^*/ivw_flashscript.php?$script
 @@||iwx.mail.qq.com^
-@@||jd.com^
 @@||jeevansathi.com/minify.php?files=$script,stylesheet
 @@||jetztspielen.de^*/EventTracker.js
 @@||jia.360.cn^
@@ -2852,7 +2834,6 @@
 @@||koldcast.tv/mint/*/tracker.php?
 @@||kropka.onet.pl^*/onet.js$domain=tvnwarszawa.pl
 @@||ks-bueromoebel.shop/*/google-analytics.*.js
-@@||kuaishou.com^
 @@||kwimgs.com^
 @@||kyaru-concat.now.sh^
 @@||kyaru-concat.now.sh^$important
@@ -3113,7 +3094,6 @@
 @@||mediation.adnxs.com^
 @@||megafon.ru/static/?files=*/tealeaf.js
 @@||meiqia.com^
-@@||meituan.com^
 @@||meituan.com^$cookie=device_uuid
 @@||member.aetna.com/appConfig/
 @@||member.aligames.com^
@@ -3139,7 +3119,6 @@
 @@||metrics1-drcn.dt.dbankcloud.cn^
 @@||mi-img.com^
 @@||mi-img.com^$important
-@@||mi.com^
 @@||mi.com^$important
 @@||mi.tigo.com.co/plugins/cordova-plugin-fingerprint-aio/www/Fingerprint.js
 @@||mibi.api.xiaomi.com^
@@ -3379,7 +3358,6 @@
 @@||openmobile.qq.com^
 @@||openmonitor.alipay-eco.com^$important
 @@||opensubtitles.org/cdn-cgi/pe/bag2?r[]=*google-analytics.com
-@@||oppo.com^
 @@||oppo.yidianzixun.com^
 @@||oppo.yidianzixun.com^$important
 @@||optimize.webtrends.com^$domain=peterboroughtoday.co.uk
@@ -3528,7 +3506,6 @@
 @@||pay.youku.com^
 @@||payapp.weixin.qq.com^
 @@||paydns.wechatpay.cn^
-@@||paypal.com^
 @@||pbaccess.video.qq.com^
 @@||pbs.twimg.com^
 @@||pc-api.uc.cn^
@@ -3575,7 +3552,6 @@
 @@||pifa.pinduoduo.com^
 @@||pillsbury.com/Shared/StarterKit/Javascript/UnicaTag.js
 @@||pillsbury.com/Shared/StarterKit/Javascript/ntpagetag.js
-@@||pinduoduo.com^
 @@||ping.hellobar.com/?*&_e=click&$image
 @@||pingan.com.cn^*/logger.js?
 @@||pingfore.qq.com^$important
@@ -3705,7 +3681,6 @@
 @@||qoe-*.yottaa.net/*/configure.rapid.js$domain=northerntool.com
 @@||qpic.y.qq.com^
 @@||qq-web.cdn-go.cn^
-@@||qq.com^
 @@||qqadapt.qpic.cn^
 @@||qqlogin.huanleapp.huanle.qq.com^
 @@||qqvip-web.cdn-go.cn^
@@ -3748,7 +3723,6 @@
 @@||rdelivery.qq.com^
 @@||reader.browser.miui.com^
 @@||reading.snssdk.com^
-@@||reading.snssdk.com^$app=com.dragon.read
 @@||readstatic.zhulang.com^
 @@||real.de/fileadmin/template/javascript/emos2.js
 @@||realclearpolitics.com/esm/assets/js/admiral.js
@@ -4330,7 +4304,6 @@
 @@||tam.cdn-go.cn/aegis-sdk/latest/aegis.min.js$domain=kf.qq.com
 @@||tam.cdn-go.cn/aegis-sdk/latest/aegis.min.js$domain=sm-unsubscribe.intlgame.com
 @@||tangram.e.qq.com^
-@@||taobao.com^
 @@||target.clickfunnels.com^
 @@||tataunistore.tt.omtrdc.net/rest/v1/mbox?client=tataunistore$xmlhttprequest,domain=tatacliq.com
 @@||taximaxim.com/assets/*/fingerprint2.min.js
@@ -4353,7 +4326,6 @@
 @@||teenvogue.com/js/eventTracker.js
 @@||telegraph.co.uk/template/ver1-0/js/webtrends/live/wtid.js
 @@||templates.marketo.net/template*/$script,stylesheet,domain=pages.addigy.com
-@@||tencentvideo.com^
 @@||test.nextdns.io^
 @@||texasroadhouse.com/common/javascript/google-analytics.js
 @@||the-japan-news.com/modules/js/lib/fgp/fingerprint2.js
@@ -4607,7 +4579,6 @@
 @@||visa.com^*/vendor/unica.js
 @@||visiblemeasures.com/crossdomain.xml$domain=espn.go.com|live.indiatimes.com
 @@||visilabs.net/*/Visilabs.min.js$domain=paribucineverse.com
-@@||vivo.com^
 @@||vizio.com/resources/js/vizio-module-tracking-google-analytics.js
 @@||vlscppe.microsoft.com/fp/tags.js$domain=microsoft.com
 @@||vm.gtimg.cn^
@@ -4683,12 +4654,10 @@
 @@||webtrends.com/ots/$domain=moneysupermarket.com
 @@||webtrendslive.com^*/wtid.js?$domain=att.yahoo.com
 @@||webzjcaptcha.reg.163.com^
-@@||wechatpay.com^
 @@||weibo.cn^$important
 @@||weidian.com^
 @@||weidian.com^$important
 @@||weishi.360.cn^
-@@||weixin.qq.com^
 @@||weixin.qq.com^$important
 @@||wenxue.iqiyi.com^
 @@||westelm.com^*/bloomreach.js
@@ -4903,7 +4872,6 @@
 @@||ynet.co.il/Common/App/Video/Gemius/gstream.js
 @@||ynetnews.com/Common/App/Video/Gemius/gstream.js
 @@||youdata.163.com^
-@@||youku.com^
 @@||youmaker.com/js/prebid.js$domain=epochtimes.com
 @@||youtu.be^
 @@||youtu.be^$important
