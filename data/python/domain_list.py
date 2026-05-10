@@ -1,8 +1,15 @@
 import os
 
-# 切换到脚本所在目录（保证路径正确）
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
+# ==========================================
+# 强制定位到 【仓库根目录】，永远不迷路
+# ==========================================
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
+os.chdir(REPO_ROOT)
 
+# ==========================================
+# 强制读写 【根目录/data/rules】
+# ==========================================
 def extract_domains(input_file, output_file):
     print("正在提取域名列表...")
 
@@ -16,7 +23,6 @@ def extract_domains(input_file, output_file):
     count = 0
     try:
         with open(output_file, 'w', encoding='utf-8') as file:
-            # 标准表头
             file.write("[Host]\n")
             file.write("# 天影 纯净域名黑名单\n")
             file.write("# Github: https://github.com/xiaolei7172/ADS\n")
@@ -24,23 +30,22 @@ def extract_domains(input_file, output_file):
 
             for line in lines:
                 line = line.strip()
-                # 提取 ||域名^ 格式
                 if line.startswith("||") and line.endswith("^"):
                     domain = line[2:-1].strip()
-                    # 过滤无效域名
                     if domain and "." in domain and not " " in domain:
                         file.write(f"{domain}\n")
                         count += 1
 
         print(f"✅ 提取完成！共提取 {count} 个有效域名")
-        print(f"📁 输出文件：{output_file}")
+        print(f"📁 输出路径：{output_file}")
 
     except Exception as e:
         print(f"❌ 写入失败：{str(e)}")
 
-# 输入输出路径（自动定位）
-input_file_path = "./data/rules/dns.txt"
-output_file_path = "./data/rules/ad-domain.txt"
+# ==========================================
+# 路径 100% 指向仓库根目录 data/rules
+# ==========================================
+input_file_path = os.path.join(REPO_ROOT, "data", "rules", "dns.txt")
+output_file_path = os.path.join(REPO_ROOT, "data", "rules", "ad-domain.txt")
 
-# 开始提取 ↓↓↓ 这里修复了！！！
 extract_domains(input_file_path, output_file_path)
