@@ -97,9 +97,7 @@
 | 白名单规则 | [allow.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/allow.txt) | [allow.txt](https://ghfast.top/raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/allow.txt) |
 </details>
 
-<summary><b>✅ 白名单规则</b></summary>
-<br>
-
+<details>
 
 <summary><b>✅ DNS服务器</b></summary>
 <br>
@@ -114,7 +112,7 @@ https://doh.pub/dns-query
 https://pub.xlxbk.cn/xlxbk/api 
 </details>
 
-<summary><b>✅ DNS服务器</b></summary>
+<details>
 <br>
 ## 📚 上游列表
 
