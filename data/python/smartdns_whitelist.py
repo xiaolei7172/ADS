@@ -1,9 +1,15 @@
 import os
 import re
 
-# 自动定位脚本目录 + 自动创建 tmp（解决报错核心）
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
-os.makedirs('tmp', exist_ok=True)
+# ==========================================
+# 强制定位到【仓库根目录】，全局统一
+# ==========================================
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
+os.chdir(REPO_ROOT)
+
+# 自动创建目录
+os.makedirs(os.path.join(REPO_ROOT, "tmp"), exist_ok=True)
 
 def convert_to_smartdns_whitelist(input_file, output_file):
     print("Generating SmartDNS whitelist rules...")
@@ -34,9 +40,11 @@ def convert_to_smartdns_whitelist(input_file, output_file):
 
     print(f"✅ 生成完成！共 {count} 条 SmartDNS 白名单规则")
 
-# 路径修复（永不报错）
-input_file_path = "./data/rules/allow.txt"
-output_file_path = "./data/rules/smartdns-whitelist.conf"
+# ==========================================
+# 强制使用仓库根目录路径
+# ==========================================
+input_file_path = os.path.join(REPO_ROOT, "data", "rules", "allow.txt")
+output_file_path = os.path.join(REPO_ROOT, "data", "rules", "smartdns-whitelist.conf")
 
 # 执行
 convert_to_smartdns_whitelist(input_file_path, output_file_path)
