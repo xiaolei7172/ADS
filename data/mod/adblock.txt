@@ -9,8 +9,92 @@
 ||ad.hongguoduanju.com^
 ||api.hongguoduanju.com^
 ||static.hongguoduanju.com^
+
 # 游戏广告落地/下载域名（常见）
 ||game-ad.com^
 ||ad-game-download.com^
 ||gamelink.*.com^
 ||gamepop.*.com^
+
+# 微信小程序广告 - 核心（必加）
+||ad.weixin.qq.com^
+||wxad.qq.com^
+||wxsnsdy.wxs.qq.com^
+||wxsnsdythumb.wxs.qq.com^
+||mp.weixin.qq.com^*/ad/
+||zhls.qq.com^
+
+# 字节系（红果/抖音小程序广告）
+||ads.bytedance.com^
+||adsm.bytedance.com^
+||pangolin.bytedance.com^
+||csj.bytedance.com^
+
+# 快手系小程序广告
+||ad.kuaishou.com^
+||ksad.kuaishou.com^
+
+# 其他常见广告域名
+||ad.xiaomi.com^
+||ad.baidu.com^
+||ssp.baidu.com^
+||ad.toutiao.com^
+
+# 微信小程序 - 通用广告隐藏
+weixin.qq.com###ad-container
+weixin.qq.com###ad-banner
+weixin.qq.com###ad-popup
+weixin.qq.com###ad-video
+weixin.qq.com###interstitial-ad
+weixin.qq.com###rewarded-ad
+
+# 小游戏常见广告组件
+weixin.qq.com###game-ad
+weixin.qq.com###game-banner
+weixin.qq.com###game-popup
+
+# 番茄小说 - 核心广告域名（必加）
+||fanqienovel.com^
+||fqnovel.com^
+||lf.fqnovel.com^
+||fanqie.ads.com^
+||ad.fanqienovel.com^
+||api.fanqienovel.com^
+||static.fanqienovel.com^
+
+# 字节系广告SDK（穿山甲/巨量/抖音广告）
+||ads.bytedance.com^
+||adsm.bytedance.com^
+||adx.bytedance.com^
+||pangolin.bytedance.com^
+||csj.bytedance.com^
+||douyinads.com^
+||pangolin-sdk-toutiao.com^
+||pglstatp-toutiao.com^
+
+# 番茄小说埋点/统计/广告请求
+||mssdk.zijieapi.com^
+||abtest.zijieapi.com^
+||snssdk.com^
+||umeng.com^
+||bytegoofy.com^
+||byteorge.com^
+
+# 番茄小说 - App 内广告隐藏
+fanqienovel.com###ad-container
+fanqienovel.com###ad-banner
+fanqienovel.com###ad-popup
+fanqienovel.com###rewarded-video-ad
+fanqienovel.com###chapter-end-ad
+fanqienovel.com###floating-ad-ball
+fanqienovel.com###fullscreen-ad
+
+# 番茄小说 - 小程序专用
+weixin.qq.com###fanqie-ad
+weixin.qq.com###fqnovel-reward-ad
+
+# 番茄小说 App 广告拦截（AdGuard 移动端）
+/app/com.dragon.read/^$app=com.dragon.read
+||i-lq.snssdk.com^$app=com.dragon.read
+||is.snssdk.com^$app=com.dragon.read
+||ad-sign.*.com^$app=com.dragon.read
