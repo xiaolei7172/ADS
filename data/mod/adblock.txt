@@ -1,39 +1,16 @@
-!========== 番茄小说 去广告/开屏/插屏/金币短剧 ==========
-||snssdk.com^$app=com.dragon.read
-||zijieapi.com^$app=com.dragon.read
-||volces.com^$app=com.dragon.read
-||fqnovelpic.com^$app=com.dragon.read
-||fqnovel.com/ad/^$app=com.dragon.read
-||douyinpic.com^$app=com.dragon.read
-||ecombdimg.com^$app=com.dragon.read
-||bytegecko.com^$app=com.dragon.read
-
-! 屏蔽开屏、信息流、埋点统计
-||*toutiao*^$app=com.dragon.read
-||*static*^$app=com.dragon.read
-||*track*^$app=com.dragon.read
-||*stat*^$app=com.dragon.read
-
-
-!========== 红果短剧 开屏/插屏/信息流/追踪广告 ==========
-||hgdzj.com^
-||ad.hgdzj.com^
-||sdk.hgdzj.com^
-||api-ad.hgdzj.com^
-||static-ad.hgdzj.com^
-||track.hgdzj.com^
-||stat.hgdzj.com^
-||hgdzj.com/ad/
-||hgdzj.com/sdk/ad/
-
-! 屏蔽广告元素弹窗
-hgdzj.com##.ad-popup
-hgdzj.com##.ad-banner
-hgdzj.com##.video-ad-card
-hgdzj.com##.recommend-ad
-
-
-!===== 红果短剧（拦截开屏/中插/结尾广告、激励视频）
-||ad.hgdzj.com^$app=com.hgdzj
-||hgdzj-ad.xigua.com^$app=com.hgdzj
-||ssp.ad.xigua.com^$app=com.hgdzj
+# 红果短剧 - 游戏广告 / 激励广告 / 开屏广告
+||ads.bytedance.com^
+||adsm.bytedance.com^
+||adx.bytedance.com^
+||pangolin.bytedance.com^
+||csj.bytedance.com^
+||douyinads.com^
+||hongguo.ads.com^
+||ad.hongguoduanju.com^
+||api.hongguoduanju.com^
+||static.hongguoduanju.com^
+# 游戏广告落地/下载域名（常见）
+||game-ad.com^
+||ad-game-download.com^
+||gamelink.*.com^
+||gamepop.*.com^
