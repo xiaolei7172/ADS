@@ -3,7 +3,7 @@
 ! Title: 📌 天影自用规则（每12小时更新一次）
 ! Homepage:🌐 https://github.com/xiaolei7172/ADS
 ! Expires: ⏰ 每 12 小时自动更新
-! Description: 📝 更新时间：2026-05-09 20:53:58（北京时间）｜📝 当前规则总数：16608 条｜
+! Description: 📝 更新时间：2026-05-10 09:45:17（北京时间）｜📝 当前规则总数：16609 条｜
 ! ======================================================================
 @@#.banner%20ad.$image,domain=dokuo666.blog98.fc2.com
 @@$csp=worker-src 'none',domain=uptostream.com
@@ -13402,6 +13402,7 @@
 @@||seraphimonolith.space/content/$stealth=referrer
 @@||serasaexperian.com.br/dist/scripts/fingerprint2.js$~third-party
 @@||series-streaminghd.com^$generichide
+@@||seriezloaded.com.ng^$generichide
 @@||serve.adclixx.net/promoload
 @@||serve.adtrackers.net/promoload
 @@||serve.bannertrack.net/promoload
