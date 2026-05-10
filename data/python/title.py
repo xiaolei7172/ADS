@@ -83,8 +83,6 @@ for filename, cfg in file_config.items():
 ! 📊 有效规则：{line_count} 条
 ! 🔄 更新频率：每 12 小时自动更新
 ! Description: ⏰ 更新时间：{beijing_time}（北京时间）｜📊 当前规则总数：{line_count} 条｜
-! Total count: {line_count}
-! Version: {beijing_time}
 ! ======================================================================
 """
 
