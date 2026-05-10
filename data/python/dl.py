@@ -35,8 +35,8 @@ subprocess.run("cp ./data/mod/whitelist.txt ./tmp/allow01.txt", shell=True)
 
 # 拦截规则
 adblock = [
-"https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_2_Base/filter.txt",  # AdguardTeam 官方基础广告拦截规则
-"https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_224_Chinese/filter.txt",  # AdguardTeam 官方中文专属广告规则
+#"https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_2_Base/filter.txt",  # AdguardTeam 官方基础广告拦截规则
+#"https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_224_Chinese/filter.txt",  # AdguardTeam 官方中文专属广告规则
 #"https://easylist-downloads.adblockplus.org/easyprivacy.txt",  # EasyPrivacy 隐私跟踪防护规则
 #"https://raw.githubusercontent.com/sjhgvr/oisd/main/abp_small.txt",  # sjhgvr OISD精简版广告规则
 "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt",  # TG-Twilight 秋风广告规则
