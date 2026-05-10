@@ -105,6 +105,7 @@
 | 规则类型 | 
 | :---- |
 | DNS服务器:
+https://tianying.pub.xlxbk.cn/xlxbk/api
 https://doh.18bit.cn/dns-query
 https://doh.360.cn/dns-query
 https://dns.alidns.com/dns-query
