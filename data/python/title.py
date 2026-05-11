@@ -9,7 +9,7 @@ import os
 if "GITHUB_WORKSPACE" in os.environ:
     REPO_ROOT = os.environ["GITHUB_WORKSPACE"]
 else:
-    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+    SCRIPT_DIR = os.dirname(os.path.abspath(__file__))
     REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
 
 # ==========================================
@@ -29,15 +29,33 @@ rules_dir = os.path.join(REPO_ROOT, "data", "rules")
 file_config = {
     "adblock.txt": {
         "title": "天影广告拦截规则",
-        "desc": "屏蔽全网广告、弹窗、跟踪、恶意域名"
+        "desc": "屏蔽全网广告、弹窗、跟踪、恶意域名",
+        "comment": "!"
     },
     "dns.txt": {
         "title": "天影 DNS 拦截规则",
-        "desc": "DNS 级广告域名屏蔽，支持 AdGuard Home / OpenWrt"
+        "desc": "DNS 级广告域名屏蔽，支持 AdGuard Home / OpenWrt",
+        "comment": "!"
     },
     "allow.txt": {
         "title": "天影白名单规则",
-        "desc": "误杀网址放行，保证正常网站正常访问"
+        "desc": "误杀网址放行，保证正常网站正常访问",
+        "comment": "!"
+    },
+    "hosts_merged.txt": {
+        "title": "天影 Hosts 拦截规则",
+        "desc": "标准 Hosts 格式，屏蔽广告、跟踪、恶意域名",
+        "comment": "#"
+    },
+    "hosts_dns.txt": {
+        "title": "天影 Hosts 纯域名规则",
+        "desc": "纯域名列表，适用于 DNS 服务器",
+        "comment": "#"
+    },
+    "hosts_adblock.txt": {
+        "title": "天影 Hosts 转换 AdBlock 规则",
+        "desc": "由 Hosts 转换而来的广告拦截规则",
+        "comment": "!"
     }
 }
 
@@ -71,19 +89,21 @@ for filename, cfg in file_config.items():
     if line_count < 0:
         line_count = 0
 
+    c = cfg["comment"]
+
     # ==========================================
-    # ✅ 每个文件生成【不一样的表头】
+    # ✅ 自动生成对应格式表头
     # ==========================================
-    header = f"""[TianYing Adblock Project]
-! ======================================================================
-! 📌 规则名称：{cfg['title']}
-! 📝 规则说明：{cfg['desc']}
-! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：{beijing_time}（北京时间）
-! 📊 有效规则：{line_count} 条
-! 🔄 更新频率：每 12 小时自动更新
-! Description: ⏰ 更新时间：{beijing_time}（北京时间）｜📊 当前规则总数：{line_count} 条｜
-! ======================================================================
+    header = f"""[{c} TianYing Adblock Project]
+{c} ======================================================================
+{c} 📌 规则名称：{cfg['title']}
+{c} 📝 规则说明：{cfg['desc']}
+{c} 🌐 项目地址：https://github.com/xiaolei7172/ADS
+{c} ⏰ 更新时间：{beijing_time}（北京时间）
+{c} 📊 有效规则：{line_count} 条
+{c} 🔄 更新频率：每 12 小时自动更新
+{c} Description: ⏰ 更新时间：{beijing_time}（北京时间）｜📊 当前规则总数：{line_count} 条｜
+{c} ======================================================================
 """
 
     # 写入
@@ -95,4 +115,4 @@ for filename, cfg in file_config.items():
     except:
         print(f"❌ 写入失败：{filename}")
 
-print("\n🎉 所有文件表头更新完成（每个文件独立样式）！")
+print("\n🎉 所有文件表头更新完成（自动适配HOSTS格式）！")
