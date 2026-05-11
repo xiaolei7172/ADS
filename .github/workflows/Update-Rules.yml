@@ -26,8 +26,8 @@ jobs:
       # ==============================================
       # 👉 智能Hosts合并去重
       # ==============================================
-      - name: Merge Hosts (智能识别+提取域名+去重)
-        run: python ./data/python/hosts_merge.py
+      # - name: Merge Hosts (智能识别+提取域名+去重)
+      #  run: python ./data/python/hosts_merge.py
 
       - name: Merge Rules
         run: python ./data/python/merge.py
