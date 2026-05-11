@@ -52,9 +52,9 @@ if os.path.exists(os.path.join(MOD_DIR, "whitelist.txt")):
 # ==============================================
 adblock_rules = [
     #{"url": "https://raw.githubusercontent.com/xiaolei7172/ADS/refs/heads/master/data/mod/adblock.txt", "name": "天影自用补充"},
-    #{"url": "https://raw.githubusercontent.com/qq5460168/dangchu/main/black.txt", "name": "对不对大佬个人维护规则"},
+    {"url": "https://raw.githubusercontent.com/qq5460168/dangchu/main/black.txt", "name": "对不对大佬个人维护规则"},
     {"url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt", "name": "秋风广告规则"},
-    {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt", "name": "乘风视频规则"},
+    #{"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt", "name": "乘风视频规则"},
     {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt", "name": "乘风通用规则"},
     {"url": "https://anti-ad.net/easylist.txt", "name": "anti-ad 官方规则"},
     {"url": "https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt", "name": "ADgk 广告规则"},
