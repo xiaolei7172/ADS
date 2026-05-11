@@ -3,32 +3,37 @@ import pytz
 import os
 
 # ================================
-# 目录（稳定版）
+# 仓库根目录
 # ================================
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
+if "GITHUB_WORKSPACE" in os.environ:
+    REPO_ROOT = os.environ["GITHUB_WORKSPACE"]
+else:
+    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+    REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
+
 RULE_DIR = os.path.join(REPO_ROOT, "data", "rules")
 
 # ================================
-# 统计有效规则（跳过! #注释、空行）
+# 精准计数（与 title.py 逻辑完全一致）
 # ================================
-def count_valid_lines(filename):
-    path = os.path.join(RULE_DIR, filename)
+def count_valid_lines(file_path):
     count = 0
     try:
-        with open(path, "r", encoding="utf-8", errors="ignore") as f:
+        with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
             for line in f:
                 line = line.strip()
                 if line and not line.startswith(("!", "#")):
                     count += 1
     except:
-        return 0
+        pass
     return count
 
-# 统计三项
-adblock_num = count_valid_lines("adblock.txt")
-dns_num = count_valid_lines("dns.txt")
-allow_num = count_valid_lines("allow.txt")
+# ================================
+# 统计三个核心规则
+# ================================
+adblock_num = count_valid_lines(os.path.join(RULE_DIR, "adblock.txt"))
+dns_num = count_valid_lines(os.path.join(RULE_DIR, "dns.txt"))
+allow_num = count_valid_lines(os.path.join(RULE_DIR, "allow.txt"))
 
 # ================================
 # 北京时间
@@ -37,63 +42,46 @@ tz = pytz.timezone("Asia/Shanghai")
 now = datetime.datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
 
 # ================================
-# 统计内容（干净排版）
+# 严格匹配你现有 README 排版格式
 # ================================
-stats_block = f"""## 📊 项目统计
+stats_block = """## 📊 实时项目统计
 
-<div align="center">
+### 🔮 天影自用广告过滤规则集群
 
----
 
-**天影自用广告过滤规则**
+🕒 **更新时间**：{}（北京时间）
 
-<br>
 
-🕒 更新时间：{now}（北京时间）
+🚫 **广告拦截规则**：{} 条
 
-<br>
 
-🚫 广告拦截规则：{adblock_num} 条
+🌐 **DNS 拦截域名**：{} 个
 
-<br>
 
-🌐 DNS 拦截域名：{dns_num} 个
+✅ **白名单放行规则**：{} 条
 
-<br>
-
-✅ 白名单规则：{allow_num} 条
-
----
-
-</div>
-
-"""
+---""".format(now, adblock_num, dns_num, allow_num)
 
 # ================================
-# 安全写入 README.md
+# 只替换统计区块，不改动其他任何内容
 # ================================
 readme_path = os.path.join(REPO_ROOT, "README.md")
+with open(readme_path, "r", encoding="utf-8", errors="ignore") as f:
+    content = f.read()
 
-try:
-    with open(readme_path, "r", encoding="utf-8", errors="ignore") as f:
-        content = f.read()
-except:
-    content = ""
+# 定位起止标记
+start_mark = "## 📊 实时项目统计"
+end_mark = "---\n\n## 📥 规则订阅中心"
 
-start_flag = "## 📊 项目统计"
-end_flag = "## 📥 规则订阅"
-
-if start_flag in content and end_flag in content:
-    part1 = content.split(start_flag)[0]
-    part2 = content.split(end_flag)[1]
-    new_content = part1 + stats_block + "## 📥 规则订阅" + part2
+if start_mark in content and end_mark in content:
+    part1 = content.split(start_mark)[0]
+    part2 = content.split(end_mark)[1]
+    new_content = part1 + stats_block + end_mark + part2
 else:
     new_content = content
 
-try:
-    with open(readme_path, "w", encoding="utf-8") as f:
-        f.write(new_content)
-except:
-    pass
+with open(readme_path, "w", encoding="utf-8") as f:
+    f.write(new_content)
 
-print("✅ README 统计更新完成！")
+print("✅ README 统计已更新，计数精准同步！")
+print(f"📊 拦截：{adblock_num} | DNS：{dns_num} | 白名单：{allow_num}")
