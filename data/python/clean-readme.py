@@ -30,39 +30,65 @@ dns_num = count_valid_lines("dns.txt")
 allow_num = count_valid_lines("allow.txt")
 
 # ================================
-# 时间
+# 北京时间
 # ================================
 tz = pytz.timezone("Asia/Shanghai")
 now = datetime.datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
 
 # ================================
-# 更新 README
+# 美化版 项目统计区块
+# ================================
+stats_block = f"""
+
+<div align="center">
+
+### 📊 项目统计
+
+---
+
+**天影自用广告过滤规则**
+
+<br>
+
+🕒 更新时间：{now}（北京时间）
+
+<br>
+
+🚫 拦截规则数量：{adblock_num} 条
+
+<br>
+
+🌐 DNS 拦截域名：{dns_num} 个
+
+<br>
+
+✅ 白名单规则数量：{allow_num} 条
+
+---
+
+</div>
+
+"""
+
+# ================================
+# 替换 README 统计区域
 # ================================
 readme_path = os.path.join(REPO_ROOT, "README.md")
 with open(readme_path, "r", encoding="utf-8") as f:
-    lines = f.readlines()
+    content = f.read()
 
-out = []
-in_stats = False
+# 标记起止，直接整块替换
+start_flag = "## 📊 项目统计"
+end_flag = "## 📥 规则订阅"
 
-for line in lines:
-    if line.startswith("## 📊 项目统计"):
-        in_stats = True
-        out.append(line)
-        out.append("\n")
-        out.append("天影自用广告过滤规则\n")
-        out.append(f"更新时间: {now}（北京时间）\n")
-        out.append(f"拦截规则数量: {adblock_num}\n")
-        out.append(f"DNS 拦截域名数量: {dns_num}\n")
-        out.append(f"白名单规则数量: {allow_num}\n")
-        out.append("\n")
-    elif in_stats and line.startswith("## "):
-        in_stats = False
-        out.append(line)
-    elif not in_stats:
-        out.append(line)
+if start_flag in content and end_flag in content:
+    part1 = content.split(start_flag)[0]
+    part2 = content.split(end_flag)[1]
+    new_content = part1 + stats_block + "## 📥 规则订阅" + part2
+else:
+    new_content = content
 
 with open(readme_path, "w", encoding="utf-8") as f:
-    f.writelines(out)
+    f.write(new_content)
 
-print("✅ README 更新完成！")
+print("✅ README 统计区块已高级美化更新完成")
