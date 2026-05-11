@@ -1,83 +1,68 @@
 import datetime
 import pytz
 import os
-import re
 
 # ================================
-# 目录配置
+# 目录
 # ================================
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
 RULE_DIR = os.path.join(REPO_ROOT, "data", "rules")
 
 # ================================
-# 从你的专属表头中提取 📊 有效规则：数字 条
+# 统计有效规则行数
 # ================================
-def get_count_from_header(filename):
+def count_valid_lines(filename):
     path = os.path.join(RULE_DIR, filename)
+    count = 0
     try:
-        with open(path, "r", encoding="utf-8", errors="ignore") as f:
-            for _ in range(20):  # 只读取头部20行，超快
-                line = f.readline()
-                if not line:
-                    break
-                # 匹配你的格式：! 📊 有效规则：12345 条
-                match = re.search(r"📊 有效规则：(\d+) 条", line)
-                if match:
-                    return match.group(1)
+        with open(path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("!"):
+                    count += 1
     except:
-        return "0"
-    return "0"
+        return 0
+    return count
+
+adblock_num = count_valid_lines("adblock.txt")
+dns_num = count_valid_lines("dns.txt")
+allow_num = count_valid_lines("allow.txt")
 
 # ================================
-# 自动读取三个文件的规则数
+# 时间
 # ================================
-num_adblock = get_count_from_header("adblock.txt")
-num_dns     = get_count_from_header("dns.txt")
-num_allow   = get_count_from_header("allow.txt")
-
-# 北京时间
 tz = pytz.timezone("Asia/Shanghai")
-beijing_time = datetime.datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+now = datetime.datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
 
 # ================================
-# README 自动更新（保证 100% 换行）
+# 更新 README
 # ================================
 readme_path = os.path.join(REPO_ROOT, "README.md")
 with open(readme_path, "r", encoding="utf-8") as f:
     lines = f.readlines()
 
-output = []
-in_stats_area = False
+out = []
+in_stats = False
 
 for line in lines:
-    # 进入统计区域
     if line.startswith("## 📊 项目统计"):
-        in_stats_area = True
-        output.append(line)
-        output.append("\n")
-        output.append("天影自用广告过滤规则\n")
-        output.append(f"更新时间: {beijing_time}（北京时间）\n")
-        output.append(f"拦截规则数量: {num_adblock}\n")
-        output.append(f"DNS 拦截域名数量: {num_dns}\n")
-        output.append(f"白名单规则数量: {num_allow}\n")
-        output.append("\n")
-    
-    # 遇到下一个标题，停止替换
-    elif in_stats_area and line.startswith("## "):
-        in_stats_area = False
-        output.append(line)
-    
-    # 不在统计区 → 保持原样
-    elif not in_stats_area:
-        output.append(line)
+        in_stats = True
+        out.append(line)
+        out.append("\n")
+        out.append("天影自用广告过滤规则\n")
+        out.append(f"更新时间: {now}（北京时间）\n")
+        out.append(f"拦截规则数量: {adblock_num}\n")
+        out.append(f"DNS 拦截域名数量: {dns_num}\n")
+        out.append(f"白名单规则数量: {allow_num}\n")
+        out.append("\n")
+    elif in_stats and line.startswith("## "):
+        in_stats = False
+        out.append(line)
+    elif not in_stats:
+        out.append(line)
 
-# 写回 README
 with open(readme_path, "w", encoding="utf-8") as f:
-    f.writelines(output)
+    f.writelines(out)
 
-print("✅ README 已自动更新完成！")
-print(f"🕒 更新时间：{beijing_time}")
-print(f"📊 拦截规则：{num_adblock} 条")
-print(f"📊 DNS 域名：{num_dns} 条")
-print(f"📊 白名单：{num_allow} 条")
+print("✅ README 更新完成！")
