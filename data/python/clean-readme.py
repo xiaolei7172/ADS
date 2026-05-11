@@ -12,9 +12,10 @@ else:
     REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
 
 RULE_DIR = os.path.join(REPO_ROOT, "data", "rules")
+readme_path = os.path.join(REPO_ROOT, "README.md")
 
 # ================================
-# 精准计数（和 title.py 完全一样）
+# 精准计数
 # ================================
 def count_valid_lines(file_path):
     count = 0
@@ -28,23 +29,22 @@ def count_valid_lines(file_path):
         pass
     return count
 
-# ================================
-# 统计三个文件
-# ================================
 adblock_num = count_valid_lines(os.path.join(RULE_DIR, "adblock.txt"))
 dns_num = count_valid_lines(os.path.join(RULE_DIR, "dns.txt"))
 allow_num = count_valid_lines(os.path.join(RULE_DIR, "allow.txt"))
 
 # ================================
-# 时间
+# 北京时间
 # ================================
 tz = pytz.timezone("Asia/Shanghai")
 now = datetime.datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
 
 # ================================
-# 要写入的统计内容
+# 完全复刻你现有居中统计区块
 # ================================
-stats_block = f"""## 📊 实时项目统计
+new_stats = f"""<div align="center">
+
+## 📊 实时项目统计
 
 ### 🔮 天影自用广告过滤规则集群
 
@@ -60,36 +60,28 @@ stats_block = f"""## 📊 实时项目统计
 
 ✅ **白名单放行规则**：{allow_num} 条
 
----"""
+---
+
+</div>"""
 
 # ================================
-# 读取 README
+# 读取并替换整块
 # ================================
-readme_path = os.path.join(REPO_ROOT, "README.md")
 with open(readme_path, "r", encoding="utf-8", errors="ignore") as f:
     content = f.read()
 
-# ================================
-# 精确匹配你的格式
-# ================================
-start_mark = "## 📊 实时项目统计"
-end_mark = "\n---\n\n## 📥 规则订阅中心"
+# 精准匹配起止标记
+start_flag = '<div align="center">\n\n## 📊 实时项目统计'
+end_flag = '\n\n</div>\n\n## 📥 规则订阅中心'
 
-if start_mark in content and end_mark in content:
-    part1 = content.split(start_mark)[0]
-    part2 = content.split(end_mark)[1]
-    new_content = part1 + stats_block + end_mark + part2
+if start_flag in content and end_flag in content:
+    left = content.split(start_flag)[0]
+    right = content.split(end_flag)[1]
+    final_content = left + new_stats + end_flag + right
+
+    with open(readme_path, "w", encoding="utf-8") as f:
+        f.write(final_content)
+    print("✅ README 统计区块更新成功！")
+    print(f"🕒 {now} | 🚫{adblock_num} | 🌐{dns_num} | ✅{allow_num}")
 else:
-    new_content = content
-
-# ================================
-# 写入 README
-# ================================
-with open(readme_path, "w", encoding="utf-8") as f:
-    f.write(new_content)
-
-print("✅ README.md 统计更新成功！")
-print(f"🕒 {now}")
-print(f"🚫 广告规则：{adblock_num}")
-print(f"🌐 DNS域名：{dns_num}")
-print(f"✅ 白名单：{allow_num}")
+    print("❌ 未匹配到统计区块，格式不匹配未更新")
