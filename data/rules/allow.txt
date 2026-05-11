@@ -3,10 +3,10 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-05-11 08:21:54（北京时间）
+! ⏰ 更新时间：2026-05-11 08:52:54（北京时间）
 ! 📊 有效规则：4904 条
 ! 🔄 更新频率：每 12 小时自动更新
-! Description: ⏰ 更新时间：2026-05-11 08:21:54（北京时间）｜📊 当前规则总数：4904 条｜
+! Description: ⏰ 更新时间：2026-05-11 08:52:54（北京时间）｜📊 当前规则总数：4904 条｜
 ! ======================================================================
 @@||redditmedia.com^
 @@||juejin.cn^
@@ -2003,7 +2003,8 @@
 @@||dwz.cn^
 @@||c.fa.jd.com^
 ! ==============================================
-! 📋 白名单来源：白名单3
+! 📋 白名单来源：李文杰白名单 [LWJ's white list]
+! 📝 规则说明：无描述
 ! 🔗 原始地址：https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt
 ! ==============================================
 @@goo.gl
@@ -2321,7 +2322,8 @@
 @@||mon.zijieapi.com^$important
 @@||openmonitor.alipay-eco.com^$important
 ! ==============================================
-! 📋 白名单来源：白名单4
+! 📋 白名单来源：AdGuard 中文白名单 [未知规则]
+! 📝 规则说明：无描述
 ! 🔗 原始地址：https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/allowlist.txt
 ! ==============================================
 @@||staticsns.cdn.bcebos.com/amis/$image,domain=pan.baidu.com
@@ -2394,7 +2396,8 @@
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=gamer.com.tw
 @@||wkstatic.bdimg.com/static/wkcore/widget/commerce/fengchao/*$domain=wenku.baidu.com
 ! ==============================================
-! 📋 白名单来源：白名单5
+! 📋 白名单来源：AdGuard 跟踪白名单 [未知规则]
+! 📝 规则说明：无描述
 ! 🔗 原始地址：https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/allowlist.txt
 ! ==============================================
 @@||st-*.dynamicyield.com/st*&inHead=true&id=*&jsession=*scriptVersion=*&noConsent=
