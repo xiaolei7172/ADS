@@ -4,15 +4,14 @@ import time
 import shutil
 
 # ==============================================
-# 目录配置
+# 目录配置（100% 对齐 merge.py）
 # ==============================================
-if "GITHUB_WORKSPACE" in os.environ:
-    BASE_DIR = os.environ["GITHUB_WORKSPACE"]
-else:
-    BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
 
-TMP_DIR = os.path.join(BASE_DIR, "tmp")
-MOD_DIR = os.path.join(BASE_DIR, "data", "mod")
+# ✅ 绝对正确：data/tmp
+TMP_DIR = os.path.join(REPO_ROOT, "data", "tmp")
+MOD_DIR = os.path.join(REPO_ROOT, "data", "mod")
 
 # ==============================================
 # 清空临时目录
@@ -49,12 +48,10 @@ if os.path.exists(os.path.join(MOD_DIR, "whitelist.txt")):
     write_source_header(dst, "本地白名单", "本地文件")
 
 # ==============================================
-# 广告规则 + 名称 分开写（永远不识别错）
+# 广告规则
 # ==============================================
 adblock_rules = [
     {"url": "https://raw.githubusercontent.com/xiaolei7172/ADS/refs/heads/master/data/mod/adblock.txt", "name": "天影自用补充"},
-    #{"url": "https://raw.githubusercontent.com/entr0pia/fcm-hosts/fcm/fcm-hosts", "name": "FMC Hosts"},
-    #{"url": "https://raw.hellogithub.com/hosts", "name": "GitHub加速"},
     {"url": "https://raw.githubusercontent.com/qq5460168/dangchu/main/black.txt", "name": "对不对大佬个人维护规则"},
     {"url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt", "name": "秋风广告规则"},
     {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt", "name": "乘风视频规则"},
