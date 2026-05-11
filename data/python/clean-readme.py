@@ -14,7 +14,7 @@ else:
 RULE_DIR = os.path.join(REPO_ROOT, "data", "rules")
 
 # ================================
-# 精准计数（与 title.py 逻辑完全一致）
+# 精准计数（和 title.py 完全一样）
 # ================================
 def count_valid_lines(file_path):
     count = 0
@@ -29,49 +29,51 @@ def count_valid_lines(file_path):
     return count
 
 # ================================
-# 统计三个核心规则
+# 统计三个文件
 # ================================
 adblock_num = count_valid_lines(os.path.join(RULE_DIR, "adblock.txt"))
 dns_num = count_valid_lines(os.path.join(RULE_DIR, "dns.txt"))
 allow_num = count_valid_lines(os.path.join(RULE_DIR, "allow.txt"))
 
 # ================================
-# 北京时间
+# 时间
 # ================================
 tz = pytz.timezone("Asia/Shanghai")
 now = datetime.datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
 
 # ================================
-# 严格匹配你现有 README 排版格式
+# 要写入的统计内容
 # ================================
-stats_block = """## 📊 实时项目统计
+stats_block = f"""## 📊 实时项目统计
 
 ### 🔮 天影自用广告过滤规则集群
 
 
-🕒 **更新时间**：{}（北京时间）
+🕒 **更新时间**：{now}（北京时间）
 
 
-🚫 **广告拦截规则**：{} 条
+🚫 **广告拦截规则**：{adblock_num} 条
 
 
-🌐 **DNS 拦截域名**：{} 个
+🌐 **DNS 拦截域名**：{dns_num} 个
 
 
-✅ **白名单放行规则**：{} 条
+✅ **白名单放行规则**：{allow_num} 条
 
----""".format(now, adblock_num, dns_num, allow_num)
+---"""
 
 # ================================
-# 只替换统计区块，不改动其他任何内容
+# 读取 README
 # ================================
 readme_path = os.path.join(REPO_ROOT, "README.md")
 with open(readme_path, "r", encoding="utf-8", errors="ignore") as f:
     content = f.read()
 
-# 定位起止标记
+# ================================
+# 精确匹配你的格式
+# ================================
 start_mark = "## 📊 实时项目统计"
-end_mark = "---\n\n## 📥 规则订阅中心"
+end_mark = "\n---\n\n## 📥 规则订阅中心"
 
 if start_mark in content and end_mark in content:
     part1 = content.split(start_mark)[0]
@@ -80,8 +82,14 @@ if start_mark in content and end_mark in content:
 else:
     new_content = content
 
+# ================================
+# 写入 README
+# ================================
 with open(readme_path, "w", encoding="utf-8") as f:
     f.write(new_content)
 
-print("✅ README 统计已更新，计数精准同步！")
-print(f"📊 拦截：{adblock_num} | DNS：{dns_num} | 白名单：{allow_num}")
+print("✅ README.md 统计更新成功！")
+print(f"🕒 {now}")
+print(f"🚫 广告规则：{adblock_num}")
+print(f"🌐 DNS域名：{dns_num}")
+print(f"✅ 白名单：{allow_num}")
