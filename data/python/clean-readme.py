@@ -10,7 +10,7 @@ REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
 RULE_DIR = os.path.join(REPO_ROOT, "data", "rules")
 
 # ================================
-# 统计有效规则（支持 ! 和 # 注释）
+# 统计有效规则
 # ================================
 def count_valid_lines(filename):
     path = os.path.join(RULE_DIR, filename)
@@ -19,18 +19,15 @@ def count_valid_lines(filename):
         with open(path, "r", encoding="utf-8", errors="ignore") as f:
             for line in f:
                 line = line.strip()
-                # 跳过空行 + 跳过 ! 注释 + 跳过 # 注释
                 if line and not line.startswith(("!", "#")):
                     count += 1
-    except FileNotFoundError:
+    except:
         return 0
     return count
 
-# 统计所有四项
 adblock_num = count_valid_lines("adblock.txt")
 dns_num = count_valid_lines("dns.txt")
 allow_num = count_valid_lines("allow.txt")
-hosts_num = count_valid_lines("hosts_merged.txt")
 
 # ================================
 # 北京时间
@@ -39,7 +36,7 @@ tz = pytz.timezone("Asia/Shanghai")
 now = datetime.datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
 
 # ================================
-# 美化版 项目统计区块
+# 统计模块（无 HOSTS）
 # ================================
 stats_block = f"""## 📊 项目统计
 
@@ -63,10 +60,6 @@ stats_block = f"""## 📊 项目统计
 
 <br>
 
-📛 HOSTS 拦截规则：{hosts_num} 条
-
-<br>
-
 ✅ 白名单规则：{allow_num} 条
 
 ---
@@ -76,7 +69,7 @@ stats_block = f"""## 📊 项目统计
 """
 
 # ================================
-# 替换 README 统计区域
+# 替换 README
 # ================================
 readme_path = os.path.join(REPO_ROOT, "README.md")
 try:
