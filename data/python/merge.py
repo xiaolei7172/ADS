@@ -5,7 +5,7 @@ import re
 # ==========================================
 # 目录配置
 # ==========================================
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+SCRIPT_DIR = os.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
 TMP_DIR = os.path.join(REPO_ROOT, "data", "tmp")
 TARGET_DIR = os.path.join(REPO_ROOT, "data", "rules")
@@ -14,7 +14,7 @@ os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(TARGET_DIR, exist_ok=True)
 
 # ==========================================
-# 智能提取信息
+# 智能提取信息（修复 Description 为空）
 # ==========================================
 def get_rule_meta(file_path):
     title = ""
@@ -25,7 +25,7 @@ def get_rule_meta(file_path):
     try:
         with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
             lines = f.readlines()
-            for line in lines[:50]:
+            for line in lines[:80]:
                 line = line.strip()
                 if line.startswith("! Title:"):
                     title = line.replace("! Title:", "").strip()
@@ -38,8 +38,13 @@ def get_rule_meta(file_path):
     except:
         pass
 
+    # ======================
+    # ✅ 修复：没有 Description 就自动赋值
+    # ======================
+    if not desc.strip():
+        desc = "广告拦截规则"
+
     final_name = f"{source_name} [{title}]" if title.strip() else source_name
-    desc = desc if desc.strip() else "无描述"
     return final_name, desc, source_url
 
 # ==========================================
@@ -99,7 +104,7 @@ with open(os.path.join(TARGET_DIR, "allow.txt"), "w", encoding="utf-8") as f:
     f.write("\n".join(white_output) + "\n")
 
 # ==========================================
-# 3. 生成 DNS 规则【完整版：带来源分段注释】
+# 3. 生成 DNS 规则【带来源分段注释】
 # ==========================================
 print("🚀 生成 DNS 规则（全分段注释）")
 dns_output = []
