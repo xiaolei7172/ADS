@@ -2,16 +2,15 @@ import os
 import re
 
 # ==========================
-# 路径配置（和你项目完全匹配）
+# 路径配置
 # ==========================
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TMP_DIR = os.path.join(BASE_DIR, "tmp")
 OUT_DIR = os.path.join(BASE_DIR, "data", "rules")
-
 os.makedirs(OUT_DIR, exist_ok=True)
 
 # ==========================
-# 排除列表（不会被收录）
+# 排除列表
 # ==========================
 EXCLUDE_DOMAINS = {
     "localhost", "localhost.localdomain", "local", "ip6-localhost",
@@ -19,80 +18,92 @@ EXCLUDE_DOMAINS = {
 }
 
 # ==========================
-# 核心：清洗 Hosts 提取域名
+# 提取来源信息
+# ==========================
+def get_source_info(file_path):
+    source_name = "未知HOSTS来源"
+    source_url = "未知地址"
+    try:
+        with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
+            for _ in range(20):
+                line = f.readline().strip()
+                if line.startswith("! 📋 规则来源："):
+                    source_name = line.replace("! 📋 规则来源：", "").strip()
+                if line.startswith("! 🔗 原始地址："):
+                    source_url = line.replace("! 🔗 原始地址：", "").strip()
+    except:
+        pass
+    return source_name, source_url
+
+# ==========================
+# 提取HOSTS域名
 # ==========================
 def extract_hosts_domains(file_path):
     domains = set()
     pattern = re.compile(r"^\s*(0\.0\.0\.0|127\.0\.0\.1)\s+([^\s#]+)", re.IGNORECASE)
-    
     try:
         with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
             for line in f:
                 line = line.strip()
                 if not line or line.startswith(("#", "!", "[", "//")):
                     continue
-
                 match = pattern.match(line)
                 if not match:
                     continue
-
                 domain = match.group(2).strip().lower()
-                if domain in EXCLUDE_DOMAINS:
-                    continue
-                if "." not in domain:
+                if domain in EXCLUDE_DOMAINS or "." not in domain:
                     continue
                 if domain.replace(".", "").isdigit():
                     continue
-
                 domains.add(domain)
     except:
         pass
     return domains
 
 # ==========================
-# 扫描 tmp 目录所有文件
+# 合并（带分段）
 # ==========================
-all_domains = set()
+final_lines = []
+global_domains = set()
 
-for filename in os.listdir(TMP_DIR):
-    path = os.path.join(TMP_DIR, filename)
-    if os.path.isfile(path):
-        print(f"🔍 扫描：{filename}")
-        domains = extract_hosts_domains(path)
-        all_domains.update(domains)
+files = sorted(os.listdir(TMP_DIR))
+for fname in files:
+    path = os.path.join(TMP_DIR, fname)
+    if not os.path.isfile(path):
+        continue
 
-# ==========================
-# 排序
-# ==========================
-sorted_domains = sorted(all_domains)
-total = len(sorted_domains)
+    s_name, s_url = get_source_info(path)
+    domains = extract_hosts_domains(path)
+    new_domains = domains - global_domains
 
-# ==========================
-# 输出 1：纯域名（dns.txt）
-# ==========================
-dns_path = os.path.join(OUT_DIR, "dns.txt")
-with open(dns_path, "w", encoding="utf-8") as f:
-    f.write("\n".join(sorted_domains))
-
-# ==========================
-# 输出 2：AdBlock 格式（adhosts.txt）
-# ==========================
-adblock_path = os.path.join(OUT_DIR, "adhosts.txt")
-adblock_lines = [f"||{d}^" for d in sorted_domains]
-with open(adblock_path, "w", encoding="utf-8") as f:
-    f.write("\n".join(adblock_lines))
+    if new_domains:
+        final_lines.append("! ==============================================")
+        final_lines.append(f"! 📋 以下HOSTS来源：{s_name}")
+        final_lines.append(f"! 🔗 原始地址：{s_url}")
+        final_lines.append("! ==============================================")
+        for d in sorted(new_domains):
+            final_lines.append(f"0.0.0.0 {d}")
+            global_domains.add(d)
+        print(f"✅ HOSTS：{s_name} | 新增 {len(new_domains)} 条")
 
 # ==========================
-# 输出 3：标准合并 Hosts（hosts_merged.txt）
+# 输出（绝对不冲突）
 # ==========================
-hosts_path = os.path.join(OUT_DIR, "hosts_merged.txt")
-hosts_lines = [f"0.0.0.0 {d}" for d in sorted_domains]
-with open(hosts_path, "w", encoding="utf-8") as f:
-    f.write("\n".join(hosts_lines))
+# 1. 带分段来源的完整 HOSTS
+with open(os.path.join(OUT_DIR, "hosts_merged.txt"), "w", encoding="utf-8") as f:
+    f.write("\n".join(final_lines) + "\n")
+
+# 2. HOSTS 专用纯域名（不会覆盖 merge.py 的 dns.txt）
+with open(os.path.join(OUT_DIR, "hosts_dns.txt"), "w", encoding="utf-8") as f:
+    f.write("\n".join(sorted(global_domains)) + "\n")
+
+# 3. HOSTS 专用 adblock 规则
+ad_lines = [f"||{d}^" for d in sorted(global_domains)]
+with open(os.path.join(OUT_DIR, "hosts_adblock.txt"), "w", encoding="utf-8") as f:
+    f.write("\n".join(ad_lines) + "\n")
 
 # ==========================
 # 完成
 # ==========================
-print(f"\n✅ Hosts 智能合并完成！")
-print(f"📦 有效域名总数：{total}")
-print(f"📁 输出到：{OUT_DIR}")
+print("\n🎉 HOSTS 智能合并完成（无冲突版）")
+print(f"📦 总域名数量：{len(global_domains)}")
