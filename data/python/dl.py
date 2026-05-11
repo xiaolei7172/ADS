@@ -57,6 +57,10 @@ adblock_rules = [
         "name": "天影自用补充"
     },
     {
+        "url": "https://raw.githubusercontent.com/qq5460168/dangchu/main/black.txt",
+        "name": "对不对大佬个人维护规则"
+    },
+    {
         "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt",
         "name": "秋风广告规则"
     },
