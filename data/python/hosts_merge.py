@@ -7,6 +7,9 @@ import re
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TMP_DIR = os.path.join(BASE_DIR, "tmp")
 OUT_DIR = os.path.join(BASE_DIR, "data", "rules")
+
+# 【关键修复】自动创建目录
+os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(OUT_DIR, exist_ok=True)
 
 # ==========================
