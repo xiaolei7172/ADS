@@ -61,7 +61,7 @@ def extract_hosts_domains(file_path):
     return domains
 
 # ==========================
-# 合并（带分段）
+# 合并（标准 # 注释）
 # ==========================
 final_lines = []
 global_domains = set()
@@ -77,27 +77,28 @@ for fname in files:
     new_domains = domains - global_domains
 
     if new_domains:
-        final_lines.append("! ==============================================")
-        final_lines.append(f"! 📋 以下HOSTS来源：{s_name}")
-        final_lines.append(f"! 🔗 原始地址：{s_url}")
-        final_lines.append("! ==============================================")
+        # 标准 Hosts 注释，全部用 #
+        final_lines.append("# ==============================================")
+        final_lines.append(f"# 📋 HOSTS来源：{s_name}")
+        final_lines.append(f"# 🔗 原始地址：{s_url}")
+        final_lines.append("# ==============================================")
         for d in sorted(new_domains):
             final_lines.append(f"0.0.0.0 {d}")
             global_domains.add(d)
         print(f"✅ HOSTS：{s_name} | 新增 {len(new_domains)} 条")
 
 # ==========================
-# 输出（绝对不冲突）
+# 输出（不冲突、标准格式）
 # ==========================
-# 1. 带分段来源的完整 HOSTS
+# 1. 标准格式带分段来源
 with open(os.path.join(OUT_DIR, "hosts_merged.txt"), "w", encoding="utf-8") as f:
     f.write("\n".join(final_lines) + "\n")
 
-# 2. HOSTS 专用纯域名（不会覆盖 merge.py 的 dns.txt）
+# 2. HOSTS 专用纯域名
 with open(os.path.join(OUT_DIR, "hosts_dns.txt"), "w", encoding="utf-8") as f:
     f.write("\n".join(sorted(global_domains)) + "\n")
 
-# 3. HOSTS 专用 adblock 规则
+# 3. HOSTS 专用 AdBlock 规则
 ad_lines = [f"||{d}^" for d in sorted(global_domains)]
 with open(os.path.join(OUT_DIR, "hosts_adblock.txt"), "w", encoding="utf-8") as f:
     f.write("\n".join(ad_lines) + "\n")
@@ -105,5 +106,5 @@ with open(os.path.join(OUT_DIR, "hosts_adblock.txt"), "w", encoding="utf-8") as 
 # ==========================
 # 完成
 # ==========================
-print("\n🎉 HOSTS 智能合并完成（无冲突版）")
+print("\n🎉 标准格式 HOSTS 合并完成！")
 print(f"📦 总域名数量：{len(global_domains)}")
