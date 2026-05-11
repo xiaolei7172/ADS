@@ -1,73 +1,72 @@
 import datetime
 import pytz
 import os
+import re
 
 # ================================
 # 根目录
 # ================================
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
-os.chdir(REPO_ROOT)
+RULE_DIR = os.path.join(REPO_ROOT, "data", "rules")
 
 # ================================
-# 读取数量
+# 读取统计数量
 # ================================
 def get_count(filename):
-    path = os.path.join(REPO_ROOT, "data", "rules", filename)
+    path = os.path.join(RULE_DIR, filename)
     try:
-        with open(path, "r", encoding="utf-8", errors="ignore") as f:
+        with open(path, "r", encoding="utf-8") as f:
             for line in f:
-                if line.startswith("! Total count:"):
-                    return line.strip().replace("! Total count:", "").strip()
+                if "📊 有效规则：" in line:
+                    return re.search(r"\d+", line).group()
     except:
         return "0"
-    return "0"
 
-num_adblock = get_count("adblock.txt")
-num_dns = get_count("dns.txt")
-num_allow = get_count("allow.txt")
+adblock_num = get_count("adblock.txt")
+dns_num = get_count("dns.txt")
+allow_num = get_count("allow.txt")
 
 # ================================
 # 时间
 # ================================
 tz = pytz.timezone("Asia/Shanghai")
-beijing_time = datetime.datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+now = datetime.datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
 
 # ================================
-# 读取 README
+# 读取 README 并逐行稳定替换（百分百换行）
 # ================================
 readme_path = os.path.join(REPO_ROOT, "README.md")
 with open(readme_path, "r", encoding="utf-8") as f:
     lines = f.readlines()
 
-# ================================
-# 逐行处理，只替换统计区域（最稳）
-# ================================
+output = []
 in_stats = False
-new_lines = []
+
 for line in lines:
+    # 进入统计区
     if line.startswith("## 📊 项目统计"):
         in_stats = True
-        # 写入新的统计
-        new_lines.append("## 📊 项目统计\n")
-        new_lines.append("\n")
-        new_lines.append("天影自用广告过滤规则\n")
-        new_lines.append(f"更新时间: {beijing_time}（北京时间）\n")
-        new_lines.append(f"拦截规则数量: {num_adblock}\n")
-        new_lines.append(f"DNS 拦截规则数量: {num_dns}\n")
-        new_lines.append(f"白名单规则数量: {num_allow}\n")
-        new_lines.append("\n")
+        output.append(line)
+        output.append("\n")
+        output.append("天影自用广告过滤规则\n")
+        output.append(f"更新时间: {now}（北京时间）\n")
+        output.append(f"拦截规则数量: {adblock_num}\n")
+        output.append(f"DNS 拦截规则数量: {dns_num}\n")
+        output.append(f"白名单规则数量: {allow_num}\n")
+        output.append("\n")
+    # 遇到下一个标题，退出统计区
     elif in_stats and line.startswith("## "):
-        # 遇到下一个标题，停止替换
         in_stats = False
-        new_lines.append(line)
+        output.append(line)
+    # 不在统计区，原样保留
     elif not in_stats:
-        new_lines.append(line)
+        output.append(line)
 
 # ================================
-# 写回
+# 写回（保证换行 100% 正常）
 # ================================
 with open(readme_path, "w", encoding="utf-8") as f:
-    f.writelines(new_lines)
+    f.writelines(output)
 
-print("✅ README 写入成功！自动换行正常！")
+print("✅ README 已自动更新 → 自动换行正常！")
