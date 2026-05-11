@@ -16,11 +16,11 @@ os.makedirs(TARGET_DIR, exist_ok=True)
 os.chdir(TMP_DIR)
 
 # ==========================================
-# 提取：规则标题 + 描述 + 来源名称 + 链接
+# 智能提取信息（修复版）
 # ==========================================
 def get_rule_meta(file_path):
-    title = "未知规则"
-    desc = "无描述"
+    title = ""
+    desc = ""
     source_name = "未知来源"
     source_url = "未知地址"
     
@@ -28,29 +28,39 @@ def get_rule_meta(file_path):
         with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
             lines = f.readlines()
             
-            for line in lines[:40]:
+            for line in lines[:50]:
                 line = line.strip()
                 
-                # 规则自身的标题
+                # 提取规则标题
                 if line.startswith("! Title:"):
                     title = line.replace("! Title:", "").strip()
                 
-                # 规则自身的描述
+                # 提取规则描述
                 if line.startswith("! Description:"):
                     desc = line.replace("! Description:", "").strip()
                 
-                # DL 写入的来源名称
+                # 提取 DL 里的来源名称
                 if line.startswith("! 📋 规则来源："):
                     source_name = line.replace("! 📋 规则来源：", "").strip()
                 
-                # DL 写入的原始链接
+                # 提取下载链接
                 if line.startswith("! 🔗 原始地址："):
                     source_url = line.replace("! 🔗 原始地址：", "").strip()
     except:
         pass
-    
-    # 你要的最终格式：来源名 [规则自身Title]
-    final_name = f"{source_name} [{title}]"
+
+    # ======================
+    # 智能显示名称（核心修复）
+    # ======================
+    if title.strip() != "" and title != "未知规则":
+        final_name = f"{source_name} [{title}]"
+    else:
+        final_name = source_name
+
+    # 描述为空则不显示
+    if desc.strip() == "":
+        desc = "无描述"
+
     return final_name, desc, source_url
 
 # ==========================================
@@ -65,7 +75,7 @@ for file in ad_files:
     final_name, desc, url = get_rule_meta(file)
     
     black_output.append("! ==============================================")
-    black_output.append(f"! 📋 规则来源：{final_name}")
+    black_output.append(f"! 📋 以下规则来源：{final_name}")
     black_output.append(f"! 📝 规则说明：{desc}")
     black_output.append(f"! 🔗 原始地址：{url}")
     black_output.append("! ==============================================")
@@ -96,7 +106,7 @@ for file in allow_files:
     final_name, desc, url = get_rule_meta(file)
     
     white_output.append("! ==============================================")
-    white_output.append(f"! 📋 白名单来源：{final_name}")
+    white_output.append(f"! 📋 以下白名单来源：{final_name}")
     white_output.append(f"! 📝 规则说明：{desc}")
     white_output.append(f"! 🔗 原始地址：{url}")
     white_output.append("! ==============================================")
