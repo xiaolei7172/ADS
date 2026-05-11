@@ -79,8 +79,8 @@ for filename, cfg in file_config.items():
 {c} 📊 有效规则：{line_count} 条
 {c} 🔄 更新频率：每 12 小时自动更新
 {c} ======================================================================
-{c} ! Title:📌{cfg['title']}📌
-{c} ! Description：⏰ 更新时间：{beijing_time} | 📊 有效规则：{line_count} 条
+{c}  Title:📌{cfg['title']}📌
+{c}  Description：⏰ 更新时间：{beijing_time} | 📊 有效规则：{line_count} 条
 {c} ======================================================================
 """
 
