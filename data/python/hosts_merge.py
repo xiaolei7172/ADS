@@ -2,13 +2,18 @@ import os
 import re
 
 # ==========================
-# 路径配置
+# ✅ 绝对正确的路径（和你的 dl.py 完全一致）
 # ==========================
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TMP_DIR = os.path.join(BASE_DIR, "tmp")
-OUT_DIR = os.path.join(BASE_DIR, "data", "rules")
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
 
-# 【关键修复】自动创建目录
+# ✅ 目录必须是：data/tmp
+TMP_DIR = os.path.join(REPO_ROOT, "data", "tmp")
+
+# ✅ 输出目录：data/rules
+OUT_DIR = os.path.join(REPO_ROOT, "data", "rules")
+
+# 自动创建（不存在就创建，不会报错）
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(OUT_DIR, exist_ok=True)
 
@@ -21,7 +26,7 @@ EXCLUDE_DOMAINS = {
 }
 
 # ==========================
-# 提取来源信息
+# 提取来源
 # ==========================
 def get_source_info(file_path):
     source_name = "未知HOSTS来源"
@@ -64,7 +69,7 @@ def extract_hosts_domains(file_path):
     return domains
 
 # ==========================
-# 合并（标准 # 注释）
+# 合并（带分段）
 # ==========================
 final_lines = []
 global_domains = set()
@@ -80,7 +85,6 @@ for fname in files:
     new_domains = domains - global_domains
 
     if new_domains:
-        # 标准 Hosts 注释，全部用 #
         final_lines.append("# ==============================================")
         final_lines.append(f"# 📋 HOSTS来源：{s_name}")
         final_lines.append(f"# 🔗 原始地址：{s_url}")
@@ -91,23 +95,17 @@ for fname in files:
         print(f"✅ HOSTS：{s_name} | 新增 {len(new_domains)} 条")
 
 # ==========================
-# 输出（不冲突、标准格式）
+# 输出（正确目录）
 # ==========================
-# 1. 标准格式带分段来源
 with open(os.path.join(OUT_DIR, "hosts_merged.txt"), "w", encoding="utf-8") as f:
     f.write("\n".join(final_lines) + "\n")
 
-# 2. HOSTS 专用纯域名
 with open(os.path.join(OUT_DIR, "hosts_dns.txt"), "w", encoding="utf-8") as f:
     f.write("\n".join(sorted(global_domains)) + "\n")
 
-# 3. HOSTS 专用 AdBlock 规则
 ad_lines = [f"||{d}^" for d in sorted(global_domains)]
 with open(os.path.join(OUT_DIR, "hosts_adblock.txt"), "w", encoding="utf-8") as f:
     f.write("\n".join(ad_lines) + "\n")
 
-# ==========================
-# 完成
-# ==========================
-print("\n🎉 标准格式 HOSTS 合并完成！")
-print(f"📦 总域名数量：{len(global_domains)}")
+print("\n🎉 HOSTS 合并完成！目录完全正确！")
+print(f"📦 最终域名总数：{len(global_domains)}")
