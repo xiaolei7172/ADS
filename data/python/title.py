@@ -9,7 +9,7 @@ import os
 if "GITHUB_WORKSPACE" in os.environ:
     REPO_ROOT = os.environ["GITHUB_WORKSPACE"]
 else:
-    SCRIPT_DIR = os.dirname(os.path.abspath(__file__))
+    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
     REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
 
 # ==========================================
@@ -92,9 +92,9 @@ for filename, cfg in file_config.items():
     c = cfg["comment"]
 
     # ==========================================
-    # ✅ 自动生成对应格式表头
+    # ✅ 修复后的正确表头！
     # ==========================================
-    header = f"""[{c} TianYing Adblock Project]
+    header = f"""{c} [TianYing Adblock Project]
 {c} ======================================================================
 {c} 📌 规则名称：{cfg['title']}
 {c} 📝 规则说明：{cfg['desc']}
