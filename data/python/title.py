@@ -84,7 +84,7 @@ for filename, cfg in file_config.items():
 
     c = cfg["comment"]
 
-    header = f"""{c} [TianYing Adblock Project]
+    header = f"""[TianYing Adblock Project]
 {c} ======================================================================
 {c} 📌 规则名称：{cfg['title']}
 {c} 📝 规则说明：{cfg['desc']}
