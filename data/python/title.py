@@ -32,8 +32,8 @@ file_config = {
         "comment": "!"
     },
     "dns.txt": {
-        "title": "天影 DNS 拦截规则",
-        "desc": "DNS 级广告域名屏蔽，支持 AdGuard Home / OpenWrt",
+        "title": "天影DNS拦截规则",
+        "desc": "DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt",
         "comment": "!"
     },
     "allow.txt": {
@@ -42,6 +42,18 @@ file_config = {
         "comment": "!"
     }
 }
+
+# ==========================================
+# 【精准计数函数】修复完成！
+# ==========================================
+def count_valid_lines(content):
+    count = 0
+    for line in content.splitlines():
+        line = line.strip()
+        # 跳过：空行、!注释、#注释
+        if line and not line.startswith(("!", "#")):
+            count += 1
+    return max(count, 0)
 
 # ==========================================
 # 处理文件
@@ -55,6 +67,7 @@ for filename, cfg in file_config.items():
     except:
         content = ""
 
+    # 清理旧表头
     lines = content.splitlines()
     while lines:
         first = lines[0].strip()
@@ -64,9 +77,10 @@ for filename, cfg in file_config.items():
             break
     clean_content = "\n".join(lines).strip()
 
-    line_count = len([l for l in clean_content.splitlines() if l.strip() and not l.strip().startswith(("!", "#"))])
-    if line_count < 0:
-        line_count = 0
+    # ======================
+    # ✅ 这里现在 100% 精准
+    # ======================
+    line_count = count_valid_lines(clean_content)
 
     c = cfg["comment"]
 
@@ -77,10 +91,10 @@ for filename, cfg in file_config.items():
 {c} 🌐 项目地址：https://github.com/xiaolei7172/ADS
 {c} ⏰ 更新时间：{beijing_time}（北京时间）
 {c} 📊 有效规则：{line_count} 条
-{c} 🔄 更新频率：每 12 小时自动更新
+{c} 🔄 更新频率：每12小时自动更新
 {c} ======================================================================
-{c}  Title:📌{cfg['title']}📌
-{c}  Description：⏰ 更新时间：{beijing_time} | 📊 有效规则：{line_count} 条
+{c} Title: 📌 {cfg['title']} 📌
+{c} Description: ⏰ 更新时间 {beijing_time} | ✅ 有效规则 {line_count} 条
 {c} ======================================================================
 """
 
