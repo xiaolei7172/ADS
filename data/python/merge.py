@@ -3,9 +3,9 @@ import glob
 import re
 
 # ==========================================
-# 目录配置
+# 目录配置（已修复 dirname 写法）
 # ==========================================
-SCRIPT_DIR = os.dirname(os.path.abspath(__file__))
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
 TMP_DIR = os.path.join(REPO_ROOT, "data", "tmp")
 TARGET_DIR = os.path.join(REPO_ROOT, "data", "rules")
@@ -14,7 +14,7 @@ os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(TARGET_DIR, exist_ok=True)
 
 # ==========================================
-# 智能提取信息（修复 Description 为空）
+# 智能提取信息
 # ==========================================
 def get_rule_meta(file_path):
     title = ""
@@ -38,9 +38,6 @@ def get_rule_meta(file_path):
     except:
         pass
 
-    # ======================
-    # ✅ 修复：没有 Description 就自动赋值
-    # ======================
     if not desc.strip():
         desc = "广告拦截规则"
 
@@ -125,7 +122,7 @@ for file in ad_files:
 
     if temp_domains:
         dns_output.append("! ==============================================")
-        dns_output.append(f"! 📋 以下规则来源：{final_name}")
+        dns_output.append(f"! 📋 规则来源：{final_name}")
         dns_output.append(f"! 📝 规则说明：{desc}")
         dns_output.append(f"! 🔗 原始地址：{url}")
         dns_output.append("! ==============================================")
