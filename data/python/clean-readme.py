@@ -3,14 +3,14 @@ import pytz
 import os
 
 # ================================
-# 目录
+# 目录（稳定版）
 # ================================
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
 RULE_DIR = os.path.join(REPO_ROOT, "data", "rules")
 
 # ================================
-# 统计有效规则
+# 统计有效规则（跳过! #注释、空行）
 # ================================
 def count_valid_lines(filename):
     path = os.path.join(RULE_DIR, filename)
@@ -25,6 +25,7 @@ def count_valid_lines(filename):
         return 0
     return count
 
+# 统计三项
 adblock_num = count_valid_lines("adblock.txt")
 dns_num = count_valid_lines("dns.txt")
 allow_num = count_valid_lines("allow.txt")
@@ -36,7 +37,7 @@ tz = pytz.timezone("Asia/Shanghai")
 now = datetime.datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
 
 # ================================
-# 统计模块（无 HOSTS）
+# 统计内容（干净排版）
 # ================================
 stats_block = f"""## 📊 项目统计
 
@@ -69,9 +70,10 @@ stats_block = f"""## 📊 项目统计
 """
 
 # ================================
-# 替换 README
+# 安全写入 README.md
 # ================================
 readme_path = os.path.join(REPO_ROOT, "README.md")
+
 try:
     with open(readme_path, "r", encoding="utf-8", errors="ignore") as f:
         content = f.read()
