@@ -22,7 +22,7 @@ def count_valid_lines(filename):
                 # 跳过空行 + 跳过 ! 注释 + 跳过 # 注释
                 if line and not line.startswith(("!", "#")):
                     count += 1
-    except:
+    except FileNotFoundError:
         return 0
     return count
 
@@ -41,8 +41,7 @@ now = datetime.datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
 # ================================
 # 美化版 项目统计区块
 # ================================
-stats_block = f"""
-## 📊 项目统计
+stats_block = f"""## 📊 项目统计
 
 <div align="center">
 
@@ -80,8 +79,11 @@ stats_block = f"""
 # 替换 README 统计区域
 # ================================
 readme_path = os.path.join(REPO_ROOT, "README.md")
-with open(readme_path, "r", encoding="utf-8", errors="ignore") as f:
-    content = f.read()
+try:
+    with open(readme_path, "r", encoding="utf-8", errors="ignore") as f:
+        content = f.read()
+except:
+    content = ""
 
 start_flag = "## 📊 项目统计"
 end_flag = "## 📥 规则订阅"
@@ -93,7 +95,10 @@ if start_flag in content and end_flag in content:
 else:
     new_content = content
 
-with open(readme_path, "w", encoding="utf-8") as f:
-    f.write(new_content)
+try:
+    with open(readme_path, "w", encoding="utf-8") as f:
+        f.write(new_content)
+except:
+    pass
 
 print("✅ README 统计更新完成！")
