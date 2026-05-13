@@ -240,3 +240,18 @@ appinn.com##.featured-section
 127.0.0.1 v29-novelapp.ixigua.com
 127.0.0.1 v30-novelapp.ixigua.com
 127.0.0.1 v31-novelapp.ixigua.com
+! 拦截穿山甲广告联盟（小游戏跳转重灾区）
+||pangolin-sdk-toutiao.com^
+||pangolin-sdk-toutiao-b.com^
+||tos.pstatp.com^
+
+! 拦截优量汇广告联盟（腾讯系，含大量小游戏）
+||v2.gdt.qq.com^
+||v.gdt.qq.com^
+||gdt.qq.com^
+
+! 拦截通用小游戏及互动广告域名
+||snssdk.com^
+||pglstatp-toutiao.com^
+||ads3-normal-lq.zijieapi.com^
+||ads5-normal-lq.zijieapi.com^
