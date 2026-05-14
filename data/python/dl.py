@@ -52,7 +52,7 @@ if os.path.exists(os.path.join(MOD_DIR, "whitelist.txt")):
 # ==============================================
 adblock_rules = [
     #{"url": "https://raw.githubusercontent.com/xiaolei7172/ADS/refs/heads/master/data/mod/adblock.txt", "name": "天影自用补充"},
-    {"url": "https://oss.xlxbk.cn/dns.txt", "name": "xlxbk DNS黑名单"},
+    #{"url": "https://oss.xlxbk.cn/dns.txt", "name": "xlxbk DNS黑名单"},
     {"url": "https://raw.githubusercontent.com/qq5460168/dangchu/main/black.txt", "name": "对不对个人维护规则"},
     {"url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt", "name": "秋风广告规则"},
     {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt", "name": "乘风视频规则"},
@@ -64,7 +64,7 @@ adblock_rules = [
 
 allow_rules = [
     #{"url": "https://raw.githubusercontent.com/xiaolei7172/ADS/refs/heads/master/data/mod/whitelist.txt", "name": "天影白名单"},
-    {"url": "https://oss.xlxbk.cn/allow.txt", "name": "xlxbk白名单"},
+    #{"url": "https://oss.xlxbk.cn/allow.txt", "name": "xlxbk白名单"},
     {"url": "https://raw.githubusercontent.com/qq5460168/dangchu/main/white.txt", "name": "当初白名单"},
     {"url": "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt", "name": "李文杰白名单"},
     {"url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/allowlist.txt", "name": "AdGuard 中文白名单"},
