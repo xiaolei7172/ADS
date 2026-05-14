@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-05-13 22:08:12（北京时间）
-! 📊 有效规则：5403 条
+! ⏰ 更新时间：2026-05-14 10:13:30（北京时间）
+! 📊 有效规则：5406 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-05-13 22:08:12 | ✅ 有效规则 5403 条
+! Description: ⏰ 更新时间 2026-05-14 10:13:30 | ✅ 有效规则 5406 条
 ! ======================================================================
 @@||mssdk3-normal-hl.zijieapi.com^$app=com.dragon.read,important
 @@||v3-fq-tts.fqnovelvod.com$important
@@ -28,6 +28,7 @@
 @@|beta.affiliates.adsterra.com^|
 @@|beta.partners.adsterra.com^|
 @@|beta.publishers.adsterra.com^|
+@@|cdn.taboola.com^|
 @@|core.crazyegg.com^|
 @@|daraz.com^|
 @@|ezodn.com^|
@@ -2907,6 +2908,8 @@
 ! 🔗 原始地址：https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/allowlist.txt
 ! ==============================================
 @@||st-*.dynamicyield.com/st*&inHead=true&id=*&jsession=*scriptVersion=*&noConsent=
+@@||cdn.cquotient.com/js/*/gretel.min.js$domain=jp.drmartens.com
+@@||e.cquotient.com/recs/blgg-DoctorMartens/$domain=jp.drmartens.com
 @@||faq-widget.nakanohito.jp/faqwidget.js$domain=keio-passport.co.jp
 @@||support-beacon.nakanohito.jp/widget/faqview$domain=keio-passport.co.jp
 @@||cdn.cxense.com/cx.cce.js$domain=hochi.news
