@@ -3,7 +3,7 @@ import glob
 import re
 
 # ==========================================
-# 目录配置（已修复 dirname 写法）
+# 目录配置
 # ==========================================
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
@@ -45,7 +45,7 @@ def get_rule_meta(file_path):
     return final_name, desc, source_url
 
 # ==========================================
-# 1. 合并黑名单（带注释）
+# 1. 合并黑名单（自动排除 @@ 白名单）
 # ==========================================
 print("🚀 合并黑名单")
 ad_files = sorted(glob.glob(os.path.join(TMP_DIR, "adblock_*.txt")))
@@ -65,6 +65,9 @@ for file in ad_files:
             line = line.strip()
             if not line or line.startswith(("!", "#", "[")):
                 continue
+            # 排除白名单，不写入黑名单
+            if line.startswith("@@"):
+                continue
             if line not in black_set:
                 black_set.add(line)
                 black_output.append(line)
@@ -73,14 +76,13 @@ with open(os.path.join(TARGET_DIR, "adblock.txt"), "w", encoding="utf-8") as f:
     f.write("\n".join(black_output) + "\n")
 
 # ==========================================
-# 2. 合并白名单（带注释）
+# 2. 自动提取所有 adblock 文件里的 @@ 白名单
 # ==========================================
-print("🚀 合并白名单")
-allow_files = sorted(glob.glob(os.path.join(TMP_DIR, "allow_*.txt")))
+print("🚀 自动提取所有白名单（从 adblock 规则中）")
 white_output = []
 white_set = set()
 
-for file in allow_files:
+for file in ad_files:
     final_name, desc, url = get_rule_meta(file)
     white_output.append("! ==============================================")
     white_output.append(f"! 📋 以下白名单来源：{final_name}")
@@ -93,6 +95,7 @@ for file in allow_files:
             line = line.strip()
             if not line:
                 continue
+            # 只提取 @@ 开头的白名单
             if line.startswith("@@") and line not in white_set:
                 white_set.add(line)
                 white_output.append(line)
@@ -101,7 +104,7 @@ with open(os.path.join(TARGET_DIR, "allow.txt"), "w", encoding="utf-8") as f:
     f.write("\n".join(white_output) + "\n")
 
 # ==========================================
-# 3. 生成 DNS 规则【带来源分段注释】
+# 3. 生成 DNS 规则
 # ==========================================
 print("🚀 生成 DNS 规则（全分段注释）")
 dns_output = []
@@ -136,7 +139,7 @@ with open(os.path.join(TARGET_DIR, "dns.txt"), "w", encoding="utf-8") as f:
 # ==========================================
 # 完成
 # ==========================================
-print("\n✅ 全部合并完成！全文件带分段注释！")
+print("\n✅ 全部合并完成！自动识别白名单！")
 print(f"📊 黑名单：{len(black_set)} 条")
-print(f"📊 白名单：{len(white_set)} 条")
+print(f"📊 白名单：{len(white_set)} 条（自动从 adblock 提取）")
 print(f"📊 DNS域名：{len(dns_set)} 个")
