@@ -74,6 +74,7 @@ DOMAIN,snssdk.com,reject
 DOMAIN,pglstatp-toutiao.com,reject
 DOMAIN,ads3-normal-lq.zijieapi.com,reject
 DOMAIN,ads5-normal-lq.zijieapi.com,reject
+DOMAIN,yinduyao.xyz,reject
 DOMAIN,httpdns5.eastmoney.com,reject
 DOMAIN,gbfek.dfcfw.com,reject
 DOMAIN,gbfek.dfcfw.com.eo.dnse1.com,reject
