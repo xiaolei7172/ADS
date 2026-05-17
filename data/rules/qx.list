@@ -74,6 +74,15 @@ DOMAIN,snssdk.com,reject
 DOMAIN,pglstatp-toutiao.com,reject
 DOMAIN,ads3-normal-lq.zijieapi.com,reject
 DOMAIN,ads5-normal-lq.zijieapi.com,reject
+DOMAIN,logs1.xnyojd.cn,reject
+DOMAIN,logs.yvgnky.cn,reject
+DOMAIN,022.yp6696.top,reject
+DOMAIN,zbfg79jn.super.svip-cdn.com.,reject
+DOMAIN,*.svip-cdn.com,reject
+DOMAIN,htxcds.2jh1l.com,reject
+DOMAIN,lwnlkj.com,reject
+DOMAIN,www.hzlockb.cn,reject
+DOMAIN,*.ph2dw0.com,reject
 DOMAIN,yinduyao.xyz,reject
 DOMAIN,httpdns5.eastmoney.com,reject
 DOMAIN,gbfek.dfcfw.com,reject
