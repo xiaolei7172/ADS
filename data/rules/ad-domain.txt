@@ -79,6 +79,21 @@ snssdk.com
 pglstatp-toutiao.com
 ads3-normal-lq.zijieapi.com
 ads5-normal-lq.zijieapi.com
+bid-adx2.vlion.cn
+alsc-ug-monitor-callback.alibaba.com
+ocpx.ainiankj.com
+de.ad.gameley.com
+s.tuia.cn
+mpcfg.fancydsp.com
+api.shanghailingye.cn
+*.anythinktech.com
+amdcopen.m.umeng.com
+audid.umeng.com
+deeplink.umeng.com
+*-jor0b302fdhgwnccw8g.com
+*-jor657bolf.com
+kssj6668.hytrfjn.com
+hkg-pre.edge-cluster-hk-pre.com
 logs1.xnyojd.cn
 logs.yvgnky.cn
 022.yp6696.top
@@ -11873,7 +11888,6 @@ api.aqyad.com
 api.e.kuaishou.com
 api.hzsanjiaomao.com
 api.installer.xiaomi.com
-api.shanghailingye.cn
 api.statsig.com
 api.touch-moblie.com
 api.yfanads.com
@@ -11887,7 +11901,6 @@ aqyad.com
 aspect-upush.umeng.com
 auction.unityads.unity3d.com
 audid-api.taobao.com
-audid.umeng.com
 badjs.weixinbridge.com
 bdad.123pan.cn
 bdapi-ads.realmemobile.com

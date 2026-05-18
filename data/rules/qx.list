@@ -74,6 +74,21 @@ DOMAIN,snssdk.com,reject
 DOMAIN,pglstatp-toutiao.com,reject
 DOMAIN,ads3-normal-lq.zijieapi.com,reject
 DOMAIN,ads5-normal-lq.zijieapi.com,reject
+DOMAIN,bid-adx2.vlion.cn,reject
+DOMAIN,alsc-ug-monitor-callback.alibaba.com,reject
+DOMAIN,ocpx.ainiankj.com,reject
+DOMAIN,de.ad.gameley.com,reject
+DOMAIN,s.tuia.cn,reject
+DOMAIN,mpcfg.fancydsp.com,reject
+DOMAIN,api.shanghailingye.cn,reject
+DOMAIN,*.anythinktech.com,reject
+DOMAIN,amdcopen.m.umeng.com,reject
+DOMAIN,audid.umeng.com,reject
+DOMAIN,deeplink.umeng.com,reject
+DOMAIN,*-jor0b302fdhgwnccw8g.com,reject
+DOMAIN,*-jor657bolf.com,reject
+DOMAIN,kssj6668.hytrfjn.com,reject
+DOMAIN,hkg-pre.edge-cluster-hk-pre.com,reject
 DOMAIN,logs1.xnyojd.cn,reject
 DOMAIN,logs.yvgnky.cn,reject
 DOMAIN,022.yp6696.top,reject
@@ -11853,7 +11868,6 @@ DOMAIN,api.aqyad.com,reject
 DOMAIN,api.e.kuaishou.com,reject
 DOMAIN,api.hzsanjiaomao.com,reject
 DOMAIN,api.installer.xiaomi.com,reject
-DOMAIN,api.shanghailingye.cn,reject
 DOMAIN,api.statsig.com,reject
 DOMAIN,api.touch-moblie.com,reject
 DOMAIN,api.yfanads.com,reject
@@ -11867,7 +11881,6 @@ DOMAIN,aqyad.com,reject
 DOMAIN,aspect-upush.umeng.com,reject
 DOMAIN,auction.unityads.unity3d.com,reject
 DOMAIN,audid-api.taobao.com,reject
-DOMAIN,audid.umeng.com,reject
 DOMAIN,badjs.weixinbridge.com,reject
 DOMAIN,bdad.123pan.cn,reject
 DOMAIN,bdapi-ads.realmemobile.com,reject

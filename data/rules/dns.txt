@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影DNS拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-05-17 20:57:34（北京时间）
-! 📊 有效规则：112403 条
+! ⏰ 更新时间：2026-05-18 10:28:24（北京时间）
+! 📊 有效规则：112416 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影DNS拦截规则 📌
-! Description: ⏰ 更新时间 2026-05-17 20:57:34 | ✅ 有效规则 112403 条
+! Description: ⏰ 更新时间 2026-05-18 10:28:24 | ✅ 有效规则 112416 条
 ! ======================================================================
 ||adsoptimal.com^
 ||adversaldisplay.com^
@@ -86,6 +86,21 @@
 ||pglstatp-toutiao.com^
 ||ads3-normal-lq.zijieapi.com^
 ||ads5-normal-lq.zijieapi.com^
+||bid-adx2.vlion.cn^
+||alsc-ug-monitor-callback.alibaba.com^
+||ocpx.ainiankj.com^
+||de.ad.gameley.com^
+||s.tuia.cn^
+||mpcfg.fancydsp.com^
+||api.shanghailingye.cn^
+||*.anythinktech.com^
+||amdcopen.m.umeng.com^
+||audid.umeng.com^
+||deeplink.umeng.com^
+||*-jor0b302fdhgwnccw8g.com^
+||*-jor657bolf.com^
+||kssj6668.hytrfjn.com^
+||hkg-pre.edge-cluster-hk-pre.com^
 ||logs1.xnyojd.cn^
 ||logs.yvgnky.cn^
 ||022.yp6696.top^
@@ -11889,7 +11904,6 @@
 ||api.e.kuaishou.com^
 ||api.hzsanjiaomao.com^
 ||api.installer.xiaomi.com^
-||api.shanghailingye.cn^
 ||api.statsig.com^
 ||api.touch-moblie.com^
 ||api.yfanads.com^
@@ -11903,7 +11917,6 @@
 ||aspect-upush.umeng.com^
 ||auction.unityads.unity3d.com^
 ||audid-api.taobao.com^
-||audid.umeng.com^
 ||badjs.weixinbridge.com^
 ||bdad.123pan.cn^
 ||bdapi-ads.realmemobile.com^
