@@ -1,3 +1,7 @@
 @@||mssdk3-normal-hl.zijieapi.com^$app=com.dragon.read,important
 @@||v3-fq-tts.fqnovelvod.com$important
 @@||v26-fq-tts.fqnovelvod.com$important
+! 腾讯游戏资源更新放行
+@@||download- *.com^
+@@||mdt.qq.com^
+@@||tcdnos.com^
