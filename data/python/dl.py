@@ -51,10 +51,14 @@ if os.path.exists(os.path.join(MOD_DIR, "whitelist.txt")):
 # 广告规则
 # ==============================================
 adblock_rules = [
+    #Hosts：
+    {"url": "https://raw.githubusercontent.com/rentianyu/Ad-set-hosts/master/hosts", "name": "小贝塔-Hosts合并"},
+
+    #AdGurad：
     #{"url": "https://raw.githubusercontent.com/qq5460168/666/master/rules.txt", "name": "个人合并规则"},
     #{"url": "https://oss.xlxbk.cn/dns.txt", "name": "xlxbk DNS黑名单"},
     #{"url": "https://raw.gitcode.com/rssv/qy-Ads-Rule/raw/main/black.txt", "name": "晴雅规则"},
-    #{"url": "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt", "name": "酷安@大萌主"},
+    {"url": "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt", "name": "酷安@大萌主"},
     #{"url": "https://raw.githubusercontent.com/2Gardon/SM-Ad-FuckU-hosts/master/SMAdHosts", "name": "基于安卓APP抓取的规则"},
     {"url": "http://hgzs.uunat.com/hg1.txt", "name": "海哥规则"},
     #{"url": "https://raw.githubusercontent.com/afwfv/DD-AD/main/rule/DD-AD.txt", "name": "dd-ad 规则"},
