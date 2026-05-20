@@ -3,13 +3,45 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-05-20 23:07:22（北京时间）
-! 📊 有效规则：5059 条
+! ⏰ 更新时间：2026-05-20 23:24:35（北京时间）
+! 📊 有效规则：5090 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-05-20 23:07:22 | ✅ 有效规则 5059 条
+! Description: ⏰ 更新时间 2026-05-20 23:24:35 | ✅ 有效规则 5090 条
 ! ======================================================================
+@@gimg*.baidu.com/gimg/app=$domain=kimivod.com
+@@||iqiyi.com/static/js/adfe.5aa3302c.js
+@@||qhres2.com^$domain=www.n.cn
+@@||x2.ifengimg.com^
+@@||lobechat.com/_next/static/chunks/
+@@googlesyndication.com$domain=bilinovel.com
+@@||cqshuda.com/template/conch/asset/js/conch.vip.js
+@@||cloudflare.com/cdn-cgi/trace$domain=net.ljxnet.cn
+@@||ecmb.bdimg.com/*.jpg
+@@||ecmb.bdimg.com/*.png
+@@.cn:8005/$domain=www.ntdm9.com|www.mxdm9.com|mxdm6.com|ntdm6.com
+@@.com/o.js$domain=2biqu.com
+@@||/template/conch/asset/js/hlhtml.js$domain=www.lldm.net|1anime.me
+@@||css.yhdmtu.xyz^$domain=iyinghua.io|yinghua8.tv
+@@||jstatic.3.cn^$domain=m.jd.com
+@@||api.nocturnal-narwhal.buzz^$domain=webtor.io
+@@||manwa.me^
+@@||cdn-msp*.18comic*.*^
+@@||cdn-msp*.18comic.*^
+@@||miaozhen.com^$domain=miaozhen.com
+@@https://static.ws.126.net/163/frontend/libs/antanalysis.min.js
+@@guokr.com/apis/flowingboard/item/guokrapp_download_source.json
+@@||qhres2.com^$domain=baike.so.com
+@@||stripe.com^$domain=pay.openai.com
+@@||aliyuncs.com/*.png
+@@||f*.baidu.com/it/u=*,*&fm=$domain=baidu.com
+@@||guokr.com/apis/flowingboard/item/m_article
+@@||guokr.com/apis/flowingboard/item/m_home_
+@@||sobot.com^
+@@||wan.douyu.com^
+@@||developer.apple.com$generichide
+! 📋 白名单来源：番茄去广告规则 [番茄炒蛋规则]（规则内置）
 @@||reading.snssdk.com^$important,app=com.dragon.read
 @@||lf-fe.fqnovelstatic.com^$important,app=com.dragon.read
 @@||lf-normal-gr-sourcecdn.bytegecko.com^$important,app=com.dragon.read
@@ -23,14 +55,11 @@
 @@||p9-novel1-sign.byteimg.com^$app=com.dragon.read,important
 @@||p*-novel-sign.byteimg.com/novel-pic/$important,app=com.dragon.read
 ! 📋 白名单来源：乘风视频规则 [乘风 视频过滤规则 uBlock Origin 1.56]（规则内置）
-! 📝 规则说明：广告拦截规则
-! 🔗 原始地址：https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt
 @@||log.mmstat.com/eg.js^$script
 @@||union.video.qq.com/fcgi-bin/$script,domain=qq.com
 @@||tb.mgtv.com/sdk/*/ad-sdk.js^$script
 @@||js.tv.itc.cn/gg.seed.js
 ! 📋 白名单来源：乘风通用规则 [乘风 广告过滤规则]（规则内置）
-! 🔗 原始地址：https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt
 @@||bdstatic.com/static/common/widget/ui/admanager/$script,domain=image.baidu.com
 @@||tb1.bdstatic.com/??/tb/_/*/ad_$script
 @@||xxxy.jnu.edu.cn/_upload/tpl/08/ad/2221/template2221/$script
@@ -58,7 +87,6 @@
 @@||learn.microsoft.com/video/media/*_960.jpg|$image,domain=learn.microsoft.com
 @@||acs.m.taobao.com
 ! 📋 白名单来源：anti-ad 官方规则（规则内置）
-! 🔗 原始地址：https://anti-ad.net/easylist.txt
 @@||ad.azure.com^
 @@||ad.ext.azure.com^
 @@||ads.taboola.com^
@@ -165,16 +193,14 @@
 @@||tongji.*kuwo.cn^
 @@||log.mmstat.com^
 @@||ad-gone.com^
-! 📋 白名单来源：本地白名单（独立白名单）
-! 🔗 原始地址：本地文件
+! 📋 白名单来源：本地白名单（远程白名单）
 @@||mssdk3-normal-hl.zijieapi.com^$app=com.dragon.read,important
 @@||v3-fq-tts.fqnovelvod.com$important
 @@||v26-fq-tts.fqnovelvod.com$important
 @@||download- *.com^
 @@||mdt.qq.com^
 @@||tcdnos.com^
-! 📋 白名单来源：当初白名单 [广告白名单规则，反馈🐧群]（独立白名单）
-! 🔗 原始地址：https://raw.githubusercontent.com/qq5460168/dangchu/main/white.txt
+! 📋 白名单来源：当初白名单 [广告白名单规则，反馈🐧群]（远程白名单）
 @@||redditmedia.com^
 @@||juejin.cn^
 @@||www.juejin.cn^
@@ -2160,8 +2186,7 @@
 @@||c.fa.jd.com^
 @@||1music.cc^$important
 @@||backend.1music.cc^$important
-! 📋 白名单来源：李文杰白名单 [LWJ's white list]（独立白名单）
-! 🔗 原始地址：https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt
+! 📋 白名单来源：李文杰白名单 [LWJ's white list]（远程白名单）
 @@goo.gl
 @@bit.ly
 @@sh.st
@@ -2476,8 +2501,7 @@
 @@||mssdk.volces.com^$important
 @@||mon.zijieapi.com^$important
 @@||openmonitor.alipay-eco.com^$important
-! 📋 白名单来源：AdGuard 中文白名单（独立白名单）
-! 🔗 原始地址：https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/allowlist.txt
+! 📋 白名单来源：AdGuard 中文白名单（远程白名单）
 @@||staticsns.cdn.bcebos.com/amis/$image,domain=pan.baidu.com
 @@||p3-tt.byteimg.com/obj/$domain=agedm.io
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=zhongguose.com
@@ -2547,8 +2571,7 @@
 @@||dayanzai.me/image/ad/$image
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=gamer.com.tw
 @@||wkstatic.bdimg.com/static/wkcore/widget/commerce/fengchao/*$domain=wenku.baidu.com
-! 📋 白名单来源：AdGuard 跟踪白名单（独立白名单）
-! 🔗 原始地址：https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/allowlist.txt
+! 📋 白名单来源：AdGuard 跟踪白名单（远程白名单）
 @@||st-*.dynamicyield.com/st*&inHead=true&id=*&jsession=*scriptVersion=*&noConsent=
 @@||assets.adobedtm.com^$domain=realtor.com
 @@||ssl.kaptcha.com/collect/$domain=app.airtm.com
@@ -5086,3 +5109,5 @@
 @@||yandex.ru/webvisor/$xmlhttprequest,domain=anoncer.net
 @@||blocket.se^*/xtcore.js
 @@||reseguiden.se^*.siteCatalyst.js
+! 📋 白名单来源：本地自定义规则（data/mod/whitelist.txt）
+! ⚠️ 优先级：最高
