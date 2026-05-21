@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-05-21 10:15:29（北京时间）
-! 📊 有效规则：330574 条
+! ⏰ 更新时间：2026-05-21 22:42:47（北京时间）
+! 📊 有效规则：330589 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-05-21 10:15:29 | ✅ 有效规则 330574 条
+! Description: ⏰ 更新时间 2026-05-21 22:42:47 | ✅ 有效规则 330589 条
 ! ======================================================================
 ||v3-novelapp.fqnovelvod.com^$app=com.dragon.read
 ||116.169.11.31:443^$app=com.dragon.read
@@ -213909,6 +213909,9 @@ ff02::3 ip6-allhosts
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt
 ! ==============================================
+||malluktig.in^
+||mavrtracktor.com^
+||renamereptiliantrance.com^
 ||tcmxmlu.com^
 ||okeeblr.com^
 ||qnywjs.buzz^
@@ -218737,6 +218740,7 @@ dingbu.*.*.*/*.add$third-party
 /show_ads_
 .cn/ack?s=*$third-party
 /js/pingbi.js
+||ininav.com/sites/default/files/js/js
 /css/ad.
 /*.css?*r=0$third-party
 /statics/govv.js$~third-party
@@ -219142,6 +219146,19 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：http://hgzs.uunat.com/hg1.txt
 ! ==============================================
+||3oik18.514mep.cnt-rambogame-app.com^
+||tencent-ssp.66mobi.com^
+||cpc-service-square.iggrowth.cn^
+||jxedtpartner.ksedt.com^
+||richmanrank.ksedt.com^
+||www.0tx4yr.vip^
+||hw.flv.wxqcloud.qq.com^
+||voipfinderliveplaythirdtest.wxqcloud.qq.com^
+||voipfinderrdsliveplay1.wxqcloud.qq.com^
+||hscdn.flv.wxqcloud.qq.com^
+||voipfinderrdsliveplay3.wxqcloud.qq.com^
+||pull-m1.wxlivecdn.com^
+||voipfinderrdsliveplay.wxqcloud.qq.com^
 ||bid-adx2.vlion.cn^
 ||alsc-ug-monitor-callback.alibaba.com^
 ||ocpx.ainiankj.com^
@@ -285022,7 +285039,6 @@ www.zhzzx.com
 ||tr.info.mavoiturecash.fr^
 ||mavq.net^
 ||mavrrtcahjidqr.com^
-||mavrtracktor.com^
 ||mavxkcvueybiu.site^
 ||mawlaybob.com^
 ||ablink.alerts.max.com^
@@ -302163,7 +302179,6 @@ www.zhzzx.com
 ||information.remploy.co.uk^
 ||log.ren.tv^
 ||track.info.renalandurologynews.com^
-||renamereptiliantrance.com^
 ||utiq.renault.fr^
 ||rencessedessations.com^
 ||rench-stage.pro^

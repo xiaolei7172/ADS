@@ -72,6 +72,9 @@ DOMAIN,gdt.qq.com,reject
 DOMAIN,pglstatp-toutiao.com,reject
 DOMAIN,ads3-normal-lq.zijieapi.com,reject
 DOMAIN,ads5-normal-lq.zijieapi.com,reject
+DOMAIN,malluktig.in,reject
+DOMAIN,mavrtracktor.com,reject
+DOMAIN,renamereptiliantrance.com,reject
 DOMAIN,tcmxmlu.com,reject
 DOMAIN,okeeblr.com,reject
 DOMAIN,qnywjs.buzz,reject
@@ -4521,6 +4524,19 @@ DOMAIN,b-gtc.getui.net,reject
 DOMAIN,gepush.com,reject
 DOMAIN,igexin.com,reject
 DOMAIN,stat.meitudata.com,reject
+DOMAIN,3oik18.514mep.cnt-rambogame-app.com,reject
+DOMAIN,tencent-ssp.66mobi.com,reject
+DOMAIN,cpc-service-square.iggrowth.cn,reject
+DOMAIN,jxedtpartner.ksedt.com,reject
+DOMAIN,richmanrank.ksedt.com,reject
+DOMAIN,www.0tx4yr.vip,reject
+DOMAIN,hw.flv.wxqcloud.qq.com,reject
+DOMAIN,voipfinderliveplaythirdtest.wxqcloud.qq.com,reject
+DOMAIN,voipfinderrdsliveplay1.wxqcloud.qq.com,reject
+DOMAIN,hscdn.flv.wxqcloud.qq.com,reject
+DOMAIN,voipfinderrdsliveplay3.wxqcloud.qq.com,reject
+DOMAIN,pull-m1.wxlivecdn.com,reject
+DOMAIN,voipfinderrdsliveplay.wxqcloud.qq.com,reject
 DOMAIN,bid-adx2.vlion.cn,reject
 DOMAIN,alsc-ug-monitor-callback.alibaba.com,reject
 DOMAIN,ocpx.ainiankj.com,reject
@@ -68910,7 +68926,6 @@ DOMAIN,ressources.mavoiturecash.fr,reject
 DOMAIN,tr.info.mavoiturecash.fr,reject
 DOMAIN,mavq.net,reject
 DOMAIN,mavrrtcahjidqr.com,reject
-DOMAIN,mavrtracktor.com,reject
 DOMAIN,mavxkcvueybiu.site,reject
 DOMAIN,mawlaybob.com,reject
 DOMAIN,ablink.alerts.max.com,reject
@@ -86050,7 +86065,6 @@ DOMAIN,removedrehabilitation.com,reject
 DOMAIN,information.remploy.co.uk,reject
 DOMAIN,log.ren.tv,reject
 DOMAIN,track.info.renalandurologynews.com,reject
-DOMAIN,renamereptiliantrance.com,reject
 DOMAIN,utiq.renault.fr,reject
 DOMAIN,rencessedessations.com,reject
 DOMAIN,rench-stage.pro,reject
