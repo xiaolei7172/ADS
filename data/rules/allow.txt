@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-05-25 10:32:57（北京时间）
-! 📊 有效规则：5093 条
+! ⏰ 更新时间：2026-05-25 22:35:16（北京时间）
+! 📊 有效规则：5099 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-05-25 10:32:57 | ✅ 有效规则 5093 条
+! Description: ⏰ 更新时间 2026-05-25 22:35:16 | ✅ 有效规则 5099 条
 ! ======================================================================
 @@gimg*.baidu.com/gimg/app=$domain=kimivod.com
 @@||iqiyi.com/static/js/adfe.5aa3302c.js
@@ -2575,6 +2575,12 @@
 @@||wkstatic.bdimg.com/static/wkcore/widget/commerce/fengchao/*$domain=wenku.baidu.com
 ! 📋 白名单来源：AdGuard 跟踪白名单（远程白名单）
 @@||st-*.dynamicyield.com/st*&inHead=true&id=*&jsession=*scriptVersion=*&noConsent=
+@@||ad.doubleclick.net/favicon.ico?$domain=footballtransfers.com
+@@||browser.covatic.io/profiles/www.footballtransfers.com.json$domain=footballtransfers.com
+@@||browser.covatic.io/sdk/*/latest.js$domain=footballtransfers.com
+@@||uk-script.dotmetrics.net/Scripts/DotmetricsVideoTracking.js$domain=footballtransfers.com
+@@||uk-script.dotmetrics.net/VideoPlugin$domain=footballtransfers.com
+@@||rm-script.dotmetrics.net/videopluginhit.gif?$domain=footballtransfers.com
 @@||cdn.cxense.com/cx.js$domain=gizmodo.jp
 @@||assets.adobedtm.com^$domain=realtor.com
 @@||ssl.kaptcha.com/collect/$domain=app.airtm.com
