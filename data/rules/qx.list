@@ -4621,6 +4621,7 @@ DOMAIN,adsfile.qq.com,reject
 DOMAIN,adsfilebssdlbig.ali.kugou.com,reject
 DOMAIN,adsfileretry.service.kugou.com,reject
 DOMAIN,adsfs-sdkconfig.heytapimage.com,reject
+DOMAIN,adsfs.heytapimage.com,reject
 DOMAIN,adslvfile.qq.com,reject
 DOMAIN,adsmart.konka.com,reject
 DOMAIN,adsp.xunlei.com,reject
@@ -4765,7 +4766,6 @@ DOMAIN,domain.aishengji.com,reject
 DOMAIN,doubleclick-cn.net,reject
 DOMAIN,download.changhong.upgrade2.huan.tv,reject
 DOMAIN,downloadxml.changhong.upgrade2.huan.tv,reject
-DOMAIN,drcn-weather.cloud.huawei.com,reject
 DOMAIN,dsp-x.jd.com,reject
 DOMAIN,dualstack-logs.amap.com,reject
 DOMAIN,dyp2p-ali.douyucdn.cn,reject
@@ -45214,6 +45214,7 @@ DOMAIN,huaqikonggu.com.cn,reject
 DOMAIN,huaqiss.cn,reject
 DOMAIN,huashiaspire.com,reject
 DOMAIN,huatakj.com,reject
+DOMAIN,drcn-weather.cloud.huawei.com,reject
 DOMAIN,mldy.huaxiays.cn,reject
 DOMAIN,kdl.huaxinsp.cn,reject
 DOMAIN,s.huayi65.com,reject

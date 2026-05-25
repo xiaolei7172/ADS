@@ -4626,6 +4626,7 @@ adsfile.qq.com
 adsfilebssdlbig.ali.kugou.com
 adsfileretry.service.kugou.com
 adsfs-sdkconfig.heytapimage.com
+adsfs.heytapimage.com
 adslvfile.qq.com
 adsmart.konka.com
 adsp.xunlei.com
@@ -4770,7 +4771,6 @@ domain.aishengji.com
 doubleclick-cn.net
 download.changhong.upgrade2.huan.tv
 downloadxml.changhong.upgrade2.huan.tv
-drcn-weather.cloud.huawei.com
 dsp-x.jd.com
 dualstack-logs.amap.com
 dyp2p-ali.douyucdn.cn
@@ -45221,6 +45221,7 @@ huaqikonggu.com.cn
 huaqiss.cn
 huashiaspire.com
 huatakj.com
+drcn-weather.cloud.huawei.com
 mldy.huaxiays.cn
 kdl.huaxinsp.cn
 s.huayi65.com
