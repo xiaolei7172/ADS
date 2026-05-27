@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影DNS拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-05-26 22:44:09（北京时间）
-! 📊 有效规则：103896 条
+! ⏰ 更新时间：2026-05-27 10:32:28（北京时间）
+! 📊 有效规则：103898 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影DNS拦截规则 📌
-! Description: ⏰ 更新时间 2026-05-26 22:44:09 | ✅ 有效规则 103896 条
+! Description: ⏰ 更新时间 2026-05-27 10:32:28 | ✅ 有效规则 103898 条
 ! ======================================================================
 ||adsoptimal.com^
 ||adversaldisplay.com^
@@ -35449,6 +35449,7 @@
 ||f30fpad7.xyz^
 ||f34aabcc0e.com^
 ||f351966262.com^
+||f3531.top^
 ||f3k194f9i7.com^
 ||f418509b38.com^
 ||f435ee855c.com^
@@ -66293,7 +66294,6 @@
 ||onlineragged.com^
 ||a8.erasutamo.onlinestaff.jp^
 ||a8.wifi.erasutamo.onlinestaff.jp^
-||onlinestarten.net^
 ||onlinesucces.nl^
 ||info.onlinetech.com^
 ||travel.onlinevacationcenter.com^
@@ -81219,6 +81219,8 @@
 ||toutiao-frontier.snssdk.com^
 ||xlog.snssdk.com^
 ||gecko.snssdk.com^
+||applog.snssdk.com^
+||os-mon.snssdk.com^
 ||snsv.ru^
 ||snta0034.com^
 ||sntjim.com^

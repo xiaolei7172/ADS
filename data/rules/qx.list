@@ -35435,6 +35435,7 @@ DOMAIN,f308e80f54.com,reject
 DOMAIN,f30fpad7.xyz,reject
 DOMAIN,f34aabcc0e.com,reject
 DOMAIN,f351966262.com,reject
+DOMAIN,f3531.top,reject
 DOMAIN,f3k194f9i7.com,reject
 DOMAIN,f418509b38.com,reject
 DOMAIN,f435ee855c.com,reject
@@ -66261,7 +66262,6 @@ DOMAIN,onlinepromousa.com,reject
 DOMAIN,onlineragged.com,reject
 DOMAIN,a8.erasutamo.onlinestaff.jp,reject
 DOMAIN,a8.wifi.erasutamo.onlinestaff.jp,reject
-DOMAIN,onlinestarten.net,reject
 DOMAIN,onlinesucces.nl,reject
 DOMAIN,info.onlinetech.com,reject
 DOMAIN,travel.onlinevacationcenter.com,reject
@@ -81187,6 +81187,8 @@ DOMAIN,temai.snssdk.com,reject
 DOMAIN,toutiao-frontier.snssdk.com,reject
 DOMAIN,xlog.snssdk.com,reject
 DOMAIN,gecko.snssdk.com,reject
+DOMAIN,applog.snssdk.com,reject
+DOMAIN,os-mon.snssdk.com,reject
 DOMAIN,snsv.ru,reject
 DOMAIN,snta0034.com,reject
 DOMAIN,sntjim.com,reject
