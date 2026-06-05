@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-06-04 22:36:13（北京时间）
-! 📊 有效规则：5106 条
+! ⏰ 更新时间：2026-06-05 10:31:23（北京时间）
+! 📊 有效规则：5109 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-06-04 22:36:13 | ✅ 有效规则 5106 条
+! Description: ⏰ 更新时间 2026-06-05 10:31:23 | ✅ 有效规则 5109 条
 ! ======================================================================
 @@gimg*.baidu.com/gimg/app=$domain=kimivod.com
 @@||iqiyi.com/static/js/adfe.5aa3302c.js
@@ -179,6 +179,7 @@
 @@||ads.listonic.com^
 @@||ads.microsoft.com^
 @@||ads.midwayusa.com^
+@@||ads.openai.com^
 @@||ads.pinterest.com^
 @@||ads.snapchat.com^
 @@||ads.spotify.com^
@@ -2576,6 +2577,8 @@
 @@||wkstatic.bdimg.com/static/wkcore/widget/commerce/fengchao/*$domain=wenku.baidu.com
 ! 📋 白名单来源：AdGuard 跟踪白名单（远程白名单）
 @@||st-*.dynamicyield.com/st*&inHead=true&id=*&jsession=*scriptVersion=*&noConsent=
+@@||mpsnare.iesnare.com/snare.js$domain=aswbe.ana.co.jp
+@@||mpsnare.iesnare.com/script/logo.js$domain=aswbe.ana.co.jp
 @@||cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/AnalyticsProvider*.js$domain=shop.app
 @@||cdn.petametrics.com/*.js$domain=thestreet.com
 @@||cnstrc.com/js/cust/indigo_pAkokG.js$domain=indigo.ca
