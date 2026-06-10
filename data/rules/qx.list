@@ -72,6 +72,7 @@ DOMAIN,gdt.qq.com,reject
 DOMAIN,pglstatp-toutiao.com,reject
 DOMAIN,ads3-normal-lq.zijieapi.com,reject
 DOMAIN,ads5-normal-lq.zijieapi.com,reject
+DOMAIN,cmos3.org,reject
 DOMAIN,ttkxny.com,reject
 DOMAIN,vdo3c.org,reject
 DOMAIN,qihang168.top,reject
