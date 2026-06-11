@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-06-11 10:41:45（北京时间）
-! 📊 有效规则：5112 条
+! ⏰ 更新时间：2026-06-11 23:36:00（北京时间）
+! 📊 有效规则：5111 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-06-11 10:41:45 | ✅ 有效规则 5112 条
+! Description: ⏰ 更新时间 2026-06-11 23:36:00 | ✅ 有效规则 5111 条
 ! ======================================================================
 @@gimg*.baidu.com/gimg/app=$domain=kimivod.com
 @@||iqiyi.com/static/js/adfe.5aa3302c.js
@@ -3227,7 +3227,6 @@
 @@||googletagmanager.com/gtm.js$domain=nrj-play.fr
 @@||sheinsz.ltwebstatic.com/*/libs/devices/fpv*.js$domain=shein.com
 @@||tt.omtrdc.net/rest/$xmlhttprequest,domain=shop.shoppersdrugmart.ca
-@@||googletagmanager.com/gtm.js$domain=tribuna.com
 @@||ws.mmstat.com/ws$domain=v.youku.tv
 @@||tracking.immobilienscout24.de/tr.js?customCounterName=is24.de.meinkonto.merkzettel.myscout
 @@||dcf.espn.com/TWDC-DTCI/prod/Bootstrap.js$domain=disney.*
