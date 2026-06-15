@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-06-15 10:46:12（北京时间）
-! 📊 有效规则：5117 条
+! ⏰ 更新时间：2026-06-16 00:58:27（北京时间）
+! 📊 有效规则：5120 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-06-15 10:46:12 | ✅ 有效规则 5117 条
+! Description: ⏰ 更新时间 2026-06-16 00:58:27 | ✅ 有效规则 5120 条
 ! ======================================================================
 @@gimg*.baidu.com/gimg/app=$domain=kimivod.com
 @@||iqiyi.com/static/js/adfe.5aa3302c.js
@@ -202,7 +202,7 @@
 @@||mdt.qq.com^
 @@||tcdnos.com^
 ! 📋 白名单来源：当初白名单 [广告白名单规则，反馈🐧群]（远程白名单）
-@@||na61-na62.wagbridge.advertisement.tanx.com^
+@@||alb-jjexm35p5nv4ven8gt.cn-shenzhen.alb.aliyuncsslb.com^
 @@||appcfg.v.qq.com^$important
 @@||m-api.uc.cn^
 @@||tongzhi.cup.com.cn^
@@ -901,6 +901,7 @@
 @@||bkimg.cdn.bcebos.com^
 @@||med-fe.cdn.bcebos.com^
 @@||static.tieba.baidu.com^
+@@||tieba-ares.cdn.bcebos.com^
 @@||imgsrc.baidu.com^
 @@||tb.himg.baidu.com^
 @@||staticsns.cdn.bcebos.com^
@@ -2193,6 +2194,7 @@
 @@||valuecommerce.com^
 @@||dwz.cn^
 @@||c.fa.jd.com^
+@@||na61-na62.wagbridge.advertisement.tanx.com^
 ! 📋 白名单来源：李文杰白名单 [LWJ's white list]（远程白名单）
 @@goo.gl
 @@bit.ly
@@ -2580,6 +2582,7 @@
 @@||wkstatic.bdimg.com/static/wkcore/widget/commerce/fengchao/*$domain=wenku.baidu.com
 ! 📋 白名单来源：AdGuard 跟踪白名单（远程白名单）
 @@||st-*.dynamicyield.com/st*&inHead=true&id=*&jsession=*scriptVersion=*&noConsent=
+@@||cdn.optimizely.com/datafiles/*.json$domain=bbc.com
 @@||app.lyrebirdhealth.com/_app/immutable/chunks/google-analytics*.js$domain=app.lyrebirdhealth.com
 @@||feliz-web.data.tm-awx.com/smile-web.min.js$domain=ok.co.uk
 @@||feliz.data.tm-awx.com/smile-web-v*/$domain=ok.co.uk
