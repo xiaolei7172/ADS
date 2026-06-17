@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-06-17 00:24:40（北京时间）
-! 📊 有效规则：5120 条
+! ⏰ 更新时间：2026-06-17 10:45:05（北京时间）
+! 📊 有效规则：5132 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-06-17 00:24:40 | ✅ 有效规则 5120 条
+! Description: ⏰ 更新时间 2026-06-17 10:45:05 | ✅ 有效规则 5132 条
 ! ======================================================================
 @@gimg*.baidu.com/gimg/app=$domain=kimivod.com
 @@||iqiyi.com/static/js/adfe.5aa3302c.js
@@ -603,6 +603,18 @@
 @@||m.dianping.com^
 @@||osp.meituan.net^
 @@||s0.meituan.net^
+@@||onelap.cn^
+@@||u.onelap.cn^
+@@||onelap.com^
+@@||wattp.net^
+@@||api.onelap.cn^
+@@||static.onelap.cn^
+@@||img.onelap.cn^
+@@||cdn.onelap.cn^
+@@||race.onelap.cn^
+@@||data.onelap.cn^
+@@||magene.cn^
+@@||api.magene.cn^
 @@||login.xunlei.com^
 @@||my.xunlei.com^
 @@||user.xunlei.com^
