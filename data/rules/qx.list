@@ -4473,7 +4473,6 @@ DOMAIN,c.l.qq.com,reject
 DOMAIN,sealine.youku.com,reject
 DOMAIN,iyes.youku.com,reject
 DOMAIN,nbsdk-baichuan.alicdn.com,reject
-DOMAIN,dorangesource.alicdn.com,reject
 DOMAIN,orange-dc.youku.com,reject
 DOMAIN,umdc.aliapp.org,reject
 DOMAIN,abtest.alibaba.com,reject

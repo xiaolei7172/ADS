@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-06-18 10:41:53（北京时间）
-! 📊 有效规则：5132 条
+! ⏰ 更新时间：2026-06-18 22:49:59（北京时间）
+! 📊 有效规则：5136 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-06-18 10:41:53 | ✅ 有效规则 5132 条
+! Description: ⏰ 更新时间 2026-06-18 22:49:59 | ✅ 有效规则 5136 条
 ! ======================================================================
 @@gimg*.baidu.com/gimg/app=$domain=kimivod.com
 @@||iqiyi.com/static/js/adfe.5aa3302c.js
@@ -203,11 +203,10 @@
 @@||tcdnos.com^
 ! 📋 白名单来源：当初白名单 [广告白名单规则，反馈🐧群]（远程白名单）
 @@||alb-jjexm35p5nv4ven8gt.cn-shenzhen.alb.aliyuncsslb.com^
-@@||appcfg.v.qq.com^$important
+@@||appcfg.v.qq.com^
 @@||m-api.uc.cn^
 @@||tongzhi.cup.com.cn^
 @@||vdn5.vzuu.com^
-@@||kunlunpi.com^
 @@||redditmedia.com^
 @@||juejin.cn^
 @@||www.juejin.cn^
@@ -237,7 +236,7 @@
 @@||free-aos-cdn-image.amap.com^
 @@||store.is.autonavi.com^
 @@||anythinktech.com^
-@@||h35.ynodd.cn^$
+@@||h35.ynodd.cn^
 @@||api.crashguard.me^
 @@||pzdown.laomaotao.com^
 @@||api.weathercn.com^
@@ -506,6 +505,8 @@
 @@||brand.heytap.com^
 @@||storedl1.nearme.com.cn^
 @@||api-cn.cdo.heytapmobi.com^
+@@||obus-dc20058-cn.heytapmobi.com^
+@@||*.heytapdownload.com^
 @@||m.zhibo8.com^
 @@||common.jbzj.com^
 @@||bucket-ynote-online-cdn.note.youdao.com^
@@ -630,7 +631,7 @@
 @@||kankan.xunlei.com^
 @@||video.xunlei.com^
 @@||v.xunlei.com^
-@@|admin-oss-xlvip.a.88cdn.com^
+@@||admin-oss-xlvip.a.88cdn.com^
 @@||res.qhmsg.com^
 @@||img-vip-ssl.a.88cdn.com^
 @@||xfile2.a.88cdn.com^
@@ -812,6 +813,7 @@
 @@||oppo.yidianzixun.com^
 @@||ib11.go2yd.com^
 @@||u.oppomobile.com^
+@@||conn1.oppomobile.com^
 @@||appconf.heytapdownload.com^
 @@||msec.opposhop.cn^
 @@||obus-cn.dc.heytapmobi.com^
@@ -989,7 +991,7 @@
 @@||wx.tenpay.com^
 @@||wxpay.qpic.cn^
 @@||gtimg.wechatpay.cn^
-@@|wxpaylogo.qpic.cn^
+@@||wxpaylogo.qpic.cn^
 @@||payapp.weixin.qq.com^
 @@||cnlogin.cainiao.com^
 @@||17u.cn^
@@ -1384,6 +1386,8 @@
 @@||h5.m.taobao.com^
 @@||ip.taobao.com^
 @@||img.alicdn.com^
+@@||kunlunpi.com^
+@@||dorangesource.alicdn.com^
 @@||lf3-cdn-tos.bytescm.com^
 @@||lf3-short.bytegoofy.com^
 @@||lf3-static.bytednsdoc.com^
@@ -1413,7 +1417,7 @@
 @@||p3-reading-sign.fqnovelpic.com^
 @@||p6-reading-sign.fqnovelpic.com^
 @@||p9-reading-sign.fqnovelpic.com^
-@@||*-misc-lf.fqnovel.com^$important
+@@||*-misc-lf.fqnovel.com^
 @@||*-novelapp.fqnovelvod.com^
 @@||fanqienovel.com^
 @@||p1-dcd.byteimg.com^
