@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-06-20 21:28:14（北京时间）
-! 📊 有效规则：314360 条
+! ⏰ 更新时间：2026-06-21 10:45:31（北京时间）
+! 📊 有效规则：314361 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-06-20 21:28:14 | ✅ 有效规则 314360 条
+! Description: ⏰ 更新时间 2026-06-21 10:45:31 | ✅ 有效规则 314361 条
 ! ======================================================================
 ||v3-novelapp.fqnovelvod.com^$app=com.dragon.read
 ||116.169.11.31:443^$app=com.dragon.read
@@ -211306,6 +211306,9 @@ ff02::3 ip6-allhosts
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt
 ! ==============================================
+||rzuagqomzl.in^
+||campfirecroutondecorator.com^
+||chnsrv.com^
 ||3ie0h3b.com^
 ||cmos3.org^
 ||ttkxny.com^
@@ -233993,7 +233996,6 @@ www.zhzzx.com
 ||prkvlr.camper.com^
 ||links.campermate.com^
 ||visit.campermate.com^
-||campfirecroutondecorator.com^
 ||ea.camping-and-co.com^
 ||tr.info.camping-vagues-oceanes.com^
 ||camplacecash.com^
@@ -235680,7 +235682,6 @@ www.zhzzx.com
 ||mvo.chng5.xyz^
 ||chnkgnctdimfu.space^
 ||chnonywbtn.com^
-||chnsrv.com^
 ||abkobh.chobirich.com^
 ||cnebis.chocola.com^
 ||chocolateluciusfight.com^

@@ -72,6 +72,9 @@ DOMAIN,gdt.qq.com,reject
 DOMAIN,pglstatp-toutiao.com,reject
 DOMAIN,ads3-normal-lq.zijieapi.com,reject
 DOMAIN,ads5-normal-lq.zijieapi.com,reject
+DOMAIN,rzuagqomzl.in,reject
+DOMAIN,campfirecroutondecorator.com,reject
+DOMAIN,chnsrv.com,reject
 DOMAIN,3ie0h3b.com,reject
 DOMAIN,cmos3.org,reject
 DOMAIN,ttkxny.com,reject
@@ -20602,7 +20605,6 @@ DOMAIN,app.campbowwow.com,reject
 DOMAIN,prkvlr.camper.com,reject
 DOMAIN,links.campermate.com,reject
 DOMAIN,visit.campermate.com,reject
-DOMAIN,campfirecroutondecorator.com,reject
 DOMAIN,ea.camping-and-co.com,reject
 DOMAIN,tr.info.camping-vagues-oceanes.com,reject
 DOMAIN,camplacecash.com,reject
@@ -22289,7 +22291,6 @@ DOMAIN,eco.chng5.xyz,reject
 DOMAIN,mvo.chng5.xyz,reject
 DOMAIN,chnkgnctdimfu.space,reject
 DOMAIN,chnonywbtn.com,reject
-DOMAIN,chnsrv.com,reject
 DOMAIN,abkobh.chobirich.com,reject
 DOMAIN,cnebis.chocola.com,reject
 DOMAIN,chocolateluciusfight.com,reject
