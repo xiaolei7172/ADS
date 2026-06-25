@@ -72,6 +72,9 @@ DOMAIN,gdt.qq.com,reject
 DOMAIN,pglstatp-toutiao.com,reject
 DOMAIN,ads3-normal-lq.zijieapi.com,reject
 DOMAIN,ads5-normal-lq.zijieapi.com,reject
+DOMAIN,musclesaskewfeeding.com,reject
+DOMAIN,kettledroopingcontinuation.com,reject
+DOMAIN,spendsdetachment.com,reject
 DOMAIN,rzuagqomzl.in,reject
 DOMAIN,campfirecroutondecorator.com,reject
 DOMAIN,chnsrv.com,reject
@@ -51460,7 +51463,6 @@ DOMAIN,ketoopsaique.net,reject
 DOMAIN,campaign-direct.ketsuatsu-taisaku.xyz,reject
 DOMAIN,kettakihome.com,reject
 DOMAIN,stats.kettlebellbundle.com,reject
-DOMAIN,kettledroopingcontinuation.com,reject
 DOMAIN,zvvsvr.kettner-edelmetalle.de,reject
 DOMAIN,afhleads.keurig.ca,reject
 DOMAIN,business.keurig.com,reject
@@ -60571,7 +60573,6 @@ DOMAIN,connect.care.muschealth.org,reject
 DOMAIN,tracking.care.muschealth.org,reject
 DOMAIN,hcjpbc.muscleandfitness.com,reject
 DOMAIN,adebis.muscledeli.jp,reject
-DOMAIN,musclesaskewfeeding.com,reject
 DOMAIN,tr.observatoire.musee-orangerie.fr,reject
 DOMAIN,tr.observatoire.musee-orsay.fr,reject
 DOMAIN,lxztgb.musee-pla.com,reject
@@ -80886,7 +80887,6 @@ DOMAIN,tracking.speltips.se,reject
 DOMAIN,umami.spencerdevs.xyz,reject
 DOMAIN,info.spencerfane.com,reject
 DOMAIN,spencertorreya.com,reject
-DOMAIN,spendsdetachment.com,reject
 DOMAIN,get.spenn.com,reject
 DOMAIN,test.spenn.com,reject
 DOMAIN,spentgeographical.com,reject
