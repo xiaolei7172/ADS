@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-07-10 22:00:28（北京时间）
-! 📊 有效规则：5143 条
+! ⏰ 更新时间：2026-07-11 09:45:57（北京时间）
+! 📊 有效规则：5155 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-07-10 22:00:28 | ✅ 有效规则 5143 条
+! Description: ⏰ 更新时间 2026-07-11 09:45:57 | ✅ 有效规则 5155 条
 ! ======================================================================
 @@gimg*.baidu.com/gimg/app=$domain=kimivod.com
 @@||iqiyi.com/static/js/adfe.5aa3302c.js
@@ -41,6 +41,19 @@
 @@||sobot.com^
 @@||wan.douyu.com^
 @@||developer.apple.com$generichide
+! 📋 白名单来源：番茄去广告规则 [番茄炒蛋规则]（规则内置）
+@@||reading.snssdk.com^$important,app=com.dragon.read
+@@||lf-fe.fqnovelstatic.com^$important,app=com.dragon.read
+@@||lf-normal-gr-sourcecdn.bytegecko.com^$important,app=com.dragon.read
+@@||api*-sinfnormal.fqnovel.com^$important,app=com.dragon.read
+@@||api5-normal-sinfonlinec.fqnovel.com/reading/bookapi/$important,app=com.dragon.read
+@@||api*-normal-sinfonline*.fqnovel.com/reading/bookapi/$important,app=com.dragon.read
+@@||security.snssdk.com^$important,app=com.dragon.read
+@@||lf-sourcecdn-tos.bytegecko.com^$important,app=com.dragon.read
+@@||p3-novel1-sign.byteimg.com^$app=com.dragon.read,important
+@@||p6-novel1-sign.byteimg.com^$app=com.dragon.read,important
+@@||p9-novel1-sign.byteimg.com^$app=com.dragon.read,important
+@@||p*-novel-sign.byteimg.com/novel-pic/$important,app=com.dragon.read
 ! 📋 白名单来源：乘风视频规则 [乘风 视频过滤规则 uBlock Origin 1.56]（规则内置）
 @@||log.mmstat.com/eg.js^$script
 @@||union.video.qq.com/fcgi-bin/$script,domain=qq.com
