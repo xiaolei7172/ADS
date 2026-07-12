@@ -72,6 +72,9 @@ DOMAIN,gdt.qq.com,reject
 DOMAIN,pglstatp-toutiao.com,reject
 DOMAIN,ads3-normal-lq.zijieapi.com,reject
 DOMAIN,ads5-normal-lq.zijieapi.com,reject
+DOMAIN,aizhantj.com,reject
+DOMAIN,lxrjekw.com,reject
+DOMAIN,131r3lknzg.com,reject
 DOMAIN,musclesaskewfeeding.com,reject
 DOMAIN,kettledroopingcontinuation.com,reject
 DOMAIN,spendsdetachment.com,reject
@@ -182,7 +185,6 @@ DOMAIN,990215.xyz,reject
 DOMAIN,epxlt.xyz,reject
 DOMAIN,jsdelivr.vip,reject
 DOMAIN,chenhao97.top,reject
-DOMAIN,aizhantj.com,reject
 DOMAIN,usrzh.cn,reject
 DOMAIN,bjfsk.xyz,reject
 DOMAIN,pinglun11223.xyz,reject
