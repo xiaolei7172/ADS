@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-07-14 21:08:46（北京时间）
-! 📊 有效规则：301697 条
+! ⏰ 更新时间：2026-07-15 09:24:05（北京时间）
+! 📊 有效规则：301699 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-07-14 21:08:46 | ✅ 有效规则 301697 条
+! Description: ⏰ 更新时间 2026-07-15 09:24:05 | ✅ 有效规则 301699 条
 ! ======================================================================
 ||v3-novelapp.fqnovelvod.com^$app=com.dragon.read
 ||116.169.11.31:443^$app=com.dragon.read
@@ -207526,6 +207526,8 @@ izaiwen.cn##DIV[carousel-item]
 izaiwen.cn##.item-box
 jianshu.com##[aria-label='lwa-ad-one']
 jianshu.com##.app-float-btn
+blog.csdn.net##.passport-login-container
+blog.csdn.net##[class^='mobileContainer_']
 huya.com###template
 huya.com##A[data-edesc='点击/推荐/左侧导航推荐图']
 smartapps.cn##swan-nest-banner-ad.ad-expose
