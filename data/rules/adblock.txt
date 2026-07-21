@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-07-21 09:46:11（北京时间）
-! 📊 有效规则：305704 条
+! ⏰ 更新时间：2026-07-21 21:17:17（北京时间）
+! 📊 有效规则：305825 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-07-21 09:46:11 | ✅ 有效规则 305704 条
+! Description: ⏰ 更新时间 2026-07-21 21:17:17 | ✅ 有效规则 305825 条
 ! ======================================================================
 ||v3-novelapp.fqnovelvod.com^$app=com.dragon.read
 ||116.169.11.31:443^$app=com.dragon.read
@@ -1650,6 +1650,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 1ytao.com
 127.0.0.1 1zdywcgmlt.com
 127.0.0.1 1zone1.free.fr
+127.0.0.1 1zw5kzrzjm.com
 127.0.0.1 2-05.com
 127.0.0.1 2-remove-virus.com
 127.0.0.1 2.1010pic.com
@@ -3989,6 +3990,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 6dp0i7.ru
 127.0.0.1 6drq9rfn.xyz
 127.0.0.1 6e.co.kr
+127.0.0.1 6e29abca70.com
 127.0.0.1 6e2f1d2ae033.com
 127.0.0.1 6e3u48e6.hair
 127.0.0.1 6e76b83826.com
@@ -10646,6 +10648,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 aca-languedoc.fr
 127.0.0.1 acacdn.com
 127.0.0.1 acaciafilterfrantically.com
+127.0.0.1 acaciinsynods.shop
 127.0.0.1 acadameysportsoutdoors.com
 127.0.0.1 academic-newspaper.pro
 127.0.0.1 academic96.top
@@ -10924,6 +10927,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 aclktrkr.com
 127.0.0.1 aclordi.actonservice.com
 127.0.0.1 acloud.com
+127.0.0.1 aclwwgyvcduom.website
 127.0.0.1 acme.tango.me
 127.0.0.1 acme.vidox.net
 127.0.0.1 acmen.fr
@@ -14037,6 +14041,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 ads-dev.ad4game.com
 127.0.0.1 ads-dev.pinterest.com
 127.0.0.1 ads-dot-o7apps.appspot.com
+127.0.0.1 ads-drcn.platform.hihonorcloud.com
 127.0.0.1 ads-ec.adaptv.advertising.com
 127.0.0.1 ads-eu.adaptv.advertising.com
 127.0.0.1 ads-game-187f4.firebaseapp.com
@@ -25273,6 +25278,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 asistanbul.com
 127.0.0.1 asistente.christus.mx
 127.0.0.1 asjitqwjvodhr.site
+127.0.0.1 asjscfkytrubv.online
 127.0.0.1 ask-coder.com
 127.0.0.1 ask-d.openx.net
 127.0.0.1 ask-gps.ru
@@ -28851,6 +28857,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 bdxydp.icu
 127.0.0.1 bdyingxiaocms.cdn.bcebos.com
 127.0.0.1 bdzcck.stadiumgoods.com
+127.0.0.1 bdzyunsuttmyu.space
 127.0.0.1 be-funk.com
 127.0.0.1 be-gmtdmp.mookie1.com
 127.0.0.1 be-go.experian.com
@@ -29285,6 +29292,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 bemobtrcks.com
 127.0.0.1 bemobtrk.com
 127.0.0.1 bemocksmunched.com
+127.0.0.1 bemolsmock.shop
 127.0.0.1 bemottoincord.com
 127.0.0.1 bemro.com
 127.0.0.1 bemydate.mobi
@@ -29920,6 +29928,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 bfeagv.chicwish.com
 127.0.0.1 bfepzyczofwtf.space
 127.0.0.1 bfetpjdaebmzl.space
+127.0.0.1 bffexpzjljesi.site
 127.0.0.1 bffigvvwoyybr.website
 127.0.0.1 bffmetercom.cleverpush.com
 127.0.0.1 bfg.loanzify.app
@@ -30472,6 +30481,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 binkowski.pro
 127.0.0.1 binlayer.com
 127.0.0.1 binlayer.de
+127.0.0.1 binmenguanase.shop
 127.0.0.1 binocule21c.merriam-webster.com
 127.0.0.1 binomlink.com
 127.0.0.1 binomnet.com
@@ -30809,6 +30819,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 bjgjunljwykym.space
 127.0.0.1 bjgztt.com
 127.0.0.1 bjhjw.com.cn
+127.0.0.1 bjhpnzkjyibyx.site
 127.0.0.1 bjk08210ip.com
 127.0.0.1 bjk08211ip.com
 127.0.0.1 bjk08220ip.com
@@ -32170,6 +32181,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 boutchecoiffure.fr
 127.0.0.1 boutique-papillon.fr
 127.0.0.1 boutique.ricoh.fr
+127.0.0.1 boutonspannus.shop
 127.0.0.1 bouygiestelecom.fr
 127.0.0.1 bovada.lv
 127.0.0.1 boveda-patagonica.live
@@ -32302,6 +32314,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 bqhkix.mosmexa.ru
 127.0.0.1 bqifheyrsbgqa.site
 127.0.0.1 bqjukucxjhtvm.website
+127.0.0.1 bqkbecehzptxh.website
 127.0.0.1 bqkerpcwptpya.space
 127.0.0.1 bqlmweiecxpxr.online
 127.0.0.1 bqloqigu.com
@@ -34220,6 +34233,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 bvlpjsmfnlxlw.space
 127.0.0.1 bvmcdn.com
 127.0.0.1 bvmcdn.net
+127.0.0.1 bvnnxhmypzrpbe.com
 127.0.0.1 bvr.ast.snva.jp
 127.0.0.1 bvr.snva.jp
 127.0.0.1 bvraciedl.com
@@ -36156,6 +36170,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 cash4members.com
 127.0.0.1 cash4popup.de
 127.0.0.1 cashandlife.com
+127.0.0.1 cashawbraying.shop
 127.0.0.1 cashback.co.uk
 127.0.0.1 cashbackwow.co.uk
 127.0.0.1 cashbeet.com
@@ -36610,6 +36625,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 cchlhb.budgetsport.fi
 127.0.0.1 cchvgvgnqxrjr.space
 127.0.0.1 cchysxj.com
+127.0.0.1 ccidedogerppw.space
 127.0.0.1 ccies.cn
 127.0.0.1 ccieurope.fr
 127.0.0.1 ccine10.com.br
@@ -39306,6 +39322,8 @@ ff02::3 ip6-allhosts
 127.0.0.1 ckmap.mediav.com
 127.0.0.1 ckmghmpfmdfvk.online
 127.0.0.1 ckndisjiwbc.com
+127.0.0.1 ckogfgjeuxixw.online
+127.0.0.1 ckogpjlm.com
 127.0.0.1 ckpchhhnhbsle.site
 127.0.0.1 ckpxtt.justfly.com
 127.0.0.1 ckpyqgorlfdko.site
@@ -41133,7 +41151,6 @@ ff02::3 ip6-allhosts
 127.0.0.1 codefund.io
 127.0.0.1 codegur.com
 127.0.0.1 codeine.ourtablets.com
-127.0.0.1 codeinspector.ddns.net
 127.0.0.1 codejhmctzunu.space
 127.0.0.1 codejumps.com
 127.0.0.1 codelogic.fr
@@ -41855,6 +41872,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 compequali.cyou
 127.0.0.1 comperesceptre.com
 127.0.0.1 competeneigh.com
+127.0.0.1 competent-bicycle.pro
 127.0.0.1 competitionpropose.com
 127.0.0.1 compiledonatevanity.com
 127.0.0.1 compilework.com
@@ -44523,6 +44541,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 cruiserx.net
 127.0.0.1 cruisetourist.com
 127.0.0.1 cruisingsmallship.com
+127.0.0.1 crumbleabay.shop
 127.0.0.1 crumblefilchactive.com
 127.0.0.1 crumbs.robinhood.com
 127.0.0.1 crumbtypewriterhome.com
@@ -44537,6 +44556,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 crunchmind-d.openx.net
 127.0.0.1 crunchysheathstruck.com
 127.0.0.1 cruntn.receno.com
+127.0.0.1 crusher38.top
 127.0.0.1 crushingaspect.pro
 127.0.0.1 crustdisagreeable.com
 127.0.0.1 crutchstubbornultimatum.com
@@ -45447,6 +45467,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 cwchmb.com
 127.0.0.1 cwclrbjglcccp.website
 127.0.0.1 cwcz58vbvwm0.n.adsco.re
+127.0.0.1 cwdjhtwyieytw.website
 127.0.0.1 cwent.cuuod.cyou
 127.0.0.1 cwent.tuape.xyz
 127.0.0.1 cwent.weieo.cyou
@@ -45777,6 +45798,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 czofrrdmzszbd.site
 127.0.0.1 czqchyyuwbpbo.site
 127.0.0.1 czr.customzonereview.com
+127.0.0.1 czrqtkjxzzwtu.website
 127.0.0.1 czsk.sharpmarketing.eu
 127.0.0.1 czsttsmgndlni.website
 127.0.0.1 czsusasfoyqln.website
@@ -45892,7 +45914,6 @@ ff02::3 ip6-allhosts
 127.0.0.1 d.impactradius-event.com
 127.0.0.1 d.jjyx.com
 127.0.0.1 d.jugnoo.in
-127.0.0.1 d.kpzip.com
 127.0.0.1 d.kugou.com
 127.0.0.1 d.la1-c2-iad.salesforceliveagent.com
 127.0.0.1 d.la3-c2-ia2.salesforceliveagent.com
@@ -48769,7 +48790,6 @@ ff02::3 ip6-allhosts
 127.0.0.1 dd.mangofortune.net
 127.0.0.1 dd.nytimes.com
 127.0.0.1 dd.panda.tv
-127.0.0.1 dd.qwant.com
 127.0.0.1 dd.seloger-bureaux-commerces.com
 127.0.0.1 dd.seloger.com
 127.0.0.1 dd.selogerneuf.com
@@ -49955,7 +49975,6 @@ ff02::3 ip6-allhosts
 127.0.0.1 dexyfui.pro
 127.0.0.1 dey-1400.ir
 127.0.0.1 deycppnevpjax.online
-127.0.0.1 deyetechnical.com
 127.0.0.1 deymalaise.com
 127.0.0.1 deysremarry.shop
 127.0.0.1 dezcom.com
@@ -50016,6 +50035,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 dfidhqoaunepq.cloudfront.net
 127.0.0.1 dfienmjafhp.com
 127.0.0.1 dfigxb.underarmour.com.mx
+127.0.0.1 dfiictnvblxoh.space
 127.0.0.1 dfiqvf0syzl54.cloudfront.net
 127.0.0.1 dfitgc.yamamay.com
 127.0.0.1 dfiv.bjhengdiao.com
@@ -50156,6 +50176,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 dheheagbmhdfk.space
 127.0.0.1 dhenr54m.com
 127.0.0.1 dheyitpmyheck.space
+127.0.0.1 dhfshdmuvezfhm.com
 127.0.0.1 dhg-logging.us-east-1.elasticbeanstalk.com
 127.0.0.1 dhgdp.cn
 127.0.0.1 dhgnzynmufgpc.site
@@ -52170,6 +52191,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 donorstuffed.com
 127.0.0.1 donotwatch.org
 127.0.0.1 donreach.com
+127.0.0.1 donsoft.xyz
 127.0.0.1 dontacos.fr
 127.0.0.1 dontbeevils.de
 127.0.0.1 dontmakeplans.com
@@ -52953,6 +52975,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 dreamsdome.com
 127.0.0.1 dreamteamaffiliates.com
 127.0.0.1 dreamvegas.com
+127.0.0.1 dreamwatchevent.com
 127.0.0.1 dreamz.com
 127.0.0.1 drearyenchantment.com
 127.0.0.1 drecentreshu.info
@@ -53214,6 +53237,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 dsbpwl.com
 127.0.0.1 dsbsmooohjuon.online
 127.0.0.1 dsbtfg.com
+127.0.0.1 dsbuzs.com
 127.0.0.1 dsbzk.comfortykive.xyz
 127.0.0.1 dsccgm.com
 127.0.0.1 dscenn.com
@@ -53226,6 +53250,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 dscpxz.com
 127.0.0.1 dscsky.com
 127.0.0.1 dscsqe.com
+127.0.0.1 dscsvtuvftoso.website
 127.0.0.1 dsctja.com
 127.0.0.1 dscuug.com
 127.0.0.1 dscykd.com
@@ -53277,6 +53302,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 dsgeln.com
 127.0.0.1 dsghhbqey6ytg.cloudfront.net
 127.0.0.1 dsgldf.com
+127.0.0.1 dsgnjf.com
 127.0.0.1 dsgvgw.com
 127.0.0.1 dsgwoa.com
 127.0.0.1 dsgwqe.com
@@ -53324,12 +53350,14 @@ ff02::3 ip6-allhosts
 127.0.0.1 dslebb.com
 127.0.0.1 dslgfw.com
 127.0.0.1 dslqpa.com
+127.0.0.1 dslrix.com
 127.0.0.1 dslrph.com
 127.0.0.1 dslxrh.com
 127.0.0.1 dsmbdi.com
 127.0.0.1 dsmcnw.com
 127.0.0.1 dsmdvf.com
 127.0.0.1 dsmgww.com
+127.0.0.1 dsmhru.com
 127.0.0.1 dsmlme.com
 127.0.0.1 dsmmadvantage.com
 127.0.0.1 dsmnpw.com
@@ -53337,6 +53365,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 dsmtlxxmhsdea.site
 127.0.0.1 dsmuvt.com
 127.0.0.1 dsmxnw.com
+127.0.0.1 dsmzof.com
 127.0.0.1 dsmzyk.com
 127.0.0.1 dsnbwt.com
 127.0.0.1 dsnbym.com
@@ -53888,6 +53917,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 dvkxhbcrrrrut.online
 127.0.0.1 dvl8xapgpqgc1.cloudfront.net
 127.0.0.1 dvleaaamtruzl.site
+127.0.0.1 dvmbarfzhhuyq.com
 127.0.0.1 dvmblpxseuyuj.space
 127.0.0.1 dvmdwmnyj3u4h.cloudfront.net
 127.0.0.1 dvmira.keskisenkello.fi
@@ -53952,6 +53982,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 dwexxuty.blogspot.com
 127.0.0.1 dwfbs38k9z6bu.cloudfront.net
 127.0.0.1 dwfdxnwjakfjm.space
+127.0.0.1 dwfzwkkyjfzdi.online
 127.0.0.1 dwglgp.dunelm.com
 127.0.0.1 dwh3rjyzxj.com
 127.0.0.1 dwibdrtzozsuz.space
@@ -54006,6 +54037,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 dxewphcplowwk.site
 127.0.0.1 dxgo95ahe73e8.cloudfront.net
 127.0.0.1 dxh2ivs16758.cloudfront.net
+127.0.0.1 dxhzjpifwraxg.site
 127.0.0.1 dxiilazmsqprw.online
 127.0.0.1 dxix.cn
 127.0.0.1 dxj6cq8hj162l.cloudfront.net
@@ -56719,6 +56751,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 elblogdelnarco.com
 127.0.0.1 elboncoin.fr
 127.0.0.1 elbowydiander.shop
+127.0.0.1 elbsommxnynjm.space
 127.0.0.1 elbwhatna.shop
 127.0.0.1 elcap.pl
 127.0.0.1 elchavodel8enhd.blogspot.com
@@ -58518,6 +58551,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 eqxun.jayswraps.com
 127.0.0.1 eqxygxmutzlep.online
 127.0.0.1 eqy.link
+127.0.0.1 eqymqcjqoeaxj.site
 127.0.0.1 er.5ykj.com
 127.0.0.1 er.dlhygj.com
 127.0.0.1 er.sufistore.top
@@ -60611,6 +60645,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 f351966262.com
 127.0.0.1 f3531.top
 127.0.0.1 f362.nola.com
+127.0.0.1 f39989e6f8.com
 127.0.0.1 f3a95oy5m.com
 127.0.0.1 f3fea4450e3b.xzccie.com
 127.0.0.1 f3i5-0g49bgn-3h95-1324992141.cos.ap-jakarta.myqcloud.com
@@ -60646,6 +60681,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 f7.mtqys.com
 127.0.0.1 f761efe176.com
 127.0.0.1 f775.thehour.com
+127.0.0.1 f77b54ef34.com
 127.0.0.1 f792df8437.com
 127.0.0.1 f799999.com
 127.0.0.1 f7dcc97ce6.com
@@ -61518,6 +61554,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 fcxxffvjrztgz.space
 127.0.0.1 fcxxsl.com
 127.0.0.1 fcyetcher.shop
+127.0.0.1 fczbxdexx.com
 127.0.0.1 fd.allsaintsyrt.club
 127.0.0.1 fd.anzhi.com
 127.0.0.1 fd.bawag.at
@@ -62236,6 +62273,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 file.ipinyou.com.cn
 127.0.0.1 file.novanet.vn
 127.0.0.1 file.ppbk9.com
+127.0.0.1 file.uhsea.com
 127.0.0.1 file.ziyu.net
 127.0.0.1 file3size.com
 127.0.0.1 filecdn2.ad.dotandad.com
@@ -63566,6 +63604,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 foldyahoolestorderly.com
 127.0.0.1 foliasbadi.cyou
 127.0.0.1 folicerin.pl
+127.0.0.1 foliotspathes.shop
 127.0.0.1 folisin.pl
 127.0.0.1 folkeautomaten.com
 127.0.0.1 folkeopplysningen.com
@@ -65467,6 +65506,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 fxjejzfjvcvbx.space
 127.0.0.1 fxjllndtgqsaf.site
 127.0.0.1 fxjs.2541.com
+127.0.0.1 fxkulwkkzcmqy.space
 127.0.0.1 fxmdjr.mamastar.jp
 127.0.0.1 fxmdjr.saita-puls.com
 127.0.0.1 fxmdjr.yogajournal.jp
@@ -65580,6 +65620,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 fzojq.info
 127.0.0.1 fzomznhnpgxee.website
 127.0.0.1 fzqfoil.cn
+127.0.0.1 fzqjigcdzyzap.online
 127.0.0.1 fzqjvw.oakandluna.com
 127.0.0.1 fzruzulad.com
 127.0.0.1 fzsibfirjxbto.website
@@ -66144,6 +66185,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 gapcontroversialprodigal.com
 127.0.0.1 gapincintranetprod.112.2o7.net
 127.0.0.1 gapl.hit.gemius.pl
+127.0.0.1 gapyprisons.shop
 127.0.0.1 gaqxkizfpyhpc.site
 127.0.0.1 gar-tech.com
 127.0.0.1 garaj.shop
@@ -66746,6 +66788,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 genazinsaat.com
 127.0.0.1 genbalar.com
 127.0.0.1 gendbkamiggxs.site
+127.0.0.1 genddos.st
 127.0.0.1 genecute.com
 127.0.0.1 genelanestezi.com
 127.0.0.1 general.agency
@@ -67525,6 +67568,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 ggpbuvhzihxxh.website
 127.0.0.1 ggpht.cn
 127.0.0.1 ggpkyvsokroop.online
+127.0.0.1 ggqbeplctuzgp.site
 127.0.0.1 ggr.yxdown.com
 127.0.0.1 ggreatshow.com
 127.0.0.1 ggreatstuff.com
@@ -70802,6 +70846,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 guuia6hxf.com
 127.0.0.1 guulgakv.com
 127.0.0.1 guurniuvgo.com
+127.0.0.1 guuulmhvdijwj.space
 127.0.0.1 guuzmczcfmhnt.com
 127.0.0.1 guvenayberkolker.com
 127.0.0.1 guvenlikfilesiimalati.com
@@ -71060,6 +71105,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 gzfqj.com
 127.0.0.1 gzgmhbgnvqiri.space
 127.0.0.1 gzhctryy.com
+127.0.0.1 gzhkarwp9n.com
 127.0.0.1 gzili.com
 127.0.0.1 gzjroa.bradsdeals.com
 127.0.0.1 gzjtfzs.cn
@@ -71990,6 +72036,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 hcrnxbzntqrks.online
 127.0.0.1 hcsmec.decathlon.pt
 127.0.0.1 hctgwbignhfoz.website
+127.0.0.1 hcthwleafirap.space
 127.0.0.1 hctkpfwgbobyz.site
 127.0.0.1 hcu.actonservice.com
 127.0.0.1 hcubjomholwda.online
@@ -72667,6 +72714,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 hghit.com
 127.0.0.1 hgisekhkuhrlo.online
 127.0.0.1 hgivfbpd.com
+127.0.0.1 hgjbjizxqnqit.site
 127.0.0.1 hgjrgltxgcsvu.site
 127.0.0.1 hgmnrvwbllpit.space
 127.0.0.1 hgnxakrfximkf.space
@@ -72675,6 +72723,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 hgoxvtdgfcdlg.website
 127.0.0.1 hgprha.mizalle.com
 127.0.0.1 hgruknobpq.com
+127.0.0.1 hgsypaspcrztw.website
 127.0.0.1 hgtasizbgvjdn.website
 127.0.0.1 hgtpidptdpxmo.space
 127.0.0.1 hgtzz.com
@@ -73660,6 +73709,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 hogpastebruise.com
 127.0.0.1 hogtiedhalawi.com
 127.0.0.1 hohmanrtit.com
+127.0.0.1 hohntd.shop
 127.0.0.1 hohuwpdeefdgp.website
 127.0.0.1 hohxhoennu.com
 127.0.0.1 hoichcxxdgkit.site
@@ -75885,6 +75935,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 icmserver.net
 127.0.0.1 icmxqeeivfzgo.site
 127.0.0.1 icn.southmoney.com
+127.0.0.1 icngtqjmoizsm.space
 127.0.0.1 ico.58pic.com
 127.0.0.1 ico.freelogs.com
 127.0.0.1 ico.re
@@ -76393,6 +76444,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 ihracat.myq-see.com
 127.0.0.1 ihsbmqrwmehki.online
 127.0.0.1 ihsicrdmfeexu.space
+127.0.0.1 ihtlzttq.com
 127.0.0.1 ihtnxu.tannergoods.com
 127.0.0.1 ihuajian.com
 127.0.0.1 ihualun.com
@@ -76618,6 +76670,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 illusorrayat.shop
 127.0.0.1 illustriousoatmeal.com
 127.0.0.1 ilmat-deo.com
+127.0.0.1 ilmdqtrrqnbhw.space
 127.0.0.1 ilmucerdas.buzz
 127.0.0.1 ilmwkysdrigqa.online
 127.0.0.1 iln.zzjpgqd.com
@@ -77985,6 +78038,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 impdk.tradedoubler.com
 127.0.0.1 impdsp.meituan.com
 127.0.0.1 impeccable-career.pro
+127.0.0.1 impeccablebrain.pro
 127.0.0.1 impeccablewriter.com
 127.0.0.1 impedimentorganized.com
 127.0.0.1 impeditenomoty.com
@@ -81484,6 +81538,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 iwl2d7pa4yx1.www.logology.co
 127.0.0.1 iwlnpw.claudiepierlot.com
 127.0.0.1 iwmjsk.jw.com.au
+127.0.0.1 iwnfkcfoqywku.website
 127.0.0.1 iwnjfdbnejbah.site
 127.0.0.1 iwoihuemn.com
 127.0.0.1 iwon.us.intellitxt.com
@@ -82006,6 +82061,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 jawqgjbvrceel.website
 127.0.0.1 jawyabhdlbtub.space
 127.0.0.1 jaxix801.com
+127.0.0.1 jaxpuvzuleqfx.space
 127.0.0.1 jaxx.com
 127.0.0.1 jaydpfcoftijl.space
 127.0.0.1 jaypietombic.com
@@ -82378,6 +82434,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 jfapiprod.optimonk.com
 127.0.0.1 jfashop.net
 127.0.0.1 jfatdzowbj.com
+127.0.0.1 jfcbwkzwaju.com
 127.0.0.1 jfdaily.adsame.com
 127.0.0.1 jfdokxkiarufi.website
 127.0.0.1 jfdtbmfzgkkxl.website
@@ -82519,6 +82576,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 jhfjslomqzfte.site
 127.0.0.1 jhfqbgimqqllry.com
 127.0.0.1 jhfuhi.b-exit.com
+127.0.0.1 jhhaekcwnbqhp.site
 127.0.0.1 jhhkl.25ku.com
 127.0.0.1 jhhpvy7cp3.com
 127.0.0.1 jhhv22erzs.com
@@ -85090,6 +85148,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 kbr23k89xz.com
 127.0.0.1 kbrdynuogwuxm.site
 127.0.0.1 kbs-services.actonservice.com
+127.0.0.1 kbtlfjjzwhqrq.space
 127.0.0.1 kbtymbjympvvb.online
 127.0.0.1 kbugxeslbjc8.com
 127.0.0.1 kbujchxeouowl.space
@@ -87056,6 +87115,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 kucent.com
 127.0.0.1 kuchynemlejnek.pro
 127.0.0.1 kucyhafaatzxg.space
+127.0.0.1 kudbltcuxlnym.site
 127.0.0.1 kudcpearvwa.com
 127.0.0.1 kuder.fr
 127.0.0.1 kudohau.pro
@@ -89054,6 +89114,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 lguhcerbqufqc.website
 127.0.0.1 lgunuddjobkyl.online
 127.0.0.1 lgupyhmwrglwg.space
+127.0.0.1 lguteecbqzqln.site
 127.0.0.1 lguvihbqjegvi.website
 127.0.0.1 lgvowkkifkdzk.online
 127.0.0.1 lgwhjaymvfjcf.website
@@ -92622,6 +92683,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 lpm-francetv.nuggad.net
 127.0.0.1 lpm-lagardere.nuggad.net
 127.0.0.1 lpm-tf1.nuggad.net
+127.0.0.1 lpmqchdfelpfw.space
 127.0.0.1 lpmugcevks.com
 127.0.0.1 lpmyiqujrqohdkq.com
 127.0.0.1 lpniqpvcdejmx.online
@@ -92822,6 +92884,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 lthglhksymoun.online
 127.0.0.1 lthzhy.elv.com
 127.0.0.1 ltiekurv.com
+127.0.0.1 ltisrhqohawdb.website
 127.0.0.1 ltjapnkpaerjm.space
 127.0.0.1 ltjjzwimrqgae.website
 127.0.0.1 ltk.pw
@@ -93281,6 +93344,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 lwwthwxurerat.online
 127.0.0.1 lwxlsj.wap.xsbiquge.com
 127.0.0.1 lwxoothcoq.com
+127.0.0.1 lwxqoxksaruzc.space
 127.0.0.1 lwxs99.cc
 127.0.0.1 lwxuo.com
 127.0.0.1 lwywgysunkygy.site
@@ -93290,6 +93354,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 lx-upload-log.yidianzixun.com
 127.0.0.1 lx167.com
 127.0.0.1 lx2rv.com
+127.0.0.1 lxadqdidnsnzd.online
 127.0.0.1 lxanialqocwwk.website
 127.0.0.1 lxapvxbggnamb.website
 127.0.0.1 lxbjs.baidu.com
@@ -95599,6 +95664,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 mamicrot.life
 127.0.0.1 mamicrot.rest
 127.0.0.1 mamilade.oewabox.at
+127.0.0.1 mamjkmhwprlnc.website
 127.0.0.1 mammocksambos.com
 127.0.0.1 mammoth-a.pro
 127.0.0.1 mammothflow.pro
@@ -97789,6 +97855,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 mawercapital.com
 127.0.0.1 mawlaybob.com
 127.0.0.1 mawogia.com
+127.0.0.1 mawrremur.in
 127.0.0.1 mawsandclaws.com
 127.0.0.1 max-files.oupeng.com
 127.0.0.1 max-l.mediav.com
@@ -99394,6 +99461,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 metricode.com
 127.0.0.1 metricreceiver.cellrebel.com
 127.0.0.1 metrics-a.wbx2.com
+127.0.0.1 metrics-ad-drcn.dt.hihonorcloud.com
 127.0.0.1 metrics-api.librato.com
 127.0.0.1 metrics-broker.prod.p.tf1.fr
 127.0.0.1 metrics-cbslocal-com.cdn.ampproject.org
@@ -105678,6 +105746,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 nchkftnswbfll.space
 127.0.0.1 nciapaet.hair
 127.0.0.1 ncieuiouesnbm.website
+127.0.0.1 ncimperc.in
 127.0.0.1 ncjjfn.org
 127.0.0.1 nckyebkwqugez.website
 127.0.0.1 nclog.mars.baofeng.net
@@ -106690,6 +106759,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 nfmvsq.giuseppezanotti.com
 127.0.0.1 nfptar.giordanoshop.com
 127.0.0.1 nfpxrhlnxtbpx.space
+127.0.0.1 nfqinqyvpswjys.com
 127.0.0.1 nfrdibffgpxoy.website
 127.0.0.1 nfrvficeao.com
 127.0.0.1 nfrytmlejsqsm.online
@@ -110200,6 +110270,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 ohxsheczrsngy.website
 127.0.0.1 ohygmjehshbun.website
 127.0.0.1 ohyswagriuexx.space
+127.0.0.1 ohytgiwefkyyp.online
 127.0.0.1 oi-otllpxl-sbx-ralo8.kn5qrm.top
 127.0.0.1 oi.429men.com
 127.0.0.1 oi.lesbianbliss.com
@@ -110216,6 +110287,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 oidgctozcfsrr.site
 127.0.0.1 oidssdwmbovry.website
 127.0.0.1 oidues.shop
+127.0.0.1 oidzrvnbsbgmx.online
 127.0.0.1 oifeqfiurelhe.site
 127.0.0.1 oifthjnpbzycw.online
 127.0.0.1 oifyyeiuwnpzc.space
@@ -110543,6 +110615,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 olntyyszaelkp.online
 127.0.0.1 oloffnngngnbnbvf.site
 127.0.0.1 oloopololoadoslaisif.site
+127.0.0.1 olopisotmvkug.site
 127.0.0.1 olopoadlosposflsdopfo.site
 127.0.0.1 olopruy.com
 127.0.0.1 olopsoldopaodlsdo.site
@@ -111855,6 +111928,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 opdnvnjiymzws.online
 127.0.0.1 opdrkeqdvzgoi.website
 127.0.0.1 opdvzscgsotag.site
+127.0.0.1 opdwwovuhiapk.online
 127.0.0.1 ope.gds.tanx.com
 127.0.0.1 ope.tanx.com
 127.0.0.1 opeeen.wpdevcloud.com
@@ -112140,6 +112214,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 opsm.qflwh.cn
 127.0.0.1 opsonew3org.sg
 127.0.0.1 opsplatform.adsrvr.org
+127.0.0.1 opsqbrqhqcamb.online
 127.0.0.1 opstag.com
 127.0.0.1 opsveda.actonservice.com
 127.0.0.1 opt-intelligence.com
@@ -112488,6 +112563,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 orionmarketing.actonservice.com
 127.0.0.1 oritooep.win
 127.0.0.1 orivelanth.com
+127.0.0.1 orizcfodqmeyj.site
 127.0.0.1 orjfun.com
 127.0.0.1 orkxknsdsklcx.online
 127.0.0.1 orlahaus.com
@@ -118478,6 +118554,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 ponzeorgas.cyou
 127.0.0.1 poodlefairly.com
 127.0.0.1 poohragmoplast.info
+127.0.0.1 poohsrebuild.shop
 127.0.0.1 pooksys.site
 127.0.0.1 pool-colruytgroup.adhese.com
 127.0.0.1 pool-ipm.adhese.com
@@ -121664,6 +121741,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 pvnwap.zol.com.cn
 127.0.0.1 pvnwfoxrfezes.space
 127.0.0.1 pvoheg.bubbleroom.se
+127.0.0.1 pvphood.cc
 127.0.0.1 pvqjldytcvxix.online
 127.0.0.1 pvrtx.net
 127.0.0.1 pvrugd.nieruchomosci-online.pl
@@ -122557,6 +122635,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 qjldydelwreqn.click
 127.0.0.1 qjlyfestjozoo.site
 127.0.0.1 qjmsmj.invia.cz
+127.0.0.1 qjnrdxcjcqvwi.site
 127.0.0.1 qjnzeflazpfig.space
 127.0.0.1 qjqdkli0ag.com
 127.0.0.1 qjurou.laredoute.com
@@ -122665,6 +122744,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 qmefcejujmezq.website
 127.0.0.1 qmemxsreczhet.space
 127.0.0.1 qmeqraen.com
+127.0.0.1 qmeudzyzcwkfy.online
 127.0.0.1 qmfpbonswktwy.website
 127.0.0.1 qmgwny.autobarn.com.au
 127.0.0.1 qmgzkb.dedoles.sk
@@ -123414,6 +123494,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 quszrmzafudas.online
 127.0.0.1 qutaobi.com
 127.0.0.1 qutaovip.com
+127.0.0.1 qutizwinxibmy.online
 127.0.0.1 qutsgp.calif.cc
 127.0.0.1 qutxilqcuqp.in
 127.0.0.1 qutyan8848.com
@@ -127124,6 +127205,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 rlovoa.duckcamp.com
 127.0.0.1 rlovygavhheuf.com
 127.0.0.1 rlpbld.icu
+127.0.0.1 rlqaepldbfpar.site
 127.0.0.1 rlrsfxkewwgww.site
 127.0.0.1 rlsnntgffqnli.online
 127.0.0.1 rlsuohvbqvbxa.space
@@ -128313,6 +128395,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 ruehofmdhvu.com
 127.0.0.1 ruemedia.adspirit.net
 127.0.0.1 ruezikydyynqk.website
+127.0.0.1 rufboelehec.com
 127.0.0.1 rufcdstpjdcrd.site
 127.0.0.1 rufdbymsjiwsg.website
 127.0.0.1 ruficwdonslzxm.site
@@ -128631,6 +128714,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 rxkayupbjvt.com
 127.0.0.1 rxkrnofyhchvm.site
 127.0.0.1 rxnvg.com
+127.0.0.1 rxojwkaldlwsx.space
 127.0.0.1 rxqqaq.hollandandbarrett.com
 127.0.0.1 rxquickpay.com
 127.0.0.1 rxrtb.bid
@@ -134582,6 +134666,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 shopaldiuk.textiletrfend.com
 127.0.0.1 shopalyst.com
 127.0.0.1 shopapi.ranking.rakuten.co.jp
+127.0.0.1 shopapprox.shop
 127.0.0.1 shoparty.metrilo.com
 127.0.0.1 shopatkshipbox.com
 127.0.0.1 shopboswell.live
@@ -134725,6 +134810,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 shqmetrics.sony.com
 127.0.0.1 shredform.com
 127.0.0.1 shredquiz.com
+127.0.0.1 shreesaiseva.org
 127.0.0.1 shrek.6.cn
 127.0.0.1 shrewdnarrative.com
 127.0.0.1 shrewsburyshow.com
@@ -139779,6 +139865,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 socdo.tv
 127.0.0.1 socehdiygqknp.site
 127.0.0.1 sochr.com
+127.0.0.1 sochtbisons.shop
 127.0.0.1 sociable-corner.pro
 127.0.0.1 sociableretainerrefreshments.com
 127.0.0.1 sociagil.fr
@@ -141468,6 +141555,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 springbot.com
 127.0.0.1 springclick-ads.s3.amazonaws.com
 127.0.0.1 springhillhomepage.com
+127.0.0.1 springhillmontessori.com
 127.0.0.1 springify.io
 127.0.0.1 springmetrics.com
 127.0.0.1 springolive.com
@@ -142771,6 +142859,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 st666win.us
 127.0.0.1 st666yet.site
 127.0.0.1 sta.ganji.com
+127.0.0.1 sta.qinxue.com
 127.0.0.1 stab.thench.net
 127.0.0.1 stabilkapital.live
 127.0.0.1 stable-skill.com
@@ -143769,7 +143858,6 @@ ff02::3 ip6-allhosts
 127.0.0.1 static.ziffdavis.com
 127.0.0.1 static.ziftsolutions.com
 127.0.0.1 static.zo88.vip
-127.0.0.1 static.zongheng.com
 127.0.0.1 static.zucks.net.zimg.jp
 127.0.0.1 static0.exoclick.com
 127.0.0.1 static01.atdnetwork.com
@@ -145872,6 +145960,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 subdividecola.com
 127.0.0.1 subducearabs.shop
 127.0.0.1 subdued-breakfast.pro
+127.0.0.1 subduedetrude.shop
 127.0.0.1 subenstrem.cyou
 127.0.0.1 suberdeseg.cyou
 127.0.0.1 subfresh.xyz
@@ -146656,6 +146745,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 svmarketing.destinationtoronto.com
 127.0.0.1 svmjnmmvxntru.site
 127.0.0.1 svn-defender.pro
+127.0.0.1 svnnfxcgtzc.com
 127.0.0.1 svntrk.com
 127.0.0.1 svoltretia.cyou
 127.0.0.1 svoywu.autoscout24.de
@@ -150988,6 +151078,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 tfeableandwo.org
 127.0.0.1 tfflrmlygarjj.online
 127.0.0.1 tfgfgtm.com
+127.0.0.1 tfggkucctwwah.site
 127.0.0.1 tfhpxv.icu
 127.0.0.1 tfjaycmztwmdp.site
 127.0.0.1 tfkszqkgogppv.site
@@ -151060,6 +151151,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 tglyr.co
 127.0.0.1 tgmbxplmlsclp.space
 127.0.0.1 tgmklw.productreview.com.au
+127.0.0.1 tgmvsyzelndqn.space
 127.0.0.1 tgn.122.2o7.net
 127.0.0.1 tgnqe.org
 127.0.0.1 tgowvecdkon.com
@@ -153296,6 +153388,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 tossm.com
 127.0.0.1 tossoffads.com
 127.0.0.1 tosswealthy.com
+127.0.0.1 tossylibant.shop
 127.0.0.1 tot88.com
 127.0.0.1 tot88.store
 127.0.0.1 totaladblock.com
@@ -155605,6 +155698,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 tracking.adpinfo.com
 127.0.0.1 tracking.adpri.org
 127.0.0.1 tracking.ads.global-fashion-group.com
+127.0.0.1 tracking.ads.honor.com
 127.0.0.1 tracking.adsafety.net
 127.0.0.1 tracking.adsdot.co.kr
 127.0.0.1 tracking.adsrv.io
@@ -158042,6 +158136,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 tsuutrmpeop.com
 127.0.0.1 tswafl.lascana.nl
 127.0.0.1 tswanafldxt.com
+127.0.0.1 tswhilcaxlrnd.website
 127.0.0.1 tswzrqpkvltnx.website
 127.0.0.1 tsxccsxbdloxt.online
 127.0.0.1 tsxclub.us.intellitxt.com
@@ -159303,6 +159398,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 ubyjor.distrelec.ch
 127.0.0.1 ubykct.teufel.ch
 127.0.0.1 ubynjtknsjveh.website
+127.0.0.1 ubzfwicjfbpac.online
 127.0.0.1 ubzmzxtdosgdh.online
 127.0.0.1 ubztowsnyurmy.space
 127.0.0.1 uc-ap.yodo1api.com
@@ -159607,6 +159703,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 ugo.eu-adcenter.net
 127.0.0.1 ugooo.cc
 127.0.0.1 ugox.cn
+127.0.0.1 ugpdpileygmoa.site
 127.0.0.1 ugqpgweplprjq.website
 127.0.0.1 ugrgujwxjxsuf.space
 127.0.0.1 ugrhavuz.com
@@ -159909,6 +160006,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 ukjrlefiioqmn.online
 127.0.0.1 ukjugjhigvcax.site
 127.0.0.1 ukjygwcfaawce.online
+127.0.0.1 ukkbgnuejhhbc.site
 127.0.0.1 uklakeshoreridge.com
 127.0.0.1 uklakesidegrove.com
 127.0.0.1 uklakesidehaven.com
@@ -160593,6 +160691,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 uniway.cn.com
 127.0.0.1 uniwersutet.blob.core.windows.net
 127.0.0.1 uniworldportal.net
+127.0.0.1 unixcheats.shop
 127.0.0.1 unjfhsdntducr.website
 127.0.0.1 unjiqfer.com
 127.0.0.1 unjrkrxme.com
@@ -160944,6 +161043,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 updates.tune.com
 127.0.0.1 updatesbit.instantcoverletter.com
 127.0.0.1 updatesecure.pro
+127.0.0.1 updateservice1-telegramweb.com
 127.0.0.1 updating-link.com
 127.0.0.1 updating-url.com
 127.0.0.1 updating-url.net
@@ -161502,6 +161602,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 usabilla.com
 127.0.0.1 usable-class.pro
 127.0.0.1 usable-march.pro
+127.0.0.1 usablebear.pro
 127.0.0.1 usablenet.com
 127.0.0.1 usachoice.net
 127.0.0.1 usadmm-ds.dotomi.com
@@ -161666,6 +161767,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 usiudsjiaddaidida.com
 127.0.0.1 usjbwvtqwv.com
 127.0.0.1 usjeardahfoqc.online
+127.0.0.1 usjzvfljxtaxm.space
 127.0.0.1 uskokvolutin.com
 127.0.0.1 uslimv.com
 127.0.0.1 uslkyabk.shop
@@ -163472,6 +163574,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 vebmmcatswbwv.com
 127.0.0.1 vebo.bet
 127.0.0.1 vebo5.com
+127.0.0.1 vebsawehaoesj.site
 127.0.0.1 vebv8me7q.com
 127.0.0.1 veclaim.com
 127.0.0.1 vectaury.io
@@ -165289,6 +165392,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 vlabddfdsgein.space
 127.0.0.1 vlamwaardiek.live
 127.0.0.1 vlauqfbnfigdk.site
+127.0.0.1 vlayitwuvh.com
 127.0.0.1 vlc.de
 127.0.0.1 vldlklwhhcdyf.site
 127.0.0.1 vldrztpyzwrwi.xyz
@@ -168625,6 +168729,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 wfqzesdbrvoje.space
 127.0.0.1 wfredir.net
 127.0.0.1 wfrglsvwclwqp.space
+127.0.0.1 wfruohnirdzm.com
 127.0.0.1 wfsczypfjnova.online
 127.0.0.1 wftbeecaebmmr.online
 127.0.0.1 wftbrlcuajtov.website
@@ -169519,6 +169624,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 wjqpyvulryxtg.site
 127.0.0.1 wjspbwpdikhfy.com
 127.0.0.1 wjssvg.descentekorea.co.kr
+127.0.0.1 wjsuiodbmvast.space
 127.0.0.1 wjtekf.vidaxl.bg
 127.0.0.1 wjtgwtedzibzu.online
 127.0.0.1 wjtplohagbwor.online
@@ -169574,6 +169680,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 wkyckafny.com
 127.0.0.1 wkyiwsiryjrke.space
 127.0.0.1 wkympu.agnesb.co.jp
+127.0.0.1 wkzivgbgob.com
 127.0.0.1 wkzmxixgjobkf.site
 127.0.0.1 wkzvf2658.com
 127.0.0.1 wkzw.me
@@ -169617,6 +169724,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 wliiymn.icu
 127.0.0.1 wlkojk.orange.ro
 127.0.0.1 wllhjebhtcrjz.space
+127.0.0.1 wllqfspzytqxw.space
 127.0.0.1 wllwdfvaudnhi.space
 127.0.0.1 wlmarketing.com
 127.0.0.1 wlmleoeykzsmm.space
@@ -170349,6 +170457,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 wrig.pl
 127.0.0.1 wrigglefinviewed.com
 127.0.0.1 wrigley.122.2o7.net
+127.0.0.1 wrijmumlmcgmw.website
 127.0.0.1 wringbible.com
 127.0.0.1 wristample.com
 127.0.0.1 wristicalit.com
@@ -199513,6 +199622,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 wxsnsdy.wxs.qq.com
 127.0.0.1 wxsnsdythumb.wxs.qq.com
 127.0.0.1 wxsohu.com
+127.0.0.1 wxstlzxmilqom.website
 127.0.0.1 wxt.sinaimg.cn
 127.0.0.1 wxtldkydabpmz.online
 127.0.0.1 wxtz.houmags.com
@@ -200480,6 +200590,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 xj9gth5i.xyz
 127.0.0.1 xjawvwhipohot.online
 127.0.0.1 xjdkccwyttuqj.website
+127.0.0.1 xjgyrgymifvju.com
 127.0.0.1 xjh4uvv1ew.com
 127.0.0.1 xji.qwxcs.com
 127.0.0.1 xjihzwnozmgyu.site
@@ -200563,6 +200674,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 xkr.e7rlbm.qpon
 127.0.0.1 xkrihxceguhfe.site
 127.0.0.1 xkronawgqyuia.site
+127.0.0.1 xkrzwyxrswksy.space
 127.0.0.1 xksinmebhlqgb.online
 127.0.0.1 xkspgkdejobec.site
 127.0.0.1 xktoy8fub.com
@@ -201374,6 +201486,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 xwlketvkzf.com
 127.0.0.1 xwlpghhsnddie.site
 127.0.0.1 xwlptajihmbkz.space
+127.0.0.1 xwlyewxxnccuy.space
 127.0.0.1 xwmcxqcxipcln.site
 127.0.0.1 xwnfmfvkxzbti.site
 127.0.0.1 xwpoxv.birdies.com
@@ -202079,6 +202192,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 yeukcqecubdcb.space
 127.0.0.1 yeuszfvmmzsng.website
 127.0.0.1 yev.moviesdirectpro.com
+127.0.0.1 yevnwuvcokhse.site
 127.0.0.1 yewrcd.govoyages.com
 127.0.0.1 yewsgooney.com
 127.0.0.1 yexex.comfortykive.xyz
@@ -202611,6 +202725,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 ynxarohfavycj.site
 127.0.0.1 ynxhsy.com
 127.0.0.1 ynxjqfljncisp.website
+127.0.0.1 ynxomkygrmeud.site
 127.0.0.1 ynyfcz.cn
 127.0.0.1 ynzhby.com
 127.0.0.1 ynztzh.com
@@ -202758,6 +202873,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 youmakeashion.fr
 127.0.0.1 youmi.net
 127.0.0.1 younetmedia.com
+127.0.0.1 young-assistant.com
 127.0.0.1 young-expert.pro
 127.0.0.1 youngfun.pro
 127.0.0.1 younglifeterlik.com
@@ -203333,6 +203449,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 ywtennjipgrwd.website
 127.0.0.1 ywtzj.com
 127.0.0.1 ywugyssrmkvat.website
+127.0.0.1 ywuwphcithuaj.space
 127.0.0.1 ywuzuazsjnzto.online
 127.0.0.1 ywwm.net
 127.0.0.1 ywxanyoenzcoo.website
@@ -204349,6 +204466,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 zhihu-web-analytics.zhihu.com
 127.0.0.1 zhihu.xmcimg.com
 127.0.0.1 zhihuiduijian.com
+127.0.0.1 zhikey.com
 127.0.0.1 zhilingshidai.com
 127.0.0.1 zhimaad.cn
 127.0.0.1 zhimengad.com
@@ -204596,6 +204714,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 zjqbxcdwwtvtt.site
 127.0.0.1 zjrbwb.markenschuhe.de
 127.0.0.1 zjres-ad.kajicam.com
+127.0.0.1 zjskecnjpgdcm.online
 127.0.0.1 zjsoosjjssjsjsj.vercel.app
 127.0.0.1 zjspxohftdmow.site
 127.0.0.1 zjsyawqj.cn
@@ -204997,6 +205116,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 zpashl.amgakuin.co.jp
 127.0.0.1 zpassmqoksnfw.website
 127.0.0.1 zpatfnmuzqfez.website
+127.0.0.1 zpbuorcjwmgsk.site
 127.0.0.1 zpcnmqvutynyr.site
 127.0.0.1 zpe.klre.18183.com
 127.0.0.1 zpfmqfxgrtttb.icu
@@ -205474,6 +205594,7 @@ ff02::3 ip6-allhosts
 127.0.0.1 zyf.fzdfwy.com
 127.0.0.1 zyf03k.xyz
 127.0.0.1 zyfsfoknnrenj.site
+127.0.0.1 zygitmwrjehml.online
 127.0.0.1 zygoojpfbiqdi.online
 127.0.0.1 zyguhojdymzqx.site
 127.0.0.1 zyhzzhxnlnfdk.site
