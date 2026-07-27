@@ -4608,6 +4608,7 @@ ads-marketing-vivofs.vivo.com.cn
 ads-sdk-api.ranfenghd.com
 ads-video-al.xhscdn.com
 ads-video-qc.xhscdn.com
+ads.adfunlink.com
 ads.auctions.yahoo.com
 ads.cup.com.cn
 ads.google.cn
@@ -4648,6 +4649,7 @@ adstrategy.biz.weibo.com
 adstudio-assets.scdn.co
 adstudio.spotify.com
 adtrack.quark.cn
+adtracker.adfunlink.com
 adtracker.medproad.com
 adui.tg.meitu.com
 adv-api.shenshiads.com
@@ -4849,7 +4851,6 @@ ifs.tanx.com
 image-ad.sm.cn
 image.hpplay.cn
 images.outbrainimg.com
-images.pinduoduo.com
 imdns.hpplay.cn
 img-c.heytapimage.com
 img-x.jd.com
@@ -5206,7 +5207,6 @@ xycdn.com
 yk-ssp-ad.cp31.ott.cibntv.net
 ykad-data.cp31.ott.cibntv.net
 ykad-gateway.youku.com
-youku-acs.m.taobao.com
 ytx-file.110route.cn
 zeus.ad.xiaomi.com
 zjres-ad.kajicam.com
@@ -67390,6 +67390,7 @@ pinchsquirrel.com
 pinchunnecessaryaggregate.com
 pincourse.com
 adim.pinduoduo.com
+images.pinduoduo.com
 dspsdk.pinduoduo.com
 pine-assets.space
 pineegypt.com
@@ -82233,6 +82234,7 @@ bcfeedback.taobao.com
 detail.taobao.com
 rtb.julang.taobao.com
 tns.simba.taobao.com
+youku-acs.m.taobao.com
 adash-c.m.taobao.com
 adash-c.ut.taobao.com
 adashbc.m.taobao.com

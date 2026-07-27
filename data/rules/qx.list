@@ -4603,6 +4603,7 @@ DOMAIN,ads-marketing-vivofs.vivo.com.cn,reject
 DOMAIN,ads-sdk-api.ranfenghd.com,reject
 DOMAIN,ads-video-al.xhscdn.com,reject
 DOMAIN,ads-video-qc.xhscdn.com,reject
+DOMAIN,ads.adfunlink.com,reject
 DOMAIN,ads.auctions.yahoo.com,reject
 DOMAIN,ads.cup.com.cn,reject
 DOMAIN,ads.google.cn,reject
@@ -4643,6 +4644,7 @@ DOMAIN,adstrategy.biz.weibo.com,reject
 DOMAIN,adstudio-assets.scdn.co,reject
 DOMAIN,adstudio.spotify.com,reject
 DOMAIN,adtrack.quark.cn,reject
+DOMAIN,adtracker.adfunlink.com,reject
 DOMAIN,adtracker.medproad.com,reject
 DOMAIN,adui.tg.meitu.com,reject
 DOMAIN,adv-api.shenshiads.com,reject
@@ -4844,7 +4846,6 @@ DOMAIN,ifs.tanx.com,reject
 DOMAIN,image-ad.sm.cn,reject
 DOMAIN,image.hpplay.cn,reject
 DOMAIN,images.outbrainimg.com,reject
-DOMAIN,images.pinduoduo.com,reject
 DOMAIN,imdns.hpplay.cn,reject
 DOMAIN,img-c.heytapimage.com,reject
 DOMAIN,img-x.jd.com,reject
@@ -5199,7 +5200,6 @@ DOMAIN,xycdn.com,reject
 DOMAIN,yk-ssp-ad.cp31.ott.cibntv.net,reject
 DOMAIN,ykad-data.cp31.ott.cibntv.net,reject
 DOMAIN,ykad-gateway.youku.com,reject
-DOMAIN,youku-acs.m.taobao.com,reject
 DOMAIN,ytx-file.110route.cn,reject
 DOMAIN,zeus.ad.xiaomi.com,reject
 DOMAIN,zjres-ad.kajicam.com,reject
@@ -67365,6 +67365,7 @@ DOMAIN,pinchsquirrel.com,reject
 DOMAIN,pinchunnecessaryaggregate.com,reject
 DOMAIN,pincourse.com,reject
 DOMAIN,adim.pinduoduo.com,reject
+DOMAIN,images.pinduoduo.com,reject
 DOMAIN,dspsdk.pinduoduo.com,reject
 DOMAIN,pine-assets.space,reject
 DOMAIN,pineegypt.com,reject
@@ -82208,6 +82209,7 @@ DOMAIN,bcfeedback.taobao.com,reject
 DOMAIN,detail.taobao.com,reject
 DOMAIN,rtb.julang.taobao.com,reject
 DOMAIN,tns.simba.taobao.com,reject
+DOMAIN,youku-acs.m.taobao.com,reject
 DOMAIN,adash-c.m.taobao.com,reject
 DOMAIN,adash-c.ut.taobao.com,reject
 DOMAIN,adashbc.m.taobao.com,reject
