@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-07-28 09:41:56（北京时间）
-! 📊 有效规则：5164 条
+! ⏰ 更新时间：2026-07-28 21:30:54（北京时间）
+! 📊 有效规则：5167 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-07-28 09:41:56 | ✅ 有效规则 5164 条
+! Description: ⏰ 更新时间 2026-07-28 21:30:54 | ✅ 有效规则 5167 条
 ! ======================================================================
 @@gimg*.baidu.com/gimg/app=$domain=kimivod.com
 @@||iqiyi.com/static/js/adfe.5aa3302c.js
@@ -2528,6 +2528,7 @@
 @@||mon.zijieapi.com^$important
 @@||openmonitor.alipay-eco.com^$important
 ! 📋 白名单来源：AdGuard 中文白名单（远程白名单）
+@@||2ipcore.com^$domain=2ip.ru
 @@/vast.php?idzone=$domain=jptt.tv
 @@||vast.livejasmin.com^$domain=jptt.tv
 @@||go.marzaent.com/smartpop/$domain=jptt.tv
@@ -2603,6 +2604,9 @@
 @@||wkstatic.bdimg.com/static/wkcore/widget/commerce/fengchao/*$domain=wenku.baidu.com
 ! 📋 白名单来源：AdGuard 跟踪白名单（远程白名单）
 @@||st-*.dynamicyield.com/st*&inHead=true&id=*&jsession=*scriptVersion=*&noConsent=
+@@||rm.redbull.com/gtm.js$domain=redbull.com
+@@||googletagmanager.com/gtm.js$domain=candy-home.com
+@@||googletagmanager.com/gtm.js$domain=brita.pl
 @@||xzeepb2clookuppsta001.blob.core.windows.net/bge/$content
 @@||googletagmanager.com/gtm.js$domain=hokkaido-np.co.jp
 @@||shopify.com/authentication/$permissions=private-state-token-redemption=()
@@ -4066,7 +4070,6 @@
 @@||googletagmanager.com/gtag/js?id=$domain=laudamotion.com
 @@||google-analytics.com/analytics.js$domain=parzibyte.me
 @@||cdn.segment.com/analytics.js/v1/*/analytics.min.js$domain=shop.fender.com
-@@||google-analytics.com/analytics.js$domain=freecoursesonline.me
 @@||google-analytics.com/analytics.js$domain=4kdownload.com
 @@||google-analytics.com/gtm/js$domain=4kdownload.com
 @@||googletagmanager.com/gtm.js$domain=vw-sklep.pl
