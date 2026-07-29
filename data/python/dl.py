@@ -55,7 +55,7 @@ adblock_rules = [
     {"url": "https://raw.githubusercontent.com/rentianyu/Ad-set-hosts/master/hosts", "name": "小贝塔-Hosts合并"},
 
     #AdGurad：
-    #{"url": "https://raw.githubusercontent.com/qq5460168/666/master/rules.txt", "name": "个人合并规则"},
+    {"url": "https://raw.githubusercontent.com/qq5460168/666/master/rules.txt", "name": "个人合并规则"},
     #{"url": "https://oss.xlxbk.cn/dns.txt", "name": "xlxbk DNS黑名单"},
     #{"url": "https://raw.gitcode.com/rssv/qy-Ads-Rule/raw/main/black.txt", "name": "晴雅规则"},
     {"url": "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt", "name": "酷安@大萌主"},
@@ -67,7 +67,7 @@ adblock_rules = [
     {"url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt", "name": "秋风广告规则"},
     {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt", "name": "乘风视频规则"},
     {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt", "name": "乘风通用规则"},
-    {"url": "https://anti-ad.net/easylist.txt", "name": "anti-ad 官方规则"},
+    #{"url": "https://anti-ad.net/easylist.txt", "name": "anti-ad 官方规则"},
     #{"url": "https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt", "name": "ADgk 广告规则"},
     #{"url": "https://raw.githubusercontent.com/qq5460168/generate-adguard/refs/heads/main/adguard_rules/filtered_rules.txt", "name": "从AdGuard Home日志生成的拦截规则"},
     
