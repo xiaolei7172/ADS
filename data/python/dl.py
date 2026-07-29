@@ -52,7 +52,7 @@ if os.path.exists(os.path.join(MOD_DIR, "whitelist.txt")):
 # ==============================================
 adblock_rules = [
     #Hosts：
-    {"url": "https://raw.githubusercontent.com/rentianyu/Ad-set-hosts/master/hosts", "name": "小贝塔-Hosts合并"},
+    #{"url": "https://raw.githubusercontent.com/rentianyu/Ad-set-hosts/master/hosts", "name": "小贝塔-Hosts合并"},
 
     #AdGurad：
     {"url": "https://raw.githubusercontent.com/qq5460168/666/master/rules.txt", "name": "个人合并规则"},
