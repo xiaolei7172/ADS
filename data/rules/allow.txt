@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-07-30 09:26:27（北京时间）
-! 📊 有效规则：6076 条
+! ⏰ 更新时间：2026-07-30 21:27:26（北京时间）
+! 📊 有效规则：6078 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-07-30 09:26:27 | ✅ 有效规则 6076 条
+! Description: ⏰ 更新时间 2026-07-30 21:27:26 | ✅ 有效规则 6078 条
 ! ======================================================================
 @@.cn:8005/$domain=www.ntdm9.com|www.mxdm9.com|mxdm6.com|ntdm6.com
 @@.com/o.js$domain=2biqu.com
@@ -3068,6 +3068,7 @@
 @@||zodgame.xyz^
 @@||ztgame.com^
 ! 📋 白名单来源：酷安@大萌主 [轻量广告拦截规则]（规则内置）
+@@||themoviedb.org/assets/
 ! 📋 白名单来源：番茄去广告规则 [番茄炒蛋规则]（规则内置）
 @@||reading.snssdk.com^$important,app=com.dragon.read
 @@||lf-fe.fqnovelstatic.com^$important,app=com.dragon.read
@@ -3513,6 +3514,7 @@
 @@||wkstatic.bdimg.com/static/wkcore/widget/commerce/fengchao/*$domain=wenku.baidu.com
 ! 📋 白名单来源：AdGuard 跟踪白名单（远程白名单）
 @@||st-*.dynamicyield.com/st*&inHead=true&id=*&jsession=*scriptVersion=*&noConsent=
+@@||pub.doubleverify.com/dvtag/$domain=bbc.com
 @@||rm.redbull.com/gtm.js$domain=redbull.com
 @@||googletagmanager.com/gtm.js$domain=candy-home.com
 @@||googletagmanager.com/gtm.js$domain=brita.pl
