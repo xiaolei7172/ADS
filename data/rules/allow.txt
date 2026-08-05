@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-08-05 09:43:14（北京时间）
-! 📊 有效规则：6078 条
+! ⏰ 更新时间：2026-08-05 21:43:35（北京时间）
+! 📊 有效规则：6077 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-08-05 09:43:14 | ✅ 有效规则 6078 条
+! Description: ⏰ 更新时间 2026-08-05 21:43:35 | ✅ 有效规则 6077 条
 ! ======================================================================
 @@.cn:8005/$domain=www.ntdm9.com|www.mxdm9.com|mxdm6.com|ntdm6.com
 @@.com/o.js$domain=2biqu.com
@@ -3514,6 +3514,7 @@
 @@||wkstatic.bdimg.com/static/wkcore/widget/commerce/fengchao/*$domain=wenku.baidu.com
 ! 📋 白名单来源：AdGuard 跟踪白名单（远程白名单）
 @@||st-*.dynamicyield.com/st*&inHead=true&id=*&jsession=*scriptVersion=*&noConsent=
+@@||cdn.amplitude.com/libs/analytics-browser-*-min.js.gz$domain=parkedin.com
 @@||pub.doubleverify.com/dvtag/$domain=bbc.com
 @@||rm.redbull.com/gtm.js$domain=redbull.com
 @@||googletagmanager.com/gtm.js$domain=candy-home.com
@@ -3551,7 +3552,6 @@
 @@||mpsnare.iesnare.com/script/logo.js$domain=aswbe.ana.co.jp
 @@||cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/AnalyticsProvider*.js$domain=shop.app
 @@||cdn.petametrics.com/*.js$domain=thestreet.com
-@@||cnstrc.com/js/cust/indigo_pAkokG.js$domain=indigo.ca
 @@||onlinestarten.net/assets/*sn1_dvt-prod.js$domain=247sports.com
 @@||onlinestarten.net^$xmlhttprequest,domain=247sports.com
 @@||cr.acecounter.com/Web/AceCounter_AW.js$domain=pedalparts.co.kr
@@ -3788,7 +3788,6 @@
 @@||googletagservices.com/tag/js/gpt.js$xmlhttprequest,script,redirect=googletagservices-gpt,domain=asda.com
 @@||auth.ticketmaster.com/epsf/gec*Login
 @@||a-fds.youborafds01.com/data?$xmlhttprequest,domain=pluto.tv
-@@||cnstrc.com/js/cust/swanson-health_*.js$domain=swansonvitamins.com
 @@||googletagmanager.com/gtm.js$domain=ybt.sapporobeer.jp
 @@||umeng.com/api/$domain=developer.umeng.com
 @@||umeng.com/college/$domain=developer.umeng.com
