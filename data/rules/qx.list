@@ -109,8 +109,6 @@ DOMAIN,*.8vx3zks.xyz,reject
 DOMAIN,*.9tjoj6.com,reject
 DOMAIN,*.a48962121.top,reject
 DOMAIN,*.acdnrvh.com,reject
-DOMAIN,*.aliyuncsslb.com,reject
-DOMAIN,*.aliyuncsslbintl.com,reject
 DOMAIN,*.amwexgj.com,reject
 DOMAIN,*.anhuyj.cn,reject
 DOMAIN,*.arbyyu.com,reject
@@ -4857,6 +4855,7 @@ DOMAIN,csjplatform.com,reject
 DOMAIN,cslbahf.top,reject
 DOMAIN,cslpf.cn,reject
 DOMAIN,csqiulong.com,reject
+DOMAIN,cssstyle.motorcycles,reject
 DOMAIN,cstoa.com,reject
 DOMAIN,csxjys.com,reject
 DOMAIN,csygxdym.com,reject
@@ -17471,4 +17470,3 @@ DOMAIN,zzycj.com,reject
 DOMAIN,zzz7.52896368.com,reject
 DOMAIN,zzztl.com,reject
 DOMAIN,zzzzz4.52896368.com,reject
-DOMAIN,cssstyle.motorcycles,reject
