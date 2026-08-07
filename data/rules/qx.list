@@ -100,12 +100,15 @@ DOMAIN,*.3dqvcli.xyz,reject
 DOMAIN,*.3r5ia7l.xyz,reject
 DOMAIN,*.4egscv.com,reject
 DOMAIN,*.59p643.com,reject
+DOMAIN,*.5z3r02h.com,reject
 DOMAIN,*.5z6h6b.cn,reject
 DOMAIN,*.60qso7.com,reject
+DOMAIN,*.636371.lifestyle,reject
 DOMAIN,*.6nxa6g.com,reject
 DOMAIN,*.80ritc.com,reject
 DOMAIN,*.8359300.cc,reject
 DOMAIN,*.8vx3zks.xyz,reject
+DOMAIN,*.9nm1ol2.com,reject
 DOMAIN,*.9tjoj6.com,reject
 DOMAIN,*.a48962121.top,reject
 DOMAIN,*.acdnrvh.com,reject
@@ -113,6 +116,8 @@ DOMAIN,*.amwexgj.com,reject
 DOMAIN,*.anhuyj.cn,reject
 DOMAIN,*.arbyyu.com,reject
 DOMAIN,*.awkwla.cn,reject
+DOMAIN,*.awsrp4.com,reject
+DOMAIN,*.b26u62v.com,reject
 DOMAIN,*.b5gvpk5.com,reject
 DOMAIN,*.bg3partner.fun,reject
 DOMAIN,*.bg4f8d.com,reject
@@ -147,12 +152,14 @@ DOMAIN,*.fiu07051kl.com,reject
 DOMAIN,*.fohbgjv.com,reject
 DOMAIN,*.fokm37.cn,reject
 DOMAIN,*.ft33t3w.pro,reject
+DOMAIN,*.fyzermq.com,reject
 DOMAIN,*.g0d679.com,reject
 DOMAIN,*.g9hc4.cn,reject
 DOMAIN,*.gdolr.cn,reject
 DOMAIN,*.giqnyl.cn,reject
 DOMAIN,*.guanaibao.com,reject
 DOMAIN,*.h6jv1o.com,reject
+DOMAIN,*.h9bc7k.top,reject
 DOMAIN,*.hrdhej.xyz,reject
 DOMAIN,*.hychwg.cyou,reject
 DOMAIN,*.iburtq.xyz,reject
@@ -175,11 +182,13 @@ DOMAIN,*.kxayxw.cn,reject
 DOMAIN,*.ky5683295.cc,reject
 DOMAIN,*.laebu.cn,reject
 DOMAIN,*.ligmd359543.vip,reject
+DOMAIN,*.lwaed631.vip,reject
 DOMAIN,*.lxclli.cn,reject
 DOMAIN,*.lzwrhiw.xyz,reject
 DOMAIN,*.md410.cc,reject
 DOMAIN,*.mise*.buzz,reject
 DOMAIN,*.mkwqj.com,reject
+DOMAIN,*.mmdf645.vip,reject
 DOMAIN,*.mokhuba.com,reject
 DOMAIN,*.mvepu.com,reject
 DOMAIN,*.myug4s.com,reject
@@ -204,6 +213,7 @@ DOMAIN,*.pl1n06.com,reject
 DOMAIN,*.pnwix.cn,reject
 DOMAIN,*.poeme.cn,reject
 DOMAIN,*.ppfu3m.com,reject
+DOMAIN,*.pqwxf4b.com,reject
 DOMAIN,*.qc.bsccdn.net,reject
 DOMAIN,*.qgivvd.cn,reject
 DOMAIN,*.qiuxl11.cn,reject
@@ -225,12 +235,14 @@ DOMAIN,*.tfkoa.com,reject
 DOMAIN,*.tkmihh.xyz,reject
 DOMAIN,*.tnprn.cn,reject
 DOMAIN,*.u101vb.com,reject
+DOMAIN,*.u2ir3v.top,reject
 DOMAIN,*.ud9ipy.com,reject
 DOMAIN,*.ul2tos.cn,reject
 DOMAIN,*.uryxw.com,reject
 DOMAIN,*.uweisit.top,reject
 DOMAIN,*.v4v6v4.com,reject
 DOMAIN,*.vkomjd.com,reject
+DOMAIN,*.vu1elrx.com,reject
 DOMAIN,*.wacaoldy1.com,reject
 DOMAIN,*.weilayun.com,reject
 DOMAIN,*.wfojsm.com,reject
@@ -885,6 +897,7 @@ DOMAIN,6711.com,reject
 DOMAIN,6726lmym.top,reject
 DOMAIN,6728812.com,reject
 DOMAIN,678tl.com,reject
+DOMAIN,67evjpvdi.com,reject
 DOMAIN,685wo.com,reject
 DOMAIN,68665565.com,reject
 DOMAIN,68710266.com,reject
@@ -914,6 +927,7 @@ DOMAIN,6osurvos.fn.bytedance.net,reject
 DOMAIN,6quspne.com,reject
 DOMAIN,6tofsu.com,reject
 DOMAIN,6tsbe1zs.me,reject
+DOMAIN,6un45sxmx.com,reject
 DOMAIN,6uzxtlv.cn,reject
 DOMAIN,6v4.work,reject
 DOMAIN,6v6.work,reject
@@ -5516,6 +5530,7 @@ DOMAIN,dns.weibo.cn,reject
 DOMAIN,dns2.q2cdn.com,reject
 DOMAIN,dns2.titannetwork.cn,reject
 DOMAIN,dnvus.com,reject
+DOMAIN,dnweq5z5g.com,reject
 DOMAIN,dnyzbp.cn,reject
 DOMAIN,dnzmhr.xyz,reject
 DOMAIN,do-not-tracker.org,reject
@@ -8365,6 +8380,7 @@ DOMAIN,iymgmtq.com,reject
 DOMAIN,iytrn.xyz,reject
 DOMAIN,izeokt.cn,reject
 DOMAIN,izicai.xyz,reject
+DOMAIN,izq.lwaed633.vip,reject
 DOMAIN,j.6avz.com,reject
 DOMAIN,j.baminw.cn,reject
 DOMAIN,j.biquge520.cc,reject
@@ -12407,6 +12423,7 @@ DOMAIN,qooic.com,reject
 DOMAIN,qos.report.qq.com,reject
 DOMAIN,qosp.iqiyi.com,reject
 DOMAIN,qosp.msg.71.am,reject
+DOMAIN,qouy029.top,reject
 DOMAIN,qowfknlds.net,reject
 DOMAIN,qp.yunanfuwuqi.com,reject
 DOMAIN,qp89pj.com,reject
@@ -12459,6 +12476,7 @@ DOMAIN,qt62q.top,reject
 DOMAIN,qt73q.top,reject
 DOMAIN,qtaeixd.com,reject
 DOMAIN,qtd95fj.online,reject
+DOMAIN,qthw061.top,reject
 DOMAIN,qtienly.top,reject
 DOMAIN,qtmdzsj.cn,reject
 DOMAIN,qtmojo.cn,reject
@@ -14062,6 +14080,7 @@ DOMAIN,swcdn.apple.com,reject
 DOMAIN,swdownload.apple.com,reject
 DOMAIN,switchadhub.com,reject
 DOMAIN,switching.atm.punchbox.org,reject
+DOMAIN,swmshpphnu2.com,reject
 DOMAIN,swpgjai.pop.weddingeeos.com,reject
 DOMAIN,swquery.apple.com,reject
 DOMAIN,swscan.apple.com,reject
@@ -16027,6 +16046,7 @@ DOMAIN,www.199tl.com,reject
 DOMAIN,www.200ps.com,reject
 DOMAIN,www.35609731.xyz,reject
 DOMAIN,www.3aym.cn,reject
+DOMAIN,www.437944.xyz,reject
 DOMAIN,www.510tl.com,reject
 DOMAIN,www.517xx.com,reject
 DOMAIN,www.51hicard.com,reject
@@ -16142,6 +16162,7 @@ DOMAIN,www.mqhzdl.com,reject
 DOMAIN,www.mt*.vip,reject
 DOMAIN,www.nleljf.xyz,reject
 DOMAIN,www.ocfgaa.xyz,reject
+DOMAIN,www.ompkcy255.vip,reject
 DOMAIN,www.opgame.me,reject
 DOMAIN,www.ostlon.com,reject
 DOMAIN,www.pangle.cn,reject
