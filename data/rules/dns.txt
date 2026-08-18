@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影DNS拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-08-17 20:22:49（北京时间）
-! 📊 有效规则：17528 条
+! ⏰ 更新时间：2026-08-18 08:39:43（北京时间）
+! 📊 有效规则：17539 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影DNS拦截规则 📌
-! Description: ⏰ 更新时间 2026-08-17 20:22:49 | ✅ 有效规则 17528 条
+! Description: ⏰ 更新时间 2026-08-18 08:39:43 | ✅ 有效规则 17539 条
 ! ======================================================================
 ||adsoptimal.com^
 ||adversaldisplay.com^
@@ -116,6 +116,7 @@
 ||*.5z6h6b.cn^
 ||*.60qso7.com^
 ||*.636371.lifestyle^
+||*.6f2fd.com^
 ||*.6nxa6g.com^
 ||*.80ritc.com^
 ||*.8359300.cc^
@@ -172,6 +173,7 @@
 ||*.guanaibao.com^
 ||*.h6jv1o.com^
 ||*.h9bc7k.top^
+||*.hbshgll.cn^
 ||*.hrdhej.xyz^
 ||*.hychwg.cyou^
 ||*.iburtq.xyz^
@@ -202,6 +204,7 @@
 ||*.mise*.buzz^
 ||*.mkwqj.com^
 ||*.mmdf645.vip^
+||*.mmdg731.vip^
 ||*.mokhuba.com^
 ||*.mvepu.com^
 ||*.myug4s.com^
@@ -216,6 +219,7 @@
 ||*.o96jic.com^
 ||*.obj23q.com^
 ||*.ochhnea.xyz^
+||*.olbbfulmed.com^
 ||*.ombuw.xyz^
 ||*.oneliner.cn^
 ||*.oweisik.top^
@@ -234,6 +238,7 @@
 ||*.retail.n.weimob.com^
 ||*.rfvjl.cn^
 ||*.rhjdc.com^
+||*.rhkd324.com^
 ||*.rtnwv.com^
 ||*.s8etj5.com^
 ||*.saxysec.com^
@@ -241,12 +246,14 @@
 ||*.siigck.xyz^
 ||*.sjpxfz.xyz^
 ||*.so04011koaq.com^
+||*.svxd326.vip^
 ||*.taoroad.com.cn^
 ||*.tap0102mzq.top^
 ||*.tbyfz.xyz^
 ||*.tfkoa.com^
 ||*.tkmihh.xyz^
 ||*.tnprn.cn^
+||*.twpvm.com^
 ||*.u101vb.com^
 ||*.u2ir3v.top^
 ||*.ud9ipy.com^
@@ -260,12 +267,14 @@
 ||*.weilayun.com^
 ||*.wfojsm.com^
 ||*.wknij.com^
+||*.wwbszy.com^
 ||*.wy2qq.top^
 ||*.x586di.com^
 ||*.x7jy10.com^
 ||*.xiangde.top^
 ||*.xpj2443430.cc^
 ||*.xqojux.xyz^
+||*.xsade391.vip^
 ||*.xwcphd.xyz^
 ||*.xxsp002.cyou^
 ||*.xzdabyw.xyz^
@@ -7538,6 +7547,7 @@
 ||hkgryazmc.pubend81372.vip^
 ||hkk456.cc^
 ||hkkeafj.cn^
+||hkl.xiuseab222.vip^
 ||hkrpg-log-upload-os.hoyoverse.com^
 ||hkrpg-log-upload.mihoyo.com^
 ||hkscldggm.xyz^
@@ -11516,6 +11526,7 @@
 ||ort-stsdk.vivo.com.cn^
 ||ort.stsdk.vivo.com.cn^
 ||ortc.cc^
+||orvexlumin.698518.xyz^
 ||orxsq.xyz^
 ||orz.hupu.com^
 ||osancik.top^
@@ -11671,7 +11682,6 @@
 ||p3-static-img.toutiaoimg.com^
 ||p3-stone-tv.byteimg.com^
 ||p3.adkwai.com^
-||p3.bdxiguaimg.com^
 ||p3.toutiaoimg.com^
 ||p3.web3cdn.cn^
 ||p3p.mmstat.com^
@@ -16455,6 +16465,7 @@
 ||xhbqczl.com^
 ||xhcdn.com^
 ||xheqbc.cn^
+||xhffhsl.*.boutique^
 ||xhiit0n.xyz^
 ||xhkvff.cn^
 ||xhmrv.com^

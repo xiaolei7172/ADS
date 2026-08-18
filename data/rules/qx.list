@@ -104,6 +104,7 @@ DOMAIN,*.5z3r02h.com,reject
 DOMAIN,*.5z6h6b.cn,reject
 DOMAIN,*.60qso7.com,reject
 DOMAIN,*.636371.lifestyle,reject
+DOMAIN,*.6f2fd.com,reject
 DOMAIN,*.6nxa6g.com,reject
 DOMAIN,*.80ritc.com,reject
 DOMAIN,*.8359300.cc,reject
@@ -160,6 +161,7 @@ DOMAIN,*.giqnyl.cn,reject
 DOMAIN,*.guanaibao.com,reject
 DOMAIN,*.h6jv1o.com,reject
 DOMAIN,*.h9bc7k.top,reject
+DOMAIN,*.hbshgll.cn,reject
 DOMAIN,*.hrdhej.xyz,reject
 DOMAIN,*.hychwg.cyou,reject
 DOMAIN,*.iburtq.xyz,reject
@@ -189,6 +191,7 @@ DOMAIN,*.md410.cc,reject
 DOMAIN,*.mise*.buzz,reject
 DOMAIN,*.mkwqj.com,reject
 DOMAIN,*.mmdf645.vip,reject
+DOMAIN,*.mmdg731.vip,reject
 DOMAIN,*.mokhuba.com,reject
 DOMAIN,*.mvepu.com,reject
 DOMAIN,*.myug4s.com,reject
@@ -203,6 +206,7 @@ DOMAIN,*.nxue75.com,reject
 DOMAIN,*.o96jic.com,reject
 DOMAIN,*.obj23q.com,reject
 DOMAIN,*.ochhnea.xyz,reject
+DOMAIN,*.olbbfulmed.com,reject
 DOMAIN,*.ombuw.xyz,reject
 DOMAIN,*.oneliner.cn,reject
 DOMAIN,*.oweisik.top,reject
@@ -221,6 +225,7 @@ DOMAIN,*.r1gu.com,reject
 DOMAIN,*.retail.n.weimob.com,reject
 DOMAIN,*.rfvjl.cn,reject
 DOMAIN,*.rhjdc.com,reject
+DOMAIN,*.rhkd324.com,reject
 DOMAIN,*.rtnwv.com,reject
 DOMAIN,*.s8etj5.com,reject
 DOMAIN,*.saxysec.com,reject
@@ -228,12 +233,14 @@ DOMAIN,*.searesource.top,reject
 DOMAIN,*.siigck.xyz,reject
 DOMAIN,*.sjpxfz.xyz,reject
 DOMAIN,*.so04011koaq.com,reject
+DOMAIN,*.svxd326.vip,reject
 DOMAIN,*.taoroad.com.cn,reject
 DOMAIN,*.tap0102mzq.top,reject
 DOMAIN,*.tbyfz.xyz,reject
 DOMAIN,*.tfkoa.com,reject
 DOMAIN,*.tkmihh.xyz,reject
 DOMAIN,*.tnprn.cn,reject
+DOMAIN,*.twpvm.com,reject
 DOMAIN,*.u101vb.com,reject
 DOMAIN,*.u2ir3v.top,reject
 DOMAIN,*.ud9ipy.com,reject
@@ -247,12 +254,14 @@ DOMAIN,*.wacaoldy1.com,reject
 DOMAIN,*.weilayun.com,reject
 DOMAIN,*.wfojsm.com,reject
 DOMAIN,*.wknij.com,reject
+DOMAIN,*.wwbszy.com,reject
 DOMAIN,*.wy2qq.top,reject
 DOMAIN,*.x586di.com,reject
 DOMAIN,*.x7jy10.com,reject
 DOMAIN,*.xiangde.top,reject
 DOMAIN,*.xpj2443430.cc,reject
 DOMAIN,*.xqojux.xyz,reject
+DOMAIN,*.xsade391.vip,reject
 DOMAIN,*.xwcphd.xyz,reject
 DOMAIN,*.xxsp002.cyou,reject
 DOMAIN,*.xzdabyw.xyz,reject
@@ -7515,6 +7524,7 @@ DOMAIN,hkfuy.com,reject
 DOMAIN,hkgryazmc.pubend81372.vip,reject
 DOMAIN,hkk456.cc,reject
 DOMAIN,hkkeafj.cn,reject
+DOMAIN,hkl.xiuseab222.vip,reject
 DOMAIN,hkrpg-log-upload-os.hoyoverse.com,reject
 DOMAIN,hkrpg-log-upload.mihoyo.com,reject
 DOMAIN,hkscldggm.xyz,reject
@@ -11486,6 +11496,7 @@ DOMAIN,orqmimfug.in,reject
 DOMAIN,ort-stsdk.vivo.com.cn,reject
 DOMAIN,ort.stsdk.vivo.com.cn,reject
 DOMAIN,ortc.cc,reject
+DOMAIN,orvexlumin.698518.xyz,reject
 DOMAIN,orxsq.xyz,reject
 DOMAIN,orz.hupu.com,reject
 DOMAIN,osancik.top,reject
@@ -11637,7 +11648,6 @@ DOMAIN,p3-lm.adkwai.com,reject
 DOMAIN,p3-static-img.toutiaoimg.com,reject
 DOMAIN,p3-stone-tv.byteimg.com,reject
 DOMAIN,p3.adkwai.com,reject
-DOMAIN,p3.bdxiguaimg.com,reject
 DOMAIN,p3.toutiaoimg.com,reject
 DOMAIN,p3.web3cdn.cn,reject
 DOMAIN,p3p.mmstat.com,reject
@@ -16410,6 +16420,7 @@ DOMAIN,xh990214c.llpstudy.top,reject
 DOMAIN,xhbqczl.com,reject
 DOMAIN,xhcdn.com,reject
 DOMAIN,xheqbc.cn,reject
+DOMAIN,xhffhsl.*.boutique,reject
 DOMAIN,xhiit0n.xyz,reject
 DOMAIN,xhkvff.cn,reject
 DOMAIN,xhmrv.com,reject
