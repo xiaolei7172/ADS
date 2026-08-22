@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-08-21 20:26:23（北京时间）
-! 📊 有效规则：6127 条
+! ⏰ 更新时间：2026-08-22 08:39:27（北京时间）
+! 📊 有效规则：6126 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-08-21 20:26:23 | ✅ 有效规则 6127 条
+! Description: ⏰ 更新时间 2026-08-22 08:39:27 | ✅ 有效规则 6126 条
 ! ======================================================================
 @@.cn:8005/$domain=www.ntdm9.com|www.mxdm9.com|mxdm6.com|ntdm6.com
 @@.com/o.js$domain=2biqu.com
@@ -3686,7 +3686,6 @@
 @@||syndication.realsrv.com/splash.php?idzone=$xmlhttprequest,domain=hentaila.tv
 @@||adobedc.demdex.net^$xmlhttprequest,domain=sc.com
 @@||src.litix.io/*/bitmovin-mux.js$domain=shoof.alkass.net
-@@||lptag.liveperson.net^$domain=yesstyle.com
 @@||cdn.optimizely.com/datafiles/$domain=metro.at|metro.bg|metro-cc.hr|metro.fr|metro.it|metro-kz.com|metro.md|metro.pk|metro.ro|metro.rs|metro.sk|makro.es|metro-tr.com|metro.ua|makro.pt|metro.de
 @@||static.airbridge.io/sdk/latest/$domain=airbridge.io
 @@||samsclub.com/px/*/captcha/captcha.js$domain=samsclub.com
