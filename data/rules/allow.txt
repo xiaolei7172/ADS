@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-08-26 20:30:19（北京时间）
-! 📊 有效规则：6129 条
+! ⏰ 更新时间：2026-08-27 13:46:11（北京时间）
+! 📊 有效规则：6128 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-08-26 20:30:19 | ✅ 有效规则 6129 条
+! Description: ⏰ 更新时间 2026-08-27 13:46:11 | ✅ 有效规则 6128 条
 ! ======================================================================
 @@.cn:8005/$domain=www.ntdm9.com|www.mxdm9.com|mxdm6.com|ntdm6.com
 @@.com/o.js$domain=2biqu.com
@@ -4499,7 +4499,6 @@
 @@||btloader.com/tag?$domain=voici.fr
 @@||googletagmanager.com/gtm.js$domain=brita.de
 @@||qualtrics.com/jfe/form/$subdocument
-@@||api.ipify.org/?format=json$domain=utils.surf
 @@||share.9cdn.net/share/long_cache/js/tracking/tracking.*.min.js$domain=nine.com.au
 @@||cdn.segmentify.com^$domain=gratis.com
 @@||cdn.segmentify.com/*/segmentify.js$domain=gratis.com
