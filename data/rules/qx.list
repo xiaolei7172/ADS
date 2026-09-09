@@ -15858,6 +15858,7 @@ DOMAIN,wgie.0z5jn.cn,reject
 DOMAIN,wgnlz.com,reject
 DOMAIN,wgnmp.com,reject
 DOMAIN,wgoeisdnlk.com,reject
+DOMAIN,wgwt5p8.com,reject
 DOMAIN,whafwl.com,reject
 DOMAIN,whalecloud.com,reject
 DOMAIN,whcrdz.com,reject
@@ -17527,4 +17528,4 @@ DOMAIN,zzycj.com,reject
 DOMAIN,zzz7.52896368.com,reject
 DOMAIN,zzztl.com,reject
 DOMAIN,zzzzz4.52896368.com,reject
-DOMAIN,wgwt5p8.com,reject
+DOMAIN,safebrowsing.urlsec.qq.com,reject

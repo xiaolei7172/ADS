@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-09-09 10:09:08（北京时间）
-! 📊 有效规则：6138 条
+! ⏰ 更新时间：2026-09-09 23:33:59（北京时间）
+! 📊 有效规则：6139 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-09-09 10:09:08 | ✅ 有效规则 6138 条
+! Description: ⏰ 更新时间 2026-09-09 23:33:59 | ✅ 有效规则 6139 条
 ! ======================================================================
 @@.cn:8005/$domain=www.ntdm9.com|www.mxdm9.com|mxdm6.com|ntdm6.com
 @@.com/o.js$domain=2biqu.com
@@ -3562,6 +3562,7 @@
 @@||wkstatic.bdimg.com/static/wkcore/widget/commerce/fengchao/*$domain=wenku.baidu.com
 ! 📋 白名单来源：AdGuard 跟踪白名单（远程白名单）
 @@||st-*.dynamicyield.com/st*&inHead=true&id=*&jsession=*scriptVersion=*&noConsent=
+@@||featureassets.org/v1/initialize?k=$domain=bloomberg.com
 @@||assetsconfigcdn.org/v1/initialize?k=$domain=bloomberg.com
 @@||cdn.jsdelivr.net/npm/@thumbmarkjs/thumbmarkjs/dist/thumbmark.$domain=archive.is|archive.today|archive.ph
 @@||cdn.cxense.com/cx.cce.js$domain=j-cast.com
