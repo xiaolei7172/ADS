@@ -13152,7 +13152,7 @@ DOMAIN,sadsaxd.nlkmp.com,reject
 DOMAIN,safe-aisle.jointreport-switch.com,reject
 DOMAIN,safe.tsgpay.cn,reject
 DOMAIN,safebrowsing.apple,reject
-DOMAIN,safebrowsing.urlsec.gg.com,reject
+DOMAIN,safebrowsing.urlsec.qq.com,reject
 DOMAIN,saferwet.com,reject
 DOMAIN,sahqoo.com,reject
 DOMAIN,saitef.cn,reject
@@ -17528,4 +17528,3 @@ DOMAIN,zzycj.com,reject
 DOMAIN,zzz7.52896368.com,reject
 DOMAIN,zzztl.com,reject
 DOMAIN,zzzzz4.52896368.com,reject
-DOMAIN,safebrowsing.urlsec.qq.com,reject
