@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-09-15 10:28:11（北京时间）
-! 📊 有效规则：6142 条
+! ⏰ 更新时间：2026-09-15 23:59:23（北京时间）
+! 📊 有效规则：6155 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-09-15 10:28:11 | ✅ 有效规则 6142 条
+! Description: ⏰ 更新时间 2026-09-15 23:59:23 | ✅ 有效规则 6155 条
 ! ======================================================================
 @@.cn:8005/$domain=www.ntdm9.com|www.mxdm9.com|mxdm6.com|ntdm6.com
 @@.com/o.js$domain=2biqu.com
@@ -28,6 +28,10 @@
 @@||*-verify.captcha-open-southeast.aliyuncs.com^
 @@||*-verify.captcha-open.aliyuncs.com^
 @@||*.*.szbdyd.com^
+@@||*.4399.com^
+@@||*.5054399.com^
+@@||*.7k7k.com^
+@@||*.7k7kimg.cn^
 @@||*.95516.com^
 @@||*.a.yximgs.com^
 @@||*.akamai-cdn-content.com^
@@ -58,6 +62,7 @@
 @@||*.heytapdownload.com^
 @@||*.hicloud.com^
 @@||*.img.mobile.sina.cn^
+@@||*.img4399.com^
 @@||*.in-addr.arpa^
 @@||*.ke.com^
 @@||*.lianjia.com^
@@ -1287,6 +1292,7 @@
 @@||img3.tapimg.com^
 @@||img30.360buyimg.com^
 @@||img4.qy0.ru^
+@@||imga*.5054399.com^
 @@||imgcache.qq.com^
 @@||imgessl.kugou.com^
 @@||imgservices-1252317822.image.myqcloud.com^
@@ -2120,6 +2126,7 @@
 @@||proxy-tf-all-ws.bilivideo.com^
 @@||pss.bdstatic.com^
 @@||psstatic.cdn.bcebos.com^
+@@||ptlogin.4399.com^
 @@||ptlogin.yuewen.com^
 @@||pttn.m3pd.com^
 @@||ptx.cdntrex.com^
@@ -2257,6 +2264,7 @@
 @@||s0.meituan.net^
 @@||s01.mifile.cn^
 @@||s1.hdslb.com^
+@@||s1.img4399.com^
 @@||s1.kskwai.com^
 @@||s1.meituan.net^
 @@||s1.voicecloud.cn^
@@ -2848,7 +2856,12 @@
 @@||www.360.cn^
 @@||www.360kuai.com^
 @@||www.360simg.com^
+@@||www.4399.cn^
+@@||www.4399.com^
+@@||www.5054399.com^
 @@||www.54647.io^
+@@||www.7k7k.com^
+@@||www.7k7kjs.cn^
 @@||www.9game.cn^
 @@||www.agiso.com^
 @@||www.airport.us^
