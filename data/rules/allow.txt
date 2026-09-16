@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-09-16 10:21:51（北京时间）
-! 📊 有效规则：6155 条
+! ⏰ 更新时间：2026-09-16 23:46:30（北京时间）
+! 📊 有效规则：6158 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-09-16 10:21:51 | ✅ 有效规则 6155 条
+! Description: ⏰ 更新时间 2026-09-16 23:46:30 | ✅ 有效规则 6158 条
 ! ======================================================================
 @@.cn:8005/$domain=www.ntdm9.com|www.mxdm9.com|mxdm6.com|ntdm6.com
 @@.com/o.js$domain=2biqu.com
@@ -3575,6 +3575,7 @@
 @@||wkstatic.bdimg.com/static/wkcore/widget/commerce/fengchao/*$domain=wenku.baidu.com
 ! 📋 白名单来源：AdGuard 跟踪白名单（远程白名单）
 @@||st-*.dynamicyield.com/st*&inHead=true&id=*&jsession=*scriptVersion=*&noConsent=
+@@||data.tm-awx.com$domain=gloucestershirelive.co.uk
 @@||rj.com/layouts/system/VisitorIdentification.js$domain=rj.com
 @@||sgtm.viking.de/gtm.js$domain=viking.de
 @@||pub-static.fotor.com/static/web/lib/sensors/sensorsdata.min.js
@@ -3607,6 +3608,8 @@
 @@||techlab-cdn.com/e/$domain=sephora.com
 @@.my.salesforce-setup.com/_ui/common/config/field/*/d?id=*&type=
 @@||static.cloudflareinsights.com^$domain=quasarzone.com,script
+@@||feliz.data.tm-awx.com^$domain=cheshire-live.co.uk
+@@||feliz-web.data.tm-awx.com^$domain=cheshire-live.co.uk
 @@||feliz.data.tm-awx.com^$domain=football.london
 @@||feliz-web.data.tm-awx.com^$domain=football.london
 @@||cdn.clerk.io/clerk.js$domain=avxperten.at|avxperten.be|avxperten.com|avxperten.cy|avxperten.cz|avxperten.de|avxperten.dk|avxperten.ee|avxperten.es|avxperten.fi|avxperten.fr|avxperten.gr|avxperten.hr|avxperten.hu|avxperten.it|avxperten.lt|avxperten.lu|avxperten.lv|avxperten.nl|avxperten.no|avxperten.pl|avxperten.pt|avxperten.ro|avxperten.se|avxperten.si|avxperten.sk|brukas.no
