@@ -11923,6 +11923,8 @@ DOMAIN,pic3.onetad.com,reject
 DOMAIN,pic494036.images9999.com,reject
 DOMAIN,pic8.onetad.com,reject
 DOMAIN,pic837013.images9999.com,reject
+DOMAIN,pica-a-display.diwodiwo.xyz,reject
+DOMAIN,pica-ad-api.diwodiwo.xyz,reject
 DOMAIN,picgg.idti.cn,reject
 DOMAIN,pick.isxyrzo.com,reject
 DOMAIN,picnewsss.com,reject
@@ -17533,5 +17535,3 @@ DOMAIN,zzycj.com,reject
 DOMAIN,zzz7.52896368.com,reject
 DOMAIN,zzztl.com,reject
 DOMAIN,zzzzz4.52896368.com,reject
-DOMAIN,pica-a-display.diwodiwo.xyz,reject
-DOMAIN,pica-ad-api.diwodiwo.xyz,reject

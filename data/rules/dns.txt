@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影DNS拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-09-22 01:25:46（北京时间）
+! ⏰ 更新时间：2026-09-22 10:25:13（北京时间）
 ! 📊 有效规则：17572 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影DNS拦截规则 📌
-! Description: ⏰ 更新时间 2026-09-22 01:25:46 | ✅ 有效规则 17572 条
+! Description: ⏰ 更新时间 2026-09-22 10:25:13 | ✅ 有效规则 17572 条
 ! ======================================================================
 ||adsoptimal.com^
 ||adversaldisplay.com^
@@ -11959,6 +11959,8 @@
 ||pic494036.images9999.com^
 ||pic8.onetad.com^
 ||pic837013.images9999.com^
+||pica-a-display.diwodiwo.xyz^
+||pica-ad-api.diwodiwo.xyz^
 ||picgg.idti.cn^
 ||pick.isxyrzo.com^
 ||picnewsss.com^
@@ -17580,5 +17582,3 @@
 ||zzz7.52896368.com^
 ||zzztl.com^
 ||zzzzz4.52896368.com^
-||pica-a-display.diwodiwo.xyz^
-||pica-ad-api.diwodiwo.xyz^
