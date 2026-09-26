@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-09-26 10:33:35（北京时间）
-! 📊 有效规则：6165 条
+! ⏰ 更新时间：2026-09-26 23:22:37（北京时间）
+! 📊 有效规则：6164 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-09-26 10:33:35 | ✅ 有效规则 6165 条
+! Description: ⏰ 更新时间 2026-09-26 23:22:37 | ✅ 有效规则 6164 条
 ! ======================================================================
 @@.cn:8005/$domain=www.ntdm9.com|www.mxdm9.com|mxdm6.com|ntdm6.com
 @@.com/o.js$domain=2biqu.com
@@ -3577,7 +3577,6 @@
 @@||wkstatic.bdimg.com/static/wkcore/widget/commerce/fengchao/*$domain=wenku.baidu.com
 ! 📋 白名单来源：AdGuard 跟踪白名单（远程白名单）
 @@||st-*.dynamicyield.com/st*&inHead=true&id=*&jsession=*scriptVersion=*&noConsent=
-@@||static.criteo.net/js/ld/publishertag.prebid.js$domain=powerwatch.jp
 @@||bookshop.org/astro-assets/google-analytics.*.js$domain=bookshop.org
 @@||blob.core.windows.net/comed/src/js/google-analytics.js$domain=comed.com
 @@||integrations.fitanalytics.com/shop/bergfreunde/pdp.js$domain=bergfreunde.de|berg-freunde.at|berg-freunde.ch|bergfreunde.nl|bergfreunde.be|bergfreunde.it|bergfreunde.es|bergfreunde.eu|bergfreunde.dk|bergfreunde.se|bergfreunde.no|bergfreunde.fi|alpinetrek.co.uk|alpiniste.fr|campz.ie
