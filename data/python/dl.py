@@ -55,14 +55,14 @@ adblock_rules = [
     #{"url": "https://raw.githubusercontent.com/rentianyu/Ad-set-hosts/master/hosts", "name": "小贝塔-Hosts合并"},
 
     #AdGurad：
-    {"url": "https://raw.githubusercontent.com/qq5460168/666/master/rules.txt", "name": "个人合并规则"},
+    #{"url": "https://raw.githubusercontent.com/qq5460168/666/master/rules.txt", "name": "个人合并规则"},
     #{"url": "https://oss.xlxbk.cn/dns.txt", "name": "xlxbk DNS黑名单"},
     #{"url": "https://raw.gitcode.com/rssv/qy-Ads-Rule/raw/main/black.txt", "name": "晴雅规则"},
-    {"url": "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt", "name": "酷安@大萌主"},
+    #{"url": "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt", "name": "酷安@大萌主"},
     #{"url": "https://raw.githubusercontent.com/2Gardon/SM-Ad-FuckU-hosts/master/SMAdHosts", "name": "基于安卓APP抓取的规则"},
-    {"url": "http://hgzs.uunat.com/hg1.txt", "name": "海哥规则"},
+    #{"url": "http://hgzs.uunat.com/hg1.txt", "name": "海哥规则"},
     #{"url": "https://raw.githubusercontent.com/afwfv/DD-AD/main/rule/DD-AD.txt", "name": "dd-ad 规则"},
-    {"url": "https://gh-proxy.com/raw.githubusercontent.com/changzhaoCZ/fqnovel-adrules/refs/heads/main/fqnovel-fxxk_ads", "name": "番茄去广告规则"},
+    #{"url": "https://gh-proxy.com/raw.githubusercontent.com/changzhaoCZ/fqnovel-adrules/refs/heads/main/fqnovel-fxxk_ads", "name": "番茄去广告规则"},
     #{"url": "https://raw.githubusercontent.com/qq5460168/dangchu/main/black.txt", "name": "酷安对不对规则"},
     {"url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt", "name": "秋风广告规则"},
     {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt", "name": "乘风视频规则"},
@@ -76,10 +76,10 @@ adblock_rules = [
 allow_rules = [
     #{"url": "https://raw.githubusercontent.com/xiaolei7172/ADS/refs/heads/master/data/mod/whitelist.txt", "name": "天影白名单"},
     #{"url": "https://oss.xlxbk.cn/allow.txt", "name": "xlxbk白名单"},
-    {"url": "https://raw.githubusercontent.com/qq5460168/dangchu/main/white.txt", "name": "当初白名单"},
-    {"url": "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt", "name": "李文杰白名单"},
-    {"url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/allowlist.txt", "name": "AdGuard 中文白名单"},
-    {"url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/allowlist.txt", "name": "AdGuard 跟踪白名单"},
+    #{"url": "https://raw.githubusercontent.com/qq5460168/dangchu/main/white.txt", "name": "当初白名单"},
+    #{"url": "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt", "name": "李文杰白名单"},
+    #{"url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/allowlist.txt", "name": "AdGuard 中文白名单"},
+    #{"url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/allowlist.txt", "name": "AdGuard 跟踪白名单"},
 ]
 
 # ==============================================
