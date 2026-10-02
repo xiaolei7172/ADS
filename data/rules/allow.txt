@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-10-02 01:43:29（北京时间）
-! 📊 有效规则：43 条
+! ⏰ 更新时间：2026-10-02 11:08:37（北京时间）
+! 📊 有效规则：75 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-10-02 01:43:29 | ✅ 有效规则 43 条
+! Description: ⏰ 更新时间 2026-10-02 11:08:37 | ✅ 有效规则 75 条
 ! ======================================================================
 @@||112.28.245.186:443^$app=cn.kuwo.player
 @@||120.221.180.167:443^$app=cn.kuwo.player
@@ -17,6 +17,39 @@
 @@||120.221.180.94:443^$app=cn.kuwo.player
 @@||lf3-reading.fqnovelpic.com^
 @@||p3-novel.byteimg.com^
+! 📋 白名单来源：酷安@大萌主 [轻量广告拦截规则]（规则内置）
+@@||themoviedb.org/assets/
+@@gimg*.baidu.com/gimg/app=$domain=kimivod.com
+@@||iqiyi.com/static/js/adfe.5aa3302c.js
+@@||qhres2.com^$domain=www.n.cn
+@@||x2.ifengimg.com^
+@@||lobechat.com/_next/static/chunks/
+@@googlesyndication.com$domain=bilinovel.com
+@@||cqshuda.com/template/conch/asset/js/conch.vip.js
+@@||cloudflare.com/cdn-cgi/trace$domain=net.ljxnet.cn
+@@||ecmb.bdimg.com/*.jpg
+@@||ecmb.bdimg.com/*.png
+@@.cn:8005/$domain=www.ntdm9.com|www.mxdm9.com|mxdm6.com|ntdm6.com
+@@.com/o.js$domain=2biqu.com
+@@||/template/conch/asset/js/hlhtml.js$domain=www.lldm.net|1anime.me
+@@||css.yhdmtu.xyz^$domain=iyinghua.io|yinghua8.tv
+@@||jstatic.3.cn^$domain=m.jd.com
+@@||api.nocturnal-narwhal.buzz^$domain=webtor.io
+@@||manwa.me^
+@@||cdn-msp*.18comic*.*^
+@@||cdn-msp*.18comic.*^
+@@||miaozhen.com^$domain=miaozhen.com
+@@https://static.ws.126.net/163/frontend/libs/antanalysis.min.js
+@@guokr.com/apis/flowingboard/item/guokrapp_download_source.json
+@@||qhres2.com^$domain=baike.so.com
+@@||stripe.com^$domain=pay.openai.com
+@@||aliyuncs.com/*.png
+@@||f*.baidu.com/it/u=*,*&fm=$domain=baidu.com
+@@||guokr.com/apis/flowingboard/item/m_article
+@@||guokr.com/apis/flowingboard/item/m_home_
+@@||sobot.com^
+@@||wan.douyu.com^
+@@||developer.apple.com$generichide
 ! 📋 白名单来源：乘风视频规则 [乘风 视频过滤规则 uBlock Origin 1.56]（规则内置）
 @@||log.mmstat.com/eg.js^$script
 @@||union.video.qq.com/fcgi-bin/$script,domain=qq.com
