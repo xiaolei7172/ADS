@@ -34,28 +34,27 @@
 ||111.13.141.211:443^$app=com.dragon.read
 ||p6-ad-sign.byteimg.com^$app=com.dragon.read
 ! ============================================================
-! 红果免费视频(红果短剧, 包名 com.phoenix.read) 广告/小游戏/奖励 屏蔽规则
-! 适用: AdGuard Home(路由器) / AdGuard for Android / AdGuard for Windows
-! 语法: 标准 AdGuard 过滤规则语法, 三端通用, 直接粘贴到「用户规则/自定义规则」即可
-! 生成日期: 2026-09-29 (域名已逐个做 DNS 存活验证)
+! 红果免费视频 + 番茄免费小说 DNS 屏蔽规则
+! 适用: AdGuard Home / AdGuard DNS 过滤 (粘贴到 自定义过滤规则/用户过滤器)
+! 语法: ||域名^=基础拦截 @@||=白名单 /正则/=正则匹配 $important=优先
+! 生成日期: 2026-10-09 (全部域名已做 DNS 存活验证)
 ! ============================================================
 
-! ---------- 模块A: 穿山甲(Pangle/CSJ) 广告请求与调度 ----------
-! 作用: 拦截开屏广告、信息流广告、激励视频广告的请求入口
+! ========== 第一部分: 红果免费视频 (com.phoenix.read) ==========
+
+! --- A. 穿山甲(Pangle) 广告请求与调度 ---
 ||ad.toutiao.com^
 ||ad.oceanengine.com^
 ||pangle.io^
 ||pangolin-sdk-toutiao.com^
 ||ad.float.pangle.com^
 
-! ---------- 模块B: 广告素材 CDN ----------
-! 作用: 拦截广告图片/视频素材下载 (仅拦截带 ad 特征的 CDN 节点, 不影响正片播放)
+! --- B. 广告素材 CDN (仅拦带 ad 特征节点, 不伤正片) ---
 ||lf-ad-nhs-pos.byteimg.com^
 /lf[0-9]-ad-..byteimg.com/
 ||lf-sourcecdn-tos.bytegecko.com^
 
-! ---------- 模块C: 广告跳转落地页 / 摇一摇跳转 ----------
-! 作用: 拦截点击广告后的跳转域名 (大量 DGA 随机域名)
+! --- C. 广告跳转落地页 / 摇一摇跳转 (DGA 随机域) ---
 ||ldhy.click^
 ||ahdohpiechei.com^
 ||siomxity.net^
@@ -63,31 +62,57 @@
 ||0kkkkkt.com^
 ||dig.bdurl.net^
 
-! ---------- 模块D: 广告配置与埋点上报 ----------
-! 作用: 阻断广告策略下发/个性化推荐画像上报, 减少广告下发频率
+! --- D. 广告策略下发与埋点上报 ---
 ||mcs.snssdk.com^
 ||mon.snssdk.com^
 ||is.snssdk.com^
 ||is-hl.snssdk.com^
 ||log.snssdk.com^
 
-! ---------- 模块E: 小游戏 / 奖励任务页 ----------
-! 作用: 拦截字节小游戏加载域与广告落地小程序容器
-! 注意: 拦截后「看广告领金币/看视频解锁剧集」会提示加载失败——这正是屏蔽目的
+! --- E. 小游戏 / 奖励任务容器 ---
+! (拦截后「看广告领金币/解锁剧集」会提示加载失败, 属预期效果)
 ||minigame.zijieapi.com^
 ||microapp.zijieapi.com^
 
-! ---------- 模块F: 安全白名单 (防止误伤, 建议保留) ----------
-! 说明: 以下为已验证存活的正常图片/内容节点, 若你后续添加了更激进的
-! 第三方大范围规则, 这两条可保护红果/番茄系正常内容加载
-@@||lf3-reading.fqnovelpic.com^
-@@||p3-novel.byteimg.com^
+! ========== 第二部分: 番茄免费小说 (com.dragon.read) ==========
+
+! --- F. 番茄系广告/更新/日志核心域 ---
+||bytescm.com^
+||bytegecko.com^
+||toblog.ctobsnssdk.com^
+||rtlog.snssdk.com^
+||i.snssdk.com^
+||log0-applog-lq.fqnovel.com^
+
+! --- G. 番茄系监控上报 (正则覆盖 mon1-mon99 等轮询域) ---
+/mon[0-9]+.*.fqnovel.com/
+/.*novelapp.fqnovelvod.com/
+
+! --- H. 番茄广告素材 CDN ---
+||p3-novel.byteimg.com^
+||lf3-reading.fqnovelpic.com^
+
+! ========== 第三部分: 可选 - 完全屏蔽番茄小说 APP ==========
+! (默认注释未启用; 如需让番茄小说完全断网, 去掉每行行首的"!"即可)
+! ||fqnovel.com^
+! ||fqnovelpic.com^
+! ||fqnovelvod.com^
+
+! ========== 第四部分: 白名单保护 (important 优先) ========== ! 防止第三方大规则误伤红果/番茄正常图片内容节点 @@||lf3-reading.fqnovelpic.com^important
+@@||p3-novel.byteimg.com^$important
+
+! ========== hosts 写法等价示例 (部分设备仅支持 hosts 格式) ==========
+0.0.0.0 ad.toutiao.com
+0.0.0.0 ad.oceanengine.com
+0.0.0.0 pangle.io
+0.0.0.0 minigame.zijieapi.com
+0.0.0.0 microapp.zijieapi.com
+0.0.0.0 bytescm.com
+0.0.0.0 log0-applog-lq.fqnovel.com
 
 ! ============================================================
-! 【绝对不要添加的规则 (会导致红果无法使用)】
-! ||snssdk.com^ —— 会拦截登录/视频接口主域名
-! ||byteimg.com^ —— 会拦截正片视频与图片 CDN
-! ||toutiao.com^ —— 会拦截大量正常接口
+! 【禁止添加 (会导致红果/番茄完全无法使用)】
+! ||snssdk.com^ ||byteimg.com^ ||toutiao.com^
 ! ============================================================
 ||002st.top^
 ||005www11w.top^
