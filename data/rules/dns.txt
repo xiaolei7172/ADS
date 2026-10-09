@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影DNS拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-10-09 11:39:48（北京时间）
-! 📊 有效规则：28498 条
+! ⏰ 更新时间：2026-10-09 12:21:19（北京时间）
+! 📊 有效规则：28500 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影DNS拦截规则 📌
-! Description: ⏰ 更新时间 2026-10-09 11:39:48 | ✅ 有效规则 28498 条
+! Description: ⏰ 更新时间 2026-10-09 12:21:19 | ✅ 有效规则 28500 条
 ! ======================================================================
 ||pangolin-sdk-toutiao.com^
 ||pglstatp-toutiao.com^
@@ -23,6 +23,10 @@
 ||qtaeixd.com^
 ||0kkkkkt.com^
 ||microapp.zijieapi.com^
+||bytescm.com^
+||bytegecko.com^
+||rtlog.snssdk.com^
+||log0-applog-lq.fqnovel.com^
 ||002st.top^
 ||005www11w.top^
 ||00601015.com^
@@ -12321,7 +12325,6 @@
 ||log.wtlogin.qq.com^
 ||log.ycapp.yiche.com^
 ||log.yex.youdao.com^
-||log0-applog-lq.fqnovel.com^
 ||log0-misc-alinc2.amemv.com^
 ||log0-misc-hl.amemv.com^
 ||log0-misc-lf.amemv.com^
@@ -14662,7 +14665,6 @@
 ||rtbasia.com^
 ||rtbcallback.sigmob.cn^
 ||rtbstat.zcdsp.com^
-||rtlog.snssdk.com^
 ||rtlog.vidown.cn^
 ||rtlog.zijieapi.com^
 ||rtlog3-applog-lq.fqnovel.com^

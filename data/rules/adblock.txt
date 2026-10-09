@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-10-09 11:39:48（北京时间）
-! 📊 有效规则：42477 条
+! ⏰ 更新时间：2026-10-09 12:21:19（北京时间）
+! 📊 有效规则：42485 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-10-09 11:39:48 | ✅ 有效规则 42477 条
+! Description: ⏰ 更新时间 2026-10-09 12:21:19 | ✅ 有效规则 42485 条
 ! ======================================================================
 ||pangolin-sdk-toutiao.com^
 ||zijieapi.com^$app=com.dragon.read
@@ -38,6 +38,19 @@
 ||qtaeixd.com^
 ||0kkkkkt.com^
 ||microapp.zijieapi.com^
+||bytescm.com^
+||bytegecko.com^
+||rtlog.snssdk.com^
+||log0-applog-lq.fqnovel.com^
+/mon[0-9]+.*.fqnovel.com/
+/.*novelapp.fqnovelvod.com/
+0.0.0.0 ad.toutiao.com
+0.0.0.0 ad.oceanengine.com
+0.0.0.0 pangle.io
+0.0.0.0 minigame.zijieapi.com
+0.0.0.0 microapp.zijieapi.com
+0.0.0.0 bytescm.com
+0.0.0.0 log0-applog-lq.fqnovel.com
 ||002st.top^
 ||005www11w.top^
 ||00601015.com^
@@ -6246,7 +6259,6 @@ www.itdog.cn#%#window.alert=function(str){return}
 0.0.0.0 ad.mobile.youku.com
 0.0.0.0 ad.netowl.jp
 0.0.0.0 ad.obuy.tw
-0.0.0.0 ad.oceanengine.com
 0.0.0.0 ad.open.jiguang.cn
 0.0.0.0 ad.partner.gifshow.com
 0.0.0.0 ad.player.baidu.com
@@ -6266,7 +6278,6 @@ www.itdog.cn#%#window.alert=function(str){return}
 0.0.0.0 ad.thsi.cn
 0.0.0.0 ad.thsi.cn  #同花顺
 0.0.0.0 ad.tianmu.mobi
-0.0.0.0 ad.toutiao.com
 0.0.0.0 ad.turn.com
 0.0.0.0 ad.us.sinaimg.cn
 0.0.0.0 ad.v3mh.com
@@ -9554,7 +9565,6 @@ www.itdog.cn#%#window.alert=function(str){return}
 0.0.0.0 miniapp.qiluyidian.mobi
 0.0.0.0 minidcsc.kugou.com
 0.0.0.0 minigame.gtimg.cn  #QQ微信小游戏图标
-0.0.0.0 minigame.zijieapi.com
 0.0.0.0 minigame3-normal-hl.zijieapi.com
 0.0.0.0 minigame3-normal.zijieapi.com
 0.0.0.0 minigame5-normal-hl.zijieapi.com
@@ -24389,7 +24399,6 @@ ip-cidr, 223.111.27.248/32^
 ||log.wtlogin.qq.com^
 ||log.ycapp.yiche.com^
 ||log.yex.youdao.com^
-||log0-applog-lq.fqnovel.com^
 ||log0-misc-alinc2.amemv.com^
 ||log0-misc-hl.amemv.com^
 ||log0-misc-lf.amemv.com^
@@ -26758,7 +26767,6 @@ ip-cidr, 223.111.27.248/32^
 ||rtbasia.com^
 ||rtbcallback.sigmob.cn^
 ||rtbstat.zcdsp.com^
-||rtlog.snssdk.com^
 ||rtlog.vidown.cn^
 ||rtlog.zijieapi.com^
 ||rtlog3-applog-lq.fqnovel.com^

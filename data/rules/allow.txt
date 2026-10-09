@@ -3,20 +3,19 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-10-09 11:39:48（北京时间）
-! 📊 有效规则：3545 条
+! ⏰ 更新时间：2026-10-09 12:21:19（北京时间）
+! 📊 有效规则：3546 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-10-09 11:39:48 | ✅ 有效规则 3545 条
+! Description: ⏰ 更新时间 2026-10-09 12:21:19 | ✅ 有效规则 3546 条
 ! ======================================================================
 @@||112.28.245.186:443^$app=cn.kuwo.player
 @@||120.221.180.167:443^$app=cn.kuwo.player
 @@||120.221.179.155:443^$app=cn.kuwo.player
 @@||112.28.245.184:443^$app=cn.kuwo.player
 @@||120.221.180.94:443^$app=cn.kuwo.player
-@@||lf3-reading.fqnovelpic.com^
-@@||p3-novel.byteimg.com^
+@@||p3-novel.byteimg.com^$important
 @@||ads3-normal-lf.zijieapi.com^
 @@||apd-pcdnwxlogin.teg.tencent-cloud.net^
 @@||api-access.pangolin-sdk-toutiao.com^
@@ -32,6 +31,7 @@
 @@||id6.me^
 @@||metok.sys.miui.com^
 @@||open.e.kuaishou.com^
+@@||p3-novel.byteimg.com^
 @@||pgdt.gtimg.cn^
 @@||sg.bls.mdt.qq.com^
 @@||to.ele.me^
@@ -1563,6 +1563,7 @@
 @@||lf3-cdn-tos.bytescm.com^
 @@||lf3-cdn2-tos.bytescm.com^
 @@||lf3-imcloud-file-sign.bytetos.com^
+@@||lf3-reading.fqnovelpic.com^
 @@||lf3-search.searchpstatp.com^
 @@||lf3-short.bytegoofy.com^
 @@||lf3-short.ibytedapm.com^

@@ -11,6 +11,10 @@ DOMAIN,siomxity.net,reject
 DOMAIN,qtaeixd.com,reject
 DOMAIN,0kkkkkt.com,reject
 DOMAIN,microapp.zijieapi.com,reject
+DOMAIN,bytescm.com,reject
+DOMAIN,bytegecko.com,reject
+DOMAIN,rtlog.snssdk.com,reject
+DOMAIN,log0-applog-lq.fqnovel.com,reject
 DOMAIN,002st.top,reject
 DOMAIN,005www11w.top,reject
 DOMAIN,00601015.com,reject
@@ -12297,7 +12301,6 @@ DOMAIN,log.v2.hunantv.com,reject
 DOMAIN,log.wtlogin.qq.com,reject
 DOMAIN,log.ycapp.yiche.com,reject
 DOMAIN,log.yex.youdao.com,reject
-DOMAIN,log0-applog-lq.fqnovel.com,reject
 DOMAIN,log0-misc-alinc2.amemv.com,reject
 DOMAIN,log0-misc-hl.amemv.com,reject
 DOMAIN,log0-misc-lf.amemv.com,reject
@@ -14627,7 +14630,6 @@ DOMAIN,rtbapi.douyucdn.cn,reject
 DOMAIN,rtbasia.com,reject
 DOMAIN,rtbcallback.sigmob.cn,reject
 DOMAIN,rtbstat.zcdsp.com,reject
-DOMAIN,rtlog.snssdk.com,reject
 DOMAIN,rtlog.vidown.cn,reject
 DOMAIN,rtlog.zijieapi.com,reject
 DOMAIN,rtlog3-applog-lq.fqnovel.com,reject
