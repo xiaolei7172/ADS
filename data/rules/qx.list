@@ -1,3 +1,5 @@
+DOMAIN,pangolin-sdk-toutiao.com,reject
+DOMAIN,pglstatp-toutiao.com,reject
 DOMAIN,0.pool.ntp.org,reject
 DOMAIN,002st.top,reject
 DOMAIN,005www11w.top,reject
@@ -282,10 +284,8 @@ DOMAIN,p3-ad-sign.byteimg.com,reject
 DOMAIN,p4-lm.adukwai.com,reject
 DOMAIN,p66-ad.adkwai.com,reject
 DOMAIN,pangle.io,reject
-DOMAIN,pangolin-sdk-toutiao.com,reject
 DOMAIN,pangolin.snssdk.com,reject
 DOMAIN,pgdt.ugdtimg.com,reject
-DOMAIN,pglstatp-toutiao.com,reject
 DOMAIN,pool.ntp.org,reject
 DOMAIN,pos.baidu.com,reject
 DOMAIN,qtaeixd.com,reject
