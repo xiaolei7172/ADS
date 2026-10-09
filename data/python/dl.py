@@ -53,14 +53,15 @@ if os.path.exists(os.path.join(MOD_DIR, "whitelist.txt")):
 adblock_rules = [
     #Hosts：
     #{"url": "https://raw.githubusercontent.com/rentianyu/Ad-set-hosts/master/hosts", "name": "小贝塔-Hosts合并"},
+    #{"url": "https://raw.githubusercontent.com/lingeringsound/10007_auto/master/all", "name": "1007-Hosts"},
 
     #AdGurad：
-    {"url": "https://raw.githubusercontent.com/qq5460168/666/master/rules.txt", "name": "个人合并规则"},
-    {"url": "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt", "name": "酷安@大萌主"},
+    #{"url": "https://raw.githubusercontent.com/qq5460168/666/master/rules.txt", "name": "个人合并规则"},
+    #{"url": "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt", "name": "酷安@大萌主"},
     {"url": "https://raw.githubusercontent.com/Thelongdarkorg/ad-rules-merged/main/merged.txt", "name": "浮风拦截规则"},
     #{"url": "http://hgzs.uunat.com/hg1.txt", "name": "海哥规则"},
     #{"url": "https://raw.githubusercontent.com/afwfv/DD-AD/main/rule/DD-AD.txt", "name": "dd-ad 规则"},
-    #{"url": "https://gh-proxy.com/raw.githubusercontent.com/changzhaoCZ/fqnovel-adrules/refs/heads/main/fqnovel-fxxk_ads", "name": "番茄去广告规则"},
+    {"url": "https://raw.githubusercontent.com/lingeringsound/10007_auto/master/adb.txt", "name": "About 1007规则"},
     #{"url": "https://raw.githubusercontent.com/qq5460168/dangchu/main/black.txt", "name": "酷安对不对规则"},
     {"url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt", "name": "秋风广告规则"},
     {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt", "name": "乘风视频规则"},
