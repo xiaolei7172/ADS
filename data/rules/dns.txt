@@ -3,30 +3,14 @@
 ! 📌 规则名称：天影DNS拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-10-09 12:21:19（北京时间）
+! ⏰ 更新时间：2026-10-09 14:48:31（北京时间）
 ! 📊 有效规则：28500 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影DNS拦截规则 📌
-! Description: ⏰ 更新时间 2026-10-09 12:21:19 | ✅ 有效规则 28500 条
+! Description: ⏰ 更新时间 2026-10-09 14:48:31 | ✅ 有效规则 28500 条
 ! ======================================================================
-||pangolin-sdk-toutiao.com^
-||pglstatp-toutiao.com^
-||ad.toutiao.com^
-||ad.oceanengine.com^
-||pangle.io^
-||ad.float.pangle.com^
-||lf-ad-nhs-pos.byteimg.com^
-||ldhy.click^
-||ahdohpiechei.com^
-||siomxity.net^
-||qtaeixd.com^
-||0kkkkkt.com^
-||microapp.zijieapi.com^
-||bytescm.com^
-||bytegecko.com^
-||rtlog.snssdk.com^
-||log0-applog-lq.fqnovel.com^
+||0.pool.ntp.org^
 ||002st.top^
 ||005www11w.top^
 ||00601015.com^
@@ -61,23 +45,7 @@
 ||06865625.com^
 ||0686vns.com^
 ||07697.pink^
-||ad.alipay.com^
-||adview.cn^
-||api.ad.xiaomi.com^
-||applovin.com^
-||c2.gdt.qq.com^
-||inmobi.com^
-||ntp3.aliyun.com^
-||ntp5.aliyun.com^
-||sdk.beizi.biz^
-||tongji.baidu.com^
-||umtrack.com^
-||volcsirius.com^
-||vpa-hotword.sginput.qq.com^
-||wximg.wxs.qq.com^
-||x.adnet.qq.com^
-||zztfly.com^
-||0.pool.ntp.org^
+||0kkkkkt.com^
 ||1.pool.ntp.org^
 ||1500020991.vodplayer.wxamedia.com^
 ||1500022744.vodplayer.wxamedia.com^
@@ -90,8 +58,8 @@
 ||aaid.umeng.com^
 ||abtest-ch.snssdk.com^
 ||ad-cdn.qingting.fm^
-||ad-scope.com^
 ||ad-scope.com.cn^
+||ad-scope.com^
 ||ad-sdk-config.youdao.com^
 ||ad-splash-tracking.hktvmall.com^
 ||ad-splash.hktvmall.com^
@@ -99,6 +67,7 @@
 ||ad.189.cn^
 ||ad.360.cn^
 ||ad.51wnl.com^
+||ad.alipay.com^
 ||ad.api.3g.youku.com^
 ||ad.baidu.com^
 ||ad.bilibili.com^
@@ -107,6 +76,7 @@
 ||ad.ctrip.com^
 ||ad.cyapi.cn^
 ||ad.dianping.com^
+||ad.float.pangle.com^
 ||ad.gameley.com^
 ||ad.hpplay.cn^
 ||ad.iot.360.cn^
@@ -117,6 +87,7 @@
 ||ad.meituan.com^
 ||ad.mgtv.com^
 ||ad.mi.com^
+||ad.oceanengine.com^
 ||ad.partner.gifshow.com^
 ||ad.qingting.fm^
 ||ad.qq.com^
@@ -125,6 +96,7 @@
 ||ad.shunchangzhixing.com^
 ||ad.tencent.com^
 ||ad.tencentmusic.com^
+||ad.toutiao.com^
 ||ad.v3mh.com^
 ||ad.weibo.com^
 ||ad.weixin.qq.com^
@@ -237,13 +209,17 @@
 ||advertising.yahoo.com^
 ||advertising.yandex.ru^
 ||advice-ads.s3.amazonaws.com^
+||adview.cn^
 ||adwo.com^
 ||adx.ads.heytapmobi.com^
 ||adx.qq.com^
+||ahdohpiechei.com^
 ||android.pool.ntp.org^
 ||api-access.pangolin-sdk-toutiao-b.com^
 ||api-access.pangolin-sdk-toutiao1.com^
+||api.ad.xiaomi.com^
 ||appldnld.apple.com^
+||applovin.com^
 ||asia.pool.ntp.org^
 ||atm.youku.com^
 ||badjs.weixinbridge.com^
@@ -254,7 +230,10 @@
 ||bgg.baidu.com^
 ||biz.weibo.com^
 ||bootpreload.uve.weibo.com^
+||bytegecko.com^
+||bytescm.com^
 ||c-snake.oppomobile.com^
+||c2.gdt.qq.com^
 ||c3.gdt.qq.com^
 ||cn.ntp.org.cn^
 ||cn.pool.ntp.org^
@@ -284,21 +263,26 @@
 ||i.qchannel03.cn^
 ||iadmusicmat.music.126.net^
 ||img.t.sinajs.cn^
+||inmobi.com^
 ||jp.pool.ntp.org^
 ||kadmimage.biz.weibo.com^
 ||kuaishou.com^
+||ldhy.click^
+||lf-ad-nhs-pos.byteimg.com^
 ||lf6-ad-union-sdk.pglstatp-toutiao.com^
 ||lianmeng.360.cn^
 ||live-play.acgvideo.com^
 ||log.bilibili.com^
 ||log.jd.com^
 ||log.zijieapi.com^
+||log0-applog-lq.fqnovel.com^
 ||logs.amap.com^
 ||ma-adx.ctrip.com^
 ||maplocatesdksnapshot.d.meituan.net^
 ||mbdlog.iqiyi.com^
 ||mdp-upgrade-cn.heytapmobi.com^
 ||mi.gdt.qq.com^
+||microapp.zijieapi.com^
 ||miniapp.bilibili.com^
 ||mobads-logs.baidu.com^
 ||mobads-pre-config.cdn.bcebos.com^
@@ -321,7 +305,9 @@
 ||ntp1.aliyun.com^
 ||ntp1.mi.com^
 ||ntp2.aliyun.com^
+||ntp3.aliyun.com^
 ||ntp4.aliyun.com^
+||ntp5.aliyun.com^
 ||ntp6.aliyun.com^
 ||ntp7.aliyun.com^
 ||ocs-cn-north1.heytapcs.com^
@@ -330,17 +316,24 @@
 ||p3-ad-sign.byteimg.com^
 ||p4-lm.adukwai.com^
 ||p66-ad.adkwai.com^
+||pangle.io^
+||pangolin-sdk-toutiao.com^
 ||pangolin.snssdk.com^
 ||pgdt.ugdtimg.com^
+||pglstatp-toutiao.com^
 ||pool.ntp.org^
 ||pos.baidu.com^
+||qtaeixd.com^
 ||qzs.gdtimg.com^
 ||report.qq.com^
+||rtlog.snssdk.com^
 ||s1a.time.edu.cn^
 ||s2c.time.edu.cn^
+||sdk.beizi.biz^
 ||sdkquic.e.qq.com^
 ||sf3-fe-tos.pglstatp-toutiao.com^
 ||sg.pool.ntp.org^
+||siomxity.net^
 ||stat.weixin.qq.com^
 ||t-dsp.pinduoduo.com^
 ||t.gdt.qq.com^
@@ -357,6 +350,7 @@
 ||tmead.y.qq.com^
 ||tnc3-alisc1.zijieapi.com^
 ||tobapplog.ctobsnssdk.com^
+||tongji.baidu.com^
 ||track.bilibili.com^
 ||track.qq.com^
 ||track.weixin.qq.com^
@@ -364,6 +358,7 @@
 ||tw.pool.ntp.org^
 ||ulogs.umeng.com^
 ||umeng.com^
+||umtrack.com^
 ||union.baidu.com^
 ||update.pan.n.shifen.com^
 ||v.qq.com^
@@ -372,14 +367,19 @@
 ||v3.gdt.qq.com^
 ||video.c-ctrip.com^
 ||vip.storage.weibo.com^
+||volcsirius.com^
+||vpa-hotword.sginput.qq.com^
 ||wcp.taobao.com^
 ||win.gdt.qq.com^
 ||wn.pos.baidu.com^
 ||wvcfg.alicdn.com.danuoyi.tbcache.com^
 ||wxapp.tc.qq.com^
+||wximg.wxs.qq.com^
+||x.adnet.qq.com^
 ||xlog.jd.com^
 ||yk-ssp.ad.youku.com^
 ||youmi.net^
+||zztfly.com^
 ||amusingarmorycomment.com^
 ||arbattadr.in^
 ||greentrafsa.com^

@@ -3,121 +3,13 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-10-09 12:21:19（北京时间）
-! 📊 有效规则：3546 条
+! ⏰ 更新时间：2026-10-09 14:48:31（北京时间）
+! 📊 有效规则：3541 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-10-09 12:21:19 | ✅ 有效规则 3546 条
+! Description: ⏰ 更新时间 2026-10-09 14:48:31 | ✅ 有效规则 3541 条
 ! ======================================================================
-@@||112.28.245.186:443^$app=cn.kuwo.player
-@@||120.221.180.167:443^$app=cn.kuwo.player
-@@||120.221.179.155:443^$app=cn.kuwo.player
-@@||112.28.245.184:443^$app=cn.kuwo.player
-@@||120.221.180.94:443^$app=cn.kuwo.player
-@@||p3-novel.byteimg.com^$important
-@@||ads3-normal-lf.zijieapi.com^
-@@||apd-pcdnwxlogin.teg.tencent-cloud.net^
-@@||api-access.pangolin-sdk-toutiao.com^
-@@||api.device.xiaomi.net^
-@@||assets.elemecdn.com^
-@@||beacon.qq.com^
-@@||cnlogs.umengcloud.com^
-@@||errlog.umeng.com^
-@@||errnewlog.umeng.com^
-@@||gateway.kugou.com^
-@@||gecko.zijieapi.com^
-@@||httpizza.ele.me^
-@@||id6.me^
-@@||metok.sys.miui.com^
-@@||open.e.kuaishou.com^
-@@||p3-novel.byteimg.com^
-@@||pgdt.gtimg.cn^
-@@||sg.bls.mdt.qq.com^
-@@||to.ele.me^
-@@||tobapplog.volceapplog.com^
-@@||toblog.volceapplog.com^
-@@||tracking.miui.com^
-@@||utoken.umeng.com^
-@@||v.gdt.qq.com^
-@@||vcs.zijieapi.com^
-@@||yybadaccess.3g.qq.com^
-@@||abtest.alibaba.com^
-@@||adashx.m.taobao.com^
-@@||aeventlog.beacon.qq.com^
-@@||apd-pcdnwxnat.teg.tencent-cloud.net^
-@@||apd-pcdnwxstat.teg.tencent-cloud.net^
-@@||api.sec.miui.com^
-@@||apmplus.volces.com^
-@@||apple.com^
-@@||astrategy.beacon.qq.com^
-@@||audid-api.taobao.com^
-@@||b1-data.ads.heytapmobi.com^
-@@||bbs-static.miyoushe.com^
-@@||bsync3-normal.zijieapi.com^
-@@||channels.weixin.qq.com^
-@@||cloudkit-api-cn.heytapmobi.com^
-@@||dc.sigmob.cn^
-@@||dig.bdurl.net^
-@@||dns.weixin.qq.com.cn^
-@@||f-cpay.snssdk.com^
-@@||gdmf.apple.com^
-@@||gsvip.dns1.top^
-@@||gxh.material.qq.com^
-@@||h.trace.qq.com^
-@@||h5.ele.me^
-@@||i.snssdk.com^
-@@||icloud.com^
-@@||in.appcenter.ms^
-@@||inews.gtimg.com^
-@@||ios.rqd.qq.com^
-@@||is.snssdk.com^
-@@||jd.com^
-@@||log.mmstat.com^
-@@||ma.zijieapi.com^
-@@||mazu.m.qq.com^
-@@||meituan.net^
-@@||mesu.apple.com^
-@@||mon.zijieapi.com^
-@@||mssdk.volces.com^
-@@||mum.alibabachengdun.com^
-@@||nr-op.elemecdn.com^
-@@||nstool.netease.com^
-@@||open.e.kuaishou.cn^
-@@||oth.eve.mdt.qq.com^
-@@||oth.str.mdt.qq.com^
-@@||otheve.beacon.qq.com^
-@@||pdc.micloud.xiaomi.net^
-@@||play.googleapis.com^
-@@||polaris.zijieapi.com^
-@@||pull-flv-l11.douyincdn.com^
-@@||px.ucweb.com^
-@@||qq.com^
-@@||reading.snssdk.com^
-@@||res.wx.qq.com^
-@@||rmonitor.qq.com^
-@@||s3plus.meituan.net^
-@@||sdk.e.qq.com^
-@@||security.snssdk.com^
-@@||sjarvis.taobao.com^
-@@||snowflake.qq.com^
-@@||sofire.baidu.com^
-@@||sso.oceanengine.com^
-@@||static-res.qq.com^
-@@||staticsns.cdn.bcebos.com^
-@@||tdid.m.qq.com^
-@@||tnc0-aliec2.zijieapi.com^
-@@||tnc0-alisc1.zijieapi.com^
-@@||tnc3-bjlgy.zijieapi.com^
-@@||toblog.ctobsnssdk.com^
-@@||tp-pay.snssdk.com^
-@@||tpstelemetry.tencent.com^
-@@||tvax4.sinaimg.cn^
-@@||updates.cdn-apple.com^
-@@||whoami.akamai.net^
-@@||wx1.sinaimg.cn^
-@@||xp.apple.com^
-! 📋 白名单来源：浮风拦截规则 [Merged Ad Rules (自动合并去重)]（规则内置）
 @@||themoviedb.org/assets/
 @@gimg*.baidu.com/gimg/app=$domain=kimivod.com
 @@||iqiyi.com/static/js/adfe.5aa3302c.js
@@ -353,6 +245,7 @@
 @@||ap.6wz.co^
 @@||ap6.ssl.msdk.qq.com^
 @@||apd-pcdniegwzlogin.teg.tencent-cloud.net^
+@@||apd-pcdnwxstat.teg.tencent-cloud.net^
 @@||apd-ugcvlive.apdcdn.tc.qq.com^
 @@||apd-vlive.apdcdn.tc.qq.com^
 @@||api-album.quark.cn^
@@ -386,6 +279,7 @@
 @@||api.crashguard.me^
 @@||api.dangbei.com^
 @@||api.developer.xiaomi.com^
+@@||api.device.xiaomi.net^
 @@||api.ds.163.com^
 @@||api.extscreen.com^
 @@||api.flash.cn^
@@ -419,6 +313,7 @@
 @@||api.rikka.app^
 @@||api.sandbox.push.apple.com^
 @@||api.sec.intl.miui.com^
+@@||api.sec.miui.com^
 @@||api.smoot.apple.com^
 @@||api.soulapp.cn^
 @@||api.tencentmusic.com^
@@ -502,6 +397,7 @@
 @@||assets.youlai.cn^
 @@||at.umeng.com^
 @@||audid-api-sg.taobao.com^
+@@||audid-api.taobao.com^
 @@||audio-cdn.shuqireader.com^
 @@||audio.ximalaya.com^
 @@||audio.xmcdn.com^
@@ -532,6 +428,7 @@
 @@||baikebcs.bdimg.com^
 @@||baixing.com^
 @@||base.cup.com.cn^
+@@||bbs-static.miyoushe.com^
 @@||bbs.huorong.cn^
 @@||bbs.mcmod.cn^
 @@||bbs.mobileapi.hupu.com^
@@ -662,6 +559,7 @@
 @@||cg.163.com^
 @@||changjiang.yuketang.cn^
 @@||channel.shouji.sogou.com^
+@@||channels.weixin.qq.com^
 @@||chat.deepseek.com^
 @@||chat.doubao.com^
 @@||checkcoverage.apple.com^
@@ -885,6 +783,7 @@
 @@||data.vod.itc.cn^
 @@||data.ximalaya.com^
 @@||data.youku.com^
+@@||dc.sigmob.cn^
 @@||dcloud.net.cn^
 @@||dcms.1688.com^
 @@||dd.myapp.com^
@@ -903,6 +802,7 @@
 @@||dftoutiao.com^
 @@||dg.k.jd.com^
 @@||dianfeijisuanqi.bmcx.com^
+@@||dig.bdurl.net^
 @@||dig.lianjia.com^
 @@||dig.zjurl.cn^
 @@||dimg04.c-ctrip.com^
@@ -1054,6 +954,7 @@
 @@||f*.market.mi-img.com^
 @@||f*.market.xiaomi.com^
 @@||f-cashloan.snssdk.com^
+@@||f-cpay.snssdk.com^
 @@||f-vali.cp31.ott.cibntv.net^
 @@||f.51240.com^
 @@||f.bmcx.com^
@@ -1152,6 +1053,7 @@
 @@||games-community-gl.heytapmobile.com^
 @@||games.mobileapi.hupu.com^
 @@||gamezop.com^
+@@||gateway.kugou.com^
 @@||gator.volces.com^
 @@||gdfp.gifshow.com^
 @@||gdown.baidu.com^
@@ -1209,6 +1111,7 @@
 @@||gx-target-experiments-frontend-api.gx.nvidia.com^
 @@||h-adashx.ut.taobao.com^
 @@||h.163.com^
+@@||h.trace.qq.com^
 @@||h18.update.netease.com^
 @@||h35.ynodd.cn^
 @@||h42.update.netease.com^
@@ -1292,6 +1195,7 @@
 @@||i.meituan.com^
 @@||i.mi.com^
 @@||i.pximg.net^
+@@||i.snssdk.com^
 @@||i.sso.sina.com.cn^
 @@||i.tancdn.com^
 @@||i.tantanapp.com^
@@ -1318,6 +1222,7 @@
 @@||id.oneplus.com^
 @@||id.realme.com^
 @@||id1.cloud.huawei.com^
+@@||id6.me^
 @@||idmb.register.xmpush.global.xiaomi.com^
 @@||idmsa.apple.com^
 @@||ietheivaicai.com^
@@ -1407,7 +1312,9 @@
 @@||imgx.mediav.com^
 @@||imop.com^
 @@||imtt.dd.qq.com^
+@@||in.appcenter.ms^
 @@||increase-openapi.soulapp.cn^
+@@||inews.gtimg.com^
 @@||info.zb.qq.com^
 @@||ingest.sentry.io^
 @@||init.itunes.apple.com^
@@ -1440,6 +1347,7 @@
 @@||ipxx.pro^
 @@||ir.tencentmusic.com^
 @@||is-hl.snssdk.com^
+@@||is.snssdk.com^
 @@||is1-ssl.mzstatic.com^
 @@||isee.weishi.qq.com^
 @@||iservice.10010.com^
@@ -1766,6 +1674,7 @@
 @@||member.jiaoyimao.com^
 @@||members.bitcomet.com^
 @@||message.bilibili.com^
+@@||metok.sys.miui.com^
 @@||metrics.apple.com^
 @@||metrics.icloud.com^
 @@||metrics1-drcn.dt.dbankcloud.cn^
@@ -1829,6 +1738,7 @@
 @@||moggy-image-1251316161.file.myqcloud.com^
 @@||mon.isnssdk.com^
 @@||mon.snssdk.com^
+@@||mon.zijieapi.com^
 @@||mooc-image.nosdn.127.net^
 @@||mos.m.taobao.com^
 @@||mp.163.com^
@@ -1919,6 +1829,7 @@
 @@||npm.cdn-go.cn^
 @@||npm.elemecdn.com^
 @@||nsclick.baidu.com^
+@@||nstool.netease.com^
 @@||o.alicdn.com^
 @@||o2o.api.xiaomi.com^
 @@||oauth-login-drcn.platform.dbankcloud.com^
@@ -1985,6 +1896,7 @@
 @@||ossapi.baidu.com^
 @@||ossp.voicecloud.cn^
 @@||ota.vivo.com^
+@@||otheve.beacon.qq.com^
 @@||ott.cibntv.net^
 @@||outexp-beta.cdn.qq.com^
 @@||oxygenos.oneplus.com^
@@ -2047,6 +1959,7 @@
 @@||p3-iz-e-sign.byteimg.com^
 @@||p3-notice.byteimg.com^
 @@||p3-novel-sign.byteimg.com^
+@@||p3-novel.byteimg.com^
 @@||p3-novelfm-sign.novelfmpic.com^
 @@||p3-passport.byteacctimg.com^
 @@||p3-pc-weboff.byteimg.com^
@@ -2138,11 +2051,13 @@
 @@||pc.xunlei.com^
 @@||pcvideoaliyun.titan.mgtv.com^
 @@||pda.jd.com^
+@@||pdc.micloud.xiaomi.net^
 @@||pdds-c1-cdn.uc.cn^
 @@||pdds.ucweb.com^
 @@||pepsico.com.cn^
 @@||personaclick.com^
 @@||pfga0.market.xiaomi.com^
+@@||pgdt.gtimg.cn^
 @@||phobos.apple.com^
 @@||phonecallapi.micloud.xiaomi.net^
 @@||photocdn.tv.sohu.com^
@@ -2186,6 +2101,7 @@
 @@||platform.deepseek.com^
 @@||play-fe.googleapis.com^
 @@||play.163.com^
+@@||play.googleapis.com^
 @@||play.mcmod.cn^
 @@||play.ximalaya.com^
 @@||play1.heytapimage.com^
@@ -2195,6 +2111,7 @@
 @@||po.funshion.com^
 @@||podman.io^
 @@||pogget.vilinko.com^
+@@||polaris.zijieapi.com^
 @@||policy.jd.com^
 @@||policy.video.iqiyi.com^
 @@||pool.v6.bt.n0808.com^
@@ -2287,6 +2204,7 @@
 @@||race.onelap.cn^
 @@||rdelivery.qq.com^
 @@||reader.browser.miui.com^
+@@||reading.snssdk.com^
 @@||readstatic.zhulang.com^
 @@||recmd.html5.qq.com^
 @@||redditmedia.com^
@@ -2377,6 +2295,7 @@
 @@||s3.us-north-1.qiniucs.com^
 @@||s3.voicecloud.cn^
 @@||s3plus-img.meituan.net^
+@@||s3plus.meituan.net^
 @@||saomiao.51240.com^
 @@||saomiao.bmcx.com^
 @@||saucenao.com^
@@ -2457,10 +2376,12 @@
 @@||smarthome-drcn.dbankcdn.com^
 @@||smartrobot-drcn.dbankcdn.com^
 @@||smsks1.cmpassport.com^
+@@||snowflake.qq.com^
 @@||sns-avatar-qc.xhscdn.com^
 @@||sns.m.taobao.com^
 @@||snzypic.com^
 @@||so.douyin.com^
+@@||sofire.baidu.com^
 @@||sofire.bdstatic.com^
 @@||soft.360.cn^
 @@||soft.imtt.qq.com^
@@ -2513,6 +2434,7 @@
 @@||static-hw.xnxx-cdn.com^
 @@||static-l3.xnxx-cdn.com^
 @@||static-mobilegame-1.biligame.net^
+@@||static-res.qq.com^
 @@||static-s.iqiyi.com^
 @@||static-ss.xvideos-cdn.com^
 @@||static-web.mimikko.cn^
@@ -2550,6 +2472,7 @@
 @@||staticimg.yidianzixun.com^
 @@||statics.123pan.com^
 @@||statics.itc.cn^
+@@||staticsns.cdn.bcebos.com^
 @@||staticwiki.biligame.com^
 @@||stats.gc.apple.com^
 @@||statsig.com^
@@ -2632,6 +2555,7 @@
 @@||tbsone.imtt.qq.com^
 @@||tbv.sb-cd.com^
 @@||tcbox.baidu.com^
+@@||tdid.m.qq.com^
 @@||teams.live.com^
 @@||test.nextdns.io^
 @@||th.bing.com^
@@ -2653,6 +2577,7 @@
 @@||tnc11-bjlgy.zijieapi.com^
 @@||tnc16-platform-useast1a.tiktokv.com^
 @@||tnc3-aliec2.snssdk.com^
+@@||tnc3-bjlgy.zijieapi.com^
 @@||tom.163.com^
 @@||tongji.flash.cn^
 @@||tongzhi.cup.com.cn^
@@ -2663,6 +2588,7 @@
 @@||tot.hoyoverse.com^
 @@||tousu.sina.cn^
 @@||tousu.sina.com.cn^
+@@||tpstelemetry.tencent.com^
 @@||track.sohu.com^
 @@||tracker.ai.xiaomi.com^
 @@||tracker.didistatic.com^
@@ -2689,6 +2615,7 @@
 @@||tvax1.sinaimg.cn^
 @@||tvax2.sinaimg.cn^
 @@||tvax3.sinaimg.cn^
+@@||tvax4.sinaimg.cn^
 @@||tvepg.pandora.xiaomi.com^
 @@||twitter.com^
 @@||tx.163.com^
@@ -2770,6 +2697,7 @@
 @@||v*.erome.com^
 @@||v*.kwaicdn.com^
 @@||v.douyin.com^
+@@||v.gdt.qq.com^
 @@||v.miguvideo.com^
 @@||v.uc.cn^
 @@||v.xunlei.com^
@@ -2801,6 +2729,7 @@
 @@||vas.snssdk.com^
 @@||vcs-quality.zijieapi.com^
 @@||vcs.snssdk.com^
+@@||vcs.zijieapi.com^
 @@||vd.l.qq.com^
 @@||vd0.market.xiaomi.com^
 @@||vd1.market.xiaomi.com^
@@ -3118,6 +3047,7 @@
 @@||wx.17u.cn^
 @@||wx.qlogo.cn^
 @@||wx.tenpay.com^
+@@||wx1.sinaimg.cn^
 @@||wx2.sinaimg.cn^
 @@||wx3.sinaimg.cn^
 @@||wx4.sinaimg.cn^
@@ -3144,6 +3074,7 @@
 @@||xn--l6qx3l9s1a.com^
 @@||xn--mes358aby2apfg.com^
 @@||xn--ngstr-lra8j.com^
+@@||xp.apple.com^
 @@||xqn.163.com^
 @@||xvideos.com^
 @@||xyq.163.com^
@@ -3175,6 +3106,7 @@
 @@||yun.rili.cn^
 @@||yun.vivo.com.cn^
 @@||yunjiasu.com^
+@@||yybadaccess.3g.qq.com^
 @@||yys.163.com^
 @@||yzg.wavee.cn^
 @@||z.ixigua.com^
@@ -3558,6 +3490,68 @@
 @@||learn.microsoft.com/video/media/*_960.jpg|$image,domain=learn.microsoft.com
 @@||acs.m.taobao.com
 ! 📋 白名单来源：本地白名单（远程白名单）
+@@||abtest.alibaba.com^
+@@||adashx.m.taobao.com^
+@@||ads3-normal-lf.zijieapi.com^
+@@||aeventlog.beacon.qq.com^
+@@||apd-pcdnwxlogin.teg.tencent-cloud.net^
+@@||apd-pcdnwxnat.teg.tencent-cloud.net^
+@@||api-access.pangolin-sdk-toutiao.com^
+@@||apmplus.volces.com^
+@@||apple.com^
+@@||assets.elemecdn.com^
+@@||astrategy.beacon.qq.com^
+@@||b1-data.ads.heytapmobi.com^
+@@||beacon.qq.com^
+@@||bsync3-normal.zijieapi.com^
+@@||cloudkit-api-cn.heytapmobi.com^
+@@||cnlogs.umengcloud.com^
+@@||dns.weixin.qq.com.cn^
+@@||errlog.umeng.com^
+@@||errnewlog.umeng.com^
+@@||gdmf.apple.com^
+@@||gecko.zijieapi.com^
+@@||gsvip.dns1.top^
+@@||gxh.material.qq.com^
+@@||h5.ele.me^
+@@||httpizza.ele.me^
+@@||icloud.com^
+@@||ios.rqd.qq.com^
+@@||jd.com^
+@@||log.mmstat.com^
+@@||ma.zijieapi.com^
+@@||mazu.m.qq.com^
+@@||meituan.net^
+@@||mesu.apple.com^
+@@||mssdk.volces.com^
+@@||mum.alibabachengdun.com^
+@@||nr-op.elemecdn.com^
+@@||open.e.kuaishou.cn^
+@@||open.e.kuaishou.com^
+@@||oth.eve.mdt.qq.com^
+@@||oth.str.mdt.qq.com^
+@@||p3-novel.byteimg.com^$important
+@@||pull-flv-l11.douyincdn.com^
+@@||px.ucweb.com^
+@@||qq.com^
+@@||res.wx.qq.com^
+@@||rmonitor.qq.com^
+@@||sdk.e.qq.com^
+@@||security.snssdk.com^
+@@||sg.bls.mdt.qq.com^
+@@||sjarvis.taobao.com^
+@@||sso.oceanengine.com^
+@@||tnc0-aliec2.zijieapi.com^
+@@||tnc0-alisc1.zijieapi.com^
+@@||to.ele.me^
+@@||tobapplog.volceapplog.com^
+@@||toblog.ctobsnssdk.com^
+@@||toblog.volceapplog.com^
+@@||tp-pay.snssdk.com^
+@@||tracking.miui.com^
+@@||updates.cdn-apple.com^
+@@||utoken.umeng.com^
+@@||whoami.akamai.net^
 @@||download- *.com^
 @@||mdt.qq.com^
 @@||tcdnos.com^
