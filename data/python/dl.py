@@ -62,7 +62,7 @@ adblock_rules = [
     #{"url": "http://hgzs.uunat.com/hg1.txt", "name": "海哥规则"},
     #{"url": "https://raw.githubusercontent.com/afwfv/DD-AD/main/rule/DD-AD.txt", "name": "dd-ad 规则"},
     {"url": "https://raw.githubusercontent.com/lingeringsound/10007_auto/master/adb.txt", "name": "About 1007规则"},
-    #{"url": "https://raw.githubusercontent.com/qq5460168/dangchu/main/black.txt", "name": "酷安对不对规则"},
+    {"url": "https://raw.githubusercontent.com/qq5460168/dangchu/main/black.txt", "name": "酷安对不对规则"},
     {"url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt", "name": "秋风广告规则"},
     {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt", "name": "乘风视频规则"},
     {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt", "name": "乘风通用规则"},
