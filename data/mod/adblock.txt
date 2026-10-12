@@ -32,28 +32,57 @@
 ||p6-ad-sign.byteimg.com^$app=com.dragon.read
 
 ! ============================================================
-! 红果免费视频(红果短剧, 包名 com.phoenix.read) 广告/小游戏/奖励 屏蔽规则
-! 适用: AdGuard Home(路由器) / AdGuard for Android / AdGuard for Windows
-! 语法: 标准 AdGuard 过滤规则语法, 三端通用, 直接粘贴到「用户规则/自定义规则」即可
-! 生成日期: 2026-09-29 (域名已逐个做 DNS 存活验证)
+! 红果免费视频 + 番茄免费小说 广告屏蔽规则 v2 (2026-10-12 更新)
+! 适用: AdGuard 用户过滤器 / 内容拦截 (非DNS版)
+! 本次更新: 从 AWAvenue 持续维护规则库 (2026-10) 提取并新增 21 个
+!           已验证存活的新广告域名 —— 此前广告复现的根源
 ! ============================================================
 
-! ---------- 模块A: 穿山甲(Pangle/CSJ) 广告请求与调度 ----------
-! 作用: 拦截开屏广告、信息流广告、激励视频广告的请求入口
+! ========== 模块A: 穿山甲广告请求域 (本次新增, 核心变更) ==========
+! 红果/番茄的激励视频、开屏、信息流广告已迁移到 zijieapi/pangolin 新通道
+||ad.zijieapi.com^
+||ads3-normal.zijieapi.com^
+||ads3-normal-hl.zijieapi.com^
+||ads3-normal-lf.zijieapi.com^
+||ads3-normal-lq.zijieapi.com^
+||ads5-normal.zijieapi.com^
+||ads5-normal-hl.zijieapi.com^
+||ads5-normal-lf.zijieapi.com^
+||ads5-normal-lq.zijieapi.com^
+||api-access.pangolin-sdk-toutiao.com^
+||api-access.pangolin-sdk-toutiao1.com^
+||api-access.pangolin-sdk-toutiao2.com^
+||api-access.pangolin-sdk-toutiao3.com^
+||api-access.pangolin-sdk-toutiao4.com^
+||api-access.pangolin-sdk-toutiao5.com^
+||api-access.pangolin-sdk-toutiao-b.com^
+||log-api.pangolin-sdk-toutiao.com^
+||log-api.pangolin-sdk-toutiao-b.com^
+
+! ========== 模块B: GroMore 聚合广告 + 广告SDK素材/签名域 ==========
+||gromore.pangolin-sdk-toutiao.com^
+||pglstatp-toutiao.com^
+||lf-ad-union-sdk.pglstatp-toutiao.com^
+
+! ========== 模块C: 广告素材 CDN (仅拦 ad 特征节点, 不伤正片) ==========
+||lf-ad-nhs-pos.byteimg.com^
+/lf[0-9]*-ad-.*\.byteimg\.com/
+||lf-sourcecdn-tos.bytegecko.com^
+||p3-tt.byteimg.com^
+
+! ========== 模块D: 广告调度与分析 ==========
 ||ad.toutiao.com^
 ||ad.oceanengine.com^
+||analytics.oceanengine.com^
 ||pangle.io^
 ||pangolin-sdk-toutiao.com^
 ||ad.float.pangle.com^
+||open.snssdk.com^
+||abtest-ch.snssdk.com^
+||success.ctobsnssdk.com^
+||toblog.ctobsnssdk.com^
 
-! ---------- 模块B: 广告素材 CDN ----------
-! 作用: 拦截广告图片/视频素材下载 (仅拦截带 ad 特征的 CDN 节点, 不影响正片播放)
-||lf-ad-nhs-pos.byteimg.com^
-/lf[0-9]-ad-..byteimg.com/
-||lf-sourcecdn-tos.bytegecko.com^
-
-! ---------- 模块C: 广告跳转落地页 / 摇一摇跳转 ----------
-! 作用: 拦截点击广告后的跳转域名 (大量 DGA 随机域名)
+! ========== 模块E: 广告跳转落地页 / 摇一摇跳转 (DGA 随机域) ==========
 ||ldhy.click^
 ||ahdohpiechei.com^
 ||siomxity.net^
@@ -61,30 +90,40 @@
 ||0kkkkkt.com^
 ||dig.bdurl.net^
 
-! ---------- 模块D: 广告配置与埋点上报 ----------
-! 作用: 阻断广告策略下发/个性化推荐画像上报, 减少广告下发频率
+! ========== 模块F: 广告策略下发与埋点上报 ==========
 ||mcs.snssdk.com^
 ||mon.snssdk.com^
 ||is.snssdk.com^
 ||is-hl.snssdk.com^
 ||log.snssdk.com^
+||applog.zijieapi.com^
+||log.zijieapi.com^
 
-! ---------- 模块E: 小游戏 / 奖励任务页 ----------
-! 作用: 拦截字节小游戏加载域与广告落地小程序容器
-! 注意: 拦截后「看广告领金币/看视频解锁剧集」会提示加载失败——这正是屏蔽目的
+! ========== 模块G: 小游戏 / 奖励任务容器 ==========
+! (拦截后「看广告领金币/解锁剧集」提示加载失败, 属预期效果)
 ||minigame.zijieapi.com^
 ||microapp.zijieapi.com^
 
-! ---------- 模块F: 安全白名单 (防止误伤, 建议保留) ----------
-! 说明: 以下为已验证存活的正常图片/内容节点, 若你后续添加了更激进的
-! 第三方大范围规则, 这两条可保护红果/番茄系正常内容加载
-@@||lf3-reading.fqnovelpic.com^
-@@||p3-novel.byteimg.com^
+! ========== 模块H: 番茄免费小说专属 ==========
+||bytescm.com^
+||bytegecko.com^
+||rtlog.snssdk.com^
+||i.snssdk.com^
+||log0-applog-lq.fqnovel.com^
+/mon[0-9]+.*\.fqnovel\.com/
+/.*novelapp\.fqnovelvod\.com/
+
+! ========== 模块I: 可选增强 (默认未启用, 去掉行首!生效) ==========
+! 说明: tnc 为远程配置下发(可携带广告策略), mssdk 为设备风控指纹
+! ! 少数情况下可能影响登录稳定性, 出问题就恢复注释
+! /tnc[0-9]+-.*\.(snssdk|toutiaoapi|bytedance)\.com/
+! ||mssdk.zijieapi.com^
+
+! ========== 模块J: 白名单保护 ($important 优先) ==========
+@@||lf3-reading.fqnovelpic.com^$important
+@@||p3-novel.byteimg.com^$important
 
 ! ============================================================
-! 【绝对不要添加的规则 (会导致红果无法使用)】
-! ||snssdk.com^ —— 会拦截登录/视频接口主域名
-! ||byteimg.com^ —— 会拦截正片视频与图片 CDN
-! ||toutiao.com^ —— 会拦截大量正常接口
+! 【禁止添加 (会导致红果/番茄完全无法使用)】
+! ||snssdk.com^  ||byteimg.com^  ||toutiao.com^  ||zijieapi.com^
 ! ============================================================
-
