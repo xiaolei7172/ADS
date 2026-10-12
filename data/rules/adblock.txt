@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-10-12 11:18:01（北京时间）
-! 📊 有效规则：42350 条
+! ⏰ 更新时间：2026-10-12 18:09:56（北京时间）
+! 📊 有效规则：42355 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-10-12 11:18:01 | ✅ 有效规则 42350 条
+! Description: ⏰ 更新时间 2026-10-12 18:09:56 | ✅ 有效规则 42355 条
 ! ======================================================================
 ||pangolin-sdk-toutiao.com^
 ||zijieapi.com^$app=com.dragon.read
@@ -26,18 +26,45 @@
 ||p9-ad-sign.byteimg.com^$app=com.dragon.read
 ||111.13.141.211:443^$app=com.dragon.read
 ||p6-ad-sign.byteimg.com^$app=com.dragon.read
+||ad.zijieapi.com^
+||ads3-normal.zijieapi.com^
+||ads3-normal-hl.zijieapi.com^
+||ads3-normal-lq.zijieapi.com^
+||ads5-normal.zijieapi.com^
+||ads5-normal-hl.zijieapi.com^
+||ads5-normal-lf.zijieapi.com^
+||ads5-normal-lq.zijieapi.com^
+||api-access.pangolin-sdk-toutiao1.com^
+||api-access.pangolin-sdk-toutiao2.com^
+||api-access.pangolin-sdk-toutiao3.com^
+||api-access.pangolin-sdk-toutiao4.com^
+||api-access.pangolin-sdk-toutiao5.com^
+||api-access.pangolin-sdk-toutiao-b.com^
+||gromore.pangolin-sdk-toutiao.com^
+||lf-ad-union-sdk.pglstatp-toutiao.com^
+||lf-ad-nhs-pos.byteimg.com^
+/lf[0-9]*-ad-.*\.byteimg\.com/
 ||ad.toutiao.com^
 ||ad.oceanengine.com^
+||analytics.oceanengine.com^
 ||pangle.io^
 ||ad.float.pangle.com^
-||lf-ad-nhs-pos.byteimg.com^
-/lf[0-9]-ad-..byteimg.com/
+||abtest-ch.snssdk.com^
+||success.ctobsnssdk.com^
 ||ldhy.click^
 ||ahdohpiechei.com^
 ||siomxity.net^
 ||qtaeixd.com^
 ||0kkkkkt.com^
+||applog.zijieapi.com^
+||log.zijieapi.com^
 ||microapp.zijieapi.com^
+||bytescm.com^
+||bytegecko.com^
+||rtlog.snssdk.com^
+||log0-applog-lq.fqnovel.com^
+/mon[0-9]+.*\.fqnovel\.com/
+/.*novelapp\.fqnovelvod\.com/
 ! ==============================================
 ! 📋 规则来源：浮风拦截规则 [Merged Ad Rules (自动合并去重)]
 ! 📝 规则说明：广告拦截规则
@@ -4372,22 +4399,17 @@
 ||tnc3-alisc1.zijieapi.com^
 ||janapi.jd.com^
 ||xlog.jd.com^
-||gromore.pangolin-sdk-toutiao.com^
 ||e.qq.com^
 ||mobads.baidu.com^
-||api-access.pangolin-sdk-toutiao1.com^
 ||gdt.qq.com^
 ||hmma.baidu.com^
 ||mi.gdt.qq.com^
 ||sdk.beizi.biz^
-||api-access.pangolin-sdk-toutiao-b.com^
 ||pgdt.ugdtimg.com^
-||applog.zijieapi.com^
 ||v2.gdt.qq.com^
 ||adsmind.ugdtimg.com^
 ||qzs.gdtimg.com^
 ||api-htp.beizi.biz^
-||log.zijieapi.com^
 ||p3-be-pack-sign.pglstatp-toutiao.com^
 ||v.adx.hubcloud.com.cn^
 ||sdktmp.hubcloud.com.cn^
@@ -4499,7 +4521,6 @@
 ||tnc3-bjlgy.snssdk.com^
 ||tnc3-bjlgy.zijieapi^
 ||dm-hl.toutiao.com^
-||abtest-ch.snssdk.com^
 ||httpdns.pro^
 ||yoda.kwd.inkuai.com^
 ||51y5.net^
@@ -5011,7 +5032,6 @@ www.itdog.cn#%#window.alert=function(str){return}
 ||ad.winrar.com.cn^
 ||ad.ximalaya.com^
 ||ad.xunkids.com^
-||ad.zijieapi.com^
 ||ad4.sina.com.cn^
 ||adapi.yynetwk.com^
 ||adashbc.ut.taobao.com^
@@ -5065,13 +5085,6 @@ www.itdog.cn#%#window.alert=function(str){return}
 ||ads.servebom.com^
 ||ads.v3mh.com^
 ||ads.zhinengxiyifang.cn^
-||ads3-normal-hl.zijieapi.com^
-||ads3-normal-lq.zijieapi.com^
-||ads3-normal.zijieapi.com^
-||ads5-normal-hl.zijieapi.com^
-||ads5-normal-lf.zijieapi.com^
-||ads5-normal-lq.zijieapi.com^
-||ads5-normal.zijieapi.com^
 ||adscdn.baidu.com^
 ||adsdk.vivo.com.cn^
 ||adse.test.ximalaya.com^
@@ -5138,17 +5151,12 @@ www.itdog.cn#%#window.alert=function(str){return}
 ||alogus.umeng.com^
 ||analysis.yozocloud.cn^
 ||analytics.adjust.cn^
-||analytics.oceanengine.com^
 ||analytics.rayjump.com^
 ||analytics.woozooo.com^
 ||analyze.lemurbrowser.com^
 ||andrqd.play.aiseet.atianqi.com^
 ||ap.dongdianqiu.com^
 ||ap.dongqiudi.com^
-||api-access.pangolin-sdk-toutiao2.com^
-||api-access.pangolin-sdk-toutiao3.com^
-||api-access.pangolin-sdk-toutiao4.com^
-||api-access.pangolin-sdk-toutiao5.com^
 ||api-ad-data.kajicam.com^
 ||api-ad-product.huxiu.com^
 ||api-ad.kajicam.com^
@@ -5556,7 +5564,6 @@ www.itdog.cn#%#window.alert=function(str){return}
 ||statsigapi.net^
 ||stg-data.ads.heytapmobi.com^
 ||stun.hitv.com^
-||success.ctobsnssdk.com^
 ||supply.inmobicdn.net^
 ||sv-video.play.aiseet.atianqi.com^
 ||syh-imp.cdnjtzy.com^
@@ -17158,7 +17165,7 @@ www.itdog.cn#%#window.alert=function(str){return}
 99.84.133.50 www.themoviedb.org
 99.84.238.181 image.tmdb.org
 ::1 ip6-localhost
-<!DOCTYPE html><html style="height:100%;width:100%"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="Server" content="CloudWAF" /><title id="title">访问被拦截！</title></head><body onload="bindall()" style="height:100%;width:100%;margin:0px;font-family:Microsoft yahei"><div><style type="text/css">	.select {float: right;margin: 10px 20px 0 0;height: 32px;line-height: 20px;font-size: 14px;width: 80px;}</style><select class="select" name="language" onchange="changeLanguage(this.options[this.options.selectedIndex].value)"><option id="option-zh" onclick="changeLanguageZh()" value="zh">中文</option><option id="option-en" onclick="changeLanguageEn()" value="en">English</option></select><div style="clear: both;"></div></div><div style="min-height:13.125rem;width:100%"><div style="margin-top:3.75rem;margin-left:18.4375rem;height:52.38;width:83.04%;"><svg xmlns="http://www.w3.org/2000/svg" style="width: 3.125rem;height: 3.125rem" viewBox="0 0 50 50"><path fill="#e84e4c" d="M25,0A25,25,0,1,0,50,25,25,25,0,0,0,25,0Zm1.6,37.16H22.85V33.41H26.6Zm0-6.63H22.85L22.35,13H27.1Z"/></svg><font style="font-family:MicrosoftYaHei;font-size:4.375rem;color:#e94d4c;margin-left: 0.75rem;font-weight: bold;">418</font></div><div style="margin-left:18.4375rem;height:47.62%;width:83.04%;"><font id="a" style="font-family:MicrosoftYaHei;font-size:1.875rem;color:#999999;word-wrap:break-word;">您的请求疑似攻击行为！</font><p style="font-family:MicrosoftYaHei;font-size:0.9rem;color:#999999;word-wrap:break-word;"><span id="c">事件ID：</span><span style="color:#499df2" id="d">34-dect-221-20261011120223-f1f6e4ac</span></p></div></div><div style="height:15.625rem;width:100%;min-width:105rem;"><div style="margin-left:18.4375rem;float:left;width:50rem"><p id="b" style="margin-top:10px">如果您是站长，您可以前往WAF控制台进行误报屏蔽设置，让您的访问不再被拦截</p></div></div></body><script>function changeLanguage(value) {if (value === 'zh') {changeLanguageZh();} else if (value === 'en') {changeLanguageEn();} else {changeLanguageZh();}}function changeLanguageZh() {document.getElementById("title").innerHTML = "访问被拦截！";document.getElementById("a").innerHTML = "您的请求疑似攻击行为！";document.getElementById("b").innerHTML = "如果您是站长，您可以前往WAF控制台进行误报屏蔽设置，让您的访问不再被拦截";document.getElementById("c").innerHTML = "事件ID：";}function changeLanguageEn() {document.getElementById("title").innerHTML = "The access is blocked.";document.getElementById("a").innerHTML = "Sorry, your request has been intercepted because it appears to be an attack.";document.getElementById("b").innerHTML = "If you are the webmaster, configure related parameters on the WAF console to allow your requests.";document.getElementById("c").innerHTML = "Event ID:";}var language = navigator.language || navigator.browserLanguage;var re_zh = /^zh/;if (language.match(re_zh)) {changeLanguageZh();document.getElementById("option-zh").setAttribute("selected", true);} else {changeLanguageEn();document.getElementById("option-en").setAttribute("selected", true);}</script></html>
+<!DOCTYPE html><html style="height:100%;width:100%"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="Server" content="CloudWAF" /><title id="title">访问被拦截！</title></head><body onload="bindall()" style="height:100%;width:100%;margin:0px;font-family:Microsoft yahei"><div><style type="text/css">	.select {float: right;margin: 10px 20px 0 0;height: 32px;line-height: 20px;font-size: 14px;width: 80px;}</style><select class="select" name="language" onchange="changeLanguage(this.options[this.options.selectedIndex].value)"><option id="option-zh" onclick="changeLanguageZh()" value="zh">中文</option><option id="option-en" onclick="changeLanguageEn()" value="en">English</option></select><div style="clear: both;"></div></div><div style="min-height:13.125rem;width:100%"><div style="margin-top:3.75rem;margin-left:18.4375rem;height:52.38;width:83.04%;"><svg xmlns="http://www.w3.org/2000/svg" style="width: 3.125rem;height: 3.125rem" viewBox="0 0 50 50"><path fill="#e84e4c" d="M25,0A25,25,0,1,0,50,25,25,25,0,0,0,25,0Zm1.6,37.16H22.85V33.41H26.6Zm0-6.63H22.85L22.35,13H27.1Z"/></svg><font style="font-family:MicrosoftYaHei;font-size:4.375rem;color:#e94d4c;margin-left: 0.75rem;font-weight: bold;">418</font></div><div style="margin-left:18.4375rem;height:47.62%;width:83.04%;"><font id="a" style="font-family:MicrosoftYaHei;font-size:1.875rem;color:#999999;word-wrap:break-word;">您的请求疑似攻击行为！</font><p style="font-family:MicrosoftYaHei;font-size:0.9rem;color:#999999;word-wrap:break-word;"><span id="c">事件ID：</span><span style="color:#499df2" id="d">34-dect-69-20261012122156-b2a42f39</span></p></div></div><div style="height:15.625rem;width:100%;min-width:105rem;"><div style="margin-left:18.4375rem;float:left;width:50rem"><p id="b" style="margin-top:10px">如果您是站长，您可以前往WAF控制台进行误报屏蔽设置，让您的访问不再被拦截</p></div></div></body><script>function changeLanguage(value) {if (value === 'zh') {changeLanguageZh();} else if (value === 'en') {changeLanguageEn();} else {changeLanguageZh();}}function changeLanguageZh() {document.getElementById("title").innerHTML = "访问被拦截！";document.getElementById("a").innerHTML = "您的请求疑似攻击行为！";document.getElementById("b").innerHTML = "如果您是站长，您可以前往WAF控制台进行误报屏蔽设置，让您的访问不再被拦截";document.getElementById("c").innerHTML = "事件ID：";}function changeLanguageEn() {document.getElementById("title").innerHTML = "The access is blocked.";document.getElementById("a").innerHTML = "Sorry, your request has been intercepted because it appears to be an attack.";document.getElementById("b").innerHTML = "If you are the webmaster, configure related parameters on the WAF console to allow your requests.";document.getElementById("c").innerHTML = "Event ID:";}var language = navigator.language || navigator.browserLanguage;var re_zh = /^zh/;if (language.match(re_zh)) {changeLanguageZh();document.getElementById("option-zh").setAttribute("selected", true);} else {changeLanguageEn();document.getElementById("option-en").setAttribute("selected", true);}</script></html>
 ip-cidr, 223.111.27.248/32^
 ||*-*-*-lrycfv.vip^
 ||*-ad-sign.byteimg.com^
@@ -24246,7 +24253,6 @@ ip-cidr, 223.111.27.248/32^
 ||log.wtlogin.qq.com^
 ||log.ycapp.yiche.com^
 ||log.yex.youdao.com^
-||log0-applog-lq.fqnovel.com^
 ||log0-misc-alinc2.amemv.com^
 ||log0-misc-hl.amemv.com^
 ||log0-misc-lf.amemv.com^
@@ -26621,7 +26627,6 @@ ip-cidr, 223.111.27.248/32^
 ||rtbasia.com^
 ||rtbcallback.sigmob.cn^
 ||rtbstat.zcdsp.com^
-||rtlog.snssdk.com^
 ||rtlog.vidown.cn^
 ||rtlog.zijieapi.com^
 ||rtlog3-applog-lq.fqnovel.com^

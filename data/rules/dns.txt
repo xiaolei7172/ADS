@@ -3,26 +3,51 @@
 ! 📌 规则名称：天影DNS拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-10-12 11:18:01（北京时间）
-! 📊 有效规则：28371 条
+! ⏰ 更新时间：2026-10-12 18:09:56（北京时间）
+! 📊 有效规则：28374 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影DNS拦截规则 📌
-! Description: ⏰ 更新时间 2026-10-12 11:18:01 | ✅ 有效规则 28371 条
+! Description: ⏰ 更新时间 2026-10-12 18:09:56 | ✅ 有效规则 28374 条
 ! ======================================================================
 ||pangolin-sdk-toutiao.com^
 ||pglstatp-toutiao.com^
+||ad.zijieapi.com^
+||ads3-normal.zijieapi.com^
+||ads3-normal-hl.zijieapi.com^
+||ads3-normal-lq.zijieapi.com^
+||ads5-normal.zijieapi.com^
+||ads5-normal-hl.zijieapi.com^
+||ads5-normal-lf.zijieapi.com^
+||ads5-normal-lq.zijieapi.com^
+||api-access.pangolin-sdk-toutiao1.com^
+||api-access.pangolin-sdk-toutiao2.com^
+||api-access.pangolin-sdk-toutiao3.com^
+||api-access.pangolin-sdk-toutiao4.com^
+||api-access.pangolin-sdk-toutiao5.com^
+||api-access.pangolin-sdk-toutiao-b.com^
+||gromore.pangolin-sdk-toutiao.com^
+||lf-ad-union-sdk.pglstatp-toutiao.com^
+||lf-ad-nhs-pos.byteimg.com^
 ||ad.toutiao.com^
 ||ad.oceanengine.com^
+||analytics.oceanengine.com^
 ||pangle.io^
 ||ad.float.pangle.com^
-||lf-ad-nhs-pos.byteimg.com^
+||abtest-ch.snssdk.com^
+||success.ctobsnssdk.com^
 ||ldhy.click^
 ||ahdohpiechei.com^
 ||siomxity.net^
 ||qtaeixd.com^
 ||0kkkkkt.com^
+||applog.zijieapi.com^
+||log.zijieapi.com^
 ||microapp.zijieapi.com^
+||bytescm.com^
+||bytegecko.com^
+||rtlog.snssdk.com^
+||log0-applog-lq.fqnovel.com^
 ||amusingarmorycomment.com^
 ||arbattadr.in^
 ||greentrafsa.com^
@@ -4350,22 +4375,17 @@
 ||tnc3-alisc1.zijieapi.com^
 ||janapi.jd.com^
 ||xlog.jd.com^
-||gromore.pangolin-sdk-toutiao.com^
 ||e.qq.com^
 ||mobads.baidu.com^
-||api-access.pangolin-sdk-toutiao1.com^
 ||gdt.qq.com^
 ||hmma.baidu.com^
 ||mi.gdt.qq.com^
 ||sdk.beizi.biz^
-||api-access.pangolin-sdk-toutiao-b.com^
 ||pgdt.ugdtimg.com^
-||applog.zijieapi.com^
 ||v2.gdt.qq.com^
 ||adsmind.ugdtimg.com^
 ||qzs.gdtimg.com^
 ||api-htp.beizi.biz^
-||log.zijieapi.com^
 ||p3-be-pack-sign.pglstatp-toutiao.com^
 ||v.adx.hubcloud.com.cn^
 ||sdktmp.hubcloud.com.cn^
@@ -4477,7 +4497,6 @@
 ||tnc3-bjlgy.snssdk.com^
 ||tnc3-bjlgy.zijieapi^
 ||dm-hl.toutiao.com^
-||abtest-ch.snssdk.com^
 ||httpdns.pro^
 ||yoda.kwd.inkuai.com^
 ||51y5.net^
@@ -4527,7 +4546,6 @@
 ||ad.winrar.com.cn^
 ||ad.ximalaya.com^
 ||ad.xunkids.com^
-||ad.zijieapi.com^
 ||ad4.sina.com.cn^
 ||adapi.yynetwk.com^
 ||adashbc.ut.taobao.com^
@@ -4581,13 +4599,6 @@
 ||ads.servebom.com^
 ||ads.v3mh.com^
 ||ads.zhinengxiyifang.cn^
-||ads3-normal-hl.zijieapi.com^
-||ads3-normal-lq.zijieapi.com^
-||ads3-normal.zijieapi.com^
-||ads5-normal-hl.zijieapi.com^
-||ads5-normal-lf.zijieapi.com^
-||ads5-normal-lq.zijieapi.com^
-||ads5-normal.zijieapi.com^
 ||adscdn.baidu.com^
 ||adsdk.vivo.com.cn^
 ||adse.test.ximalaya.com^
@@ -4654,17 +4665,12 @@
 ||alogus.umeng.com^
 ||analysis.yozocloud.cn^
 ||analytics.adjust.cn^
-||analytics.oceanengine.com^
 ||analytics.rayjump.com^
 ||analytics.woozooo.com^
 ||analyze.lemurbrowser.com^
 ||andrqd.play.aiseet.atianqi.com^
 ||ap.dongdianqiu.com^
 ||ap.dongqiudi.com^
-||api-access.pangolin-sdk-toutiao2.com^
-||api-access.pangolin-sdk-toutiao3.com^
-||api-access.pangolin-sdk-toutiao4.com^
-||api-access.pangolin-sdk-toutiao5.com^
 ||api-ad-data.kajicam.com^
 ||api-ad-product.huxiu.com^
 ||api-ad.kajicam.com^
@@ -5072,7 +5078,6 @@
 ||statsigapi.net^
 ||stg-data.ads.heytapmobi.com^
 ||stun.hitv.com^
-||success.ctobsnssdk.com^
 ||supply.inmobicdn.net^
 ||sv-video.play.aiseet.atianqi.com^
 ||syh-imp.cdnjtzy.com^
@@ -12178,7 +12183,6 @@
 ||log.wtlogin.qq.com^
 ||log.ycapp.yiche.com^
 ||log.yex.youdao.com^
-||log0-applog-lq.fqnovel.com^
 ||log0-misc-alinc2.amemv.com^
 ||log0-misc-hl.amemv.com^
 ||log0-misc-lf.amemv.com^
@@ -14525,7 +14529,6 @@
 ||rtbasia.com^
 ||rtbcallback.sigmob.cn^
 ||rtbstat.zcdsp.com^
-||rtlog.snssdk.com^
 ||rtlog.vidown.cn^
 ||rtlog.zijieapi.com^
 ||rtlog3-applog-lq.fqnovel.com^

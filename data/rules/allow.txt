@@ -3,20 +3,20 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-10-12 11:18:01（北京时间）
-! 📊 有效规则：3546 条
+! ⏰ 更新时间：2026-10-12 18:09:56（北京时间）
+! 📊 有效规则：3547 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-10-12 11:18:01 | ✅ 有效规则 3546 条
+! Description: ⏰ 更新时间 2026-10-12 18:09:56 | ✅ 有效规则 3547 条
 ! ======================================================================
 @@||112.28.245.186:443^$app=cn.kuwo.player
 @@||120.221.180.167:443^$app=cn.kuwo.player
 @@||120.221.179.155:443^$app=cn.kuwo.player
 @@||112.28.245.184:443^$app=cn.kuwo.player
 @@||120.221.180.94:443^$app=cn.kuwo.player
-@@||lf3-reading.fqnovelpic.com^
-@@||p3-novel.byteimg.com^
+@@||lf3-reading.fqnovelpic.com^$important
+@@||p3-novel.byteimg.com^$important
 ! 📋 白名单来源：浮风拦截规则 [Merged Ad Rules (自动合并去重)]（规则内置）
 @@||themoviedb.org/assets/
 @@gimg*.baidu.com/gimg/app=$domain=kimivod.com
@@ -1479,6 +1479,7 @@
 @@||lf3-cdn-tos.bytescm.com^
 @@||lf3-cdn2-tos.bytescm.com^
 @@||lf3-imcloud-file-sign.bytetos.com^
+@@||lf3-reading.fqnovelpic.com^
 @@||lf3-search.searchpstatp.com^
 @@||lf3-short.bytegoofy.com^
 @@||lf3-short.ibytedapm.com^
@@ -1966,6 +1967,7 @@
 @@||p3-iz-e-sign.byteimg.com^
 @@||p3-notice.byteimg.com^
 @@||p3-novel-sign.byteimg.com^
+@@||p3-novel.byteimg.com^
 @@||p3-novelfm-sign.novelfmpic.com^
 @@||p3-passport.byteacctimg.com^
 @@||p3-pc-weboff.byteimg.com^
@@ -3536,7 +3538,6 @@
 @@||open.e.kuaishou.com^
 @@||oth.eve.mdt.qq.com^
 @@||oth.str.mdt.qq.com^
-@@||p3-novel.byteimg.com^$important
 @@||pull-flv-l11.douyincdn.com^
 @@||px.ucweb.com^
 @@||qq.com^
