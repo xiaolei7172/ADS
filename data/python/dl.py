@@ -59,7 +59,7 @@ adblock_rules = [
     {"url": "https://raw.githubusercontent.com/qq5460168/666/master/rules.txt", "name": "个人合并规则"},
     #{"url": "https://filters.adtidy.org/android/filters/11_optimized.txt", "name": "AdGuard 移动广告过滤器"},
     {"url": "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt", "name": "酷安@大萌主"},
-    #{"url": "https://raw.githubusercontent.com/Thelongdarkorg/ad-rules-merged/main/merged.txt", "name": "浮风拦截规则"},
+    {"url": "https://raw.githubusercontent.com/Thelongdarkorg/ad-rules-merged/main/merged.txt", "name": "浮风拦截规则"},
     {"url": "http://hgzs.uunat.com/hg1.txt", "name": "海哥规则"},
     #{"url": "https://raw.githubusercontent.com/afwfv/DD-AD/main/rule/DD-AD.txt", "name": "dd-ad 规则"},
     #{"url": "https://raw.githubusercontent.com/lingeringsound/10007_auto/master/adb.txt", "name": "About 1007规则"},
@@ -67,9 +67,9 @@ adblock_rules = [
     {"url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt", "name": "秋风广告规则"},
     {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt", "name": "乘风视频规则"},
     {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt", "name": "乘风通用规则"},
-    #{"url": "https://anti-ad.net/easylist.txt", "name": "anti-ad 官方规则"},
+    {"url": "https://anti-ad.net/easylist.txt", "name": "anti-ad 官方规则"},
     #{"url": "https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt", "name": "ADgk 广告规则"},
-    #{"url": "https://raw.githubusercontent.com/rssvcn/qy-Ads-Rule/main/black.txt", "name": "晴雅拦截规则"},
+    {"url": "https://raw.githubusercontent.com/rssvcn/qy-Ads-Rule/main/black.txt", "name": "晴雅拦截规则"},
     
 ]
 
