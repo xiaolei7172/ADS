@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-10-17 10:08:18（北京时间）
-! 📊 有效规则：3317 条
+! ⏰ 更新时间：2026-10-17 12:39:09（北京时间）
+! 📊 有效规则：3219 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-10-17 10:08:18 | ✅ 有效规则 3317 条
+! Description: ⏰ 更新时间 2026-10-17 12:39:09 | ✅ 有效规则 3219 条
 ! ======================================================================
 @@||112.28.245.186:443^$app=cn.kuwo.player
 @@||120.221.180.167:443^$app=cn.kuwo.player
@@ -118,39 +118,7 @@
 @@||whoami.akamai.net^
 @@||wx1.sinaimg.cn^
 @@||xp.apple.com^
-! 📋 白名单来源：浮风拦截规则 [Merged Ad Rules (自动合并去重)]（规则内置）
-@@||themoviedb.org/assets/
-@@gimg*.baidu.com/gimg/app=$domain=kimivod.com
-@@||iqiyi.com/static/js/adfe.5aa3302c.js
-@@||qhres2.com^$domain=www.n.cn
-@@||x2.ifengimg.com^
-@@||lobechat.com/_next/static/chunks/
-@@googlesyndication.com$domain=bilinovel.com
-@@||cqshuda.com/template/conch/asset/js/conch.vip.js
-@@||cloudflare.com/cdn-cgi/trace$domain=net.ljxnet.cn
-@@||ecmb.bdimg.com/*.jpg
-@@||ecmb.bdimg.com/*.png
-@@.cn:8005/$domain=www.ntdm9.com|www.mxdm9.com|mxdm6.com|ntdm6.com
-@@.com/o.js$domain=2biqu.com
-@@||/template/conch/asset/js/hlhtml.js$domain=www.lldm.net|1anime.me
-@@||css.yhdmtu.xyz^$domain=iyinghua.io|yinghua8.tv
-@@||jstatic.3.cn^$domain=m.jd.com
-@@||api.nocturnal-narwhal.buzz^$domain=webtor.io
-@@||manwa.me^
-@@||cdn-msp*.18comic*.*^
-@@||cdn-msp*.18comic.*^
-@@||miaozhen.com^$domain=miaozhen.com
-@@https://static.ws.126.net/163/frontend/libs/antanalysis.min.js
-@@guokr.com/apis/flowingboard/item/guokrapp_download_source.json
-@@||qhres2.com^$domain=baike.so.com
-@@||stripe.com^$domain=pay.openai.com
-@@||aliyuncs.com/*.png
-@@||f*.baidu.com/it/u=*,*&fm=$domain=baidu.com
-@@||guokr.com/apis/flowingboard/item/m_article
-@@||guokr.com/apis/flowingboard/item/m_home_
-@@||sobot.com^
-@@||wan.douyu.com^
-@@||developer.apple.com$generichide
+! 📋 白名单来源：个人合并规则 [去广告规则，酷安反馈反馈]（规则内置）
 @@||*-cf.xvideos-cdn.com^
 @@||*-misc-lf.fqnovel.com^
 @@||*-novelapp.fqnovelvod.com^
@@ -218,6 +186,7 @@
 @@||*ad*.ksyungslb.com^
 @@||*apk.cosama.cn^
 @@||*m.chenzhongtech.com^
+@@||/template/conch/asset/js/hlhtml.js$domain=www.lldm.net|1anime.me
 @@||000714.xyz^
 @@||17u.cn^
 @@||18comic.org^
@@ -330,6 +299,7 @@
 @@||alissl.ucdl.pp.uc.cn^
 @@||alist.wavee.cn^
 @@||alistgo.com^
+@@||aliyuncs.com/*.png
 @@||alps.51y5.net^
 @@||als.baidu.com^
 @@||amdc.m.taobao.com^
@@ -406,6 +376,7 @@
 @@||api.miui.security.xiaomi.com^
 @@||api.miwifi.com^
 @@||api.neixin.cn^
+@@||api.nocturnal-narwhal.buzz^$domain=webtor.io
 @@||api.onelap.cn^
 @@||api.open.uc.cn^
 @@||api.pinduoduo.com^
@@ -620,6 +591,8 @@
 @@||cdn-chateva.zhhainiao.com^
 @@||cdn-f1.assistant.miui.com^
 @@||cdn-go.cn^
+@@||cdn-msp*.18comic*.*^
+@@||cdn-msp*.18comic.*^
 @@||cdn-www.huorong.cn^
 @@||cdn.akamai.steamstatic.com^
 @@||cdn.aligames.com^
@@ -757,6 +730,7 @@
 @@||cloudcache.tencent-cloud.cn^
 @@||cloudcontrol.live.360.cn^
 @@||cloudflare-dns.com^
+@@||cloudflare.com/cdn-cgi/trace$domain=net.ljxnet.cn
 @@||cloudflareinsights.com^
 @@||cloudpush.aliyuncs.com^
 @@||cm-10-*.getui.com^
@@ -837,6 +811,7 @@
 @@||cpu.baidu.com^
 @@||cpucdn.baidu.com^
 @@||cpv2.mairuan.com^
+@@||cqshuda.com/template/conch/asset/js/conch.vip.js
 @@||cre.dp.sina.cn^
 @@||credit-cdn.heytap.com^
 @@||credit-jfimage-cn.heytapimage.com^
@@ -849,6 +824,7 @@
 @@||cros-updates-serving.appspot.com^
 @@||csi.gstatic.com^
 @@||css.tv.itc.cn^
+@@||css.yhdmtu.xyz^$domain=iyinghua.io|yinghua8.tv
 @@||cstaticdun-v6.126.net^
 @@||cstaticdun.126.net^
 @@||ctldl.windowsupdate.com^
@@ -897,6 +873,7 @@
 @@||detail.zol.com.cn^
 @@||dev.miuiflash.com^
 @@||develope-oss.lanzoug.com^
+@@||developer.apple.com$generichide
 @@||developer.extscreen.com^
 @@||devuploads.com^
 @@||dfcfw.com^
@@ -1011,6 +988,8 @@
 @@||eastus.api.speech.microsoft.com^
 @@||ecard.163.com^
 @@||ecard.shenzhentong.com^
+@@||ecmb.bdimg.com/*.jpg
+@@||ecmb.bdimg.com/*.png
 @@||ecmb.bdimg.com^
 @@||eco.taobao.com^
 @@||ecombdapi.com^
@@ -1051,6 +1030,7 @@
 @@||exp-new.bdstatic.com^
 @@||exp.sug.browser.miui.com^
 @@||exporntoons.net^
+@@||f*.baidu.com/it/u=*,*&fm=$domain=baidu.com
 @@||f*.market.mi-img.com^
 @@||f*.market.xiaomi.com^
 @@||f-cashloan.snssdk.com^
@@ -1201,6 +1181,8 @@
 @@||guanjia.qq.com^
 @@||guid.tpns.tencent.com^
 @@||guide-acs.m.taobao.com^
+@@||guokr.com/apis/flowingboard/item/m_article
+@@||guokr.com/apis/flowingboard/item/m_home_
 @@||gvt1.com^
 @@||gvt2.com^
 @@||gw-paopao.iqiyi.com^
@@ -1438,6 +1420,7 @@
 @@||ipv6.ping0.cc^
 @@||ipw.cn^
 @@||ipxx.pro^
+@@||iqiyi.com/static/js/adfe.5aa3302c.js
 @@||ir.tencentmusic.com^
 @@||is-hl.snssdk.com^
 @@||is1-ssl.mzstatic.com^
@@ -1484,6 +1467,7 @@
 @@||js.tv.itc.cn^
 @@||jspassport.ssl.qhimg.com^
 @@||jstatic.3.cn^
+@@||jstatic.3.cn^$domain=m.jd.com
 @@||juejin.cn^
 @@||jump.luna.58.com^
 @@||jumpluna.58.com^
@@ -1604,6 +1588,7 @@
 @@||livew.l.qq.com^
 @@||lixian.xunlei.com^
 @@||loadingbaycn.webapp.163.com^
+@@||lobechat.com/_next/static/chunks/
 @@||loc.map.baidu.com^
 @@||localads.chengzijianzhan.cn^
 @@||lockororder.netlify.app^
@@ -1723,6 +1708,7 @@
 @@||manus.im^
 @@||manus.monica.cn^
 @@||manwa.fun^
+@@||manwa.me^
 @@||manwac.xyz^
 @@||map.baidu.com^
 @@||map.bdimg.com^
@@ -1771,6 +1757,7 @@
 @@||metrics1-drcn.dt.dbankcloud.cn^
 @@||mgbsdk.matrix.netease.com^
 @@||mi-img.com^
+@@||miaozhen.com^$domain=miaozhen.com
 @@||mibi.api.xiaomi.com^
 @@||midas.gtimg.cn^
 @@||mime.baidu.com^
@@ -2248,6 +2235,8 @@
 @@||qcloudimg.tencent-cloud.cn^
 @@||qdfepccdn.qidian.com^
 @@||qhres2.com^
+@@||qhres2.com^$domain=baike.so.com
+@@||qhres2.com^$domain=www.n.cn
 @@||qi.163.com^
 @@||qidian.gtimg.com^
 @@||qiye.163.com^
@@ -2461,6 +2450,7 @@
 @@||sns.m.taobao.com^
 @@||snzypic.com^
 @@||so.douyin.com^
+@@||sobot.com^
 @@||sofire.bdstatic.com^
 @@||soft.360.cn^
 @@||soft.imtt.qq.com^
@@ -2577,6 +2567,7 @@
 @@||storep.91haoka.cn^
 @@||streamsb.net^
 @@||streamwish.to^
+@@||stripe.com^$domain=pay.openai.com
 @@||study.163.com^
 @@||su.uc.cn^
 @@||subscription.iqiyi.com^
@@ -2639,6 +2630,7 @@
 @@||thefantazy.com^
 @@||theme.heytapimage.com^
 @@||themis.soulapp.cn^
+@@||themoviedb.org/assets/
 @@||theporndude.com^
 @@||thirdqq.qlogo.cn^
 @@||thirdwx.qlogo.cn^
@@ -2864,6 +2856,7 @@
 @@||wallpaper.cdn.pandora.xiaomi.com^
 @@||wallpaperm.cmcm.com^
 @@||wan.baidu.com^
+@@||wan.douyu.com^
 @@||wannianrili.bmcx.com^
 @@||wap.cmpassport.com^
 @@||wap.zol.com.cn^
@@ -3131,6 +3124,7 @@
 @@||x.kuwo.cn^
 @@||x0.ifengimg.com^
 @@||x19.update.netease.com^
+@@||x2.ifengimg.com^
 @@||x6img.com^
 @@||xbk.189.cn^
 @@||xfile2.a.88cdn.com^
@@ -3197,6 +3191,14 @@
 @@||zmde.yijoys.com^
 @@||zodgame.xyz^
 @@||ztgame.com^
+! 📋 白名单来源：酷安@大萌主 [轻量广告拦截规则]（规则内置）
+@@gimg*.baidu.com/gimg/app=$domain=kimivod.com
+@@googlesyndication.com$domain=bilinovel.com
+@@.cn:8005/$domain=www.ntdm9.com|www.mxdm9.com|mxdm6.com|ntdm6.com
+@@.com/o.js$domain=2biqu.com
+@@https://static.ws.126.net/163/frontend/libs/antanalysis.min.js
+@@guokr.com/apis/flowingboard/item/guokrapp_download_source.json
+! 📋 白名单来源：浮风拦截规则 [Merged Ad Rules (自动合并去重)]（规则内置）
 ! 📋 白名单来源：乘风视频规则 [乘风 视频过滤规则 uBlock Origin 1.56]（规则内置）
 @@||log.mmstat.com/eg.js^$script
 @@||union.video.qq.com/fcgi-bin/$script,domain=qq.com
@@ -3229,108 +3231,10 @@
 @@||wago.io/js/118.$script
 @@||learn.microsoft.com/video/media/*_960.jpg|$image,domain=learn.microsoft.com
 @@||acs.m.taobao.com
-! 📋 白名单来源：anti-ad 官方规则（规则内置）
-@@||ad.azure.com^
-@@||ad.ext.azure.com^
-@@||ads.finance^
-@@||ads.taboola.com^
-@@||autocomplete.clearbit.com^
-@@||chart-embed.service.newrelic.com^
-@@||tracker.eu.org^
-@@||stats.uptimerobot.com^
-@@||center-h5api.m.taobao.com^
-@@||app.adjust.com^
-@@||advertisement.taobao.com^
-@@||baozhang.baidu.com^
-@@||tongji.edu.cn^
-@@||tongji.cn^
-@@||ad.siemens.com.cn^
-@@||stats.gov.cn^
-@@||tj.gov.cn^
-@@||news-app.abumedia.yql.yahoo.com^
-@@||meizu.coapi.moji.com^
-@@||passport.bobo.com^
-@@||stat.jseea.cn^
-@@||widget.intercom.io^
-@@||storage.live.com^
-@@||skyapi.onedrive.live.com^
-@@||ftp.bmp.ovh^
-@@||profile*.se.360.cn^
-@@||ad.jp^
-@@||ad.cityu.edu.hk^
-@@||edge-enterprise.activity.windows.com^
-@@||skydrivesync.policies.live.net^
-@@||dxcloud.episerver.net^
-@@||settings-win.data.microsoft.com^
-@@||insideruser.microsoft.com^
-@@||metrics.vrch.at^
-@@||widget.1688.com^
-@@||future.biz.weibo.com^
-@@||ad-putting.gw.zt-express.com^
-@@||api.onedrive.com^
-@@||files.1drv.com^
-@@||skyapi.live.net^
-@@||adm.crowdicity.com^
-@@||iufostworldcongress-singapore.com^
-@@||ad.ext.azure.cn^
-@@||torproject.org^
-@@||api.browser.miui.com^
-@@||pixel.prime.amazon.dev^
-@@||ku.dk^
-@@||microsoftazuresponsorships.com^
-@@||adashx.ut.dingtalk.com^
-@@||h-adashx.ut.dingtalk.com^
-@@||ads.95516.com^
-@@||tongji.koowo.cn^
-@@||adverts.1foo.com^
-@@||ads.smartmidea.net^
-@@||widget.ezidebit.com.au^
-@@||widget.rave.office.net^
-@@||code.sms.mob.com^
-@@||widget.sndcdn.com^
-@@||ad.nl^
-@@||api.slightcommunicativeinterconnectedness.xyz^
-@@||star.c10r.facebook.com^
-@@||www.fbsbx.com^
-@@||star.fallback.c10r.facebook.com^
-@@||ads.cdn.tvb.com^
-@@||ads.console.aliyun.com^
-@@||login-sh.aki-game.com^
-@@||ad-block.dns.adguard.com^
-@@||app.powerbi.com^
-@@||widgets.wp.com^
-@@||analysis.windows.net^
-@@||widget.tianqiapi.com^
-@@||analysis.chess.com^
-@@||ad.vivo.com.cn^
-@@||ads.alafish.cn^
-@@||ads.atmosphere.copernicus.eu^
-@@||ads.cs.washington.edu^
-@@||ads.doordash.com^
-@@||ads.elevateplatform.co.uk^
-@@||ads.google.com^
-@@||ads.lingxing.com^
-@@||ads.listonic.com^
-@@||ads.microsoft.com^
-@@||ads.midwayusa.com^
-@@||ads.openai.com^
-@@||ads.pinterest.com^
-@@||ads.snapchat.com^
-@@||ads.spotify.com^
-@@||ads.temu.com^
-@@||ads.twitter.com^
-@@||ads.vk.com^
-@@||ads.vk.ru^
-@@||ads.x.com^
-@@||ui.ads.microsoft.com^
-@@||adm.10jqka.com.cn^
-@@||analytics.itunes.apple.com^
-@@||widget.weibo.com^
-@@||tongji.*kuwo.cn^
-@@||ad-gone.com^
 ! 📋 白名单来源：本地白名单（远程白名单）
 @@||download- *.com^
 @@||mdt.qq.com^
 @@||tcdnos.com^
+! 📋 白名单来源：当初白名单 [广告白名单规则，反馈🐧群]（远程白名单）
 ! 📋 白名单来源：本地自定义规则（data/mod/whitelist.txt）
 ! ⚠️ 优先级：最高
