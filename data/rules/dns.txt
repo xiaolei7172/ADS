@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影DNS拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-10-17 12:39:09（北京时间）
-! 📊 有效规则：17855 条
+! ⏰ 更新时间：2026-10-17 13:44:41（北京时间）
+! 📊 有效规则：17722 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影DNS拦截规则 📌
-! Description: ⏰ 更新时间 2026-10-17 12:39:09 | ✅ 有效规则 17855 条
+! Description: ⏰ 更新时间 2026-10-17 13:44:41 | ✅ 有效规则 17722 条
 ! ======================================================================
 ||pangolin-sdk-toutiao.com^
 ||pglstatp-toutiao.com^
@@ -17732,136 +17732,3 @@
 ||zzz7.52896368.com^
 ||zzztl.com^
 ||zzzzz4.52896368.com^
-||*-ad-union-sdk.pglstatp-toutiao.com^
-||*-ad.adkwai.com^
-||*-reading-ad.qznovelvod.com^
-||*.ads.heytapmobi.com^
-||*.applovin.com^
-||*.juicyads.me^
-||*.voiceads.cn^
-||*/omts.tc.qq.com^
-||*/snscosdownload/*/reserved/*^
-||*ad.wtzw.com^
-||*adintl.cn^
-||*googleads*^
-||*googleadsserving.cn^
-||*pangolin*toutiao*.com^
-||*pglstatp-toutiao.com^
-||*unityads.unity3d.com^
-||120.226.10.195^
-||120.232.58.157^
-||120.232.6.158^
-||activity.inads.cn^
-||ad-rs6-bjmt-platform34.idcyz.hb1.kwaidc.com^
-||ad-rs6-bjmt5406.idcyz.hb1.kwaidc.com^
-||ad-rs6-bjmt5409.idcyz.hb1.kwaidc.com^
-||ad.dm.gg^
-||ad.samsungadhub.com^
-||ad.smartadserver.com^
-||ad.wx.com:12638^
-||ad.wx.com^
-||ad.xelements.cn^
-||ads*-normal-hl.zijieapi.com^
-||ads*-normal-lf.zijieapi.com^
-||ads*-normal-lq.zijieapi.com^
-||ads*-normal.zijieapi.com^
-||ads*.papegames.com^
-||ads-*.xhscdn.com^
-||ads-mas-us.vivobrowser.com^
-||ads-mas.vivobrowser.com^
-||ads.log.kafka.top^
-||adsserver.yadro.ru^
-||adv.adriver.ru^
-||api-access.pangolin-sdk-toutiao-*.com^
-||api.crashlytics.com^
-||api.launchdarkly.com^
-||api.rollbar.com^
-||apps.iad.apple.com^
-||audit.quantcast.mgr.consensu.org^
-||cdn.abtest.ai^
-||cdn.inads.cn^
-||cdn.spotxcdn.com^
-||cdn.vwo.com^
-||certify.alexametrics.com^
-||click.em.pardot.com^
-||cn.gdt.qq.com^
-||coin-hive-proxy.com^
-||coinhive-proxy.com^
-||coinhiveproxy.com^
-||consent-api.exponential.com^
-||display-apps-ui-soak.iad.apple.com^
-||download*.vzuu.com^
-||email-open.dripemail2.com^
-||feeds.vivo.com.cn^
-||fmiphone-apple.com^
-||gads.pubmatic.com^
-||gdpr.trustarc.com^
-||huaweicdncmnet.inter.iqiyi.com^
-||iris.iad.apple.com^
-||itjcqlp.icu^
-||lalabaos1026.top^
-||landing.gdtimg.com^
-||lf-leads-fe-scm.bytecdn.com.*.queniubg.com^
-||log*-applog-lq.fqnovel.com^
-||logs.logrocket.io^
-||lt.activecampaign.com^
-||lt.pardot.com^
-||luggagetumbledapple.com^
-||minero-proxy.com^
-||open.activecampaign.com^
-||p*-ad.adukwai.com^
-||p*-be-pack-sign.pglstatp-toutiao.com^
-||p*-ff.adkwai.com^
-||p*-lm.adkwai.com^
-||p*-lm.adukwai.com^
-||p*.adkwai.com^
-||pagead*.googleadservices-cn.com^
-||pagead*.googlesyndication-cn.com^
-||pinner-imgserver.byted.org^
-||pixel.mailchimp.com^
-||polaris*-normal-lq.zijieapi.com^
-||public-bjy-rs-kce-node1466.idchb1az2.hb1.kwaidc.com^
-||quantcast.mgr.consensu.org^
-||reports.crashlytics.com^
-||rtlog*-applog-lq.fqnovel.com^
-||s7.addthis.com^
-||sb.adtidy.com^
-||sc.laoqj.top^
-||sdefm2ikfmn2i34n2.ser023.com^
-||search.spotxchange.com^
-||sf*-be-pack.pglstatp-toutiao.com^
-||sourcepoint.mgr.consensu.org^
-||stg-cmws.iad.apple.com^
-||sync.search.spotxchange.com^
-||tnc0-*.zijieapi.com^
-||track.constantcontact.com^
-||us.edge.rms.media.net^
-||v.smtcdns.com^
-||vdn5-1.vzuu.com^
-||vdn6.vzuu.com^
-||video-ads.twitter.com^
-||view-apple.com^
-||wvcwop.zbbznk.xyz^
-||www.fmiphone-apple.com^
-||www.view-apple.com^
-||xiaoshuo.km.com^
-||ad-*.kwaidc.com^
-||ad-*.alibabadns.com^
-||ad-*.alimama.com^
-||ads-*.hihonorcloud.com^
-||ads-*.vivo.com.cn^
-||ads3-*.zijieapi.com^
-||ads5-*.zijieapi.com^
-||ad-monitor.huya.com^
-||pagead*.googlesyndication.com^
-||ads-jssdk.vivo.com.cn^
-||amap-aos-info-nogw.amap.com^
-||whjzjx.cn^
-||ad.track.66mobi.com^
-||oneseeker.top^
-||novel.pangolin-sdk-toutiao.com^
-||dsp-api-cn.metricslinks.com^
-||mores.anythinktech.com^
-||mgw.mpaas.cn-hangzhou.aliyuncs.com^
-||wallpaper-1258344696.file.myqcloud.com^
-||nadvideo.baidu.com^
