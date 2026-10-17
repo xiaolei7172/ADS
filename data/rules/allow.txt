@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-10-17 13:44:41（北京时间）
-! 📊 有效规则：3219 条
+! ⏰ 更新时间：2026-10-17 16:52:54（北京时间）
+! 📊 有效规则：3317 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-10-17 13:44:41 | ✅ 有效规则 3219 条
+! Description: ⏰ 更新时间 2026-10-17 16:52:54 | ✅ 有效规则 3317 条
 ! ======================================================================
 @@||112.28.245.186:443^$app=cn.kuwo.player
 @@||120.221.180.167:443^$app=cn.kuwo.player
@@ -3198,6 +3198,7 @@
 @@.com/o.js$domain=2biqu.com
 @@https://static.ws.126.net/163/frontend/libs/antanalysis.min.js
 @@guokr.com/apis/flowingboard/item/guokrapp_download_source.json
+! 📋 白名单来源：浮风拦截规则 [Merged Ad Rules (自动合并去重)]（规则内置）
 ! 📋 白名单来源：乘风视频规则 [乘风 视频过滤规则 uBlock Origin 1.56]（规则内置）
 @@||log.mmstat.com/eg.js^$script
 @@||union.video.qq.com/fcgi-bin/$script,domain=qq.com
@@ -3230,6 +3231,105 @@
 @@||wago.io/js/118.$script
 @@||learn.microsoft.com/video/media/*_960.jpg|$image,domain=learn.microsoft.com
 @@||acs.m.taobao.com
+! 📋 白名单来源：anti-ad 官方规则（规则内置）
+@@||ad.azure.com^
+@@||ad.ext.azure.com^
+@@||ads.finance^
+@@||ads.taboola.com^
+@@||autocomplete.clearbit.com^
+@@||chart-embed.service.newrelic.com^
+@@||tracker.eu.org^
+@@||stats.uptimerobot.com^
+@@||center-h5api.m.taobao.com^
+@@||app.adjust.com^
+@@||advertisement.taobao.com^
+@@||baozhang.baidu.com^
+@@||tongji.edu.cn^
+@@||tongji.cn^
+@@||ad.siemens.com.cn^
+@@||stats.gov.cn^
+@@||tj.gov.cn^
+@@||news-app.abumedia.yql.yahoo.com^
+@@||meizu.coapi.moji.com^
+@@||passport.bobo.com^
+@@||stat.jseea.cn^
+@@||widget.intercom.io^
+@@||storage.live.com^
+@@||skyapi.onedrive.live.com^
+@@||ftp.bmp.ovh^
+@@||profile*.se.360.cn^
+@@||ad.jp^
+@@||ad.cityu.edu.hk^
+@@||edge-enterprise.activity.windows.com^
+@@||skydrivesync.policies.live.net^
+@@||dxcloud.episerver.net^
+@@||settings-win.data.microsoft.com^
+@@||insideruser.microsoft.com^
+@@||metrics.vrch.at^
+@@||widget.1688.com^
+@@||future.biz.weibo.com^
+@@||ad-putting.gw.zt-express.com^
+@@||api.onedrive.com^
+@@||files.1drv.com^
+@@||skyapi.live.net^
+@@||adm.crowdicity.com^
+@@||iufostworldcongress-singapore.com^
+@@||ad.ext.azure.cn^
+@@||torproject.org^
+@@||api.browser.miui.com^
+@@||pixel.prime.amazon.dev^
+@@||ku.dk^
+@@||microsoftazuresponsorships.com^
+@@||adashx.ut.dingtalk.com^
+@@||h-adashx.ut.dingtalk.com^
+@@||ads.95516.com^
+@@||tongji.koowo.cn^
+@@||adverts.1foo.com^
+@@||ads.smartmidea.net^
+@@||widget.ezidebit.com.au^
+@@||widget.rave.office.net^
+@@||code.sms.mob.com^
+@@||widget.sndcdn.com^
+@@||ad.nl^
+@@||api.slightcommunicativeinterconnectedness.xyz^
+@@||star.c10r.facebook.com^
+@@||www.fbsbx.com^
+@@||star.fallback.c10r.facebook.com^
+@@||ads.cdn.tvb.com^
+@@||ads.console.aliyun.com^
+@@||login-sh.aki-game.com^
+@@||ad-block.dns.adguard.com^
+@@||app.powerbi.com^
+@@||widgets.wp.com^
+@@||analysis.windows.net^
+@@||widget.tianqiapi.com^
+@@||analysis.chess.com^
+@@||ad.vivo.com.cn^
+@@||ads.alafish.cn^
+@@||ads.atmosphere.copernicus.eu^
+@@||ads.cs.washington.edu^
+@@||ads.doordash.com^
+@@||ads.elevateplatform.co.uk^
+@@||ads.google.com^
+@@||ads.lingxing.com^
+@@||ads.listonic.com^
+@@||ads.microsoft.com^
+@@||ads.midwayusa.com^
+@@||ads.openai.com^
+@@||ads.pinterest.com^
+@@||ads.snapchat.com^
+@@||ads.spotify.com^
+@@||ads.temu.com^
+@@||ads.twitter.com^
+@@||ads.vk.com^
+@@||ads.vk.ru^
+@@||ads.x.com^
+@@||ui.ads.microsoft.com^
+@@||adm.10jqka.com.cn^
+@@||analytics.itunes.apple.com^
+@@||widget.weibo.com^
+@@||tongji.*kuwo.cn^
+@@||ad-gone.com^
 ! 📋 白名单来源：本地白名单（远程白名单）
 @@||download- *.com^
 @@||mdt.qq.com^
