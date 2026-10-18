@@ -52,7 +52,7 @@ if os.path.exists(os.path.join(MOD_DIR, "whitelist.txt")):
 # ==============================================
 adblock_rules = [
     #Hosts：
-    {"url": "https://raw.githubusercontent.com/rentianyu/Ad-set-hosts/master/hosts", "name": "小贝塔-Hosts合并"},
+    #{"url": "https://raw.githubusercontent.com/rentianyu/Ad-set-hosts/master/hosts", "name": "小贝塔-Hosts合并"},
     {"url": "https://raw.githubusercontent.com/lingeringsound/10007_auto/master/all", "name": "1007-Hosts"},
 
     #AdGurad：
@@ -67,7 +67,7 @@ adblock_rules = [
     {"url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt", "name": "秋风广告规则"},
     {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt", "name": "乘风视频规则"},
     {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt", "name": "乘风通用规则"},
-    {"url": "https://anti-ad.net/easylist.txt", "name": "anti-ad 官方规则"},
+    #{"url": "https://anti-ad.net/easylist.txt", "name": "anti-ad 官方规则"},
     #{"url": "https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt", "name": "ADgk 广告规则"},
     {"url": "https://raw.githubusercontent.com/rssvcn/qy-Ads-Rule/main/black.txt", "name": "晴雅拦截规则"},
     
@@ -77,9 +77,9 @@ allow_rules = [
     #{"url": "https://raw.githubusercontent.com/xiaolei7172/ADS/refs/heads/master/data/mod/whitelist.txt", "name": "天影白名单"},
     #{"url": "https://oss.xlxbk.cn/allow.txt", "name": "xlxbk白名单"},
     {"url": "https://raw.githubusercontent.com/qq5460168/dangchu/main/white.txt", "name": "当初白名单"},
-    #{"url": "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt", "name": "李文杰白名单"},
-    #{"url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/allowlist.txt", "name": "AdGuard 中文白名单"},
-    #{"url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/allowlist.txt", "name": "AdGuard 跟踪白名单"},
+    {"url": "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt", "name": "李文杰白名单"},
+    {"url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/allowlist.txt", "name": "AdGuard 中文白名单"},
+    {"url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/allowlist.txt", "name": "AdGuard 跟踪白名单"},
 ]
 
 # ==============================================
