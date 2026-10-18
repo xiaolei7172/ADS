@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-10-18 10:08:07（北京时间）
-! 📊 有效规则：6240 条
+! ⏰ 更新时间：2026-10-18 14:13:47（北京时间）
+! 📊 有效规则：6338 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-10-18 10:08:07 | ✅ 有效规则 6240 条
+! Description: ⏰ 更新时间 2026-10-18 14:13:47 | ✅ 有效规则 6338 条
 ! ======================================================================
 @@||112.28.245.186:443^$app=cn.kuwo.player
 @@||120.221.180.167:443^$app=cn.kuwo.player
@@ -118,6 +118,116 @@
 @@||whoami.akamai.net^
 @@||wx1.sinaimg.cn^
 @@||xp.apple.com^
+! 📋 白名单来源：anti-ad 官方规则（规则内置）
+@@||ad.azure.com^
+@@||ad.ext.azure.com^
+@@||ads.finance^
+@@||ads.taboola.com^
+@@||autocomplete.clearbit.com^
+@@||chart-embed.service.newrelic.com^
+@@||tracker.eu.org^
+@@||stats.uptimerobot.com^
+@@||center-h5api.m.taobao.com^
+@@||app.adjust.com^
+@@||uland.taobao.com^
+@@||advertisement.taobao.com^
+@@||baozhang.baidu.com^
+@@||tongji.edu.cn^
+@@||tongji.cn^
+@@||ad.siemens.com.cn^
+@@||sdkapi.sms.mob.com^
+@@||stats.gov.cn^
+@@||tj.gov.cn^
+@@||sax.sina.com.cn^
+@@||news-app.abumedia.yql.yahoo.com^
+@@||meizu.coapi.moji.com^
+@@||passport.bobo.com^
+@@||stat.jseea.cn^
+@@||widget.intercom.io^
+@@||www.msftconnecttest.com^
+@@||storage.live.com^
+@@||skyapi.onedrive.live.com^
+@@||counter-strike.net^
+@@||ftp.bmp.ovh^
+@@||profile*.se.360.cn^
+@@||ad.jp^
+@@||ad.cityu.edu.hk^
+@@||edge-enterprise.activity.windows.com^
+@@||edge.activity.windows.com^
+@@||skydrivesync.policies.live.net^
+@@||dxcloud.episerver.net^
+@@||settings-win.data.microsoft.com^
+@@||insideruser.microsoft.com^
+@@||metrics.vrch.at^
+@@||s.mvconf.f.360.cn^
+@@||widget.1688.com^
+@@||api.huangye.miui.com^
+@@||ads.privacy.qq.com^
+@@||future.biz.weibo.com^
+@@||ad-putting.gw.zt-express.com^
+@@||api.onedrive.com^
+@@||files.1drv.com^
+@@||skyapi.live.net^
+@@||adm.crowdicity.com^
+@@||iufostworldcongress-singapore.com^
+@@||ad.ext.azure.cn^
+@@||torproject.org^
+@@||api.browser.miui.com^
+@@||pixel.prime.amazon.dev^
+@@||ku.dk^
+@@||microsoftazuresponsorships.com^
+@@||metrics.icloud.com^
+@@||adashx.ut.dingtalk.com^
+@@||h-adashx.ut.dingtalk.com^
+@@||ads.95516.com^
+@@||tongji.koowo.cn^
+@@||adverts.1foo.com^
+@@||ads.smartmidea.net^
+@@||widget.ezidebit.com.au^
+@@||widget.rave.office.net^
+@@||code.sms.mob.com^
+@@||widget.sndcdn.com^
+@@||ad.nl^
+@@||api.slightcommunicativeinterconnectedness.xyz^
+@@||star.c10r.facebook.com^
+@@||www.fbsbx.com^
+@@||star.fallback.c10r.facebook.com^
+@@||ads.cdn.tvb.com^
+@@||ads.console.aliyun.com^
+@@||login-sh.aki-game.com^
+@@||ad-block.dns.adguard.com^
+@@||app.powerbi.com^
+@@||tube.e.kuaishou.com^
+@@||widgets.wp.com^
+@@||analysis.windows.net^
+@@||widget.tianqiapi.com^
+@@||analysis.chess.com^
+@@||ad.vivo.com.cn^
+@@||ads.alafish.cn^
+@@||ads.atmosphere.copernicus.eu^
+@@||ads.cs.washington.edu^
+@@||ads.doordash.com^
+@@||ads.elevateplatform.co.uk^
+@@||ads.google.com^
+@@||ads.lingxing.com^
+@@||ads.listonic.com^
+@@||ads.microsoft.com^
+@@||ads.midwayusa.com^
+@@||ads.openai.com^
+@@||ads.pinterest.com^
+@@||ads.snapchat.com^
+@@||ads.spotify.com^
+@@||ads.temu.com^
+@@||ads.twitter.com^
+@@||ads.vk.com^
+@@||ads.vk.ru^
+@@||ads.x.com^
+@@||ui.ads.microsoft.com^
+@@||adm.10jqka.com.cn^
+@@||analytics.itunes.apple.com^
+@@||widget.weibo.com^
+@@||tongji.*kuwo.cn^
+@@||ad-gone.com^
 ! 📋 白名单来源：个人合并规则 [去广告规则，酷安反馈反馈]（规则内置）
 @@||*-cf.xvideos-cdn.com^
 @@||*-misc-lf.fqnovel.com^
@@ -272,7 +382,6 @@
 @@||adidasapp.api.adidas.com.cn^
 @@||admin-oss-xlvip.a.88cdn.com^
 @@||adnmb3.com^
-@@||ads.privacy.qq.com^
 @@||adv.ccb.com^
 @@||adv.sec.miui.com^
 @@||aegis.qq.com^
@@ -359,7 +468,6 @@
 @@||api.ds.163.com^
 @@||api.extscreen.com^
 @@||api.flash.cn^
-@@||api.huangye.miui.com^
 @@||api.io.mi.com^
 @@||api.iplay.163.com^
 @@||api.jdl.cn^
@@ -805,7 +913,6 @@
 @@||cos.na-siliconvalley.myqcloud.com^
 @@||cos.sa-saopaulo.myqcloud.com^
 @@||count.mail.163.com^
-@@||counter-strike.net^
 @@||courier.push.apple.com^
 @@||cp2-cdn-play.funshion.com^
 @@||cpu.baidu.com^
@@ -994,7 +1101,6 @@
 @@||eco.taobao.com^
 @@||ecombdapi.com^
 @@||ecombdimg.com^
-@@||edge.activity.windows.com^
 @@||edge.microsoft.com^
 @@||edith.xiaohongshu.com^
 @@||edu-image.nosdn.127.net^
@@ -1753,7 +1859,6 @@
 @@||members.bitcomet.com^
 @@||message.bilibili.com^
 @@||metrics.apple.com^
-@@||metrics.icloud.com^
 @@||metrics1-drcn.dt.dbankcloud.cn^
 @@||mgbsdk.matrix.netease.com^
 @@||mi-img.com^
@@ -2332,7 +2437,6 @@
 @@||s.click.taobao.com^
 @@||s.click.tmall.com^
 @@||s.img.mix.sina.com.cn^
-@@||s.mvconf.f.360.cn^
 @@||s.pximg.net^
 @@||s.ssl.qhres2.com^
 @@||s.youku.com^
@@ -2371,7 +2475,6 @@
 @@||saucenao.com^
 @@||saveu*-normal-lf.zijieapi.com^
 @@||saveu.zijieapi.com^
-@@||sax.sina.com.cn^
 @@||sbanh.com^
 @@||sbfast.com^
 @@||sbfull.com^
@@ -2386,7 +2489,6 @@
 @@||sdk.open.talk.gepush.com^
 @@||sdk.ptqy.gitv.tv^
 @@||sdk.xyapi.game.qq.com^
-@@||sdkapi.sms.mob.com^
 @@||se*.360simg.com^
 @@||se.360.cn^
 @@||search.doubao.com^
@@ -2670,7 +2772,6 @@
 @@||ts4.tc.mm.bing.net^
 @@||tsis.jpush.cn^
 @@||ttwid.bytedance.com^
-@@||tube.e.kuaishou.com^
 @@||tunion-api.m.taobao.com^
 @@||turing.captcha.gtimg.com^
 @@||tv.2345.com^
@@ -2711,7 +2812,6 @@
 @@||ugapk.com^
 @@||ugurl.cn^
 @@||uiam.unionpayintl.com^
-@@||uland.taobao.com^
 @@||ulive-interact.uc.cn^
 @@||ulive-sc.uc.cn^
 @@||umengjmacs.m.taobao.com^
@@ -3038,7 +3138,6 @@
 @@||www.mimikko.cn^
 @@||www.mini1.cn^
 @@||www.mousouzoku-av.com^
-@@||www.msftconnecttest.com^
 @@||www.msn.com^
 @@||www.mydockfinder.com^
 @@||www.nodeseek.com^
