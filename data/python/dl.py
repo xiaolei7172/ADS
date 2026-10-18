@@ -54,6 +54,12 @@ adblock_rules = [
     #Hosts：
     #{"url": "https://raw.githubusercontent.com/rentianyu/Ad-set-hosts/master/hosts", "name": "小贝塔-Hosts合并"},
     {"url": "https://raw.githubusercontent.com/lingeringsound/10007_auto/master/all", "name": "1007-Hosts"},
+    {"url": "https://raw.githubusercontent.com/lingeringsound/10007_auto/master/reward", "name": "1007-保留奖励名单"},
+    
+
+    #DNS：
+    {"url": "https://anti-ad.net/easylist.txt", "name": "anti-ad 官方规则"},
+    {"url": "https://gp.adrules.top/dns.txt", "name": "AdRules DNS List"},
 
     #AdGurad：
     {"url": "https://raw.githubusercontent.com/qq5460168/666/master/rules.txt", "name": "个人合并规则"},
@@ -67,7 +73,6 @@ adblock_rules = [
     {"url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt", "name": "秋风广告规则"},
     {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt", "name": "乘风视频规则"},
     {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt", "name": "乘风通用规则"},
-    #{"url": "https://anti-ad.net/easylist.txt", "name": "anti-ad 官方规则"},
     #{"url": "https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt", "name": "ADgk 广告规则"},
     {"url": "https://raw.githubusercontent.com/rssvcn/qy-Ads-Rule/main/black.txt", "name": "晴雅拦截规则"},
     
