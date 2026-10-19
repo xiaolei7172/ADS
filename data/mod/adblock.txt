@@ -128,6 +128,29 @@
 ! ||snssdk.com^  ||byteimg.com^  ||toutiao.com^  ||zijieapi.com^
 ! ============================================================
 
+! 红果短剧广告拦截 - AdGuard 版
+! 由 Loon 插件 hgdj.lpx 转换而来
+! 原始地址：https://github.com/Tartarus2014/Loon-Script/blob/master/Plugin/Block/hgdj.lpx
+! 适用：AdGuard Home / AdGuard DNS / AdGuard 浏览器扩展
+
+! ============ 红果核心广告拦截（对应 Loon REJECT）============
+||hongguoapp.com^
+||hongguosdk.com^
+||pangolin-sdk-toutiao.com^
+||pglstatp-toutiao.com^
+/ad-union-sdk/
+/be-pack/
+/hongguo\.ad/
+
+! ============ 字节系广告兜底（红果隶属字节）============
+||ad.pangle.cn^
+||ad.pangolin.cn^
+||zijieapi.com^
+/tnc\.snssdk/
+
+! ============ 说明 ============
+
+
 ||002st.top^
 ||005www11w.top^
 ||00601015.com^
