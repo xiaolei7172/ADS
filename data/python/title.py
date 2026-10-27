@@ -41,15 +41,21 @@ file_config = {
 }
 
 
+HEADER_MARKER = "[TianYing Adblock Project]"
+HEADER_LINES = 12  # 标记行 + 11 行表头（含结尾分隔线）
+
+
 def strip_header(content):
-    """去掉文件开头的注释/[标记]/空行，只留规则正文"""
+    """去掉本脚本上次生成的旧表头，只留正文。
+
+    只认自己写的表头（首行 [TianYing Adblock Project] 标记，固定格式）；
+    其余开头注释（如 adblock/dns 的来源分区头）一律保留，绝不误删。
+    """
     lines = content.splitlines()
-    while lines:
-        first = lines[0].strip()
-        if first.startswith(("!", "[", "#")) or first == "":
-            lines.pop(0)
-        else:
-            break
+    if lines and lines[0].strip() == HEADER_MARKER:
+        lines = lines[HEADER_LINES:]
+    while lines and lines[0].strip() == "":
+        lines.pop(0)
     return "\n".join(lines).strip()
 
 
