@@ -48,8 +48,8 @@
 
 | 规则类型 | 📥 GitHub直链 | 🚀 国内加速链接 |
 | :---- | :---- | :---- |
-| AdGuard 拦截规则 | [adblock.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/adblock.txt) | [adblock.txt](https://ghfast.top/raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/adblock.txt) |
-| AdGuard Home DNS拦截规则 | [dns.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/dns.txt) | [dns.txt](https://ghfast.top/raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/dns.txt) |
+| AdGuard 拦截规则 | [adblock.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/adblock.txt) | [adblock.txt](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/adblock.txt) |
+| AdGuard Home DNS拦截规则 | [dns.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/dns.txt) | [dns.txt](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/dns.txt) |
 
 </details>
 
@@ -60,7 +60,7 @@
 
 | 规则类型 | 📥 GitHub直链 | 🚀 国内加速链接 |
 | :---- | :---- | :---- |
-| 黑名单域名列表 | [ad-domain.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/ad-domain.txt) | [ad-domain.txt](https://ghfast.top/raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/ad-domain.txt) |
+| 黑名单域名列表 | [ad-domain.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/ad-domain.txt) | [ad-domain.txt](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/ad-domain.txt) |
 
 </details>
 
@@ -71,7 +71,7 @@
 
 | 规则类型 | 📥 GitHub直链 | 🚀 国内加速链接 |
 | :---- | :---- | :---- |
-| Quantumult X规则 | [qx.list](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/qx.list) | [qx.list](https://ghfast.top/raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/qx.list) |
+| Quantumult X规则 | [qx.list](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/qx.list) | [qx.list](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/qx.list) |
 
 </details>
 
@@ -82,8 +82,8 @@
 
 | 规则类型 | 📥 GitHub直链 | 🚀 国内加速链接 |
 | :---- | :---- | :---- |
-| SmartDNS拦截规则 | [smartdns.conf](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns.conf) | [smartdns.conf](https://ghfast.top/raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns.conf) |
-| SmartDNS白名单 | [smartdns-whitelist.conf](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns-whitelist.conf) | [smartdns-whitelist.conf](https://ghfast.top/raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns-whitelist.conf) |
+| SmartDNS拦截规则 | [smartdns.conf](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns.conf) | [smartdns.conf](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/smartdns.conf) |
+| SmartDNS白名单 | [smartdns-whitelist.conf](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns-whitelist.conf) | [smartdns-whitelist.conf](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/smartdns-whitelist.conf) |
 
 </details>
 
@@ -94,7 +94,7 @@
 
 | 规则类型 | 📥 GitHub直链 | 🚀 国内加速链接 |
 | :---- | :---- | :---- |
-| HOSTS 格式（0.0.0.0） | [hosts.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/hosts.txt) | [hosts.txt](https://ghfast.top/raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/hosts.txt) |
+| HOSTS 格式（0.0.0.0） | [hosts.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/hosts.txt) | [hosts.txt](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/hosts.txt) |
 
 </details>
 
@@ -105,7 +105,7 @@
 
 | 规则类型 | 📥 GitHub直链 | 🚀 国内加速链接 |
 | :---- | :---- | :---- |
-| 白名单规则 | [allow.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/allow.txt) | [allow.txt](https://ghfast.top/raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/allow.txt) |
+| 白名单规则 | [allow.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/allow.txt) | [allow.txt](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/allow.txt) |
 
 </details>
 
