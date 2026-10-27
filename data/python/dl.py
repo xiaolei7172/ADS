@@ -12,9 +12,9 @@ import os
 import re
 import json
 import subprocess
-import time
 import shutil
 import sys
+from concurrent.futures import ThreadPoolExecutor
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
@@ -186,20 +186,28 @@ if os.path.exists(os.path.join(MOD_DIR, "whitelist.txt")):
 failed = []
 dl_status = []   # 源健康度：clean-readme.py 读取后写入 README
 
+MAX_WORKERS = 5  # 并发下载数：对上游保持礼貌，5 线程已能把 19 源从串行 2 分钟压到半分钟内
+
+def fetch_one(i_rule, prefix):
+    i, rule = i_rule
+    url, name = rule["url"], rule["name"]
+    save_path = os.path.join(TMP_DIR, f"{prefix}_{i+1:02d}.txt")
+    ok, err = download_file(url, save_path)
+    if ok:
+        write_source_header(save_path, name, url)
+    return name, ok, err
+
 def fetch_all(rules, prefix):
-    for i, rule in enumerate(rules):
-        url, name = rule["url"], rule["name"]
-        save_path = os.path.join(TMP_DIR, f"{prefix}_{i+1:02d}.txt")
-        ok, err = download_file(url, save_path)
-        if ok:
-            write_source_header(save_path, name, url)
-            dl_status.append({"name": name, "ok": True, "err": ""})
-            print(f"✅ 下载成功：{name}")
-        else:
-            failed.append(name)
-            dl_status.append({"name": name, "ok": False, "err": err})
-            print(f"❌ 下载失败：{name} —— {err}")
-        time.sleep(1)
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
+        # map 保序：输出顺序与清单一致，便于对照
+        for name, ok, err in pool.map(fetch_one, list(enumerate(rules)), [prefix] * len(rules)):
+            if ok:
+                dl_status.append({"name": name, "ok": True, "err": ""})
+                print(f"✅ 下载成功：{name}")
+            else:
+                failed.append(name)
+                dl_status.append({"name": name, "ok": False, "err": err})
+                print(f"❌ 下载失败：{name} —— {err}")
 
 fetch_all(adblock_rules, "adblock")
 fetch_all(allow_rules, "allow")

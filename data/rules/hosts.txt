@@ -1,7 +1,7 @@
 # 天影广告拦截规则（HOSTS 版）
 # 由 dns.txt（已去重）自动转换，规则与 dns.txt 完全一致
 # 📌 项目地址：https://github.com/xiaolei7172/ADS
-# ⏰ 更新时间：2026-10-27 16:16:15（北京时间） | 📊 有效规则：245724 条
+# ⏰ 更新时间：2026-10-27 17:19:11（北京时间） | 📊 有效规则：245751 条
 # 🔄 更新频率：每12小时自动更新
 0.0.0.0 ads3-normal-hl.zijieapi.com
 0.0.0.0 ads3-normal-lf.zijieapi.com
@@ -143566,7 +143566,6 @@
 0.0.0.0 jssdk.fubavavibosuta.com
 0.0.0.0 jssdk.gogukypynijoxy.com
 0.0.0.0 jssdk.jucibenadyxyso.com
-0.0.0.0 jssdk.modusygunaciro.com
 0.0.0.0 jssdk.sivycafybemude.com
 0.0.0.0 jssdk.sixapypyfynela.com
 0.0.0.0 jssdk.tyzajufezakili.com
@@ -219584,6 +219583,7 @@
 0.0.0.0 zzzoraclecloudsupportp01e10-app-hs.eloquademos.com
 0.0.0.0 zzzoraclecloudsupportp02e10-app-hs.eloquademos.com
 0.0.0.0 zzzoraclecloudsupportp07e10-img-enh-cdn.eloquademos.com
+0.0.0.0 modusygunaciro.com
 0.0.0.0 combatbaskstationery.com
 0.0.0.0 dga9amo.website
 0.0.0.0 cdn.adwebcode.gr
@@ -221953,6 +221953,8 @@
 0.0.0.0 ads-redis.ecn.cl
 0.0.0.0 publi.elliberal.com.ar
 0.0.0.0 adclient-uol.lp.uol.com.br
+0.0.0.0 bigdata.downza.com
+0.0.0.0 zenstats.yzhy19.cn
 0.0.0.0 users.vidy.st
 0.0.0.0 pvdpix.com
 0.0.0.0 analytics.floris.amsterdam
@@ -222688,31 +222690,54 @@
 0.0.0.0 klik.zeus.fun
 0.0.0.0 nawala.my
 0.0.0.0 anopiasbeguine.qpon
+0.0.0.0 awrvxfbwdbhbt.site
+0.0.0.0 ayciteflomhgz.site
 0.0.0.0 baizedtoby.cfd
 0.0.0.0 chockstchick.cfd
 0.0.0.0 clacksgrudges.qpon
+0.0.0.0 cleverbasin.com
 0.0.0.0 copensclaude.qpon
 0.0.0.0 cufprifbmpmsh.website
+0.0.0.0 delzlcrsgmkru.site
+0.0.0.0 dfhvwmrsdhqex.online
 0.0.0.0 dnqloqyjfbdid.site
 0.0.0.0 dtkkskvymeibd.site
 0.0.0.0 eqerhjksssooo.space
+0.0.0.0 festyfa.com
 0.0.0.0 frbeqzvebqbyq.online
 0.0.0.0 giftedbamboo.com
+0.0.0.0 graceful-original.pro
+0.0.0.0 ipuopmsaqurfw.online
+0.0.0.0 jfcjprwiwzxnu.website
+0.0.0.0 jwjorrlvvyqci.site
+0.0.0.0 klmoiedmqhmcb.com
 0.0.0.0 maqodyjrxhblw.online
 0.0.0.0 mdudedikicn.com
 0.0.0.0 mhuvxzugznhdz.website
+0.0.0.0 ntfmwhxmdauua.site
 0.0.0.0 otqrunduqtcu.in
 0.0.0.0 peyuywnqenpyp.space
+0.0.0.0 pidgybmlejfzc.site
 0.0.0.0 plbqsafhuanug.com
 0.0.0.0 pne8jpfkywx1hewo6.cfd
+0.0.0.0 pujqqwfyplisz.space
 0.0.0.0 pyyywcvtizmf9kq9vhoz.rest
+0.0.0.0 relictimotyka.cfd
 0.0.0.0 retsyzqcswpie.space
 0.0.0.0 shannycased.cfd
+0.0.0.0 smockerriflingparge.cfd
+0.0.0.0 snecksalogism.com
 0.0.0.0 swordedsuresh.cfd
 0.0.0.0 transomburutpanton.cyou
+0.0.0.0 trickyclub.com
+0.0.0.0 umwzmxoufszxv.site
+0.0.0.0 utsukunpotfakeer.qpon
 0.0.0.0 waymenchorook.cfd
 0.0.0.0 wweqeizpoqjfu.online
+0.0.0.0 xmfvsyoqsstij.site
+0.0.0.0 yojymjmj.com
 0.0.0.0 yokeagemanila.cyou
+0.0.0.0 ypumbsbdsymuq.website
 0.0.0.0 yuchmastmanestuary.cfd
 0.0.0.0 3ckz.com
 0.0.0.0 3vetz.com
@@ -222846,6 +222871,8 @@
 0.0.0.0 xmatch.com
 0.0.0.0 widget.faphouse.com
 0.0.0.0 widgets.guppy.live
+0.0.0.0 o35jufwu6.com
+0.0.0.0 lgfktruknrjbxc.com
 0.0.0.0 88p2p.com
 0.0.0.0 aiwanma99.com
 0.0.0.0 kuheju.com

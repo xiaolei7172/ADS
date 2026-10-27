@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-10-27 16:16:29（北京时间）
-! 📊 有效规则：277249 条
+! ⏰ 更新时间：2026-10-27 17:20:00（北京时间）
+! 📊 有效规则：277273 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-10-27 16:16:29 | ✅ 有效规则 277249 条
+! Description: ⏰ 更新时间 2026-10-27 17:20:00 | ✅ 有效规则 277273 条
 ! ======================================================================
 ! ==============================================
 ! 📋 规则来源：本地自定义规则
@@ -234201,6 +234201,7 @@
 ! 📝 规则说明：Filter composed of several other filters (AdGuard Base filter, Tracking Protection filter, Mobile ads filter, EasyList, EasyPrivacy, etc) and simplified specifically to be better compatible with DNS-level ad blocking.
 ! 🔗 原始地址：https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 ! ==============================================
+||modusygunaciro.com^
 ||combatbaskstationery.com^
 ||dga9amo.website^
 ||xhvideo.saawsedge.com^
@@ -236988,6 +236989,8 @@ vkcdnservice.appspot.com^
 ||countly.
 ||countly-
 |piwik.
+||bigdata.downza.com^
+||zenstats.yzhy19.cn^
 ||sw.vidmoly.
 ||users.vidy.st^
 ||e.missav.
@@ -238263,33 +238266,56 @@ dlsdk.appsflyer.com^
 ||ad.linksynergy.com^
 ||ads.lemmatechnologies.com^
 ||anopiasbeguine.qpon^
+||awrvxfbwdbhbt.site^
+||ayciteflomhgz.site^
 ||baizedtoby.cfd^
 ||chockstchick.cfd^
 ||clacksgrudges.qpon^
+||cleverbasin.com^
 ||copensclaude.qpon^
 ||cufprifbmpmsh.website^
 ||daleelerah.info
+||delzlcrsgmkru.site^
+||dfhvwmrsdhqex.online^
 ||dnqloqyjfbdid.site^
 ||dtkkskvymeibd.site^
 ||eqerhjksssooo.space^
+||festyfa.com^
 ||frbeqzvebqbyq.online^
 ||get-me-wow.
 ||giftedbamboo.com^
+||graceful-original.pro^
+||ipuopmsaqurfw.online^
+||jfcjprwiwzxnu.website^
+||jwjorrlvvyqci.site^
+||klmoiedmqhmcb.com^
 ||maqodyjrxhblw.online^
 ||mdudedikicn.com^
 ||mhuvxzugznhdz.website^
+||ntfmwhxmdauua.site^
 ||otqrunduqtcu.in^
 ||peyuywnqenpyp.space^
+||pidgybmlejfzc.site^
 ||plbqsafhuanug.com^
 ||pne8jpfkywx1hewo6.cfd^
+||pujqqwfyplisz.space^
 ||pyyywcvtizmf9kq9vhoz.rest^
+||relictimotyka.cfd^
 ||retsyzqcswpie.space^
 ||shannycased.cfd^
+||smockerriflingparge.cfd^
+||snecksalogism.com^
 ||swordedsuresh.cfd^
 ||transomburutpanton.cyou^
+||trickyclub.com^
+||umwzmxoufszxv.site^
+||utsukunpotfakeer.qpon^
 ||waymenchorook.cfd^
 ||wweqeizpoqjfu.online^
+||xmfvsyoqsstij.site^
+||yojymjmj.com^
 ||yokeagemanila.cyou^
+||ypumbsbdsymuq.website^
 ||yuchmastmanestuary.cfd^
 ||3ckz.com^
 ||3vetz.com^
@@ -238438,6 +238464,8 @@ dlsdk.appsflyer.com^
 ||tools.bongacams.com^
 ||widget.faphouse.com^
 ||widgets.guppy.live^
+||o35jufwu6.com^
+||lgfktruknrjbxc.com^
 ||cpro.baidustatic.com^
 ||farm-cn.plista.com^
 ||static-cn.plista.com^
@@ -244831,7 +244859,6 @@ analytics-*.aasaam.com
 ! ==============================================
 ||0-02.net^
 ||000webhostapp.com^
-||00a154c916.48dd51f81a.com^
 ||0214217ebc.com^
 ||04b9055b2a.com^
 ||08082c0ad5.com^
@@ -244882,7 +244909,6 @@ analytics-*.aasaam.com
 ||6a7eac2034.com^
 ||6dbc7ad876.com^
 ||6e7c875650.com^
-||7.lueb6cprrr2q5v.cfd^
 ||700f312054.com^
 ||71692fai4cc0.com^
 ||760a131226.com^
@@ -246471,7 +246497,6 @@ analytics-*.aasaam.com
 ||g.doubleclick.net^
 ||g.ezodn.com^
 ||g.jwpsrv.com^
-||g889couw.rhhr8j29prowl23k2xv4.cfd^
 ||gabbingvending.com^
 ||galas3xy.com^
 ||galaxbalilla.click^
@@ -247865,7 +247890,6 @@ analytics-*.aasaam.com
 ||wpcodes.org^
 ||www8.glam.com^
 ||x24hr.com^
-||x4.269xbvm9tm329bnz4eec6t7.cfd^
 ||x6.yakiuchi.com^
 ||xajibur.ru^
 ||xatech.com^

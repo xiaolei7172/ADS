@@ -19,7 +19,8 @@ sys.path.insert(0, SCRIPT_DIR)
 from common import RULES_DIR, MOD_DIR, block_domain
 
 DNS_FLOOR = 50000
-DOMAIN_FILES = ["dns.txt", "qx.list", "smartdns.conf", "ad-domain.txt", "hosts.txt"]
+DOMAIN_FILES = ["dns.txt", "qx.list", "smartdns.conf", "ad-domain.txt", "hosts.txt",
+                "mihomo.yaml", "surge.list"]
 RAW_FILES = ["adblock.txt", "allow.txt"]
 
 errors = []
@@ -36,9 +37,10 @@ if os.path.exists(local_path):
 
 
 def rule_lines(path):
-    """返回文件中的规则行（跳过注释/空行），hosts 文件取目标域"""
+    """返回文件中的规则行（跳过注释/空行），各格式提取目标域"""
     out = []
-    is_hosts = os.path.basename(path) == "hosts.txt"
+    name = os.path.basename(path)
+    is_hosts = name == "hosts.txt"
     with open(path, "r", encoding="utf-8", errors="ignore") as f:
         for raw in f:
             line = raw.strip()
@@ -47,6 +49,16 @@ def rule_lines(path):
             if is_hosts:
                 parts = line.split()
                 out.append(parts[1].lower() if len(parts) == 2 and parts[0] == "0.0.0.0" else None)
+            elif name == "mihomo.yaml":
+                # 形如   - '+.domain.com'  → domain.com；'domain.com' 精确匹配也算
+                m = line.lstrip("- ").strip().strip("'\"")
+                if m.startswith("+."):
+                    m = m[2:]
+                out.append(m.lower() if m else None)
+            elif name == "surge.list":
+                # 形如 DOMAIN-SUFFIX,domain.com
+                parts = line.split(",")
+                out.append(parts[-1].lower() if len(parts) == 2 else None)
             else:
                 out.append(line.lower())
     return [l for l in out if l]

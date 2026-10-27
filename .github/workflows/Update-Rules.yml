@@ -51,6 +51,11 @@ jobs:
       - name: Generate Hosts Rules
         run: python ./data/python/hosts.py
 
+      - name: Generate Clash/Surge Rules
+        run: |
+          python ./data/python/clash.py
+          python ./data/python/surge.py
+
       # ==============================================
       # 🛡️ 质量自检闸门：0 重复 / 0 父子域冗余 / 分区自洽，
       #    不合格 exit 1，问题不流到线上

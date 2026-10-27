@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影DNS拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-10-27 16:16:30（北京时间）
-! 📊 有效规则：245724 条
+! ⏰ 更新时间：2026-10-27 17:20:00（北京时间）
+! 📊 有效规则：245751 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影DNS拦截规则 📌
-! Description: ⏰ 更新时间 2026-10-27 16:16:30 | ✅ 有效规则 245724 条
+! Description: ⏰ 更新时间 2026-10-27 17:20:00 | ✅ 有效规则 245751 条
 ! ======================================================================
 ! 天影DNS拦截规则
 ! 由 filter-dns.py 从 adblock.txt 提取，已应用白名单父子域过滤 + 父子域语义去重
@@ -19,8 +19,8 @@
 !        85 条  本地自定义规则
 !      5702 条  1007-Hosts
 !     94661 条  anti-ad 官方规则
-!    119133 条  AdRules DNS List [AdRules DNS List]
-!      9492 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
+!    119132 条  AdRules DNS List [AdRules DNS List]
+!      9520 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !      2815 条  OISD 拦截规则 [oisd small]
 !      4744 条  个人合并规则 [酷安广告规则]
 !      9092 条  海哥规则
@@ -100503,7 +100503,7 @@
 ! 📝 规则说明：List for blocking ads in the Chinese region. Block Ads, Trackers, Malware, HTTPDNS, PCDN.
 ! 🔗 原始地址：https://gp.adrules.top/dns.txt
 ! ==============================================
-! 📊 本区规则：119133 条
+! 📊 本区规则：119132 条
 ! ==============================================
 ||0.avmarket.rs^
 ||0.nextyourcontent.com^
@@ -143620,7 +143620,6 @@
 ||jssdk.fubavavibosuta.com^
 ||jssdk.gogukypynijoxy.com^
 ||jssdk.jucibenadyxyso.com^
-||jssdk.modusygunaciro.com^
 ||jssdk.sivycafybemude.com^
 ||jssdk.sixapypyfynela.com^
 ||jssdk.tyzajufezakili.com^
@@ -219644,8 +219643,9 @@
 ! 📝 规则说明：Filter composed of several other filters (AdGuard Base filter, Tracking Protection filter, Mobile ads filter, EasyList, EasyPrivacy, etc) and simplified specifically to be better compatible with DNS-level ad blocking.
 ! 🔗 原始地址：https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 ! ==============================================
-! 📊 本区规则：9492 条
+! 📊 本区规则：9520 条
 ! ==============================================
+||modusygunaciro.com^
 ||combatbaskstationery.com^
 ||dga9amo.website^
 ||cdn.adwebcode.gr^
@@ -222015,6 +222015,8 @@
 ||ads-redis.ecn.cl^
 ||publi.elliberal.com.ar^
 ||adclient-uol.lp.uol.com.br^
+||bigdata.downza.com^
+||zenstats.yzhy19.cn^
 ||users.vidy.st^
 ||pvdpix.com^
 ||analytics.floris.amsterdam^
@@ -222750,31 +222752,54 @@
 ||klik.zeus.fun^
 ||nawala.my^
 ||anopiasbeguine.qpon^
+||awrvxfbwdbhbt.site^
+||ayciteflomhgz.site^
 ||baizedtoby.cfd^
 ||chockstchick.cfd^
 ||clacksgrudges.qpon^
+||cleverbasin.com^
 ||copensclaude.qpon^
 ||cufprifbmpmsh.website^
+||delzlcrsgmkru.site^
+||dfhvwmrsdhqex.online^
 ||dnqloqyjfbdid.site^
 ||dtkkskvymeibd.site^
 ||eqerhjksssooo.space^
+||festyfa.com^
 ||frbeqzvebqbyq.online^
 ||giftedbamboo.com^
+||graceful-original.pro^
+||ipuopmsaqurfw.online^
+||jfcjprwiwzxnu.website^
+||jwjorrlvvyqci.site^
+||klmoiedmqhmcb.com^
 ||maqodyjrxhblw.online^
 ||mdudedikicn.com^
 ||mhuvxzugznhdz.website^
+||ntfmwhxmdauua.site^
 ||otqrunduqtcu.in^
 ||peyuywnqenpyp.space^
+||pidgybmlejfzc.site^
 ||plbqsafhuanug.com^
 ||pne8jpfkywx1hewo6.cfd^
+||pujqqwfyplisz.space^
 ||pyyywcvtizmf9kq9vhoz.rest^
+||relictimotyka.cfd^
 ||retsyzqcswpie.space^
 ||shannycased.cfd^
+||smockerriflingparge.cfd^
+||snecksalogism.com^
 ||swordedsuresh.cfd^
 ||transomburutpanton.cyou^
+||trickyclub.com^
+||umwzmxoufszxv.site^
+||utsukunpotfakeer.qpon^
 ||waymenchorook.cfd^
 ||wweqeizpoqjfu.online^
+||xmfvsyoqsstij.site^
+||yojymjmj.com^
 ||yokeagemanila.cyou^
+||ypumbsbdsymuq.website^
 ||yuchmastmanestuary.cfd^
 ||3ckz.com^
 ||3vetz.com^
@@ -222908,6 +222933,8 @@
 ||xmatch.com^
 ||widget.faphouse.com^
 ||widgets.guppy.live^
+||o35jufwu6.com^
+||lgfktruknrjbxc.com^
 ||88p2p.com^
 ||aiwanma99.com^
 ||kuheju.com^

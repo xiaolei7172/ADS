@@ -10,7 +10,7 @@
 [![最近提交](https://img.shields.io/github/last-commit/xiaolei7172/ADS/master?label=%E6%9C%80%E8%BF%91%E6%9B%B4%E6%96%B0&color=success)](https://github.com/xiaolei7172/ADS/commits/master)
 [![License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
 
-[📥 规则订阅](#-规则订阅中心) · [📊 实时统计](#-实时项目统计) · [📚 上游数据源](#-上游规则数据源) · [🧪 拦截效果测试](#-拦截效果在线测试)
+[📥 规则订阅](#-规则订阅中心) · [📊 实时统计](#-实时项目统计) · [🚀 快速开始](#-快速开始) · [📚 上游数据源](#-上游规则数据源) · [🧪 拦截效果测试](#-拦截效果在线测试)
 
 ---
 
@@ -19,13 +19,13 @@
 ### 🔮 天影自用广告过滤规则集群
 
 
-🕒 **更新时间**：2026-10-27 16:16:30（北京时间）
+🕒 **更新时间**：2026-10-27 17:20:01（北京时间）
 
 
-🚫 **广告拦截规则**：277249 条
+🚫 **广告拦截规则**：277273 条
 
 
-🌐 **DNS 拦截域名**：245724 个
+🌐 **DNS 拦截域名**：245751 个
 
 
 ✅ **白名单放行规则**：6696 条
@@ -51,6 +51,71 @@
 | 🚧 **发布护栏** | 规则量骤降 >10% 或低于 5 万条即中止发布，绝不带病上线 |
 | 🌐 **多源容灾** | GitHub API + 3 个 jsDelivr 子域 + gh-proxy 共 6 通道下载兜底 |
 | 📋 **来源可溯** | 每条规则标注所属上游来源，排查误杀一步定位 |
+
+---
+
+## 🚀 快速开始
+
+<details open>
+<summary><b>🖥️ AdGuard（Windows / Mac / Android）</b></summary>
+<br>
+
+1. 打开 AdGuard → 设置 → **内容拦截**（Windows 为「过滤器」）
+2. 点击「添加过滤器」→「使用自定义过滤器」
+3. 粘贴订阅链接（国内网络选加速列）：
+   `https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/adblock.txt`
+4. 建议同时启用白名单：`https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/allow.txt`
+
+</details>
+
+<details>
+<summary><b>🌐 AdGuard Home</b></summary>
+<br>
+
+1. 管理后台 → 过滤器 → **DNS 拦截列表** → 添加拦截列表
+2. 粘贴：`https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/dns.txt`
+3. 白名单（自定义过滤规则 → 放行）：`https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/allow.txt`
+
+</details>
+
+<details>
+<summary><b>📡 OpenWrt（hosts 方式）</b></summary>
+<br>
+
+1. 下载 hosts 文件：`https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/hosts.txt`
+2. 覆盖到 `/etc/hosts` 末尾（或配合 dnsmasq 的 `addn-hosts` 引用）
+3. 重启 dnsmasq：`/etc/init.d/dnsmasq restart`
+
+</details>
+
+<details>
+<summary><b>🔍 SmartDNS</b></summary>
+<br>
+
+1. 编辑 `smartdns.conf`，加入：`conf-file https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/smartdns.conf`
+   （或下载后 `include` 到主配置）
+2. 误杀放行：`conf-file .../data/rules/smartdns-whitelist.conf`
+3. 重启服务：`/etc/init.d/smartdns restart`
+
+</details>
+
+<details>
+<summary><b>🧩 Clash / Mihomo</b></summary>
+<br>
+
+```yaml
+rule-providers:
+  tianying-ad:
+    type: http
+    behavior: domain
+    url: "https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/mihomo.yaml"
+    path: ./rules/tianying-ad.yaml
+    interval: 43200
+rules:
+  - RULE-SET,tianying-ad,REJECT
+```
+
+</details>
 
 ---
 
@@ -123,6 +188,18 @@
 | 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接 |
 | :---- | :---- | :---- | :---- |
 | 白名单规则（误杀放行） | AdGuard 全家桶 | [allow.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/allow.txt) | [allow.txt](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/allow.txt) |
+
+</details>
+
+
+<details>
+<summary><b>🧩 Clash / Mihomo / Surge 规则</b></summary>
+<br>
+
+| 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接 |
+| :---- | :---- | :---- | :---- |
+| Mihomo 域名集 | Clash / Mihomo / Stash（behavior: domain） | [mihomo.yaml](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/mihomo.yaml) | [mihomo.yaml](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/mihomo.yaml) |
+| Surge 规则集 | Surge / Loon（RULE-SET） | [surge.list](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/surge.list) | [surge.list](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/surge.list) |
 
 </details>
 
