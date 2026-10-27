@@ -100,34 +100,65 @@ with open(input_path, "r", encoding="utf-8", errors="ignore") as fin:
         sec["domains"].append(d)
 
 # ==========================================
-# 第二遍：白名单过滤（本地自定义域豁免）+ 写出
+# 第二遍：白名单过滤（本地自定义域豁免）
 # ==========================================
 kept, by_white = 0, 0
+filtered_sections = OrderedDict()  # 来源名 -> 白名单过滤后的域名列表
+
+for name, sec in SECTIONS.items():
+    kept_here = []
+    for d in sec["domains"]:
+        if is_allowed(d, allow_set) and d not in local_block:
+            by_white += 1
+            continue
+        kept_here.append(d)
+    if kept_here:
+        filtered_sections[name] = kept_here
+        kept += len(kept_here)
+
+# ==========================================
+# 第三遍：父子域语义去重
+# ||parent^ 在 AdGuard/hosts 语义下覆盖全部子域，
+# 若父域本身已保留，其子域规则即冗余，剔除。
+# 注意必须在白名单过滤之后：若父域被白名单放行而子域没有，
+# 子域必须保留。本地自定义域（用户明确意图）始终保留原文。
+# ==========================================
+kept_all = set()
+for doms in filtered_sections.values():
+    kept_all.update(doms)
+
+def has_ancestor(d, pool):
+    parts = d.split(".")
+    for i in range(1, len(parts) - 1):
+        if ".".join(parts[i:]) in pool:
+            return True
+    return False
+
+collapsed = 0
 per_source_kept = OrderedDict()
 
 with open(output_path, "w", encoding="utf-8", newline="\n") as fout:
     fout.write("! 天影DNS拦截规则\n")
-    fout.write("! 由 filter-dns.py 从 adblock.txt 提取，已应用白名单父子域过滤\n")
+    fout.write("! 由 filter-dns.py 从 adblock.txt 提取，已应用白名单父子域过滤 + 父子域语义去重\n")
     fout.write("! 各来源分区见下（与 adblock.txt 的来源标注一致）\n")
 
-    for name, sec in SECTIONS.items():
-        kept_here = []
-        for d in sec["domains"]:
-            if is_allowed(d, allow_set) and d not in local_block:
-                by_white += 1
+    for name, doms in filtered_sections.items():
+        final_doms = []
+        for d in doms:
+            if d not in local_block and has_ancestor(d, kept_all):
+                collapsed += 1
                 continue
-            kept_here.append(d)
-        if not kept_here:
-            continue  # 该来源全部被放行，不输出空分区
-        kept += len(kept_here)
-        per_source_kept[name] = len(kept_here)
+            final_doms.append(d)
+        if not final_doms:
+            continue  # 该来源规则全部冗余/被放行，不输出空分区
+        per_source_kept[name] = len(final_doms)
 
         fout.write("\n! ==============================================\n")
-        for c in sec["comments"]:
+        for c in SECTIONS[name]["comments"]:
             fout.write(f"{c}\n")
-        fout.write(f"! 📊 本区规则：{len(kept_here)} 条\n")
+        fout.write(f"! 📊 本区规则：{len(final_doms)} 条\n")
         fout.write("! ==============================================\n")
-        for d in kept_here:
+        for d in final_doms:
             fout.write(f"||{d}^\n")
 
 # 来源汇总插入头部：读回文件重写（规则量大时仍是秒级）
@@ -143,7 +174,8 @@ if per_source_kept:
 with open(output_path, "w", encoding="utf-8", newline="\n") as f:
     f.write(content[:head_end] + summary_text + content[head_end:])
 
+kept_final = sum(per_source_kept.values())
 print(f"✅ DNS 规则提取完成！已生成 → {output_path}")
-print(f"📊 保留 {kept} 条（{len(per_source_kept)} 个来源）| 白名单放行 {by_white} 条 | 跨来源重复 {dup} 条 | 非法/跳过 {invalid} 条")
+print(f"📊 最终保留 {kept_final} 条（{len(per_source_kept)} 个来源）| 白名单放行 {by_white} 条 | 跨来源重复 {dup} 条 | 父子域冗余剔除 {collapsed} 条 | 非法/跳过 {invalid} 条")
 for name, n in per_source_kept.items():
     print(f"   · {n:>7} 条  {name}")

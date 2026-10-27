@@ -111,8 +111,10 @@ def append_black(path):
             if is_junk_hosts_line(line):
                 junk_skipped += 1
                 continue
-            if line not in black_set:
-                black_set.add(line)
+            # 大小写不敏感去重：||Media.net^ 与 ||media.net^ 是同一条规则
+            key = line.lower()
+            if key not in black_set:
+                black_set.add(key)
                 new_rules.append(line)
     if not new_rules:
         # 该来源的规则已全部被前面的来源覆盖，不写空分区头
@@ -144,8 +146,9 @@ if os.path.exists(local_black_path):
             if not line or line.startswith(("!", "#", "[", "@@")):
                 continue
             local_rule_lines.add(line)
-            if line not in black_set:
-                black_set.add(line)
+            key = line.lower()
+            if key not in black_set:
+                black_set.add(key)
                 local_new.append(line)
     if local_new:
         black_output.extend([
