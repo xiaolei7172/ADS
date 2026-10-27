@@ -144,6 +144,8 @@ adblock_rules = [
     #DNS：
     {"url": "https://anti-ad.net/easylist.txt", "name": "anti-ad 官方规则"},
     {"url": "https://gp.adrules.top/dns.txt", "name": "AdRules DNS List"},
+    {"url": "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt", "name": "AdGuard DNS Filter 官方"},
+    {"url": "https://small.oisd.nl/", "name": "OISD 拦截规则"},
 
     #AdGurad：
     {"url": "https://raw.githubusercontent.com/qq5460168/666/master/rules.txt", "name": "个人合并规则"},
@@ -161,6 +163,7 @@ allow_rules = [
     {"url": "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt", "name": "李文杰白名单"},
     {"url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/allowlist.txt", "name": "AdGuard 中文白名单"},
     {"url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/allowlist.txt", "name": "AdGuard 跟踪白名单"},
+    {"url": "https://raw.githubusercontent.com/BlueSkyXN/AdGuardHomeRules/master/ok.txt", "name": "BlueSkyXN 白名单"},
 ]
 
 # ==============================================
