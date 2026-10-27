@@ -124,7 +124,7 @@ adblock_rules = [
     #Hosts：
     {"url": "https://raw.githubusercontent.com/lingeringsound/10007_auto/master/all", "name": "1007-Hosts"},
     {"url": "https://raw.githubusercontent.com/lingeringsound/10007_auto/master/reward", "name": "1007-保留奖励名单"},
-
+    {"url": "https://fastly.jsdelivr.net/gh/abclq/home-dns-adblock@main/dist/adguard-dns.txt", "name": "Home DNS针对国内番茄字节 App"},
     #DNS：
     {"url": "https://anti-ad.net/easylist.txt", "name": "anti-ad 官方规则"},
     {"url": "https://gp.adrules.top/dns.txt", "name": "AdRules DNS List"},
