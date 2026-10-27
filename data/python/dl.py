@@ -10,6 +10,7 @@
 """
 import os
 import re
+import json
 import subprocess
 import time
 import shutil
@@ -183,6 +184,7 @@ if os.path.exists(os.path.join(MOD_DIR, "whitelist.txt")):
 # 下载
 # ==============================================
 failed = []
+dl_status = []   # 源健康度：clean-readme.py 读取后写入 README
 
 def fetch_all(rules, prefix):
     for i, rule in enumerate(rules):
@@ -191,14 +193,23 @@ def fetch_all(rules, prefix):
         ok, err = download_file(url, save_path)
         if ok:
             write_source_header(save_path, name, url)
+            dl_status.append({"name": name, "ok": True, "err": ""})
             print(f"✅ 下载成功：{name}")
         else:
             failed.append(name)
+            dl_status.append({"name": name, "ok": False, "err": err})
             print(f"❌ 下载失败：{name} —— {err}")
         time.sleep(1)
 
 fetch_all(adblock_rules, "adblock")
 fetch_all(allow_rules, "allow")
+
+# 健康度落盘：clean-readme.py 读取并渲染进 README
+try:
+    with open(os.path.join(TMP_DIR, "dl_status.json"), "w", encoding="utf-8") as f:
+        json.dump(dl_status, f, ensure_ascii=False, indent=1)
+except OSError as e:
+    print(f"⚠️ 源健康度写入失败（不影响主流程）：{e}")
 
 total = len(adblock_rules) + len(allow_rules)
 print(f"\n📊 下载结果：成功 {total - len(failed)}/{total}")

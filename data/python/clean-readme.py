@@ -12,12 +12,13 @@
 """
 import os
 import re
+import json
 import subprocess
 import sys
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
-from common import RULES_DIR, count_valid_lines, beijing_now
+from common import RULES_DIR, TMP_DIR, count_valid_lines, beijing_now
 
 REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
 README_PATH = os.path.join(REPO_ROOT, "README.md")
@@ -83,6 +84,35 @@ updated = re.sub(r"🕒 \*\*更新时间\*\*：.*?（北京时间）", rf"🕒 *
 updated = re.sub(r"🚫 \*\*广告拦截规则\*\*：\d+ 条", rf"🚫 **广告拦截规则**：{adblock} 条", updated)
 updated = re.sub(r"🌐 \*\*DNS 拦截域名\*\*：\d+ 个", rf"🌐 **DNS 拦截域名**：{dns} 个", updated)
 updated = re.sub(r"✅ \*\*白名单放行规则\*\*：\d+ 条", rf"✅ **白名单放行规则**：{allow} 条", updated)
+
+# ==========================================
+# 源健康度：dl.py 落盘的下载状态渲染进 README
+# ==========================================
+def render_dl_status():
+    status_path = os.path.join(TMP_DIR, "dl_status.json")
+    if not os.path.exists(status_path):
+        return None
+    try:
+        with open(status_path, "r", encoding="utf-8") as f:
+            status = json.load(f)
+    except (OSError, ValueError):
+        return None
+    if not status:
+        return None
+    total = len(status)
+    ok_n = sum(1 for s in status if s.get("ok"))
+    if ok_n == total:
+        return f"✅ **上游源状态**：{total}/{total} 全部下载成功"
+    failed_items = "、".join(
+        f"{s['name']}（{s.get('err') or '未知错误'}）" for s in status if not s.get("ok")
+    )
+    return f"⚠️ **上游源状态**：{ok_n}/{total} 成功，失败：{failed_items}"
+
+dl_line = render_dl_status()
+MARK_S, MARK_E = "<!-- DL_STATUS_START -->", "<!-- DL_STATUS_END -->"
+if dl_line and MARK_S in updated and MARK_E in updated:
+    block = f"{MARK_S}\n{dl_line}\n{MARK_E}"
+    updated = re.sub(re.escape(MARK_S) + r".*?" + re.escape(MARK_E), block, updated, flags=re.S)
 
 # 判断"实质变化"：忽略时间戳行，其余内容必须有一处不同才写回
 strip_ts = lambda s: re.sub(r"🕒 \*\*更新时间\*\*：.*?（北京时间）", "", s)

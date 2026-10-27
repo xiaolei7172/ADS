@@ -48,6 +48,16 @@ jobs:
       - name: Generate Domain List
         run: python ./data/python/domain_list.py
 
+      - name: Generate Hosts Rules
+        run: python ./data/python/hosts.py
+
+      # ==============================================
+      # 🛡️ 质量自检闸门：0 重复 / 0 父子域冗余 / 分区自洽，
+      #    不合格 exit 1，问题不流到线上
+      # ==============================================
+      - name: Quality Check
+        run: python ./data/python/check-quality.py
+
       - name: Update Title & ReadMe
         run: |
           python ./data/python/title.py

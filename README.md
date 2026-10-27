@@ -20,16 +20,20 @@
 ### 🔮 天影自用广告过滤规则集群
 
 
-🕒 **更新时间**：2026-10-27 15:56:35（北京时间）
+🕒 **更新时间**：2026-10-27 16:16:30（北京时间）
 
 
-🚫 **广告拦截规则**：266040 条
+🚫 **广告拦截规则**：277249 条
 
 
-🌐 **DNS 拦截域名**：250431 个
+🌐 **DNS 拦截域名**：245724 个
 
 
-✅ **白名单放行规则**：6695 条
+✅ **白名单放行规则**：6696 条
+
+<!-- DL_STATUS_START -->
+✅ **上游源状态**：19/19 全部下载成功
+<!-- DL_STATUS_END -->
 
 ---
 
@@ -85,14 +89,12 @@
 
 
 <details>
-<summary><b>📛 HOSTS 科技拦截规则</b></summary>
+<summary><b>📛 HOSTS 拦截规则</b></summary>
 <br>
 
 | 规则类型 | 📥 GitHub直链 | 🚀 国内加速链接 |
 | :---- | :---- | :---- |
-| 标准HOSTS合并规则 | [hosts_merged.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/hosts_merged.txt) | [hosts_merged.txt](https://ghfast.top/raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/hosts_merged.txt) |
-| HOSTS转AdGuard规则 | [hosts_adblock.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/hosts_adblock.txt) | [hosts_adblock.txt](https://ghfast.top/raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/hosts_adblock.txt) |
-| HOSTS纯域名列表 | [hosts_dns.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/hosts_dns.txt) | [hosts_dns.txt](https://ghfast.top/raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/hosts_dns.txt) |
+| HOSTS 格式（0.0.0.0） | [hosts.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/hosts.txt) | [hosts.txt](https://ghfast.top/raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/hosts.txt) |
 
 </details>
 
