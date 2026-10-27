@@ -20,20 +20,26 @@
 ### 🔮 天影自用广告过滤规则集群
 
 
-🕒 **更新时间**：2026-10-27 16:29:21（北京时间）
+🕒 **更新时间**：2026-10-27 16:16:30（北京时间）
 
 
-🚫 **广告拦截规则**：266065 条
+🚫 **广告拦截规则**：277249 条
 
 
-🌐 **DNS 拦截域名**：236980 个
+🌐 **DNS 拦截域名**：245724 个
 
 
-✅ **白名单放行规则**：6695 条
+✅ **白名单放行规则**：6696 条
 
 <!-- DL_STATUS_START -->
-⚠️ **上游源状态**：18/19 成功，失败：海哥规则（curl 退出码 60）
+✅ **上游源状态**：19/19 全部下载成功
 <!-- DL_STATUS_END -->
+
+![规则量趋势](data/stats/trend.svg)
+
+<!-- 🏷️ 动态徽章：① 在 gist.github.com 新建一个 Gist；② 仓库 Settings → Secrets 新建 GIST_SECRET（需 gist 权限的 Token）、Settings → Variables 新建 GIST_ID（填 Gist ID）；③ 取消下一行注释并把 <GIST_ID> 换成实际 ID
+![天影规则](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/xiaolei7172/<GIST_ID>/raw/tianying-stats.json)
+-->
 
 ---
 
