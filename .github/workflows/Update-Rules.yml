@@ -3,6 +3,11 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 */12 * * *'
+
+# 定时与手动触发可能重叠，两个实例同时 push 会互相顶掉
+concurrency:
+  group: update-rules
+  cancel-in-progress: false
     
 jobs:
   update:
@@ -15,10 +20,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Install Python dependencies
-        run: |
-          pip install pytz
 
       - name: Download Rules
         run: python ./data/python/dl.py

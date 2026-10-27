@@ -112,7 +112,7 @@ def build_allow_domains():
 
 
 def count_valid_lines(path_or_text, is_path=True):
-    """有效规则行数（跳过空行和 !/# 注释）"""
+    """有效规则行数（跳过空行、!/# 注释、[Header] 标记行）"""
     if is_path:
         try:
             with open(path_or_text, "r", encoding="utf-8", errors="ignore") as f:
@@ -124,7 +124,7 @@ def count_valid_lines(path_or_text, is_path=True):
     n = 0
     for line in text.splitlines():
         s = line.strip()
-        if s and not s.startswith(("!", "#")):
+        if s and not s.startswith(("!", "#", "[")):
             n += 1
     return n
 

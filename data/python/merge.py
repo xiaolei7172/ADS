@@ -101,13 +101,7 @@ junk_skipped = 0
 def append_black(path):
     global blocked_by_white, junk_skipped
     final_name, desc, url = get_rule_meta(path)
-    black_output.extend([
-        "! ==============================================",
-        f"! 📋 规则来源：{final_name}",
-        f"! 📝 规则说明：{desc}",
-        f"! 🔗 原始地址：{url}",
-        "! ==============================================",
-    ])
+    new_rules = []
     with open(path, "r", encoding="utf-8", errors="ignore") as f:
         for line in f:
             line = line.strip()
@@ -119,21 +113,31 @@ def append_black(path):
                 continue
             if line not in black_set:
                 black_set.add(line)
-                black_output.append(line)
+                new_rules.append(line)
+    if not new_rules:
+        # 该来源的规则已全部被前面的来源覆盖，不写空分区头
+        return 0
+    black_output.extend([
+        "! ==============================================",
+        f"! 📋 规则来源：{final_name}",
+        f"! 📝 规则说明：{desc}",
+        f"! 🔗 原始地址：{url}",
+        "! ==============================================",
+    ])
+    black_output.extend(new_rules)
+    return len(new_rules)
 
 for file in ad_files:
     append_black(file)
 
 # 本地黑名单（优先级最高）
+# 注意：dl.py 已把本地规则作为"源 00"（adblock_00.txt）注入，
+# 这里通常已被上面去重吸收；只有本地分区带来新规则时才写分区头，
+# 避免在 adblock.txt 末尾留下没有规则的空分区。
 local_rule_lines = set()  # 本地自定义规则：豁免白名单过滤（用户明确意图）
 if os.path.exists(local_black_path):
     print("✅ 已加载本地黑名单：data/mod/adblock.txt")
-    black_output.extend([
-        "! ==============================================",
-        "! 📋 规则来源：本地自定义规则（data/mod/adblock.txt）",
-        "! ⚠️ 优先级：最高",
-        "! ==============================================",
-    ])
+    local_new = []
     with open(local_black_path, "r", encoding="utf-8", errors="ignore") as f:
         for line in f:
             line = line.strip()
@@ -142,7 +146,15 @@ if os.path.exists(local_black_path):
             local_rule_lines.add(line)
             if line not in black_set:
                 black_set.add(line)
-                black_output.append(line)
+                local_new.append(line)
+    if local_new:
+        black_output.extend([
+            "! ==============================================",
+            "! 📋 规则来源：本地自定义规则（data/mod/adblock.txt）",
+            "! ⚠️ 优先级：最高",
+            "! ==============================================",
+        ])
+        black_output.extend(local_new)
 
 # 白名单过滤统一放最后：黑名单里逐行判断代价高，改为
 # 先收集 ||domain^ 行，再按父子域过滤。

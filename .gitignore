@@ -1,1 +1,8 @@
+# 本地构建中间产物（不入库）
 tmp/
+data/tmp/
+data/cache/
+
+# Python 缓存（CI 的 git add --all 曾把 .pyc 提交进仓库）
+__pycache__/
+*.pyc

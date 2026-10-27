@@ -1,0 +1,9 @@
+# 统一换行符：仓库一律 LF。
+# 没有这条，Windows 的 core.autocrlf=true 会让每次操作打 8 条
+# CRLF 警告，且某些工具写出 CRLF 时会产生「整文件重写」的假 diff。
+* text=auto eol=lf
+
+# 规则文件是机器生成的，不做语言统计
+data/rules/*.txt   linguist-generated=true
+data/rules/*.conf  linguist-generated=true
+data/rules/*.list  linguist-generated=true

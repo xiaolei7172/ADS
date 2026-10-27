@@ -58,6 +58,7 @@ DEFAULT_SECTION = "（未标注来源的规则）"
 
 seen = set()
 invalid = 0
+dup = 0
 
 def ensure_section(name, comments):
     if name not in SECTIONS:
@@ -87,6 +88,7 @@ with open(input_path, "r", encoding="utf-8", errors="ignore") as fin:
             invalid += 1
             continue
         if d in seen:
+            dup += 1
             continue
         seen.add(d)
 
@@ -142,6 +144,6 @@ with open(output_path, "w", encoding="utf-8", newline="\n") as f:
     f.write(content[:head_end] + summary_text + content[head_end:])
 
 print(f"✅ DNS 规则提取完成！已生成 → {output_path}")
-print(f"📊 保留 {kept} 条（{len(per_source_kept)} 个来源）| 白名单放行 {by_white} 条 | 非法/跳过 {invalid} 条")
+print(f"📊 保留 {kept} 条（{len(per_source_kept)} 个来源）| 白名单放行 {by_white} 条 | 跨来源重复 {dup} 条 | 非法/跳过 {invalid} 条")
 for name, n in per_source_kept.items():
     print(f"   · {n:>7} 条  {name}")

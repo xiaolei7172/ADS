@@ -22,14 +22,14 @@ except OSError:
     sys.exit(1)
 
 domains = set()
-invalid = 0
+not_domain = 0  # 合法的 @@ 规则，但带通配符/正则/路径，无法转成纯域名白名单
 with fin:
     for line in fin:
         d = allow_domain(line)
         if d:
             domains.add(d)
         elif line.strip() and line.strip().startswith("@@"):
-            invalid += 1
+            not_domain += 1
 
 # 父域去重：父域已在集合中时跳过子域
 kept = []
@@ -47,4 +47,5 @@ with open(output_file_path, "w", encoding="utf-8", newline="\n") as fout:
         fout.write(f"address /{d}/-\n")
 
 print(f"✅ 生成完成！共 {len(kept)} 条 SmartDNS 白名单规则"
-      f"（去重前 {len(domains)} 条，非法 {invalid} 条）")
+      f"（去重前 {len(domains)} 条，父域去重 {len(domains) - len(kept)} 条，"
+      f"非纯域名规则 {not_domain} 条不适用）")
