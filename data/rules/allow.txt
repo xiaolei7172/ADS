@@ -3,19 +3,13 @@
 ! 📌 规则名称：天影白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-10-27 14:44:48（北京时间）
-! 📊 有效规则：6278 条
+! ⏰ 更新时间：2026-10-27 15:05:32（北京时间）
+! 📊 有效规则：6314 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影白名单规则 📌
-! Description: ⏰ 更新时间 2026-10-27 14:44:48 | ✅ 有效规则 6278 条
+! Description: ⏰ 更新时间 2026-10-27 15:05:32 | ✅ 有效规则 6314 条
 ! ======================================================================
-@@||112.28.245.186:443^$app=cn.kuwo.player
-@@||120.221.180.167:443^$app=cn.kuwo.player
-@@||120.221.179.155:443^$app=cn.kuwo.player
-@@||112.28.245.184:443^$app=cn.kuwo.player
-@@||120.221.180.94:443^$app=cn.kuwo.player
-! 📋 白名单来源：anti-ad 官方规则（规则内置）
 @@||ad.azure.com^
 @@||ad.ext.azure.com^
 @@||ads.finance^
@@ -892,7 +886,6 @@
 @@||dftoutiao.com^
 @@||dg.k.jd.com^
 @@||dianfeijisuanqi.bmcx.com^
-@@||dig.bdurl.net^
 @@||dig.lianjia.com^
 @@||dig.zjurl.cn^
 @@||dimg04.c-ctrip.com^
@@ -1289,7 +1282,6 @@
 @@||i.meituan.com^
 @@||i.mi.com^
 @@||i.pximg.net^
-@@||i.snssdk.com^
 @@||i.sso.sina.com.cn^
 @@||i.tancdn.com^
 @@||i.tantanapp.com^
@@ -1613,12 +1605,10 @@
 @@||localads.chengzijianzhan.cn^
 @@||lockororder.netlify.app^
 @@||log-api.pangolin-sdk-toutiao-b.com^
-@@||log-api.pangolin-sdk-toutiao.com^
 @@||log-upload.mihoyo.com^
 @@||log.snssdk.com^
 @@||log.taobao.com^
 @@||log1.cmpassport.com^
-@@||log5-applog-lf.fqnovel.com^
 @@||log5-applog.fqnovel.com^
 @@||login-user.kugou.com^
 @@||login.live.com^
@@ -1756,7 +1746,6 @@
 @@||mcdn.bilivideo.cn^
 @@||mcdn.pinduoduo.com^
 @@||mcs.ele.me^
-@@||mcs.snssdk.com^
 @@||mcs.zijieapi.com^
 @@||mdevstat.qqlive.qq.com^
 @@||mdgram.app^
@@ -1786,7 +1775,6 @@
 @@||mini2015.qq.com^
 @@||miniapp.gtimg.cn^
 @@||minigame.zijieapi.com^
-@@||minigame5-normal-hl.zijieapi.com^
 @@||minorshort.weixin.qq.com^
 @@||mip.xiachufang.com^
 @@||mipcache.bdstatic.com^
@@ -1836,7 +1824,6 @@
 @@||moggy-image-1251316161.file.myqcloud.com^
 @@||mon.isnssdk.com^
 @@||mon.snssdk.com^
-@@||mon.zijieapi.com^
 @@||mooc-image.nosdn.127.net^
 @@||mos.m.taobao.com^
 @@||mp.163.com^
@@ -1866,7 +1853,6 @@
 @@||msn.yidianzixun.com^
 @@||mss0.bdstatic.com^
 @@||mssdk3-normal-lf.zijieapi.com^
-@@||msync-im1-vip6-std.easemob.com^
 @@||mumu.163.com^
 @@||music.163.com^
 @@||music.douyin.com^
@@ -1978,7 +1964,6 @@
 @@||open.bytedanceapi.com^
 @@||open.douyin.com^
 @@||open.oppomobile.com^
-@@||open.snssdk.com^
 @@||open.unionpay.com^
 @@||open.unionpayintl.com^
 @@||openap-alps.51y5.net^
@@ -2440,11 +2425,9 @@
 @@||sf3-cdn-tos.bdxiguastatic.com^
 @@||sf3-cdn-tos.toutiaostatic.com^
 @@||sf3-pitaya-tos.pstatp.com^
-@@||sf3-ttcdn-tos.pstatp.com^
 @@||sf6-cdn-tos.bdxiguastatic.com^
 @@||sf6-cdn-tos.douyinstatic.com^
 @@||sf6-cdn-tos.toutiaostatic.com^
-@@||sf6-fe-tos.pglstatp-toutiao.com^
 @@||sfdl.360safe.com^
 @@||sfp.safe.baidu.com^
 @@||sfsapi.micloud.xiaomi.net^
@@ -2677,7 +2660,6 @@
 @@||tnc11-bjlgy.zijieapi.com^
 @@||tnc16-platform-useast1a.tiktokv.com^
 @@||tnc3-aliec2.snssdk.com^
-@@||tnc3-bjlgy.zijieapi.com^
 @@||tom.163.com^
 @@||tongji.flash.cn^
 @@||tongzhi.cup.com.cn^
@@ -3236,6 +3218,8 @@
 @@https://static.ws.126.net/163/frontend/libs/antanalysis.min.js
 @@guokr.com/apis/flowingboard/item/guokrapp_download_source.json
 ! 📋 白名单来源：浮风拦截规则 [Merged Ad Rules (自动合并去重)]（规则内置）
+! 📋 白名单来源：海哥规则（规则内置）
+@@||sug.so.360.cn^
 ! 📋 白名单来源：乘风视频规则 [乘风 视频过滤规则 uBlock Origin 1.56]（规则内置）
 @@||log.mmstat.com/eg.js^$script
 @@||union.video.qq.com/fcgi-bin/$script,domain=qq.com
@@ -3269,9 +3253,65 @@
 @@||learn.microsoft.com/video/media/*_960.jpg|$image,domain=learn.microsoft.com
 @@||acs.m.taobao.com
 ! 📋 白名单来源：本地白名单（远程白名单）
-@@||download- *.com^
+@@||abtest.alibaba.com^
+@@||adashx.m.taobao.com^
+@@||aeventlog.beacon.qq.com^
+@@||apd-pcdnwxlogin.teg.tencent-cloud.net^
+@@||apd-pcdnwxnat.teg.tencent-cloud.net^
+@@||apmplus.volces.com^
+@@||apple.com^
+@@||assets.elemecdn.com^
+@@||astrategy.beacon.qq.com^
+@@||b1-data.ads.heytapmobi.com^
+@@||beacon.qq.com^
+@@||bsync3-normal.zijieapi.com^
+@@||cloudkit-api-cn.heytapmobi.com^
+@@||cnlogs.umengcloud.com^
+@@||dns.weixin.qq.com.cn^
+@@||errlog.umeng.com^
+@@||errnewlog.umeng.com^
+@@||gdmf.apple.com^
+@@||gecko.zijieapi.com^
+@@||gsvip.dns1.top^
+@@||gxh.material.qq.com^
+@@||h5.ele.me^
+@@||httpizza.ele.me^
+@@||icloud.com^
+@@||ios.rqd.qq.com^
+@@||jd.com^
+@@||ma.zijieapi.com^
+@@||mazu.m.qq.com^
+@@||meituan.net^
+@@||mesu.apple.com^
+@@||mssdk.volces.com^
+@@||mum.alibabachengdun.com^
+@@||nr-op.elemecdn.com^
+@@||open.e.kuaishou.cn^
+@@||open.e.kuaishou.com^
+@@||oth.eve.mdt.qq.com^
+@@||oth.str.mdt.qq.com^
+@@||p3-novel.byteimg.com^$important
+@@||pull-flv-l11.douyincdn.com^
+@@||px.ucweb.com^
+@@||qq.com^
+@@||res.wx.qq.com^
+@@||rmonitor.qq.com^
+@@||sdk.e.qq.com^
+@@||security.snssdk.com^
+@@||sg.bls.mdt.qq.com^
+@@||sjarvis.taobao.com^
+@@||sso.oceanengine.com^
+@@||to.ele.me^
+@@||tobapplog.volceapplog.com^
+@@||toblog.volceapplog.com^
+@@||tp-pay.snssdk.com^
+@@||tracking.miui.com^
+@@||updates.cdn-apple.com^
+@@||utoken.umeng.com^
+@@||whoami.akamai.net^
 @@||mdt.qq.com^
 @@||tcdnos.com^
+! 📋 白名单来源：当初白名单 [广告白名单规则，反馈🐧群]（远程白名单）
 ! 📋 白名单来源：李文杰白名单 [LWJ's white list]（远程白名单）
 @@goo.gl
 @@bit.ly
@@ -3581,11 +3621,8 @@
 @@||monsetting.toutiao.com^$important
 @@||mon.snssdk.com^$important
 @@||log.snssdk.com^$important
-@@||i.snssdk.com^$important
-@@||toblog.ctobsnssdk.com^$important
 @@||tobapplog.ctobsnssdk.com^$important
 @@||mssdk.volces.com^$important
-@@||mon.zijieapi.com^$important
 @@||openmonitor.alipay-eco.com^$important
 ! 📋 白名单来源：AdGuard 中文白名单（远程白名单）
 @@||cdn.staticfile.org^$domain=aoi.hugemaker.com.cn

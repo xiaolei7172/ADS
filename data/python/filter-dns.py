@@ -12,7 +12,7 @@ import sys
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
-from common import RULES_DIR, block_domain, hosts_target, build_allow_domains, is_allowed
+from common import RULES_DIR, MOD_DIR, block_domain, hosts_target, build_allow_domains, is_allowed
 
 os.makedirs(RULES_DIR, exist_ok=True)
 
@@ -23,6 +23,17 @@ print("正在从 adblock.txt 提取 DNS 规则（含白名单过滤）...")
 
 allow_set = build_allow_domains()
 print(f"📊 白名单域名：{len(allow_set)} 个")
+
+# 本地自定义规则豁免白名单过滤（用户明确意图，优先级最高）
+local_block = set()
+local_path = os.path.join(MOD_DIR, "adblock.txt")
+if os.path.exists(local_path):
+    with open(local_path, "r", encoding="utf-8", errors="ignore") as f:
+        for line in f:
+            d = block_domain(line)
+            if d:
+                local_block.add(d)
+print(f"📌 本地自定义拦截域（豁免白名单）：{len(local_block)} 个")
 
 seen = set()
 kept, dup, by_white, invalid = [], 0, 0, 0
@@ -46,7 +57,7 @@ with open(input_path, "r", encoding="utf-8", errors="ignore") as fin, \
             dup += 1
             continue
         seen.add(d)
-        if is_allowed(d, allow_set):
+        if is_allowed(d, allow_set) and d not in local_block:
             by_white += 1
             continue
         fout.write(f"||{d}^\n")

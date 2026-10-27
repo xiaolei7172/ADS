@@ -17,7 +17,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
 from common import (
     RULES_DIR, TMP_DIR, MOD_DIR, REPO_ROOT,
-    allow_domain, is_allowed, is_junk_hosts_line, count_valid_lines,
+    allow_domain, block_domain, is_allowed, is_junk_hosts_line, count_valid_lines,
 )
 
 os.makedirs(TMP_DIR, exist_ok=True)
@@ -125,6 +125,7 @@ for file in ad_files:
     append_black(file)
 
 # 本地黑名单（优先级最高）
+local_rule_lines = set()  # 本地自定义规则：豁免白名单过滤（用户明确意图）
 if os.path.exists(local_black_path):
     print("✅ 已加载本地黑名单：data/mod/adblock.txt")
     black_output.extend([
@@ -138,14 +139,21 @@ if os.path.exists(local_black_path):
             line = line.strip()
             if not line or line.startswith(("!", "#", "[", "@@")):
                 continue
+            local_rule_lines.add(line)
             if line not in black_set:
                 black_set.add(line)
                 black_output.append(line)
 
 # 白名单过滤统一放最后：黑名单里逐行判断代价高，改为
-# 先收集 ||domain^ 行，再按父子域过滤
+# 先收集 ||domain^ 行，再按父子域过滤。
+# 本地自定义规则（data/mod/adblock.txt）豁免过滤——用户明确要拦的域，
+# 即使被远程白名单放行也照样拦（「优先级：最高」落到代码上）。
 final_black = []
+exempt = 0
 for line in black_output:
+    if line in local_rule_lines:
+        final_black.append(line)
+        continue
     if line.startswith("||") and line.endswith("^"):
         dom = line[2:-1].lower()
         if is_allowed(dom, allow_domain_set):
@@ -200,6 +208,22 @@ if os.path.exists(local_white_path):
         white_output.extend(tmp)
 
 final_white = list(dict.fromkeys(white_output))
+
+# 本地自定义拦截域（data/mod/adblock.txt）覆盖的 @@ 行必须从白名单成品剔除：
+# AdGuard 中 @@ 放行优先于拦截，不剔除会让本地规则对双规则订阅用户失效。
+local_block_domains = set()
+if os.path.exists(local_black_path):
+    with open(local_black_path, "r", encoding="utf-8", errors="ignore") as f:
+        for line in f:
+            d = block_domain(line)
+            if d:
+                local_block_domains.add(d)
+if local_block_domains:
+    before = len(final_white)
+    final_white = [l for l in final_white
+                   if not (l.startswith("@@") and is_allowed(allow_domain(l) or "", local_block_domains))]
+    print(f"✂️  因本地自定义拦截域，从白名单剔除 {before - len(final_white)} 条放行规则")
+
 with open(os.path.join(RULES_DIR, "allow.txt"), "w", encoding="utf-8") as f:
     f.write("\n".join(final_white) + "\n")
 
@@ -209,6 +233,6 @@ with open(os.path.join(RULES_DIR, "allow.txt"), "w", encoding="utf-8") as f:
 print("\n✅ 全部合并完成！本地黑白名单均已完整写入！")
 print(f"📊 黑名单：{count_valid_lines(os.path.join(RULES_DIR, 'adblock.txt'))} 条")
 print(f"📊 白名单：{len(all_white_raw)} 条")
-print(f"🚫 因白名单（父子域）放行而移除的拦截规则：{blocked_by_white} 条")
+print(f"🚫 因白名单（父子域）放行而移除的拦截规则：{blocked_by_white} 条（本地自定义规则豁免）")
 print(f"🧹 丢弃回环/垃圾行：{junk_skipped} 条")
 print("ℹ️  dns.txt 由 filter-dns.py 统一生成（原第 4 段会被它覆盖，已移除）")

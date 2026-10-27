@@ -42,9 +42,13 @@ def write_source_header(file_path, source_name, source_url):
 
 # ==============================================
 # 内容体检：拦住 404 页、Cloudflare 挑战页、空文件
+# 注意：不能拿 "cloudflare" 当关键词——规则正文合法地含它（如
+# @@||xx.cloudflare.com^），本文件就误杀过当初白名单。
+# 判 HTML 要认结构标签，判挑战页要用完整短语。
 # ==============================================
 BAD_MARKERS = re.compile(
-    r"<!DOCTYPE|<html|just a moment|checking your browser|cloudflare|enable javascript",
+    r"<!doctype\s|<html[\s>]|</html>|<title>|just a moment|checking your browser"
+    r"|enable javascript and cookies|attention required",
     re.IGNORECASE,
 )
 
@@ -65,36 +69,48 @@ def content_ok(path):
 
 
 # ==============================================
-# raw.githubusercontent.com → GitHub API 兜底
+# raw.githubusercontent.com → 多通道兜底
+# 实测可用性（2026-10-27，国内网络）：raw 直连时断时续，
+# API 匿名限额 60次/小时容易耗尽，cdn.jsdelivr.net 主域被重置，
+# 但 fastly/testingcf/gcore 三个 jsDelivr 子域和 gh-proxy.com 稳定可用
 # ==============================================
 RE_RAW_URL = re.compile(
     r"^https://raw\.githubusercontent\.com/([^/]+)/([^/]+)/([^/]+)/(.+)$"
 )
 
-def api_fallback_url(url):
+def mirror_urls(url):
+    """返回 [(url, 是否API模式), ...]，按可靠性排序"""
+    attempts = [(url, False)]
     m = RE_RAW_URL.match(url)
-    if not m:
-        return None
-    owner, repo, branch, path = m.groups()
-    return f"https://api.github.com/repos/{owner}/{repo}/contents/{path}?ref={branch}"
+    if m:
+        owner, repo, branch, path = m.groups()
+        # GitHub Contents API（有令牌时限额 1000/小时）
+        attempts.append(
+            (f"https://api.github.com/repos/{owner}/{repo}/contents/{path}?ref={branch}", True)
+        )
+        # jsDelivr 三个可用子域（主域 cdn.jsdelivr.net 国内被重置，勿用）
+        for cdn in ("fastly.jsdelivr.net", "testingcf.jsdelivr.net", "gcore.jsdelivr.net"):
+            attempts.append((f"https://{cdn}/gh/{owner}/{repo}@{branch}/{path}", False))
+        # gh-proxy 加速代理
+        attempts.append((f"https://gh-proxy.com/{url}", False))
+    # http 源补 https 变体（部分网络环境禁明文 http）
+    if url.startswith("http://"):
+        attempts.append((url.replace("http://", "https://", 1), False))
+    return attempts
 
 
 def download_file(url, save_path):
-    """curl -f 下载 + 体检；raw 被墙时走 API 兜底。成功返回 (True, '')"""
-    attempts = [url]
-    fb = api_fallback_url(url)
-    if fb:
-        attempts.append(fb)
+    """多通道下载 + 体检，任一通道成功即返回 (True, '')"""
     last_err = "未知错误"
-    for i, u in enumerate(attempts):
+    for u, is_api in mirror_urls(url):
         cmd = [
             "curl", "-fsSL", "--retry", "3", "--retry-delay", "2",
-            "--connect-timeout", "20", "--max-time", "180",
+            "--retry-all-errors", "--connect-timeout", "15", "--max-time", "180",
             "-A", "Mozilla/5.0 (compatible; TianYing-Rules/1.0)",
             "-o", save_path, u,
         ]
-        # API 兜底要拿原始文件内容；有令牌时带上，避免匿名限额（60次/小时）
-        if i == 1:
+        if is_api:
+            # API 要拿原始文件内容；有令牌时带上，避免匿名限额（60次/小时）
             cmd[cmd.index("-o"):cmd.index("-o")] = ["-H", "Accept: application/vnd.github.raw"]
             token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
             if token:
@@ -124,7 +140,7 @@ adblock_rules = [
     #Hosts：
     {"url": "https://raw.githubusercontent.com/lingeringsound/10007_auto/master/all", "name": "1007-Hosts"},
     {"url": "https://raw.githubusercontent.com/lingeringsound/10007_auto/master/reward", "name": "1007-保留奖励名单"},
-    {"url": "https://fastly.jsdelivr.net/gh/abclq/home-dns-adblock@main/dist/adguard-dns.txt", "name": "Home DNS针对国内番茄字节 App"},
+
     #DNS：
     {"url": "https://anti-ad.net/easylist.txt", "name": "anti-ad 官方规则"},
     {"url": "https://gp.adrules.top/dns.txt", "name": "AdRules DNS List"},

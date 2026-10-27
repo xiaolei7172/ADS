@@ -1,32 +1,131 @@
+! ============================================================
+! 红果短剧 + 番茄小说 广告屏蔽规则 v3（DNS 兼容版）2026-10-27
+! ============================================================
+! 数据来源：abclq/home-dns-adblock 实测修剪版（2026-10-14 维护）
+!           + 原规则库整理去重
+! 规则形态：全部为 ||域名^ 纯域名规则
+!           兼容 AdGuard Home / AdGuard DNS / OpenWrt / SmartDNS / QX
+! 域名活性：全部经公网 DNS（223.5.5.5）验证可解析（2026-10-27）
+!
+! 【正片保护 · 一字之差】
+!   正片视频 → v11-reading-video.qznovelvod.com   ← 放行
+!   广告视频 → v11-reading-ad.qznovelvod.com      ← 拦截
+!
+! 【本版已删除的高危误拦规则】（实测会导致 App 功能异常）
+!   ||zijieapi.com^ / ||bytegecko.com^ / ||fqnovelvod.com^
+!   ||api3-normal-lf.fqnovel.com^（与反作弊域同前缀，宁缺毋滥）
+!   p{3,6,9}-novel-sign.byteimg.com（正片签名，与 -ad-sign 一字之差）
+!
+! 【禁拦清单】（拦了整个 App 就废，勿加回）
+!   qznovelvod.com / fqnovelpic.com / douyincdn.com / douyinliving.com
+!   bytegecko.com / byteimg.com / snssdk.com / is.snssdk.com
+!   api{3,5}-normal-sinfonlinea.fqnovel.com（反作弊风控）
+! ============================================================
+
+! ========== 模块A: 广告计费接口（核心，拦掉=广告请求发不出去）==========
+||ads3-normal-hl.zijieapi.com^
+||ads3-normal-lf.zijieapi.com^
+||ads3-normal-lq.zijieapi.com^
+||ads5-normal-hl.zijieapi.com^
+||ads5-normal-lf.zijieapi.com^
+||ads5-normal-lq.zijieapi.com^
+
+! ========== 模块B: 广告调度 TNC（决定"这个位置放哪条广告"）==========
+||tnc0-aliec2.zijieapi.com^
+||tnc0-alisc1.zijieapi.com^
+||tnc3-aliec2.zijieapi.com^
+||tnc3-alisc1.zijieapi.com^
+||tnc3-bjlgy.snssdk.com^
+||tnc3-bjlgy.zijieapi.com^
+
+! ========== 模块C: 穿山甲广告联盟 SDK（字节系通用）==========
 ||pangolin-sdk-toutiao.com^
-||zijieapi.com^$app=com.dragon.read
-||frontier-toutiao.snssdk.com^$app=com.dragon.read
-||pangolin-sdk-toutiao-b.com'
-||ads5-normal-lf.zijieapi.com^$app=com.dragon.read
 ||pglstatp-toutiao.com^
-@@||112.28.245.186:443^$app=cn.kuwo.player
-@@||120.221.180.167:443^$app=cn.kuwo.player
-@@||120.221.179.155:443^$app=cn.kuwo.player
-@@||112.28.245.184:443^$app=cn.kuwo.player
-@@||120.221.180.94:443^$app=cn.kuwo.player
-||api3-normal-lf.fqnovel.com^$app=com.dragon.read
-||dig.bdurl.net^$app=com.dragon.read
-||frontier-toutiao.snssdk.com^$app=com.dragon.read
-||log5-applog-lf.fqnovel.com^$app=com.dragon.read
-||dig.bdurl.net^$app=com.dragon.read
-||security.snssdk.com^$app=com.dragon.read
-||mon11-misc-lf.fqnovel.com^$app=com.dragon.read
-||mon11-misc-lf.fqnovel.com^$app=com.dragon.read
-||mon11-misc-lf.fqnovel.com^$app=com.dragon.read
-||mon11-misc-lf.fqnovel.com^$app=com.dragon.read
-||mon11-misc-lf.fqnovel.com^$app=com.dragon.read
-||mon11-misc-lf.fqnovel.com^$app=com.dragon.read
-||mon11-misc-lf.fqnovel.com^$app=com.dragon.read
-111.13.213.245:5222$network,app=com.dragon.read
-||ads3-normal-lf.zijieapi.com^$app=com.dragon.read
-||p9-ad-sign.byteimg.com^$app=com.dragon.read
-||ads3-normal-lf.zijieapi.com^$app=com.dragon.read
-||111.13.141.211:443^$app=com.dragon.read
-||ads5-normal-lf.zijieapi.com^$app=com.dragon.read
-||111.13.141.211:443^$app=com.dragon.read
-||p6-ad-sign.byteimg.com^$app=com.dragon.read
+||gromore.pangolin-sdk-toutiao.com^
+||api-access.pangolin-sdk-toutiao.com^
+||api-access.pangolin-sdk-toutiao1.com^
+||log-api.pangolin-sdk-toutiao.com^
+||pangle.io^
+||ad.toutiao.com^
+||ad.oceanengine.com^
+||analytics.oceanengine.com^
+
+! ========== 模块D: 广告素材签名（与正片 -novel-sign 一字之差）==========
+||p3-ad-sign.byteimg.com^
+||p6-ad-sign.byteimg.com^
+||p9-ad-sign.byteimg.com^
+
+! ========== 模块E: 广告视频（只拦 -reading-ad，正片 -reading-video 不动）==========
+||v5-reading-ad.qznovelvod.com^
+||v6-reading-ad.qznovelvod.com^
+||v9-reading-ad.qznovelvod.com^
+||v11-reading-ad.qznovelvod.com^
+||v13-reading-ad.qznovelvod.com^
+||v26-reading-ad.qznovelvod.com^
+||v96-reading-ad.qznovelvod.com^
+||v5-bd-daily-reading-ad.qznovelvod.com^
+||v5-se-sjy-daily-reading-ad.qznovelvod.com^
+
+! ========== 模块F: 直播广告（红果刷到的购物直播跳转位）==========
+! 直播流本体走 douyincdn.com / douyinliving.com（白名单保护），只拦广告位接口
+||webcast5-open-hl.douyin.com^
+||webcast5-open-hl.douyin.com.c.dsa.cdnbuild.net^
+||l2-toutiao-quic-ipv6-ml.gslb.ksyuncdn.com^
+
+! ========== 模块G: 小游戏广告位（红果小游戏弹窗）==========
+||minigame3-normal-hl.zijieapi.com^
+||minigame3-normal-lf.zijieapi.com^
+||minigame3-normal-lq.zijieapi.com^
+||minigame5-normal-hl.zijieapi.com^
+||minigame5-normal-lf.zijieapi.com^
+||minigame5-normal-lq.zijieapi.com^
+
+! ========== 模块H: 埋点 / 归因上报（is/snssdk 风控主域在白名单，勿拦）==========
+||i.snssdk.com^
+||i-lq.snssdk.com^
+||mcs.snssdk.com^
+||security-lq.snssdk.com^
+||vas-lf-x.snssdk.com^
+||mon.zijieapi.com^
+||thanos.zijieapi.com^
+||timon.zijieapi.com^
+||feedback-c.zijieapi.com^
+||abtest3-misc-hl.zijieapi.com^
+||sf3-ttcdn-tos.pstatp.com^
+||toblog.ctobsnssdk.com^
+||success.ctobsnssdk.com^
+||open.snssdk.com^
+||abtest-ch.snssdk.com^
+
+! ========== 模块I: 番茄小说日志 / 埋点（正片图床 fqnovelpic.com 已保护）==========
+||log3-applog-lf.fqnovel.com^
+||log5-applog-hl.fqnovel.com^
+||log5-applog-lf.fqnovel.com^
+||mon3-misc-lf.fqnovel.com^
+||mon11-misc-hl.fqnovel.com^
+||mon11-misc-lf.fqnovel.com^
+||rtlog3-applog-hl.fqnovel.com^
+||rtlog3-applog-lf.fqnovel.com^
+||rtlog5-applog-hl.fqnovel.com^
+||rtlog5-applog-lf.fqnovel.com^
+
+! ========== 模块J: 红果 SDK / 激励视频弹窗 ==========
+||hongguoapp.com^
+||praisewindow.ugsdk.cn^
+||msync-im1-vip6-std.easemob.com^
+
+! ========== 模块K: 点击跳转追踪 + 广告落地页（DGA 随机域）==========
+||dig.bdurl.net^
+||ldhy.click^
+||ahdohpiechei.com^
+||siomxity.net^
+||qtaeixd.com^
+||0kkkkkt.com^
+||wmzfylgdsz.com^
+||comfylink.com^
+||jomoxc.com^
+||ndcpp.com^
+||qrstuvwxyzab.com^
+||xinqiucc.com^
+||ydycdn.com^
+||wuchuyun.com^
