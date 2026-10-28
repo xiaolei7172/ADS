@@ -1,7 +1,7 @@
 # 天影规则聚合 · HOSTS 版
 # 由 dns.txt（已去重）自动转换，规则与 dns.txt 完全一致
 # 📌 项目地址：https://github.com/xiaolei7172/ADS
-# ⏰ 更新时间：2026-10-28 10:45:01（北京时间） | 📊 有效规则：245751 条
+# ⏰ 更新时间：2026-10-28 10:56:57（北京时间） | 📊 有效规则：245751 条
 # 🔄 更新频率：每12小时自动更新
 0.0.0.0 ads3-normal-hl.zijieapi.com
 0.0.0.0 ads3-normal-lf.zijieapi.com

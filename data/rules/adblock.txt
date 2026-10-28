@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影规则聚合 · 广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-10-28 10:45:03（北京时间）
-! 📊 有效规则：277273 条
+! ⏰ 更新时间：2026-10-28 10:56:59（北京时间）
+! 📊 有效规则：277005 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-10-28 10:45:03 | ✅ 有效规则 277273 条
+! Description: ⏰ 更新时间 2026-10-28 10:56:59 | ✅ 有效规则 277005 条
 ! ======================================================================
 ! ==============================================
 ! 📋 规则来源：本地自定义规则
@@ -105,8 +105,6 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/lingeringsound/10007_auto/master/all
 ! ==============================================
-::2 ip6-localhost
-::3 ip6-localhost
 127.0.1.1 hostname
 127.0.1.2 hostname
 127.0.1.3 hostname
@@ -12550,18 +12548,6 @@
 0.0.0.0 zww.ero-advertising.com
 0.0.0.0 zysybao.pro
 0.0.0.0 zz.bdstatic.com
-110.43.121.13 bigota.d.miui.com
-110.43.121.13 hugeota.d.miui.com
-110.43.121.249 bigota.d.miui.com
-110.43.121.249 hugeota.d.miui.com
-123.6.13.6 bigota.d.miui.com
-123.6.13.6 hugeota.d.miui.com
-183.136.207.132 bigota.d.miui.com
-183.136.207.132 hugeota.d.miui.com
-23.202.34.138 bigota.d.miui.com
-23.202.34.138 hugeota.d.miui.com
-47.74.196.250 bigota.d.miui.com
-47.74.196.250 hugeota.d.miui.com
 0.0.0.0 c2.gdt.qq.com
 0.0.0.0 d.gdt.qq.com
 0.0.0.0 gw.365you.com
@@ -234396,8 +234382,6 @@
 ||wonderful-day.club^
 ||bloxplay.com^
 ||berangkasilmu.com^
-||fxhpaoxqyajvmdg.
-||rgfftupf.
 ||getmackeepersoftpro.xyz^
 ||linker.ba^
 ||igniterads.com^
@@ -234608,7 +234592,6 @@
 /^88\.208\.22\.[1234]:/
 /^88\.208\.22\.[1234]$/
 ||154.199.255.184^
-||tn.porngo.xxx^$badfilter
 ||88.208.46.222^
 ||kms-full.com^
 ||103.224.182.210^
@@ -234681,7 +234664,6 @@
 ||static.pops.gg^
 ||launcher.disconetwork.com^
 ||adradar.io^
-||advertising.civitai.
 ||hbx.media.net^
 ||micro.rubiconproject.com^
 ||id-msp.newsbreak.com
@@ -234708,12 +234690,8 @@
 ||headerbidding.services^
 ||cdn.234doo.com^
 ||widget.tippebannere.no^
-||pl.ua^$badfilter
-||linksprf.com^$badfilter
 ||c2c24.pl^
 ||cdn.gallery^
-||fixtures.onet.pl^$badfilter
-wykop.pl$badfilter
 ||adsok.co^
 ||moneyoyo.com^
 .n.2.1.js^
@@ -234938,7 +234916,6 @@ vkcdnservice.appspot.com^
 ||fzgrpqktmq.com^
 ||igbfwa.com^
 ||ippstuet.com^
-||vst.videolink.
 ||ippscriptbear.com^
 ||builthuosefor.com^
 ||gomtdata.com^
@@ -235471,7 +235448,6 @@ vkcdnservice.appspot.com^
 ||adlmerge.com^
 ||adlook.net^
 ||admilk.ru^
-||admulti.
 ||adne.info^
 ||adnetpartner.com^
 ||adnova.ru^
@@ -235482,7 +235458,6 @@ vkcdnservice.appspot.com^
 ||adprofy.com^
 ||adriverm.narod2.ru^
 ||adrock.ru^
-||adserver1.
 ||adservone.com^
 ||adsgid.com^
 ||adsmmgp.com^
@@ -235594,7 +235569,6 @@ vkcdnservice.appspot.com^
 ||bobi-mobi.info^
 ||bodaybo.net^
 ||bolshoykush.ru^
-||bondzgi*.
 ||bongacash.com^
 ||bongobono.com^
 ||boobzi.com^
@@ -235701,7 +235675,6 @@ vkcdnservice.appspot.com^
 ||firsttrack.ru^
 ||fkehg.com^
 ||flapoint.ru^
-||flipflapflo.
 ||fogtrack.net^
 ||foundtr.com^
 ||freeavalanche.ru^
@@ -235737,7 +235710,6 @@ vkcdnservice.appspot.com^
 ||gomakemerich.com^
 ||gomakemerich2.com^
 ||gonews*.net^
-||goodadvert.
 ||goon.ru^
 ||goossb.com^
 ||gotraff.ru^
@@ -235763,8 +235735,6 @@ vkcdnservice.appspot.com^
 ||iadvert.net^
 ||ice-media.ru^
 ||iclckk.com^
-||icq-window.
-||icqwindow.
 ||idvd.su^
 ||idwrx.com^
 ||iframepay.com^
@@ -235836,7 +235806,6 @@ vkcdnservice.appspot.com^
 ||lenty.ru^
 ||letimsnami.ru^
 ||letitsoft.com^
-||letssex.
 ||levelpay.ru^
 ||liex.ru^
 ||lifemeet.biz^
@@ -235845,7 +235814,6 @@ vkcdnservice.appspot.com^
 ||lineoflife.ru^
 ||lingospot.com^
 ||link.ru^
-||linkexchange.
 ||linkfeed.ru^
 ||linktraff.ru^
 ||linkunder.ru^
@@ -235883,8 +235851,6 @@ vkcdnservice.appspot.com^
 ||mecash.ru^
 ||media-active.ru^
 ||media.kahoxa.ru^
-||mediacontext.
-||medialand.
 ||medianaft.ru^
 ||medianetworks.ru^
 ||mediaportal.ru^
@@ -235995,15 +235961,8 @@ vkcdnservice.appspot.com^
 ||pluginsjquery.com^
 ||pokitom.com^
 ||pokrutim.ru^
-||pop-parad.
-||pop-under.
 ||popinads.com^
-||poptraf.
-||popunder.
-||popupclick.
-||popuptraf.
 ||pornorunet.ru^
-||poshalim.
 ||pozzitiv.ru^
 ||prbn.ru^
 ||primechoice.ru^
@@ -236073,16 +236032,12 @@ vkcdnservice.appspot.com^
 ||rontar.com^
 ||rorer.ru^
 ||rot.rusoul.ru^
-||rotaban.
-||rotabanner.
-||rotator.
 ||rsuuc.com^
 ||rtb-media.ru^
 ||rtbweb.com^
 ||ruscams.com
 ||ruscontext.com^
 ||rushkolnik.ru^
-||rusrestbest.
 ||rustrackers.ru^
 ||ruttwind.com^
 ||rutvind.com^
@@ -236223,8 +236178,6 @@ vkcdnservice.appspot.com^
 ||ulogix.ru^
 ||ultrapay.net^
 ||umekana.ru^
-||under-click.
-||underclick.
 ||underdone.ru^
 ||undere.com^
 ||untily.com^
@@ -236255,8 +236208,6 @@ vkcdnservice.appspot.com^
 ||video.market-place.su^
 ||video.videonow.ru^
 ||videocap.org^
-||videoclick.
-||videoclik.
 ||videofan.ru^
 ||videoklass.ru^
 ||videopotok.pro^
@@ -236286,7 +236237,6 @@ vkcdnservice.appspot.com^
 ||vztfc.com^
 ||w*statistics.info^
 ||web-rotation.net
-||web-visor.
 ||webgringo.ru^
 ||webmedia.co.il^
 ||websharks.ru^
@@ -236727,7 +236677,6 @@ vkcdnservice.appspot.com^
 -adx-*.rayjump.com^
 ||kiesta.net^
 ||ads.adadapted.com^
-||adx-*.dbankcloud.
 ||api-ad-callback.mobiuspace.net
 ||mmp001.scalemonk.com^
 ||krt.asycxtz.cn^
@@ -236844,7 +236793,6 @@ vkcdnservice.appspot.com^
 ||ads.livetvcdn.net^
 ||adshow.sc2tv.ru^
 ||afbanner.kinobomber3.online^
-||an.yandex.
 ||b.1istochnik.ru^
 ||b.povarenok.ru^
 ||b13.penzainform.ru^
@@ -236986,33 +236934,24 @@ vkcdnservice.appspot.com^
 ||publi.elliberal.com.ar^
 ||adclient-uol.lp.uol.com.br^
 ||adv.r7.com^
-||countly.
 ||countly-
 |piwik.
 ||bigdata.downza.com^
 ||zenstats.yzhy19.cn^
-||sw.vidmoly.
 ||users.vidy.st^
-||e.missav.
-||stats.dulo.
 ||analytics.netronline.dev^
-||faro.civitai.
 ||sync.inmobi.com^
-||log.api-maps.yandex.
 ||ats.gmarket.co.kr
 -events-collector.spot.im^
 -upaas.ucweb.com^
 ||datadog-log.clovergames.io
-||me9ddf.moebelix.
 ||unif-id.ssp.inmobi.com^
 ||telemetry.sdk.inmobi.com^
 ||i.go.sohu.com^
 ||sync.getpublica.com^
 ||analytics.adjust.io^
-||touch.yesim.
 ||pvdpix.com^
 ||usage.trackjs.com^
-||analytics.vgtimes.
 ||collector-pxdojv695v.protechts.net^
 ||cdn.js.fpaudience.com^
 ||lg3.media.net^
@@ -237020,24 +236959,18 @@ vkcdnservice.appspot.com^
 ||m.techpump.com^
 prd.api.bleacherreport.com^
 ||config.sdk.kochava.dewrain.life^
-||sgtm.wimdu.
 ||ta.pinduoduo.com^
 ||th.pinduoduo.com^
 ||tag.researchnow.com^
 ||events.statsigapi.net^
 .prod.pr.analytics.console.aws.a2z.com
-||analytics.ahrefs.
 ||metrics.camsoda.com^
 ||analytics.floris.amsterdam^
-||sgtm.fairmont.
 ||cllctr.roistat.com^
 ||akn.analytics.autodesk.com^
 ||cdn.track.olx.com.br^
-||backstory.ebay.
-||edgetrksvc.ebay.
 ||pn.ybp.yahoo.com^
 ||pr-bh.ybp.yahoo.com^
-||ubt.tracking.shopee.
 ||taplytics-umami.grubhub.com
 ||event.havasedge.com^
 ||tag.havasedge.com^
@@ -237047,27 +236980,18 @@ prd.api.bleacherreport.com^
 ||stats.totalav.com^
 ||iss.shopimind.com^
 ||app.shopimind.com^
-||analytics.streamfab.
-||adservice.google.
 ||campaign.remp.nv.ua^
 -tracker.biliapi.net^
 ||stats.debatdirect.tweedekamer.nl
 -telemetry.officeapps.live.com^
 -telemetry.officeapps.live.com.mcas.ms^
-||sgtm.fashionunited.
 ||log.affiliate.rakuten.co.jp^
 ||pixel.rubiconproject.com^
 ||smarttag.rubiconproject.com^
 ||a.opmnstr.com^
-||pixel.archive.
 ||zc.adswizz.com^
-||analytics-api.dvdfab.
-||servo-report.dvdfab.
-||collector.xhamster*.
 ||uts.auction.co.kr
 ||static.affiliatly.com^
-||stw.zone-telechargement.
-||stats.zone-telechargement.
 ||cdn.sgmntfy.com^
 ://r.i.ua^
 ||adstax-cdn.adrtx.net^
@@ -237076,17 +237000,8 @@ prd.api.bleacherreport.com^
 ||app.adjust.io^
 ||app.crossengage.io^
 ||bia.brightinfo.com^
-||button.blogs.yandex.
 ||c.bigmir.net
 ||c0.adalyser.com^
-||cnt.hd21.
-||cnt.nuvid.
-||cnt.proporn.
-||cnt.tubeon.
-||cnt.vivatube.
-||cnt.winporn.
-||cnt.yeptube.
-||collector.hamsterix.
 ||collector.roistat.com^
 ||collector.trendmd.com^
 ||count.channeladvisor.com^
@@ -237094,7 +237009,6 @@ prd.api.bleacherreport.com^
 ||e.tw.cx^
 ||events.privy.com^
 ||events.release.narrativ.com^
-||gtmdev.jabra.
 ||hi.hellobar.com^
 ||ia.51.la^
 ||img.opentracker.net
@@ -237130,7 +237044,6 @@ prd.api.bleacherreport.com^
 ||tracking2.channeladvisor.com^
 ||ts.tradetracker.net^
 ||video-ad-stats.googlesyndication.com^
-||wa.gmx.
 ||webed.dm-event.net^
 charlestownwyllie.oaklawnnonantum.com^
 |a.klaviyo.com^
@@ -237202,7 +237115,6 @@ dlsdk.appsflyer.com^
 ||tnc-sg.capcutapi.com^
 ||tnc-boot.capcutapi.com^
 -ulogl*.kwai-pro.com^
-||snowplow-collector.
 ||analysis.polarisoffice.com
 ||logs.supersonic.com^
 -rtb.gravite.net^
@@ -237220,8 +237132,6 @@ dlsdk.appsflyer.com^
 ||ulogs.umengcloud.com^
 ||dflow.log.hunantv.com^
 ||post-log.pushwoosh.com^
-||log-collector.shopee.
-||seller-log-collector.shopee.
 ||conversions.appsflyer.com^
 ||publisher-event.ads.prd.ie.internal.unity3d.com^
 ||ploy.batmobi.net^
@@ -237364,7 +237274,6 @@ dlsdk.appsflyer.com^
 ||wiseref.com^
 ||site24x7rum.in^
 ||cdn.tercept.com^
-||talpa-analytics.
 ||zhanzhang.toutiao.com^
 ||trueroas.io^
 ||t.adcell.com^
@@ -237527,8 +237436,6 @@ dlsdk.appsflyer.com^
 ||analy1.dtnnetwork.be^
 ||cerdmann.com^
 ||aukana.jp^
-||stat.tiara.
-||track.tiara.
 ||telemetry.api.wmcdp.io^
 ||logs.psm.wmcdp.io^
 ||mon-va.byteoversea.com^
@@ -237874,7 +237781,6 @@ dlsdk.appsflyer.com^
 ||secure.info.m.seek.com.au^
 ||smetrics.williamhill.es^
 ||atinternet.com^
-||tccd.douglas.
 ||tm.hdmtools.com^
 ||mj23.eulerian.com^
 ||webcontr.bet-at-home.com^
@@ -237920,7 +237826,6 @@ dlsdk.appsflyer.com^
 |load.sgtm.
 |load.ss.
 |load.sst.
-||thegreatesthits.
 ||d.bet-at-home.com^
 ||ejizlcat.sleeknote.com^
 ||load.data.barry-callebaut.com^
@@ -238282,7 +238187,6 @@ dlsdk.appsflyer.com^
 ||eqerhjksssooo.space^
 ||festyfa.com^
 ||frbeqzvebqbyq.online^
-||get-me-wow.
 ||giftedbamboo.com^
 ||graceful-original.pro^
 ||ipuopmsaqurfw.online^
@@ -238403,7 +238307,6 @@ dlsdk.appsflyer.com^
 /(https?:\/\/)51\.195\.31\..{100,}/
 ||ad.wsod.com^
 ||affiliatepluginintegration.cj.com^
-||allsportsflix.
 ||pagead2.googlesyndication.com^
 ||rotator.tradetracker.net^
 ||static.tradetracker.net^
@@ -238470,18 +238373,15 @@ dlsdk.appsflyer.com^
 ||farm-cn.plista.com^
 ||static-cn.plista.com^
 ||ubmcvideo.baidustatic.com^
-||1024wanzhai.
 ||88p2p.com^
 ||aiwanma99.com^
 ||kuheju.com^
 ||besc.baidustatic.com^
 ||itv.hexun.com
 ||m.aty.sohu.com^
-||sax*.sina.
 ||wuliao.epro.sogou.com^
 ||a1.zhanzhang.net^
 ||d6.mobaders.com^
-||fpb1.chinacar.
 ||2k19.nl^
 ||adrequest.net^
 ||adshim.com^
@@ -238913,7 +238813,6 @@ dlsdk.appsflyer.com^
 ||analytics.webpushr.com^
 ||api.reo.dev^
 ||banner.appsflyersdk.com^
-||bc.geocities.
 ||beacon.aimtell.com^
 ||count-server.sharethis.com^
 ||d.shareaholic.com^
@@ -238930,7 +238829,6 @@ dlsdk.appsflyer.com^
 ||recs.shareaholic.com^
 ||seg.sharethis.com^
 ||t.sharethis.com^
-||tracker.twenga.
 ||tracking.adalyser.com^
 ||tracking.wisepops.com^
 ||traffic.shareaholic.com^
@@ -244802,7 +244700,6 @@ analytics-*.aasaam.com
 ||stbt.coupons.com^
 ||stcollection.moneysupermarket.com^
 ||t.blinkist.com^
-||t.delfi.
 ||t.vimeo.com^
 ||tracer.perezhilton.com^
 ||track.codepen.io^
@@ -244810,7 +244707,6 @@ analytics-*.aasaam.com
 ||track.ft.com^
 ||track.gawker.com^
 ||track.workablemetro.com^
-||track.zalando.
 ||track.zomato.com^
 ||tracker.cpapath.com^
 ||tracker.lolalytics.com^
@@ -244821,7 +244717,6 @@ analytics-*.aasaam.com
 ||tracking.goodgamestudios.com^
 ||tracking.koego.com^
 ||tracking.moneyam.com^
-||tracking.olx.
 ||tracking.porndoelabs.com^
 ||tracking.pornhd.com^
 ||tracking.realtor.com^
@@ -251927,17 +251822,7 @@ analytics-*.aasaam.com
 0.0.0.0 zt.gifshow.com
 0.0.0.0 zt.jd.com
 0.0.0.0 zymo.mps.weibo.com
-103.230.123.190 steamcommunity.com
-103.230.123.190 www.steamcommunity.com
-103.99.35.13 userstorage.mega.co.nz
-103.99.35.13 userstroage.mega.co.nz
-103.99.35.250 jp.static.mega.co.nz
-103.99.35.251 sg.static.mega.co.nz
-108.138.246.125 api.themoviedb.org
-108.177.104.188     alt7-mtalk.google.com
-108.177.125.188 alt4-mtalk.google.com
 108.177.125.188 mtalk.google.com  #台湾
-108.177.97.188 alt2-mtalk.google.com
 118pan.com##.card.mt-2:nth-child(2)
 120ask.com##IFRAME[width='400']
 123pan.com##.adv-container-pc
@@ -256896,142 +256781,17 @@ analytics-*.aasaam.com
 127.0.0.1 zwfw.mps.gov.cn
 127.0.0.1 zymo.mps.weibo.com
 127.0.0.1 zz.bdstatic.com
-13.107.42.16 pipelines.actions.githubusercontent.com
-13.224.163.98 api.themoviedb.org
-13.226.198.225 thetvdb.com
-13.226.254.58 image.tmdb.org
-13.35.0.128 api.themoviedb.org
-133.237.176.198 hb.afl.rakuten.co.jp
-140.82.112.18 github.community
-140.82.112.25 live.github.com
-140.82.113.21 collector.github.com
-140.82.113.26 alive.github.com
 142.250.107.188 alt6-mtalk.google.com #US
-142.250.115.188     alt6-mtalk.google.com
 142.250.115.188 alt7-mtalk.google.com #US
-142.250.141.188     alt2-mtalk.google.com
-142.250.152.188     alt8-mtalk.google.com
 142.250.152.188 alt8-mtalk.google.com #US
-142.250.157.188     mtalk.google.com
-142.250.157.188 alt5-mtalk.google.com
 142.251.10.188 alt3-mtalk.google.com #JP
-142.251.10.188 alt7-mtalk.google.com
 142.251.12.188 alt4-mtalk.google.com #JP
 142.251.127.188 alt5-mtalk.google.com #JP
 142.251.170.188 alt1-mtalk.google.com #TW
-142.251.8.188 alt6-mtalk.google.com
-146.75.48.133 media.githubusercontent.com
-146.75.48.133 objects.githubusercontent.com
-146.75.48.133 raw.githubusercontent.com
-146.75.48.133 release-assets.githubusercontent.com
-151.101.76.133 raw.github.com
-169.150.249.166 image.tmdb.org
-173.194.202.188     alt4-mtalk.google.com
-18.65.159.31 api.themoviedb.org
-180.163.150.33      dl.l.google.com
-180.163.151.161     dl.google.com
-182.239.104.89 bigota.d.miui.com
-182.239.104.89 hugeota.d.miui.com
-183.136.207.132 superota.d.miui.com
-183.136.207.132 ultimateota.d.miui.com
-184.85.65.125 steamcommunity.com
-184.85.65.125 www.steamcommunity.com
-185.199.110.133 avatars.githubusercontent.com
-185.199.110.133 avatars0.githubusercontent.com
-185.199.110.133 avatars1.githubusercontent.com
-185.199.110.133 avatars2.githubusercontent.com
-185.199.110.133 avatars3.githubusercontent.com
-185.199.110.133 avatars4.githubusercontent.com
-185.199.110.133 avatars5.githubusercontent.com
-185.199.110.133 camo.githubusercontent.com
-185.199.110.133 cloud.githubusercontent.com
-185.199.110.133 desktop.githubusercontent.com
-185.199.110.133 github.io
-185.199.110.133 objects.githubusercontent.com
-185.199.110.133 user-images.githubusercontent.com
-185.199.110.153 githubstatus.com
-185.199.110.153 topjohnwu.github.io
-185.199.110.154 docs.github.com
 185.199.110.154 github.githubassets.com  #网页排版
-192.0.80.242 0.gravatar.com
-192.0.80.242 1.gravatar.com
-192.0.80.242 2.gravatar.com
-192.0.80.242 lb.gravatar.com
-192.0.80.242 s.gravatar.com
-192.0.80.242 secure.gravatar.com
-192.0.80.242 www.gravatar.com
-20.200.245.245 api.github.com
-20.200.245.247 gist.github.co
-20.200.245.247 github.com
-20.43.185.14 github.dev
-208.80.154.224 zh.wikipedia.org
-216.239.32.40 translate-pa.googleapis.com
-216.239.32.40 translate.google.com
-216.239.32.40 translate.googleapis.com
-23.12.10.105 steamcommunity.com
-23.192.47.137 www.rakuten.co.jp
-23.201.165.153 steam-chat.com
-23.204.10.89 api.steampowered.com
-23.204.10.89 help.steampowered.com
-23.215.0.204 steamcdn-a.akamaihd.net
-23.222.193.171 store.steampowered.com
-23.48.224.239 oxygenos.oneplus.net
-23.49.100.232 api.pinterest.com
-23.49.100.232 i.pinimg.com
-23.49.100.232 pinterest.com
-23.49.100.232 trk.pinterest.com
-23.49.100.232 v1.pinimg.com
-23.49.100.232 www.pinterest.com
-23.53.35.199 cdn.akamai.steamstatic.com
-23.53.35.202 community.akamai.steamstatic.com
-23.53.35.204 store.akamai.steamstatic.com
-23.58.97.230 store.steampowered.com
-31.216.145.5 mega.nz
-43.206.62.10 ck.jp.ap.valuecommerce.com
-45.116.79.187 ads.api.fakeloc.cc
-45.116.79.187 api.fakeloc.cc
-45.116.79.187 av1.xdrig.com
-45.116.79.187 fakeloc.cc
-45.116.79.187 fakelocation.api.lerist.dev
-47.102.115.14 translate-pa.googleapis.com
-47.102.115.14 translate.google.com
-47.102.115.14 translate.googleapis.com
-47.246.37.220 bigota.d.miui.com
-47.246.37.220 hugeota.d.miui.com
-52.84.166.68 api.themoviedb.org
-52.84.166.71 api.themoviedb.org
 52movieba.com,acglala.me,acglala.net,awaker.cn,bimiacg4.net,bimiacg5.net,ccav1.com,cdsoso.me,cgown.com,cn163.net,comicat.org,cosersuki.org,dzbhdm.net,epinv.com,eroacg.com,galacg.me,gmgard.com,haochi123.com,hexieshe.cn,hexieshe.com,hexieshe.xyz,hggard.com,hmghmg.com,hmoe11.net,idanmu.ee,ifenpaidy.com,jitapu.com,jitashe.org,jiyingw.vip,kelatv.com,kisssub.org,languang.co,llss.bz,mtrend.cn,mydrivers.com,mzh.ren,nxing.cn,oyksoft.com,souxue8.com,speedtest.cn,tingroom.com,whsir.com,xxshe.info,xxshe.xyz##a[href*=".taobao.com"]
-54.192.18.90 themoviedb.org
-54.192.73.28 image.tmdb.org
 5dm.app##[src*="sinaimg.cn"]
-64.233.171.188      alt3-mtalk.google.com
-64.233.188.188 mtalk.google.com
-64.233.189.188 alt1-mtalk.google.com
-65.8.164.121 image.tmdb.org
-66.203.124.31 g.cdn1.mega.co.nz
-66.203.124.31 mega.co.nz
-66.203.124.31 www.mega.co.nz
-66.203.124.37 eu.static.mega.co.nz
-66.203.124.37 static.mega.co.nz
-66.203.124.49 cms2.mega.nz
-66.203.125.11 eu.api.mega.co.nz
-66.203.125.11 g.api.mega.co.nz
-66.203.125.12 lu.api.mega.co.nz
-66.203.125.28 reqstat.api.mega.co.nz
-66.203.125.53 w.api.mega.co.nz
-66.203.125.56 mcd270n310.karere.mega.nz
-66.203.127.13 g.static.mega.co.nz
-72.247.96.248 api.pinterest.com
-72.247.96.248 i.pinimg.com
-72.247.96.248 pinterest.com
-72.247.96.248 trk.pinterest.com
-72.247.96.248 v1.pinimg.com
-72.247.96.248 www.pinterest.com
-74.125.126.188      alt5-mtalk.google.com
-74.125.200.188      alt1-mtalk.google.com
 74.125.200.188 alt2-mtalk.google.com #SG
-74.125.200.188 alt8-mtalk.google.com
-74.125.204.188 alt3-mtalk.google.com
 baidu.com###page-copyright.se-page-copyright
 baidu.com##.detail-banner-new
 ||*-*-*-lrycfv.vip^
@@ -258863,7 +258623,6 @@ baidu.com##.detail-banner-new
 ||bypbwm.cn^
 ||byteorge.com^
 ||byteww.com^
-||bz*.com/js/cdn.
 ||bzres.yigomob.com^
 ||bzuh3qw6t7aq.top^
 ||c-hzgt2.getui.com^
@@ -261469,7 +261228,6 @@ baidu.com##.detail-banner-new
 ||mobiorg8.com^
 ||mobrtb.com^
 ||mobsurl.com^
-||moegirl.org.cn/insight/moegirlinsight.
 ||mofjgesm.memti79268.cc^
 ||moka.inte.sogoucdn.com^
 ||moka113.jdjdodd.cn^
@@ -261872,7 +261630,6 @@ baidu.com##.detail-banner-new
 ||painiuimg.com^
 ||palmertx.com/template/js/img-1.php
 ||pan.baidu.com/buy/ad/*^
-||pan0304.com/ads.
 ||pangolin.snssdk.com
 ||pangolin.snssdk.com/api/ad/*^
 ||panoramio.com^
@@ -268924,7 +268681,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||byoc.143.cc^
 ||bypb.7klyd.com^
 ||bytedance.com^
-||byteshieldcdn.com.
 ||bytetcc.com^
 ||bz5.sj8s0j7.cn^
 ||bzcnfwlqijtvdwvx.top^
@@ -271417,7 +271173,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||js.ctbnfscgt.xyz^
 ||js.letfab.cn^
 ||js2.xn--1ct366iukbz0j.cc^
-||js568f.
 ||js870584.cc^
 ||js8810202.jiwbubu233.com^
 ||js8810203.wihjeieike.com^
@@ -272645,7 +272400,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||nuperfect.net^
 ||nuxpj.com^
 ||nv00.cdn.bcebos.com^
-||nvnvnvdidi5566.
 ||nvrme1368.comhgzs.uunat.com
 ||nvxea.cbriifw.com^
 ||nvxea.mipewft.com^
@@ -276181,7 +275935,6 @@ g.huya.com
 statwup.huya.com
 va.huya.com
 www.ted.com##.gm-fp-body .justify-center.tracking-tightest
-||onetrust.
 ||google.*/pagead/
 ||gstatic.com/shopping?
 ||btsow.lol/app/jav$image
@@ -276234,38 +275987,27 @@ pan.baidu.com##.ad-platform-tips, .phone-banner
 zhidao.baidu.com###left-promotion,#ui-tooltip-0,div.cms-slide.cms-slide-optimus,div.wgt-bottom-ask,div.cms-slide.cms-slide-lazy
 tiebac.baidu.com,tieba.baidu.com,jump.bdimg.com,jump2.bdimg.com###thread_list>li:not(.j_thread_list):not(.thread_top_list_folder),div[data-rank],div[ad-dom-img],a.j_click_stats,div.custom-ad-container
 *$doc,removeparam=/^(sp|ut|fro?)m(_|\b)/
-||ad.
 */ad.$image,script,subdocument,media
 */ad/$script,subdocument,media
 */ad_
 */ad-$~stylesheet
 */adbox/
-||ads.
 */ads.
 */ads/
 */adload.
-||adsense.
 */adsense/
-||adserver.
 ||cm.$image,script,xhr,3p
-||gg.
-||ggg.
 ||greenet.cn/$popunder
 37cs.com
 37gowan.com
 51.la
-||admaster.
 ||market.aliyun.com/
-||allyes.
 webcert.cnmstl.net
-||cnzz.
 ||coinhive.com/
 *coinhive.min.js^$script
 ||coin-hive.com/
 doubleclick.net
 dlads.cn
-||adservice.
-||googleadservices.
 imasdk.googleapis.com
 ||googlesyndication.com
 ||google-analytics.com
@@ -276277,7 +276019,6 @@ u-x.jd.com
 mediav.com
 tanx.com
 ||click.taobao.com/$third-party,popunder
-||union.
 ||vamaker.com/$third-party
 */vamaker/
 wrating.com
@@ -276346,7 +276087,6 @@ cr173.com###foot~*,div.show_970,[data=viewAds]
 crsky.com##div[class^=banner],div.fast_down,dl.mirror-special,div.banner-square,li.yellowdown
 ||crsky.com/img/hezi
 ||www.crsky.com/img/pic.js
-||crsky.com/theme/images/fast_down.
 ||crsky.com/theme/images/rd0
 ||ddooo.com/ddshow/$script
 ||www.downbank.cn/js/gong.js
@@ -276479,8 +276219,6 @@ mail.163.com,mail.126.com##.emailSuggest,#theme,.gWel-bottom
 ||pfp.sina.com.cn/
 pfp.sina.net
 ||rm.sina.com.cn/$script,subdocument
-||sax.sina.
-||saxs.sina.
 blog.sina.cn##div.item_hide+div,#pl-blog-artad
 ||dmp.sina.cn/
 tuijian.sogou.com
@@ -277299,11 +277037,6 @@ erebor.douban.com
 *_index_banner$script
 *_right_ad.$domain=~dzwww.com
 ||acs.$domain=~youku.com|~tudou.com|~acs.org
-||adpic.
-||adsame.
-||adsfile.
-||biz5.
-||icast.
 ||168.it168.com$script
 admin5.com##.float_both,div.sherry_ad1,div.specialBox,.content_right_ad
 100.pncdn.cn
@@ -277339,7 +277072,6 @@ parallelsdesktop.cn
 pdfexpert.cc
 shankejingling.com
 vegaschina.cn
-||xmindchina.
 xshellcn.com
 yihuifu.cn
 www.zhzzx.com

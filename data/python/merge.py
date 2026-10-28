@@ -11,6 +11,7 @@
 """
 import os
 import glob
+import re
 import sys
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -22,6 +23,28 @@ from common import (
 
 os.makedirs(TMP_DIR, exist_ok=True)
 os.makedirs(RULES_DIR, exist_ok=True)
+
+# ==========================================
+# 规则语法清洗：丢掉"看着像规则、实际有害或无效"的行
+# 上游合并源里混着三类脏数据，必须挡在成品之外：
+#   1. $badfilter —— AdGuard 里用于"取消某条规则"，留着等于反向放行广告；
+#   2. ||domain. —— 尾点多一个句点，AdGuard 语法无效，纯废行；
+#   3. 非回环 IP 的 hosts 行（如 110.43.121.13 bigota.d.miui.com）——
+#      这是 IP 加速映射而非拦截，留着会把用户域名强行指向某 IP 造成故障。
+# ==========================================
+RE_IP_HOSTS = re.compile(r"^(?:\d{1,3}(?:\.\d{1,3}){3}|[0-9a-fA-F:]+)\s+\S+$")
+LOOPBACK_IPS = {"0.0.0.0", "127.0.0.1", "::1", "::", "255.255.255.255"}
+
+def is_bad_rule(line):
+    if "$badfilter" in line.lower():
+        return True
+    if line.startswith("||") and line.endswith("."):
+        return True
+    if RE_IP_HOSTS.match(line):
+        ip = line.split()[0].lower()
+        if ip not in LOOPBACK_IPS and not ip.startswith("127."):
+            return True
+    return False
 
 # ==========================================
 # 智能提取头部信息
@@ -97,9 +120,10 @@ black_output = []
 black_set = set()
 blocked_by_white = 0
 junk_skipped = 0
+bad_skipped = 0
 
 def append_black(path):
-    global blocked_by_white, junk_skipped
+    global blocked_by_white, junk_skipped, bad_skipped
     final_name, desc, url = get_rule_meta(path)
     new_rules = []
     with open(path, "r", encoding="utf-8", errors="ignore") as f:
@@ -110,6 +134,10 @@ def append_black(path):
             # 回环地址行（127.0.0.1 localhost 之类）直接丢弃
             if is_junk_hosts_line(line):
                 junk_skipped += 1
+                continue
+            # $badfilter / 尾点规则 / IP 加速映射行：不是拦截语义，丢弃
+            if is_bad_rule(line):
+                bad_skipped += 1
                 continue
             # 大小写不敏感去重：||Media.net^ 与 ||media.net^ 是同一条规则
             key = line.lower()
@@ -144,6 +172,10 @@ if os.path.exists(local_black_path):
         for line in f:
             line = line.strip()
             if not line or line.startswith(("!", "#", "[", "@@")):
+                continue
+            # 本地规则同样过一遍语法清洗（手写也可能误抄 IP 映射/尾点）
+            if is_bad_rule(line):
+                bad_skipped += 1
                 continue
             local_rule_lines.add(line)
             key = line.lower()
@@ -250,4 +282,5 @@ print(f"📊 黑名单：{count_valid_lines(os.path.join(RULES_DIR, 'adblock.txt
 print(f"📊 白名单：{len(all_white_raw)} 条")
 print(f"🚫 因白名单（父子域）放行而移除的拦截规则：{blocked_by_white} 条（本地自定义规则豁免）")
 print(f"🧹 丢弃回环/垃圾行：{junk_skipped} 条")
+print(f"🧽 丢弃无效/有害语法（$badfilter、尾点规则、IP 映射行）：{bad_skipped} 条")
 print("ℹ️  dns.txt 由 filter-dns.py 统一生成（原第 4 段会被它覆盖，已移除）")

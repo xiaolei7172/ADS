@@ -12,6 +12,8 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    # 卡住的步骤最多耗 40 分钟就中止，而不是默认的 6 小时
+    timeout-minutes: 40
     permissions:
       actions: write
       contents: write
@@ -22,13 +24,10 @@ jobs:
           fetch-depth: 0
 
       - name: Download Rules
+        # 传入令牌：dl.py 的 GitHub API 兜底通道不再走匿名（60 次/小时限额）
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python ./data/python/dl.py
-
-      # ==============================================
-      # 👉 智能Hosts合并去重
-      # ==============================================
-      # - name: Merge Hosts (智能识别+提取域名+去重)
-      #  run: python ./data/python/hosts_merge.py
 
       - name: Merge Rules
         run: python ./data/python/merge.py
@@ -133,12 +132,14 @@ jobs:
           namedLogo: github
 
       # ==============================================
-      # 自动删除【所有历史运行记录】，只保留最新一条
+      # 运行记录清理：保留最近 7 天 / 至少 5 条，
+      # 便于回溯"某天规则为什么变化"（原设置只留 1 条，
+      # 出事时完全无据可查）
       # ==============================================
       - name: Delete workflow runs
         uses: Mattraks/delete-workflow-runs@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.repository }}
-          retain_days: 0
-          keep_minimum_runs: 1
+          retain_days: 7
+          keep_minimum_runs: 5

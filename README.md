@@ -21,10 +21,10 @@
 ### 🔮 天影规则聚合 · 实时规则规模
 
 
-🕒 **更新时间**：2026-10-27 17:20:01（北京时间）
+🕒 **更新时间**：2026-10-28 10:58:01（北京时间）
 
 
-🚫 **广告拦截规则**：277273 条
+🚫 **广告拦截规则**：277005 条
 
 
 🌐 **DNS 拦截域名**：245751 个
@@ -256,52 +256,54 @@ rules:
 
 ## 📚 上游规则数据源
 
+> 管线实际下载 **19 路源**（14 个拦截 + 5 个白名单），另有 2 个本仓库自定义文件。
+> 其中「合并源」本身已聚合多个二级上游，因此实际覆盖的项目数量多于 19。
+> 每个来源在成品中都有分区标注，误拦可直接定位到源。
+
 <details>
 <summary><b>点击查看全部数据来源</b></summary>
 <br>
 
-### 🔴 拦截规则
+### 🔴 拦截规则（14 路）
 
-| 来源 | 说明 |
-| :---- | :---- |
-| 📛 [AdguardTeam 官方基础广告拦截规则](https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_2_Base/filter.txt) | AdGuard 官方基础过滤 |
-| 📛 [AdguardTeam 官方中文专属广告规则](https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_224_Chinese/filter.txt) | AdGuard 官方中文过滤 |
-| 📛 [EasyPrivacy 隐私跟踪防护规则](https://easylist-downloads.adblockplus.org/easyprivacy.txt) | 隐私跟踪防护 |
-| 📛 [sjhgvr OISD精简版广告规则](https://raw.githubusercontent.com/sjhgvr/oisd/main/abp_small.txt) | OISD 精简版 |
-| 📛 [TG-Twilight 秋风广告规则](https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt) | 秋风规则 |
-| 📛 [cjx82630 网页烦扰元素拦截规则](https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt) | 烦扰元素拦截 |
-| 📛 [afwfv DD-AD 综合广告拦截规则](https://raw.githubusercontent.com/afwfv/DD-AD/main/rule/DD-AD.txt) | DD-AD 综合 |
-| 📛 [消失的DD DNS精简版](https://ghproxy.net/https://raw.githubusercontent.com/afwfv/DD-AD/main/rule/dns.txt) | DD-AD DNS 版 |
-| 📛 [damengzhu 广告接口拦截规则](https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt) | 接口拦截 |
-| 📛 [HG 综合广告/弹窗拦截规则](https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt) | 综合弹窗拦截 |
-| 📛 [天影自定义补充规则](https://raw.githubusercontent.com/xiaolei7172/ADS/refs/heads/master/data/mod/adblock.txt) | 本仓库自定义（优先级最高） |
-| 📛 [anti-AD 命中率高、兼容性强](https://anti-ad.net/easylist.txt) | anti-AD 官方 |
-| 📛 [当初 综合黑名单](https://raw.githubusercontent.com/qq5460168/dangchu/main/black.txt) | 当初黑名单 |
-| 📛 [CHN: AdRules DNS List](https://adguardteam.github.io/HostlistsRegistry/assets/filter_29.txt) | AdRules DNS |
-| 📛 [hagezi 轻量低误杀DNS规则](https://ghproxy.net/https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt) | hagezi 轻量版 |
-| 📛 [极客 DNS专用规则](https://www.kbsml.com/wp-content/uploads/adblock/adguard/adg-kall-dns.txt) | 极客 DNS |
-| 📛 [AdRules DNS Filter 国内优化](https://raw.gitmirror.com/Cats-Team/dns-filter/main/abp.txt) | Cats-Team 国内优化 |
-| 📛 [GitHub加速Hosts](https://raw.hellogithub.com/hosts) | GitHub 加速 |
-| 📛 [FCM Hosts 隐私推送优化](https://raw.githubusercontent.com/entr0pia/fcm-hosts/fcm/fcm-hosts) | FCM 推送优化 |
-| 📛 [xlxbj_dns 国内短视频APP广告域名](https://www.xlxbk.cn/dns.txt) | 短视频 APP 广告 |
-| 📛 [🌸茯苓广告规则](https://raw.githubusercontent.com/Kuroba-Sayuki/FuLing-AdRules/Master/FuLingRules/FuLingBlockList.txt) | 茯苓拦截 |
-| 📛 [当初 adhosts 域名拦截](https://raw.githubusercontent.com/qq5460168/dangchu/main/adhosts.txt) | 当初 adhosts |
-| 📛 [群主合并规则](https://mirror.ghproxy.com/raw.githubusercontent.com/qq5460168/666/master/rules.txt) | 群主合并 |
-| 📛 [知还管理 合并规则](https://get.66a.vip/https://raw.githubusercontent.com/sccheng460/me/master/rules.txt) | 知还合并 |
+| 来源 | 侧重 | 原始地址 |
+| :--- | :--- | :--- |
+| 📛 **1007-Hosts** | Hosts 混合源 | [10007_auto/all](https://raw.githubusercontent.com/lingeringsound/10007_auto/master/all) |
+| 📛 **1007-保留奖励名单** | 奖励类域名保留 | [10007_auto/reward](https://raw.githubusercontent.com/lingeringsound/10007_auto/master/reward) |
+| 📛 **anti-AD 官方规则** | 命中率高、兼容性强 | [anti-ad.net/easylist.txt](https://anti-ad.net/easylist.txt) |
+| 📛 **AdRules DNS List** | DNS 专用 | [gp.adrules.top/dns.txt](https://gp.adrules.top/dns.txt) |
+| 📛 **AdGuard DNS Filter 官方** | DNS 专用（官方维护） | [AdGuardSDNSFilter](https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt) |
+| 📛 **OISD 拦截规则** | DNS 专用，低误杀 | [small.oisd.nl](https://small.oisd.nl/) |
+| 📛 **个人合并规则** | 合并源（群主维护） | [666/rules.txt](https://raw.githubusercontent.com/qq5460168/666/master/rules.txt) |
+| 📛 **酷安@大萌主** | 接口 / SDK 广告 | [banad/jiekouAD.txt](https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt) |
+| 📛 **浮风拦截规则** | 合并源 | [ad-rules-merged](https://raw.githubusercontent.com/Thelongdarkorg/ad-rules-merged/main/merged.txt) |
+| 📛 **海哥规则** | 综合拦截 | [hgzs.uunat.com/hg1.txt](http://hgzs.uunat.com/hg1.txt) |
+| 📛 **秋风广告规则** | 综合拦截 | [AWAvenue-Ads-Rule](https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt) |
+| 📛 **乘风视频规则** | 视频贴片广告 | [Adblock-Plus-Rule/mv.txt](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt) |
+| 📛 **乘风通用规则** | 通用拦截 | [Adblock-Plus-Rule/rule.txt](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt) |
+| 📛 **晴雅拦截规则** | 综合拦截 | [qy-Ads-Rule/black.txt](https://raw.githubusercontent.com/rssvcn/qy-Ads-Rule/main/black.txt) |
+| 🏠 **本仓库自定义** | 红果短剧 / 番茄小说专项等 | [data/mod/adblock.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/mod/adblock.txt) |
 
-### 🟢 白名单规则
+### 🟢 白名单规则（5 路 + 自定义）
 
-| 来源 | 说明 |
-| :---- | :---- |
-| ✅ [个人自用白名单](https://hub.gitmirror.com/https://raw.githubusercontent.com/qq5460168/dangchu/main/white.txt) | 当初白名单 |
-| ✅ [冷漠白名单](https://file-git.trli.club/file-hosts/allow/Domains) | 冷漠 |
-| ✅ [茯苓允许规则](https://raw.githubusercontent.com/Kuroba-Sayuki/FuLing-AdRules/Master/FuLingRules/FuLingAllowList.txt) | 茯苓放行 |
-| ✅ [个人合并白名单](https://mirror.ghproxy.com/raw.githubusercontent.com/qq5460168/666/master/allow.txt) | 群主合并白名单 |
-| ✅ [个人自定义白名单规则](https://raw.githubusercontent.com/qq5460168/dangchu/main/white.txt) | 当初白名单 |
-| ✅ [天影自定义补充白名单](https://raw.githubusercontent.com/xiaolei7172/ADS/refs/heads/master/data/mod/whitelist.txt) | 本仓库自定义（优先级最高） |
-| ✅ [中文通用白名单](https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt) | 李文杰白名单 |
-| ✅ [AdGuard 中文放行白名单](https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/allowlist.txt) | AdGuard 官方中文 |
-| ✅ [隐私拦截放行白名单](https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/allowlist.txt) | AdGuard 官方隐私 |
+| 来源 | 侧重 | 原始地址 |
+| :--- | :--- | :--- |
+| ✅ **当初白名单** | 综合放行 | [dangchu/white.txt](https://raw.githubusercontent.com/qq5460168/dangchu/main/white.txt) |
+| ✅ **李文杰白名单** | 中文站点放行 | [adg-rules/white.txt](https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt) |
+| ✅ **AdGuard 中文白名单** | 官方中文放行 | [ChineseFilter/allowlist](https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/allowlist.txt) |
+| ✅ **AdGuard 跟踪白名单** | 官方隐私放行 | [SpywareFilter/allowlist](https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/allowlist.txt) |
+| ✅ **BlueSkyXN 白名单** | AdGuard Home 专用 | [AdGuardHomeRules/ok.txt](https://raw.githubusercontent.com/BlueSkyXN/AdGuardHomeRules/master/ok.txt) |
+| 🏠 **本仓库自定义** | 误杀补救（优先级最高） | [data/mod/whitelist.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/mod/whitelist.txt) |
+
+### 🧽 上游脏数据清洗
+
+合并过程中会主动丢弃以下三类"看着像规则、实际有害或无效"的行：
+
+| 类型 | 为例 | 为什么要丢 |
+| :--- | :--- | :--- |
+| `$badfilter` | `pl.ua^$badfilter` | AdGuard 里用于取消规则，留着等于反向放行广告 |
+| 尾点多一个句点 | `advertising.civitai.` | 语法无效，纯废行 |
+| 非回环 IP 映射行 | `110.43.121.13 bigota.d.miui.com` | 这是 hosts 加速映射而非拦截，会把域名强行指向某个 IP |
 
 </details>
 
