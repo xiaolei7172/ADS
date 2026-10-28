@@ -18,7 +18,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
 from common import (
     RULES_DIR, TMP_DIR, MOD_DIR, REPO_ROOT,
-    allow_domain, block_domain, is_allowed, is_junk_hosts_line, count_valid_lines,
+    allow_domain, block_domain, is_allowed, is_junk_hosts_line, count_valid_lines, valid_domain,
 )
 
 os.makedirs(TMP_DIR, exist_ok=True)
@@ -85,7 +85,13 @@ allow_files = sorted(glob.glob(os.path.join(TMP_DIR, "allow_*.txt")))
 local_white_path = os.path.join(MOD_DIR, "whitelist.txt")
 local_black_path = os.path.join(MOD_DIR, "adblock.txt")
 
-def collect_white(path):
+def collect_white(path, convert_bare=False):
+    """收集 @@ 白名单行；convert_bare=True 时把裸域名行转为 @@||domain^。
+
+    背景：部分上游源（如 abclq/home-dns-adblock 的 config/whitelist.txt）
+    用"一行一个域名"的配置格式表达白名单（子域自动保护），需转换后才能
+    进入 AdGuard 语法管线。仅对白名单文件启用，拦截文件不受影响。
+    """
     n = 0
     with open(path, "r", encoding="utf-8", errors="ignore") as f:
         for line in f:
@@ -93,14 +99,19 @@ def collect_white(path):
             if line.startswith("@@"):
                 all_white_raw.add(line)
                 n += 1
+            elif convert_bare and line and not line.startswith(("#", "!", "[")) and valid_domain(line):
+                rule = f"@@||{line}^"
+                if rule not in all_white_raw:
+                    all_white_raw.add(rule)
+                    n += 1
     return n
 
 for file in ad_files:
     collect_white(file)
 for file in allow_files:
-    collect_white(file)
+    collect_white(file, convert_bare=True)
 if os.path.exists(local_white_path):
-    n = collect_white(local_white_path)
+    n = collect_white(local_white_path, convert_bare=True)
     print(f"✅ 已加载本地白名单：data/mod/whitelist.txt（{n} 条）")
 
 # 白名单域名集合：只收合法行，跳过带空格等非法行
@@ -223,8 +234,14 @@ def append_white(path, tag):
     with open(path, "r", encoding="utf-8", errors="ignore") as f:
         for line in f:
             line = line.strip()
-            if line.startswith("@@") and line in all_white_raw:
-                tmp.append(line)
+            if line.startswith("@@"):
+                if line in all_white_raw:
+                    tmp.append(line)
+            elif line and not line.startswith(("#", "!", "[")) and valid_domain(line):
+                # 裸域名行：与 collect_white 相同的转换，命中集合才输出
+                rule = f"@@||{line}^"
+                if rule in all_white_raw:
+                    tmp.append(rule)
     if tmp:
         white_output.extend([
             "! ==============================================",

@@ -165,6 +165,7 @@ allow_rules = [
     {"url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/allowlist.txt", "name": "AdGuard 中文白名单"},
     {"url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/allowlist.txt", "name": "AdGuard 跟踪白名单"},
     {"url": "https://raw.githubusercontent.com/BlueSkyXN/AdGuardHomeRules/master/ok.txt", "name": "BlueSkyXN 白名单"},
+    {"url": "https://raw.githubusercontent.com/abclq/home-dns-adblock/refs/heads/main/config/whitelist.txt", "name": "abclq 防误杀白名单"},
 ]
 
 # ==============================================

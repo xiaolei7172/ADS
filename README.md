@@ -6,7 +6,7 @@
 
 **⚡ 强力去广告 · 每 12 小时自动更新 · 全平台适配 ⚡**
 
-> 干净的网络，从一条订阅开始 —— 19 路数据源聚合 · 三层真实去重 · 每 12 小时自动更新，一套规则覆盖 10 种格式
+> 干净的网络，从一条订阅开始 —— 20 路数据源聚合 · 三层真实去重 · 每 12 小时自动更新，一套规则覆盖 10 种格式
 
 [![CI 状态](https://github.com/xiaolei7172/ADS/actions/workflows/Update-Rules.yml/badge.svg)](https://github.com/xiaolei7172/ADS/actions/workflows/Update-Rules.yml)
 [![最近提交](https://img.shields.io/github/last-commit/xiaolei7172/ADS/master?label=%E6%9C%80%E8%BF%91%E6%9B%B4%E6%96%B0&color=success)](https://github.com/xiaolei7172/ADS/commits/master)
@@ -21,19 +21,19 @@
 ### 🔮 天影规则聚合 · 实时规则规模
 
 
-🕒 **更新时间**：2026-10-28 11:04:46（北京时间）
+🕒 **更新时间**：2026-10-28 11:51:32（北京时间）
 
 
-🚫 **广告拦截规则**：266006 条
+🚫 **广告拦截规则**：277188 条
 
 
-🌐 **DNS 拦截域名**：237190 个
+🌐 **DNS 拦截域名**：245901 个
 
 
-✅ **白名单放行规则**：6695 条
+✅ **白名单放行规则**：6708 条
 
 <!-- DL_STATUS_START -->
-✅ **上游源状态**：19/19 全部下载成功
+✅ **上游源状态**：20/20 全部下载成功
 <!-- DL_STATUS_END -->
 
 ![规则量趋势](data/stats/trend.svg)
@@ -256,7 +256,7 @@ rules:
 
 ## 📚 上游规则数据源
 
-> 管线实际下载 **19 路源**（14 个拦截 + 5 个白名单），另有 2 个本仓库自定义文件。
+> 管线实际下载 **20 路源**（14 个拦截 + 6 个白名单），另有 2 个本仓库自定义文件。
 > 其中「合并源」本身已聚合多个二级上游，因此实际覆盖的项目数量多于 19。
 > 每个来源在成品中都有分区标注，误拦可直接定位到源。
 
@@ -284,7 +284,7 @@ rules:
 | 📛 **晴雅拦截规则** | 综合拦截 | [qy-Ads-Rule/black.txt](https://raw.githubusercontent.com/rssvcn/qy-Ads-Rule/main/black.txt) |
 | 🏠 **本仓库自定义** | 红果短剧 / 番茄小说专项等 | [data/mod/adblock.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/mod/adblock.txt) |
 
-### 🟢 白名单规则（5 路 + 自定义）
+### 🟢 白名单规则（6 路 + 自定义）
 
 | 来源 | 侧重 | 原始地址 |
 | :--- | :--- | :--- |
@@ -293,6 +293,7 @@ rules:
 | ✅ **AdGuard 中文白名单** | 官方中文放行 | [ChineseFilter/allowlist](https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/allowlist.txt) |
 | ✅ **AdGuard 跟踪白名单** | 官方隐私放行 | [SpywareFilter/allowlist](https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/allowlist.txt) |
 | ✅ **BlueSkyXN 白名单** | AdGuard Home 专用 | [AdGuardHomeRules/ok.txt](https://raw.githubusercontent.com/BlueSkyXN/AdGuardHomeRules/master/ok.txt) |
+| ✅ **abclq 防误杀白名单** | 红果/抖音正片 CDN 防误杀（裸域名格式，自动转换） | [home-dns-adblock whitelist](https://raw.githubusercontent.com/abclq/home-dns-adblock/refs/heads/main/config/whitelist.txt) |
 | 🏠 **本仓库自定义** | 误杀补救（优先级最高） | [data/mod/whitelist.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/mod/whitelist.txt) |
 
 ### 🧽 上游脏数据清洗
