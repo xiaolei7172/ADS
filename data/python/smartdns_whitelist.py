@@ -40,7 +40,7 @@ for d in sorted(domains):
         kept.append(d)
 
 with open(output_file_path, "w", encoding="utf-8", newline="\n") as fout:
-    fout.write("# SmartDNS whitelist rules for 天影\n")
+    fout.write("# 天影规则聚合 · SmartDNS whitelist\n")
     fout.write("# Homepage: https://github.com/xiaolei7172/ADS\n")
     fout.write("# Format: address /domain/-\n\n")
     for d in kept:

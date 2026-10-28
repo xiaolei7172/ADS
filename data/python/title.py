@@ -24,21 +24,24 @@ rules_dir = os.path.join(REPO_ROOT, "data", "rules")
 
 file_config = {
     "adblock.txt": {
-        "title": "天影广告拦截规则",
+        "title": "天影规则聚合 · 广告拦截规则",
         "desc": "屏蔽全网广告、弹窗、跟踪、恶意域名",
         "comment": "!"
     },
     "dns.txt": {
-        "title": "天影DNS拦截规则",
+        "title": "天影规则聚合 · DNS 拦截规则",
         "desc": "DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt",
         "comment": "!"
     },
     "allow.txt": {
-        "title": "天影白名单规则",
+        "title": "天影规则聚合 · 白名单规则",
         "desc": "误杀网址放行，保证正常网站正常访问",
         "comment": "!"
     }
 }
+
+# 表头模板本身改动后，正文条数未变也需要重写表头 → python title.py --force
+FORCE = "--force" in sys.argv
 
 
 HEADER_MARKER = "[TianYing Adblock Project]"
@@ -80,7 +83,7 @@ for filename, cfg in file_config.items():
         if m:
             old_count = int(m.group(1))
             break
-    if old_count is not None and old_count == line_count:
+    if old_count is not None and old_count == line_count and not FORCE:
         print(f"⏭️  {filename} | 正文无变化，保留原表头和时间戳")
         continue
 

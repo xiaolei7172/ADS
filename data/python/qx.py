@@ -20,7 +20,7 @@ output_file_path = os.path.join(RULES_DIR, "qx.list")
 kept, skipped = 0, 0
 with open(input_file_path, "r", encoding="utf-8", errors="ignore") as fin, \
      open(output_file_path, "w", encoding="utf-8", newline="\n") as fout:
-    fout.write("# 天影 Quantumult X 拦截规则\n")
+    fout.write("# 天影规则聚合 · Quantumult X 拦截规则\n")
     fout.write("# Github: https://github.com/xiaolei7172/ADS\n")
     fout.write("# Format: DOMAIN,domain,reject\n\n")
     for line in fin:

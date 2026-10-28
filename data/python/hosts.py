@@ -36,7 +36,7 @@ for d in domains:
         seen.add(d)
         uniq.append(d)
 
-header = f"""# 天影广告拦截规则（HOSTS 版）
+header = f"""# 天影规则聚合 · HOSTS 版
 # 由 dns.txt（已去重）自动转换，规则与 dns.txt 完全一致
 # 📌 项目地址：https://github.com/xiaolei7172/ADS
 # ⏰ 更新时间：{beijing_now()}（北京时间） | 📊 有效规则：{len(uniq)} 条

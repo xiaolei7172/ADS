@@ -1,37 +1,39 @@
 <div align="center">
 
-# 🛸 天影自用规则合集
+<a id="top"></a>
+
+# 🛸 天影规则聚合 · TianYing Rules Hub
 
 **⚡ 强力去广告 · 每 12 小时自动更新 · 全平台适配 ⚡**
 
-> 多上游聚合 → 合并去重 → 派生 7 种格式，一条订阅覆盖 AdGuard / AdGuard Home / SmartDNS / Quantumult X / HOSTS
+> 干净的网络，从一条订阅开始 —— 19 路数据源聚合 · 三层真实去重 · 每 12 小时自动更新，一套规则覆盖 10 种格式
 
 [![CI 状态](https://github.com/xiaolei7172/ADS/actions/workflows/Update-Rules.yml/badge.svg)](https://github.com/xiaolei7172/ADS/actions/workflows/Update-Rules.yml)
 [![最近提交](https://img.shields.io/github/last-commit/xiaolei7172/ADS/master?label=%E6%9C%80%E8%BF%91%E6%9B%B4%E6%96%B0&color=success)](https://github.com/xiaolei7172/ADS/commits/master)
 [![License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
 
-[📥 规则订阅](#-规则订阅中心) · [📊 实时统计](#-实时项目统计) · [🚀 快速开始](#-快速开始) · [📚 上游数据源](#-上游规则数据源) · [🧪 拦截效果测试](#-拦截效果在线测试)
+[📥 规则订阅](#-规则订阅中心) · [🚀 快速开始](#-快速开始) · [📦 客户端下载](#-客户端下载速查) · [📊 实时统计](#-实时项目统计) · [📚 上游数据源](#-上游规则数据源) · [🧪 拦截测试](#-拦截效果在线测试)
 
 ---
 
 ## 📊 实时项目统计
 
-### 🔮 天影自用广告过滤规则集群
+### 🔮 天影规则聚合 · 实时规则规模
 
 
-🕒 **更新时间**：2026-10-28 01:02:17（北京时间）
+🕒 **更新时间**：2026-10-27 17:20:01（北京时间）
 
 
-🚫 **广告拦截规则**：266183 条
+🚫 **广告拦截规则**：277273 条
 
 
-🌐 **DNS 拦截域名**：237099 个
+🌐 **DNS 拦截域名**：245751 个
 
 
-✅ **白名单放行规则**：6695 条
+✅ **白名单放行规则**：6696 条
 
 <!-- DL_STATUS_START -->
-⚠️ **上游源状态**：18/19 成功，失败：海哥规则（curl 退出码 60）
+✅ **上游源状态**：19/19 全部下载成功
 <!-- DL_STATUS_END -->
 
 ![规则量趋势](data/stats/trend.svg)
@@ -56,9 +58,27 @@
 
 ## 🚀 快速开始
 
+> 💡 先把客户端装好，再贴订阅链接。下面全部为**官方来源**（链接已实测可达）；GitHub Releases 在国内不稳时，可在链接前加 `https://gh-proxy.com/` 加速。
+
+### 📦 客户端下载速查
+
+| 软件 | 适用平台 | 官方下载 | 备注 |
+| :--- | :--- | :--- | :--- |
+| **AdGuard** | Windows / macOS / Android | [官网下载](https://adguard.com/zh_cn/download.html) | 商业软件（有试用），系统级全局拦截 |
+| **AdGuard Home** | Win / macOS / Linux / Docker | [GitHub Releases](https://github.com/AdguardTeam/AdGuardHome/releases) | 免费开源，自建 DNS 服务器 |
+| **OpenWrt** | 路由器 | [固件选择器](https://firmware-selector.openwrt.org/) · [ImmortalWrt](https://github.com/immortalwrt/immortalwrt) | 免费开源路由系统，国内推荐后者 |
+| **SmartDNS** | Linux / OpenWrt | [GitHub Releases](https://github.com/pymumu/smartdns/releases) | 免费开源，DNS 加速 + 拦截 |
+| **Clash Verge Rev** | Win / macOS / Linux | [GitHub Releases](https://github.com/clash-verge-rev/clash-verge-rev/releases) | 免费开源图形客户端，最常用 |
+| **Mihomo Party** | Win / macOS / Linux | [GitHub Releases](https://github.com/mihomo-party-org/mihomo-party/releases) | 免费开源，开箱即用 |
+| **Mihomo 内核** | 全平台（命令行） | [GitHub Releases](https://github.com/MetaCubeX/mihomo/releases) | 进阶自建 / 软路由用 |
+| **Quantumult X** | iOS / iPadOS | [App Store](https://apps.apple.com/app/quantumult-x/id1443988620) | 付费买断，需美区/港区账号 |
+| **Surge** | iOS / macOS | [nssurge.com](https://nssurge.com) | 付费订阅；官网国内直连不稳，需自备网络 |
+
 <details open>
 <summary><b>🖥️ AdGuard（Windows / Mac / Android）</b></summary>
 <br>
+
+> 📥 下载：[Windows](https://adguard.com/zh_cn/adguard-windows/overview.html) · [macOS](https://adguard.com/zh_cn/adguard-mac/overview.html) · [Android](https://adguard.com/zh_cn/adguard-android/overview.html) · [全部平台](https://adguard.com/zh_cn/download.html)
 
 1. 打开 AdGuard → 设置 → **内容拦截**（Windows 为「过滤器」）
 2. 点击「添加过滤器」→「使用自定义过滤器」
@@ -72,6 +92,8 @@
 <summary><b>🌐 AdGuard Home</b></summary>
 <br>
 
+> 📥 下载：[GitHub Releases](https://github.com/AdguardTeam/AdGuardHome/releases) · 也支持 Docker（`docker run -p 53:53/tcp -p 53:53/udp -p 3000:3000 adguard/adguardhome`）
+
 1. 管理后台 → 过滤器 → **DNS 拦截列表** → 添加拦截列表
 2. 粘贴：`https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/dns.txt`
 3. 白名单（自定义过滤规则 → 放行）：`https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/allow.txt`
@@ -81,6 +103,8 @@
 <details>
 <summary><b>📡 OpenWrt（hosts 方式）</b></summary>
 <br>
+
+> 📥 固件：[官方固件选择器](https://firmware-selector.openwrt.org/) · [ImmortalWrt（国内源更全）](https://github.com/immortalwrt/immortalwrt) · OpenClash 插件：[Releases](https://github.com/vernesong/OpenClash/releases)
 
 1. 下载 hosts 文件：`https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/hosts.txt`
 2. 覆盖到 `/etc/hosts` 末尾（或配合 dnsmasq 的 `addn-hosts` 引用）
@@ -92,6 +116,8 @@
 <summary><b>🔍 SmartDNS</b></summary>
 <br>
 
+> 📥 下载：[GitHub Releases](https://github.com/pymumu/smartdns/releases)（OpenWrt 可直接 `opkg install smartdns`）
+
 1. 编辑 `smartdns.conf`，加入：`conf-file https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/smartdns.conf`
    （或下载后 `include` 到主配置）
 2. 误杀放行：`conf-file .../data/rules/smartdns-whitelist.conf`
@@ -102,6 +128,8 @@
 <details>
 <summary><b>🧩 Clash / Mihomo</b></summary>
 <br>
+
+> 📥 客户端：[Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev/releases) · [Mihomo Party](https://github.com/mihomo-party-org/mihomo-party/releases) · [Mihomo 内核](https://github.com/MetaCubeX/mihomo/releases)
 
 ```yaml
 rule-providers:
@@ -151,6 +179,8 @@ rules:
 <summary><b>📱 Quantumult X 规则</b></summary>
 <br>
 
+> 📥 客户端：[Quantumult X（App Store，付费）](https://apps.apple.com/app/quantumult-x/id1443988620)　|　导入位置：配置文件 →「引用」的 `[filter_remote]` 段
+
 | 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接 |
 | :---- | :---- | :---- | :---- |
 | Quantumult X 规则 | Quantumult X | [qx.list](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/qx.list) | [qx.list](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/qx.list) |
@@ -195,6 +225,8 @@ rules:
 <details>
 <summary><b>🧩 Clash / Mihomo / Surge 规则</b></summary>
 <br>
+
+> 📥 客户端：[Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev/releases) · [Mihomo Party](https://github.com/mihomo-party-org/mihomo-party/releases) · [Surge](https://nssurge.com)（付费，官网需自备网络）
 
 | 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接 |
 | :---- | :---- | :---- | :---- |
@@ -242,7 +274,7 @@ rules:
 | 📛 [消失的DD DNS精简版](https://ghproxy.net/https://raw.githubusercontent.com/afwfv/DD-AD/main/rule/dns.txt) | DD-AD DNS 版 |
 | 📛 [damengzhu 广告接口拦截规则](https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt) | 接口拦截 |
 | 📛 [HG 综合广告/弹窗拦截规则](https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt) | 综合弹窗拦截 |
-| 📛 [天影自用补充规则](https://raw.githubusercontent.com/xiaolei7172/ADS/refs/heads/master/data/mod/adblock.txt) | 本仓库自定义（优先级最高） |
+| 📛 [天影自定义补充规则](https://raw.githubusercontent.com/xiaolei7172/ADS/refs/heads/master/data/mod/adblock.txt) | 本仓库自定义（优先级最高） |
 | 📛 [anti-AD 命中率高、兼容性强](https://anti-ad.net/easylist.txt) | anti-AD 官方 |
 | 📛 [当初 综合黑名单](https://raw.githubusercontent.com/qq5460168/dangchu/main/black.txt) | 当初黑名单 |
 | 📛 [CHN: AdRules DNS List](https://adguardteam.github.io/HostlistsRegistry/assets/filter_29.txt) | AdRules DNS |
@@ -266,7 +298,7 @@ rules:
 | ✅ [茯苓允许规则](https://raw.githubusercontent.com/Kuroba-Sayuki/FuLing-AdRules/Master/FuLingRules/FuLingAllowList.txt) | 茯苓放行 |
 | ✅ [个人合并白名单](https://mirror.ghproxy.com/raw.githubusercontent.com/qq5460168/666/master/allow.txt) | 群主合并白名单 |
 | ✅ [个人自定义白名单规则](https://raw.githubusercontent.com/qq5460168/dangchu/main/white.txt) | 当初白名单 |
-| ✅ [天影自用补充白名单规则](https://raw.githubusercontent.com/xiaolei7172/ADS/refs/heads/master/data/mod/whitelist.txt) | 本仓库自定义（优先级最高） |
+| ✅ [天影自定义补充白名单](https://raw.githubusercontent.com/xiaolei7172/ADS/refs/heads/master/data/mod/whitelist.txt) | 本仓库自定义（优先级最高） |
 | ✅ [中文通用白名单](https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt) | 李文杰白名单 |
 | ✅ [AdGuard 中文放行白名单](https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/allowlist.txt) | AdGuard 官方中文 |
 | ✅ [隐私拦截放行白名单](https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/allowlist.txt) | AdGuard 官方隐私 |
@@ -300,6 +332,6 @@ rules:
 
 🙏 致敬 8680 大佬 · 各上游规则作者
 
-📄 [MIT License](LICENSE) · 🔄 每 12 小时自动更新 · [⬆ 返回顶部](#-天影自用规则合集)
+📄 [MIT License](LICENSE) · 🔄 每 12 小时自动更新 · [⬆ 返回顶部](#top)
 
 </div>

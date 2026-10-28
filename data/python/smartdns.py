@@ -22,7 +22,7 @@ except OSError:
     sys.exit(1)
 
 with fin, open(output_file_path, "w", encoding="utf-8", newline="\n") as fout:
-    fout.write("# SmartDNS rules for 天影\n")
+    fout.write("# 天影规则聚合 · SmartDNS rules\n")
     fout.write("# Homepage: https://github.com/xiaolei7172/ADS\n")
     fout.write("# Format: address /domain/#\n\n")
     for line in fin:

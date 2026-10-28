@@ -138,8 +138,8 @@ collapsed = 0
 per_source_kept = OrderedDict()
 
 with open(output_path, "w", encoding="utf-8", newline="\n") as fout:
-    fout.write("! 天影DNS拦截规则\n")
-    fout.write("! 由 filter-dns.py 从 adblock.txt 提取，已应用白名单父子域过滤 + 父子域语义去重\n")
+    fout.write("! 本文件由 filter-dns.py 从 adblock.txt 提取（项目：天影规则聚合）\n")
+    fout.write("! 已应用：白名单父子域过滤 + 父子域语义去重\n")
     fout.write("! 各来源分区见下（与 adblock.txt 的来源标注一致）\n")
 
     for name, doms in filtered_sections.items():

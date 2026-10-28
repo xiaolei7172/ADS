@@ -33,7 +33,7 @@ for d in domains:
         uniq.append(d)
 
 with open(output_path, "w", encoding="utf-8", newline="\n") as f:
-    f.write("# 天影广告拦截规则（Surge RULE-SET）\n")
+    f.write("# 天影规则聚合 · Surge RULE-SET\n")
     f.write("# 由 dns.txt（已去重）自动转换 | https://github.com/xiaolei7172/ADS | 每12小时自动更新\n")
     for d in uniq:
         f.write(f"DOMAIN-SUFFIX,{d}\n")

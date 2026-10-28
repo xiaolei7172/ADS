@@ -19,7 +19,7 @@ kept, skipped = 0, 0
 with open(input_file_path, "r", encoding="utf-8", errors="ignore") as fin, \
      open(output_file_path, "w", encoding="utf-8", newline="\n") as fout:
     fout.write("[Host]\n")
-    fout.write("# 天影 纯净域名黑名单\n")
+    fout.write("# 天影规则聚合 · 纯净域名黑名单\n")
     fout.write("# Github: https://github.com/xiaolei7172/ADS\n")
     fout.write("# 自动提取：只保留纯域名，适配 AdGuard Home / 路由器\n\n")
     for line in fin:
