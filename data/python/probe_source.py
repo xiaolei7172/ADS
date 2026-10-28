@@ -144,6 +144,8 @@ def load_dns_block_domains():
 def rehearse_allow(candidate_domains):
     """白名单冲突预演：新放行域 vs 现有拦截域，返回 (放行影响明细, 统计)"""
     current_allows = load_current_allows()
+    dup = len(candidate_domains) - sum(1 for d in candidate_domains
+                                       if not is_allowed(d, current_allows))
     new_allows = {d for d in candidate_domains if not is_allowed(d, current_allows)}
     dns_blocks = load_dns_block_domains()
     affected = {}          # 会被解封的现有拦截域名 → 命中的新放行域
@@ -155,7 +157,7 @@ def rehearse_allow(candidate_domains):
                 affected[b] = d
         else:
             unaffected_new += 1
-    return affected, len(new_allows), unaffected_new
+    return affected, len(new_allows), unaffected_new, dup
 
 
 def rehearse_block(candidate_domains):
@@ -212,9 +214,10 @@ def main():
         candidate = set(allow_doms) | ({d for d in
                                         (l.strip() for l in open(tmp, encoding="utf-8", errors="ignore"))
                                         if valid_domain(d)} if stats["bare"] else set())
-        affected, n_new, n_neutral = rehearse_allow(candidate)
+        affected, n_new, n_neutral, n_dup = rehearse_allow(candidate)
         print(f"\n⚗️  冲突预演（白名单）：")
-        print(f"   新增放行域：{n_new} 条（另 {n_neutral} 条与现有白名单重复/已被覆盖）")
+        print(f"   候选放行域 {len(candidate)} 条：与现有白名单重复 {n_dup} 条，"
+              f"净新增 {n_new} 条（其中 {n_neutral} 条当前无拦截规则在拦）")
         if not affected:
             print("   ✅ 零冲突：这些放行域目前没有任何拦截规则在拦，接入零风险")
         else:
