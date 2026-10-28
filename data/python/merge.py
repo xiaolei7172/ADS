@@ -208,16 +208,34 @@ if os.path.exists(local_black_path):
 # 即使被远程白名单放行也照样拦（「优先级：最高」落到代码上）。
 final_black = []
 exempt = 0
+kept_block_rules = 0
 for line in black_output:
     if line in local_rule_lines:
         final_black.append(line)
+        if line.startswith("||"):
+            kept_block_rules += 1
         continue
     if line.startswith("||") and line.endswith("^"):
         dom = line[2:-1].lower()
         if is_allowed(dom, allow_domain_set):
             blocked_by_white += 1
             continue
+        kept_block_rules += 1
     final_black.append(line)
+
+# ==========================================
+# 闸门：白名单污染熔断
+# 一条被投毒/错配的白名单上游（如整域 @@||qq.com^ 混进远程源）
+# 能把几十万条拦截规则砍到残废。移除比例异常即中止发布——
+# 宁可这次不更新，也不能发布被白名单清空的残缺规则。
+# 正常运行时该比例约 1~2%，阈值放宽到 8% 留足余量。
+# ==========================================
+removed_ratio = blocked_by_white / max(kept_block_rules + blocked_by_white, 1)
+if removed_ratio > 0.08:
+    print(f"\n🚫 白名单熔断：{blocked_by_white}/{kept_block_rules + blocked_by_white} 条拦截规则"
+          f"（{removed_ratio:.1%}）被白名单放行移除，远超正常水位（≈2%）。"
+          f"疑似某路白名单源被投毒或黑白错配，中止本次更新。")
+    sys.exit(1)
 
 with open(os.path.join(RULES_DIR, "adblock.txt"), "w", encoding="utf-8") as f:
     f.write("\n".join(final_black) + "\n")

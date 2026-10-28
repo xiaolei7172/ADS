@@ -11,13 +11,14 @@
 import os
 import re
 import json
-import subprocess
 import shutil
 import sys
 from concurrent.futures import ThreadPoolExecutor
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../.."))
+sys.path.insert(0, SCRIPT_DIR)
+from fetch import download_file
 
 TMP_DIR = os.path.join(REPO_ROOT, "data", "tmp")
 MOD_DIR = os.path.join(REPO_ROOT, "data", "mod")
@@ -42,96 +43,43 @@ def write_source_header(file_path, source_name, source_url):
 
 
 # ==============================================
-# 内容体检：拦住 404 页、Cloudflare 挑战页、空文件
-# 注意：不能拿 "cloudflare" 当关键词——规则正文合法地含它（如
-# @@||xx.cloudflare.com^），本文件就误杀过当初白名单。
-# 判 HTML 要认结构标签，判挑战页要用完整短语。
+# 下载后方向体检：放错清单的源当场报警
+# 白名单文件里混几条拦截语法是常态（上游自带的防误杀），但若
+# 拦截语法占大头，多半是把黑名单错挂到了 allow_rules——
+# 现在线上就报警，不用等 merge 阶段才发现白名单把规则砍光了。
 # ==============================================
-BAD_MARKERS = re.compile(
-    r"<!doctype\s|<html[\s>]|</html>|<title>|just a moment|checking your browser"
-    r"|enable javascript and cookies|attention required",
-    re.IGNORECASE,
-)
-
-def content_ok(path):
+def sanity_hint(path, prefix):
     try:
-        size = os.path.getsize(path)
-        if size < 200:
-            return False, f"文件过小({size}B)"
         with open(path, "r", encoding="utf-8", errors="ignore") as f:
-            head = f.read(4096)
-        if BAD_MARKERS.search(head):
-            return False, "内容是HTML/挑战页，不是规则"
-        if head.lstrip().startswith("{"):
-            return False, "内容是JSON（API报错），不是规则"
-        return True, ""
-    except OSError as e:
-        return False, str(e)
-
-
-# ==============================================
-# raw.githubusercontent.com → 多通道兜底
-# 实测可用性（2026-10-27，国内网络）：raw 直连时断时续，
-# API 匿名限额 60次/小时容易耗尽，cdn.jsdelivr.net 主域被重置，
-# 但 fastly/testingcf/gcore 三个 jsDelivr 子域和 gh-proxy.com 稳定可用
-# ==============================================
-RE_RAW_URL = re.compile(
-    r"^https://raw\.githubusercontent\.com/([^/]+)/([^/]+)/([^/]+)/(.+)$"
-)
-
-def mirror_urls(url):
-    """返回 [(url, 是否API模式), ...]，按可靠性排序"""
-    attempts = [(url, False)]
-    m = RE_RAW_URL.match(url)
-    if m:
-        owner, repo, branch, path = m.groups()
-        # GitHub Contents API（有令牌时限额 1000/小时）
-        attempts.append(
-            (f"https://api.github.com/repos/{owner}/{repo}/contents/{path}?ref={branch}", True)
-        )
-        # jsDelivr 三个可用子域（主域 cdn.jsdelivr.net 国内被重置，勿用）
-        for cdn in ("fastly.jsdelivr.net", "testingcf.jsdelivr.net", "gcore.jsdelivr.net"):
-            attempts.append((f"https://{cdn}/gh/{owner}/{repo}@{branch}/{path}", False))
-        # gh-proxy 加速代理
-        attempts.append((f"https://gh-proxy.com/{url}", False))
-    # http 源补 https 变体（部分网络环境禁明文 http）
-    if url.startswith("http://"):
-        attempts.append((url.replace("http://", "https://", 1), False))
-    return attempts
-
-
-def download_file(url, save_path):
-    """多通道下载 + 体检，任一通道成功即返回 (True, '')"""
-    last_err = "未知错误"
-    for u, is_api in mirror_urls(url):
-        cmd = [
-            "curl", "-fsSL", "--retry", "3", "--retry-delay", "2",
-            "--retry-all-errors", "--connect-timeout", "15", "--max-time", "180",
-            "-A", "Mozilla/5.0 (compatible; TianYing-Rules/1.0)",
-            "-o", save_path, u,
-        ]
-        if is_api:
-            # API 要拿原始文件内容；有令牌时带上，避免匿名限额（60次/小时）
-            cmd[cmd.index("-o"):cmd.index("-o")] = ["-H", "Accept: application/vnd.github.raw"]
-            token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
-            if token:
-                cmd[cmd.index("-o"):cmd.index("-o")] = ["-H", f"Authorization: Bearer {token}"]
-        try:
-            result = subprocess.run(cmd, capture_output=True, text=True, timeout=200)
-        except subprocess.TimeoutExpired:
-            last_err = "下载超时"
+            text = f.read()
+    except OSError:
+        return
+    n_allow = n_block = 0
+    for line in text.splitlines():
+        s = line.strip()
+        if not s or s.startswith(("!", "#", "[")):
             continue
-        if result.returncode == 0 and os.path.exists(save_path):
-            ok, err = content_ok(save_path)
-            if ok:
-                return True, ""
-            os.remove(save_path)
-            last_err = err
-        else:
-            last_err = f"curl 退出码 {result.returncode}"
-    if os.path.exists(save_path):
-        os.remove(save_path)
-    return False, last_err
+        if s.startswith("@@"):
+            n_allow += 1
+        elif s.startswith("||") or is_hosts_block(s):
+            n_block += 1
+    if n_allow + n_block < 20:
+        return  # 样本太少，不判方向
+    if prefix == "allow" and n_block > n_allow * 2:
+        print(f"⚠️  方向警告：{os.path.basename(path)} 拦截语法 {n_block} 条 ≫ 放行语法 {n_allow} 条，"
+              f"疑似黑名单被误挂到 allow_rules，请用 probe_source.py 核实！")
+    elif prefix == "adblock" and n_allow > n_block and n_allow > 100:
+        print(f"⚠️  方向警告：{os.path.basename(path)} 放行语法 {n_allow} 条 ≫ 拦截语法 {n_block} 条，"
+              f"疑似白名单被误挂到 adblock_rules，请用 probe_source.py 核实！")
+
+
+def is_hosts_block(line):
+    """0.0.0.0/127.0.0.1 指向正常域名 → 拦截语义"""
+    m = re.match(r"^(?:0\.0\.0\.0|127\.0\.0\.\d+)\s+(\S+)$", line)
+    if not m:
+        return False
+    t = m.group(1).lower()
+    return "." in t and not t.replace(".", "").isdigit()
 
 
 # ==============================================
@@ -194,9 +142,10 @@ def fetch_one(i_rule, prefix):
     i, rule = i_rule
     url, name = rule["url"], rule["name"]
     save_path = os.path.join(TMP_DIR, f"{prefix}_{i+1:02d}.txt")
-    ok, err = download_file(url, save_path)
+    ok, err, _ = download_file(url, save_path)
     if ok:
         write_source_header(save_path, name, url)
+        sanity_hint(save_path, prefix)
     return name, ok, err
 
 def fetch_all(rules, prefix):
