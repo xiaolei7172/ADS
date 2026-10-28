@@ -157,6 +157,7 @@ adblock_rules = [
     {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt", "name": "乘风视频规则"},
     {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt", "name": "乘风通用规则"},
     {"url": "https://raw.githubusercontent.com/rssvcn/qy-Ads-Rule/main/black.txt", "name": "晴雅拦截规则"},
+    {"url": "https://raw.githubusercontent.com/abclq/home-dns-adblock/refs/heads/main/dist/hosts.txt", "name": "abclq Hosts 拦截规则"},
 ]
 
 allow_rules = [
@@ -187,7 +188,7 @@ if os.path.exists(os.path.join(MOD_DIR, "whitelist.txt")):
 failed = []
 dl_status = []   # 源健康度：clean-readme.py 读取后写入 README
 
-MAX_WORKERS = 5  # 并发下载数：对上游保持礼貌，5 线程已能把 19 源从串行 2 分钟压到半分钟内
+MAX_WORKERS = 5  # 并发下载数：对上游保持礼貌，5 线程已能把 21 源从串行 2 分钟压到半分钟内
 
 def fetch_one(i_rule, prefix):
     i, rule = i_rule

@@ -1,15 +1,3 @@
-[TianYing Adblock Project]
-! ======================================================================
-! 📌 规则名称：天影规则聚合 · 广告拦截规则
-! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
-! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-10-28 11:51:04（北京时间）
-! 📊 有效规则：277188 条
-! 🔄 更新频率：每12小时自动更新
-! ======================================================================
-! Title: 📌 天影规则聚合 · 广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-10-28 11:51:04 | ✅ 有效规则 277188 条
-! ======================================================================
 ! ==============================================
 ! 📋 规则来源：本地自定义规则
 ! 📝 规则说明：广告拦截规则
@@ -277258,3 +277246,42 @@ vegaschina.cn
 xshellcn.com
 yihuifu.cn
 www.zhzzx.com
+! ==============================================
+! 📋 规则来源：abclq Hosts 拦截规则
+! 📝 规则说明：广告拦截规则
+! 🔗 原始地址：https://raw.githubusercontent.com/abclq/home-dns-adblock/refs/heads/main/dist/hosts.txt
+! ==============================================
+0.0.0.0 ads-vp5.xhscdn.com
+0.0.0.0 apm-native.xiaohongshu.com
+0.0.0.0 comfylink.com
+0.0.0.0 dns.alidns.com
+0.0.0.0 doh.pub
+0.0.0.0 jomoxc.com
+0.0.0.0 l2-toutiao-quic-ipv6-ml.gslb.ksyuncdn.com
+0.0.0.0 lng.xiaohongshu.com
+0.0.0.0 log3-applog-lf.fqnovel.com
+0.0.0.0 minigame3-normal-lf.zijieapi.com
+0.0.0.0 minigame3-normal-lq.zijieapi.com
+0.0.0.0 minigame5-normal-lf.zijieapi.com
+0.0.0.0 ndcpp.com
+0.0.0.0 praisewindow.ugsdk.cn
+0.0.0.0 qrstuvwxyzab.com
+0.0.0.0 rtlog3-applog-lf.fqnovel.com
+0.0.0.0 thanos.zijieapi.com
+0.0.0.0 tnc0-alisc1.zijieapi.com
+0.0.0.0 tracker.xiaomixiaoai.com
+0.0.0.0 v11-reading-ad.qznovelvod.com
+0.0.0.0 v13-reading-ad.qznovelvod.com
+0.0.0.0 v26-reading-ad.qznovelvod.com
+0.0.0.0 v5-bd-daily-reading-ad.qznovelvod.com
+0.0.0.0 v5-reading-ad.qznovelvod.com
+0.0.0.0 v5-se-sjy-daily-reading-ad.qznovelvod.com
+0.0.0.0 v6-reading-ad.qznovelvod.com
+0.0.0.0 v9-reading-ad.qznovelvod.com
+0.0.0.0 v96-reading-ad.qznovelvod.com
+0.0.0.0 webcast5-open-hl.douyin.com
+0.0.0.0 webcast5-open-hl.douyin.com.c.dsa.cdnbuild.net
+0.0.0.0 wmzfylgdsz.com
+0.0.0.0 wuchuyun.com
+0.0.0.0 xinqiucc.com
+0.0.0.0 ydycdn.com

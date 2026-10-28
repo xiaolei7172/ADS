@@ -6,7 +6,7 @@
 
 **⚡ 强力去广告 · 每 12 小时自动更新 · 全平台适配 ⚡**
 
-> 干净的网络，从一条订阅开始 —— 20 路数据源聚合 · 三层真实去重 · 每 12 小时自动更新，一套规则覆盖 10 种格式
+> 干净的网络，从一条订阅开始 —— 21 路数据源聚合 · 三层真实去重 · 每 12 小时自动更新，一套规则覆盖 10 种格式
 
 [![CI 状态](https://github.com/xiaolei7172/ADS/actions/workflows/Update-Rules.yml/badge.svg)](https://github.com/xiaolei7172/ADS/actions/workflows/Update-Rules.yml)
 [![最近提交](https://img.shields.io/github/last-commit/xiaolei7172/ADS/master?label=%E6%9C%80%E8%BF%91%E6%9B%B4%E6%96%B0&color=success)](https://github.com/xiaolei7172/ADS/commits/master)
@@ -256,7 +256,7 @@ rules:
 
 ## 📚 上游规则数据源
 
-> 管线实际下载 **20 路源**（14 个拦截 + 6 个白名单），另有 2 个本仓库自定义文件。
+> 管线实际下载 **21 路源**（15 个拦截 + 6 个白名单），另有 2 个本仓库自定义文件。
 > 其中「合并源」本身已聚合多个二级上游，因此实际覆盖的项目数量多于 19。
 > 每个来源在成品中都有分区标注，误拦可直接定位到源。
 
@@ -282,6 +282,7 @@ rules:
 | 📛 **乘风视频规则** | 视频贴片广告 | [Adblock-Plus-Rule/mv.txt](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt) |
 | 📛 **乘风通用规则** | 通用拦截 | [Adblock-Plus-Rule/rule.txt](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt) |
 | 📛 **晴雅拦截规则** | 综合拦截 | [qy-Ads-Rule/black.txt](https://raw.githubusercontent.com/rssvcn/qy-Ads-Rule/main/black.txt) |
+| 📛 **abclq Hosts 拦截规则** | Hosts 综合拦截 | [home-dns-adblock hosts](https://raw.githubusercontent.com/abclq/home-dns-adblock/refs/heads/main/dist/hosts.txt) |
 | 🏠 **本仓库自定义** | 红果短剧 / 番茄小说专项等 | [data/mod/adblock.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/mod/adblock.txt) |
 
 ### 🟢 白名单规则（6 路 + 自定义）
