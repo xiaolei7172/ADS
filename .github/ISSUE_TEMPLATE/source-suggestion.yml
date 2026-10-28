@@ -1,0 +1,67 @@
+name: 🌐 上游源推荐
+description: 推荐一个优质的拦截 / 白名单规则源，希望合并进本项目
+title: "[新源] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > 本项目只接受 **纯域名类、结构清晰、持续维护、无明显误杀** 的源。
+        > 元素隐藏、脚本注入、需登录才能获取的源一律不合并（会破坏 DNS 兼容性）。
+
+  - type: input
+    id: name
+    attributes:
+      label: 源名称
+      placeholder: 某某规则库
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: 原始地址（必须是可直接下载的 raw 链接）
+      placeholder: https://raw.githubusercontent.com/user/repo/main/rules.txt
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: 源类型
+      options:
+        - 拦截规则（黑名单）
+        - 白名单（放行）
+    validations:
+      required: true
+
+  - type: dropdown
+    id: format
+    attributes:
+      label: 规则格式
+      options:
+        - DNS 域名（||domain^ / 0.0.0.0 domain）
+        - Adblock 全语法（含元素隐藏）
+        - 混合格式
+        - 不确定
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: 推荐理由
+      description: 相比现有源的优势（覆盖更多？误杀更低？更新更勤？）
+      placeholder: 专注国内 App 开屏广告，日更，误杀率低
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 请确认
+      options:
+        - label: 该源公开可免费使用，且允许被二次整理
+          required: true
+        - label: 我确认该链接可直接访问并返回规则内容（不是登录页或 HTML 页面）
+          required: true

@@ -1,0 +1,66 @@
+name: 🎯 漏拦报告（还有广告没拦住）
+description: 某个 App 或网站的广告、弹窗、开屏、直播广告没有被拦截
+title: "[漏拦] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > 提交前请先确认规则已更新到最新版（每 12 小时自动更新）。
+        > 若是 App 内广告，能提供抓包得到的域名会极大加快处理速度。
+
+  - type: input
+    id: target
+    attributes:
+      label: 出现广告的 App 或网站
+      placeholder: 红果短剧 / 某某小说 / example.com
+    validations:
+      required: true
+
+  - type: dropdown
+    id: adtype
+    attributes:
+      label: 广告类型
+      options:
+        - 开屏广告
+        - 信息流 / 列表广告
+        - 弹窗 / 插屏
+        - 视频贴片 / 暂停广告
+        - 直播广告
+        - 小游戏广告
+        - 追踪 / 统计（非视觉广告）
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: domains
+    attributes:
+      label: 相关域名（有则填，最有效）
+      description: 用抓包工具（如 HttpCanary / Surge / Stream）拿到的广告请求域名
+      render: text
+      placeholder: |
+        api.example-ad.com
+        img.example-cdn.net
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: 使用的客户端
+      options:
+        - AdGuard（Windows / Mac / Android）
+        - AdGuard Home
+        - OpenWrt / 路由器 hosts
+        - SmartDNS
+        - Clash / Mihomo
+        - Surge / Loon
+        - Quantumult X
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: 截图或其他补充
+      description: 可直接把截图拖进输入框

@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 📥 订阅链接与使用教程
+    url: https://github.com/xiaolei7172/ADS#readme
+    about: 各平台订阅地址、客户端下载、配置步骤都在 README 里
+  - name: 🧪 拦截效果在线测试
+    url: https://adblock-tester.com/
+    about: 先测一下拦截率，确认规则是否已生效再报问题

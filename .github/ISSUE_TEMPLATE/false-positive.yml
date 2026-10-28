@@ -1,0 +1,74 @@
+name: 🚨 误拦报告（正常网站被拦了）
+description: 某个正常网站或功能被本项目的规则挡住了，打不开或功能异常
+title: "[误拦] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > 提交前请先在**关闭本项目规则**的情况下复测一次，确认确实是本规则导致的。
+        > 如果怀疑是某个上游源的规则问题，上游反馈通常更快生效，但我们仍会先在本仓库加白名单放行。
+
+  - type: input
+    id: domain
+    attributes:
+      label: 被误拦的域名或网址
+      description: 尽量给出完整域名（如 example.com），不要只写"某个网站"
+      placeholder: example.com
+    validations:
+      required: true
+
+  - type: textarea
+    id: symptom
+    attributes:
+      label: 具体表现
+      description: 打不开？登录失败？图片/视频不加载？支付跳转异常？
+      placeholder: 打开 example.com 首页白屏，关掉规则后正常
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: 使用的客户端
+      options:
+        - AdGuard（Windows / Mac / Android）
+        - AdGuard Home
+        - OpenWrt / 路由器 hosts
+        - SmartDNS
+        - Clash / Mihomo
+        - Surge / Loon
+        - Quantumult X
+        - 其他
+    validations:
+      required: true
+
+  - type: dropdown
+    id: rulefile
+    attributes:
+      label: 订阅的是哪个规则文件
+      options:
+        - adblock.txt（AdGuard 系）
+        - dns.txt（AdGuard Home / DNS 系）
+        - hosts.txt
+        - allow.txt（白名单）
+        - mihomo.yaml
+        - surge.list
+        - qx.list
+        - smartdns.conf
+        - 不确定
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: 规则版本或更新时间
+      description: README 统计区的更新时间，或你导入时的时间
+      placeholder: 2026-10-28 08:00
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: 截图或其他补充
+      description: 可直接把截图拖进输入框
