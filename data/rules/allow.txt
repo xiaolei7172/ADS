@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影规则聚合 · 白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-10-29 01:38:12（北京时间）
-! 📊 有效规则：6708 条
+! ⏰ 更新时间：2026-10-29 11:29:17（北京时间）
+! 📊 有效规则：6718 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 白名单规则 📌
-! Description: ⏰ 更新时间 2026-10-29 01:38:12 | ✅ 有效规则 6708 条
+! Description: ⏰ 更新时间 2026-10-29 11:29:17 | ✅ 有效规则 6718 条
 ! ======================================================================
 ! ==============================================
 ! 📋 白名单来源：anti-ad 官方规则（规则内置）
@@ -649,7 +649,9 @@
 @@||app.home.360.cn^
 @@||app.huabao.360.cn^
 @@||app.market.xiaomi.com^
+@@||app.mi.com^
 @@||app.toutiao.com^
+@@||app.xiaomi.com^
 @@||app.zhuanzhuan.com^
 @@||appcenter.ms^
 @@||appcfg.v.qq.com^
@@ -676,6 +678,7 @@
 @@||aps.amap.com^
 @@||aq.qq.com^
 @@||archive.biliimg.com^
+@@||archive.stardock.com^
 @@||arenascan.com^
 @@||article.zlink.toutiao.com^
 @@||as.weixin.qq.com^
@@ -1004,6 +1007,7 @@
 @@||contentcenter-vali-drcn.dbankcdn.com^
 @@||coolapk-oss-image.oss-cn-hangzhou.aliyuncs.com^
 @@||coop.voicecloud.cn^
+@@||copilot.tencent.com^
 @@||core.tantanapp.com^
 @@||cos.ap-bangkok.myqcloud.com^
 @@||cos.ap-beijing-1.myqcloud.com^
@@ -1310,6 +1314,8 @@
 @@||fonts.gstatic.com^
 @@||forum.trae.cn^
 @@||forums.oneplus.com^
+@@||forums.stardock.com^
+@@||forums.stardock.net^
 @@||foundation.youdao.com^
 @@||fourhoi.com^
 @@||fourier-videoclip-eu.allawnos.com^
@@ -1524,6 +1530,7 @@
 @@||id.realme.com^
 @@||id1.cloud.huawei.com^
 @@||id6.me^
+@@||identity.stardock.com^
 @@||idmb.register.xmpush.global.xiaomi.com^
 @@||idmsa.apple.com^
 @@||ietheivaicai.com^
@@ -2956,6 +2963,7 @@
 @@||up.cm.ksmobile.com^
 @@||upage.imtt.qq.com^
 @@||update.360safe.com^
+@@||update.appstore.vivo.com.cn^
 @@||update.hicloud.com^
 @@||update.huorong.cn^
 @@||update.vivo.com^
@@ -3301,6 +3309,8 @@
 @@||www.siyuan-note.club^
 @@||www.so.com^
 @@||www.spaceship.com^
+@@||www.stardock.com^
+@@||www.stardock.net^
 @@||www.sygjx.com^
 @@||www.taobao.com^
 @@||www.taptap.cn^
