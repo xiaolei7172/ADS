@@ -90,29 +90,6 @@ jobs:
           fi
 
       # ==============================================
-      # 📦 自动 Release：附规则打包，滚动保留最近 3 个
-      # ==============================================
-      - name: Create Release
-        if: steps.push.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          TS=$(TZ=Asia/Shanghai date +'%Y%m%d-%H%M')
-          ZIP="TianYing-Rules-${TS}.zip"
-          PKG=$(mktemp -d)
-          cp data/rules/* "$PKG/"
-          (cd "$PKG" && zip -q "$RUNNER_TEMP/${ZIP}" *)
-          gh release create "auto-${TS}" "$RUNNER_TEMP/${ZIP}" \
-            --title "规则更新 ${TS}" \
-            --notes "自动发布。规则文件见附件，日常订阅请优先使用仓库内最新文件（见 README）。"
-          # 滚动保留：超过 3 个时删除最旧的（连 tag 一起清）
-          COUNT=$(gh release list --limit 100 --json tagName --jq 'length')
-          if [ "$COUNT" -gt 3 ]; then
-            gh release list --limit "$((COUNT-3))" --json tagName --jq '.[].tagName' | \
-              while read -r tag; do gh release delete "$tag" --yes --cleanup-tag || true; done
-          fi
-
-      # ==============================================
       # 🏷️ 动态徽章：需配置仓库 Variable GIST_ID +
       #    Secret GIST_SECRET，未配置时自动跳过
       # ==============================================
