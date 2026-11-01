@@ -139,7 +139,7 @@ if os.path.exists(os.path.join(MOD_DIR, "whitelist.txt")):
 failed = []
 dl_status = []   # 源健康度：clean-readme.py 读取后写入 README
 
-MAX_WORKERS = 5  # 并发下载数：对上游保持礼貌，5 线程已能把 21 源从串行 2 分钟压到半分钟内
+MAX_WORKERS = 5  # 并发下载数：对上游保持礼貌，5 线程已能把 20 源从串行 2 分钟压到半分钟内
 
 def fetch_one(i_rule, prefix):
     i, rule = i_rule

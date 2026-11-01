@@ -5,7 +5,12 @@
   1. 删除旧的子串匹配白名单删除逻辑——`any(dom in line)` 会把
      t.co 白名单误伤所有 *.t.com 域名（ad.tencent.com 就是这样消失的）；
      dns.txt 在 filter-dns.py 已按父子域过滤白名单，这里只需转换格式；
-  2. 跳过通配符域名：QX 的 DOMAIN 类型不支持 *，写进去是无效规则。
+  2. 跳过通配符域名：QX 的 DOMAIN 类型不支持 *，写进去是无效规则；
+  3. 用 DOMAIN-SUFFIX 而非 DOMAIN：dns.txt 在 filter-dns.py 已做父子域折叠
+     （父域存在即删除子域），语义上依赖"||parent^"覆盖全部子域。原先写
+     DOMAIN 是精确匹配，父域覆盖不到被折叠掉的子域，实测少拦 15,775 个子域，
+     与 dns / surge / smartdns / mihomo 四种格式不一致。DOMAIN-SUFFIX 语义
+     与 dns.txt 的 ||domain^ 等价，同时 QX 的后缀树匹配比逐条精确匹配更快。
 """
 import os
 import sys
@@ -22,7 +27,7 @@ with open(input_file_path, "r", encoding="utf-8", errors="ignore") as fin, \
      open(output_file_path, "w", encoding="utf-8", newline="\n") as fout:
     fout.write("# 天影规则聚合 · Quantumult X 拦截规则\n")
     fout.write("# Github: https://github.com/xiaolei7172/ADS\n")
-    fout.write("# Format: DOMAIN,domain,reject\n\n")
+    fout.write("# Format: DOMAIN-SUFFIX,domain,reject（后缀匹配，等价 AdGuard 的 ||domain^）\n\n")
     for line in fin:
         line = line.strip()
         if not line or line.startswith(("!", "#", "[")):
@@ -31,7 +36,7 @@ with open(input_file_path, "r", encoding="utf-8", errors="ignore") as fin, \
         if d is None:
             skipped += 1
             continue
-        fout.write(f"DOMAIN,{d},reject\n")
+        fout.write(f"DOMAIN-SUFFIX,{d},reject\n")
         kept += 1
 
 print(f"✅ Quantumult X 规则生成完成：qx.list（{kept} 条，跳过非法 {skipped} 条）")

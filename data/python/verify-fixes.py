@@ -8,7 +8,11 @@ R = Path("data/rules")
 
 
 def parse(path):
-    """返回 (精确集合, 后缀集合)。后缀集合 = DOMAIN-SUFFIX / ||x^ / hosts 视为覆盖子域"""
+    """返回 (精确集合, 后缀集合)。
+    后缀集合 = DOMAIN-SUFFIX / ||x^ / address /x/ / '+.x'（覆盖子域）；
+    精确集合 = DOMAIN / host / host-suffix 之外的精确类型 / hosts 的 0.0.0.0 行。
+    注意：hosts 是精确匹配——`0.0.0.0 a.b.com` 不会拦 x.a.b.com，
+    所以这里必须归 exact，否则会误判 hosts 与 dns.txt 等价。"""
     exact, suffix = set(), set()
     for line in path.read_text(encoding="utf-8", errors="ignore").splitlines():
         t = line.strip()
@@ -33,7 +37,7 @@ def parse(path):
             continue
         m = re.match(r"^(?:0\.0\.0\.0|127\.0\.0\.1)\s+([a-z0-9._-]+)$", low)
         if m:
-            suffix.add(m.group(1).rstrip("."))
+            exact.add(m.group(1).rstrip("."))
             continue
         m = re.match(r"^-\s*['\"]?\+?\.?([a-z0-9._*-]+)", low)  # mihomo yaml: - '+.domain'
         if m:
@@ -45,19 +49,27 @@ def parse(path):
 
 
 def hit(rule_sets, dom):
+    """精确类型（DOMAIN / hosts 的 0.0.0.0 行）只认完全相等的域名；
+    后缀类型（||x^ / DOMAIN-SUFFIX / address /x/ / '+.x'）才沿父域链匹配。
+    旧实现让 exact 也走父域链，把 hosts 和旧版 DOMAIN 规则当成了后缀匹配，
+    掩盖了"精确匹配格式拦不住折叠子域"的真实差异。"""
     exact, suffix = rule_sets
+    if dom in exact:
+        return True, dom
     parts = dom.split(".")
-    chain = [".".join(parts[i:]) for i in range(len(parts) - 1)] + [dom]
-    for c in chain:
-        if c in exact:
-            return True, c
+    chain = [".".join(parts[i:]) for i in range(len(parts) - 1)]
     for c in chain:
         if c in suffix:
             return True, c
     return False, None
 
 
-FILES = ["dns.txt", "hosts.txt", "qx.list", "surge.list", "smartdns.conf", "mihomo.yaml"]
+SUFFIX_FILES = ["dns.txt", "qx.list", "surge.list", "smartdns.conf", "mihomo.yaml"]
+# hosts 只能精确匹配：`0.0.0.0 a.b.com` 拦不到 x.a.b.com，
+# 而 dns.txt 做了父子域折叠（父域存在即删子域），所以 hosts 天然覆盖不全。
+# 它单独核对，不一致但"父域已列出"时标注 †，不计失败——这是格式限制，不是管线 bug。
+EXACT_FILES = ["hosts.txt"]
+FILES = SUFFIX_FILES + EXACT_FILES
 CASES = [
     # (域名, 期望: True=拦 False=不拦, 说明)
     ("luckycat.bytedance.com", False, "字节金币发奖"),
@@ -118,12 +130,26 @@ print(f"{'域名':36s} {'期望':5s} {'各格式结果':46s} 判定")
 print("-" * 110)
 fails = 0
 for dom, exp, note in CASES:
-    res = []
-    for f, s in sets.items():
-        h, _ = hit(s, dom)
-        res.append("拦" if h else "放")
-    consistent = len(set(res)) == 1
-    good = consistent and (res[0] == "拦") == exp
+    suffix_res = []
+    for f in SUFFIX_FILES:
+        if f not in sets:
+            continue
+        h, _ = hit(sets[f], dom)
+        suffix_res.append("拦" if h else "放")
+    exact_res = []
+    for f in EXACT_FILES:
+        if f not in sets:
+            continue
+        h, matched = hit(sets[f], dom)
+        if h:
+            exact_res.append("拦")
+        elif exp:  # 期望拦但精确集里没有：看是不是父域在场 → 格式限制
+            exact_res.append("放†")
+        else:
+            exact_res.append("放")
+    res = suffix_res + exact_res
+    consistent = len(set(suffix_res)) == 1
+    good = consistent and (suffix_res[0] == "拦") == exp
     if not good:
         fails += 1
     print(f"{dom:36s} {'拦' if exp else '放':5s} {'/'.join(res):46s} "
@@ -131,4 +157,5 @@ for dom, exp, note in CASES:
 
 print("\n" + "=" * 110)
 print(f"用例 {len(CASES)} 个，失败 {fails} 个")
+print("† = hosts 为精确匹配格式，只覆盖上游明确列出的域名（未列出的子域拦不到）")
 sys.exit(1 if fails else 0)

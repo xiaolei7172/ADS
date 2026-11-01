@@ -23,6 +23,9 @@ from common import RULES_DIR, MOD_DIR, block_domain
 DNS_FLOOR = 50000
 DOMAIN_FILES = ["dns.txt", "qx.list", "smartdns.conf", "ad-domain.txt", "hosts.txt",
                 "mihomo.yaml", "surge.list"]
+# hosts 只能精确匹配，必须保留被折叠的子域才能拦住它们（否则 1.5 万个子域漏网），
+# 所以父子域冗余检查对它豁免；精确重复、脏语法仍然照查。
+COLLAPSE_EXEMPT = {"hosts.txt"}
 RAW_FILES = ["adblock.txt", "allow.txt"]
 
 errors = []
@@ -81,7 +84,7 @@ for name in RAW_FILES + DOMAIN_FILES:
     if dup:
         errors.append(f"{name}: {len(dup)} 条精确重复，如 {dup[:3]}")
 
-    if name in DOMAIN_FILES:
+    if name in DOMAIN_FILES and name not in COLLAPSE_EXEMPT:
         s = set(lines)
         redundant = []
         for d in lines:
@@ -155,4 +158,5 @@ if errors:
         print(f"   ❌ {e}")
     sys.exit(1)
 
-print(f"✅ 质量自检通过：全部文件 0 重复、0 父子域冗余、0 脏语法，dns.txt {actual_total} 条，分区计数自洽")
+print(f"✅ 质量自检通过：全部文件 0 重复、0 脏语法，dns.txt {actual_total} 条，分区计数自洽"
+      f"（hosts.txt 因需覆盖子域，父子域冗余检查豁免）")

@@ -127,6 +127,20 @@ kept_all = set()
 for doms in filtered_sections.values():
     kept_all.update(doms)
 
+# 折叠前的完整域名集（已白名单过滤 + 跨来源去重）留给 hosts.py：
+# hosts 只能精确匹配，若跟着 dns.txt 一起折叠，被折叠掉的子域就永远拦不到了。
+# 写 data/tmp 而非 data/rules，避免多一份对外发布的产物。
+UNFOLDED_PATH = os.path.join(os.path.dirname(RULES_DIR), "tmp", "dns-unfolded.txt")
+try:
+    os.makedirs(os.path.dirname(UNFOLDED_PATH), exist_ok=True)
+    with open(UNFOLDED_PATH, "w", encoding="utf-8", newline="\n") as f:
+        for doms in filtered_sections.values():
+            for d in doms:
+                f.write(f"||{d}^\n")
+    print(f"📦 折叠前域名集已落盘：{UNFOLDED_PATH}（{len(kept_all)} 条，供 hosts.txt 覆盖子域）")
+except OSError as e:
+    print(f"⚠️ 折叠前域名集写入失败（hosts.txt 将退回折叠后的 dns.txt）：{e}")
+
 def has_ancestor(d, pool):
     parts = d.split(".")
     for i in range(1, len(parts) - 1):

@@ -146,6 +146,28 @@ def extract_old_stats(content, comment="!"):
     return result or None
 
 
+def dns_effective_note(clean_content):
+    """统计白名单里有多少条能在 DNS 层生效。
+
+    上游白名单（尤其 AdGuard 官方那两个）大量使用路径级规则
+    （`@@||x.com/tag/js$domain=y.com`）和正则，这些只在浏览器版 AdGuard
+    里有效；DNS 层没有路径和来源页概念，只有 `@@||domain^` 与通配能用。
+    不标出来，用户会以为 6767 条全在保护自己。
+    """
+    plain = wildcard = other = 0
+    for line in clean_content.splitlines():
+        s = line.strip()
+        if not s or s.startswith(("!", "#", "[")):
+            continue
+        if re.fullmatch(r"@@\|\|[^/^$*]+\^", s):
+            plain += 1
+        elif s.startswith("@@||") and s.endswith("^"):
+            wildcard += 1
+        else:
+            other += 1
+    return plain, wildcard, other
+
+
 changed = 0
 for filename, cfg in file_config.items():
     file_path = os.path.join(rules_dir, filename)
@@ -160,8 +182,17 @@ for filename, cfg in file_config.items():
     line_count = count_valid_lines(clean_content, is_path=False)
     stats = parse_source_stats(clean_content)
 
-    # 正文是否变化：旧表头记录的条数 + 来源统计都与本次计算一致 → 正文未变，
-    # 不重写、保留原时间戳（避免无意义 diff 撑大仓库历史）。
+    c = cfg["comment"]
+    # 白名单额外提示 DNS 层实际生效口径（其余为浏览器版专用规则）
+    note_block = ""
+    if filename == "allow.txt":
+        plain, wildcard, other = dns_effective_note(clean_content)
+        note_block = (f"{c} 🧮 DNS 层可直接生效：{plain + wildcard:,} 条"
+                      f"（纯域名 {plain:,} + 通配 {wildcard:,}）；"
+                      f"另有 {other:,} 条为路径级 / $domain= / 正则，仅浏览器版 AdGuard 有效\n")
+
+    # 正文是否变化：旧表头记录的条数 + 来源统计 + 白名单口径行都与本次一致
+    # → 正文未变，不重写、保留原时间戳（避免无意义 diff 撑大仓库历史）。
     old_count = None
     for line in content.splitlines()[:15]:
         m = re.search(r"有效规则：(\d+) 条", line)
@@ -169,13 +200,13 @@ for filename, cfg in file_config.items():
             old_count = int(m.group(1))
             break
     body_unchanged = (old_count == line_count
-                      and extract_old_stats(content, cfg["comment"]) is not None
-                      and sorted(extract_old_stats(content, cfg["comment"])) == sorted(stats))
+                      and (not note_block or note_block.strip() in content)
+                      and extract_old_stats(content, c) is not None
+                      and sorted(extract_old_stats(content, c)) == sorted(stats))
     if body_unchanged and not FORCE:
         print(f"⏭️  {filename} | 正文无变化，保留原表头和时间戳")
         continue
 
-    c = cfg["comment"]
     beijing_time = beijing_now()
     stats_block = render_stats_block(stats, c)
 
@@ -192,7 +223,7 @@ for filename, cfg in file_config.items():
 {c} ======================================================================
 {c} Title: 📌 {cfg['title']} 📌
 {c} Description: ⏰ 更新时间 {beijing_time} | ✅ 有效规则 {line_count} 条
-""" + stats_block + f"""{c} ======================================================================
+{note_block}""" + stats_block + f"""{c} ======================================================================
 """
 
     final = header + clean_content + "\n"

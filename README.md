@@ -30,7 +30,7 @@
 🌐 **DNS 拦截域名**：242345 个
 
 
-✅ **白名单放行规则**：6767 条
+✅ **白名单放行规则**：6767 条（约半数可在 DNS 层直接生效，其余为浏览器版 AdGuard 的路径级 / `$domain=` 规则，DNS 层无效）
 
 <!-- DL_STATUS_START -->
 ✅ **上游源状态**：20/20 全部下载成功
@@ -112,6 +112,8 @@
 1. 下载 hosts 文件：`https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/hosts.txt`
 2. 覆盖到 `/etc/hosts` 末尾（或配合 dnsmasq 的 `addn-hosts` 引用）
 3. 重启 dnsmasq：`/etc/init.d/dnsmasq restart`
+
+> ⚠️ **hosts 只能精确匹配**：`0.0.0.0 a.b.com` 拦不到 `x.a.b.com`。本仓库的 hosts.txt 已把 dns.txt 折叠掉的 1.4 万个子域补回（比 dns.txt 多约 1.4 万条，含上游明确列出的全部域名），但上游没列出的子域仍然拦不到。要彻底覆盖子域，请优先用 **dns.txt（AdGuard Home）/ smartdns.conf / surge.list / mihomo.yaml / qx.list** 这些后缀匹配格式。
 
 </details>
 
@@ -325,7 +327,7 @@ rules:
 
 但**不能盲目展开**：实测展开全部 517 条会放行 76 条规则，其中近半是广告/埋点域（`ad.a.yximgs.com` 快手广告集群、`tipsdk.baidu.com` 百度推广追踪、`amdc.alipay.com` 调度埋点都在其中）。所以采用**可信模式表** `data/mod/wildcard_allow.txt`：只有整组确认都是功能/CDN 域的模式（抖音视频节点 `v*.douyinvod.com`、B站播放镜像 `upos-sz-*.bilivideo.com`、腾讯 hash 下载 CDN `*.dlied1.cdntips.net` 等 6 条）才会展开成具体放行条目；混着广告的通配继续忽略，改用白名单点名放行其中的功能域。展开结果写入 allow.txt 的「可信通配展开」独立分区，可溯源、可审计。
 
-改完跑 `python data/python/verify-fixes.py`，它会用 40 个用例把 dns / hosts / qx / surge / smartdns / mihomo 六种格式逐个比对，状态必须完全一致。
+改完跑 `python data/python/verify-fixes.py`，它会用 48 个用例把 dns / qx / surge / smartdns / mihomo 五种后缀匹配格式逐个比对，状态必须完全一致；hosts 因只能精确匹配单独核对（已补回折叠前的子域，上游未列出的子域仍拦不到），相关用例标 `†`。
 
 ### 🧽 上游脏数据清洗
 
