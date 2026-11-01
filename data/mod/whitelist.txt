@@ -135,3 +135,28 @@
 @@||appstore.360.cn^
 @@||jiagu.360.cn^
 @@||mcloud.360.cn^
+
+! ========== 红果短剧 / 番茄小说 播放链路修复（2026-11-01 体检）==========
+! 上游白名单用 @@||v*.douyinvod.com^ 和 @@||*-novelapp.fqnovelvod.com^ 通配放行
+! 视频节点，但 DNS 层无法解析通配符，节点被上游黑名单拦截后无人兜底，
+! 被调度到这些节点的视频会加载失败。这里按上游意图逐条点名放行：
+@@||v3-cold-src1.douyinvod.com^
+@@||v5-gz-a.douyinvod.com^
+@@||v5-hl-e-hw.douyinvod.com^
+@@||v5-hl-f-hw.douyinvod.com^
+@@||v5-hl-g-hw.douyinvod.com^
+@@||v5-hl-h-bd.douyinvod.com^
+@@||v5-hl-h-hw.douyinvod.com^
+@@||v9-re1.douyinvod.com^
+@@||v95-bjb.douyinvod.com^
+@@||v95-zjb-a.douyinvod.com^
+@@||v95-zjb-b.douyinvod.com^
+@@||v96.douyinvod.com^
+@@||v6-novelapp.fqnovelvod.com^
+@@||v6-novelapp-nxyd.fqnovelvod.com^
+! 番茄 App 内 H5（签到 / 活动 / 书城页）静态资源，与已整域放行的 fqnovelpic.com 同类
+@@||lf-fe.fqnovelstatic.com^
+@@||lf3-reading.fqnovelstatic.com^
+! novelapp.fqnovelvod.com 根域同为视频 CDN 调度入口 —— 本地黑名单禁拦清单早已
+! 判定 ||fqnovelvod.com^ 整域拦截是"高危误拦"（拦了 App 白屏），根域与 vN 节点同性质
+@@||novelapp.fqnovelvod.com^

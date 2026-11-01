@@ -228564,7 +228564,6 @@ DOMAIN-SUFFIX,iu.snssdk.com.edgekey.net
 DOMAIN-SUFFIX,log.snssdk.com.bytedns.net
 DOMAIN-SUFFIX,open.snssdk.com.bytedns.net
 DOMAIN-SUFFIX,saveu5-normal-lf.zijieapi.com
-DOMAIN-SUFFIX,v6-novelapp.fqnovelvod.com
 DOMAIN-SUFFIX,ma5-normal-lq.zijieapi.com
 DOMAIN-SUFFIX,abtest3-misc-lq.zijieapi.com
 DOMAIN-SUFFIX,polaris-sinfonlinea.zijieapi.com
@@ -228591,19 +228590,7 @@ DOMAIN-SUFFIX,developer.toutiao.com
 DOMAIN-SUFFIX,p3.toutiaoimg.com
 DOMAIN-SUFFIX,p3-static-img.toutiaoimg.com
 DOMAIN-SUFFIX,log-alibaba-taobao-douyin.cdn.bcebos.com
-DOMAIN-SUFFIX,v95-zjb-a.douyinvod.com
-DOMAIN-SUFFIX,v5-gz-a.douyinvod.com
-DOMAIN-SUFFIX,v5-hl-f-hw.douyinvod.com
-DOMAIN-SUFFIX,v96.douyinvod.com
-DOMAIN-SUFFIX,v5-hl-e-hw.douyinvod.com
-DOMAIN-SUFFIX,v9-re1.douyinvod.com
-DOMAIN-SUFFIX,v95-zjb-b.douyinvod.com
-DOMAIN-SUFFIX,v5-hl-h-hw.douyinvod.com
-DOMAIN-SUFFIX,v3-cold-src1.douyinvod.com
-DOMAIN-SUFFIX,v5-hl-g-hw.douyinvod.com
-DOMAIN-SUFFIX,v5-hl-h-bd.douyinvod.com
 DOMAIN-SUFFIX,lf6-webcastcdn-tos-sign.douyinstatic.com
-DOMAIN-SUFFIX,v95-bjb.douyinvod.com
 DOMAIN-SUFFIX,webcast5-open-lq.douyin.com
 DOMAIN-SUFFIX,lf3-webcastcdn-tos-sign.douyinstatic.com
 DOMAIN-SUFFIX,webcast5-open-lf.douyin.com
@@ -228662,9 +228649,7 @@ DOMAIN-SUFFIX,vemarsdev.com
 DOMAIN-SUFFIX,ohayoo.cn
 DOMAIN-SUFFIX,rtlog3-applog-lq.fqnovel.com
 DOMAIN-SUFFIX,rtlog5-applog-lq.fqnovel.com
-DOMAIN-SUFFIX,lf3-reading.fqnovelstatic.com
 DOMAIN-SUFFIX,log3-applog-lq.fqnovel.com
-DOMAIN-SUFFIX,v6-novelapp-nxyd.fqnovelvod.com
 DOMAIN-SUFFIX,xpis-xcdn.youku.com
 DOMAIN-SUFFIX,xpis-mob-xcdn.youku.com
 DOMAIN-SUFFIX,youku-jmacs.m.taobao.com
@@ -229397,7 +229382,6 @@ DOMAIN-SUFFIX,volcsiriusbd.com
 DOMAIN-SUFFIX,sealaly.net
 DOMAIN-SUFFIX,vegslb.com
 DOMAIN-SUFFIX,siomxity.com
-DOMAIN-SUFFIX,lf-fe.fqnovelstatic.com
 DOMAIN-SUFFIX,huixuanjiasu.com
 DOMAIN-SUFFIX,life-service-open.zijieapi.com
 DOMAIN-SUFFIX,tapad-platform.tapimg.com
@@ -230200,7 +230184,6 @@ DOMAIN-SUFFIX,analytics.bytescm.com
 DOMAIN-SUFFIX,sf-tb-sg.ibytedtos.com
 DOMAIN-SUFFIX,p1-dy.bytexservice.com
 DOMAIN-SUFFIX,free-lbv3.idouyinvod.com
-DOMAIN-SUFFIX,novelapp.fqnovelvod.com
 DOMAIN-SUFFIX,mon3-misc.fqnovel.com
 DOMAIN-SUFFIX,mon11-misc.fqnovel.com
 DOMAIN-SUFFIX,ichannel.snssdk.com.bytedns.net

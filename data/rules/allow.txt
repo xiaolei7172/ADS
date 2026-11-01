@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影规则聚合 · 白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-01 12:16:52（北京时间）
-! 📊 有效规则：6729 条
+! ⏰ 更新时间：2026-11-01 12:45:21（北京时间）
+! 📊 有效规则：6746 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 白名单规则 📌
-! Description: ⏰ 更新时间 2026-11-01 12:16:52 | ✅ 有效规则 6729 条
+! Description: ⏰ 更新时间 2026-11-01 12:45:21 | ✅ 有效规则 6746 条
 ! ======================================================================
 ! ==============================================
 ! 📋 白名单来源：anti-ad 官方规则（规则内置）
@@ -6757,3 +6757,20 @@
 @@||appstore.360.cn^
 @@||jiagu.360.cn^
 @@||mcloud.360.cn^
+@@||v3-cold-src1.douyinvod.com^
+@@||v5-gz-a.douyinvod.com^
+@@||v5-hl-e-hw.douyinvod.com^
+@@||v5-hl-f-hw.douyinvod.com^
+@@||v5-hl-g-hw.douyinvod.com^
+@@||v5-hl-h-bd.douyinvod.com^
+@@||v5-hl-h-hw.douyinvod.com^
+@@||v9-re1.douyinvod.com^
+@@||v95-bjb.douyinvod.com^
+@@||v95-zjb-a.douyinvod.com^
+@@||v95-zjb-b.douyinvod.com^
+@@||v96.douyinvod.com^
+@@||v6-novelapp.fqnovelvod.com^
+@@||v6-novelapp-nxyd.fqnovelvod.com^
+@@||lf-fe.fqnovelstatic.com^
+@@||lf3-reading.fqnovelstatic.com^
+@@||novelapp.fqnovelvod.com^

@@ -1,7 +1,7 @@
 # 天影规则聚合 · HOSTS 版
 # 由 dns.txt（已去重）自动转换，规则与 dns.txt 完全一致
 # 📌 项目地址：https://github.com/xiaolei7172/ADS
-# ⏰ 更新时间：2026-11-01 12:16:26（北京时间） | 📊 有效规则：242383 条
+# ⏰ 更新时间：2026-11-01 12:44:13（北京时间） | 📊 有效规则：242366 条
 # 🔄 更新频率：每12小时自动更新
 0.0.0.0 ads3-normal-hl.zijieapi.com
 0.0.0.0 ads3-normal-lf.zijieapi.com
@@ -228567,7 +228567,6 @@
 0.0.0.0 log.snssdk.com.bytedns.net
 0.0.0.0 open.snssdk.com.bytedns.net
 0.0.0.0 saveu5-normal-lf.zijieapi.com
-0.0.0.0 v6-novelapp.fqnovelvod.com
 0.0.0.0 ma5-normal-lq.zijieapi.com
 0.0.0.0 abtest3-misc-lq.zijieapi.com
 0.0.0.0 polaris-sinfonlinea.zijieapi.com
@@ -228594,19 +228593,7 @@
 0.0.0.0 p3.toutiaoimg.com
 0.0.0.0 p3-static-img.toutiaoimg.com
 0.0.0.0 log-alibaba-taobao-douyin.cdn.bcebos.com
-0.0.0.0 v95-zjb-a.douyinvod.com
-0.0.0.0 v5-gz-a.douyinvod.com
-0.0.0.0 v5-hl-f-hw.douyinvod.com
-0.0.0.0 v96.douyinvod.com
-0.0.0.0 v5-hl-e-hw.douyinvod.com
-0.0.0.0 v9-re1.douyinvod.com
-0.0.0.0 v95-zjb-b.douyinvod.com
-0.0.0.0 v5-hl-h-hw.douyinvod.com
-0.0.0.0 v3-cold-src1.douyinvod.com
-0.0.0.0 v5-hl-g-hw.douyinvod.com
-0.0.0.0 v5-hl-h-bd.douyinvod.com
 0.0.0.0 lf6-webcastcdn-tos-sign.douyinstatic.com
-0.0.0.0 v95-bjb.douyinvod.com
 0.0.0.0 webcast5-open-lq.douyin.com
 0.0.0.0 lf3-webcastcdn-tos-sign.douyinstatic.com
 0.0.0.0 webcast5-open-lf.douyin.com
@@ -228665,9 +228652,7 @@
 0.0.0.0 ohayoo.cn
 0.0.0.0 rtlog3-applog-lq.fqnovel.com
 0.0.0.0 rtlog5-applog-lq.fqnovel.com
-0.0.0.0 lf3-reading.fqnovelstatic.com
 0.0.0.0 log3-applog-lq.fqnovel.com
-0.0.0.0 v6-novelapp-nxyd.fqnovelvod.com
 0.0.0.0 xpis-xcdn.youku.com
 0.0.0.0 xpis-mob-xcdn.youku.com
 0.0.0.0 youku-jmacs.m.taobao.com
@@ -229400,7 +229385,6 @@
 0.0.0.0 sealaly.net
 0.0.0.0 vegslb.com
 0.0.0.0 siomxity.com
-0.0.0.0 lf-fe.fqnovelstatic.com
 0.0.0.0 huixuanjiasu.com
 0.0.0.0 life-service-open.zijieapi.com
 0.0.0.0 tapad-platform.tapimg.com
@@ -230203,7 +230187,6 @@
 0.0.0.0 sf-tb-sg.ibytedtos.com
 0.0.0.0 p1-dy.bytexservice.com
 0.0.0.0 free-lbv3.idouyinvod.com
-0.0.0.0 novelapp.fqnovelvod.com
 0.0.0.0 mon3-misc.fqnovel.com
 0.0.0.0 mon11-misc.fqnovel.com
 0.0.0.0 ichannel.snssdk.com.bytedns.net

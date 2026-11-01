@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影规则聚合 · DNS 拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-01 12:16:52（北京时间）
-! 📊 有效规则：242383 条
+! ⏰ 更新时间：2026-11-01 12:45:21（北京时间）
+! 📊 有效规则：242366 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · DNS 拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-01 12:16:52 | ✅ 有效规则 242383 条
+! Description: ⏰ 更新时间 2026-11-01 12:45:21 | ✅ 有效规则 242366 条
 ! ======================================================================
 ! 本文件由 filter-dns.py 从 adblock.txt 提取（项目：天影规则聚合）
 ! 已应用：白名单父子域过滤 + 父子域语义去重
@@ -22,7 +22,7 @@
 !    119299 条  AdRules DNS List [AdRules DNS List]
 !      9550 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !      2750 条  OISD 拦截规则 [oisd small]
-!      4755 条  5460 [酷安广告规则]
+!      4738 条  5460 [酷安广告规则]
 !      9127 条  海哥规则
 ! ────────────────────────────────────────
 
@@ -228580,7 +228580,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/qq5460168/dangchu/main/black.txt
 ! ==============================================
-! 📊 本区规则：4755 条
+! 📊 本区规则：4738 条
 ! ==============================================
 ||ad.360.cn^
 ||ad.360safe.com^
@@ -228645,7 +228645,6 @@
 ||log.snssdk.com.bytedns.net^
 ||open.snssdk.com.bytedns.net^
 ||saveu5-normal-lf.zijieapi.com^
-||v6-novelapp.fqnovelvod.com^
 ||ma5-normal-lq.zijieapi.com^
 ||abtest3-misc-lq.zijieapi.com^
 ||polaris-sinfonlinea.zijieapi.com^
@@ -228672,19 +228671,7 @@
 ||p3.toutiaoimg.com^
 ||p3-static-img.toutiaoimg.com^
 ||log-alibaba-taobao-douyin.cdn.bcebos.com^
-||v95-zjb-a.douyinvod.com^
-||v5-gz-a.douyinvod.com^
-||v5-hl-f-hw.douyinvod.com^
-||v96.douyinvod.com^
-||v5-hl-e-hw.douyinvod.com^
-||v9-re1.douyinvod.com^
-||v95-zjb-b.douyinvod.com^
-||v5-hl-h-hw.douyinvod.com^
-||v3-cold-src1.douyinvod.com^
-||v5-hl-g-hw.douyinvod.com^
-||v5-hl-h-bd.douyinvod.com^
 ||lf6-webcastcdn-tos-sign.douyinstatic.com^
-||v95-bjb.douyinvod.com^
 ||webcast5-open-lq.douyin.com^
 ||lf3-webcastcdn-tos-sign.douyinstatic.com^
 ||webcast5-open-lf.douyin.com^
@@ -228743,9 +228730,7 @@
 ||ohayoo.cn^
 ||rtlog3-applog-lq.fqnovel.com^
 ||rtlog5-applog-lq.fqnovel.com^
-||lf3-reading.fqnovelstatic.com^
 ||log3-applog-lq.fqnovel.com^
-||v6-novelapp-nxyd.fqnovelvod.com^
 ||xpis-xcdn.youku.com^
 ||xpis-mob-xcdn.youku.com^
 ||youku-jmacs.m.taobao.com^
@@ -229478,7 +229463,6 @@
 ||sealaly.net^
 ||vegslb.com^
 ||siomxity.com^
-||lf-fe.fqnovelstatic.com^
 ||huixuanjiasu.com^
 ||life-service-open.zijieapi.com^
 ||tapad-platform.tapimg.com^
@@ -230281,7 +230265,6 @@
 ||sf-tb-sg.ibytedtos.com^
 ||p1-dy.bytexservice.com^
 ||free-lbv3.idouyinvod.com^
-||novelapp.fqnovelvod.com^
 ||mon3-misc.fqnovel.com^
 ||mon11-misc.fqnovel.com^
 ||ichannel.snssdk.com.bytedns.net^

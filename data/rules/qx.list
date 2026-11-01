@@ -228566,7 +228566,6 @@ DOMAIN,iu.snssdk.com.edgekey.net,reject
 DOMAIN,log.snssdk.com.bytedns.net,reject
 DOMAIN,open.snssdk.com.bytedns.net,reject
 DOMAIN,saveu5-normal-lf.zijieapi.com,reject
-DOMAIN,v6-novelapp.fqnovelvod.com,reject
 DOMAIN,ma5-normal-lq.zijieapi.com,reject
 DOMAIN,abtest3-misc-lq.zijieapi.com,reject
 DOMAIN,polaris-sinfonlinea.zijieapi.com,reject
@@ -228593,19 +228592,7 @@ DOMAIN,developer.toutiao.com,reject
 DOMAIN,p3.toutiaoimg.com,reject
 DOMAIN,p3-static-img.toutiaoimg.com,reject
 DOMAIN,log-alibaba-taobao-douyin.cdn.bcebos.com,reject
-DOMAIN,v95-zjb-a.douyinvod.com,reject
-DOMAIN,v5-gz-a.douyinvod.com,reject
-DOMAIN,v5-hl-f-hw.douyinvod.com,reject
-DOMAIN,v96.douyinvod.com,reject
-DOMAIN,v5-hl-e-hw.douyinvod.com,reject
-DOMAIN,v9-re1.douyinvod.com,reject
-DOMAIN,v95-zjb-b.douyinvod.com,reject
-DOMAIN,v5-hl-h-hw.douyinvod.com,reject
-DOMAIN,v3-cold-src1.douyinvod.com,reject
-DOMAIN,v5-hl-g-hw.douyinvod.com,reject
-DOMAIN,v5-hl-h-bd.douyinvod.com,reject
 DOMAIN,lf6-webcastcdn-tos-sign.douyinstatic.com,reject
-DOMAIN,v95-bjb.douyinvod.com,reject
 DOMAIN,webcast5-open-lq.douyin.com,reject
 DOMAIN,lf3-webcastcdn-tos-sign.douyinstatic.com,reject
 DOMAIN,webcast5-open-lf.douyin.com,reject
@@ -228664,9 +228651,7 @@ DOMAIN,vemarsdev.com,reject
 DOMAIN,ohayoo.cn,reject
 DOMAIN,rtlog3-applog-lq.fqnovel.com,reject
 DOMAIN,rtlog5-applog-lq.fqnovel.com,reject
-DOMAIN,lf3-reading.fqnovelstatic.com,reject
 DOMAIN,log3-applog-lq.fqnovel.com,reject
-DOMAIN,v6-novelapp-nxyd.fqnovelvod.com,reject
 DOMAIN,xpis-xcdn.youku.com,reject
 DOMAIN,xpis-mob-xcdn.youku.com,reject
 DOMAIN,youku-jmacs.m.taobao.com,reject
@@ -229399,7 +229384,6 @@ DOMAIN,volcsiriusbd.com,reject
 DOMAIN,sealaly.net,reject
 DOMAIN,vegslb.com,reject
 DOMAIN,siomxity.com,reject
-DOMAIN,lf-fe.fqnovelstatic.com,reject
 DOMAIN,huixuanjiasu.com,reject
 DOMAIN,life-service-open.zijieapi.com,reject
 DOMAIN,tapad-platform.tapimg.com,reject
@@ -230202,7 +230186,6 @@ DOMAIN,analytics.bytescm.com,reject
 DOMAIN,sf-tb-sg.ibytedtos.com,reject
 DOMAIN,p1-dy.bytexservice.com,reject
 DOMAIN,free-lbv3.idouyinvod.com,reject
-DOMAIN,novelapp.fqnovelvod.com,reject
 DOMAIN,mon3-misc.fqnovel.com,reject
 DOMAIN,mon11-misc.fqnovel.com,reject
 DOMAIN,ichannel.snssdk.com.bytedns.net,reject

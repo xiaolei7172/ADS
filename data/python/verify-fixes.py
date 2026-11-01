@@ -77,7 +77,7 @@ CASES = [
     ("dm.bytedance.com", True, "字节数据平台"),
     ("log3-applog-lf.fqnovel.com", True, "番茄日志埋点"),
     ("frontier100-toutiao-lf.fqnovel.com", True, "番茄埋点"),
-    ("v6-novelapp.fqnovelvod.com", True, "番茄视频广告"),
+    ("v6-novelapp.fqnovelvod.com", False, "番茄视频CDN（2026-11 改判：与 v3/v5/v9/v26 同族放行）"),
     ("adtrack.ucweb.com", True, "UC 广告追踪"),
     ("ucads.ucweb.com", True, "UC 广告"),
     ("union.ucweb.com", True, "UC 广告联盟"),
@@ -101,6 +101,15 @@ CASES = [
     ("c-adx.2345.com", True, "2345 广告交易"),
     ("ad.doubleclick.net", True, "Google DART 广告（原被白名单放行）"),
     ("v6-reading-ad.qznovelvod.com", True, "番茄阅读页广告（原被放行）"),
+    # —— 2026-11-01 下午：红果短剧 / 番茄小说播放链路 ——
+    ("api5-normal-sinfonlinea.fqnovel.com", False, "红果搜索 API（hongguoTV 逆向实锤）"),
+    ("api5-normal-sinfonlineb.fqnovel.com", False, "红果播放 API"),
+    ("v5-hl-h-hw.douyinvod.com", False, "视频节点(华为云)，上游 v* 通配放行的 DNS 层落实"),
+    ("v96.douyinvod.com", False, "视频节点"),
+    ("v6-novelapp.fqnovelvod.com", False, "番茄视频 CDN，对齐 v3/v5/v9/v26"),
+    ("lf-fe.fqnovelstatic.com", False, "番茄 H5 前端静态资源"),
+    ("lf3-reading.fqnovelstatic.com", False, "番茄阅读页静态资源"),
+    ("v5-hl-ali-reading-video.fqnovelvod.com", True, "阅读页信息流广告视频（保持拦）"),
 ]
 
 sets = {f: parse(R / f) for f in FILES if (R / f).exists()}
