@@ -1,0 +1,62 @@
+! ============================================================
+! 精确剔除表（exact rule cancellation）· 优先级：最高
+! 逐条匹配"域名"本身，只删这一条规则，不触发父子域折叠。
+! 与白名单的区别：白名单会连带放行所有子域（例如 @@||bytedance.com^
+! 会把 20 条子域拦截一起废掉），剔除表只拆掉"过宽的那一条"，
+! 子域规则原样保留。用于上游把整公司主域 / API 网关一锅端的场景。
+!
+! 语法：||domain^   → 删除该域名的拦截规则（含 hosts 格式的同一域名）
+!       @@||domain^ → 删除该域名的放行规则
+! 校验：改完必须跑 check-quality.py + 逐条 curl 验证
+! ============================================================
+
+! ---------- 一、字节主域整域拦截：连带打死功能性基础设施 ----------
+||bytedance.com^
+! ↑ 这一条会把整个 bytedance.com 端掉，抖音/番茄/头条 的配置下发、设备标识、
+!   小程序容器全跟着挂。子域里真正的埋点/广告归因仍保持拦截（见下方清单末尾）
+||tnc3-aliec2.bytedance.com^
+||tnc3-alisc1.bytedance.com^
+||tnc3-alisc2.bytedance.com^
+||tnc3-bjlgy.bytedance.com^
+||scc.bytedance.com^
+||ttwid.bytedance.com^
+||microapp.bytedance.com^
+||ipolyfill-origin.bytedance.com^
+||cdn-tos-cn.bytedance.net^
+||www.bytedance.com^
+||jobs.bytedance.com^
+||abtestvm.bytedance.com^
+||webim.bytedance.com^
+! 仍保持拦截（埋点 / 广告归因）：||mssdk.bytedance.com^ ||mssdk-bu.bytedance.com^
+!   ||creativelab-proxy.bytedance.com^ ||dm.bytedance.com^ ||amcn.bytedance.com^
+! 说明：pitaya / ad-experience / ttwid / www / jobs / abtestvm / ipolyfill-origin
+!   早已被「当初白名单」整体放行，本表对它们是冗余保险（上游改白名单时兜底）。
+
+! ---------- 二、番茄小说内容 API：拦了 App 直接白屏 ----------
+! 本仓库 data/mod/adblock.txt 当初就明确"宁缺毋滥"没拦 api3-normal-lf，
+! 但海哥源把整族 api{3,5}-normal-* 全端了，这里逐条拆回。
+||api.fqnovel.com^
+||api3-normal.fqnovel.com^
+||api5-normal.fqnovel.com^
+||api3-normal-lf.fqnovel.com^
+||api3-normal-hl.fqnovel.com^
+||api3-normal-lq.fqnovel.com^
+||api5-normal-lf.fqnovel.com^
+||api5-normal-hl.fqnovel.com^
+||api5-normal-lq.fqnovel.com^
+||api3-normal-sinfonlineb.fqnovel.com^
+||api5-normal-sinfonlineb.fqnovel.com^
+||api3-normal-sinfonlinec.fqnovel.com^
+||api5-normal-sinfonlinec.fqnovel.com^
+! 仍保持拦截（日志 / 埋点 / 视频广告，不影响正文与章节加载）：
+!   ||log3-applog-*.fqnovel.com^ ||mon3-misc-*^ ||rtlog*^
+!   ||applog-*^ ||frontier100-toutiao-*^ ||v6-novelapp*.fqnovelvod.com^
+
+! ---------- 三、UC 根域：过宽的放行与过宽的拦截一起拆 ----------
+! @@||ucweb.com^ 把 46 条 UC 广告/追踪域全放行了（广告全漏）；
+! 但只删它又会让 ||ucweb.com^ 复活，把 u3 资源集群 / cms / ucsec 一起端掉。
+! 所以两条根域规则同时剔除，改为"逐条点名"：
+!   放行 → data/mod/whitelist.txt 里的 10 条功能子域
+!   拦截 → 保留下游 20 余条广告/追踪子域（adtrack / ucads / union / insight / utp …）
+@@||ucweb.com^
+||ucweb.com^

@@ -19,6 +19,7 @@ sys.path.insert(0, SCRIPT_DIR)
 from common import (
     RULES_DIR, TMP_DIR, MOD_DIR, REPO_ROOT,
     allow_domain, block_domain, is_allowed, is_junk_hosts_line, count_valid_lines, valid_domain,
+    hosts_target,
 )
 
 os.makedirs(TMP_DIR, exist_ok=True)
@@ -84,6 +85,31 @@ ad_files = sorted(glob.glob(os.path.join(TMP_DIR, "adblock_*.txt")))
 allow_files = sorted(glob.glob(os.path.join(TMP_DIR, "allow_*.txt")))
 local_white_path = os.path.join(MOD_DIR, "whitelist.txt")
 local_black_path = os.path.join(MOD_DIR, "adblock.txt")
+local_exclude_path = os.path.join(MOD_DIR, "exclude.txt")
+
+# ==========================================
+# 精确剔除表：只删"过宽的那一条"规则，不做父子域折叠
+# 白名单治不了这类源——@@||company.com^ 会连带废掉几十条子域拦截，
+# 副作用比问题本身还大；剔除表按域名逐条对齐，子域规则原样保留。
+# ==========================================
+exclude_block_domains = set()
+exclude_allow_domains = set()
+if os.path.exists(local_exclude_path):
+    with open(local_exclude_path, "r", encoding="utf-8", errors="ignore") as _f:
+        for _line in _f:
+            _s = _line.strip()
+            if not _s or _s.startswith(("!", "#")):
+                continue
+            if _s.startswith("@@"):
+                _d = allow_domain(_s)
+                if _d:
+                    exclude_allow_domains.add(_d)
+            else:
+                _d = block_domain(_s) or hosts_target(_s)
+                if _d:
+                    exclude_block_domains.add(_d)
+    print(f"🧯 已加载精确剔除表：data/mod/exclude.txt"
+          f"（拦截 {len(exclude_block_domains)} 条 / 放行 {len(exclude_allow_domains)} 条）")
 
 def collect_white(path, convert_bare=False):
     """收集 @@ 白名单行；convert_bare=True 时把裸域名行转为 @@||domain^。
@@ -114,6 +140,14 @@ if os.path.exists(local_white_path):
     n = collect_white(local_white_path, convert_bare=True)
     print(f"✅ 已加载本地白名单：data/mod/whitelist.txt（{n} 条）")
 
+# 精确剔除过宽的放行规则（如 @@||ucweb.com^ 会把 46 条 UC 广告域一起放行）。
+# 必须在构建 allow_domain_set 之前剔除，否则子域拦截已被 is_allowed 判掉。
+if exclude_allow_domains:
+    _before = len(all_white_raw)
+    all_white_raw = {r for r in all_white_raw
+                     if (allow_domain(r) or "") not in exclude_allow_domains}
+    print(f"🧯 精确剔除过宽放行规则 {_before - len(all_white_raw)} 条（data/mod/exclude.txt）")
+
 # 白名单域名集合：只收合法行，跳过带空格等非法行
 allow_domain_set = set()
 for rule in all_white_raw:
@@ -132,9 +166,10 @@ black_set = set()
 blocked_by_white = 0
 junk_skipped = 0
 bad_skipped = 0
+excluded_block = 0
 
 def append_black(path):
-    global blocked_by_white, junk_skipped, bad_skipped
+    global blocked_by_white, junk_skipped, bad_skipped, excluded_block
     final_name, desc, url = get_rule_meta(path)
     new_rules = []
     with open(path, "r", encoding="utf-8", errors="ignore") as f:
@@ -150,6 +185,12 @@ def append_black(path):
             if is_bad_rule(line):
                 bad_skipped += 1
                 continue
+            # 精确剔除：只拆过宽的那一条（如 ||bytedance.com^），子域规则保留
+            if exclude_block_domains:
+                _d = block_domain(line) or hosts_target(line)
+                if _d and _d in exclude_block_domains:
+                    excluded_block += 1
+                    continue
             # 大小写不敏感去重：||Media.net^ 与 ||media.net^ 是同一条规则
             key = line.lower()
             if key not in black_set:
@@ -316,6 +357,7 @@ print("\n✅ 全部合并完成！本地黑白名单均已完整写入！")
 print(f"📊 黑名单：{count_valid_lines(os.path.join(RULES_DIR, 'adblock.txt'))} 条")
 print(f"📊 白名单：{len(all_white_raw)} 条")
 print(f"🚫 因白名单（父子域）放行而移除的拦截规则：{blocked_by_white} 条（本地自定义规则豁免）")
+print(f"🧯 因精确剔除表移除的过宽拦截规则：{excluded_block} 条（data/mod/exclude.txt）")
 print(f"🧹 丢弃回环/垃圾行：{junk_skipped} 条")
 print(f"🧽 丢弃无效/有害语法（$badfilter、尾点规则、IP 映射行）：{bad_skipped} 条")
 print("ℹ️  dns.txt 由 filter-dns.py 统一生成（原第 4 段会被它覆盖，已移除）")

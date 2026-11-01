@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影规则聚合 · 广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-01 11:51:16（北京时间）
-! 📊 有效规则：273524 条
+! ⏰ 更新时间：2026-11-01 12:01:53（北京时间）
+! 📊 有效规则：273503 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-01 11:51:16 | ✅ 有效规则 273524 条
+! Description: ⏰ 更新时间 2026-11-01 12:01:53 | ✅ 有效规则 273503 条
 ! ======================================================================
 ! ==============================================
 ! 📋 规则来源：本地自定义规则
@@ -10490,13 +10490,10 @@
 0.0.0.0 tnc16-useast1a.isnssdk.com
 0.0.0.0 tnc3-aliec2.snssdk.com
 0.0.0.0 tnc3-aliec2.zijieapi.com
-0.0.0.0 tnc3-alisc1.bytedance.com
 0.0.0.0 tnc3-alisc1.snssdk.com
 0.0.0.0 tnc3-alisc1.zijieapi.com
-0.0.0.0 tnc3-alisc2.bytedance.com
 0.0.0.0 tnc3-alisc2.snssdk.com
 0.0.0.0 tnc3-alisc2.zijieapi.com
-0.0.0.0 tnc3-bjlgy.bytedance.com
 0.0.0.0 tnc3-bjlgy.snssdk.com
 0.0.0.0 tnc3-bjlgy.zijieapi.com
 0.0.0.0 toads.osdn.com
@@ -27568,9 +27565,6 @@
 ||byteadverts.com^
 ||tracking.server.bytecon.com^
 ||dm.bytedance.com^
-||tnc3-aliec2.bytedance.com^
-||tnc3-alisc1.bytedance.com^
-||tnc3-bjlgy.bytedance.com^
 ||mssdk-bu.bytedance.com^
 ||mon-sg.byteintlapi.com^
 ||explore.bytelab.uk^
@@ -93025,6 +93019,15 @@
 ||ucuumhsxenzwq.online^
 ||ucuypyhcns.com^
 ||ucweb.cn^
+||px-intl.ucweb.com^
+||adn.insight.ucweb.com^
+||adtrack.ucweb.com^
+||ucus.ucweb.com^
+||up1.tj.u2.ucweb.com^
+||up4.ucweb.com^
+||utp-dmp.ucweb.com^
+||utp.ucweb.com^
+||gjapplog.ucweb.com^
 ||ucwypnemwclwd.online^
 ||ucyqufwwjyhex.space^
 ||uczzd.com^
@@ -110496,6 +110499,7 @@
 ||adtmonetize.com^
 ||adtoqbuejunef.com^
 ||adtorque.in^
+||adtrack-intl.ucweb.com^
 ||adtrack.herbalia.rs^
 ||adtrack.king.com^
 ||adtrack.kireibiz.jp^
@@ -140001,6 +140005,7 @@
 ||gjseep.com^
 ||gjtdzt.brandchee.com^
 ||gjtrack.uc.cn^
+||gjtrack.ucweb.com^
 ||gjvgp.contactlensking.com^
 ||gjxmcla.pro^
 ||gjxwrn.nettilamppu.fi^
@@ -150428,6 +150433,7 @@
 ||insight.tryastavina.com^
 ||insight.tryokinami.com^
 ||insight.tryonset.com^
+||insight.ucweb.com^
 ||insight.veloura.center^
 ||insight.vinnea.dk^
 ||insight.vinnea.no^
@@ -150535,6 +150541,7 @@
 ||instarooliths.com^
 ||instinctiveads.com^
 ||institutehopelessbeck.com^
+||instory-log.ucnews.ucweb.com^
 ||instruments102.com^
 ||instui201.info^
 ||insurance.locktonaffinity.net^
@@ -150612,6 +150619,7 @@
 ||intimidatepropel.com^
 ||intinfo.wolterskluwer.com^
 ||intlsst.zagg.com^
+||intlsucus.ucweb.com^
 ||intortarguing.com^
 ||intorterraon.com^
 ||intouch.schlesingerassociates.com^
@@ -162617,6 +162625,7 @@
 ||logsink.zedge.net^
 ||logsk.glomancloud.gr^
 ||logsss.com^
+||logssug.ucweb.com^
 ||logstash-*.radio-canada.ca^
 ||logu.hpplay.cn^
 ||logv2.kienthuc.net.vn^
@@ -220683,6 +220692,7 @@
 ||uc.qq.uuaoz.com^
 ||uc5gbql.c1qoyyyjlnkx4h.cyou^
 ||uc768.wk7oecq4nzen7pvf.cyou^
+||ucads.ucweb.com^
 ||ucapi.unlon.com^
 ||ucawkg.rsfplus.com^
 ||ucb.1rjm53pqcyjmb632jq.cyou^
@@ -221180,6 +221190,7 @@
 ||uninvitedenvious.com^
 ||union*.365inews.com^
 ||union.360.cn^
+||union.ucweb.com^
 ||unionsyeggman.cfd^
 ||uniqueliernes.com^
 ||unisdk.proxima.nie.easebar.com^
@@ -244610,7 +244621,6 @@ analytics-*.aasaam.com
 ||*.qc.bsccdn.net^
 ||log0-applog-lq.fqnovel.com^
 ||api.fanqiesdk.com^
-||api.fqnovel.com^
 ||zlink.ugsdk.cn^
 ||clue.oceanengine.com^
 ||vemarsdev.com^
@@ -244618,12 +244628,6 @@ analytics-*.aasaam.com
 ||ohayoo.cn^
 ||rtlog3-applog-lq.fqnovel.com^
 ||rtlog5-applog-lq.fqnovel.com^
-||api3-normal-lf.fqnovel.com^
-||api3-normal-hl.fqnovel.com^
-||api3-normal-lq.fqnovel.com^
-||api5-normal-lf.fqnovel.com^
-||api5-normal-hl.fqnovel.com^
-||api5-normal-lq.fqnovel.com^
 ||lf3-reading.fqnovelstatic.com^
 ||log3-applog-lq.fqnovel.com^
 ||v6-novelapp-nxyd.fqnovelvod.com^
@@ -244657,6 +244661,7 @@ analytics-*.aasaam.com
 ||apd-pcdnvodstat.teg.tencent-cloud.net^
 ||apd-vodp2plogin.teg.tencent-cloud.net^
 ||site.uc.cn^
+||sdkupgrade.insight.ucweb.com^
 ||track.ucdns.uc.cn^
 ||jd.sundxs.com^
 ||dsp-x.jd.com.gslb.qianxun.com^
@@ -245509,7 +245514,6 @@ analytics-*.aasaam.com
 ||api.htp.hubcloud.com.cn^
 ||sdktmp.hubcloud.com.cn^
 ||sdk.beizi.biz^
-||scc.bytedance.com^
 ||www.bytedance.com.w.cdngslb.com^
 ||www.bytedance.com.queniurc.com^
 ||rt.applovin.com^
@@ -245817,7 +245821,6 @@ analytics-*.aasaam.com
 ||errdom.oss-cn-heyuan.aliyuncs.com^
 ||adeng.lebo.cn^
 ||6osurvos.fn.bytedance.net^
-||microapp.bytedance.com^
 ||bdxiguaimg.com^
 ||sdk.verification.jiguang.cn^
 ||smartop-sdkapi.jiguang.cn^
@@ -248637,8 +248640,6 @@ play.google.com#@#a[href^="intent://"]
 127.0.0.1 p3-novel.byteimg.com  #24.6.17测试
 127.0.0.1 p6-novel.byteimg.com
 127.0.0.1 mssdk-bu.bytedance.com
-127.0.0.1 tnc3-alisc1.bytedance.com
-127.0.0.1 tnc3-aliec2.bytedance.com
 127.0.0.1 lf3-cdn-tos.bytegecko.com
 127.0.0.1 lf6-cdn-tos.bytegecko.com
 127.0.0.1 lf9-cdn-tos.bytegecko.com
@@ -248651,7 +248652,6 @@ play.google.com#@#a[href^="intent://"]
 127.0.0.1 dig.bdurl.net  #头条极速版没网
 127.0.0.1 mssdk.bytedance.com
 127.0.0.1 dm.bytedance.com
-127.0.0.1 tnc3-bjlgy.bytedance.com
 127.0.0.1 pitaya.bytedance.com
 127.0.0.1 adbrand.byteimg.com
 127.0.0.1 ad-sign.byteimg.com
@@ -248671,14 +248671,6 @@ play.google.com#@#a[href^="intent://"]
 127.0.0.1 p9-webcast.douyinpic.com
 127.0.0.1 pull-flv-l11.douyincdn.com
 127.0.0.1 free-lbv3.idouyinvod.com  #据说误杀网页版视频，测试未发现有影响
-127.0.0.1 api3-normal.fqnovel.com
-127.0.0.1 api3-normal-hl.fqnovel.com
-127.0.0.1 api3-normal-lf.fqnovel.com
-127.0.0.1 api3-normal-lq.fqnovel.com
-127.0.0.1 api5-normal.fqnovel.com
-127.0.0.1 api5-normal-hl.fqnovel.com
-127.0.0.1 api5-normal-lf.fqnovel.com
-127.0.0.1 api5-normal-lq.fqnovel.com
 127.0.0.1 p6-reading-sign.fqnovelpic.com
 127.0.0.1 novelapp.fqnovelvod.com
 127.0.0.1 frontier100-toutiao-lf.fqnovel.com
@@ -254034,8 +254026,6 @@ play.google.com#@#a[href^="intent://"]
 0.0.0.0 api1.shuzilm.cn
 0.0.0.0 api2.deepinstall.com
 0.0.0.0 api2.openinstall.io
-0.0.0.0 api3-normal-hl.fqnovel.com
-0.0.0.0 api5-normal-hl.fqnovel.com
 0.0.0.0 apicloud.mob.com
 0.0.0.0 apicloud.zol.com.cn
 0.0.0.0 apidy.vaas.jiguang.cn
@@ -256234,7 +256224,6 @@ play.google.com#@#a[href^="intent://"]
 0.0.0.0 tj.kugou.com
 0.0.0.0 tj.video.qq.com
 0.0.0.0 tmfsdktcpv4.m.qq.com
-0.0.0.0 tnc3-aliec2.bytedance.com
 0.0.0.0 tobapplog.ctobsnssdk.com
 0.0.0.0 toblog.ctobsnssdk.com
 0.0.0.0 toblog.snssdk.com
@@ -256422,12 +256411,6 @@ play.google.com#@#a[href^="intent://"]
 0.0.0.0 adx-fb.wandoujia.com
 0.0.0.0 android-imgs.25pp.com
 0.0.0.0 api.douban.com
-0.0.0.0 api3-normal-lf.fqnovel.com
-0.0.0.0 api3-normal-lq.fqnovel.com
-0.0.0.0 api3-normal.fqnovel.com
-0.0.0.0 api5-normal-lf.fqnovel.com
-0.0.0.0 api5-normal-lq.fqnovel.com
-0.0.0.0 api5-normal.fqnovel.com
 0.0.0.0 app-api.smzdm.com
 0.0.0.0 apps.bytesfield-b.com
 0.0.0.0 artery.douban.com
@@ -259418,6 +259401,7 @@ play.google.com#@#a[href^="intent://"]
 ||cerebral.typn.com^
 ||m.uc123.com^
 ||eva.ucas.com^
+||slot.union.ucweb.com^
 ||ue.ueadlian.com^
 ||e.ueram.com^
 ||m.ueram.com^
@@ -264742,10 +264726,8 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||api2.immersivetranslate.com^
 ||api2.openinstall.io^
 ||api2.srbs35.com^
-||api3-normal-sinfonlinec.fqnovel.com^
 ||api3.matangame.com^
 ||api5-normal-lq.toutiaoapi.com^
-||api5-normal-sinfonlinec.fqnovel.com^
 ||api88.shananfen.com^
 ||api8800.swarnor.com^
 ||apiapm.gz4399.com^
@@ -265188,7 +265170,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||bydsp30.com^
 ||byoc.143.cc^
 ||bypb.7klyd.com^
-||bytedance.com^
 ||bytetcc.com^
 ||bz5.sj8s0j7.cn^
 ||bzcnfwlqijtvdwvx.top^
@@ -265347,7 +265328,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||cdn-t5game1.scgame.com.cn^
 ||cdn-tg-pt.4366.com.5099a8be.cdnhwchcg02.com^
 ||cdn-tg-pt.4366.com^
-||cdn-tos-cn.bytedance.net^
 ||cdn-tx-h5-prod.huanyuantech.com^
 ||cdn-v69.trafficmanager.net^
 ||cdn-wx-v6-lds.ludashi.com^
@@ -271288,7 +271268,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||webh5.24705a4.com^
 ||webh5.42d4c84.com^
 ||webid.360.cn^
-||webim.bytedance.com^
 ||websocket.kh686.com^
 ||websocket.meilitiaodongxinxi.xyz^
 ||wecdfsza.3683ac5b.er.aliyun-esa.net^

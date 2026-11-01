@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影规则聚合 · 白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-01 11:51:17（北京时间）
-! 📊 有效规则：6716 条
+! ⏰ 更新时间：2026-11-01 12:01:53（北京时间）
+! 📊 有效规则：6727 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 白名单规则 📌
-! Description: ⏰ 更新时间 2026-11-01 11:51:17 | ✅ 有效规则 6716 条
+! Description: ⏰ 更新时间 2026-11-01 12:01:53 | ✅ 有效规则 6727 条
 ! ======================================================================
 ! ==============================================
 ! 📋 白名单来源：anti-ad 官方规则（规则内置）
@@ -3042,7 +3042,6 @@
 @@||ulive-interact.uc.cn^
 @@||ulive-sc.uc.cn^
 @@||v.uc.cn^
-@@||ucweb.com^
 @@||emoji.uc.cn^
 @@||m.uczzd.cn^
 @@||iflow-api.uc.cn^
@@ -6744,3 +6743,15 @@
 @@||tz.sec.xiaomi.com^
 ! 📋 白名单来源：本地自定义规则（data/mod/whitelist.txt）
 ! ⚠️ 优先级：最高
+@@||u3.ucweb.com^
+@@||cms.ucweb.com^
+@@||client.video.ucweb.com^
+@@||kwurl.ucweb.com^
+@@||ucsec.ucweb.com^
+@@||ucsec1.ucweb.com^
+@@||uc9.ucweb.com^
+@@||bts-la.ucweb.com^
+@@||hk.napi.ucweb.com^
+@@||sea.napi.ucweb.com^
+@@||safe.ucweb.com^
+@@||wap3.ucweb.com^

@@ -106,3 +106,18 @@
 @@||ecma.bdimg.com^
 @@||retcode.taobao.com^
 @@||lmlicenses.wip4.adobe.com^
+
+! UC 浏览器功能子域（替代原来的 @@||ucweb.com^ 整域放行）
+! 上游 46 条 ucweb 规则里，广告/追踪域继续拦，资源与安全域在这里点名放行
+@@||u3.ucweb.com^
+@@||cms.ucweb.com^
+@@||client.video.ucweb.com^
+@@||kwurl.ucweb.com^
+@@||ucsec.ucweb.com^
+@@||ucsec1.ucweb.com^
+@@||uc9.ucweb.com^
+@@||bts-la.ucweb.com^
+@@||hk.napi.ucweb.com^
+@@||sea.napi.ucweb.com^
+@@||safe.ucweb.com^
+@@||wap3.ucweb.com^

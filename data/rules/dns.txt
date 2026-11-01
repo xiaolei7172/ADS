@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影规则聚合 · DNS 拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-01 11:51:16（北京时间）
-! 📊 有效规则：242265 条
+! ⏰ 更新时间：2026-11-01 12:01:53（北京时间）
+! 📊 有效规则：242273 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · DNS 拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-01 11:51:16 | ✅ 有效规则 242265 条
+! Description: ⏰ 更新时间 2026-11-01 12:01:53 | ✅ 有效规则 242273 条
 ! ======================================================================
 ! 本文件由 filter-dns.py 从 adblock.txt 提取（项目：天影规则聚合）
 ! 已应用：白名单父子域过滤 + 父子域语义去重
@@ -17,13 +17,13 @@
 
 ! ────────────── 来源汇总 ──────────────
 !       219 条  本地自定义规则
-!      5631 条  1007-Hosts
-!     91001 条  anti-ad 官方规则
-!    119290 条  AdRules DNS List [AdRules DNS List]
+!      5643 条  1007-Hosts
+!     91003 条  anti-ad 官方规则
+!    119295 条  AdRules DNS List [AdRules DNS List]
 !      9550 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !      2749 条  OISD 拦截规则 [oisd small]
-!      4728 条  5460 [酷安广告规则]
-!      9097 条  海哥规则
+!      4720 条  5460 [酷安广告规则]
+!      9094 条  海哥规则
 ! ────────────────────────────────────────
 
 ! ==============================================
@@ -258,7 +258,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/lingeringsound/10007_auto/master/all
 ! ==============================================
-! 📊 本区规则：5631 条
+! 📊 本区规则：5643 条
 ! ==============================================
 ||1-free-share-buttons.com^
 ||100webads.com^
@@ -2587,6 +2587,7 @@
 ||adtima-video.zascdn.me^
 ||adtrack.cimedia.net^
 ||adtrack.king.com^
+||adtrack.ucweb.com^
 ||adtrack.voicestar.com^
 ||adtradradservices.com^
 ||adukwai.com^
@@ -3957,6 +3958,7 @@
 ||dlads.cn^
 ||dm-hl.toutiao.com^
 ||dm-lq.toutiao.com^
+||dm.bytedance.com^
 ||dm.isnssdk.com^
 ||dm.jb51.net^
 ||dm.mlstat.com^
@@ -4218,6 +4220,7 @@
 ||gikoqe.pro^
 ||gimg.baidu.com^
 ||girlsadvanceethiopia.org^
+||gjtrack.ucweb.com^
 ||globalwebads.com^
 ||glores2.lanzoui.com^
 ||glores2.lanzoux.com^
@@ -4385,6 +4388,7 @@
 ||inmobisdk-a.akamaihd.net^
 ||inner-active.mobi^
 ||inpmone.pro^
+||insight.ucweb.com^
 ||inst.360safe.com^
 ||install.365-stream.com^
 ||installads.com^
@@ -4519,6 +4523,7 @@
 ||location.ximalaya.com^
 ||logiclotemax-pro.pages.dev^
 ||logiclotemax200-click.pages.dev^
+||logssug.ucweb.com^
 ||lorvano.pro^
 ||lorventa.pro^
 ||lorvian.pro^
@@ -4660,6 +4665,8 @@
 ||msg.simeji.baidu.jp^
 ||msite.baidu.com^
 ||mslinks-downloads.com^
+||mssdk-bu.bytedance.com^
+||mssdk.bytedance.com^
 ||mssp.baidu.com^
 ||mu88ads.com^
 ||multi-az-ad.kuaishou.cn^
@@ -5485,6 +5492,7 @@
 ||uc.whkwpzz.cn^
 ||ucdc-upaas.uc.cn^
 ||ucstat.baidu.com^
+||ucus.ucweb.com^
 ||udc.msn.com^
 ||uk.ads.hexus.net^
 ||uklad61.help^
@@ -5512,6 +5520,8 @@
 ||unityads.unitychina.cn^
 ||unstat.baidu.com^
 ||uole.ad.uol.com.br^
+||up1.tj.u2.ucweb.com^
+||up4.ucweb.com^
 ||update-confirm-pay-tax.com^
 ||update-directinfo.com^
 ||update-expiry-notification-report.appwrite.network^
@@ -5549,6 +5559,8 @@
 ||ushealthyadvisor.com^
 ||utensils.pro^
 ||utility.baidu.com^
+||utp-dmp.ucweb.com^
+||utp.ucweb.com^
 ||uxip-res.meizu.com^
 ||v.adsrvr.cn^
 ||v.nhatvip.pro^
@@ -5897,7 +5909,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://anti-ad.net/easylist.txt
 ! ==============================================
-! 📊 本区规则：91001 条
+! 📊 本区规则：91003 条
 ! ==============================================
 ||000491b06a.com^
 ||000dn.com^
@@ -84710,6 +84722,8 @@
 ||ucuumhsxenzwq.online^
 ||ucuypyhcns.com^
 ||ucweb.cn^
+||px-intl.ucweb.com^
+||gjapplog.ucweb.com^
 ||ucwypnemwclwd.online^
 ||ucyqufwwjyhex.space^
 ||uczzd.com^
@@ -96906,7 +96920,7 @@
 ! 📝 规则说明：List for blocking ads in the Chinese region. Block Ads, Trackers, Malware, HTTPDNS, PCDN.
 ! 🔗 原始地址：https://gp.adrules.top/dns.txt
 ! ==============================================
-! 📊 本区规则：119290 条
+! 📊 本区规则：119295 条
 ! ==============================================
 ||0.avmarket.rs^
 ||0.nextyourcontent.com^
@@ -100483,6 +100497,7 @@
 ||adtmonetize.com^
 ||adtoqbuejunef.com^
 ||adtorque.in^
+||adtrack-intl.ucweb.com^
 ||adtrack.herbalia.rs^
 ||adtrack.kireibiz.jp^
 ||adtrack.ovotaris.com^
@@ -138724,6 +138739,7 @@
 ||instarooliths.com^
 ||instinctiveads.com^
 ||institutehopelessbeck.com^
+||instory-log.ucnews.ucweb.com^
 ||instruments102.com^
 ||instui201.info^
 ||insurance.locktonaffinity.net^
@@ -138798,6 +138814,7 @@
 ||intimidatepropel.com^
 ||intinfo.wolterskluwer.com^
 ||intlsst.zagg.com^
+||intlsucus.ucweb.com^
 ||intortarguing.com^
 ||intorterraon.com^
 ||intouch.schlesingerassociates.com^
@@ -207212,6 +207229,7 @@
 ||uc.qq.uuaoz.com^
 ||uc5gbql.c1qoyyyjlnkx4h.cyou^
 ||uc768.wk7oecq4nzen7pvf.cyou^
+||ucads.ucweb.com^
 ||ucapi.unlon.com^
 ||ucawkg.rsfplus.com^
 ||ucb.1rjm53pqcyjmb632jq.cyou^
@@ -207688,6 +207706,7 @@
 ||unifully.com^
 ||uniguide.fr^
 ||uninvitedenvious.com^
+||union.ucweb.com^
 ||unionsyeggman.cfd^
 ||uniqueliernes.com^
 ||unisdk.proxima.nie.easebar.com^
@@ -228519,7 +228538,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/qq5460168/dangchu/main/black.txt
 ! ==============================================
-! 📊 本区规则：4728 条
+! 📊 本区规则：4720 条
 ! ==============================================
 ||ad.360safe.com^
 ||cloud.360safe.com^
@@ -228650,17 +228669,10 @@
 ||access.if.iqiyi.com^
 ||meta.video.iqiyi.com^
 ||log0-applog-lq.fqnovel.com^
-||api.fqnovel.com^
 ||vemarsdev.com^
 ||ohayoo.cn^
 ||rtlog3-applog-lq.fqnovel.com^
 ||rtlog5-applog-lq.fqnovel.com^
-||api3-normal-lf.fqnovel.com^
-||api3-normal-hl.fqnovel.com^
-||api3-normal-lq.fqnovel.com^
-||api5-normal-lf.fqnovel.com^
-||api5-normal-hl.fqnovel.com^
-||api5-normal-lq.fqnovel.com^
 ||lf3-reading.fqnovelstatic.com^
 ||log3-applog-lq.fqnovel.com^
 ||v6-novelapp-nxyd.fqnovelvod.com^
@@ -229316,6 +229328,7 @@
 ||data-drru.push.dbankcloud.com^
 ||apps.bytesfield-b.com^
 ||oceanengine.com^
+||amcn.bytedance.com^
 ||api.megvii.com^
 ||api.wqycq.com^
 ||aq-ad-h5-fe.c.t.soulapp-inc.cn^
@@ -230191,8 +230204,6 @@
 ||sf-tb-sg.ibytedtos.com^
 ||p1-dy.bytexservice.com^
 ||free-lbv3.idouyinvod.com^
-||api3-normal.fqnovel.com^
-||api5-normal.fqnovel.com^
 ||novelapp.fqnovelvod.com^
 ||mon3-misc.fqnovel.com^
 ||mon11-misc.fqnovel.com^
@@ -233255,7 +233266,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt
 ! ==============================================
-! 📊 本区规则：9097 条
+! 📊 本区规则：9094 条
 ! ==============================================
 ||www.programming-rabbit.com^
 ||lxdblzka2xrh5g8f45la.fdw84egqu7lf.kgbbzc.cn^
@@ -235596,10 +235607,8 @@
 ||api2.gdapi2.com^
 ||api2.immersivetranslate.com^
 ||api2.srbs35.com^
-||api3-normal-sinfonlinec.fqnovel.com^
 ||api3.matangame.com^
 ||api5-normal-lq.toutiaoapi.com^
-||api5-normal-sinfonlinec.fqnovel.com^
 ||api88.shananfen.com^
 ||api8800.swarnor.com^
 ||apiapm.gz4399.com^
@@ -235983,7 +235992,6 @@
 ||by6pw.cc^
 ||bydsp30.com^
 ||bypb.7klyd.com^
-||bytedance.com^
 ||bytetcc.com^
 ||bz5.sj8s0j7.cn^
 ||bzcnfwlqijtvdwvx.top^
@@ -236106,7 +236114,6 @@
 ||cdn-sdk.mxzgame.com^
 ||cdn-t5game1.scgame.com.cn^
 ||cdn-tg-pt.4366.com.5099a8be.cdnhwchcg02.com^
-||cdn-tos-cn.bytedance.net^
 ||cdn-tx-h5-prod.huanyuantech.com^
 ||cdn-v69.trafficmanager.net^
 ||cdn-wx-v6-lds.ludashi.com^
@@ -236361,6 +236368,7 @@
 ||cqrxe540.com^
 ||cr63-site-01.gocname.com^
 ||crcok.cn^
+||creativelab-proxy.bytedance.com^
 ||crjbpade.xiaohongshucdn-yd.top^
 ||crl.edge.digicert.com^
 ||crm.feichengjiaoyu.com^

@@ -1,7 +1,7 @@
 # 天影规则聚合 · HOSTS 版
 # 由 dns.txt（已去重）自动转换，规则与 dns.txt 完全一致
 # 📌 项目地址：https://github.com/xiaolei7172/ADS
-# ⏰ 更新时间：2026-11-01 11:50:48（北京时间） | 📊 有效规则：242265 条
+# ⏰ 更新时间：2026-11-01 12:01:34（北京时间） | 📊 有效规则：242273 条
 # 🔄 更新频率：每12小时自动更新
 0.0.0.0 ads3-normal-hl.zijieapi.com
 0.0.0.0 ads3-normal-lf.zijieapi.com
@@ -2549,6 +2549,7 @@
 0.0.0.0 adtima-video.zascdn.me
 0.0.0.0 adtrack.cimedia.net
 0.0.0.0 adtrack.king.com
+0.0.0.0 adtrack.ucweb.com
 0.0.0.0 adtrack.voicestar.com
 0.0.0.0 adtradradservices.com
 0.0.0.0 adukwai.com
@@ -3919,6 +3920,7 @@
 0.0.0.0 dlads.cn
 0.0.0.0 dm-hl.toutiao.com
 0.0.0.0 dm-lq.toutiao.com
+0.0.0.0 dm.bytedance.com
 0.0.0.0 dm.isnssdk.com
 0.0.0.0 dm.jb51.net
 0.0.0.0 dm.mlstat.com
@@ -4180,6 +4182,7 @@
 0.0.0.0 gikoqe.pro
 0.0.0.0 gimg.baidu.com
 0.0.0.0 girlsadvanceethiopia.org
+0.0.0.0 gjtrack.ucweb.com
 0.0.0.0 globalwebads.com
 0.0.0.0 glores2.lanzoui.com
 0.0.0.0 glores2.lanzoux.com
@@ -4347,6 +4350,7 @@
 0.0.0.0 inmobisdk-a.akamaihd.net
 0.0.0.0 inner-active.mobi
 0.0.0.0 inpmone.pro
+0.0.0.0 insight.ucweb.com
 0.0.0.0 inst.360safe.com
 0.0.0.0 install.365-stream.com
 0.0.0.0 installads.com
@@ -4481,6 +4485,7 @@
 0.0.0.0 location.ximalaya.com
 0.0.0.0 logiclotemax-pro.pages.dev
 0.0.0.0 logiclotemax200-click.pages.dev
+0.0.0.0 logssug.ucweb.com
 0.0.0.0 lorvano.pro
 0.0.0.0 lorventa.pro
 0.0.0.0 lorvian.pro
@@ -4622,6 +4627,8 @@
 0.0.0.0 msg.simeji.baidu.jp
 0.0.0.0 msite.baidu.com
 0.0.0.0 mslinks-downloads.com
+0.0.0.0 mssdk-bu.bytedance.com
+0.0.0.0 mssdk.bytedance.com
 0.0.0.0 mssp.baidu.com
 0.0.0.0 mu88ads.com
 0.0.0.0 multi-az-ad.kuaishou.cn
@@ -5447,6 +5454,7 @@
 0.0.0.0 uc.whkwpzz.cn
 0.0.0.0 ucdc-upaas.uc.cn
 0.0.0.0 ucstat.baidu.com
+0.0.0.0 ucus.ucweb.com
 0.0.0.0 udc.msn.com
 0.0.0.0 uk.ads.hexus.net
 0.0.0.0 uklad61.help
@@ -5474,6 +5482,8 @@
 0.0.0.0 unityads.unitychina.cn
 0.0.0.0 unstat.baidu.com
 0.0.0.0 uole.ad.uol.com.br
+0.0.0.0 up1.tj.u2.ucweb.com
+0.0.0.0 up4.ucweb.com
 0.0.0.0 update-confirm-pay-tax.com
 0.0.0.0 update-directinfo.com
 0.0.0.0 update-expiry-notification-report.appwrite.network
@@ -5511,6 +5521,8 @@
 0.0.0.0 ushealthyadvisor.com
 0.0.0.0 utensils.pro
 0.0.0.0 utility.baidu.com
+0.0.0.0 utp-dmp.ucweb.com
+0.0.0.0 utp.ucweb.com
 0.0.0.0 uxip-res.meizu.com
 0.0.0.0 v.adsrvr.cn
 0.0.0.0 v.nhatvip.pro
@@ -84664,6 +84676,8 @@
 0.0.0.0 ucuumhsxenzwq.online
 0.0.0.0 ucuypyhcns.com
 0.0.0.0 ucweb.cn
+0.0.0.0 px-intl.ucweb.com
+0.0.0.0 gjapplog.ucweb.com
 0.0.0.0 ucwypnemwclwd.online
 0.0.0.0 ucyqufwwjyhex.space
 0.0.0.0 uczzd.com
@@ -100429,6 +100443,7 @@
 0.0.0.0 adtmonetize.com
 0.0.0.0 adtoqbuejunef.com
 0.0.0.0 adtorque.in
+0.0.0.0 adtrack-intl.ucweb.com
 0.0.0.0 adtrack.herbalia.rs
 0.0.0.0 adtrack.kireibiz.jp
 0.0.0.0 adtrack.ovotaris.com
@@ -138670,6 +138685,7 @@
 0.0.0.0 instarooliths.com
 0.0.0.0 instinctiveads.com
 0.0.0.0 institutehopelessbeck.com
+0.0.0.0 instory-log.ucnews.ucweb.com
 0.0.0.0 instruments102.com
 0.0.0.0 instui201.info
 0.0.0.0 insurance.locktonaffinity.net
@@ -138744,6 +138760,7 @@
 0.0.0.0 intimidatepropel.com
 0.0.0.0 intinfo.wolterskluwer.com
 0.0.0.0 intlsst.zagg.com
+0.0.0.0 intlsucus.ucweb.com
 0.0.0.0 intortarguing.com
 0.0.0.0 intorterraon.com
 0.0.0.0 intouch.schlesingerassociates.com
@@ -207158,6 +207175,7 @@
 0.0.0.0 uc.qq.uuaoz.com
 0.0.0.0 uc5gbql.c1qoyyyjlnkx4h.cyou
 0.0.0.0 uc768.wk7oecq4nzen7pvf.cyou
+0.0.0.0 ucads.ucweb.com
 0.0.0.0 ucapi.unlon.com
 0.0.0.0 ucawkg.rsfplus.com
 0.0.0.0 ucb.1rjm53pqcyjmb632jq.cyou
@@ -207634,6 +207652,7 @@
 0.0.0.0 unifully.com
 0.0.0.0 uniguide.fr
 0.0.0.0 uninvitedenvious.com
+0.0.0.0 union.ucweb.com
 0.0.0.0 unionsyeggman.cfd
 0.0.0.0 uniqueliernes.com
 0.0.0.0 unisdk.proxima.nie.easebar.com
@@ -228572,17 +228591,10 @@
 0.0.0.0 access.if.iqiyi.com
 0.0.0.0 meta.video.iqiyi.com
 0.0.0.0 log0-applog-lq.fqnovel.com
-0.0.0.0 api.fqnovel.com
 0.0.0.0 vemarsdev.com
 0.0.0.0 ohayoo.cn
 0.0.0.0 rtlog3-applog-lq.fqnovel.com
 0.0.0.0 rtlog5-applog-lq.fqnovel.com
-0.0.0.0 api3-normal-lf.fqnovel.com
-0.0.0.0 api3-normal-hl.fqnovel.com
-0.0.0.0 api3-normal-lq.fqnovel.com
-0.0.0.0 api5-normal-lf.fqnovel.com
-0.0.0.0 api5-normal-hl.fqnovel.com
-0.0.0.0 api5-normal-lq.fqnovel.com
 0.0.0.0 lf3-reading.fqnovelstatic.com
 0.0.0.0 log3-applog-lq.fqnovel.com
 0.0.0.0 v6-novelapp-nxyd.fqnovelvod.com
@@ -229238,6 +229250,7 @@
 0.0.0.0 data-drru.push.dbankcloud.com
 0.0.0.0 apps.bytesfield-b.com
 0.0.0.0 oceanengine.com
+0.0.0.0 amcn.bytedance.com
 0.0.0.0 api.megvii.com
 0.0.0.0 api.wqycq.com
 0.0.0.0 aq-ad-h5-fe.c.t.soulapp-inc.cn
@@ -230113,8 +230126,6 @@
 0.0.0.0 sf-tb-sg.ibytedtos.com
 0.0.0.0 p1-dy.bytexservice.com
 0.0.0.0 free-lbv3.idouyinvod.com
-0.0.0.0 api3-normal.fqnovel.com
-0.0.0.0 api5-normal.fqnovel.com
 0.0.0.0 novelapp.fqnovelvod.com
 0.0.0.0 mon3-misc.fqnovel.com
 0.0.0.0 mon11-misc.fqnovel.com
@@ -235510,10 +235521,8 @@
 0.0.0.0 api2.gdapi2.com
 0.0.0.0 api2.immersivetranslate.com
 0.0.0.0 api2.srbs35.com
-0.0.0.0 api3-normal-sinfonlinec.fqnovel.com
 0.0.0.0 api3.matangame.com
 0.0.0.0 api5-normal-lq.toutiaoapi.com
-0.0.0.0 api5-normal-sinfonlinec.fqnovel.com
 0.0.0.0 api88.shananfen.com
 0.0.0.0 api8800.swarnor.com
 0.0.0.0 apiapm.gz4399.com
@@ -235897,7 +235906,6 @@
 0.0.0.0 by6pw.cc
 0.0.0.0 bydsp30.com
 0.0.0.0 bypb.7klyd.com
-0.0.0.0 bytedance.com
 0.0.0.0 bytetcc.com
 0.0.0.0 bz5.sj8s0j7.cn
 0.0.0.0 bzcnfwlqijtvdwvx.top
@@ -236020,7 +236028,6 @@
 0.0.0.0 cdn-sdk.mxzgame.com
 0.0.0.0 cdn-t5game1.scgame.com.cn
 0.0.0.0 cdn-tg-pt.4366.com.5099a8be.cdnhwchcg02.com
-0.0.0.0 cdn-tos-cn.bytedance.net
 0.0.0.0 cdn-tx-h5-prod.huanyuantech.com
 0.0.0.0 cdn-v69.trafficmanager.net
 0.0.0.0 cdn-wx-v6-lds.ludashi.com
@@ -236275,6 +236282,7 @@
 0.0.0.0 cqrxe540.com
 0.0.0.0 cr63-site-01.gocname.com
 0.0.0.0 crcok.cn
+0.0.0.0 creativelab-proxy.bytedance.com
 0.0.0.0 crjbpade.xiaohongshucdn-yd.top
 0.0.0.0 crl.edge.digicert.com
 0.0.0.0 crm.feichengjiaoyu.com

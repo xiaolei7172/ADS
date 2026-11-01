@@ -2548,6 +2548,7 @@ DOMAIN,adtima-static.zascdn.me,reject
 DOMAIN,adtima-video.zascdn.me,reject
 DOMAIN,adtrack.cimedia.net,reject
 DOMAIN,adtrack.king.com,reject
+DOMAIN,adtrack.ucweb.com,reject
 DOMAIN,adtrack.voicestar.com,reject
 DOMAIN,adtradradservices.com,reject
 DOMAIN,adukwai.com,reject
@@ -3918,6 +3919,7 @@ DOMAIN,dl2.bav.baidu.com,reject
 DOMAIN,dlads.cn,reject
 DOMAIN,dm-hl.toutiao.com,reject
 DOMAIN,dm-lq.toutiao.com,reject
+DOMAIN,dm.bytedance.com,reject
 DOMAIN,dm.isnssdk.com,reject
 DOMAIN,dm.jb51.net,reject
 DOMAIN,dm.mlstat.com,reject
@@ -4179,6 +4181,7 @@ DOMAIN,ggx10.miguvideo.com,reject
 DOMAIN,gikoqe.pro,reject
 DOMAIN,gimg.baidu.com,reject
 DOMAIN,girlsadvanceethiopia.org,reject
+DOMAIN,gjtrack.ucweb.com,reject
 DOMAIN,globalwebads.com,reject
 DOMAIN,glores2.lanzoui.com,reject
 DOMAIN,glores2.lanzoux.com,reject
@@ -4346,6 +4349,7 @@ DOMAIN,injuredworkersadvocates.com,reject
 DOMAIN,inmobisdk-a.akamaihd.net,reject
 DOMAIN,inner-active.mobi,reject
 DOMAIN,inpmone.pro,reject
+DOMAIN,insight.ucweb.com,reject
 DOMAIN,inst.360safe.com,reject
 DOMAIN,install.365-stream.com,reject
 DOMAIN,installads.com,reject
@@ -4480,6 +4484,7 @@ DOMAIN,local-download.com,reject
 DOMAIN,location.ximalaya.com,reject
 DOMAIN,logiclotemax-pro.pages.dev,reject
 DOMAIN,logiclotemax200-click.pages.dev,reject
+DOMAIN,logssug.ucweb.com,reject
 DOMAIN,lorvano.pro,reject
 DOMAIN,lorventa.pro,reject
 DOMAIN,lorvian.pro,reject
@@ -4621,6 +4626,8 @@ DOMAIN,msg.iqiyi.com,reject
 DOMAIN,msg.simeji.baidu.jp,reject
 DOMAIN,msite.baidu.com,reject
 DOMAIN,mslinks-downloads.com,reject
+DOMAIN,mssdk-bu.bytedance.com,reject
+DOMAIN,mssdk.bytedance.com,reject
 DOMAIN,mssp.baidu.com,reject
 DOMAIN,mu88ads.com,reject
 DOMAIN,multi-az-ad.kuaishou.cn,reject
@@ -5446,6 +5453,7 @@ DOMAIN,uc-ap.yodo1api.com,reject
 DOMAIN,uc.whkwpzz.cn,reject
 DOMAIN,ucdc-upaas.uc.cn,reject
 DOMAIN,ucstat.baidu.com,reject
+DOMAIN,ucus.ucweb.com,reject
 DOMAIN,udc.msn.com,reject
 DOMAIN,uk.ads.hexus.net,reject
 DOMAIN,uklad61.help,reject
@@ -5473,6 +5481,8 @@ DOMAIN,unityads.unity3d.com.edgekey.net,reject
 DOMAIN,unityads.unitychina.cn,reject
 DOMAIN,unstat.baidu.com,reject
 DOMAIN,uole.ad.uol.com.br,reject
+DOMAIN,up1.tj.u2.ucweb.com,reject
+DOMAIN,up4.ucweb.com,reject
 DOMAIN,update-confirm-pay-tax.com,reject
 DOMAIN,update-directinfo.com,reject
 DOMAIN,update-expiry-notification-report.appwrite.network,reject
@@ -5510,6 +5520,8 @@ DOMAIN,usadserver.com,reject
 DOMAIN,ushealthyadvisor.com,reject
 DOMAIN,utensils.pro,reject
 DOMAIN,utility.baidu.com,reject
+DOMAIN,utp-dmp.ucweb.com,reject
+DOMAIN,utp.ucweb.com,reject
 DOMAIN,uxip-res.meizu.com,reject
 DOMAIN,v.adsrvr.cn,reject
 DOMAIN,v.nhatvip.pro,reject
@@ -84663,6 +84675,8 @@ DOMAIN,ucuqtxhmdgvfr.website,reject
 DOMAIN,ucuumhsxenzwq.online,reject
 DOMAIN,ucuypyhcns.com,reject
 DOMAIN,ucweb.cn,reject
+DOMAIN,px-intl.ucweb.com,reject
+DOMAIN,gjapplog.ucweb.com,reject
 DOMAIN,ucwypnemwclwd.online,reject
 DOMAIN,ucyqufwwjyhex.space,reject
 DOMAIN,uczzd.com,reject
@@ -100428,6 +100442,7 @@ DOMAIN,adtima.vn,reject
 DOMAIN,adtmonetize.com,reject
 DOMAIN,adtoqbuejunef.com,reject
 DOMAIN,adtorque.in,reject
+DOMAIN,adtrack-intl.ucweb.com,reject
 DOMAIN,adtrack.herbalia.rs,reject
 DOMAIN,adtrack.kireibiz.jp,reject
 DOMAIN,adtrack.ovotaris.com,reject
@@ -138669,6 +138684,7 @@ DOMAIN,instaread-ads.s3.amazonaws.com,reject
 DOMAIN,instarooliths.com,reject
 DOMAIN,instinctiveads.com,reject
 DOMAIN,institutehopelessbeck.com,reject
+DOMAIN,instory-log.ucnews.ucweb.com,reject
 DOMAIN,instruments102.com,reject
 DOMAIN,instui201.info,reject
 DOMAIN,insurance.locktonaffinity.net,reject
@@ -138743,6 +138759,7 @@ DOMAIN,intimatediary.com,reject
 DOMAIN,intimidatepropel.com,reject
 DOMAIN,intinfo.wolterskluwer.com,reject
 DOMAIN,intlsst.zagg.com,reject
+DOMAIN,intlsucus.ucweb.com,reject
 DOMAIN,intortarguing.com,reject
 DOMAIN,intorterraon.com,reject
 DOMAIN,intouch.schlesingerassociates.com,reject
@@ -207157,6 +207174,7 @@ DOMAIN,ubzdk.opopop.com,reject
 DOMAIN,uc.qq.uuaoz.com,reject
 DOMAIN,uc5gbql.c1qoyyyjlnkx4h.cyou,reject
 DOMAIN,uc768.wk7oecq4nzen7pvf.cyou,reject
+DOMAIN,ucads.ucweb.com,reject
 DOMAIN,ucapi.unlon.com,reject
 DOMAIN,ucawkg.rsfplus.com,reject
 DOMAIN,ucb.1rjm53pqcyjmb632jq.cyou,reject
@@ -207633,6 +207651,7 @@ DOMAIN,uniformer.biz,reject
 DOMAIN,unifully.com,reject
 DOMAIN,uniguide.fr,reject
 DOMAIN,uninvitedenvious.com,reject
+DOMAIN,union.ucweb.com,reject
 DOMAIN,unionsyeggman.cfd,reject
 DOMAIN,uniqueliernes.com,reject
 DOMAIN,unisdk.proxima.nie.easebar.com,reject
@@ -228571,17 +228590,10 @@ DOMAIN,muses-ugc.iqiyi.com,reject
 DOMAIN,access.if.iqiyi.com,reject
 DOMAIN,meta.video.iqiyi.com,reject
 DOMAIN,log0-applog-lq.fqnovel.com,reject
-DOMAIN,api.fqnovel.com,reject
 DOMAIN,vemarsdev.com,reject
 DOMAIN,ohayoo.cn,reject
 DOMAIN,rtlog3-applog-lq.fqnovel.com,reject
 DOMAIN,rtlog5-applog-lq.fqnovel.com,reject
-DOMAIN,api3-normal-lf.fqnovel.com,reject
-DOMAIN,api3-normal-hl.fqnovel.com,reject
-DOMAIN,api3-normal-lq.fqnovel.com,reject
-DOMAIN,api5-normal-lf.fqnovel.com,reject
-DOMAIN,api5-normal-hl.fqnovel.com,reject
-DOMAIN,api5-normal-lq.fqnovel.com,reject
 DOMAIN,lf3-reading.fqnovelstatic.com,reject
 DOMAIN,log3-applog-lq.fqnovel.com,reject
 DOMAIN,v6-novelapp-nxyd.fqnovelvod.com,reject
@@ -229237,6 +229249,7 @@ DOMAIN,data-dre.push.dbankcloud.com,reject
 DOMAIN,data-drru.push.dbankcloud.com,reject
 DOMAIN,apps.bytesfield-b.com,reject
 DOMAIN,oceanengine.com,reject
+DOMAIN,amcn.bytedance.com,reject
 DOMAIN,api.megvii.com,reject
 DOMAIN,api.wqycq.com,reject
 DOMAIN,aq-ad-h5-fe.c.t.soulapp-inc.cn,reject
@@ -230112,8 +230125,6 @@ DOMAIN,analytics.bytescm.com,reject
 DOMAIN,sf-tb-sg.ibytedtos.com,reject
 DOMAIN,p1-dy.bytexservice.com,reject
 DOMAIN,free-lbv3.idouyinvod.com,reject
-DOMAIN,api3-normal.fqnovel.com,reject
-DOMAIN,api5-normal.fqnovel.com,reject
 DOMAIN,novelapp.fqnovelvod.com,reject
 DOMAIN,mon3-misc.fqnovel.com,reject
 DOMAIN,mon11-misc.fqnovel.com,reject
@@ -235509,10 +235520,8 @@ DOMAIN,api12976546579843116546.jewelry.cn.com,reject
 DOMAIN,api2.gdapi2.com,reject
 DOMAIN,api2.immersivetranslate.com,reject
 DOMAIN,api2.srbs35.com,reject
-DOMAIN,api3-normal-sinfonlinec.fqnovel.com,reject
 DOMAIN,api3.matangame.com,reject
 DOMAIN,api5-normal-lq.toutiaoapi.com,reject
-DOMAIN,api5-normal-sinfonlinec.fqnovel.com,reject
 DOMAIN,api88.shananfen.com,reject
 DOMAIN,api8800.swarnor.com,reject
 DOMAIN,apiapm.gz4399.com,reject
@@ -235896,7 +235905,6 @@ DOMAIN,by33325.vip,reject
 DOMAIN,by6pw.cc,reject
 DOMAIN,bydsp30.com,reject
 DOMAIN,bypb.7klyd.com,reject
-DOMAIN,bytedance.com,reject
 DOMAIN,bytetcc.com,reject
 DOMAIN,bz5.sj8s0j7.cn,reject
 DOMAIN,bzcnfwlqijtvdwvx.top,reject
@@ -236019,7 +236027,6 @@ DOMAIN,cdn-prod-asia.shadylady.tech,reject
 DOMAIN,cdn-sdk.mxzgame.com,reject
 DOMAIN,cdn-t5game1.scgame.com.cn,reject
 DOMAIN,cdn-tg-pt.4366.com.5099a8be.cdnhwchcg02.com,reject
-DOMAIN,cdn-tos-cn.bytedance.net,reject
 DOMAIN,cdn-tx-h5-prod.huanyuantech.com,reject
 DOMAIN,cdn-v69.trafficmanager.net,reject
 DOMAIN,cdn-wx-v6-lds.ludashi.com,reject
@@ -236274,6 +236281,7 @@ DOMAIN,cqbr.ag8.com,reject
 DOMAIN,cqrxe540.com,reject
 DOMAIN,cr63-site-01.gocname.com,reject
 DOMAIN,crcok.cn,reject
+DOMAIN,creativelab-proxy.bytedance.com,reject
 DOMAIN,crjbpade.xiaohongshucdn-yd.top,reject
 DOMAIN,crl.edge.digicert.com,reject
 DOMAIN,crm.feichengjiaoyu.com,reject
