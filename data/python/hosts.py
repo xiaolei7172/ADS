@@ -7,13 +7,14 @@
   - hosts 只能精确匹配，`0.0.0.0 a.b.com` 拦不到 `x.a.b.com`。
     dns.txt 为 AdGuard 语义做过父子域折叠（父域存在即删子域），
     若 hosts 跟着折叠，被删掉的那批子域就永远拦不到——实测约 1.58 万个；
-  - 所以优先读 data/tmp/dns-unfolded.txt（折叠前，已过白名单 + 跨源去重），
-    该文件不存在时（单独跑 hosts.py 的场景）退回 dns.txt；
+  - 所以必须读 data/tmp/dns-unfolded.txt（折叠前，已过白名单 + 跨源去重）；
+    该文件不存在时直接 exit 1——静默退回折叠版等于发布一份子域覆盖残缺的产物。
   - 0.0.0.0 格式，适用于 AdGuard Home / OpenWrt / 安卓无 root 等场景。
 """
 import os
 import re
 import sys
+import json
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
@@ -32,16 +33,28 @@ def parse_domain(line):
     return s if BARE_DOMAIN.match(s) else None
 
 UNFOLDED_PATH = os.path.join(os.path.dirname(RULES_DIR), "tmp", "dns-unfolded.txt")
-FALLBACK_PATH = os.path.join(RULES_DIR, "dns.txt")
+UNFOLDED_META = os.path.join(os.path.dirname(RULES_DIR), "tmp", "dns-unfolded.meta.json")
 output_path = os.path.join(RULES_DIR, "hosts.txt")
 
-if os.path.exists(UNFOLDED_PATH):
-    input_path = UNFOLDED_PATH
-    desc = "由 dns.txt 折叠前的完整域名集转换，含全部子域，覆盖与 AdGuard 语义对齐"
-else:
-    input_path = FALLBACK_PATH
-    desc = "由 dns.txt（已去重）自动转换；未找到折叠前域名集，子域覆盖不完整"
-    print(f"⚠️ 未找到 {UNFOLDED_PATH}，退回折叠后的 dns.txt（子域覆盖会不完整）")
+# 硬性要求：必须拿到折叠前的域名集。
+# hosts 只能精确匹配，退回折叠后的 dns.txt 会漏掉约 1.5 万个被折叠的子域，
+# 而漏掉是无声的——用户看不出来，只有被封的子域真的解析成功时才知道。
+# 所以这里宁可 exit 1 让 CI 红掉，也不发布一份静默降级的 hosts.txt。
+if not os.path.exists(UNFOLDED_PATH):
+    print(f"❌ 未找到折叠前域名集：{UNFOLDED_PATH}")
+    print("   hosts 跟随折叠后的 dns.txt 会漏掉约 1.5 万个子域，不发布这种残缺产物。")
+    print("   请先执行：python data/python/filter-dns.py")
+    sys.exit(1)
+
+input_path = UNFOLDED_PATH
+desc = "由 dns.txt 折叠前的完整域名集转换，含全部子域，覆盖与 AdGuard 语义对齐"
+if os.path.exists(UNFOLDED_META):
+    try:
+        with open(UNFOLDED_META, "r", encoding="utf-8") as f:
+            meta = json.load(f)
+        print(f"📦 折叠前域名集：{meta.get('count', '?')} 条（生成于 {meta.get('generated', '未知')}）")
+    except (OSError, ValueError):
+        print("⚠️ 折叠前域名集的 meta 读取失败，仍按文件内容生成")
 
 domains = []
 with open(input_path, "r", encoding="utf-8", errors="ignore") as f:

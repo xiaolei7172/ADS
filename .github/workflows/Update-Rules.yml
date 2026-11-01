@@ -19,11 +19,18 @@ jobs:
     permissions:
       actions: write
       contents: write
-      
+      issues: write          # 失败时自动开 issue 需要
+
     steps:
-      - uses: actions/checkout@v4
+      # 第三方 action 一律钉 commit SHA（tag 可被上游重指，等于把仓库交给别人）
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4
         with:
           fetch-depth: 0
+
+      # 纯函数单测：不依赖产物、秒级，语义层（valid_domain / 域名后缀匹配 /
+      # 镜像 URL 解析）改错时立刻红，而不是等到 40 分钟后产物对不上
+      - name: Unit Tests
+        run: python -m unittest discover -s tests -v
 
       - name: Download Rules
         # 传入令牌：dl.py 的 GitHub API 兜底通道不再走匿名（60 次/小时限额）
@@ -67,6 +74,14 @@ jobs:
       - name: Quality Check
         run: python ./data/python/check-quality.py
 
+      # ==============================================
+      # 🔍 格式一致性：11 种产物对同一域名的判定必须一致。
+      #    历史上 qx 漏拦 1.4 万子域、hosts 漏拦 1.4 万、dnsmasq 不认 address=，
+      #    全靠"人记得跑 verify"才发现。现在由 CI 强制，改坏当场红。
+      # ==============================================
+      - name: Verify Format Consistency
+        run: python ./data/python/verify-fixes.py
+
       - name: Update Title & ReadMe
         run: |
           python ./data/python/title.py
@@ -105,7 +120,7 @@ jobs:
 
       - name: Update Badge
         if: ${{ vars.GIST_ID != '' }}
-        uses: schneegans/dynamic-badges-action@v1.7.0
+        uses: schneegans/dynamic-badges-action@e9a478b16159b4d31420099ba146cdc50f134483  # v1.7.0
         with:
           auth: ${{ secrets.GIST_SECRET }}
           gistID: ${{ vars.GIST_ID }}
@@ -116,12 +131,67 @@ jobs:
           namedLogo: github
 
       # ==============================================
+      # 📊 运行摘要：条数直接写进 Job 首页，不用点开日志翻
+      # ==============================================
+      - name: Job Summary
+        if: always()
+        run: |
+          {
+            echo "## 📊 本次产物"
+            echo ""
+            echo "| 文件 | 条数 |"
+            echo "| --- | ---: |"
+            for f in dns.txt adblock.txt allow.txt hosts.txt dnsmasq.conf; do
+              n=$(grep -vcE '^(#|!|\[|$)' "data/rules/$f" 2>/dev/null || true)
+              echo "| $f | ${n:-读取失败} |"
+            done
+            echo ""
+            echo "上游源：$(grep -o '上游源状态：[^<]*' README.md 2>/dev/null | head -1)"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # ==============================================
+      # 🚨 失败通知：定时任务挂了只在 Actions 页面可见，
+      #    规则会静默停在几天前。失败时自动开 issue，
+      #    已有同名 open issue 则追加评论（用 API 直调，不引第三方 action）
+      # ==============================================
+      - name: Report Failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -u
+          API="https://api.github.com/repos/${{ github.repository }}/issues"
+          existing=$(curl -sS -H "Authorization: Bearer $GH_TOKEN" \
+            "https://api.github.com/search/issues?q=repo:${{ github.repository }}+is:issue+is:open+in:title+%E8%A7%84%E5%88%99%E6%9B%B4%E6%96%B0%E5%A4%B1%E8%B4%A5" \
+            | python -c "import sys,json;d=json.load(sys.stdin);print(d['items'][0]['number'] if d.get('items') else '')")
+          if [ -n "$existing" ]; then
+            curl -sS -X POST -H "Authorization: Bearer $GH_TOKEN" \
+              -d "{\"body\":\"再次失败：$RUN_URL\"}" "$API/$existing/comments" > /dev/null
+            echo "↩️ 已追加到 issue #$existing"
+          else
+            curl -sS -X POST -H "Authorization: Bearer $GH_TOKEN" \
+              -d "{\"title\":\"❌ 规则更新失败（见最新运行记录）\",\"body\":\"最近一次定时更新失败。\n\n运行记录：$RUN_URL\n\n排查顺序：Job Summary 看各产物条数 → Download Rules 看哪个源挂了 → Quality Check / Verify Format Consistency 看是不是规则本身退化。\"}" \
+              "$API" > /dev/null
+            echo "🆕 已创建失败 issue"
+          fi
+
+      # 失败时把产物传一份，方便事后 diff 排查（成功时不传，省存储和时长）
+      - name: Upload Artifacts on Failure
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4
+        with:
+          name: rules-${{ github.run_id }}
+          path: data/rules/
+          retention-days: 7
+
+      # ==============================================
       # 运行记录清理：保留最近 7 天 / 至少 5 条，
       # 便于回溯"某天规则为什么变化"（原设置只留 1 条，
       # 出事时完全无据可查）
       # ==============================================
       - name: Delete workflow runs
-        uses: Mattraks/delete-workflow-runs@v2
+        uses: Mattraks/delete-workflow-runs@0cf693bc9909e5e867ee8f27b813224ba862939c  # v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.repository }}

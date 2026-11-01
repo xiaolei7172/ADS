@@ -146,6 +146,23 @@ def extract_old_stats(content, comment="!"):
     return result or None
 
 
+def header_region(content, comment="!"):
+    """截出表头文本（标记行 → 第 HEADER_SEPARATORS 条分隔线）。
+
+    表头内的幂等比对要限定在这个范围：直接用 `xxx in content` 会在正文
+    出现同样文字时误判「已写入」，导致本该重写的表头被跳过。
+    """
+    lines = content.splitlines()
+    sep_pat = re.compile(rf"^{re.escape(comment)}\s*=+\s*$")
+    seen = 0
+    for i, line in enumerate(lines[1:], start=1):
+        if sep_pat.match(line.strip()):
+            seen += 1
+            if seen == HEADER_SEPARATORS:
+                return "\n".join(lines[:i + 1])
+    return ""
+
+
 def dns_effective_note(clean_content):
     """统计白名单里有多少条能在 DNS 层生效。
 
@@ -200,7 +217,7 @@ for filename, cfg in file_config.items():
             old_count = int(m.group(1))
             break
     body_unchanged = (old_count == line_count
-                      and (not note_block or note_block.strip() in content)
+                      and (not note_block or note_block.strip() in header_region(content, c))
                       and extract_old_stats(content, c) is not None
                       and sorted(extract_old_stats(content, c)) == sorted(stats))
     if body_unchanged and not FORCE:

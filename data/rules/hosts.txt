@@ -2,7 +2,7 @@
 # 由 dns.txt 折叠前的完整域名集转换，含全部子域，覆盖与 AdGuard 语义对齐
 # ⚠️ hosts 只能精确匹配，拦不到未列出的子域；需要完整子域覆盖请用 dns.txt / smartdns.conf / surge.list
 # 📌 项目地址：https://github.com/xiaolei7172/ADS
-# ⏰ 更新时间：2026-11-01 15:05:43（北京时间） | 📊 有效规则：256708 条
+# ⏰ 更新时间：2026-11-01 16:49:34（北京时间） | 📊 有效规则：256733 条
 # 🔄 更新频率：每日自动更新（北京时间 08:00）
 0.0.0.0 ads3-normal-hl.zijieapi.com
 0.0.0.0 ads3-normal-lf.zijieapi.com
@@ -210514,6 +210514,7 @@
 0.0.0.0 tempttalk.com
 0.0.0.0 tenaciousd.zeeprime.com.br
 0.0.0.0 tenant-content.apm.appfolio-analytics.com
+0.0.0.0 tencent.xn--io0a7i
 0.0.0.0 tendencystrangely.com
 0.0.0.0 tendrilkahawai.cfd
 0.0.0.0 tenekslu.com
@@ -211734,6 +211735,7 @@
 0.0.0.0 touristvisaonline.com
 0.0.0.0 tousersepionomissus.cyou
 0.0.0.0 tousingazotous.qpon
+0.0.0.0 toutiao.xn--fiqs8s
 0.0.0.0 touzleclasses.cyou
 0.0.0.0 tovkak.execupgrades.com
 0.0.0.0 tovppl.cn
@@ -223704,9 +223706,13 @@
 0.0.0.0 xmxhyz.markenbaumarkt24.de
 0.0.0.0 xmxupz.xyz
 0.0.0.0 xmywlyh.cn
+0.0.0.0 xn--2qu92fhtxsxexqab.xn--fiqs8s
 0.0.0.0 xn--2qux23cs4e63q.com
+0.0.0.0 xn--2qux23cwrdmnaz3gj3w.xn--fiqs8s
+0.0.0.0 xn--2ss830adjbqy7h.xn--fiqs8s
 0.0.0.0 xn--49s928hlshoya.cn
 0.0.0.0 xn--521-x72fh66s.cn
+0.0.0.0 xn--80afden1bnch4a.xn--p1ai
 0.0.0.0 xn--9krv3x413bbyb.com
 0.0.0.0 xn--blckchain-17c.com
 0.0.0.0 xn--bqro42frpg5up.cn
@@ -223721,6 +223727,9 @@
 0.0.0.0 xn--oogle-wmc.com
 0.0.0.0 xn--qrq171dxpq.com
 0.0.0.0 xn--swt207gl1hzc.net
+0.0.0.0 xn--wxtr9fwyxk9c.xn--fiqs8s
+0.0.0.0 xn--wxtr9fwyxk9c.xn--io0a7i
+0.0.0.0 xn--wxtr9fwyxk9co4hbua.xn--fiqs8s
 0.0.0.0 xn--xhq326apqhcx0d.cn
 0.0.0.0 xn--xhq9mt12cf5v.ren
 0.0.0.0 xn--yotu-1ra.be
@@ -223911,6 +223920,7 @@
 0.0.0.0 xtzoieci8.u1fm7pzfzuiu3q.cyou
 0.0.0.0 xtzpot.chatuba.com.br
 0.0.0.0 xuanyaosp.com
+0.0.0.0 xuawdz.xn--b1aedqiqb.xn--p1ai
 0.0.0.0 xubchynamm.in
 0.0.0.0 xuddeg.rukzakoff.ru
 0.0.0.0 xudgjz.xyz
@@ -239505,6 +239515,8 @@
 0.0.0.0 mswd00602.xz.ajshs.cn
 0.0.0.0 ja20602jat.ajshs.cn
 0.0.0.0 qt73q.top
+0.0.0.0 a1.xn--w9qw2i396a4i5a.xn--fiqs8s
+0.0.0.0 ts1701801159.xn--w9qw2i396a4i5a.xn--fiqs8s
 0.0.0.0 yes.cnmjcn.net
 0.0.0.0 m.cnmjcn.com
 0.0.0.0 tkodoczxfrie.yuchengxinxia.xyz
@@ -239523,6 +239535,8 @@
 0.0.0.0 js.anws.top
 0.0.0.0 www.instv729.com
 0.0.0.0 www.17c122.com
+0.0.0.0 b8.xn--w9qw2i396a4i5a.xn--fiqs8s
+0.0.0.0 ts1701867796.xn--w9qw2i396a4i5a.xn--fiqs8s
 0.0.0.0 mn.dzigj.com
 0.0.0.0 273343.com
 0.0.0.0 cherrytale.ero-labs.website
@@ -239547,6 +239561,10 @@
 0.0.0.0 t91215.xyz
 0.0.0.0 t91772.xyz
 0.0.0.0 api.cgyx.tv
+0.0.0.0 c13.xn--gor54rzzhjt7b.xn--fiqs8s
+0.0.0.0 ts1703360599.xn--gor54rzzhjt7b.xn--fiqs8s
+0.0.0.0 ts1703360599.xn--vhqt2hvuhr1h113abiq.xn--fiqs8s
+0.0.0.0 a13.xn--vhqt2hvuhr1h113abiq.xn--fiqs8s
 0.0.0.0 mqwe01w.xyz
 0.0.0.0 di9tms72wgbs.zpoejv.top
 0.0.0.0 qps.000aaap2023.com
@@ -246761,6 +246779,7 @@
 0.0.0.0 oikxlcv.wang
 0.0.0.0 0x01e7.website
 0.0.0.0 brakefluid.website
+0.0.0.0 xn--xhq9mt12cf5v.xn--io0a7i
 0.0.0.0 sss.sege.xxx
 0.0.0.0 ayabreya.xyz
 0.0.0.0 ddmax20.xyz
@@ -247205,6 +247224,8 @@
 0.0.0.0 0z2s0.dsq.3145cn.com
 0.0.0.0 1.3pj347.top
 0.0.0.0 1.fw.zhongshanpark.com.cn
+0.0.0.0 1.qaz138.xn--fiqs8s
+0.0.0.0 1.qaz142.xn--fiqs8s
 0.0.0.0 10.jsjietui.com
 0.0.0.0 10086.cscsearch.com
 0.0.0.0 100uc.com
@@ -247317,6 +247338,7 @@
 0.0.0.0 16h82.com
 0.0.0.0 16hd.4393.cc
 0.0.0.0 16zz.co
+0.0.0.0 1705581604.xn--6krs2g97h8suq1pfhg.xn--fiqs8s
 0.0.0.0 1717.gg
 0.0.0.0 173kw.com
 0.0.0.0 176dh.com
@@ -247452,6 +247474,7 @@
 0.0.0.0 1zlks.vip
 0.0.0.0 1zzakf1yrrgczhphkluk8lfhsog65f6x.xyz
 0.0.0.0 2.android.pool.ntp.org
+0.0.0.0 2.qaz139.xn--fiqs8s
 0.0.0.0 2.semiao3654.cc
 0.0.0.0 20.cc
 0.0.0.0 2000742.com
@@ -256220,6 +256243,7 @@
 0.0.0.0 y3fr.608.com
 0.0.0.0 y41.cn
 0.0.0.0 y4p2qg.vip
+0.0.0.0 y5.xn--l9qw23a8uggkv.xn--fiqs8s
 0.0.0.0 y5002.9kk99k.xyz
 0.0.0.0 y5004.9kk99k.xyz
 0.0.0.0 y5gossl.5rwyrv.com
@@ -256679,6 +256703,7 @@
 0.0.0.0 zvd1.7790.com
 0.0.0.0 zvsnkpqu.atvtkf.com
 0.0.0.0 zwad.cdn.ersiba.cn
+0.0.0.0 zwdqtedlvzsn.xn--vzyw96bk9n.xn--fiqs8s
 0.0.0.0 zwj5.143.cc
 0.0.0.0 zwzwhzalh.work.stmkt238.com
 0.0.0.0 zx01.cc

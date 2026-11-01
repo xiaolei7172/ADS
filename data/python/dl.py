@@ -38,7 +38,9 @@ def write_source_header(file_path, source_name, source_url):
     with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
         content = f.read()
     header = f"! 📋 规则来源：{source_name}\n! 🔗 原始地址：{source_url}\n\n"
-    with open(file_path, "w", encoding="utf-8") as f:
+    # newline="\n"：Windows 上默认写 CRLF，会让临时文件与 CI（ubuntu）产物不一致
+    # （历史上 0173282 就是这么进的仓库）
+    with open(file_path, "w", encoding="utf-8", newline="\n") as f:
         f.write(header + content)
 
 

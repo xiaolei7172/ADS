@@ -53,7 +53,7 @@ def name_hint(url):
 # ----------------------------------------
 def analyze(path):
     stats = {"allow": 0, "block": 0, "hosts": 0, "bare": 0, "other": 0, "comment": 0}
-    allow_domains, block_domains = set(), set()
+    allow_domains, block_domains, bare_domains = set(), set(), set()
     with open(path, "r", encoding="utf-8", errors="ignore") as f:
         for line in f:
             s = line.strip()
@@ -77,9 +77,10 @@ def analyze(path):
                 continue
             if valid_domain(s):
                 stats["bare"] += 1
+                bare_domains.add(s.lower())
                 continue
             stats["other"] += 1
-    return stats, allow_domains, block_domains
+    return stats, allow_domains, block_domains, bare_domains
 
 
 def classify(stats, url):
@@ -141,20 +142,35 @@ def load_dns_block_domains():
     return blocks
 
 
+def build_suffix_index(domains):
+    """拦截域 → 「每一级后缀」反向索引：idx[后缀] = 该后缀下的全部拦截域。
+
+    一次构建 O(n × 层数)，之后查"某个放行域会解开哪些拦截"是 O(结果数)。
+    旧写法对每个候选放行域全量扫一遍 24 万条拦截域（is_allowed 逐条比对），
+    接一份 1000 条的候选白名单就是 2.4 亿次比较，实measure 会跑到分钟级。
+    """
+    idx = {}
+    for d in domains:
+        parts = d.split(".")
+        for i in range(len(parts)):
+            idx.setdefault(".".join(parts[i:]), []).append(d)
+    return idx
+
+
 def rehearse_allow(candidate_domains):
     """白名单冲突预演：新放行域 vs 现有拦截域，返回 (放行影响明细, 统计)"""
     current_allows = load_current_allows()
     dup = len(candidate_domains) - sum(1 for d in candidate_domains
                                        if not is_allowed(d, current_allows))
     new_allows = {d for d in candidate_domains if not is_allowed(d, current_allows)}
-    dns_blocks = load_dns_block_domains()
+    suffix_idx = build_suffix_index(load_dns_block_domains())
     affected = {}          # 会被解封的现有拦截域名 → 命中的新放行域
     unaffected_new = 0     # 新放行域当前没在拦（不产生变化）
-    for d in new_allows:
-        hit = [b for b in dns_blocks if is_allowed(b, {d})]
+    for a in new_allows:
+        hit = suffix_idx.get(a)
         if hit:
             for b in hit:
-                affected[b] = d
+                affected[b] = a
         else:
             unaffected_new += 1
     return affected, len(new_allows), unaffected_new, dup
@@ -190,7 +206,7 @@ def main():
     print(f"✅ 下载成功（{used_channel}），{os.path.getsize(tmp)} 字节")
 
     # 2. 语法统计 + 自动分类
-    stats, allow_doms, block_doms = analyze(tmp)
+    stats, allow_doms, block_doms, bare_doms = analyze(tmp)
     print(f"\n📊 语法统计：放行(@@) {stats['allow']} · 拦截(||) {stats['block']} · "
           f"hosts拦截 {stats['hosts']} · 裸域名 {stats['bare']} · 其他 {stats['other']} · 注释 {stats['comment']}")
 
@@ -211,9 +227,8 @@ def main():
 
     # 3. 冲突预演
     if verdict == "allow":
-        candidate = set(allow_doms) | ({d for d in
-                                        (l.strip() for l in open(tmp, encoding="utf-8", errors="ignore"))
-                                        if valid_domain(d)} if stats["bare"] else set())
+        # 裸域名在白名单里等价于 @@||d^，直接并进候选（旧写法在这里重新 open 一次文件且没 close）
+        candidate = set(allow_doms) | set(bare_doms)
         affected, n_new, n_neutral, n_dup = rehearse_allow(candidate)
         print(f"\n⚗️  冲突预演（白名单）：")
         print(f"   候选放行域 {len(candidate)} 条：与现有白名单重复 {n_dup} 条，"
@@ -229,10 +244,12 @@ def main():
             risk = "高危" if len(affected) > 1000 else "需确认" if len(affected) > 50 else "低风险"
             print(f"   风险评级：{risk} —— 请逐条确认这些解封是否符合预期，再决定是否接入")
     elif verdict == "block":
-        dup, new = rehearse_block(block_doms)
+        # 裸域名黑名单很常见（很多 hosts 源去掉 IP 就只有域名），一并计入候选
+        block_candidate = block_doms | bare_doms
+        dup, new = rehearse_block(block_candidate)
         print(f"\n⚗️  冲突预演（黑名单）：")
-        print(f"   拦截域 {len(block_doms)} 条：与现有 DNS 拦截重复 {dup} 条，预计净新增 {new} 条")
-        if len(block_doms) == 0:
+        print(f"   拦截域 {len(block_candidate)} 条：与现有 DNS 拦截重复 {dup} 条，预计净新增 {new} 条")
+        if len(block_candidate) == 0:
             print("   ⚠️ 未解析出任何拦截域名，接入价值存疑")
         elif new == 0:
             print("   ℹ️ 全部与现有规则重叠——接入仅提供多源冗余保障，不会改变拦截面")

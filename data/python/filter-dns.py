@@ -12,11 +12,12 @@
 """
 import os
 import sys
+import json
 from collections import OrderedDict
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
-from common import RULES_DIR, MOD_DIR, block_domain, hosts_target, build_allow_domains, is_allowed
+from common import RULES_DIR, MOD_DIR, block_domain, hosts_target, build_allow_domains, is_allowed, beijing_now
 
 os.makedirs(RULES_DIR, exist_ok=True)
 
@@ -131,15 +132,21 @@ for doms in filtered_sections.values():
 # hosts 只能精确匹配，若跟着 dns.txt 一起折叠，被折叠掉的子域就永远拦不到了。
 # 写 data/tmp 而非 data/rules，避免多一份对外发布的产物。
 UNFOLDED_PATH = os.path.join(os.path.dirname(RULES_DIR), "tmp", "dns-unfolded.txt")
+UNFOLDED_META = os.path.join(os.path.dirname(RULES_DIR), "tmp", "dns-unfolded.meta.json")
 try:
     os.makedirs(os.path.dirname(UNFOLDED_PATH), exist_ok=True)
     with open(UNFOLDED_PATH, "w", encoding="utf-8", newline="\n") as f:
         for doms in filtered_sections.values():
             for d in doms:
                 f.write(f"||{d}^\n")
+    # 契约文件：hosts.py 靠它确认「折叠前域名集确实由本次管线生成」。
+    # 旧实现是隐式契约——dl.py 开头 rmtree(tmp)，hosts.py 找不到就静默退回折叠版，
+    # 于是发布一份子域覆盖不完整的 hosts.txt 而没人发现。
+    with open(UNFOLDED_META, "w", encoding="utf-8", newline="\n") as f:
+        json.dump({"count": len(kept_all), "generated": beijing_now()}, f, ensure_ascii=False)
     print(f"📦 折叠前域名集已落盘：{UNFOLDED_PATH}（{len(kept_all)} 条，供 hosts.txt 覆盖子域）")
 except OSError as e:
-    print(f"⚠️ 折叠前域名集写入失败（hosts.txt 将退回折叠后的 dns.txt）：{e}")
+    print(f"⚠️ 折叠前域名集写入失败：{e}")
 
 def has_ancestor(d, pool):
     parts = d.split(".")
@@ -150,43 +157,48 @@ def has_ancestor(d, pool):
 
 collapsed = 0
 per_source_kept = OrderedDict()
+chunks = []          # 分区正文先攒在内存里：5 MB 文字，换掉「写完读回再重写」的两轮 IO
 
-with open(output_path, "w", encoding="utf-8", newline="\n") as fout:
-    fout.write("! 本文件由 filter-dns.py 从 adblock.txt 提取（项目：天影规则聚合）\n")
-    fout.write("! 已应用：白名单父子域过滤 + 父子域语义去重\n")
-    fout.write("! 各来源分区见下（与 adblock.txt 的来源标注一致）\n")
+HEAD_LINES = (
+    "! 本文件由 filter-dns.py 从 adblock.txt 提取（项目：天影规则聚合）",
+    "! 已应用：白名单父子域过滤 + 父子域语义去重",
+    "! 各来源分区见下（与 adblock.txt 的来源标注一致）",
+)
 
-    for name, doms in filtered_sections.items():
-        final_doms = []
-        for d in doms:
-            if d not in local_block and has_ancestor(d, kept_all):
-                collapsed += 1
-                continue
-            final_doms.append(d)
-        if not final_doms:
-            continue  # 该来源规则全部冗余/被放行，不输出空分区
-        per_source_kept[name] = len(final_doms)
+for name, doms in filtered_sections.items():
+    final_doms = []
+    for d in doms:
+        if d not in local_block and has_ancestor(d, kept_all):
+            collapsed += 1
+            continue
+        final_doms.append(d)
+    if not final_doms:
+        continue  # 该来源规则全部冗余/被放行，不输出空分区
+    per_source_kept[name] = len(final_doms)
 
-        fout.write("\n! ==============================================\n")
-        for c in SECTIONS[name]["comments"]:
-            fout.write(f"{c}\n")
-        fout.write(f"! 📊 本区规则：{len(final_doms)} 条\n")
-        fout.write("! ==============================================\n")
-        for d in final_doms:
-            fout.write(f"||{d}^\n")
+    buf = ["\n! ==============================================\n"]
+    for c in SECTIONS[name]["comments"]:
+        buf.append(f"{c}\n")
+    buf.append(f"! 📊 本区规则：{len(final_doms)} 条\n")
+    buf.append("! ==============================================\n")
+    for d in final_doms:
+        buf.append(f"||{d}^\n")
+    chunks.append("".join(buf))
 
-# 来源汇总插入头部：读回文件重写（规则量大时仍是秒级）
-with open(output_path, "r", encoding="utf-8", newline="") as f:
-    content = f.read()
-head_end = content.index("\n\n") + 2  # 头部注释之后
+# 来源汇总（各区条数在第一遍循环里就已知，不必回读文件）
 summary_text = ""
 if per_source_kept:
     summary_text = "\n! ────────────── 来源汇总 ──────────────\n"
     for name, n in per_source_kept.items():
         summary_text += f"!   {n:>7} 条  {name}\n"
     summary_text += "! ────────────────────────────────────────\n\n"
+
+body = "".join(chunks)
+# 与旧版切分点对齐：旧实现把第一个分区的前导空行算进头部，这里显式补回
+head_text = "".join(f"{line}\n" for line in HEAD_LINES)
+out = head_text + "\n" + summary_text + (body[1:] if body else "")
 with open(output_path, "w", encoding="utf-8", newline="\n") as f:
-    f.write(content[:head_end] + summary_text + content[head_end:])
+    f.write(out)
 
 kept_final = sum(per_source_kept.values())
 print(f"✅ DNS 规则提取完成！已生成 → {output_path}")

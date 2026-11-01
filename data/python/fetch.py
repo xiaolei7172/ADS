@@ -44,8 +44,26 @@ def content_ok(path):
 # 但 fastly/testingcf/gcore 三个 jsDelivr 子域和 gh-proxy.com 稳定可用
 # ==============================================
 RE_RAW_URL = re.compile(
-    r"^https://raw\.githubusercontent\.com/([^/]+)/([^/]+)/([^/]+)/(.+)$"
+    r"^https://raw\.githubusercontent\.com/([^/]+)/([^/]+)/(.+)$"
 )
+
+
+def split_raw_path(rest):
+    """把 raw URL 的 owner/repo 之后那段拆成 (branch, path)。
+
+    兼容两种写法：
+      /owner/repo/main/path/to/file        ← 老写法
+      /owner/repo/refs/heads/main/path/... ← GitHub 文件页「Raw」按钮现在给的就是这种
+
+    历史 bug：旧正则把 refs/heads/main/... 整段当成"分支名=refs、路径=heads/main/..."，
+    于是 API 兜底请求 .../contents/heads/main/...?ref=refs、
+    jsDelivr 请求 ...@refs/heads/main/... 全部 404，
+    这两个源实际只剩 raw 直连一条通道（raw 一抖就直接判死）。
+    """
+    if rest.startswith("refs/heads/"):
+        rest = rest[len("refs/heads/"):]
+    branch, _, path = rest.partition("/")
+    return branch, path
 
 
 def mirror_urls(url):
@@ -53,14 +71,16 @@ def mirror_urls(url):
     attempts = [(url, False)]
     m = RE_RAW_URL.match(url)
     if m:
-        owner, repo, branch, path = m.groups()
-        # GitHub Contents API（有令牌时限额 1000/小时）
-        attempts.append(
-            (f"https://api.github.com/repos/{owner}/{repo}/contents/{path}?ref={branch}", True)
-        )
-        # jsDelivr 三个可用子域（主域 cdn.jsdelivr.net 国内被重置，勿用）
-        for cdn in ("fastly.jsdelivr.net", "testingcf.jsdelivr.net", "gcore.jsdelivr.net"):
-            attempts.append((f"https://{cdn}/gh/{owner}/{repo}@{branch}/{path}", False))
+        owner, repo, rest = m.groups()
+        branch, path = split_raw_path(rest)
+        if branch and path:
+            # GitHub Contents API（有令牌时限额 1000/小时）
+            attempts.append(
+                (f"https://api.github.com/repos/{owner}/{repo}/contents/{path}?ref={branch}", True)
+            )
+            # jsDelivr 三个可用子域（主域 cdn.jsdelivr.net 国内被重置，勿用）
+            for cdn in ("fastly.jsdelivr.net", "testingcf.jsdelivr.net", "gcore.jsdelivr.net"):
+                attempts.append((f"https://{cdn}/gh/{owner}/{repo}@{branch}/{path}", False))
         # gh-proxy 加速代理
         attempts.append((f"https://gh-proxy.com/{url}", False))
     # http 源补 https 变体（部分网络环境禁明文 http）

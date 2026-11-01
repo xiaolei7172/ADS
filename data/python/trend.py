@@ -2,7 +2,7 @@
 """
 规则量趋势图：每次更新把条数追加到 data/stats/stats.csv，
 并生成 SVG 折线图 data/stats/trend.svg 供 README 嵌入。
-- 数据点超过 90 个时滚动保留最近 90 个（文件不无限膨胀）；
+- 数据点超过 365 个时滚动保留最近 365 个（按天收敛，约一年）；
 - 当天已有记录且数值未变时不追加（规则没变不产生新数据点）；
 - 纯标准库画 SVG，无第三方依赖。
 """
@@ -19,7 +19,7 @@ from common import RULES_DIR, REPO_ROOT, count_valid_lines, beijing_now
 STATS_DIR = os.path.join(REPO_ROOT, "data", "stats")
 CSV_PATH = os.path.join(STATS_DIR, "stats.csv")
 SVG_PATH = os.path.join(STATS_DIR, "trend.svg")
-MAX_POINTS = 90
+MAX_POINTS = 365
 
 # ==========================================
 # 1. 追加数据点
@@ -44,14 +44,18 @@ else:
 
 # 当天已记录且数值未变 → 不追加（避免规则没变也堆数据点）
 today = now[:10]
-if data:
-    last = data[-1]
-    if last[0][:10] == today and last[1:] == [str(dns), str(adblock), str(allow)]:
-        pass  # 已有当点，不重复
-    else:
-        data.append([ts, str(dns), str(adblock), str(allow)])
+row = [ts, str(dns), str(adblock), str(allow)]
+if data and data[-1][0][:10] == today:
+    data[-1] = row          # 同一天只保留最后一条（数值变了也只是替换，不新增点）
 else:
-    data.append([ts, str(dns), str(adblock), str(allow)])
+    data.append(row)
+
+# 历史数据里同一天可能留下多条（旧逻辑只要数值变化就追加），统一收敛为当天最后一条：
+# 趋势图本来就是按天看的，一天多个点只会让 CSV 虚胖、MAX_POINTS 提前滚动。
+by_day = {}
+for r in data:
+    by_day[r[0][:10]] = r
+data = [by_day[d] for d in sorted(by_day)]
 
 if len(data) > MAX_POINTS:
     data = data[-MAX_POINTS:]

@@ -1,0 +1,13 @@
+version: 2
+# 第三方 action 在 workflow 里钉的是 commit SHA（tag 可被上游重指）。
+# Dependabot 会按 SHA 后的注释识别版本号并自动提 PR 升级，
+# 这样既有供应链保护，又不会把版本钉死。
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "ci"
+    labels:
+      - "dependencies"

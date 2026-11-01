@@ -13,9 +13,12 @@ RULES_DIR = os.path.join(REPO_ROOT, "data", "rules")
 TMP_DIR = os.path.join(REPO_ROOT, "data", "tmp")
 MOD_DIR = os.path.join(REPO_ROOT, "data", "mod")
 
-# 合法域名：字母数字连字符标签 + 2~24 位字母 TLD
+# 合法域名：字母数字连字符标签 + TLD
+# TLD 允许两种形态：常规字母（2~24 位）与 punycode（xn--fiqs8s = .中国）。
+# 旧规则只认纯字母，把 .中国/.公司 这类 IDN 域名整条丢掉（上游实测 63 条）。
 RE_DOMAIN = re.compile(
-    r"^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,24}$", re.IGNORECASE
+    r"^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+(?:[a-z]{2,24}|xn--[a-z0-9-]{2,})$",
+    re.IGNORECASE,
 )
 # ||domain^
 RE_BLOCK_DOMAIN = re.compile(r"^\|\|([a-zA-Z0-9.-]+)\^$")

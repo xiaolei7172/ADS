@@ -13,6 +13,7 @@ import os
 import glob
 import re
 import sys
+from itertools import islice
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
@@ -58,7 +59,9 @@ def get_rule_meta(file_path):
 
     try:
         with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
-            for line in f.readlines()[:80]:
+            # islice：只要前 80 行。旧写法 readlines()[:80] 会先把整个文件
+            # （单源最大 10 MB）读成列表再切片，白读 99% 的内容
+            for line in islice(f, 80):
                 line = line.strip()
                 if line.startswith("! Title:"):
                     title = line.replace("! Title:", "").strip()
@@ -149,13 +152,16 @@ if exclude_allow_domains:
     print(f"🧯 精确剔除过宽放行规则 {_before - len(all_white_raw)} 条（data/mod/exclude.txt）")
 
 # 白名单域名集合：只收合法行，跳过带空格等非法行
+# （旧写法在 print 里又跑了一遍全量 allow_domain 推导式，等于多算两次）
 allow_domain_set = set()
+n_invalid_white = 0
 for rule in all_white_raw:
     d = allow_domain(rule)
     if d:
         allow_domain_set.add(d)
-print(f"📊 合法白名单域名：{len(allow_domain_set)} 个"
-      f"（丢弃非法白名单行 {len(all_white_raw) - len([r for r in all_white_raw if allow_domain(r)])} 条）")
+    else:
+        n_invalid_white += 1
+print(f"📊 合法白名单域名：{len(allow_domain_set)} 个（丢弃非法白名单行 {n_invalid_white} 条）")
 
 # ==========================================
 # 2. 合并黑名单（自动过滤 + 写入本地自定义）
