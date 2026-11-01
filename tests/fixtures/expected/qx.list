@@ -1,0 +1,7 @@
+# 天影规则聚合 · Quantumult X 拦截规则
+# Github: https://github.com/xiaolei7172/ADS
+# Format: DOMAIN-SUFFIX,domain,reject（后缀匹配，等价 AdGuard 的 ||domain^）
+
+DOMAIN-SUFFIX,union.ucweb.com,reject
+DOMAIN-SUFFIX,ssp.2345.com,reject
+DOMAIN-SUFFIX,xn--pan-ei0e.xn--baidu-jm6h.com,reject

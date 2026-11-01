@@ -1,0 +1,4 @@
+# golden 输入：3 条真实上游域名（含一条 punycode），改这里必须同步重生成 expected/
+union.ucweb.com
+ssp.2345.com
+xn--pan-ei0e.xn--baidu-jm6h.com

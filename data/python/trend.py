@@ -8,7 +8,6 @@
 """
 import os
 import csv
-from datetime import datetime
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys_paths = os.path.abspath(SCRIPT_DIR)

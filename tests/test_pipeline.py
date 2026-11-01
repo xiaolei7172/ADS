@@ -8,12 +8,14 @@
 跑法：python -m unittest discover -s tests -v
 """
 import os
+import pathlib
 import re
 import sys
 import unittest
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "data", "python"))
+FIXTURES = os.path.join(ROOT, "tests", "fixtures")
 
 from common import (  # noqa: E402
     valid_domain, block_domain, allow_domain, hosts_target,
@@ -83,9 +85,13 @@ class TestAllowSemantics(unittest.TestCase):
 class TestMirrorUrls(unittest.TestCase):
     """镜像兜底是 raw 抖动时的唯一活路，断言每个通道的 URL 都拼得对。"""
 
-    URLS = re.findall(r'"url":\s*"([^"]+)"',
-                      open(os.path.join(ROOT, "data", "python", "dl.py"),
-                           encoding="utf-8").read())
+    @classmethod
+    def setUpClass(cls):
+        # 放在 setUpClass 而不是类体：URLS 若在 import 阶段求值，dl.py 一旦换成
+        # 单引号 / 改成从 YAML 读，整个测试文件会在 import 时就崩，
+        # 报错指向"测试文件第 N 行"而不是"URL 解析失败"。
+        src = pathlib.Path(ROOT, "data", "python", "dl.py").read_text(encoding="utf-8")
+        cls.URLS = re.findall(r'"url":\s*"([^"]+)"', src)
 
     def test_split_raw_path(self):
         self.assertEqual(split_raw_path("main/dist/hosts.txt"), ("main", "dist/hosts.txt"))
@@ -143,6 +149,65 @@ class TestFormats(unittest.TestCase):
     def test_only_hosts_is_exact_match(self):
         exact = [f.name for f in self.formats if not f.suffix]
         self.assertEqual(exact, ["hosts.txt"])
+
+
+class TestGoldenFiles(unittest.TestCase):
+    """产物字节锁 —— 这一层是"第二双眼睛"。
+
+    为什么非要有：生成器用 fmt.render 写文件、校验器用 fmt.read 读文件，
+    两边都错（比如 read_dnsmasq 少写了 `=`）会一致地错，verify-fixes 依然全绿、
+    test_write_read_roundtrip 也依然通过，客户端却读不了。
+    golden 里的字节是"上一次发布出去、被真实客户端读过"的那一版
+    （tests/fixtures/expected/ 的正文行已逐字节对齐 data/rules/ 的线上产物），
+    所以它测的是"产物有没有变"，而不是"代码自己认为对不对"。
+
+    新增格式时必须同时补 expected/<name>，否则 test_every_format_has_golden 会红。
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        from formats import FORMATS
+        from pipeline import render_text
+        cls.formats = FORMATS
+        cls.render_text = staticmethod(render_text)
+        with open(os.path.join(FIXTURES, "input.txt"), encoding="utf-8") as f:
+            cls.domains = [ln.strip() for ln in f
+                           if ln.strip() and not ln.startswith("#")]
+
+    def test_every_format_has_golden(self):
+        have = {p.name for p in pathlib.Path(FIXTURES, "expected").iterdir()}
+        want = {f.name for f in self.formats}
+        self.assertEqual(want - have, set(), "这些格式缺 golden 文件")
+        self.assertEqual(have - want, set(), "这些 golden 已没有对应格式，删掉它")
+
+    def test_golden_bytes(self):
+        for fmt in self.formats:
+            want = pathlib.Path(FIXTURES, "expected", fmt.name).read_text(encoding="utf-8")
+            got = self.render_text(fmt, self.domains)
+            if got == want:
+                continue
+            # 找出第一处不同，报错时直接指出来，不用人肉 diff
+            g, w = got.splitlines(), want.splitlines()
+            idx = next((i for i in range(min(len(g), len(w))) if g[i] != w[i]),
+                       min(len(g), len(w)))
+            raise AssertionError(
+                f"{fmt.name} 产物字节变了（第 {idx + 1} 行）\n"
+                f"  现在写：{g[idx] if idx < len(g) else '<文件提前结束>'!r}\n"
+                f"  golden：{w[idx] if idx < len(w) else '<文件提前结束>'!r}\n"
+                f"  若这是有意的格式变更，同步更新 tests/fixtures/expected/{fmt.name}，"
+                f"并确认 data/python/formats.py 的 read() 也一起改了。")
+
+    def test_hosts_header_has_no_timestamp(self):
+        """hosts 表头不能带时间戳：带了就等于每天重写 7 MB 文件，
+        `git diff --cached --quiet` 的"无变化不提交"永远走不到。"""
+        hosts = next(f for f in self.formats if f.name == "hosts.txt")
+        first = self.render_text(hosts, self.domains)
+        self.assertNotIn("⏰ 更新时间", first)
+        self.assertIn("内容指纹", first)
+        self.assertEqual(first, self.render_text(hosts, self.domains),
+                         "同样输入两次渲染必须完全一致")
+        self.assertNotEqual(first, self.render_text(hosts, self.domains[:-1]),
+                            "域名集变了，内容指纹必须跟着变")
 
 
 if __name__ == "__main__":

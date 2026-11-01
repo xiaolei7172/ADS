@@ -1,0 +1,5 @@
+# 天影规则聚合 · Surge RULE-SET
+# 由 dns.txt（已去重）自动转换 | https://github.com/xiaolei7172/ADS | 每日自动更新
+DOMAIN-SUFFIX,union.ucweb.com
+DOMAIN-SUFFIX,ssp.2345.com
+DOMAIN-SUFFIX,xn--pan-ei0e.xn--baidu-jm6h.com

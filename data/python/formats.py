@@ -10,6 +10,7 @@
 
 现在新增一种格式 = 往 FORMATS 里加一个 Format(...)，写、读、校验三处同时就有了。
 """
+import hashlib
 import re
 from dataclasses import dataclass
 from typing import Callable, Optional, Sequence, Tuple, Union
@@ -129,14 +130,22 @@ H_SMARTDNS_WHITE = (
 
 
 def h_hosts(domains):
-    """hosts 表头带条数与时间，必须动态生成"""
-    from common import beijing_now
+    """hosts 表头：条数 + 内容指纹（不能写时间戳）。
+
+    以前这里写的是「⏰ 更新时间：{beijing_now()}」，而 h_hosts 每次运行都会重算，
+    于是条数一条没变、整份 7 MB 文件也被重写一遍：
+      · workflow 里 `git diff --cached --quiet` 的"无变化不提交"分支永远走不到；
+      · 用户看 git log 会以为每天都在更新，其实可能一条规则都没动。
+    改成域名集的内容指纹后，只有集合真的变了，文件才变。
+    """
+    digest = hashlib.sha256("\n".join(domains).encode("utf-8")).hexdigest()[:12]
     return (
         "# 天影规则聚合 · HOSTS 版",
         "# 由 dns.txt 折叠前的完整域名集转换，含全部子域，覆盖与 AdGuard 语义对齐",
         "# ⚠️ hosts 只能精确匹配，拦不到未列出的子域；需要完整子域覆盖请用 dns.txt / smartdns.conf / surge.list",
         "# 📌 项目地址：https://github.com/xiaolei7172/ADS",
-        f"# ⏰ 更新时间：{beijing_now()}（北京时间） | 📊 有效规则：{len(domains)} 条",
+        f"# 🔖 内容指纹：{digest} | 📊 有效规则：{len(domains)} 条"
+        " | ⏰ 变更时间见 git 提交记录",
         "# 🔄 更新频率：每日自动更新（北京时间 08:00）",
     )
 

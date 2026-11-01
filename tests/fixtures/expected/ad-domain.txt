@@ -1,0 +1,8 @@
+[Host]
+# 天影规则聚合 · 纯净域名黑名单
+# Github: https://github.com/xiaolei7172/ADS
+# 自动提取：只保留纯域名，适配 AdGuard Home / 路由器
+
+union.ucweb.com
+ssp.2345.com
+xn--pan-ei0e.xn--baidu-jm6h.com

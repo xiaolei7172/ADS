@@ -147,7 +147,7 @@ def build_suffix_index(domains):
 
     一次构建 O(n × 层数)，之后查"某个放行域会解开哪些拦截"是 O(结果数)。
     旧写法对每个候选放行域全量扫一遍 24 万条拦截域（is_allowed 逐条比对），
-    接一份 1000 条的候选白名单就是 2.4 亿次比较，实measure 会跑到分钟级。
+    接一份 1000 条的候选白名单就是 2.4 亿次比较，实测会跑到分钟级。
     """
     idx = {}
     for d in domains:
@@ -230,7 +230,7 @@ def main():
         # 裸域名在白名单里等价于 @@||d^，直接并进候选（旧写法在这里重新 open 一次文件且没 close）
         candidate = set(allow_doms) | set(bare_doms)
         affected, n_new, n_neutral, n_dup = rehearse_allow(candidate)
-        print(f"\n⚗️  冲突预演（白名单）：")
+        print("\n⚗️  冲突预演（白名单）：")
         print(f"   候选放行域 {len(candidate)} 条：与现有白名单重复 {n_dup} 条，"
               f"净新增 {n_new} 条（其中 {n_neutral} 条当前无拦截规则在拦）")
         if not affected:
@@ -247,7 +247,7 @@ def main():
         # 裸域名黑名单很常见（很多 hosts 源去掉 IP 就只有域名），一并计入候选
         block_candidate = block_doms | bare_doms
         dup, new = rehearse_block(block_candidate)
-        print(f"\n⚗️  冲突预演（黑名单）：")
+        print("\n⚗️  冲突预演（黑名单）：")
         print(f"   拦截域 {len(block_candidate)} 条：与现有 DNS 拦截重复 {dup} 条，预计净新增 {new} 条")
         if len(block_candidate) == 0:
             print("   ⚠️ 未解析出任何拦截域名，接入价值存疑")
@@ -255,7 +255,7 @@ def main():
             print("   ℹ️ 全部与现有规则重叠——接入仅提供多源冗余保障，不会改变拦截面")
 
     # 4. 接入建议
-    print(f"\n📌 接入建议：")
+    print("\n📌 接入建议：")
     if verdict == "allow":
         target = "dl.py 的 allow_rules"
     elif verdict == "block":
@@ -263,8 +263,9 @@ def main():
     else:
         target = "先人工拆分再决定，不建议整文件接入"
     print(f"   1. 判定通过后，把该 URL 加入 {target}，name 建议带上黑白属性（如 xx 白名单/xx 拦截规则）")
-    print(f"   2. 接入后本地跑：python dl.py && python merge.py && python filter-dns.py && python check-quality.py")
-    print(f"   3. 正式管线另有双保险：下载方向体检（dl.py）+ 白名单污染熔断（merge.py，移除比例>8% 即中止）")
+    print("   2. 接入后本地跑：python dl.py && python merge.py && python filter-dns.py"
+          " && python pipeline.py && python check-quality.py && python verify-fixes.py")
+    print("   3. 正式管线另有双保险：下载方向体检（dl.py）+ 白名单污染熔断（merge.py，移除比例>8% 即中止）")
     os.remove(tmp)
 
 

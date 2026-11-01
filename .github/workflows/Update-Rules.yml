@@ -1,6 +1,11 @@
 name: TianYing Update Rules
 on: 
   workflow_dispatch:
+    inputs:
+      simulate_failure:
+        description: '🧪 注入一次失败，验证失败告警链路（只建 issue，不发布任何产物）'
+        type: boolean
+        default: false
   schedule:
     # 每日一次：UTC 00:17 = 北京时间 08:17
     # 用 17 分而非整点，避开 GitHub 调度高峰（整点前后定时任务常被推迟十几分钟）
@@ -32,6 +37,15 @@ jobs:
       - name: Unit Tests
         run: python -m unittest discover -s tests -v
 
+      # 🧪 失败告警链路自测：告警代码平时永远不执行，只有在出事时才跑，
+      #    所以必须能被主动触发一次。手动 dispatch 勾上 simulate_failure 即可。
+      #    用 github.event.inputs 而不是 inputs 上下文：前者对 workflow_dispatch 恒可用。
+      - name: Simulate Failure
+        if: ${{ github.event.inputs.simulate_failure == 'true' }}
+        run: |
+          echo "::error::模拟失败（simulate_failure=true）：用于验证 Report Failure 是否真的建出 issue"
+          exit 1
+
       - name: Download Rules
         # 传入令牌：dl.py 的 GitHub API 兜底通道不再走匿名（60 次/小时限额）
         env:
@@ -57,7 +71,7 @@ jobs:
         run: python ./data/python/check-quality.py
 
       # ==============================================
-      # 🔍 格式一致性：11 种产物对同一域名的判定必须一致。
+      # 🔍 格式一致性：8 种拦截产物对同一域名的判定必须一致。
       #    历史上 qx 漏拦 1.4 万子域、hosts 漏拦 1.4 万、dnsmasq 不认 address=，
       #    全靠"人记得跑 verify"才发现。现在由 CI 强制，改坏当场红。
       # ==============================================
@@ -128,13 +142,20 @@ jobs:
               echo "| $f | ${n:-读取失败} |"
             done
             echo ""
-            echo "上游源：$(grep -o '上游源状态：[^<]*' README.md 2>/dev/null | head -1)"
+            # README 里的写法是「✅ **上游源状态**：20/20 全部下载成功」，
+            # 状态与冒号之间夹着 **，旧正则 `上游源状态：[^<]*` 永远匹配不到，输出恒为空
+            echo "上游源：$(grep -m1 '上游源状态' README.md 2>/dev/null | sed 's/.*\*\*：//')"
           } >> "$GITHUB_STEP_SUMMARY"
 
       # ==============================================
       # 🚨 失败通知：定时任务挂了只在 Actions 页面可见，
       #    规则会静默停在几天前。失败时自动开 issue，
-      #    已有同名 open issue 则追加评论（用 API 直调，不引第三方 action）
+      #    已有同名 open issue 则追加评论。
+      #
+      #    用 gh CLI 而不是 curl 直调：JSON 组装、转义、错误码全交给 gh，
+      #    它遇到 4xx/5xx 会以非零退出码结束。旧写法 `curl -sS ... > /dev/null`
+      #    没有 -f，4xx 也返回 0，这一步会显示绿色但什么都没发生——
+      #    专门为"失败可见"加的防线，在最需要它的时候是纸糊的。
       # ==============================================
       - name: Report Failure
         if: failure()
@@ -142,19 +163,19 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          set -u
-          API="https://api.github.com/repos/${{ github.repository }}/issues"
-          existing=$(curl -sS -H "Authorization: Bearer $GH_TOKEN" \
-            "https://api.github.com/search/issues?q=repo:${{ github.repository }}+is:issue+is:open+in:title+%E8%A7%84%E5%88%99%E6%9B%B4%E6%96%B0%E5%A4%B1%E8%B4%A5" \
-            | python -c "import sys,json;d=json.load(sys.stdin);print(d['items'][0]['number'] if d.get('items') else '')")
+          set -eu
+          existing=$(gh issue list --repo "${{ github.repository }}" --state open \
+                       --search '规则更新失败 in:title' \
+                       --json number --jq '.[0].number // ""')
           if [ -n "$existing" ]; then
-            curl -sS -X POST -H "Authorization: Bearer $GH_TOKEN" \
-              -d "{\"body\":\"再次失败：$RUN_URL\"}" "$API/$existing/comments" > /dev/null
+            gh issue comment "$existing" --repo "${{ github.repository }}" \
+              --body "再次失败：$RUN_URL"
             echo "↩️ 已追加到 issue #$existing"
           else
-            curl -sS -X POST -H "Authorization: Bearer $GH_TOKEN" \
-              -d "{\"title\":\"❌ 规则更新失败（见最新运行记录）\",\"body\":\"最近一次定时更新失败。\n\n运行记录：$RUN_URL\n\n排查顺序：Job Summary 看各产物条数 → Download Rules 看哪个源挂了 → Quality Check / Verify Format Consistency 看是不是规则本身退化。\"}" \
-              "$API" > /dev/null
+            body=$(printf '最近一次定时更新失败。\n\n运行记录：%s\n\n排查顺序：Job Summary 看各产物条数 → Download Rules 看哪个源挂了 → Quality Check / Verify Format Consistency 看是不是规则本身退化。' "$RUN_URL")
+            gh issue create --repo "${{ github.repository }}" \
+              --title "❌ 规则更新失败（见最新运行记录）" \
+              --body "$body"
             echo "🆕 已创建失败 issue"
           fi
 

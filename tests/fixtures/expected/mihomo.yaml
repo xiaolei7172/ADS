@@ -1,0 +1,7 @@
+# 天影规则聚合 · Clash/Mihomo 域名集
+# 由 dns.txt（已去重）自动转换；behavior: domain
+# 📌 https://github.com/xiaolei7172/ADS | 🔄 每日自动更新
+payload:
+  - '+.union.ucweb.com'
+  - '+.ssp.2345.com'
+  - '+.xn--pan-ei0e.xn--baidu-jm6h.com'

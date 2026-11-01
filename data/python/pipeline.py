@@ -12,13 +12,14 @@
   python pipeline.py                 # 生成全部
   python pipeline.py qx.list surge.list   # 只生成指定格式（旧脚本走这条路）
 """
+import json
 import os
 import re
 import sys
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
-from common import RULES_DIR, MOD_DIR, block_domain, allow_domain  # noqa: E402
+from common import RULES_DIR, block_domain, allow_domain  # noqa: E402
 from formats import FORMATS, BY_NAME  # noqa: E402
 
 DNS_PATH = os.path.join(RULES_DIR, "dns.txt")
@@ -53,6 +54,10 @@ def load_unfolded():
 
     hosts 只能精确匹配，跟着折叠后的 dns.txt 会漏掉约 1.5 万个被折叠的子域，
     而漏掉是无声的。所以这里读不到就直接失败，不发布残缺产物。
+
+    光判断「文件存在」不够：filter-dns 中途崩掉时，上一次留下的 dns-unfolded.txt
+    还在，pipeline 会认为契约满足，用一份过期的折叠集生成 hosts.txt——
+    条数与当天 dns.txt 对不上，但没有任何红。所以再拿 meta 里的 count 核一次。
     """
     if not os.path.exists(UNFOLDED_PATH):
         print(f"❌ 未找到折叠前域名集：{UNFOLDED_PATH}")
@@ -64,6 +69,20 @@ def load_unfolded():
         d = block_domain(line) or (line.lower() if BARE.match(line) else None)
         if d:
             out.append(d)
+
+    if os.path.exists(UNFOLDED_META):
+        try:
+            with open(UNFOLDED_META, "r", encoding="utf-8") as f:
+                meta = json.load(f)
+            want = meta.get("count")
+            if want is not None and int(want) != len(out):
+                print(f"❌ 折叠前域名集与 meta 不一致：文件 {len(out):,} 条 / "
+                      f"meta {int(want):,} 条（生成于 {meta.get('generated')}）")
+                print("   疑似 filter-dns.py 未跑完就中断，留下的是上一次的旧文件。")
+                print("   请重新执行：python data/python/filter-dns.py")
+                sys.exit(1)
+        except (OSError, ValueError, TypeError):
+            print("⚠️ dns-unfolded.meta.json 读取失败，按文件实际内容生成")
     return out
 
 
@@ -85,23 +104,38 @@ def load_allow():
 LOADERS = {"block": load_block, "unfolded": load_unfolded, "allow": load_allow}
 
 
-def emit(fmt, domains):
-    """按格式声明写出一个产物，返回实际条数"""
+def _dedup(fmt, domains):
+    """保序去重：同一份 dns.txt 里父子域折叠后仍可能有大小写等重复。"""
+    if not fmt.dedup:
+        return list(domains)
     seen = set()
     rows = []
     for d in domains:
-        if fmt.dedup:
-            if d in seen:
-                continue
-            seen.add(d)
+        if d in seen:
+            continue
+        seen.add(d)
         rows.append(d)
+    return rows
 
+
+def render_text(fmt, domains):
+    """按格式声明渲染出一个产物的完整文本（表头 + 正文）。
+
+    单独拆出来是为了让 golden 测试能比对「完整文件」而不是「拼出来的正文」——
+    表头才是最容易被客户端读错、又最容易被改坏而无人发现的部分。
+    """
+    rows = _dedup(fmt, domains)
+    out = [line + "\n" for line in fmt.header_lines(rows)]
+    out.extend(fmt.render(d) for d in rows)
+    return "".join(out)
+
+
+def emit(fmt, domains):
+    """写出一个产物，返回实际条数"""
+    rows = _dedup(fmt, domains)
     out_path = os.path.join(RULES_DIR, fmt.name)
     with open(out_path, "w", encoding="utf-8", newline="\n") as f:
-        for line in fmt.header_lines(rows):
-            f.write(line + "\n")
-        for d in rows:
-            f.write(fmt.render(d))
+        f.write(render_text(fmt, rows))
     return len(rows)
 
 
