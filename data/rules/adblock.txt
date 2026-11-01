@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影规则聚合 · 广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-01 11:27:31（北京时间）
-! 📊 有效规则：273529 条
+! ⏰ 更新时间：2026-11-01 11:42:53（北京时间）
+! 📊 有效规则：273524 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-01 11:27:31 | ✅ 有效规则 273529 条
+! Description: ⏰ 更新时间 2026-11-01 11:42:53 | ✅ 有效规则 273524 条
 ! ======================================================================
 ! ==============================================
 ! 📋 规则来源：本地自定义规则
@@ -71092,7 +71092,6 @@
 ||adsfs.oppomobile.com^
 ||httpdns.ocloud.oppomobile.com^
 ||adsfs-in.oppomobile.com^
-||httpdns.push.oppomobile.com^
 ||opponentharriet.com^
 ||opportunitysearch.net^
 ||opposerseizers.com^
@@ -133898,7 +133897,6 @@
 ||eclkmpbn.com^
 ||eclunhuzuyoia.store^
 ||ecm.agravis.de^
-||ecma.bdimg.com^
 ||ecmcza.phiten-store.com^
 ||ecn15csr-store.net.mydays.de^
 ||eco.blendxxx.com^
@@ -154822,7 +154820,6 @@
 ||lmeci.stuartweitzman.com^
 ||lmfsga.chojyu.com^
 ||lmh.lmhshoppingzone.shop^
-||lmlicenses.wip4.adobe.com^
 ||lmnpd.xyz^
 ||lmpadebis.gala-series.com^
 ||lmtjapi.com^
@@ -179484,7 +179481,6 @@
 ||retaildetail.fr^
 ||retailleaders.rila.org^
 ||retapedarrozcarolin.cyou^
-||retcode.taobao.com^
 ||rethephrased.com^
 ||rethetritestleaches.cfd^
 ||retiadraffy.top^
@@ -264668,7 +264664,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||api.dhrest.com^
 ||api.erghh3717.cc^
 ||api.feelgood.cn^
-||api.g.micloud.xiaomi.net^
 ||api.game.chot.cn^
 ||api.game.hnquyou.com^
 ||api.game.mgtv.com^

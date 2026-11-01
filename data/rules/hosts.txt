@@ -1,7 +1,7 @@
 # 天影规则聚合 · HOSTS 版
 # 由 dns.txt（已去重）自动转换，规则与 dns.txt 完全一致
 # 📌 项目地址：https://github.com/xiaolei7172/ADS
-# ⏰ 更新时间：2026-11-01 11:27:26（北京时间） | 📊 有效规则：242271 条
+# ⏰ 更新时间：2026-11-01 11:42:33（北京时间） | 📊 有效规则：242265 条
 # 🔄 更新频率：每12小时自动更新
 0.0.0.0 ads3-normal-hl.zijieapi.com
 0.0.0.0 ads3-normal-lf.zijieapi.com
@@ -63031,7 +63031,6 @@
 0.0.0.0 tracking.oppd.com
 0.0.0.0 oppetlswhmzck.space
 0.0.0.0 adsfs-in.oppomobile.com
-0.0.0.0 httpdns.push.oppomobile.com
 0.0.0.0 opponentharriet.com
 0.0.0.0 opportunitysearch.net
 0.0.0.0 opposerseizers.com
@@ -122499,7 +122498,6 @@
 0.0.0.0 eclkmpbn.com
 0.0.0.0 eclunhuzuyoia.store
 0.0.0.0 ecm.agravis.de
-0.0.0.0 ecma.bdimg.com
 0.0.0.0 ecmcza.phiten-store.com
 0.0.0.0 ecn15csr-store.net.mydays.de
 0.0.0.0 eco.blendxxx.com
@@ -142825,7 +142823,6 @@
 0.0.0.0 lmeci.stuartweitzman.com
 0.0.0.0 lmfsga.chojyu.com
 0.0.0.0 lmh.lmhshoppingzone.shop
-0.0.0.0 lmlicenses.wip4.adobe.com
 0.0.0.0 lmnpd.xyz
 0.0.0.0 lmpadebis.gala-series.com
 0.0.0.0 lmtjapi.com
@@ -166900,7 +166897,6 @@
 0.0.0.0 retaildetail.fr
 0.0.0.0 retailleaders.rila.org
 0.0.0.0 retapedarrozcarolin.cyou
-0.0.0.0 retcode.taobao.com
 0.0.0.0 rethephrased.com
 0.0.0.0 rethetritestleaches.cfd
 0.0.0.0 retiadraffy.top
@@ -235443,7 +235439,6 @@
 0.0.0.0 api.cmsv5.iyunzk.com
 0.0.0.0 api.dhrest.com
 0.0.0.0 api.feelgood.cn
-0.0.0.0 api.g.micloud.xiaomi.net
 0.0.0.0 api.game.chot.cn
 0.0.0.0 api.game.hnquyou.com
 0.0.0.0 api.game.mgtv.com
@@ -242273,4 +242268,3 @@
 0.0.0.0 zzxx97043.ww7e9.com
 0.0.0.0 zzzu.ag8.com
 0.0.0.0 zzzx1-862777969.ap-east-1.elb.amazonaws.com
-0.0.0.0 dns.alidns.com

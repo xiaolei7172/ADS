@@ -97,3 +97,12 @@
 ! 腾讯游戏资源更新放行
 @@||mdt.qq.com^
 @@||tcdnos.com^
+
+! 功能域放行（取自 lingeringsound/10007_auto Adaway 白名单，只摘 6 条真正影响功能的）
+! 该源 331 条中 289 条与本表重合，剩余多为广告域，整包导入会自毁拦截效果，故只取以下
+@@||dns.alidns.com^
+@@||httpdns.push.oppomobile.com^
+@@||api.g.micloud.xiaomi.net^
+@@||ecma.bdimg.com^
+@@||retcode.taobao.com^
+@@||lmlicenses.wip4.adobe.com^

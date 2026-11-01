@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影规则聚合 · DNS 拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-01 11:27:31（北京时间）
-! 📊 有效规则：242271 条
+! ⏰ 更新时间：2026-11-01 11:42:54（北京时间）
+! 📊 有效规则：242265 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · DNS 拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-01 11:27:31 | ✅ 有效规则 242271 条
+! Description: ⏰ 更新时间 2026-11-01 11:42:54 | ✅ 有效规则 242265 条
 ! ======================================================================
 ! 本文件由 filter-dns.py 从 adblock.txt 提取（项目：天影规则聚合）
 ! 已应用：白名单父子域过滤 + 父子域语义去重
@@ -18,13 +18,12 @@
 ! ────────────── 来源汇总 ──────────────
 !       219 条  本地自定义规则
 !      5631 条  1007-Hosts
-!     91002 条  anti-ad 官方规则
-!    119293 条  AdRules DNS List [AdRules DNS List]
+!     91001 条  anti-ad 官方规则
+!    119290 条  AdRules DNS List [AdRules DNS List]
 !      9550 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !      2749 条  OISD 拦截规则 [oisd small]
 !      4728 条  5460 [酷安广告规则]
-!      9098 条  海哥规则
-!         1 条  abclq Hosts 拦截规则
+!      9097 条  海哥规则
 ! ────────────────────────────────────────
 
 ! ==============================================
@@ -5898,7 +5897,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://anti-ad.net/easylist.txt
 ! ==============================================
-! 📊 本区规则：91002 条
+! 📊 本区规则：91001 条
 ! ==============================================
 ||000491b06a.com^
 ||000dn.com^
@@ -63078,7 +63077,6 @@
 ||tracking.oppd.com^
 ||oppetlswhmzck.space^
 ||adsfs-in.oppomobile.com^
-||httpdns.push.oppomobile.com^
 ||opponentharriet.com^
 ||opportunitysearch.net^
 ||opposerseizers.com^
@@ -96908,7 +96906,7 @@
 ! 📝 规则说明：List for blocking ads in the Chinese region. Block Ads, Trackers, Malware, HTTPDNS, PCDN.
 ! 🔗 原始地址：https://gp.adrules.top/dns.txt
 ! ==============================================
-! 📊 本区规则：119293 条
+! 📊 本区规则：119290 条
 ! ==============================================
 ||0.avmarket.rs^
 ||0.nextyourcontent.com^
@@ -122554,7 +122552,6 @@
 ||eclkmpbn.com^
 ||eclunhuzuyoia.store^
 ||ecm.agravis.de^
-||ecma.bdimg.com^
 ||ecmcza.phiten-store.com^
 ||ecn15csr-store.net.mydays.de^
 ||eco.blendxxx.com^
@@ -142880,7 +142877,6 @@
 ||lmeci.stuartweitzman.com^
 ||lmfsga.chojyu.com^
 ||lmh.lmhshoppingzone.shop^
-||lmlicenses.wip4.adobe.com^
 ||lmnpd.xyz^
 ||lmpadebis.gala-series.com^
 ||lmtjapi.com^
@@ -166955,7 +166951,6 @@
 ||retaildetail.fr^
 ||retailleaders.rila.org^
 ||retapedarrozcarolin.cyou^
-||retcode.taobao.com^
 ||rethephrased.com^
 ||rethetritestleaches.cfd^
 ||retiadraffy.top^
@@ -233260,7 +233255,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt
 ! ==============================================
-! 📊 本区规则：9098 条
+! 📊 本区规则：9097 条
 ! ==============================================
 ||www.programming-rabbit.com^
 ||lxdblzka2xrh5g8f45la.fdw84egqu7lf.kgbbzc.cn^
@@ -235530,7 +235525,6 @@
 ||api.cmsv5.iyunzk.com^
 ||api.dhrest.com^
 ||api.feelgood.cn^
-||api.g.micloud.xiaomi.net^
 ||api.game.chot.cn^
 ||api.game.hnquyou.com^
 ||api.game.mgtv.com^
@@ -242360,12 +242354,3 @@
 ||zzxx97043.ww7e9.com^
 ||zzzu.ag8.com^
 ||zzzx1-862777969.ap-east-1.elb.amazonaws.com^
-
-! ==============================================
-! 📋 规则来源：abclq Hosts 拦截规则
-! 📝 规则说明：广告拦截规则
-! 🔗 原始地址：https://raw.githubusercontent.com/abclq/home-dns-adblock/refs/heads/main/dist/hosts.txt
-! ==============================================
-! 📊 本区规则：1 条
-! ==============================================
-||dns.alidns.com^
