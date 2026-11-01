@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影规则聚合 · 白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-01 11:18:56（北京时间）
-! 📊 有效规则：6721 条
+! ⏰ 更新时间：2026-11-01 11:27:31（北京时间）
+! 📊 有效规则：6710 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 白名单规则 📌
-! Description: ⏰ 更新时间 2026-11-01 11:18:56 | ✅ 有效规则 6721 条
+! Description: ⏰ 更新时间 2026-11-01 11:27:31 | ✅ 有效规则 6710 条
 ! ======================================================================
 ! ==============================================
 ! 📋 白名单来源：anti-ad 官方规则（规则内置）
@@ -55,7 +55,6 @@
 @@||s.mvconf.f.360.cn^
 @@||widget.1688.com^
 @@||api.huangye.miui.com^
-@@||ads.privacy.qq.com^
 @@||future.biz.weibo.com^
 @@||ad-putting.gw.zt-express.com^
 @@||api.onedrive.com^
@@ -2710,7 +2709,6 @@
 @@||pic640.weishi.qq.com^
 @@||l.qq.com^
 @@||yunjiasu.com^
-@@||rdelivery.qq.com^
 @@||c.y.qq.com^
 @@||isure.stream.qqmusic.qq.com^
 @@||public.gdtimg.com^
@@ -2720,7 +2718,6 @@
 @@||logs.game.qq.com^
 @@||cn.ekg.riotgames.com^
 @@||view.inews.qq.com^
-@@||v.gdt.qq.com^
 @@||livew.l.qq.com^
 @@||iwx.mail.qq.com^
 @@||img.ssl.msdk.qq.com^
@@ -2735,7 +2732,6 @@
 @@||dm.video.qq.com^
 @@||c.gj.qq.com^
 @@||vd.l.qq.com^
-@@||mdevstat.qqlive.qq.com^
 @@||vv.video.qq.com^
 @@||mini2015.qq.com^
 @@||pbaccess.video.qq.com^
@@ -2750,13 +2746,11 @@
 @@||bqq.gtimg.com^
 @@||pro.bugly.qq.com^
 @@||yybadaccess.3g.qq.com^
-@@||h.trace.qq.com^
 @@||otheve.beacon.qq.com^
 @@||img1.360buyimg.com^
 @@||ssl.msdk.qq.com^
 @@||sqdd.myapp.com^
 @@||pacaio.match.qq.com^
-@@||btrace.qq.com^
 @@||cfg.imtt.qq.com^
 @@||graph.qq.com^
 @@||im.qq.com^
@@ -2775,7 +2769,6 @@
 @@||dnet.mb.qq.com^
 @@||map.qq.com^
 @@||qun.qzone.qq.com^
-@@||stat.y.qq.com^
 @@||tbs.imtt.qq.com^
 @@||work.weixin.qq.com^
 @@||weidian.com^
@@ -2784,7 +2777,6 @@
 @@||translator.qq.com^
 @@||appsupport.qq.com^
 @@||aegis.qq.com^
-@@||ii.gdt.qq.com^
 @@||dldir3.qq.com^
 @@||gdtimg.com^
 @@||ios.bugly.qq.com^
@@ -3663,7 +3655,6 @@
 @@||acs.m.taobao.com^$important
 @@||na61-na62.wagbridge.advertisement.alibabacorp.com.gds.alibabadns.com^$important
 @@||na61-na62.wagbridge.advertisement.alibabacorp.com^$important
-@@||btrace.qq.com^$important
 @@||c.y.qq.com^$important
 @@||cdn.ark.qq.com^$important
 @@||dldir1.qq.com^$important
@@ -3685,7 +3676,6 @@
 @@||weixin.qq.com^$important
 @@||vdun.weibo.com^$important
 @@||soft.tbs.imtt.qq.com^$important
-@@||stat.y.qq.com^$important
 @@||tbs.imtt.qq.com^$important
 @@||vectorsdk.map.qq.com^$important
 @@||work.weixin.qq.com^$important
@@ -3718,7 +3708,6 @@
 @@||qun.qzone.qq.com^$important
 @@||adstats.tencentmusic.com^$important
 @@||adsmind.gdtimg.com^$important
-@@||v.gdt.qq.com^$important
 @@||126.net^$important
 @@||163.com^$important
 @@||passport.youdao.com^$important
