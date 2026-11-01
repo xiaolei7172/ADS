@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影规则聚合 · 白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-01 12:01:53（北京时间）
-! 📊 有效规则：6727 条
+! ⏰ 更新时间：2026-11-01 12:16:52（北京时间）
+! 📊 有效规则：6729 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 白名单规则 📌
-! Description: ⏰ 更新时间 2026-11-01 12:01:53 | ✅ 有效规则 6727 条
+! Description: ⏰ 更新时间 2026-11-01 12:16:52 | ✅ 有效规则 6729 条
 ! ======================================================================
 ! ==============================================
 ! 📋 白名单来源：anti-ad 官方规则（规则内置）
@@ -3186,7 +3186,6 @@
 @@||click.o.delta.com^
 @@||click.discord.com^
 @@||click.dji.com^
-@@||ad.doubleclick.net^
 @@||click*.experian.com^
 @@||click.fidelityinvestments.com^
 @@||click.holidayinnclubemail.com^
@@ -6729,7 +6728,6 @@
 @@||idv-prod1.apple.com^
 @@||www.widgets.link^
 ! 📋 白名单来源：abclq 防误杀白名单（远程白名单）
-@@||qznovelvod.com^
 @@||douyinliving.com^
 @@||fqnovelpic.com^
 @@||douyinpic.com^
@@ -6755,3 +6753,7 @@
 @@||sea.napi.ucweb.com^
 @@||safe.ucweb.com^
 @@||wap3.ucweb.com^
+@@||wechat.com^
+@@||appstore.360.cn^
+@@||jiagu.360.cn^
+@@||mcloud.360.cn^

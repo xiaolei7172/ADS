@@ -21,16 +21,16 @@
 ### 🔮 天影规则聚合 · 实时规则规模
 
 
-🕒 **更新时间**：2026-11-01 12:01:54（北京时间）
+🕒 **更新时间**：2026-11-01 12:16:53（北京时间）
 
 
-🚫 **广告拦截规则**：273503 条
+🚫 **广告拦截规则**：273498 条
 
 
-🌐 **DNS 拦截域名**：242273 个
+🌐 **DNS 拦截域名**：242383 个
 
 
-✅ **白名单放行规则**：6727 条
+✅ **白名单放行规则**：6729 条
 
 <!-- DL_STATUS_START -->
 ✅ **上游源状态**：20/20 全部下载成功
@@ -313,8 +313,12 @@ rules:
 | 上游拦了 `\|bytedance.com^`（整公司主域） | 剔除该条 | 配置下发 `tnc3-*`、设备标识 `ttwid`、小程序容器 `microapp` 恢复；`mssdk`/`pitaya` 等埋点子域照旧拦 |
 | 上游拦了 `\|api5-normal-lf.fqnovel.com^`（番茄内容 API） | 剔除整族 `api{3,5}-normal-*` | 番茄小说正文与章节恢复；`log*-applog`/`mon*-misc` 等埋点照旧拦 |
 | 上游白名单放了 `@@\|ucweb.com^`（整域） | 同时剔除它与 `\|ucweb.com^` | UC 的 `adtrack`/`ucads`/`union`/`insight`/`utp` 等 18 条广告追踪域恢复拦截；`u3`/`cms`/`ucsec`/`safe` 等功能子域点名放行 |
+| 上游拦了 `\|360.cn^` / `\|2345.com^` / `\|wechat.com^`（整公司主域） | 剔除主域三条 | 360 安全卫士、2345 导航、微信国际版恢复解析；同时上游单列的 107 条广告子域（`ad.360.cn`、`pop.360.cn`、`ssp.2345.com` …）从父子域折叠中露出、继续拦截 |
+| 上游白名单放了 `@@\|ad.doubleclick.net^` / `@@\|qznovelvod.com^` | 剔除放行侧两条 | Google DART 展示广告、番茄小说阅读页 `vN-reading-ad` 共 7 条恢复拦截 |
 
-改完跑 `python data/python/verify-fixes.py`，它会用 22 个用例把 dns / hosts / qx / surge / smartdns / mihomo 六种格式逐个比对，状态必须完全一致。
+> ⚠️ 剔除主域会带来一个连带效应：父子域去重此前把该域下的子域规则折叠了，主域一旦解除，这些子域规则会全部浮出。所以还要复查新露出的子域有没有误伤功能（本轮就因此补放了 `appstore.360.cn` / `jiagu.360.cn` / `mcloud.360.cn`，并把 `wechat.com` 改成整域放行）。
+
+改完跑 `python data/python/verify-fixes.py`，它会用 40 个用例把 dns / hosts / qx / surge / smartdns / mihomo 六种格式逐个比对，状态必须完全一致。
 
 ### 🧽 上游脏数据清洗
 

@@ -13,7 +13,6 @@
 @@||audid-api.taobao.com^
 @@||b1-data.ads.heytapmobi.com^
 @@||bbs-static.miyoushe.com^
-@@||beacon.qq.com^
 @@||bsync3-normal.zijieapi.com^
 @@||channels.weixin.qq.com^
 @@||cloudkit-api-cn.heytapmobi.com^
@@ -109,6 +108,10 @@
 
 ! UC 浏览器功能子域（替代原来的 @@||ucweb.com^ 整域放行）
 ! 上游 46 条 ucweb 规则里，广告/追踪域继续拦，资源与安全域在这里点名放行
+! 注意：u3.ucweb.com 必须整域放行 —— 上游把它的 260 条子域全拦了，其中
+!       vs0~vs27.{bj2,gz2,bj2cm…}.u3.ucweb.com 共 228 条是视频 CDN 节点，
+!       拦了 UC 视频加载不出来；余下 32 条是上游批量生成的 *gtest 测试域。
+!       这里用白名单整域放行是"正确的过宽"，不拆。
 @@||u3.ucweb.com^
 @@||cms.ucweb.com^
 @@||client.video.ucweb.com^
@@ -121,3 +124,14 @@
 @@||sea.napi.ucweb.com^
 @@||safe.ucweb.com^
 @@||wap3.ucweb.com^
+
+! wechat.com 整域放行（微信国际版）
+! 上游把 ||wechat.com^ 连同 u / support / newres / dns / mmhead.c2c 五条功能子域一起砍了，
+! 该域本身不承载广告，放行整域的代价远小于打死微信国际版
+@@||wechat.com^
+
+! 360 功能域：解除 ||360.cn^ 父域后，上游单独列的这几条子域会浮出水面
+! （此前一直被父域折叠隐藏），拦了会直接打死 360 的应用商店 / 加固 / 云服务
+@@||appstore.360.cn^
+@@||jiagu.360.cn^
+@@||mcloud.360.cn^

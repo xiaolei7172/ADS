@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影规则聚合 · 广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-01 12:01:53（北京时间）
-! 📊 有效规则：273503 条
+! ⏰ 更新时间：2026-11-01 12:16:52（北京时间）
+! 📊 有效规则：273498 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-01 12:01:53 | ✅ 有效规则 273503 条
+! Description: ⏰ 更新时间 2026-11-01 12:16:52 | ✅ 有效规则 273498 条
 ! ======================================================================
 ! ==============================================
 ! 📋 规则来源：本地自定义规则
@@ -302,7 +302,6 @@
 0.0.0.0 31gtest.bj2cu.u3.ucweb.com
 0.0.0.0 360-g.cn
 0.0.0.0 360.anatic.net
-0.0.0.0 360.cn
 0.0.0.0 360.munion.mediav.com
 0.0.0.0 360ads.com
 0.0.0.0 360dianjing.agrantsem.com
@@ -13771,7 +13770,6 @@
 ||assets.2343sdxs.com^
 ||2345.cc^
 ||2345.cn^
-||2345.com^
 ||2345at.com^
 ||234y.com^
 ||235123.net^
@@ -14268,7 +14266,6 @@
 ||qstore.inner.api.sj.360.cn^
 ||sdk.tf.360.cn^
 ||sdkrec.tf.360.cn^
-||service.jiagu.360.cn^
 ||shake.360.cn^
 ||shake.f.360.cn^
 ||show.look.360.cn^
@@ -151515,7 +151512,6 @@
 ||jhvut.jamesallen.com^
 ||jhwwtm.idmarket.com^
 ||jhzfwl.cn^
-||jiagu.360.cn^
 ||jianchajingmk.net^
 ||jianxinshanghai.com^
 ||jianyihang.com^
@@ -244364,7 +244360,6 @@ analytics-*.aasaam.com
 ||upload.360.cn^
 ||trace.360.cn^
 ||data.360.cn^
-||mcloud.360.cn^
 ||cloud.360safe.com^
 ||bizhi.360.cn^
 ||wallpaper.360.cn^
@@ -244379,7 +244374,6 @@ analytics-*.aasaam.com
 ||so.360.cn^
 ||sp.360.cn^
 ||mapp.360.cn^
-||appstore.360.cn^
 ||app.360.cn^
 ||game.360.cn^
 ||gamead.360.cn^
@@ -244399,7 +244393,6 @@ analytics-*.aasaam.com
 ||httpdns.calorietech.com^
 ||hd.xiaojukeji.com^
 ||dns2.titannetwork.cn^
-||dns.wechat.com^
 ||impression.biligame.com^
 ||jzts.cmpassport.com^
 ||ug-data.mihoyo.com^
@@ -245640,6 +245633,8 @@ analytics-*.aasaam.com
 ||picgg.idti.cn^
 ||lv-api.ulikecam.com^
 ||d.url.cn/myapp/qq_desk/pre_res/official/*.plist?mType=ConfigCheck^
+||v26-reading.qznovelvod.com^
+||v3-reading.qznovelvod.com^
 ||match.adsrvr.cn^
 ||t.dentsuchina.cn^
 ||sf1-amtos-cdn.bytesmanager.com^
@@ -245902,6 +245897,7 @@ analytics-*.aasaam.com
 ||hy040803.298754.cc^
 ||*.taoroad.com.cn^
 ||frt040803.341035.cc^
+||ad.doubleclick.net^
 ||adc3-launch.adcolony.com^
 ||events3alt.adcolony.com^
 ||wd.adcolony.com^
@@ -268566,7 +268562,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||mlvbdc.live.tlivesource.com^
 ||mlx96.shbzh.com^
 ||mm51-tvhn1767.vip^
-||mmhead.c2c.wechat.com^
 ||mmp53.com^
 ||mmqn.api.moji.com^
 ||mmrgnyst.18yfjgf.com^
@@ -268727,6 +268722,7 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||n8u9.yl.ag^
 ||n8xz.143.cc^
 ||n920.011.com^
+||n98-v-readingvideo.qznovelvod.com^
 ||n9ujxzht.n.cdn6ao.vip^
 ||n9ujxzht.n.cdn7ab.vip^
 ||na02.meiyingnet.com^
@@ -268777,7 +268773,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||newdownload.tipt71v7.com^
 ||newetc.xn--czrq32anzck17c.net^
 ||newpay.263pk.com^
-||newres.wechat.com^
 ||news-img.lsttnews.com^
 ||news.10jqka.com.cn^
 ||news.m.liebao.cn^
@@ -270332,7 +270327,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||sup309.kuaizhan.com^
 ||sup6.cl.app^
 ||support.qiu630.com^
-||support.wechat.com^
 ||suv18.com^
 ||sv.bdstatic.com^
 ||svbtdkk1iu96d9gm.nxds66.com^
@@ -270756,7 +270750,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||u.adsl.cn^
 ||u.asdf.live^
 ||u.laidianbanlv.cn^
-||u.wechat.com^
 ||u.yd.qcloud.com^
 ||u0537.com^
 ||u0po6.zoalqhcfubctojr.com^
@@ -270965,6 +270958,7 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||v23-skvod.kwaicdn.com^
 ||v269.ag8.com^
 ||v3-ot02.kwaicdn.com^
+||v3-reading-ad.qznovelvod.com^
 ||v3.verify.cyou^
 ||v3019.com^
 ||v4-plat-fdl.wsukwai.com^
@@ -270978,6 +270972,7 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||v5-hl-ali-reading-video.fqnovelvod.com^
 ||v5-hl-hw-reading-video.fqnovelvod.com^
 ||v5-ks.a.bdycdn.cn^
+||v5-reading-video-b.qznovelvod.com^
 ||v55eyl.vip^
 ||v6-b1.toutiaovod.com^
 ||v62199.com^
@@ -270987,6 +270982,7 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||v7777.cdn.anti8.net^
 ||v7p7.011.com^
 ||v88770.com^
+||v9-reading.qznovelvod.com^
 ||v9669.com^
 ||v9m.gc.com.cn^
 ||v9static.cdn.bcebos.com^
@@ -271271,7 +271267,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||websocket.kh686.com^
 ||websocket.meilitiaodongxinxi.xyz^
 ||wecdfsza.3683ac5b.er.aliyun-esa.net^
-||wechat.com^
 ||wedbccid.top^
 ||wedfrtgy6huj.9q7sjngda.cc^
 ||wedl.cl.app^

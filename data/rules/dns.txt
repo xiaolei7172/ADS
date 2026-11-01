@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影规则聚合 · DNS 拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-01 12:01:53（北京时间）
-! 📊 有效规则：242273 条
+! ⏰ 更新时间：2026-11-01 12:16:52（北京时间）
+! 📊 有效规则：242383 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · DNS 拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-01 12:01:53 | ✅ 有效规则 242273 条
+! Description: ⏰ 更新时间 2026-11-01 12:16:52 | ✅ 有效规则 242383 条
 ! ======================================================================
 ! 本文件由 filter-dns.py 从 adblock.txt 提取（项目：天影规则聚合）
 ! 已应用：白名单父子域过滤 + 父子域语义去重
@@ -17,13 +17,13 @@
 
 ! ────────────── 来源汇总 ──────────────
 !       219 条  本地自定义规则
-!      5643 条  1007-Hosts
-!     91003 条  anti-ad 官方规则
-!    119295 条  AdRules DNS List [AdRules DNS List]
+!      5673 条  1007-Hosts
+!     91010 条  anti-ad 官方规则
+!    119299 条  AdRules DNS List [AdRules DNS List]
 !      9550 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
-!      2749 条  OISD 拦截规则 [oisd small]
-!      4720 条  5460 [酷安广告规则]
-!      9094 条  海哥规则
+!      2750 条  OISD 拦截规则 [oisd small]
+!      4755 条  5460 [酷安广告规则]
+!      9127 条  海哥规则
 ! ────────────────────────────────────────
 
 ! ==============================================
@@ -258,7 +258,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/lingeringsound/10007_auto/master/all
 ! ==============================================
-! 📊 本区规则：5643 条
+! 📊 本区规则：5673 条
 ! ==============================================
 ||1-free-share-buttons.com^
 ||100webads.com^
@@ -277,7 +277,6 @@
 ||30ads.com^
 ||360-g.cn^
 ||360.anatic.net^
-||360.cn^
 ||360ads.com^
 ||3dns-1.adobe.com^
 ||3dns-2.adobe.com^
@@ -471,6 +470,7 @@
 ||ad.ddo.jp^
 ||ad.dedecms.com^
 ||ad.depositfiles.com^
+||ad.dev.360.cn^
 ||ad.deviantart.com^
 ||ad.digitallook.com^
 ||ad.directmirror.com^
@@ -551,6 +551,7 @@
 ||ad.infoseek.com^
 ||ad.inter-edu.com^
 ||ad.intl.xiaomi.com^
+||ad.iot.360.cn^
 ||ad.ipadview.com^
 ||ad.ir.ru^
 ||ad.jamba.net^
@@ -2818,6 +2819,8 @@
 ||af-ad.co.uk^
 ||afd.baidu.com^
 ||afraud-cse.avlyun.com^
+||agd.p.360.cn^
+||agd2.p.360.cn^
 ||ahn.jiankang123.net^
 ||ai.m.taobao.com^
 ||ai.taobao.com^
@@ -3376,6 +3379,7 @@
 ||api.setting.intl.miui.com^
 ||api.shbet3.com^
 ||api.shbetvv.com^
+||api.shuaji.360.cn^
 ||api.sky88.club^
 ||api.sky88.com^
 ||api.sky88.moda^
@@ -3561,8 +3565,10 @@
 ||bbm-ad-stack-production.up.railway.app^
 ||bdapi-ads.realmemobile.com^
 ||bdapi-in-ads.realmemobile.com^
+||bdcode.2345.com^
 ||bdnad1.bangornews.com^
 ||bdplus.baidu.com^
+||bdsearch.2345.com^
 ||bdyingxiaocms.cdn.bcebos.com^
 ||beaconfundamoren.pro^
 ||bead-ad.com^
@@ -3625,6 +3631,7 @@
 ||bwp.download.com^
 ||bystrostrad.pro^
 ||c-adash.m.taobao.com^
+||c.adx.2345.com^
 ||c.ar.msn.com^
 ||c.at.msn.com^
 ||c.be.msn.com^
@@ -3655,6 +3662,7 @@
 ||c.prodigy.msn.com^
 ||c.pt.msn.com^
 ||c.ru.msn.com^
+||c.sayhi.360.cn^
 ||c.se.msn.com^
 ||c.sg.msn.com^
 ||c.th.msn.com^
@@ -3677,6 +3685,7 @@
 ||capitalholding.pro^
 ||carbonads.com^
 ||carbonads.net^
+||care.help.360.cn^
 ||cash-advance.now-cash.com^
 ||cashflowxx-click.pages.dev^
 ||catalog.video.msn.com^
@@ -3952,6 +3961,7 @@
 ||djksajsdkf.shop^
 ||dl-vip.bav.baidu.com^
 ||dl-vip.pcfaster.baidu.co.th^
+||dl.2345.com^
 ||dl.btii.cn^
 ||dl.ops.baidu.com^
 ||dl2.bav.baidu.com^
@@ -3984,12 +3994,14 @@
 ||doubleclick.ne.jp^
 ||doubleclick.net^
 ||doublepimpads.com^
+||down.360.cn^
 ||down1oads.com^
 ||download-ebbos-cbgf42.lat^
 ||download-ledgerlive.us^
 ||download-shares.com^
 ||download-webbos-cbgf42.lat^
 ||download.123cw.cn^
+||download.2345.com^
 ||download.350.com^
 ||download.56.com^
 ||download.88kwp.com^
@@ -4213,6 +4225,7 @@
 ||gethostllab.pro^
 ||getmyads.com^
 ||getmyads24.com^
+||ggcode.2345.com^
 ||ggic01.miguvideo.com^
 ||ggx01.miguvideo.com^
 ||ggx02.miguvideo.com^
@@ -4267,6 +4280,7 @@
 ||habyzuo.pro^
 ||haiwai-ic.ksosoft.com^
 ||haldenorixa.pro^
+||hao.360.cn^
 ||hao123.xywy.com^
 ||haostat.qihoo.com^
 ||hb-analytics.hotstar.com^
@@ -4300,6 +4314,7 @@
 ||hot-mob.com^
 ||hotapi-va.isnssdk.com^
 ||hotchat-im.iqiyi.com^
+||houtai.2345.com^
 ||hpd.baidu.com^
 ||hs-analytics.net^
 ||hs-banner.com^
@@ -4328,6 +4343,7 @@
 ||hueads.com^
 ||hueadsortb.com^
 ||hueadsxml.com^
+||huodong.mobilem.360.cn^
 ||hw-ot-ad.a.yximgs.com^
 ||hypesquad-apply.ml^
 ||hzyd.cdn.bcebos.com^
@@ -4339,6 +4355,7 @@
 ||i16-tb.isnssdk.com.edgekey.net^
 ||i9.pro^
 ||iad.anm.co.uk^
+||iad.e.360.cn^
 ||iads.staticscdn.net^
 ||iadsdk.qtlcdn.com^
 ||iakserttgou.pro^
@@ -4421,6 +4438,7 @@
 ||jcdn.jsoid.com^
 ||jellyfish.pandora.xiaomi.com^
 ||jenno.adsb4all.com^
+||jifen.2345.com^
 ||jinkads.de^
 ||jipinyouwu.com^
 ||jizzads.com^
@@ -4616,6 +4634,7 @@
 ||microsoft-update.name^
 ||miniapp-ad.cdn.bcebos.com^
 ||miniapp.qiluyidian.mobi^
+||minipage.2345.com^
 ||mipengine.baidu.com^
 ||mirevix.pro^
 ||mirroruploads.nocoshop.ru^
@@ -4665,6 +4684,7 @@
 ||msg.simeji.baidu.jp^
 ||msite.baidu.com^
 ||mslinks-downloads.com^
+||msoftdl.360.cn^
 ||mssdk-bu.bytedance.com^
 ||mssdk.bytedance.com^
 ||mssp.baidu.com^
@@ -4776,6 +4796,7 @@
 ||openadsnetwork.com^
 ||openapi-news.meizu.com^
 ||openapi.cymera.com^
+||openbox.mobilem.360.cn^
 ||openjmacs.m.taobao.com^
 ||openrcv.baidu.com^
 ||opensdk.wlanbanlv.com^
@@ -5027,6 +5048,7 @@
 ||qojise.pro^
 ||qorvath.pro^
 ||qsptv.net^
+||qstore.inner.api.sj.360.cn^
 ||quantixfinance-pro.pages.dev^
 ||quantrexarvion-click.pages.dev^
 ||quanvex.pro^
@@ -5103,6 +5125,7 @@
 ||rusule.pro^
 ||ryqixio.pro^
 ||rytofyy.pro^
+||s.360.cn^
 ||s.ad131m.com^
 ||s.baidu.com^
 ||s0-2mdn-net.l.google.com^
@@ -5144,6 +5167,7 @@
 ||sdk.iappgame.com^
 ||sdk.ibm.xtify.com^
 ||sdk.inlocomedia.com^
+||sdk.look.360.cn^
 ||sdk.loveota.net^
 ||sdk.markmedia.com.cn^
 ||sdk.native123.com^
@@ -5191,6 +5215,7 @@
 ||sgj1.zmj22.top^
 ||sgsnssdk.com.edgekey.net^
 ||shadu.baidu.com^
+||shake.360.cn^
 ||share-clouds.com^
 ||share-server.com^
 ||share-stores.com^
@@ -5202,6 +5227,7 @@
 ||shopislads.shop^
 ||shoppingads.com^
 ||short-share.com^
+||show.look.360.cn^
 ||sigmob.cn^
 ||sigmob.com^
 ||signup.advance.net^
@@ -5370,6 +5396,7 @@
 ||test.surepush.cn^
 ||text-link-ads.com^
 ||textads.biz^
+||tf.360.cn^
 ||theadsparks.com^
 ||thedragadventures.com^
 ||this.content.served.by.adshuffle.com^
@@ -5424,6 +5451,7 @@
 ||tpads.ovguide.com^
 ||tr-vcode-api.vivoglobal.com^
 ||tr.api.fanbyte.com^
+||tr.p.360.cn^
 ||trace.690.co^
 ||trace.ledu.com^
 ||trace.m1905.cn^
@@ -5648,6 +5676,7 @@
 ||w9.gskwai.com^
 ||wa.gtimg.com^
 ||wager.dm^
+||wan.2345.com^
 ||wangmeng.baidu.com^
 ||wataads.com^
 ||wavestatix-fr.pro^
@@ -5889,6 +5918,7 @@
 ||zentravo.pro^
 ||zhanzhang.toutiao.com^
 ||zhihu-web-analytics.zhihu.com^
+||zhushou.2345.com^
 ||zidovoy.pro^
 ||zion-telemetry.api.cnn.io^
 ||zion.api.cnn.io^
@@ -5909,7 +5939,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://anti-ad.net/easylist.txt
 ! ==============================================
-! 📊 本区规则：91003 条
+! 📊 本区规则：91010 条
 ! ==============================================
 ||000491b06a.com^
 ||000dn.com^
@@ -6883,7 +6913,6 @@
 ||assets.2343sdxs.com^
 ||2345.cc^
 ||2345.cn^
-||2345.com^
 ||2345at.com^
 ||234y.com^
 ||235123.net^
@@ -7352,6 +7381,14 @@
 ||m.35rqb.cn^
 ||35wo96wkjs.com^
 ||35yp8ot6.xyz^
+||gamebox.360.cn^
+||lianmeng.360.cn^
+||cpull.360.cn^
+||wan.360.cn^
+||fenxi.360.cn^
+||leak.360.cn^
+||soft.data.weather.360.cn^
+||softdl4.360.cn^
 ||3600.com^
 ||360640.com^
 ||cps.360buy.com^
@@ -96920,7 +96957,7 @@
 ! 📝 规则说明：List for blocking ads in the Chinese region. Block Ads, Trackers, Malware, HTTPDNS, PCDN.
 ! 🔗 原始地址：https://gp.adrules.top/dns.txt
 ! ==============================================
-! 📊 本区规则：119295 条
+! 📊 本区规则：119299 条
 ! ==============================================
 ||0.avmarket.rs^
 ||0.nextyourcontent.com^
@@ -106825,6 +106862,8 @@
 ||bczaq.quikcamo.com^
 ||bcznrf.paprcuts.de^
 ||bczro.boxhill.co.nz^
+||bd-js1.2345.com^
+||bd-retrieval1.2345.com^
 ||bd.alamfashion.xyz^
 ||bd.allhouseplan.com^
 ||bd.arabianfoodbd.com^
@@ -162229,6 +162268,7 @@
 ||papayamobile.com^
 ||papeilist.pics^
 ||papel.ingral.com.br^
+||papi.look.360.cn^
 ||papia.zaifaonlineshop.infy.uk^
 ||papyrignomon.qpon^
 ||paqkp.alignmedbrasil.com.br^
@@ -207706,6 +207746,7 @@
 ||unifully.com^
 ||uniguide.fr^
 ||uninvitedenvious.com^
+||union.360.cn^
 ||union.ucweb.com^
 ||unionsyeggman.cfd^
 ||uniqueliernes.com^
@@ -225781,7 +225822,7 @@
 ! 📝 规则说明：Block. Don't break.
 ! 🔗 原始地址：https://small.oisd.nl/
 ! ==============================================
-! 📊 本区规则：2749 条
+! 📊 本区规则：2750 条
 ! ==============================================
 ||0-02.net^
 ||000webhostapp.com^
@@ -226028,6 +226069,7 @@
 ||ad.games.ch^
 ||ad.genybet.fr^
 ||ad.jeune-independant.net^
+||ad.life.360.cn^
 ||ad.luxnet.ua^
 ||ad.mailo.com^
 ||ad.maoyan.com^
@@ -228538,10 +228580,38 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/qq5460168/dangchu/main/black.txt
 ! ==============================================
-! 📊 本区规则：4720 条
+! 📊 本区规则：4755 条
 ! ==============================================
+||ad.360.cn^
 ||ad.360safe.com^
+||adv.360.cn^
+||adpop.360.cn^
+||adlog.360.cn^
+||log.360.cn^
+||stat.360.cn^
+||report.360.cn^
+||upload.360.cn^
+||trace.360.cn^
+||data.360.cn^
 ||cloud.360safe.com^
+||bizhi.360.cn^
+||wallpaper.360.cn^
+||wp.360.cn^
+||pop.360.cn^
+||msg.360.cn^
+||notice.360.cn^
+||push.360.cn^
+||f.360.cn^
+||so.360.cn^
+||sp.360.cn^
+||mapp.360.cn^
+||app.360.cn^
+||game.360.cn^
+||gamead.360.cn^
+||tuiguang.360.cn^
+||promo.360.cn^
+||wallpaper.apc.360.cn^
+||huabao.360.cn^
 ||bizhi360.com^
 ||yyapp-httpdns.gslb.yy.com^
 ||union-httpdns.gslb.yy.com^
@@ -229103,6 +229173,7 @@
 ||bcydy.com^
 ||dy44.live^
 ||dysohvv.com^
+||fun.360.cn^
 ||hza01.com^
 ||jfm522.com^
 ||jlpckj.com^
@@ -229165,6 +229236,7 @@
 ||www.bytedance.com.queniurc.com^
 ||dzzt-video.cbread.cn^
 ||ad-static.ssread.cn^
+||trrs-adp.2345.com^
 ||upload-z0.qiniup.com^
 ||tx.a.kspkg.com^
 ||api.xahc971.com^
@@ -229237,6 +229309,8 @@
 ||jibh.zhangxy2.cn^
 ||picgg.idti.cn^
 ||lv-api.ulikecam.com^
+||v26-reading.qznovelvod.com^
+||v3-reading.qznovelvod.com^
 ||sf1-amtos-cdn.bytesmanager.com^
 ||lv-api-sinfonlinea.ulikecam.com^
 ||www.bayread.com^
@@ -229875,6 +229949,7 @@
 ||flysleep.cn^
 ||wxcjgg.cn^
 ||adv.api.mucfc.com^
+||rtawin.daikuan.360.cn^
 ||bc-ad-vod.zdmimg.com^
 ||api2.dealmoon.cn^
 ||domobcdn.com^
@@ -230046,6 +230121,8 @@
 ||fcard.api.moji.com^
 ||vdo.api.moji.com^
 ||stqt.weathercn.com^
+||update.app.2345.com^
+||c-adx.2345.com^
 ||business-syh-cdn.2345ii.com^
 ||update.thread0.com^
 ||udpolimeok.baidu.com^
@@ -233266,7 +233343,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt
 ! ==============================================
-! 📊 本区规则：9094 条
+! 📊 本区规则：9127 条
 ! ==============================================
 ||www.programming-rabbit.com^
 ||lxdblzka2xrh5g8f45la.fdw84egqu7lf.kgbbzc.cn^
@@ -235408,6 +235485,7 @@
 ||ajimg.xyz^
 ||ak968.com^
 ||akapi.aggextr2e47.net^
+||akn.safe.360.cn^
 ||aks.jdpay.com^
 ||aksins.jishangsw.xyz^
 ||aksnis.baofengpinpai.xyz^
@@ -235552,6 +235630,7 @@
 ||api.kpgxb.com^
 ||api.ksport.io^
 ||api.liuliangguo.com^
+||api.look.360.cn^
 ||api.mockuai.com^
 ||api.n2mg.cn^
 ||api.n5yrs.shop^
@@ -236007,6 +236086,7 @@
 ||c.huanbeiloan.cn^
 ||c.huanbeiloan.com^
 ||c.mipcdn.com^
+||c.ssp.360.cn^
 ||c05001.sv61705w.com^
 ||c1.stcfile.com^
 ||c259166.cc^
@@ -236075,6 +236155,7 @@
 ||cc.chuidiren.com^
 ||cc.ddos.pub^
 ||cc.mobage.cn^
+||cc.push.dc.360.cn^
 ||cc.xiaocongyun.cn^
 ||cc0d0708-a5e4-4890-8a8d-30587daf9a1c.fjtrsdx.cn^
 ||cc22.ccss3play.cc^
@@ -236133,6 +236214,7 @@
 ||cdn.cqgnsc.com.gccdn.net^
 ||cdn.cqgnsc.com^
 ||cdn.d1zd8.xyz^
+||cdn.daikuan.360.cn^
 ||cdn.dewu.com^
 ||cdn.dhsf.996db.cn^
 ||cdn.dongyixiang.com^
@@ -236322,6 +236404,7 @@
 ||common.api.siyunyatwo.com^
 ||compass.cn^
 ||coneduad.cn^
+||conf.wsm.360.cn^
 ||config-p2p-other.vcloud.ks-live.com^
 ||config2.cmpassport.com^
 ||configcdn.quickapi.net^
@@ -236502,6 +236585,7 @@
 ||dc9eg11.vip^
 ||dcc108.xyz^
 ||dcdn-ka-all.ipv4v6.qiniu.com.c.vedcdnlb.com^
+||dd.mgame.360.cn^
 ||dd2397.com^
 ||dd3kd.com^
 ||dd5269.com^
@@ -236606,6 +236690,7 @@
 ||dmm-ph-core.brmyx.com^
 ||dmp-data.ftms.com.cn^
 ||dmp-exposure.xdmssp.com^
+||dmp.360.cn^
 ||dmpdata.58.com^
 ||dmxm.7790.com^
 ||dnciy.rwzuspf.com^
@@ -236620,6 +236705,8 @@
 ||domainsguardian.com^
 ||dongruihe.com^
 ||dot.api.idmzj.com^
+||dot.look.360.cn^
+||dot.xy.360.cn^
 ||douer.oscdncar.com^
 ||doumvips.com^
 ||douyin10010.cn^
@@ -236773,6 +236860,7 @@
 ||ebxx.k8.com^
 ||ech2hq.top^
 ||ecs-113-45-175-45.compute.hwclouds-dns.com^
+||ecs.daikuan.360.cn^
 ||ectandroid.yxqiche.com^
 ||ed.jinri.red^
 ||ed4d3uu.nl^
@@ -236805,6 +236893,7 @@
 ||ejuk.720lu.com^
 ||el-memberclub.elcapp.cn^
 ||elakqt.d4lqdnzu.com^
+||ele.daikuan.360.cn^
 ||ele.manzu.la^
 ||elmemberclubstatic.elcapp.cn^
 ||elsheminiapp.elcapp.cn^
@@ -236920,6 +237009,7 @@
 ||f9o.cn^
 ||f9x.cn^
 ||fa86.720lu.com^
+||face.mobilem.360.cn^
 ||fafau03.top^
 ||fahvrbgk.n.ttge.ru^
 ||fakeurl.virtual.baidu.com^
@@ -237181,6 +237271,8 @@
 ||gaf1e13.cdn.85073232.com^
 ||gaj5.yl.ag^
 ||gal01.net^
+||galaxy.cdn.aiwork.360.cn^
+||galaxy.safe.360.cn^
 ||galaxy991.com^
 ||gallery.opgirl.cn^
 ||game-channel.gamed.kuaishou.com^
@@ -237295,6 +237387,7 @@
 ||gkw3.yl.ag^
 ||gl6288.xyz^
 ||gl9z.yl.ag^
+||global-api.grow.360.cn^
 ||global.esport001.com.txlivecdn.com^
 ||global.esport001.com^
 ||gm.gtja.com^
@@ -237405,6 +237498,7 @@
 ||gz360.tv^
 ||gzhxjiaoyu.com^
 ||h.huabianyl.com^
+||h.safe.360.cn^
 ||h07.yytxqcy.com^
 ||h0wo.8890.com^
 ||h1a0.154.com^
@@ -237993,6 +238087,7 @@
 ||instv1236.com^
 ||instv2558.com^
 ||instv735.com^
+||insurance.safe.360.cn^
 ||inter.nextapistep.xyz^
 ||interface.bilibili.com^
 ||internet7.vip^
@@ -238413,6 +238508,7 @@
 ||kjapp.zol.com.cn^
 ||kjbuebs.hhcdnfly58.com^
 ||kjhgsertyu.uutdur.cn^
+||kjjs.360.cn^
 ||kjnp41580.cc^
 ||kk0356086808.rycuqfw.cn^
 ||kk1.likeduoduiyi.cn^
@@ -238863,6 +238959,7 @@
 ||m.j3b4m3g8.work^
 ||m.land.024888.net^
 ||m.liangbingliang1.cn^
+||m.look.360.cn^
 ||m.nnabc.cn^
 ||m.qvkanwen.com^
 ||m.skin360.com.cn^
@@ -239020,6 +239117,7 @@
 ||mikal.nttcname.com^
 ||military.china.com^
 ||mimimao315.cc^
+||mini.360.cn^
 ||mini.scymob.com^
 ||miniapi.gifshow.com^
 ||minigame.gtimg.cn.cdn.dnsv1.com.cn^
@@ -239036,6 +239134,7 @@
 ||mk42.yide.com^
 ||mkt.360jie.com.cn^
 ||mkt.qq499.com^
+||mktmain.daikuan.360.cn^
 ||mkts.4399sy.com^
 ||mktyvip80.com^
 ||mkvn9i.com^
@@ -239091,6 +239190,7 @@
 ||movj.ag8.com^
 ||mp-live.iqiyi.com^
 ||mp-manhattan.xiaojukeji.com^
+||mp.360.cn^
 ||mp3.zing.vn^
 ||mpbs.djkcfln.cn^
 ||mpc-prod-27-s6uit34pua-uk.a.run.app^
@@ -239198,6 +239298,7 @@
 ||n7lb.j3b4m3g8.work^
 ||n8u9.yl.ag^
 ||n920.011.com^
+||n98-v-readingvideo.qznovelvod.com^
 ||n9ujxzht.n.cdn6ao.vip^
 ||na02.meiyingnet.com^
 ||name.jiangoo.com^
@@ -239720,6 +239821,7 @@
 ||poi.10jqka.com.cn^
 ||pop.qweug84.com^
 ||popbqyz.com.a1.initac.com^
+||popup.safe.360.cn^
 ||portal.ionewu.com^
 ||portal.iu.live^
 ||portal.xunyou.mobi^
@@ -240508,7 +240610,9 @@
 ||sscsw3.ig900.com^
 ||ssg.static.tsspzn.com^
 ||ssl-hw-pc.ludashi.com^
+||ssl.look.360.cn^
 ||ssl.njkvjotel.yes-tvm.study^
+||ssp.2345.com^
 ||ssp.hupu.com^
 ||ssp.iytcdn.com^
 ||sspeeddns.com^
@@ -240532,6 +240636,7 @@
 ||stapi.youpengw.com^
 ||star.portal.ppfez.cn^
 ||star.s-qec.com.cdn2.mlycdn.com^
+||starnews.2345.com^
 ||stat.dezhuyun.com^
 ||stat.hzins.net^
 ||static-app.shhguo.com^
@@ -241019,6 +241124,7 @@
 ||uayy71.cc^
 ||ub66.net^
 ||ubap-report.sany.com.cn^
+||ubas.daikuan.360.cn^
 ||ubb.bbb.wzguosutang.com^
 ||ubgc992.com^
 ||ubgj.154.com^
@@ -241169,6 +241275,7 @@
 ||v23-skvod.kwaicdn.com^
 ||v269.ag8.com^
 ||v3-ot02.kwaicdn.com^
+||v3-reading-ad.qznovelvod.com^
 ||v3.verify.cyou^
 ||v3019.com^
 ||v4-plat-fdl.wsukwai.com^
@@ -241182,6 +241289,7 @@
 ||v5-hl-ali-reading-video.fqnovelvod.com^
 ||v5-hl-hw-reading-video.fqnovelvod.com^
 ||v5-ks.a.bdycdn.cn^
+||v5-reading-video-b.qznovelvod.com^
 ||v55eyl.vip^
 ||v6-b1.toutiaovod.com^
 ||v62199.com^
@@ -241191,6 +241299,7 @@
 ||v7777.cdn.anti8.net^
 ||v7p7.011.com^
 ||v88770.com^
+||v9-reading.qznovelvod.com^
 ||v9669.com^
 ||v9m.gc.com.cn^
 ||v9static.cdn.bcebos.com^
@@ -241246,6 +241355,7 @@
 ||vioa.365bcg.com^
 ||vip-01.top^
 ||vip-91.cdn-vipvideo.com^
+||vip-api.360game.360.cn^
 ||vip-gamec.kuaishou.com^
 ||vip-ipspace-cn.heytapmobi.com^
 ||vip.4466kk5.com^
@@ -241424,9 +241534,9 @@
 ||webgate.ujn.edu.cn^
 ||webh5.24705a4.com^
 ||webh5.42d4c84.com^
+||webid.360.cn^
 ||websocket.meilitiaodongxinxi.xyz^
 ||wecdfsza.3683ac5b.er.aliyun-esa.net^
-||wechat.com^
 ||wedbccid.top^
 ||wedfrtgy6huj.9q7sjngda.cc^
 ||wedl.cl.app^

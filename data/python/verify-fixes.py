@@ -84,6 +84,23 @@ CASES = [
     ("insight.ucweb.com", True, "UC 统计"),
     ("px-intl.ucweb.com", True, "UC 国际广告"),
     ("ads3-normal-hl.zijieapi.com", True, "番茄广告计费"),
+    # —— 2026-11-01 体检修复：大厂主域整杀 / 白名单放行广告 ——
+    ("360.cn", False, "360 公司主域（原被 1007-Hosts 整域拦）"),
+    ("2345.com", False, "2345 主域"),
+    ("wechat.com", False, "微信国际版主域"),
+    ("dns.wechat.com", False, "微信国际版 DNS"),
+    ("u.wechat.com", False, "微信国际版业务域"),
+    ("appstore.360.cn", False, "360 应用商店"),
+    ("jiagu.360.cn", False, "360 加固服务"),
+    ("mcloud.360.cn", False, "360 云服务"),
+    ("ad.360.cn", True, "360 广告"),
+    ("pop.360.cn", True, "360 弹窗推广"),
+    ("union.360.cn", True, "360 广告联盟"),
+    ("gamead.360.cn", True, "360 游戏广告"),
+    ("ssp.2345.com", True, "2345 广告交易"),
+    ("c-adx.2345.com", True, "2345 广告交易"),
+    ("ad.doubleclick.net", True, "Google DART 广告（原被白名单放行）"),
+    ("v6-reading-ad.qznovelvod.com", True, "番茄阅读页广告（原被放行）"),
 ]
 
 sets = {f: parse(R / f) for f in FILES if (R / f).exists()}
