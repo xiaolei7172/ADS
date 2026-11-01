@@ -66,6 +66,8 @@ jobs:
         run: |
           python ./data/python/title.py
           python ./data/python/clean-readme.py
+          # 更新历史从 git log 生成，自动跳过本工作流的例行提交
+          python ./data/python/changelog.py
 
       - name: Update Trend Chart
         run: python ./data/python/trend.py

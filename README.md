@@ -12,7 +12,7 @@
 [![最近提交](https://img.shields.io/github/last-commit/xiaolei7172/ADS/master?label=%E6%9C%80%E8%BF%91%E6%9B%B4%E6%96%B0&color=success)](https://github.com/xiaolei7172/ADS/commits/master)
 [![License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
 
-[📥 规则订阅](#-规则订阅中心) · [🚀 快速开始](#-快速开始) · [📦 客户端下载](#-客户端下载速查) · [📊 实时统计](#-实时项目统计) · [📚 上游数据源](#-上游规则数据源) · [🧪 拦截测试](#-拦截效果在线测试)
+[📥 规则订阅](#-规则订阅中心) · [🚀 快速开始](#-快速开始) · [📦 客户端下载](#-客户端下载速查) · [📊 实时统计](#-实时项目统计) · [📚 上游数据源](#-上游规则数据源) · [🧪 拦截测试](#-拦截效果在线测试) · [📜 更新历史](#-更新历史)
 
 ---
 
@@ -371,6 +371,74 @@ python data/python/probe_source.py <规则源URL> block    # 已知是黑名单�
 
 </details>
 
+
+<!-- CHANGELOG:START -->
+## 📜 更新历史
+
+> 仅收录**功能性变更**；CI 每 12 小时的例行规则更新（`✅ 规则自动更新` 提交）不列出。完整记录见 [Commits](https://github.com/xiaolei7172/ADS/commits/master)。
+
+### 📅 2026-11-01
+
+| 类型 | 变更内容 | 提交 |
+| :--- | :--- | :--- |
+| 💄 优化 | 表头统计块排版优化：修复 📈 在部分编辑器显示为破损占位框的问题 | [`2fbe718`](https://github.com/xiaolei7172/ADS/commit/2fbe718) |
+| 🪄 新机制 | 可信通配表：修复 517 条上游通配白名单在 DNS 层静默失效的问题 | [`ed60a3e`](https://github.com/xiaolei7172/ADS/commit/ed60a3e) |
+| 📊 功能 | 三个合并文件表头新增「规则来源统计」：打开规则页第一屏可见各上游条数 | [`100c714`](https://github.com/xiaolei7172/ADS/commit/100c714) |
+| 🎬 修复 | 红果短剧 / 番茄小说播放链路修复：16+1 条视频节点从"通配失效"中救回 | [`95e23f8`](https://github.com/xiaolei7172/ADS/commit/95e23f8) |
+| 🩺 修复 | 产物体检并修复：3 条大厂主域整杀 + 2 条白名单放行广告 | [`8e8c77a`](https://github.com/xiaolei7172/ADS/commit/8e8c77a) |
+| 🎯 规则调优 | 修复三处过宽规则：字节整域拦截 / 番茄内容 API / UC 整域放行 | [`24b629e`](https://github.com/xiaolei7172/ADS/commit/24b629e) |
+| 🧹 清理 | 移除冗余源 1007-reward：实测是 all 的严格子集，单独下载贡献 0 条 | [`5bf3caf`](https://github.com/xiaolei7172/ADS/commit/5bf3caf) |
+| 📖 文档 | README 白名单段补注：6 条功能域为手工摘录，非自动源 | [`86e3843`](https://github.com/xiaolei7172/ADS/commit/86e3843) |
+| 🩹 修复 | 白名单补 6 条功能域：DoH / 推送 HTTPDNS / 小米云 / 百度图床 / 淘宝鉴权 / Adobe 授权 | [`8d7cee8`](https://github.com/xiaolei7172/ADS/commit/8d7cee8) |
+| 🎯 规则调优 | 腾讯广告精确拦截：134 条广告域绕过 qq.com 整域放行 | [`3cdff84`](https://github.com/xiaolei7172/ADS/commit/3cdff84) |
+| 🔧 修复 | 修复海哥规则源：改用官方 GitHub 镜像 + 补齐国内 App 覆盖 | [`2a6cfff`](https://github.com/xiaolei7172/ADS/commit/2a6cfff) |
+
+<details>
+<summary><b>📅 2026-10-29</b> · 1 项变更</summary>
+
+| 类型 | 变更内容 | 提交 |
+| :--- | :--- | :--- |
+| 🔕 变更 | 关闭自动发布：移除 CI 中的自动 Release 步骤 | [`669cc47`](https://github.com/xiaolei7172/ADS/commit/669cc47) |
+
+</details>
+
+<details>
+<summary><b>📅 2026-10-28</b> · 8 项变更</summary>
+
+| 类型 | 变更内容 | 提交 |
+| :--- | :--- | :--- |
+| 🔧 修复 | 仓库体检修复：探针重复条数统计 + 保障表收录投毒熔断 | [`2ccdb82`](https://github.com/xiaolei7172/ADS/commit/2ccdb82) |
+| 🔧 修复 | API 推送行尾归一化（CRLF→LF），修复上一次 API 通道推入的 Windows 行尾 | [`0173282`](https://github.com/xiaolei7172/ADS/commit/0173282) |
+| 🔬 新机制 | 新增源探针：先验证后接入 + 黑白名单自动分辨 | [`3817f79`](https://github.com/xiaolei7172/ADS/commit/3817f79) |
+| ➕ 新增源 | 接入 abclq Hosts 拦截规则（第 21 路源） | [`147f5a6`](https://github.com/xiaolei7172/ADS/commit/147f5a6) |
+| ➕ 新增源 | 接入 abclq 防误杀白名单（第 20 路源）+ 裸域名格式自动转换 | [`76d40ef`](https://github.com/xiaolei7172/ADS/commit/76d40ef) |
+| 📋 文档 | 建立完整 Issue 反馈体系（误拦/漏拦/新源/其他四类） | [`8b3d70c`](https://github.com/xiaolei7172/ADS/commit/8b3d70c) |
+| 🧽 清理 | 清洗上游脏规则 + 重写上游源表 + workflow 加固 | [`65e5358`](https://github.com/xiaolei7172/ADS/commit/65e5358) |
+| 💄 优化 | 项目改名「天影规则聚合 Rules Hub」+ 快速开始补齐客户端下载地址 | [`73634af`](https://github.com/xiaolei7172/ADS/commit/73634af) |
+
+</details>
+
+<details>
+<summary><b>📅 2026-10-27</b> · 12 项变更</summary>
+
+| 类型 | 变更内容 | 提交 |
+| :--- | :--- | :--- |
+| ✨ 新增 | 新增 Clash/Surge 格式 + 下载并发 + README 快速开始教程 | [`cc43ecd`](https://github.com/xiaolei7172/ADS/commit/cc43ecd) |
+| 💄 优化 | README 全面美化：徽章行/五大保障/平台适配列/修复公共DNS坏表格/上游来源表格化/页脚 | [`5af6104`](https://github.com/xiaolei7172/ADS/commit/5af6104) |
+| ✨ 新增 | 新增规则量趋势图 + 自动 Release + 动态徽章（未配置时自动跳过） | [`8cdefc4`](https://github.com/xiaolei7172/ADS/commit/8cdefc4) |
+| 🔗 优化 | 国内加速链接由 ghfast.top（当前不可达）切换为 jsDelivr testingcf（实测 2.3s 可用） | [`5b425fd`](https://github.com/xiaolei7172/ADS/commit/5b425fd) |
+| ✨ 新增 | 修复 hosts 死链 + 新增质量自检闸门 + README 源健康度 | [`d3ef609`](https://github.com/xiaolei7172/ADS/commit/d3ef609) |
+| 🐛 修复 | 修复大小写绕过去重 + 新增父子域语义去重 | [`0f4a50d`](https://github.com/xiaolei7172/ADS/commit/0f4a50d) |
+| 🔍 修复 | 全面复查修复：计数偏差、空分区、仓库卫生、工作流 | [`2652a90`](https://github.com/xiaolei7172/ADS/commit/2652a90) |
+| ➕ 新增源 | 新增 3 个规则源：AdGuard DNS Filter 官方 + OISD + BlueSkyXN 白名单 | [`2eb3c03`](https://github.com/xiaolei7172/ADS/commit/2eb3c03) |
+| 🌐 格式 | dns.txt 增加规则来源分区标注（与 adblock.txt 一致） | [`8afc02b`](https://github.com/xiaolei7172/ADS/commit/8afc02b) |
+| 🧹 清理 | 移除 data/tmp（本地下载缓存误入库，由 API 推送带入） | [`82d446a`](https://github.com/xiaolei7172/ADS/commit/82d446a) |
+| 🛑 规则调优 | 红果短剧+番茄小说广告规则 v3（DNS兼容）+ 下载通道修复 | [`99b0761`](https://github.com/xiaolei7172/ADS/commit/99b0761) |
+| 🧹 清理 | 仓库历史重建：单提交快照 | [`9495a7f`](https://github.com/xiaolei7172/ADS/commit/9495a7f) |
+
+</details>
+
+<!-- CHANGELOG:END -->
 
 ## 🧪 拦截效果在线测试
 
