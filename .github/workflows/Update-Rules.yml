@@ -165,7 +165,7 @@ jobs:
         run: |
           set -eu
           existing=$(gh issue list --repo "${{ github.repository }}" --state open \
-                       --search '规则更新失败 in:title' \
+                       --search '自动创建 in:title' \
                        --json number --jq '.[0].number // ""')
           if [ -n "$existing" ]; then
             gh issue comment "$existing" --repo "${{ github.repository }}" \
@@ -173,10 +173,11 @@ jobs:
             echo "↩️ 已追加到 issue #$existing"
           else
             body=$(printf '最近一次定时更新失败。\n\n运行记录：%s\n\n排查顺序：Job Summary 看各产物条数 → Download Rules 看哪个源挂了 → Quality Check / Verify Format Consistency 看是不是规则本身退化。' "$RUN_URL")
-            gh issue create --repo "${{ github.repository }}" \
-              --title "❌ 规则更新失败（见最新运行记录）" \
-              --body "$body"
-            echo "🆕 已创建失败 issue"
+            # gh issue create 把 issue URL 打到 stdout（它不支持 --json），顺手打出来方便点进去
+            url=$(gh issue create --repo "${{ github.repository }}" \
+              --title "❌ 规则更新/校验失败（自动创建）" \
+              --body "$body")
+            echo "🆕 已创建失败 issue：$url"
           fi
 
       # 失败时把产物传一份，方便事后 diff 排查（成功时不传，省存储和时长）
