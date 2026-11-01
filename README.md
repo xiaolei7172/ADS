@@ -21,16 +21,16 @@
 ### 🔮 天影规则聚合 · 实时规则规模
 
 
-🕒 **更新时间**：2026-11-01 16:51:43（北京时间）
+🕒 **更新时间**：2026-11-01 17:35:48（北京时间）
 
 
-🚫 **广告拦截规则**：273466 条
+🚫 **广告拦截规则**：273540 条
 
 
-🌐 **DNS 拦截域名**：242370 个
+🌐 **DNS 拦截域名**：242447 个
 
 
-✅ **白名单放行规则**：6767 条（约半数可在 DNS 层直接生效，其余为浏览器版 AdGuard 的路径级 / `$domain=` 规则，DNS 层无效）
+✅ **白名单放行规则**：6766 条（约半数可在 DNS 层直接生效，其余为浏览器版 AdGuard 的路径级 / `$domain=` 规则，DNS 层无效）
 
 <!-- DL_STATUS_START -->
 ✅ **上游源状态**：20/20 全部下载成功
@@ -429,7 +429,15 @@ python data/python/check-quality.py && python data/python/verify-fixes.py
 
 | 类型 | 变更内容 | 提交 |
 | :--- | :--- | :--- |
-| 💄 优化 | 表头统计块排版优化：修复 📈 在部分编辑器显示为破损占位框的问题 | [`2fbe718`](https://github.com/xiaolei7172/ADS/commit/2fbe718) |
+| 🩹 修复 | 告警链路用真 gh 实测后修正：issue URL 打到日志、标题覆盖校验失败 | [`79a0a38`](https://github.com/xiaolei7172/ADS/commit/79a0a38) |
+| 🔧 修复 | 按第二轮审查落地：告警链路改 gh CLI、golden 字节锁、hosts 改内容指纹 | [`5f8d658`](https://github.com/xiaolei7172/ADS/commit/5f8d658) |
+| ♻ 其他 | ️ P1 重构：8 份格式脚本合成 formats.py + pipeline.py，产物逐字节一致 | [`5630a08`](https://github.com/xiaolei7172/ADS/commit/5630a08) |
+| 🔧 修复 | 按代码审查报告落地 P0 + P3：一致性校验进 CI、失败可见、语义层加固 | [`f11067a`](https://github.com/xiaolei7172/ADS/commit/f11067a) |
+| 🛠 其他 | 新增 dnsmasq 格式产物（dnsmasq.conf） | [`6d3c828`](https://github.com/xiaolei7172/ADS/commit/6d3c828) |
+| 🔹 其他 | ⏱️ 更新频率改为每日一次（北京时间 08:17） | [`e062ec1`](https://github.com/xiaolei7172/ADS/commit/e062ec1) |
+| 🩺 修复 | 产物体检：qx 改后缀匹配、hosts 补回折叠子域、白名单标注 DNS 口径 | [`695555a`](https://github.com/xiaolei7172/ADS/commit/695555a) |
+| 📜 其他 | README 新增「更新历史」章节：由 git log 自动生成，随 CI 刷新 | [`cd001c3`](https://github.com/xiaolei7172/ADS/commit/cd001c3) |
+| 💄 优化 | 表头统计块排版优化：📈 → ☑ 修复破损占位框；数字列缩进 5→2 空格 | [`1c28066`](https://github.com/xiaolei7172/ADS/commit/1c28066) |
 | 🪄 新机制 | 可信通配表：修复 517 条上游通配白名单在 DNS 层静默失效的问题 | [`ed60a3e`](https://github.com/xiaolei7172/ADS/commit/ed60a3e) |
 | 📊 功能 | 三个合并文件表头新增「规则来源统计」：打开规则页第一屏可见各上游条数 | [`100c714`](https://github.com/xiaolei7172/ADS/commit/100c714) |
 | 🎬 修复 | 红果短剧 / 番茄小说播放链路修复：16+1 条视频节点从"通配失效"中救回 | [`95e23f8`](https://github.com/xiaolei7172/ADS/commit/95e23f8) |

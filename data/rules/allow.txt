@@ -3,13 +3,13 @@
 ! 📌 规则名称：天影规则聚合 · 白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-01 15:05:08（北京时间）
-! 📊 有效规则：6767 条
+! ⏰ 更新时间：2026-11-01 17:35:48（北京时间）
+! 📊 有效规则：6766 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 白名单规则 📌
-! Description: ⏰ 更新时间 2026-11-01 15:05:08 | ✅ 有效规则 6767 条
-! 🧮 DNS 层可直接生效：3,500 条（纯域名 3,342 + 通配 158）；另有 3,267 条为路径级 / $domain= / 正则，仅浏览器版 AdGuard 有效
+! Description: ⏰ 更新时间 2026-11-01 17:35:48 | ✅ 有效规则 6766 条
+! 🧮 DNS 层可直接生效：3,499 条（纯域名 3,341 + 通配 158）；另有 3,267 条为路径级 / $domain= / 正则，仅浏览器版 AdGuard 有效
 ! ────────────────── ☑ 规则来源统计 ──────────────────
 !    3,090 条  5460 [酷安广告规则]（规则内置）
 !    2,634 条  AdGuard 跟踪白名单（远程白名单）
@@ -17,9 +17,8 @@
 !      212 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]（规则内置）
 !      170 条  BlueSkyXN 白名单（远程白名单）
 !      109 条  anti-ad 官方规则（规则内置）
+!      108 条  本地白名单（远程白名单）
 !       76 条  AdGuard 中文白名单（远程白名单）
-!       66 条  本地白名单（远程白名单）
-!       43 条  本地自定义规则（data/mod/whitelist.txt）
 !       26 条  乘风通用规则 [乘风 广告过滤规则]（规则内置）
 !       11 条  可信通配展开（data/mod/wildcard_allow.txt）
 !       11 条  abclq 防误杀白名单（远程白名单）
@@ -3509,7 +3508,6 @@
 @@||assets.elemecdn.com^
 @@||astrategy.beacon.qq.com^
 @@||b1-data.ads.heytapmobi.com^
-@@||beacon.qq.com^
 @@||bsync3-normal.zijieapi.com^
 @@||cloudkit-api-cn.heytapmobi.com^
 @@||cnlogs.umengcloud.com^
@@ -3565,6 +3563,49 @@
 @@||ecma.bdimg.com^
 @@||retcode.taobao.com^
 @@||lmlicenses.wip4.adobe.com^
+@@||u3.ucweb.com^
+@@||cms.ucweb.com^
+@@||client.video.ucweb.com^
+@@||kwurl.ucweb.com^
+@@||ucsec.ucweb.com^
+@@||ucsec1.ucweb.com^
+@@||uc9.ucweb.com^
+@@||bts-la.ucweb.com^
+@@||hk.napi.ucweb.com^
+@@||sea.napi.ucweb.com^
+@@||safe.ucweb.com^
+@@||wap3.ucweb.com^
+@@||wechat.com^
+@@||appstore.360.cn^
+@@||jiagu.360.cn^
+@@||mcloud.360.cn^
+@@||v3-cold-src1.douyinvod.com^
+@@||v5-gz-a.douyinvod.com^
+@@||v5-hl-e-hw.douyinvod.com^
+@@||v5-hl-f-hw.douyinvod.com^
+@@||v5-hl-g-hw.douyinvod.com^
+@@||v5-hl-h-bd.douyinvod.com^
+@@||v5-hl-h-hw.douyinvod.com^
+@@||v9-re1.douyinvod.com^
+@@||v95-bjb.douyinvod.com^
+@@||v95-zjb-a.douyinvod.com^
+@@||v95-zjb-b.douyinvod.com^
+@@||v96.douyinvod.com^
+@@||v6-novelapp.fqnovelvod.com^
+@@||v6-novelapp-nxyd.fqnovelvod.com^
+@@||lf-fe.fqnovelstatic.com^
+@@||lf3-reading.fqnovelstatic.com^
+@@||novelapp.fqnovelvod.com^
+@@||cmshow.gtimg.cn^
+@@||discuz.gtimg.cn^
+@@||g.gtimg.cn^
+@@||iv6.gtimg.cn^
+@@||minigame.gtimg.cn^
+@@||open.gtimg.cn^
+@@||xj.gtimg.cn^
+@@||zplan.gtimg.cn^
+@@||livev.m.chenzhongtech.com^
+@@||jits5.heytapdownload.com^
 ! 📋 白名单来源：当初白名单 [广告白名单规则，反馈🐧群]（远程白名单）
 ! 📋 白名单来源：李文杰白名单 [LWJ's white list]（远程白名单）
 @@goo.gl
@@ -6772,46 +6813,3 @@
 @@||tz.sec.xiaomi.com^
 ! 📋 白名单来源：本地自定义规则（data/mod/whitelist.txt）
 ! ⚠️ 优先级：最高
-@@||u3.ucweb.com^
-@@||cms.ucweb.com^
-@@||client.video.ucweb.com^
-@@||kwurl.ucweb.com^
-@@||ucsec.ucweb.com^
-@@||ucsec1.ucweb.com^
-@@||uc9.ucweb.com^
-@@||bts-la.ucweb.com^
-@@||hk.napi.ucweb.com^
-@@||sea.napi.ucweb.com^
-@@||safe.ucweb.com^
-@@||wap3.ucweb.com^
-@@||wechat.com^
-@@||appstore.360.cn^
-@@||jiagu.360.cn^
-@@||mcloud.360.cn^
-@@||v3-cold-src1.douyinvod.com^
-@@||v5-gz-a.douyinvod.com^
-@@||v5-hl-e-hw.douyinvod.com^
-@@||v5-hl-f-hw.douyinvod.com^
-@@||v5-hl-g-hw.douyinvod.com^
-@@||v5-hl-h-bd.douyinvod.com^
-@@||v5-hl-h-hw.douyinvod.com^
-@@||v9-re1.douyinvod.com^
-@@||v95-bjb.douyinvod.com^
-@@||v95-zjb-a.douyinvod.com^
-@@||v95-zjb-b.douyinvod.com^
-@@||v96.douyinvod.com^
-@@||v6-novelapp.fqnovelvod.com^
-@@||v6-novelapp-nxyd.fqnovelvod.com^
-@@||lf-fe.fqnovelstatic.com^
-@@||lf3-reading.fqnovelstatic.com^
-@@||novelapp.fqnovelvod.com^
-@@||cmshow.gtimg.cn^
-@@||discuz.gtimg.cn^
-@@||g.gtimg.cn^
-@@||iv6.gtimg.cn^
-@@||minigame.gtimg.cn^
-@@||open.gtimg.cn^
-@@||xj.gtimg.cn^
-@@||zplan.gtimg.cn^
-@@||livev.m.chenzhongtech.com^
-@@||jits5.heytapdownload.com^
