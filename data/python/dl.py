@@ -88,7 +88,8 @@ def is_hosts_block(line):
 adblock_rules = [
     #Hosts：
     {"url": "https://raw.githubusercontent.com/lingeringsound/10007_auto/master/all", "name": "1007-Hosts"},
-    {"url": "https://raw.githubusercontent.com/lingeringsound/10007_auto/master/reward", "name": "1007-保留奖励名单"},
+    # 1007 的 reward（保留广告奖励版）实测是 all 的严格子集：12,429 条 100% 被 all 包含，
+    # all 只多出 70 条（腾讯音乐/穿山甲/快手广告）。单独下载对最终规则贡献 0 条，已移除。
 
     #DNS：
     {"url": "https://anti-ad.net/easylist.txt", "name": "anti-ad 官方规则"},
