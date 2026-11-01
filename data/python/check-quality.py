@@ -3,7 +3,7 @@
 发布前质量自检闸门：验证去重与文件结构的真实性，不合格 exit 1。
 检查项：
   1. adblock.txt / allow.txt：0 精确重复（大小写不敏感）；
-  2. dns.txt / qx.list / smartdns.conf / ad-domain.txt / hosts.txt：
+  2. dns.txt / qx.list / smartdns.conf / dnsmasq.conf / ad-domain.txt / hosts.txt：
      0 精确重复、0 父子域冗余（本地自定义域豁免，与 filter-dns.py 口径一致）；
   3. dns.txt 分区自洽：每个 "! 📊 本区规则：N 条" 与该分区实际行数一致，
      分区总和 = 总行数；
@@ -22,7 +22,7 @@ from common import RULES_DIR, MOD_DIR, block_domain
 
 DNS_FLOOR = 50000
 DOMAIN_FILES = ["dns.txt", "qx.list", "smartdns.conf", "ad-domain.txt", "hosts.txt",
-                "mihomo.yaml", "surge.list"]
+                "mihomo.yaml", "surge.list", "dnsmasq.conf"]
 # hosts 只能精确匹配，必须保留被折叠的子域才能拦住它们（否则 1.5 万个子域漏网），
 # 所以父子域冗余检查对它豁免；精确重复、脏语法仍然照查。
 COLLAPSE_EXEMPT = {"hosts.txt"}
@@ -64,6 +64,10 @@ def rule_lines(path):
                 # 形如 DOMAIN-SUFFIX,domain.com
                 parts = line.split(",")
                 out.append(parts[-1].lower() if len(parts) == 2 else None)
+            elif name == "dnsmasq.conf":
+                # 形如 address=/domain.com/0.0.0.0
+                m = re.match(r"^address\s*=?\s*/([^/]+)/", line)
+                out.append(m.group(1).lower() if m else None)
             else:
                 out.append(line.lower())
     return [l for l in out if l]

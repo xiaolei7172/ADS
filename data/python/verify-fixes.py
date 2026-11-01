@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""验证 10 种格式对同一域名的判定是否一致（格式感知解析 + 父子域语义）"""
+"""验证 11 种格式对同一域名的判定是否一致（格式感知解析 + 父子域语义）"""
 import re, sys
 from pathlib import Path
 
@@ -31,7 +31,7 @@ def parse(path):
             else:
                 exact.add(d)
             continue
-        m = re.match(r"^address\s*/([a-z0-9._*-]+)/", low)
+        m = re.match(r"^address\s*=?\s*/([a-z0-9._*-]+)/", low)  # smartdns: address /x/ ；dnsmasq: address=/x/0.0.0.0
         if m:
             suffix.add(m.group(1).rstrip("."))
             continue
@@ -64,7 +64,7 @@ def hit(rule_sets, dom):
     return False, None
 
 
-SUFFIX_FILES = ["dns.txt", "qx.list", "surge.list", "smartdns.conf", "mihomo.yaml"]
+SUFFIX_FILES = ["dns.txt", "qx.list", "surge.list", "smartdns.conf", "dnsmasq.conf", "mihomo.yaml"]
 # hosts 只能精确匹配：`0.0.0.0 a.b.com` 拦不到 x.a.b.com，
 # 而 dns.txt 做了父子域折叠（父域存在即删子域），所以 hosts 天然覆盖不全。
 # 它单独核对，不一致但"父域已列出"时标注 †，不计失败——这是格式限制，不是管线 bug。

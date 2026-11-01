@@ -6,7 +6,7 @@
 
 **⚡ 强力去广告 · 每日自动更新 · 全平台适配 ⚡**
 
-> 干净的网络，从一条订阅开始 —— 20 路数据源聚合 · 三层真实去重 · 每日自动更新，一套规则覆盖 10 种格式
+> 干净的网络，从一条订阅开始 —— 20 路数据源聚合 · 三层真实去重 · 每日自动更新，一套规则覆盖 11 种格式
 
 [![CI 状态](https://github.com/xiaolei7172/ADS/actions/workflows/Update-Rules.yml/badge.svg)](https://github.com/xiaolei7172/ADS/actions/workflows/Update-Rules.yml)
 [![最近提交](https://img.shields.io/github/last-commit/xiaolei7172/ADS/master?label=%E6%9C%80%E8%BF%91%E6%9B%B4%E6%96%B0&color=success)](https://github.com/xiaolei7172/ADS/commits/master)
@@ -104,16 +104,28 @@
 </details>
 
 <details>
-<summary><b>📡 OpenWrt（hosts 方式）</b></summary>
+<summary><b>📡 OpenWrt / dnsmasq 路由器</b></summary>
 <br>
 
 > 📥 固件：[官方固件选择器](https://firmware-selector.openwrt.org/) · [ImmortalWrt（国内源更全）](https://github.com/immortalwrt/immortalwrt) · OpenClash 插件：[Releases](https://github.com/vernesong/OpenClash/releases)
+
+**方式一：dnsmasq 规则（推荐，后缀匹配，子域一起拦）**
+
+1. SSH 登录路由器，把规则下到 dnsmasq 配置目录：
+   `wget -O /etc/dnsmasq.d/tianying.conf https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/dnsmasq.conf`
+2. 让 dnsmasq 加载它：主配置 `/etc/dnsmasq.conf` 里若有 `conf-dir=/etc/dnsmasq.d` 即可直接生效；没有就追加一行
+   `echo 'conf-file=/etc/dnsmasq.d/tianying.conf' >> /etc/dnsmasq.conf`
+3. 重启服务：`/etc/init.d/dnsmasq restart`
+
+> `address=/域名/0.0.0.0` 会连同该域名的全部子域一起作答。想顺带拦 IPv6，可把 `0.0.0.0` 全局替换为 `#`（需 dnsmasq ≥ 2.86），或改用 `local=/域名/` 直接答 NXDOMAIN。
+
+**方式二：hosts（老固件兜底，无 conf-dir 时用）**
 
 1. 下载 hosts 文件：`https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/hosts.txt`
 2. 覆盖到 `/etc/hosts` 末尾（或配合 dnsmasq 的 `addn-hosts` 引用）
 3. 重启 dnsmasq：`/etc/init.d/dnsmasq restart`
 
-> ⚠️ **hosts 只能精确匹配**：`0.0.0.0 a.b.com` 拦不到 `x.a.b.com`。本仓库的 hosts.txt 已把 dns.txt 折叠掉的 1.4 万个子域补回（比 dns.txt 多约 1.4 万条，含上游明确列出的全部域名），但上游没列出的子域仍然拦不到。要彻底覆盖子域，请优先用 **dns.txt（AdGuard Home）/ smartdns.conf / surge.list / mihomo.yaml / qx.list** 这些后缀匹配格式。
+> ⚠️ **hosts 只能精确匹配**：`0.0.0.0 a.b.com` 拦不到 `x.a.b.com`。本仓库的 hosts.txt 已把 dns.txt 折叠掉的 1.4 万个子域补回（比 dns.txt 多约 1.4 万条，含上游明确列出的全部域名），但上游没列出的子域仍然拦不到。要彻底覆盖子域，请优先用 **dns.txt（AdGuard Home）/ dnsmasq.conf / smartdns.conf / surge.list / mihomo.yaml / qx.list** 这些后缀匹配格式。
 
 </details>
 
@@ -201,6 +213,19 @@ rules:
 | :---- | :---- | :---- | :---- |
 | SmartDNS 拦截规则 | SmartDNS | [smartdns.conf](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns.conf) | [smartdns.conf](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/smartdns.conf) |
 | SmartDNS 白名单 | SmartDNS | [smartdns-whitelist.conf](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns-whitelist.conf) | [smartdns-whitelist.conf](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/smartdns-whitelist.conf) |
+
+</details>
+
+
+<details>
+<summary><b>🛠 dnsmasq 规则（OpenWrt / Pi-hole / 软路由）</b></summary>
+<br>
+
+> 后缀匹配：`address=/域名/0.0.0.0` 连同该域名的全部子域一起拦截，比 hosts 的精确匹配更彻底，也是家用路由最省事的方案。
+
+| 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接 |
+| :---- | :---- | :---- | :---- |
+| dnsmasq 拦截规则 | OpenWrt / Pi-hole / 梅林 / 爱快（dnsmasq 后端） | [dnsmasq.conf](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/dnsmasq.conf) | [dnsmasq.conf](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/dnsmasq.conf) |
 
 </details>
 

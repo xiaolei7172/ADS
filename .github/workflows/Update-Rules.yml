@@ -46,6 +46,9 @@ jobs:
       - name: Generate SmartDNS Whitelist
         run: python ./data/python/smartdns_whitelist.py
 
+      - name: Generate dnsmasq Rules
+        run: python ./data/python/dnsmasq.py
+
       - name: Generate Domain List
         run: python ./data/python/domain_list.py
 
