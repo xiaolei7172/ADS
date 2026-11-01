@@ -102,15 +102,20 @@ def parse_source_stats(clean_content):
 
 
 def render_stats_block(stats, comment):
-    """渲染「规则来源统计」表头块（条数降序，千分位）。"""
+    """渲染「规则来源统计」表头块（条数降序，千分位）。
+
+    图标用 ☑（U+2611 基本区字符）：📈 等部分 emoji 在常见文本编辑器里
+    会显示为破损占位框，☑ 在等宽/比例字体、彩色/黑白 emoji 环境下都能稳定渲染。
+    数字列宽 8（右对齐千分位），行首仅留 1 空格，统计数字贴近行首更整齐。
+    """
     if not stats:
         return ""
     rows = sorted(stats, key=lambda x: -x[1])
     lines = [
-        f"{comment} ────────────────── 📈 规则来源统计 ──────────────────",
+        f"{comment} ────────────────── ☑ 规则来源统计 ──────────────────",
     ]
     for name, n in rows:
-        lines.append(f"{comment}   {n:>9,} 条  {name}")
+        lines.append(f"{comment} {n:>8,} 条  {name}")
     lines.append(f"{comment} ────────────────────────────────────────────────")
     return "\n".join(lines) + "\n"
 
