@@ -17,7 +17,7 @@ import sys
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
 from common import (
-    RULES_DIR, TMP_DIR, MOD_DIR, REPO_ROOT,
+    RULES_DIR, TMP_DIR, MOD_DIR,
     allow_domain, block_domain, is_allowed, is_junk_hosts_line, count_valid_lines, valid_domain,
     hosts_target,
 )
@@ -169,7 +169,7 @@ bad_skipped = 0
 excluded_block = 0
 
 def append_black(path):
-    global blocked_by_white, junk_skipped, bad_skipped, excluded_block
+    global junk_skipped, bad_skipped, excluded_block
     final_name, desc, url = get_rule_meta(path)
     new_rules = []
     with open(path, "r", encoding="utf-8", errors="ignore") as f:
@@ -243,6 +243,46 @@ if os.path.exists(local_black_path):
         ])
         black_output.extend(local_new)
 
+# ==========================================
+# 可信通配白名单展开
+# 上游白名单常用 @@||v*.douyinvod.com^ 这类通配放行 CDN 节点，
+# 但 DNS 层域名集合只收纯域名，通配全部静默失效——上游黑名单
+# 拦掉的节点无人兜底，被调度到这些节点的视频/图片加载失败。
+# 解决：data/mod/wildcard_allow.txt 是经人工甄别的「可信模式表」
+# （整组都是功能/CDN 域、不含广告），合并时把命中的拦截域名
+# 展开为具体 @@||domain^ 加入白名单并参与过滤。
+# 未列入本表的上游通配（如 *.a.yximgs.com 广告集群、t*.baidu.com
+# 追踪域）继续忽略——忽略它们本身就是防线：盲目展开实测会放行
+# 76 条规则，其中近半是广告/埋点。
+# ==========================================
+wildcard_expanded = []
+wildcard_pat_path = os.path.join(MOD_DIR, "wildcard_allow.txt")
+if os.path.exists(wildcard_pat_path):
+    wild_pats = []
+    with open(wildcard_pat_path, "r", encoding="utf-8") as _wf:
+        for _line in _wf:
+            _s = _line.split("!")[0].strip()   # 去行内注释
+            if not _s or _s.startswith("#"):
+                continue
+            wild_pats.append(
+                re.compile("^" + ".*".join(re.escape(x) for x in _s.split("*")) + "$"))
+    if wild_pats:
+        for _key in black_set:
+            # 拦截规则有两种形态：||domain^ 与 0.0.0.0 domain（hosts），都要展开
+            _dom = block_domain(_key) or hosts_target(_key)
+            if not _dom:
+                continue
+            if _dom in exclude_allow_domains:
+                continue
+            if any(p.fullmatch(_dom) for p in wild_pats):
+                _rule = f"@@||{_dom}^"
+                if _rule not in all_white_raw:
+                    all_white_raw.add(_rule)
+                    allow_domain_set.add(_dom)
+                    wildcard_expanded.append(_rule)
+        print(f"🪄 可信通配展开：{len(wild_pats)} 个模式 → 新增放行 {len(wildcard_expanded)} 条"
+              f"（data/mod/wildcard_allow.txt）")
+
 # 白名单过滤统一放最后：黑名单里逐行判断代价高，改为
 # 先收集 ||domain^ 行，再按父子域过滤。
 # 本地自定义规则（data/mod/adblock.txt）豁免过滤——用户明确要拦的域，
@@ -309,6 +349,16 @@ def append_white(path, tag):
         ])
         white_output.extend(tmp)
 
+# 通配展开的放行条目没有所属上游分区，写独立分区（便于溯源与审计）
+if wildcard_expanded:
+    white_output.extend([
+        "! ==============================================",
+        "! 📋 白名单来源：可信通配展开（data/mod/wildcard_allow.txt）",
+        "! ⚠️ 上游通配白名单在 DNS 层无法表达，此处为按可信模式展开的具体域名",
+        "! ==============================================",
+    ])
+    white_output.extend(sorted(wildcard_expanded))
+
 for file in ad_files:
     append_white(file, "规则内置")
 for file in allow_files:
@@ -324,7 +374,7 @@ if os.path.exists(local_white_path):
     if tmp:
         white_output.extend([
             "! ==============================================",
-            f"! 📋 白名单来源：本地自定义规则（data/mod/whitelist.txt）",
+            "! 📋 白名单来源：本地自定义规则（data/mod/whitelist.txt）",
             "! ⚠️ 优先级：最高",
             "! ==============================================",
         ])

@@ -3,18 +3,18 @@
 ! 📌 规则名称：天影规则聚合 · 广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-01 13:06:13（北京时间）
-! 📊 有效规则：273482 条
+! ⏰ 更新时间：2026-11-01 13:19:27（北京时间）
+! 📊 有效规则：273466 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-01 13:06:13 | ✅ 有效规则 273482 条
+! Description: ⏰ 更新时间 2026-11-01 13:19:27 | ✅ 有效规则 273466 条
 ! ────────────────── 📈 规则来源统计 ──────────────────
-!     125,283 条  AdRules DNS List [AdRules DNS List]
-!      92,760 条  anti-ad 官方规则
-!      16,108 条  5460 [酷安广告规则]
+!     125,282 条  AdRules DNS List [AdRules DNS List]
+!      92,759 条  anti-ad 官方规则
+!      16,104 条  5460 [酷安广告规则]
 !      12,441 条  1007-Hosts
-!      11,201 条  海哥规则
+!      11,191 条  海哥规则
 !      10,586 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !       3,015 条  OISD 拦截规则 [oisd small]
 !       1,119 条  乘风通用规则 [乘风 广告过滤规则]
@@ -47438,7 +47438,6 @@
 ||gtfzyeftkexvo.site^
 ||oldk.gtifund.cn^
 ||tianshu-x.gtimg.cn^
-||cmshow.gtimg.cn^
 ||beacon.gtimg.com^
 ||bla.gtimg.com^
 ||lb.gtimg.com^
@@ -132175,7 +132174,6 @@
 ||discoveryad.castoola.tv^
 ||discreditperspirepoetry.com^
 ||discussiondaub.com^
-||discuz.gtimg.cn^
 ||diseusy.top^
 ||dishinglucilia.cfd^
 ||dishoneststyle.com^
@@ -244639,7 +244637,6 @@ analytics-*.aasaam.com
 ||qqpublic.qpic.cn^
 ||unicom.shuzilm.cn^
 ||ipv6.shuzilm.cn^
-||zplan.gtimg.cn^
 ||tianxuan.gtimg.cn^
 ||vatplat.gtimg.cn^
 ||prewxacode.wxqcloud.qq.com.cn^
@@ -245384,7 +245381,6 @@ analytics-*.aasaam.com
 ||cdn.xiangkanwang.com^
 ||youtube.com/get_midroll_
 ||tr.byteurl.cn^
-||minigame.gtimg.cn^
 ||c.wkanx.com^
 ||push-dc.51y5.net^
 ||ios-dc.51y5.net^
@@ -246065,8 +246061,6 @@ analytics-*.aasaam.com
 ||securepubads.g.doubleclick.net^
 ||ssp-sdk-config.uc.cn^
 ||swallow.kakamobi.cn^
-||upos-sz-static.bilivideo.com^
-||upos-sz-staticcos.bilivideo.com^
 ||xvadtrack.xingya.com.cn^
 ||cainiao-app-logs.cn-zhangjiakou.dualstack.log.aliyuncs.com^
 ||admonitor-feedback.cn-hangzhou.log.aliyuncs.com^
@@ -263157,7 +263151,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||4bd779f.exvn615m2y7i.com^
 ||4bfx0u.com^
 ||4c16670.iftgxr.com^
-||4c3b3a1950cb390ecf348a13e5ec27cffdf46213a35774e9.dlied1.cdntips.net^
 ||4cqxzsx.xunlaibasc.cobucns.com^
 ||4d43.k8.com^
 ||4dvh6e.vip^
@@ -263206,7 +263199,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||505scdn.pandacdn.top^
 ||5078690667377.com^
 ||5082402074754.com^
-||50d2557cbde5f1fe7041db723da8ebd63331ba59e82648fa.dlied1.cdntips.net^
 ||51.com^
 ||51245360.com^
 ||5187.wya4fcb0bd.vip^
@@ -264957,7 +264949,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||b832e0ae.hii-go.com^
 ||b8777.vip^
 ||b8888y831.vip^
-||b8a1a36974ed9fcd7a53cf2f89b925ee.dlied1.cdntips.net^
 ||b8b42dd6.48997740.com.cname.byteshieldcdn.com^
 ||b8ef.cc^
 ||b8q9.yjzb.tv^
@@ -266461,7 +266452,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||g-adnet.dutils.com^
 ||g-api.kwai.com^
 ||g.dyi3h.id^
-||g.gtimg.cn^
 ||g.h1v3fa.com^
 ||g0224f8.cdn.yhcdn88.com^
 ||g03b765cdn.668cdn.xyz^
@@ -267590,7 +267580,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||jinlisaws.com^
 ||jintao.haohuxx.com^
 ||jiskj1.com^
-||jits5.heytapdownload.com^
 ||jiuka.com^
 ||jiuwan-2.cazcdz8fyag1.com^
 ||jiuyou.com^
@@ -268179,7 +268168,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||livep2pjs.ksapisrv.com^
 ||liveplay.pddpic.com^
 ||liveplay04.pddpic.com^
-||livev.m.chenzhongtech.com^
 ||liwbei.cn^
 ||lix.haoka69.cn^
 ||liyingshidai.cn^
@@ -269137,7 +269125,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||p4-ec.ecukwai.com^
 ||p4-live.wsukwai.com^
 ||p4-plat.wskwai.com^
-||p4.qhimg.com^
 ||p48g9d.cc^
 ||p5-ec.ecukwai.com^
 ||p5-lm.adkwai.com^
@@ -269151,7 +269138,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||p66-live.ndcjl.com^
 ||p7f.cn^
 ||p7lhgaze.com^
-||p8.qhimg.com^
 ||p8.shnhyl.com.cn^
 ||p8akfg5r9.com.361cyd.net^
 ||p8akfg5r9.com^
@@ -269981,7 +269967,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||sdnjl6.hqeydsv.cn^
 ||sdp.qihucdn.com^
 ||se11.k8.com^
-||se3.360simg.com^
 ||se80.cc^
 ||search5-search-lq.toutiaoapi.com^
 ||security-platform.kltb.com.cn^
@@ -271628,7 +271613,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||xinyingfashion.com^
 ||xiuno.com^
 ||xiydufuishsgi8b3t.fefu1.com^
-||xj.gtimg.cn^
 ||xjjoa.gdn^
 ||xjkf.a03me9.com^
 ||xjkf.ahlowp.com^

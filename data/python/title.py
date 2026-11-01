@@ -15,7 +15,7 @@ import sys
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
-from common import RULES_DIR, count_valid_lines, beijing_now
+from common import count_valid_lines, beijing_now
 
 if "GITHUB_WORKSPACE" in os.environ:
     REPO_ROOT = os.environ["GITHUB_WORKSPACE"]

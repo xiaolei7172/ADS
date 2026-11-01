@@ -3,19 +3,19 @@
 ! 📌 规则名称：天影规则聚合 · DNS 拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-01 13:06:33（北京时间）
-! 📊 有效规则：242366 条
+! ⏰ 更新时间：2026-11-01 13:19:27（北京时间）
+! 📊 有效规则：242345 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · DNS 拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-01 13:06:33 | ✅ 有效规则 242366 条
+! Description: ⏰ 更新时间 2026-11-01 13:19:27 | ✅ 有效规则 242345 条
 ! ────────────────── 📈 规则来源统计 ──────────────────
 !     119,299 条  AdRules DNS List [AdRules DNS List]
 !      91,010 条  anti-ad 官方规则
 !       9,550 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
-!       9,127 条  海哥规则
-!       5,673 条  1007-Hosts
-!       4,738 条  5460 [酷安广告规则]
+!       9,117 条  海哥规则
+!       5,671 条  1007-Hosts
+!       4,729 条  5460 [酷安广告规则]
 !       2,750 条  OISD 拦截规则 [oisd small]
 !         219 条  本地自定义规则
 ! ────────────────────────────────────────────────
@@ -27,13 +27,13 @@
 
 ! ────────────── 来源汇总 ──────────────
 !       219 条  本地自定义规则
-!      5673 条  1007-Hosts
+!      5671 条  1007-Hosts
 !     91010 条  anti-ad 官方规则
 !    119299 条  AdRules DNS List [AdRules DNS List]
 !      9550 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !      2750 条  OISD 拦截规则 [oisd small]
-!      4738 条  5460 [酷安广告规则]
-!      9127 条  海哥规则
+!      4729 条  5460 [酷安广告规则]
+!      9117 条  海哥规则
 ! ────────────────────────────────────────
 
 ! ==============================================
@@ -268,7 +268,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/lingeringsound/10007_auto/master/all
 ! ==============================================
-! 📊 本区规则：5673 条
+! 📊 本区规则：5671 条
 ! ==============================================
 ||1-free-share-buttons.com^
 ||100webads.com^
@@ -3851,7 +3851,6 @@
 ||cloudpush.iqiyi.com^
 ||cloudstackix.pro^
 ||cm.baidu.com^
-||cmshow.gtimg.cn^
 ||cn1-bid.adsrvr.cn^
 ||cn2-bid.adsrvr.cn^
 ||cn3-bid.adsrvr.cn^
@@ -3965,7 +3964,6 @@
 ||directleads.com^
 ||discountads.net^
 ||discretioningratitudeadvisedly.com^
-||discuz.gtimg.cn^
 ||displayads-formats.googleusercontent.com^
 ||disqusads.com^
 ||djksajsdkf.shop^
@@ -228590,7 +228588,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/qq5460168/dangchu/main/black.txt
 ! ==============================================
-! 📊 本区规则：4738 条
+! 📊 本区规则：4729 条
 ! ==============================================
 ||ad.360.cn^
 ||ad.360safe.com^
@@ -228752,7 +228750,6 @@
 ||trade.taobao.com^
 ||ud.click.taobao.com^
 ||qqpublic.qpic.cn^
-||zplan.gtimg.cn^
 ||tianxuan.gtimg.cn^
 ||vatplat.gtimg.cn^
 ||prewxacode.wxqcloud.qq.com.cn^
@@ -229153,7 +229150,6 @@
 ||tt.cn^
 ||cdn.xiangkanwang.com^
 ||tr.byteurl.cn^
-||minigame.gtimg.cn^
 ||ping.pinyin.sogou.com^
 ||topnewsfeeds.net^
 ||5ityx.com^
@@ -229546,8 +229542,6 @@
 ||qttunion.com^
 ||remoteads.oss-cn-beijing.aliyuncs.com^
 ||swallow.kakamobi.cn^
-||upos-sz-static.bilivideo.com^
-||upos-sz-staticcos.bilivideo.com^
 ||xvadtrack.xingya.com.cn^
 ||polaris5-normal-hl.zijieapi.com^
 ||inbox.clashofclans.cn^
@@ -230011,7 +230005,6 @@
 ||mgw.mpaas.cn-hangzhou.aliyuncs.com^
 ||lemon.gameley.com^
 ||wallpaper-1258344696.file.myqcloud.com^
-||iv6.gtimg.cn^
 ||social.blued.cn^
 ||client-tracking.tantanapp.com^
 ||client-tracking.tantanapp.com.ctc^
@@ -230214,7 +230207,6 @@
 ||qq.shu008.com^
 ||qq.vvx.highter.top^
 ||weixin.qq.hellocdn.top^
-||open.gtimg.cn^
 ||mmgr.gtimg.com^
 ||ca.gtimg.com^
 ||tpns.tencent.com^
@@ -230919,10 +230911,7 @@
 ||url8807.global.passport.xiaomi.com^
 ||tower.douyucdn.cn^
 ||cmonitor.iqiyi.com^
-||upos-sz-mirrorcos.bilivideo.com^
 ||s.w.org^
-||upos-sz-mirror08c.bilivideo.com^
-||upos-sz-mirror08h.bilivideo.com^
 ||yandex.ru^
 ||icosa-service-in.allawnos.com^
 ||allawntech.com^
@@ -233336,7 +233325,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt
 ! ==============================================
-! 📊 本区规则：9127 条
+! 📊 本区规则：9117 条
 ! ==============================================
 ||www.programming-rabbit.com^
 ||lxdblzka2xrh5g8f45la.fdw84egqu7lf.kgbbzc.cn^
@@ -234349,7 +234338,6 @@
 ||4bd779f.exvn615m2y7i.com^
 ||4bfx0u.com^
 ||4c16670.iftgxr.com^
-||4c3b3a1950cb390ecf348a13e5ec27cffdf46213a35774e9.dlied1.cdntips.net^
 ||4cqxzsx.xunlaibasc.cobucns.com^
 ||4d43.k8.com^
 ||4dvh6e.vip^
@@ -234393,7 +234381,6 @@
 ||505scdn.pandacdn.top^
 ||5078690667377.com^
 ||5082402074754.com^
-||50d2557cbde5f1fe7041db723da8ebd63331ba59e82648fa.dlied1.cdntips.net^
 ||51.com^
 ||51245360.com^
 ||5187.wya4fcb0bd.vip^
@@ -235882,7 +235869,6 @@
 ||b832e0ae.hii-go.com^
 ||b8777.vip^
 ||b8888y831.vip^
-||b8a1a36974ed9fcd7a53cf2f89b925ee.dlied1.cdntips.net^
 ||b8b42dd6.48997740.com.cname.byteshieldcdn.com^
 ||b8ef.cc^
 ||b8q9.yjzb.tv^
@@ -237198,7 +237184,6 @@
 ||fzz0.154.com^
 ||g-api.kwai.com^
 ||g.dyi3h.id^
-||g.gtimg.cn^
 ||g0224f8.cdn.yhcdn88.com^
 ||g03b765cdn.668cdn.xyz^
 ||g040.880.net^
@@ -238242,7 +238227,6 @@
 ||jinlisaws.com^
 ||jintao.haohuxx.com^
 ||jiskj1.com^
-||jits5.heytapdownload.com^
 ||jiuka.com^
 ||jiuwan-2.cazcdz8fyag1.com^
 ||jiuyou.com^
@@ -238793,7 +238777,6 @@
 ||livehelp100-file.com^
 ||livejs.gifshow.com^
 ||livelyhelp.chat^
-||livev.m.chenzhongtech.com^
 ||liwbei.cn^
 ||lix.haoka69.cn^
 ||liyingshidai.cn^
@@ -239661,7 +239644,6 @@
 ||p4-ec.ecukwai.com^
 ||p4-live.wsukwai.com^
 ||p4-plat.wskwai.com^
-||p4.qhimg.com^
 ||p48g9d.cc^
 ||p5-ec.ecukwai.com^
 ||p5c2m7o9.com^
@@ -239674,7 +239656,6 @@
 ||p66-live.ndcjl.com^
 ||p7f.cn^
 ||p7lhgaze.com^
-||p8.qhimg.com^
 ||p8.shnhyl.com.cn^
 ||p8akfg5r9.com.361cyd.net^
 ||p8akfg5r9.com^
@@ -240429,7 +240410,6 @@
 ||sdnjl6.hqeydsv.cn^
 ||sdp.qihucdn.com^
 ||se11.k8.com^
-||se3.360simg.com^
 ||se80.cc^
 ||search5-search-lq.toutiaoapi.com^
 ||sejieboxapi.yingyangdj.com^
@@ -241861,7 +241841,6 @@
 ||xinyingfashion.com^
 ||xiuno.com^
 ||xiydufuishsgi8b3t.fefu1.com^
-||xj.gtimg.cn^
 ||xjjoa.gdn^
 ||xjkf.a03me9.com^
 ||xjkf.ahlowp.com^

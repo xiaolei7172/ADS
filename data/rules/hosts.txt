@@ -1,7 +1,7 @@
 # 天影规则聚合 · HOSTS 版
 # 由 dns.txt（已去重）自动转换，规则与 dns.txt 完全一致
 # 📌 项目地址：https://github.com/xiaolei7172/ADS
-# ⏰ 更新时间：2026-11-01 12:44:13（北京时间） | 📊 有效规则：242366 条
+# ⏰ 更新时间：2026-11-01 13:19:19（北京时间） | 📊 有效规则：242345 条
 # 🔄 更新频率：每12小时自动更新
 0.0.0.0 ads3-normal-hl.zijieapi.com
 0.0.0.0 ads3-normal-lf.zijieapi.com
@@ -3803,7 +3803,6 @@
 0.0.0.0 cloudpush.iqiyi.com
 0.0.0.0 cloudstackix.pro
 0.0.0.0 cm.baidu.com
-0.0.0.0 cmshow.gtimg.cn
 0.0.0.0 cn1-bid.adsrvr.cn
 0.0.0.0 cn2-bid.adsrvr.cn
 0.0.0.0 cn3-bid.adsrvr.cn
@@ -3917,7 +3916,6 @@
 0.0.0.0 directleads.com
 0.0.0.0 discountads.net
 0.0.0.0 discretioningratitudeadvisedly.com
-0.0.0.0 discuz.gtimg.cn
 0.0.0.0 displayads-formats.googleusercontent.com
 0.0.0.0 disqusads.com
 0.0.0.0 djksajsdkf.shop
@@ -228664,7 +228662,6 @@
 0.0.0.0 trade.taobao.com
 0.0.0.0 ud.click.taobao.com
 0.0.0.0 qqpublic.qpic.cn
-0.0.0.0 zplan.gtimg.cn
 0.0.0.0 tianxuan.gtimg.cn
 0.0.0.0 vatplat.gtimg.cn
 0.0.0.0 prewxacode.wxqcloud.qq.com.cn
@@ -229065,7 +229062,6 @@
 0.0.0.0 tt.cn
 0.0.0.0 cdn.xiangkanwang.com
 0.0.0.0 tr.byteurl.cn
-0.0.0.0 minigame.gtimg.cn
 0.0.0.0 ping.pinyin.sogou.com
 0.0.0.0 topnewsfeeds.net
 0.0.0.0 5ityx.com
@@ -229458,8 +229454,6 @@
 0.0.0.0 qttunion.com
 0.0.0.0 remoteads.oss-cn-beijing.aliyuncs.com
 0.0.0.0 swallow.kakamobi.cn
-0.0.0.0 upos-sz-static.bilivideo.com
-0.0.0.0 upos-sz-staticcos.bilivideo.com
 0.0.0.0 xvadtrack.xingya.com.cn
 0.0.0.0 polaris5-normal-hl.zijieapi.com
 0.0.0.0 inbox.clashofclans.cn
@@ -229923,7 +229917,6 @@
 0.0.0.0 mgw.mpaas.cn-hangzhou.aliyuncs.com
 0.0.0.0 lemon.gameley.com
 0.0.0.0 wallpaper-1258344696.file.myqcloud.com
-0.0.0.0 iv6.gtimg.cn
 0.0.0.0 social.blued.cn
 0.0.0.0 client-tracking.tantanapp.com
 0.0.0.0 client-tracking.tantanapp.com.ctc
@@ -230126,7 +230119,6 @@
 0.0.0.0 qq.shu008.com
 0.0.0.0 qq.vvx.highter.top
 0.0.0.0 weixin.qq.hellocdn.top
-0.0.0.0 open.gtimg.cn
 0.0.0.0 mmgr.gtimg.com
 0.0.0.0 ca.gtimg.com
 0.0.0.0 tpns.tencent.com
@@ -230831,10 +230823,7 @@
 0.0.0.0 url8807.global.passport.xiaomi.com
 0.0.0.0 tower.douyucdn.cn
 0.0.0.0 cmonitor.iqiyi.com
-0.0.0.0 upos-sz-mirrorcos.bilivideo.com
 0.0.0.0 s.w.org
-0.0.0.0 upos-sz-mirror08c.bilivideo.com
-0.0.0.0 upos-sz-mirror08h.bilivideo.com
 0.0.0.0 yandex.ru
 0.0.0.0 icosa-service-in.allawnos.com
 0.0.0.0 allawntech.com
@@ -234253,7 +234242,6 @@
 0.0.0.0 4bd779f.exvn615m2y7i.com
 0.0.0.0 4bfx0u.com
 0.0.0.0 4c16670.iftgxr.com
-0.0.0.0 4c3b3a1950cb390ecf348a13e5ec27cffdf46213a35774e9.dlied1.cdntips.net
 0.0.0.0 4cqxzsx.xunlaibasc.cobucns.com
 0.0.0.0 4d43.k8.com
 0.0.0.0 4dvh6e.vip
@@ -234297,7 +234285,6 @@
 0.0.0.0 505scdn.pandacdn.top
 0.0.0.0 5078690667377.com
 0.0.0.0 5082402074754.com
-0.0.0.0 50d2557cbde5f1fe7041db723da8ebd63331ba59e82648fa.dlied1.cdntips.net
 0.0.0.0 51.com
 0.0.0.0 51245360.com
 0.0.0.0 5187.wya4fcb0bd.vip
@@ -235786,7 +235773,6 @@
 0.0.0.0 b832e0ae.hii-go.com
 0.0.0.0 b8777.vip
 0.0.0.0 b8888y831.vip
-0.0.0.0 b8a1a36974ed9fcd7a53cf2f89b925ee.dlied1.cdntips.net
 0.0.0.0 b8b42dd6.48997740.com.cname.byteshieldcdn.com
 0.0.0.0 b8ef.cc
 0.0.0.0 b8q9.yjzb.tv
@@ -237102,7 +237088,6 @@
 0.0.0.0 fzz0.154.com
 0.0.0.0 g-api.kwai.com
 0.0.0.0 g.dyi3h.id
-0.0.0.0 g.gtimg.cn
 0.0.0.0 g0224f8.cdn.yhcdn88.com
 0.0.0.0 g03b765cdn.668cdn.xyz
 0.0.0.0 g040.880.net
@@ -238146,7 +238131,6 @@
 0.0.0.0 jinlisaws.com
 0.0.0.0 jintao.haohuxx.com
 0.0.0.0 jiskj1.com
-0.0.0.0 jits5.heytapdownload.com
 0.0.0.0 jiuka.com
 0.0.0.0 jiuwan-2.cazcdz8fyag1.com
 0.0.0.0 jiuyou.com
@@ -238697,7 +238681,6 @@
 0.0.0.0 livehelp100-file.com
 0.0.0.0 livejs.gifshow.com
 0.0.0.0 livelyhelp.chat
-0.0.0.0 livev.m.chenzhongtech.com
 0.0.0.0 liwbei.cn
 0.0.0.0 lix.haoka69.cn
 0.0.0.0 liyingshidai.cn
@@ -239565,7 +239548,6 @@
 0.0.0.0 p4-ec.ecukwai.com
 0.0.0.0 p4-live.wsukwai.com
 0.0.0.0 p4-plat.wskwai.com
-0.0.0.0 p4.qhimg.com
 0.0.0.0 p48g9d.cc
 0.0.0.0 p5-ec.ecukwai.com
 0.0.0.0 p5c2m7o9.com
@@ -239578,7 +239560,6 @@
 0.0.0.0 p66-live.ndcjl.com
 0.0.0.0 p7f.cn
 0.0.0.0 p7lhgaze.com
-0.0.0.0 p8.qhimg.com
 0.0.0.0 p8.shnhyl.com.cn
 0.0.0.0 p8akfg5r9.com.361cyd.net
 0.0.0.0 p8akfg5r9.com
@@ -240333,7 +240314,6 @@
 0.0.0.0 sdnjl6.hqeydsv.cn
 0.0.0.0 sdp.qihucdn.com
 0.0.0.0 se11.k8.com
-0.0.0.0 se3.360simg.com
 0.0.0.0 se80.cc
 0.0.0.0 search5-search-lq.toutiaoapi.com
 0.0.0.0 sejieboxapi.yingyangdj.com
@@ -241765,7 +241745,6 @@
 0.0.0.0 xinyingfashion.com
 0.0.0.0 xiuno.com
 0.0.0.0 xiydufuishsgi8b3t.fefu1.com
-0.0.0.0 xj.gtimg.cn
 0.0.0.0 xjjoa.gdn
 0.0.0.0 xjkf.a03me9.com
 0.0.0.0 xjkf.ahlowp.com

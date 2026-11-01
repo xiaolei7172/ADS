@@ -1,0 +1,30 @@
+! ======================================================================
+! 可信通配白名单 —— 经人工甄别的通配模式表
+! ======================================================================
+! 背景：上游白名单常用 @@||v*.douyinvod.com^ 这类通配放行 CDN 节点，
+! 但 DNS 层域名集合只收纯域名，通配全部静默失效 —— 上游黑名单拦掉的
+! 节点无人兜底，被调度到这些节点的视频/图片/下载会加载失败。
+!
+! merge.py 会把「同时命中本表模式且被拦截」的域名展开成具体
+! @@||domain^ 放行条目（写入 allow.txt 独立分区，可溯源）。
+!
+! ⚠️ 只有整组确认都是功能/CDN 域、不含广告与埋点的模式才能进本表！
+!    实测盲目展开 517 条上游通配会放行 76 条规则，其中近半是广告/埋点：
+!      *.a.yximgs.com（快手广告集群 ad/ali-ad/alimov2…）  → 保持忽略
+!      t*.baidu.com（tipsdk/tk/tracker/tuisong 推广追踪） → 保持忽略
+!      *.alipay.com（amdc/collect/loggw 调度埋点）        → 保持忽略
+!      cl*.k5a.io（快手转化归因）                         → 保持忽略
+!      *-misc-lf.fqnovel.com（mon 埋点）                  → 保持忽略
+!      data.mistat.*xiaomi.com / data.sec*.miui.com      → 保持忽略
+!      aliexpress.* / klclick*.com                       → 保持忽略
+!    通配里混广告的，改用 whitelist.txt 点名放行具体功能域。
+!
+! 语法：一行一个模式，* 为任意字符；"!" 后为注释
+! ======================================================================
+
+v*.douyinvod.com            ! 抖音/红果视频播放节点（v3/v5/v9/v95/v96…，新增节点自动覆盖）
+*-novelapp.fqnovelvod.com   ! 番茄/红果小说视频 CDN（v3/v5/v6-novelapp…）
+upos-sz-*.bilivideo.com     ! B站视频播放镜像节点（mirror08c/08h/cos/static…）
+*.dlied1.cdntips.net        ! 腾讯下载 CDN（hash 文件名，无法枚举，必须通配）
+p*.qhimg.com                ! 360 静态图片 CDN（p1~p8，拦了网页图片全挂）
+se*.360simg.com             ! 360 静态图片 CDN

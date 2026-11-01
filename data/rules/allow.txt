@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影规则聚合 · 白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-01 13:06:13（北京时间）
-! 📊 有效规则：6746 条
+! ⏰ 更新时间：2026-11-01 13:19:28（北京时间）
+! 📊 有效规则：6767 条
 ! 🔄 更新频率：每12小时自动更新
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 白名单规则 📌
-! Description: ⏰ 更新时间 2026-11-01 13:06:13 | ✅ 有效规则 6746 条
+! Description: ⏰ 更新时间 2026-11-01 13:19:28 | ✅ 有效规则 6767 条
 ! ────────────────── 📈 规则来源统计 ──────────────────
 !       3,090 条  5460 [酷安广告规则]（规则内置）
 !       2,634 条  AdGuard 跟踪白名单（远程白名单）
@@ -18,8 +18,9 @@
 !         109 条  anti-ad 官方规则（规则内置）
 !          76 条  AdGuard 中文白名单（远程白名单）
 !          66 条  本地白名单（远程白名单）
-!          33 条  本地自定义规则（data/mod/whitelist.txt）
+!          43 条  本地自定义规则（data/mod/whitelist.txt）
 !          26 条  乘风通用规则 [乘风 广告过滤规则]（规则内置）
+!          11 条  可信通配展开（data/mod/wildcard_allow.txt）
 !          11 条  abclq 防误杀白名单（远程白名单）
 !           6 条  酷安@大萌主 [轻量广告拦截规则]（规则内置）
 !           4 条  乘风视频规则 [乘风 视频过滤规则 uBlock Origin 1.56]（规则内置）
@@ -27,6 +28,19 @@
 ! ────────────────────────────────────────────────
 ! ======================================================================
 ! ==============================================
+! 📋 白名单来源：可信通配展开（data/mod/wildcard_allow.txt）
+! ⚠️ 上游通配白名单在 DNS 层无法表达，此处为按可信模式展开的具体域名
+@@||4c3b3a1950cb390ecf348a13e5ec27cffdf46213a35774e9.dlied1.cdntips.net^
+@@||50d2557cbde5f1fe7041db723da8ebd63331ba59e82648fa.dlied1.cdntips.net^
+@@||b8a1a36974ed9fcd7a53cf2f89b925ee.dlied1.cdntips.net^
+@@||p4.qhimg.com^
+@@||p8.qhimg.com^
+@@||se3.360simg.com^
+@@||upos-sz-mirror08c.bilivideo.com^
+@@||upos-sz-mirror08h.bilivideo.com^
+@@||upos-sz-mirrorcos.bilivideo.com^
+@@||upos-sz-static.bilivideo.com^
+@@||upos-sz-staticcos.bilivideo.com^
 ! 📋 白名单来源：anti-ad 官方规则（规则内置）
 @@||ad.azure.com^
 @@||ad.ext.azure.com^
@@ -6790,3 +6804,13 @@
 @@||lf-fe.fqnovelstatic.com^
 @@||lf3-reading.fqnovelstatic.com^
 @@||novelapp.fqnovelvod.com^
+@@||cmshow.gtimg.cn^
+@@||discuz.gtimg.cn^
+@@||g.gtimg.cn^
+@@||iv6.gtimg.cn^
+@@||minigame.gtimg.cn^
+@@||open.gtimg.cn^
+@@||xj.gtimg.cn^
+@@||zplan.gtimg.cn^
+@@||livev.m.chenzhongtech.com^
+@@||jits5.heytapdownload.com^

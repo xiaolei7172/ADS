@@ -160,3 +160,20 @@
 ! novelapp.fqnovelvod.com 根域同为视频 CDN 调度入口 —— 本地黑名单禁拦清单早已
 ! 判定 ||fqnovelvod.com^ 整域拦截是"高危误拦"（拦了 App 白屏），根域与 vN 节点同性质
 @@||novelapp.fqnovelvod.com^
+
+! ========== 通配白名单甄别：整组通配里混着广告/埋点，只点名放行功能域 ==========
+! 上游 @@||*.gtimg.cn^（腾讯静态/开放平台）因含 $important 且被通配忽略，
+! 11 条子域暴露被拦；只放行 8 条确定的功能域，
+! tianshu-x / tianxuan（营销）与 vatplat 继续拦
+@@||cmshow.gtimg.cn^
+@@||discuz.gtimg.cn^
+@@||g.gtimg.cn^
+@@||iv6.gtimg.cn^
+@@||minigame.gtimg.cn^
+@@||open.gtimg.cn^
+@@||xj.gtimg.cn^
+@@||zplan.gtimg.cn^
+! 快手直播播放流（上游 *m.chenzhongtech.com 通配被忽略后暴露；随机子域 kph8gvfz 继续拦）
+@@||livev.m.chenzhongtech.com^
+! OPPO 下载 CDN（上游 *.heytapdownload.com 通配被忽略后暴露；mdp-usertrace 追踪域继续拦）
+@@||jits5.heytapdownload.com^
