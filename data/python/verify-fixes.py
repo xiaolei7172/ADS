@@ -1,50 +1,48 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""验证 11 种格式对同一域名的判定是否一致（格式感知解析 + 父子域语义）"""
-import re, sys
+"""验证 11 种格式对同一域名的判定是否一致。
+
+解析器统一来自 formats.py（与生成器、质量闸门共用同一份 reader）：
+以前这里是 11 种格式各写一套正则，生成器认为写对了、校验器认为没问题、
+客户端却读不了——dnsmasq 的 address= 就是这么漏掉的。
+"""
+import os
+import sys
 from pathlib import Path
 
-R = Path("data/rules")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from common import RULES_DIR, block_domain  # noqa: E402
+from formats import FORMATS, BY_NAME  # noqa: E402
+
+R = Path(RULES_DIR)
+
+# 白名单产物（smartdns-whitelist.conf）语义相反，不参与一致性比对
+BLOCK_FORMATS = [f for f in FORMATS if f.source != "allow"]
 
 
-def parse(path):
+def parse(name):
     """返回 (精确集合, 后缀集合)。
-    后缀集合 = DOMAIN-SUFFIX / ||x^ / address /x/ / '+.x'（覆盖子域）；
-    精确集合 = DOMAIN / host / host-suffix 之外的精确类型 / hosts 的 0.0.0.0 行。
-    注意：hosts 是精确匹配——`0.0.0.0 a.b.com` 不会拦 x.a.b.com，
-    所以这里必须归 exact，否则会误判 hosts 与 dns.txt 等价。"""
+
+    后缀集合 = ||x^ / DOMAIN-SUFFIX / address /x/ / '+.x'（覆盖子域）；
+    精确集合 = hosts 的 0.0.0.0 行——`0.0.0.0 a.b.com` 不会拦 x.a.b.com，
+    必须归 exact，否则会误判 hosts 与 dns.txt 等价。
+    """
+    fmt = BY_NAME.get(name)
     exact, suffix = set(), set()
-    for line in path.read_text(encoding="utf-8", errors="ignore").splitlines():
+    for line in (R / name).read_text(encoding="utf-8", errors="ignore").splitlines():
         t = line.strip()
-        if not t or t.startswith(("!", "#", "[", "//")) or t in ("payload:",):
+        if not t or t.startswith(("!", "#", "[", "//")) or t == "payload:":
             continue
-        low = t.lower()
-        m = re.match(r"^\|\|([a-z0-9._*-]+)\^?$", low)
-        if m:
-            suffix.add(m.group(1).rstrip("."))
+        if name == "dns.txt":
+            d = block_domain(t)
+        else:
+            d = fmt.read(t) if fmt else None
+        if not d:
             continue
-        m = re.match(r"^(?:domain|host|domain-suffix|host-suffix)\s*,\s*([a-z0-9._*-]+)", low)
-        if m:
-            d = m.group(1).rstrip(".")
-            if "suffix" in low.split(",")[0]:
-                suffix.add(d)
-            else:
-                exact.add(d)
-            continue
-        m = re.match(r"^address\s*=?\s*/([a-z0-9._*-]+)/", low)  # smartdns: address /x/ ；dnsmasq: address=/x/0.0.0.0
-        if m:
-            suffix.add(m.group(1).rstrip("."))
-            continue
-        m = re.match(r"^(?:0\.0\.0\.0|127\.0\.0\.1)\s+([a-z0-9._-]+)$", low)
-        if m:
-            exact.add(m.group(1).rstrip("."))
-            continue
-        m = re.match(r"^-\s*['\"]?\+?\.?([a-z0-9._*-]+)", low)  # mihomo yaml: - '+.domain'
-        if m:
-            suffix.add(m.group(1).rstrip(".").strip("'\""))
-            continue
-        if " " not in low and "." in low and re.fullmatch(r"[a-z0-9._*-]+", low):
-            suffix.add(low.rstrip("."))
+        if fmt is not None and not fmt.suffix:
+            exact.add(d)
+        else:
+            suffix.add(d)
     return exact, suffix
 
 
@@ -64,11 +62,11 @@ def hit(rule_sets, dom):
     return False, None
 
 
-SUFFIX_FILES = ["dns.txt", "qx.list", "surge.list", "smartdns.conf", "dnsmasq.conf", "mihomo.yaml"]
+SUFFIX_FILES = ["dns.txt"] + [f.name for f in BLOCK_FORMATS if f.suffix]
 # hosts 只能精确匹配：`0.0.0.0 a.b.com` 拦不到 x.a.b.com，
 # 而 dns.txt 做了父子域折叠（父域存在即删子域），所以 hosts 天然覆盖不全。
 # 它单独核对，不一致但"父域已列出"时标注 †，不计失败——这是格式限制，不是管线 bug。
-EXACT_FILES = ["hosts.txt"]
+EXACT_FILES = [f.name for f in BLOCK_FORMATS if not f.suffix]
 FILES = SUFFIX_FILES + EXACT_FILES
 CASES = [
     # (域名, 期望: True=拦 False=不拦, 说明)
@@ -124,7 +122,7 @@ CASES = [
     ("v5-hl-ali-reading-video.fqnovelvod.com", True, "阅读页信息流广告视频（保持拦）"),
 ]
 
-sets = {f: parse(R / f) for f in FILES if (R / f).exists()}
+sets = {f: parse(f) for f in FILES if (R / f).exists()}
 print(f"解析格式：{', '.join(sets)}\n")
 print(f"{'域名':36s} {'期望':5s} {'各格式结果':46s} 判定")
 print("-" * 110)

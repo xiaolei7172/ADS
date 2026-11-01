@@ -44,28 +44,10 @@ jobs:
       - name: Generate dns Rules
         run: python ./data/python/filter-dns.py
 
-      - name: Generate qx Rules
-        run: python ./data/python/qx.py
-
-      - name: Generate SmartDNS Rules
-        run: python ./data/python/smartdns.py
-
-      - name: Generate SmartDNS Whitelist
-        run: python ./data/python/smartdns_whitelist.py
-
-      - name: Generate dnsmasq Rules
-        run: python ./data/python/dnsmasq.py
-
-      - name: Generate Domain List
-        run: python ./data/python/domain_list.py
-
-      - name: Generate Hosts Rules
-        run: python ./data/python/hosts.py
-
-      - name: Generate Clash/Surge Rules
-        run: |
-          python ./data/python/clash.py
-          python ./data/python/surge.py
+      # 8 种派生格式一次生成：三个域名集各构建一次，写法全部来自 formats.py。
+      # 以前是 8 个脚本各自读一遍 5.6 MB 的 dns.txt、各写一份循环。
+      - name: Generate Derivative Formats
+        run: python ./data/python/pipeline.py
 
       # ==============================================
       # 🛡️ 质量自检闸门：0 重复 / 0 父子域冗余 / 分区自洽，

@@ -115,5 +115,35 @@ class TestMirrorUrls(unittest.TestCase):
                                     f"jsDelivr 分支解析错（会 404）：{u}")
 
 
+class TestFormats(unittest.TestCase):
+    """格式层自检：写进去的必须能原样读回来，表头不能被误认成规则。"""
+
+    def setUp(self):
+        from formats import FORMATS
+        self.formats = FORMATS
+
+    def test_write_read_roundtrip(self):
+        for f in self.formats:
+            line = f.render("ads.example.com").rstrip("\n")
+            self.assertEqual(f.read(line), "ads.example.com",
+                             f"{f.name} 写入后读不回同一个域名：{line!r}")
+
+    def test_header_not_mistaken_for_rule(self):
+        for f in self.formats:
+            for h in f.header_lines(["a.com"]):
+                if h.startswith(("#", "!", "[", "payload")):
+                    self.assertIsNone(f.read(h), f"{f.name} 把表头当成规则：{h!r}")
+
+    def test_expected_formats_present(self):
+        names = {f.name for f in self.formats}
+        for n in ("qx.list", "surge.list", "mihomo.yaml", "smartdns.conf",
+                  "dnsmasq.conf", "ad-domain.txt", "hosts.txt", "smartdns-whitelist.conf"):
+            self.assertIn(n, names)
+
+    def test_only_hosts_is_exact_match(self):
+        exact = [f.name for f in self.formats if not f.suffix]
+        self.assertEqual(exact, ["hosts.txt"])
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

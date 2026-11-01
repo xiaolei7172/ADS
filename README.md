@@ -398,6 +398,23 @@ python data/python/probe_source.py <规则源URL> block    # 已知是黑名单�
 - **下载方向体检**（dl.py）：白名单文件里拦截语法占大头 / 黑名单文件里放行语法占大头，下载阶段当场报警；
 - **白名单污染熔断**（merge.py）：若白名单放行移除的拦截规则超过 **8%**（正常水位 ≈2%），判定白名单被投毒或黑白错配，中止发布残缺规则。
 
+**本地跑一遍完整管线**（顺序不能乱）：
+
+```bash
+python data/python/dl.py           # 下载 20 路上游（六通道容灾）
+python data/python/merge.py        # 合并 + 白名单过滤（含投毒熔断）
+python data/python/filter-dns.py   # 生成 dns.txt + 折叠前域名集
+python data/python/pipeline.py     # 一次生成 8 种派生格式
+python data/python/title.py && python data/python/clean-readme.py && python data/python/changelog.py
+python data/python/trend.py
+python data/python/check-quality.py && python data/python/verify-fixes.py
+```
+
+> 🔧 **改格式只改一处**：8 种派生格式的「写一行 / 读一行 / 来源 / 匹配语义」全部声明在
+> `data/python/formats.py` 的 `FORMATS` 里，生成、质量闸门、一致性校验共用同一份 reader。
+> 新增一种格式 = 加一个 `Format(...)`；只重生成某一种 = `python data/python/pipeline.py qx.list`。
+> 域名词法（`common.py` 的 `valid_domain` 等）另有一层纯函数单测：`python -m unittest discover -s tests -v`。
+
 </details>
 
 

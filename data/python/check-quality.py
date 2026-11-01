@@ -19,6 +19,7 @@ from collections import Counter
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
 from common import RULES_DIR, MOD_DIR, block_domain
+from formats import BY_NAME
 
 DNS_FLOOR = 50000
 DOMAIN_FILES = ["dns.txt", "qx.list", "smartdns.conf", "ad-domain.txt", "hosts.txt",
@@ -42,32 +43,23 @@ if os.path.exists(local_path):
 
 
 def rule_lines(path):
-    """返回文件中的规则行（跳过注释/空行），各格式提取目标域"""
+    """返回文件中的规则行（跳过注释/空行），按 formats.py 的声明提取目标域。
+
+    这里不再为每种格式写一个分支：写法与读法都声明在 formats.FORMATS 里，
+    生成器用 write、这里用 read，两边不可能再各说各话。
+    """
     out = []
     name = os.path.basename(path)
-    is_hosts = name == "hosts.txt"
+    fmt = BY_NAME.get(name)
     with open(path, "r", encoding="utf-8", errors="ignore") as f:
         for raw in f:
             line = raw.strip()
             if not line or line.startswith(("!", "#", "[")):
                 continue
-            if is_hosts:
-                parts = line.split()
-                out.append(parts[1].lower() if len(parts) == 2 and parts[0] == "0.0.0.0" else None)
-            elif name == "mihomo.yaml":
-                # 形如   - '+.domain.com'  → domain.com；'domain.com' 精确匹配也算
-                m = line.lstrip("- ").strip().strip("'\"")
-                if m.startswith("+."):
-                    m = m[2:]
-                out.append(m.lower() if m else None)
-            elif name == "surge.list":
-                # 形如 DOMAIN-SUFFIX,domain.com
-                parts = line.split(",")
-                out.append(parts[-1].lower() if len(parts) == 2 else None)
-            elif name == "dnsmasq.conf":
-                # 形如 address=/domain.com/0.0.0.0
-                m = re.match(r"^address\s*=?\s*/([^/]+)/", line)
-                out.append(m.group(1).lower() if m else None)
+            if fmt:
+                out.append(fmt.read(line))
+            elif name == "dns.txt":
+                out.append(block_domain(line))
             else:
                 out.append(line.lower())
     return [l for l in out if l]
