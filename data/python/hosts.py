@@ -66,7 +66,7 @@ header = f"""# 天影规则聚合 · HOSTS 版
 # ⚠️ hosts 只能精确匹配，拦不到未列出的子域；需要完整子域覆盖请用 dns.txt / smartdns.conf / surge.list
 # 📌 项目地址：https://github.com/xiaolei7172/ADS
 # ⏰ 更新时间：{beijing_now()}（北京时间） | 📊 有效规则：{len(uniq)} 条
-# 🔄 更新频率：每12小时自动更新
+# 🔄 更新频率：每日自动更新（北京时间 08:00）
 """
 with open(output_path, "w", encoding="utf-8", newline="\n") as f:
     f.write(header)

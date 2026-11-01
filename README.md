@@ -4,9 +4,9 @@
 
 # 🛸 天影规则聚合 · TianYing Rules Hub
 
-**⚡ 强力去广告 · 每 12 小时自动更新 · 全平台适配 ⚡**
+**⚡ 强力去广告 · 每日自动更新 · 全平台适配 ⚡**
 
-> 干净的网络，从一条订阅开始 —— 20 路数据源聚合 · 三层真实去重 · 每 12 小时自动更新，一套规则覆盖 10 种格式
+> 干净的网络，从一条订阅开始 —— 20 路数据源聚合 · 三层真实去重 · 每日自动更新，一套规则覆盖 10 种格式
 
 [![CI 状态](https://github.com/xiaolei7172/ADS/actions/workflows/Update-Rules.yml/badge.svg)](https://github.com/xiaolei7172/ADS/actions/workflows/Update-Rules.yml)
 [![最近提交](https://img.shields.io/github/last-commit/xiaolei7172/ADS/master?label=%E6%9C%80%E8%BF%91%E6%9B%B4%E6%96%B0&color=success)](https://github.com/xiaolei7172/ADS/commits/master)
@@ -377,7 +377,7 @@ python data/python/probe_source.py <规则源URL> block    # 已知是黑名单�
 <!-- CHANGELOG:START -->
 ## 📜 更新历史
 
-> 仅收录**功能性变更**；CI 每 12 小时的例行规则更新（`✅ 规则自动更新` 提交）不列出。完整记录见 [Commits](https://github.com/xiaolei7172/ADS/commits/master)。
+> 仅收录**功能性变更**；CI 每日的例行规则更新（`✅ 规则自动更新` 提交）不列出。完整记录见 [Commits](https://github.com/xiaolei7172/ADS/commits/master)。
 
 ### 📅 2026-11-01
 
@@ -470,6 +470,6 @@ python data/python/probe_source.py <规则源URL> block    # 已知是黑名单�
 
 💬 遇到 **误拦 / 漏拦**？[提交 Issue](https://github.com/xiaolei7172/ADS/issues/new/choose) 反馈，误拦会优先加白名单放行
 
-📄 [MIT License](LICENSE) · 🔄 每 12 小时自动更新 · [⬆ 返回顶部](#top)
+📄 [MIT License](LICENSE) · 🔄 每日 08:00 自动更新 · [⬆ 返回顶部](#top)
 
 </div>

@@ -1,6 +1,6 @@
 # 天影规则聚合 · Clash/Mihomo 域名集
 # 由 dns.txt（已去重）自动转换；behavior: domain
-# 📌 https://github.com/xiaolei7172/ADS | 🔄 每12小时自动更新
+# 📌 https://github.com/xiaolei7172/ADS | 🔄 每日自动更新
 payload:
   - '+.ads3-normal-hl.zijieapi.com'
   - '+.ads3-normal-lf.zijieapi.com'

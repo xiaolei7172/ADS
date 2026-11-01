@@ -2,7 +2,9 @@ name: TianYing Update Rules
 on: 
   workflow_dispatch:
   schedule:
-    - cron: '0 */12 * * *'
+    # 每日一次：UTC 00:17 = 北京时间 08:17
+    # 用 17 分而非整点，避开 GitHub 调度高峰（整点前后定时任务常被推迟十几分钟）
+    - cron: '17 0 * * *'
 
 # 定时与手动触发可能重叠，两个实例同时 push 会互相顶掉
 concurrency:

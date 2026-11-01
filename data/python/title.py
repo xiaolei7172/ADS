@@ -219,7 +219,7 @@ for filename, cfg in file_config.items():
 {c} 🌐 项目地址：https://github.com/xiaolei7172/ADS
 {c} ⏰ 更新时间：{beijing_time}（北京时间）
 {c} 📊 有效规则：{line_count} 条
-{c} 🔄 更新频率：每12小时自动更新
+{c} 🔄 更新频率：每日自动更新（北京时间 08:00）
 {c} ======================================================================
 {c} Title: 📌 {cfg['title']} 📌
 {c} Description: ⏰ 更新时间 {beijing_time} | ✅ 有效规则 {line_count} 条
