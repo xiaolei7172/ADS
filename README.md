@@ -298,6 +298,8 @@ rules:
 | ✅ **abclq 防误杀白名单** | 红果/抖音正片 CDN 防误杀（裸域名格式，自动转换） | [home-dns-adblock whitelist](https://raw.githubusercontent.com/abclq/home-dns-adblock/refs/heads/main/config/whitelist.txt) |
 | 🏠 **本仓库自定义** | 误杀补救（优先级最高） | [data/mod/whitelist.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/mod/whitelist.txt) |
 
+> 📎 另有 6 条功能域手工摘录自 [lingeringsound/10007_auto 的 Adaway 白名单](https://raw.githubusercontent.com/lingeringsound/10007_auto/master/Adaway_white_list.prop)（DoH 端点 / 推送 HTTPDNS / 小米云 / 百度图床 / 淘宝鉴权 / Adobe 授权）。该源整包 331 条中 289 条已与现有白名单重合，剩余多为 `alimama`、`adnxs`、`ads.tiktok` 等纯广告域，**未作为自动源接入**，仅摘录不接会坏功能的几条。
+
 ### 🧽 上游脏数据清洗
 
 合并过程中会主动丢弃以下三类"看着像规则、实际有害或无效"的行：
