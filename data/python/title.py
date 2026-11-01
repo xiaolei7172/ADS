@@ -5,7 +5,9 @@
   1. 【关键修复】规则正文没变化时，保留原文件不动（原时间戳继续有效）——
      旧版每次都写入新时间戳，规则一条没变也必然产生整文件 diff，
      这是仓库历史膨胀到 1 GB 的直接原因之一；
-  2. 去掉 pytz 依赖，改用标准库固定 UTC+8（中国无夏令时）。
+  2. 去掉 pytz 依赖，改用标准库固定 UTC+8（中国无夏令时）；
+  3. 表头 Title/Description 区块下方附「规则来源统计」——
+     打开规则页面第一屏就能看到每个上游贡献了多少条规则。
 """
 import os
 import re
@@ -40,26 +42,103 @@ file_config = {
     }
 }
 
-# 表头模板本身改动后，正文条数未变也需要重写表头 → python title.py --force
+# 表头/统计块本身改动后，正文条数未变也需要重写表头 → python title.py --force
 FORCE = "--force" in sys.argv
 
 
 HEADER_MARKER = "[TianYing Adblock Project]"
-HEADER_LINES = 12  # 标记行 + 11 行表头（含结尾分隔线）
+# 表头固定含 3 条 ===== 分隔线：标记后第 3 条分隔线即表头结束
+HEADER_SEPARATORS = 3
+
+# 来源分区标记（merge.py 写拦截/白名单分区，两种写法都兼容）：
+#   ! 📋 规则来源：xxx   /   ! 📋 白名单来源：xxx
+SECTION_PAT = re.compile(r"^!\s*(?:📋\s*)?(?:规则来源|白名单来源)：(.+?)\s*$")
 
 
-def strip_header(content):
+def strip_header(content, comment="!"):
     """去掉本脚本上次生成的旧表头，只留正文。
 
-    只认自己写的表头（首行 [TianYing Adblock Project] 标记，固定格式）；
+    只认自己写的表头（首行标记，到第 HEADER_SEPARATORS 条 ===== 分隔线为止）；
     其余开头注释（如 adblock/dns 的来源分区头）一律保留，绝不误删。
     """
     lines = content.splitlines()
     if lines and lines[0].strip() == HEADER_MARKER:
-        lines = lines[HEADER_LINES:]
+        sep_pat = re.compile(rf"^{re.escape(comment)}\s*=+\s*$")
+        seen = 0
+        for i, line in enumerate(lines):
+            if sep_pat.match(line.strip()):
+                seen += 1
+                if seen == HEADER_SEPARATORS:
+                    lines = lines[i + 1:]
+                    break
+        else:
+            # 结构异常时保守处理：只跳标记行，避免误删正文
+            lines = lines[1:]
     while lines and lines[0].strip() == "":
         lines.pop(0)
     return "\n".join(lines).strip()
+
+
+def parse_source_stats(clean_content):
+    """解析正文里的来源分区，返回 [(来源名, 条数), ...]（按出现顺序，0 条的省略）。
+
+    合计与 count_valid_lines 完全一致（同一套"非 !/#/[ 且非空"判定），
+    已实测三个文件分区合计 == 文件总条数，差值 0。
+    """
+    counts, order = {}, []
+    for line in clean_content.splitlines():
+        s = line.strip()
+        m = SECTION_PAT.match(s)
+        if m:
+            name = m.group(1)
+            if name not in counts:
+                counts[name] = 0
+                order.append(name)
+            continue
+        if s and not s.startswith(("!", "#", "[")):
+            if order:
+                counts[order[-1]] += 1
+    return [(name, counts[name]) for name in order if counts[name] > 0]
+
+
+def render_stats_block(stats, comment):
+    """渲染「规则来源统计」表头块（条数降序，千分位）。"""
+    if not stats:
+        return ""
+    rows = sorted(stats, key=lambda x: -x[1])
+    lines = [
+        f"{comment} ────────────────── 📈 规则来源统计 ──────────────────",
+    ]
+    for name, n in rows:
+        lines.append(f"{comment}   {n:>9,} 条  {name}")
+    lines.append(f"{comment} ────────────────────────────────────────────────")
+    return "\n".join(lines) + "\n"
+
+
+def extract_old_stats(content, comment="!"):
+    """从旧表头里解析出上次写入的来源统计，用于检测统计块是否变化。
+
+    只扫表头范围（标记行到第 HEADER_SEPARATORS 条分隔线），
+    避免把 dns.txt 正文里 filter-dns 的「来源汇总」块误算进来。
+    """
+    lines = content.splitlines()
+    if not lines or lines[0].strip() != HEADER_MARKER:
+        return None
+    # 注意：不能用 f-string 写 \s{2}（{2} 会被当成格式字段），这里用 \s\s
+    pat = re.compile(rf"^{re.escape(comment)}\s+(\d[\d,]*) 条\s\s(.+)$")
+    sep_pat = re.compile(rf"^{re.escape(comment)}\s*=+\s*$")
+    result = []
+    seen = 0
+    for line in lines[1:]:
+        if sep_pat.match(line.strip()):
+            seen += 1
+            if seen == HEADER_SEPARATORS:
+                break
+            continue
+        m = pat.match(line)
+        if m:
+            result.append((m.group(2), int(m.group(1).replace(",", ""))))
+    return result or None
 
 
 changed = 0
@@ -72,24 +151,31 @@ for filename, cfg in file_config.items():
     except OSError:
         content = ""
 
-    clean_content = strip_header(content)
+    clean_content = strip_header(content, cfg["comment"])
     line_count = count_valid_lines(clean_content, is_path=False)
+    stats = parse_source_stats(clean_content)
 
-    # 正文是否变化：用旧表头里记录的条数对比新条数。
-    # 表头由本脚本上次生成，条数一致即说明正文未变 → 不重写、保留原时间戳。
+    # 正文是否变化：旧表头记录的条数 + 来源统计都与本次计算一致 → 正文未变，
+    # 不重写、保留原时间戳（避免无意义 diff 撑大仓库历史）。
     old_count = None
     for line in content.splitlines()[:15]:
         m = re.search(r"有效规则：(\d+) 条", line)
         if m:
             old_count = int(m.group(1))
             break
-    if old_count is not None and old_count == line_count and not FORCE:
+    body_unchanged = (old_count == line_count
+                      and extract_old_stats(content, cfg["comment"]) is not None
+                      and sorted(extract_old_stats(content, cfg["comment"])) == sorted(stats))
+    if body_unchanged and not FORCE:
         print(f"⏭️  {filename} | 正文无变化，保留原表头和时间戳")
         continue
 
     c = cfg["comment"]
     beijing_time = beijing_now()
+    stats_block = render_stats_block(stats, c)
 
+    # 统计块放在第 3 条 ===== 分隔线之前（表头内部），
+    # 这样 strip_header 数到第 3 条分隔线即表头结束，新旧格式通用。
     header = f"""[TianYing Adblock Project]
 {c} ======================================================================
 {c} 📌 规则名称：{cfg['title']}
@@ -101,15 +187,16 @@ for filename, cfg in file_config.items():
 {c} ======================================================================
 {c} Title: 📌 {cfg['title']} 📌
 {c} Description: ⏰ 更新时间 {beijing_time} | ✅ 有效规则 {line_count} 条
-{c} ======================================================================
+""" + stats_block + f"""{c} ======================================================================
 """
+
     final = header + clean_content + "\n"
 
     try:
         with open(file_path, "w", encoding="utf-8", newline="\n") as f:
             f.write(final)
         changed += 1
-        print(f"✅ {filename} | 规则：{line_count} 条")
+        print(f"✅ {filename} | 规则：{line_count} 条 | 来源分区：{len(stats)} 个")
     except OSError:
         print(f"❌ 写入失败：{filename}")
 
