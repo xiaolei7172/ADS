@@ -21,19 +21,19 @@
 ### 🔮 天影规则聚合 · 实时规则规模
 
 
-🕒 **更新时间**：2026-11-01 11:14:27（北京时间）
+🕒 **更新时间**：2026-11-01 11:18:57（北京时间）
 
 
-🚫 **广告拦截规则**：262201 条
+🚫 **广告拦截规则**：273395 条
 
 
-🌐 **DNS 拦截域名**：233361 个
+🌐 **DNS 拦截域名**：242137 个
 
 
-✅ **白名单放行规则**：6718 条
+✅ **白名单放行规则**：6721 条
 
 <!-- DL_STATUS_START -->
-⚠️ **上游源状态**：20/21 成功，失败：海哥规则（curl 退出码 60）
+✅ **上游源状态**：21/21 全部下载成功
 <!-- DL_STATUS_END -->
 
 ![规则量趋势](data/stats/trend.svg)
@@ -278,7 +278,7 @@ rules:
 | 📛 **个人合并规则** | 合并源（群主维护） | [666/rules.txt](https://raw.githubusercontent.com/qq5460168/666/master/rules.txt) |
 | 📛 **酷安@大萌主** | 接口 / SDK 广告 | [banad/jiekouAD.txt](https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt) |
 | 📛 **浮风拦截规则** | 合并源 | [ad-rules-merged](https://raw.githubusercontent.com/Thelongdarkorg/ad-rules-merged/main/merged.txt) |
-| 📛 **海哥规则** | 综合拦截 | [hgzs.uunat.com/hg1.txt](http://hgzs.uunat.com/hg1.txt) |
+| 📛 **海哥规则** | 国内 App 专项（腾讯/字节/小米/番茄系） | [HG/hg1.txt 官方镜像](https://github.com/2771936993/HG/blob/main/hg1.txt) |
 | 📛 **秋风广告规则** | 综合拦截 | [AWAvenue-Ads-Rule](https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt) |
 | 📛 **乘风视频规则** | 视频贴片广告 | [Adblock-Plus-Rule/mv.txt](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt) |
 | 📛 **乘风通用规则** | 通用拦截 | [Adblock-Plus-Rule/rule.txt](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt) |

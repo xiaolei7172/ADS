@@ -100,7 +100,9 @@ adblock_rules = [
     {"url": "https://raw.githubusercontent.com/qq5460168/666/master/rules.txt", "name": "个人合并规则"},
     {"url": "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt", "name": "酷安@大萌主"},
     {"url": "https://raw.githubusercontent.com/Thelongdarkorg/ad-rules-merged/main/merged.txt", "name": "浮风拦截规则"},
-    {"url": "http://hgzs.uunat.com/hg1.txt", "name": "海哥规则"},
+    # 原址 hgzs.uunat.com 对海外 IP 返回 409（地域封锁），GitHub Actions 永远拿不到，
+    # 改用海哥官方镜像（作者自建，Actions 每天 01:15 自动从源站同步，内容与源站一致）
+    {"url": "https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt", "name": "海哥规则"},
     {"url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt", "name": "秋风广告规则"},
     {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt", "name": "乘风视频规则"},
     {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt", "name": "乘风通用规则"},

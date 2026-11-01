@@ -69,35 +69,77 @@ def mirror_urls(url):
     return attempts
 
 
+# curl 的 SSL/TLS 类错误码：证书链不全、握手失败、协议不匹配等
+# 国内小站（尤其自建 nginx）常见证书配置不全，但明文/内容本身是好的，
+# 这一类错误值得用 -k 再来一次（规则是纯文本，内容另有 valid_domain 把关）
+SSL_ERR_CODES = {35, 51, 58, 59, 60, 77, 83, 90, 91}
+
+# curl 退出码的可读含义（诊断用，比裸数字有用得多）
+CURL_MEANING = {
+    6: "无法解析主机", 7: "连接失败", 22: "HTTP 错误码(4xx/5xx)",
+    28: "超时", 35: "SSL 握手失败", 52: "服务器空响应",
+    56: "接收数据失败", 60: "证书验证失败",
+}
+
+
+def _host_of(u):
+    """取 URL 的 host 用于错误信息（完整 URL 太长）"""
+    m = re.match(r"https?://([^/]+)", u)
+    return m.group(1) if m else u[:24]
+
+
+def _curl_once(u, save_path, is_api, token, insecure=False):
+    """执行一次 curl，返回 (退出码, 错误说明)"""
+    cmd = [
+        "curl", "-fsSL", "--retry", "3", "--retry-delay", "2",
+        "--retry-all-errors", "--connect-timeout", "15", "--max-time", "180",
+        "-A", "Mozilla/5.0 (compatible; TianYing-Rules/1.0)",
+        "-o", save_path, u,
+    ]
+    if insecure:
+        cmd.insert(1, "-k")
+    if is_api:
+        # API 要拿原始文件内容；有令牌时带上，避免匿名限额（60次/小时）
+        cmd[cmd.index("-o"):cmd.index("-o")] = ["-H", "Accept: application/vnd.github.raw"]
+        t = token or os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+        if t:
+            cmd[cmd.index("-o"):cmd.index("-o")] = ["-H", f"Authorization: Bearer {t}"]
+    try:
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=200)
+    except subprocess.TimeoutExpired:
+        return -1, "下载超时"
+    if result.returncode != 0:
+        meaning = CURL_MEANING.get(result.returncode, "")
+        return result.returncode, f"curl {result.returncode}" + (f"({meaning})" if meaning else "")
+    if not os.path.exists(save_path):
+        return -2, "未产出文件"
+    ok, err = content_ok(save_path)
+    if ok:
+        return 0, ""
+    os.remove(save_path)
+    return -3, err
+
+
 def download_file(url, save_path, token=None):
-    """多通道下载 + 体检，任一通道成功即返回 (True, '', used_url)；全败返回 (False, err, '')"""
-    last_err = "未知错误"
+    """多通道下载 + 体检，任一通道成功即返回 (True, '', used_url)；全败返回 (False, err, '')
+
+    失败时把每个通道的原因都汇总，避免"只留最后一条错误"导致误诊
+    （曾经因为这个，把「源站对海外 IP 返回 409」误判成「证书问题」）。
+    """
+    errors = []
     for u, is_api in mirror_urls(url):
-        cmd = [
-            "curl", "-fsSL", "--retry", "3", "--retry-delay", "2",
-            "--retry-all-errors", "--connect-timeout", "15", "--max-time", "180",
-            "-A", "Mozilla/5.0 (compatible; TianYing-Rules/1.0)",
-            "-o", save_path, u,
-        ]
-        if is_api:
-            # API 要拿原始文件内容；有令牌时带上，避免匿名限额（60次/小时）
-            cmd[cmd.index("-o"):cmd.index("-o")] = ["-H", "Accept: application/vnd.github.raw"]
-            t = token or os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
-            if t:
-                cmd[cmd.index("-o"):cmd.index("-o")] = ["-H", f"Authorization: Bearer {t}"]
-        try:
-            result = subprocess.run(cmd, capture_output=True, text=True, timeout=200)
-        except subprocess.TimeoutExpired:
-            last_err = "下载超时"
-            continue
-        if result.returncode == 0 and os.path.exists(save_path):
-            ok, err = content_ok(save_path)
-            if ok:
-                return True, "", u
-            os.remove(save_path)
-            last_err = err
-        else:
-            last_err = f"curl 退出码 {result.returncode}"
+        rc, err = _curl_once(u, save_path, is_api, token)
+        if rc == 0:
+            return True, "", u
+        # SSL 类错误：降级跳过证书校验再试一次（部分国内站点证书链残缺）
+        if rc in SSL_ERR_CODES:
+            rc2, err2 = _curl_once(u, save_path, is_api, token, insecure=True)
+            if rc2 == 0:
+                print(f"   ⚠️ {_host_of(u)} 证书校验失败，已跳过校验取回内容（内容仍经语法体检）")
+                return True, "", u + " (已跳过证书校验)"
+            err = f"{err} / 跳过校验后仍失败: {err2}"
+        errors.append(f"{_host_of(u)}: {err}")
     if os.path.exists(save_path):
         os.remove(save_path)
-    return False, last_err, ""
+    # 只保留前 3 条通道原因，避免日志爆炸
+    return False, "；".join(errors[:3]) if errors else "无可用通道"
