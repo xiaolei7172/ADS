@@ -10,11 +10,19 @@ on:
     # 每日一次：UTC 00:17 = 北京时间 08:17
     # 用 17 分而非整点，避开 GitHub 调度高峰（整点前后定时任务常被推迟十几分钟）
     - cron: '17 0 * * *'
+  # PR 也要跑：以前只挂 schedule/dispatch，"CI 强制"只对**合并之后**生效，
+  # 改 data/mod/whitelist.txt 的 PR 一路无检查就合进去了。
+  # PR 上只跑校验、不发布（Git Push / Badge / 清理运行记录 三步都带 event_name 判断）。
+  pull_request:
+    branches: [master]
+    types: [opened, synchronize, reopened]
 
-# 定时与手动触发可能重叠，两个实例同时 push 会互相顶掉
+# 定时与手动触发可能重叠，两个实例同时 push 会互相顶掉。
+# 按 ref 分组：PR 跑在 refs/pull/N/merge，不会把每日任务堵在门外；
+# 同一 PR 连推几次则只保留最新一次。
 concurrency:
-  group: update-rules
-  cancel-in-progress: false
+  group: update-rules-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
     
 jobs:
   update:
@@ -90,10 +98,12 @@ jobs:
 
       # ==============================================
       # 无变化不提交（否则定时运行的 git commit 会因
-      # nothing to commit 退出码 1 把整个工作流判为失败）
+      # nothing to commit 退出码 1 把整个工作流判为失败）。
+      # PR 上不推：PR 只做校验，产物由合并后的定时任务负责发布。
       # ==============================================
       - name: Git Push
         id: push
+        if: github.event_name != 'pull_request'
         run: |
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
@@ -115,7 +125,7 @@ jobs:
         run: echo "BADGE_MSG=$(python ./data/python/badge_msg.py)" >> "$GITHUB_ENV"
 
       - name: Update Badge
-        if: ${{ vars.GIST_ID != '' }}
+        if: ${{ github.event_name != 'pull_request' && vars.GIST_ID != '' }}
         uses: schneegans/dynamic-badges-action@e9a478b16159b4d31420099ba146cdc50f134483  # v1.7.0
         with:
           auth: ${{ secrets.GIST_SECRET }}
@@ -161,20 +171,25 @@ jobs:
         if: failure()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          TRIGGER: ${{ github.event_name }}
         run: |
           set -eu
-          existing=$(gh issue list --repo "${{ github.repository }}" --state open \
+          # gh 遇到 4xx/5xx 直接非零退出，配上 set -e，"没建成 issue"不可能是绿灯。
+          # 旧写法是 curl -sS 直调且把响应丢进 /dev/null，缺 -f 时 4xx 也返回 0，
+          # 这一步会显示成功、实际什么都没发生——为"失败可见"加的防线，最需要时是纸糊的。
+          existing=$(gh issue list --repo "$REPO" --state open \
                        --search '自动创建 in:title' \
                        --json number --jq '.[0].number // ""')
           if [ -n "$existing" ]; then
-            gh issue comment "$existing" --repo "${{ github.repository }}" \
-              --body "再次失败：$RUN_URL"
+            gh issue comment "$existing" --repo "$REPO" \
+              --body "再次失败（触发方式：$TRIGGER）：$RUN_URL"
             echo "↩️ 已追加到 issue #$existing"
           else
-            body=$(printf '最近一次定时更新失败。\n\n运行记录：%s\n\n排查顺序：Job Summary 看各产物条数 → Download Rules 看哪个源挂了 → Quality Check / Verify Format Consistency 看是不是规则本身退化。' "$RUN_URL")
+            body=$(printf '最近一次规则更新/校验失败。\n\n触发方式：%s\n运行记录：%s\n\n排查顺序：Job Summary 看各产物条数 → Download Rules 看哪个源挂了 → Quality Check / Verify Format Consistency / Unit Tests 看是不是规则或代码本身退化。' "$TRIGGER" "$RUN_URL")
             # gh issue create 把 issue URL 打到 stdout（它不支持 --json），顺手打出来方便点进去
-            url=$(gh issue create --repo "${{ github.repository }}" \
+            url=$(gh issue create --repo "$REPO" \
               --title "❌ 规则更新/校验失败（自动创建）" \
               --body "$body")
             echo "🆕 已创建失败 issue：$url"
@@ -195,6 +210,7 @@ jobs:
       # 出事时完全无据可查）
       # ==============================================
       - name: Delete workflow runs
+        if: github.event_name != 'pull_request'
         uses: Mattraks/delete-workflow-runs@0cf693bc9909e5e867ee8f27b813224ba862939c  # v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
