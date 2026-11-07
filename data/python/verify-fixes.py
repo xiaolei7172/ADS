@@ -149,6 +149,27 @@ CASES = [
     ("bank.pingan.com", False, "平安银行（海哥源整域拦了 pingan.com，实测 200 正常银行页）"),
     ("www.10jqka.com.cn", False, "同花顺官网（被精确拦，实测 200 / Server: Stargate）"),
     ("gchat.qpic.cn", False, "微信群聊图片 CDN（腾讯 NWSs，拦了群图全裂）"),
+    # —— 2026-11-07：APP 视频/开屏广告 SDK 补全（含 5 条白名单放行剔除）——
+    ("cn-api.anythinktech.com", True, "TopOn/AnyThink 聚合 SDK 请求入口"),
+    ("adx.anythinktech.com", True, "TopOn 广告交易接口"),
+    ("tk.anythinktech.com", True, "TopOn 广告交易接口"),
+    ("api.e.kuaishou.com", True, "快手联盟广告接口"),
+    ("api2.e.kuaishou.com", True, "快手联盟广告接口（备用）"),
+    ("open.e.kuaishou.com", True, "快手联盟（白名单曾整条放行，exclude.txt 第七节剔除）"),
+    ("sdk.e.qq.com", True, "优量汇 SDK 入口（白名单曾放行）"),
+    ("v.gdt.qq.com", True, "广点通曝光上报（白名单曾放行）"),
+    ("pgdt.gtimg.cn", True, "广点通素材 CDN（白名单曾放行）"),
+    ("adsmind.gdtimg.com", True, "广点通素材服务"),
+    ("pgdt.ugdtimg.com", True, "广点通素材 CDN"),
+    ("dc.sigmob.cn", True, "Sigmob 激励视频（白名单曾放行）"),
+    ("t7z.cupid.iqiyi.com", True, "爱奇艺贴片广告调度子域"),
+    ("ad.bilibili.com", True, "B 站广告位投放"),
+    ("cm.bilibili.com", True, "B 站广告投放系统"),
+    # 前面几条必须拦，下面这几条必须放——视频 App 的正片与图片命门
+    ("api.bilibili.com", False, "B 站全站 API（拦了 App 全废）"),
+    ("vv.video.qq.com", False, "腾讯视频播放地址接口（200 返回 JSON）"),
+    ("t5.a.yximgs.com", False, "快手图床（拦了碎图）"),
+    ("adss.video.qq.com", True, "腾讯视频贴片广告（本地 134 条腾讯广告域里的一条，须保持拦）"),
 ]
 
 missing = [f for f in FILES if not (R / f).exists()]

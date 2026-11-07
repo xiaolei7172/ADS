@@ -5880,13 +5880,18 @@ DOMAIN-SUFFIX,zuwnq.cn,reject
 DOMAIN-SUFFIX,zysybao.pro,reject
 DOMAIN-SUFFIX,zz.bdstatic.com,reject
 DOMAIN-SUFFIX,gw.365you.com,reject
+DOMAIN-SUFFIX,pgdt.gtimg.cn,reject
+DOMAIN-SUFFIX,pgdt.ugdtimg.com,reject
 DOMAIN-SUFFIX,nadvideo.baidu.com,reject
 DOMAIN-SUFFIX,nadvideo2.baidu.com,reject
 DOMAIN-SUFFIX,e.kuaishou.com,reject
+DOMAIN-SUFFIX,api2.e.kuaishou.com,reject
+DOMAIN-SUFFIX,api.e.kuaishou.com,reject
 DOMAIN-SUFFIX,ad.tencentmusic.com,reject
 DOMAIN-SUFFIX,adexpo.tencentmusic.com,reject
 DOMAIN-SUFFIX,adcdn.tencentmusic.com,reject
 DOMAIN-SUFFIX,adclick.tencentmusic.com,reject
+DOMAIN-SUFFIX,dc.sigmob.cn,reject
 DOMAIN-SUFFIX,000491b06a.com,reject
 DOMAIN-SUFFIX,000dn.com,reject
 DOMAIN-SUFFIX,0013.cc,reject
@@ -101459,6 +101464,7 @@ DOMAIN-SUFFIX,adslop.com,reject
 DOMAIN-SUFFIX,adsluna.com,reject
 DOMAIN-SUFFIX,adsmarket.com,reject
 DOMAIN-SUFFIX,adsmetadata.mobileadexchange.net,reject
+DOMAIN-SUFFIX,adsmind.gdtimg.com,reject
 DOMAIN-SUFFIX,adsmo.ru,reject
 DOMAIN-SUFFIX,adsmobi.com,reject
 DOMAIN-SUFFIX,adsmrapi.imbc.com,reject
@@ -204154,6 +204160,7 @@ DOMAIN-SUFFIX,t733.wjcl.com,reject
 DOMAIN-SUFFIX,t7bxx94y1teo387r7k9l5puqj3m.rest,reject
 DOMAIN-SUFFIX,t7k3n9.micasa.ch,reject
 DOMAIN-SUFFIX,t7x22m7c.com,reject
+DOMAIN-SUFFIX,t7z.cupid.iqiyi.com,reject
 DOMAIN-SUFFIX,t83my.m6l9ih1x259pzcv.cyou,reject
 DOMAIN-SUFFIX,t84c3srgclc9.com,reject
 DOMAIN-SUFFIX,t8i4.y6jp3thoxgz68qcu.cyou,reject
@@ -222582,6 +222589,7 @@ DOMAIN-SUFFIX,ad.eloan.co.jp,reject
 DOMAIN-SUFFIX,advert.punyu.com,reject
 DOMAIN-SUFFIX,gwrtdp-tn690bfadt.tclclouds.com,reject
 DOMAIN-SUFFIX,kiesta.net,reject
+DOMAIN-SUFFIX,open.e.kuaishou.cn,reject
 DOMAIN-SUFFIX,painsko.com,reject
 DOMAIN-SUFFIX,adsmobila.com,reject
 DOMAIN-SUFFIX,adplex.co.kr,reject
@@ -232835,6 +232843,7 @@ DOMAIN-SUFFIX,g-zt.kwai-pro.com,reject
 DOMAIN-SUFFIX,v2.oskwai.com,reject
 DOMAIN-SUFFIX,w2.eckwai.com,reject
 DOMAIN-SUFFIX,v6-gdvod.kwaicdn.com,reject
+DOMAIN-SUFFIX,api.e.kuaishou.cn,reject
 DOMAIN-SUFFIX,ad.v6.kuaishou.cn,reject
 DOMAIN-SUFFIX,sentry.kuaishou.com,reject
 DOMAIN-SUFFIX,meta-cdn.video.iqiyi.com,reject
@@ -232892,6 +232901,7 @@ DOMAIN-SUFFIX,ud.click.taobao.com,reject
 DOMAIN-SUFFIX,qqpublic.qpic.cn,reject
 DOMAIN-SUFFIX,tianxuan.gtimg.cn,reject
 DOMAIN-SUFFIX,vatplat.gtimg.cn,reject
+DOMAIN-SUFFIX,sdk.e.qq.com,reject
 DOMAIN-SUFFIX,prewxacode.wxqcloud.qq.com.cn,reject
 DOMAIN-SUFFIX,as.yyymvp.com,reject
 DOMAIN-SUFFIX,adtest.tencentmusic.com,reject
@@ -233343,6 +233353,7 @@ DOMAIN-SUFFIX,ad.xmmnsd.com,reject
 DOMAIN-SUFFIX,a1.alibabausercontent.com,reject
 DOMAIN-SUFFIX,download1.vzuu.com,reject
 DOMAIN-SUFFIX,vod-settings.volcvod.com,reject
+DOMAIN-SUFFIX,tk.anythinktech.com,reject
 DOMAIN-SUFFIX,themis.hupu.com,reject
 DOMAIN-SUFFIX,p3-stone-tv.byteimg.com,reject
 DOMAIN-SUFFIX,az2-api-js.gifshow.com,reject
@@ -233376,6 +233387,7 @@ DOMAIN-SUFFIX,www.bytedance.com.queniurc.com,reject
 DOMAIN-SUFFIX,dzzt-video.cbread.cn,reject
 DOMAIN-SUFFIX,ad-static.ssread.cn,reject
 DOMAIN-SUFFIX,trrs-adp.2345.com,reject
+DOMAIN-SUFFIX,adx-bj.anythinktech.com,reject
 DOMAIN-SUFFIX,upload-z0.qiniup.com,reject
 DOMAIN-SUFFIX,tx.a.kspkg.com,reject
 DOMAIN-SUFFIX,api.xahc971.com,reject
@@ -233437,6 +233449,8 @@ DOMAIN-SUFFIX,785008.com,reject
 DOMAIN-SUFFIX,778538.com,reject
 DOMAIN-SUFFIX,49789c.com,reject
 DOMAIN-SUFFIX,188555.com,reject
+DOMAIN-SUFFIX,adx-bj-req.anythinktech.com,reject
+DOMAIN-SUFFIX,cn-api.anythinktech.com,reject
 DOMAIN-SUFFIX,download.qidian.com,reject
 DOMAIN-SUFFIX,ipinfo.io,reject
 DOMAIN-SUFFIX,zpm-platform.cdnjtzy.com,reject
@@ -233621,6 +233635,7 @@ DOMAIN-SUFFIX,life-service-open.zijieapi.com,reject
 DOMAIN-SUFFIX,tapad-platform.tapimg.com,reject
 DOMAIN-SUFFIX,tap-dsp.iem.taptap.cn,reject
 DOMAIN-SUFFIX,adx.dictapis.cn,reject
+DOMAIN-SUFFIX,v.gdt.qq.com,reject
 DOMAIN-SUFFIX,wejianzhan.com,reject
 DOMAIN-SUFFIX,oschina.net,reject
 DOMAIN-SUFFIX,proxy.svc.litv.tv,reject
@@ -239586,6 +239601,7 @@ DOMAIN-SUFFIX,adtcdn.com,reject
 DOMAIN-SUFFIX,adtech.pdd.link.hmgreat.com,reject
 DOMAIN-SUFFIX,adtrack.qianwen.com,reject
 DOMAIN-SUFFIX,adtracking.quickjoy.com,reject
+DOMAIN-SUFFIX,adx.anythinktech.com,reject
 DOMAIN-SUFFIX,ae1gw-i3g8b6v.ofjlj9t-tqb9zu1i.top,reject
 DOMAIN-SUFFIX,aecudqvo.apzrugvfgbgvocd.top,reject
 DOMAIN-SUFFIX,aefe450.w5u9u8yb.top,reject
@@ -240515,6 +240531,7 @@ DOMAIN-SUFFIX,cluster676107f9.nk71l.com,reject
 DOMAIN-SUFFIX,cluster70d31fdc.74067120.com,reject
 DOMAIN-SUFFIX,cluster71e0b07a.jhydms12.com,reject
 DOMAIN-SUFFIX,clutch.gdn,reject
+DOMAIN-SUFFIX,cm.bilibili.com,reject
 DOMAIN-SUFFIX,cm.goumaoyuanny.com,reject
 DOMAIN-SUFFIX,cm29.dustctr.cn,reject
 DOMAIN-SUFFIX,cmbi.s-qec.com,reject
@@ -246600,3 +246617,4 @@ DOMAIN-SUFFIX,zzuad.btpol.cn,reject
 DOMAIN-SUFFIX,zzxx97043.ww7e9.com,reject
 DOMAIN-SUFFIX,zzzu.ag8.com,reject
 DOMAIN-SUFFIX,zzzx1-862777969.ap-east-1.elb.amazonaws.com,reject
+DOMAIN-SUFFIX,ad.bilibili.com,reject

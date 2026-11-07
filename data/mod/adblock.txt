@@ -275,3 +275,66 @@
 ||xs.gdt.qq.com^
 ||xscdn.gdt.qq.com^
 ||xsweb.gdt.qq.com^
+
+! ============================================================
+! APP 视频 / 开屏广告 SDK 补全 v1（2026-11-07）
+! ============================================================
+! 定位：主流广告联盟的「视频类」请求入口。开屏视频、激励视频、贴片、
+!       插屏视频都从这里发起，拦掉等于广告请求发不出去。
+! 来源交叉验证（4 个独立源，非单一抄录）：
+!   ACL4SSR BanProgramAD1.list（明写「对影视/动漫 APP 有加速奇效」）
+!   lingeringsound/10007-Hosts（2026-11-07 16:10 版）
+!   anti-AD easylist（2026-11-07）
+!   aioneas/surge 数智易正抓包规则（MITM 抓包得出 api/tk/da.anythinktech.com）
+! 活性：全部经 2026-11-07 公网实测可解析且返回广告服务特征。
+!
+! 【本版剔除的无效域名】（实测 NXDOMAIN，加了就是死规则）
+!   ad.kuaishou.com / t.e.kuaishou.com / kwaipaimedia.com / adukwai.com
+!   ad.mgtv.com / ads.mgtv.com / tc.mgtv.com
+!   ad.vod.sohu.com / impress.vod.sohu.com
+!   anythinktech.com（根域）/ hb.mintegral.com / w.mintegral.com / sigmobssp.com
+!   pangolin-sdk-toutiao-b.com（本地 dns.txt 里已有的那条也已是死规则）
+!
+! 【禁拦清单】（拦了正片/功能直接废，勿加回）
+!   api.bilibili.com / data.bilibili.com  B 站全站 API（已在 critical-domains.txt）
+!   vv.video.qq.com                       腾讯视频播放地址接口，200 返回 JSON
+!   t5.a.yximgs.com                       快手图床，拦了碎图
+!   v.qq.com / y.qq.com                   腾讯视频/QQ音乐主站
+!   api.mgtv.com / pcweb.api.mgtv.com     芒果 TV 播放接口
+!   wxsnsdy.wxs.qq.com 等                 朋友圈视频，拦了掉红包封面
+! ============================================================
+
+! ---------- 一、TopOn / AnyThink 聚合 SDK（本地此前 0 覆盖）----------
+! 国内最大的广告聚合平台，免费 App / 小游戏几乎人手一个。
+! 它本身不产广告，但负责向穿山甲/优量汇/快手联盟分发请求——
+! 拦掉聚合入口，等于一次性掐断多家的调度链。
+||cn-api.anythinktech.com^
+||adx.anythinktech.com^
+||adx-bj.anythinktech.com^
+||adx-bj-req.anythinktech.com^
+||tk.anythinktech.com^
+
+! ---------- 二、快手联盟（补全 .com/.cn 双后缀）----------
+||api.e.kuaishou.com^
+||api2.e.kuaishou.com^
+||api.e.kuaishou.cn^
+||open.e.kuaishou.cn^
+! open.e.kuaishou.com 的放行在 data/mod/whitelist.txt，
+! 由 data/mod/exclude.txt 第七节剔除（本条随之生效）
+
+! ---------- 三、腾讯优量汇 GDT（补全 SDK/上报/素材三段）----------
+||sdk.e.qq.com^
+||v.gdt.qq.com^
+||pgdt.gtimg.cn^
+||adsmind.gdtimg.com^
+||pgdt.ugdtimg.com^
+
+! ---------- 四、Sigmob 激励视频----------
+||dc.sigmob.cn^
+
+! ---------- 五、长视频贴片调度（只拦调度域，不碰正片）----------
+! cupid.iqiyi.com 已在上游拦，这里补调度子域
+||t7z.cupid.iqiyi.com^
+! B 站：ad 是广告位投放，cm 是广告投放系统（CM=Commercial）
+||ad.bilibili.com^
+||cm.bilibili.com^

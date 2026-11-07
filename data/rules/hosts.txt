@@ -2,7 +2,7 @@
 # 由 dns.txt 折叠前的完整域名集转换，含全部子域，覆盖与 AdGuard 语义对齐
 # ⚠️ hosts 只能精确匹配，拦不到未列出的子域；需要完整子域覆盖请用 dns.txt / smartdns.conf / surge.list
 # 📌 项目地址：https://github.com/xiaolei7172/ADS
-# 🔖 内容指纹：08741a52c797 | 📊 有效规则：260986 条 | ⏰ 变更时间见 git 提交记录
+# 🔖 内容指纹：45646906ed2a | 📊 有效规则：261000 条 | ⏰ 变更时间见 git 提交记录
 # 🔄 更新频率：每日自动更新（北京时间 08:00）
 0.0.0.0 ads3-normal-hl.zijieapi.com
 0.0.0.0 ads3-normal-lf.zijieapi.com
@@ -11614,6 +11614,7 @@
 0.0.0.0 zysybao.pro
 0.0.0.0 zz.bdstatic.com
 0.0.0.0 gw.365you.com
+0.0.0.0 pgdt.gtimg.cn
 0.0.0.0 pgdt.ugdtimg.com
 0.0.0.0 nadvideo.baidu.com
 0.0.0.0 nadvideo2.baidu.com
@@ -11625,6 +11626,7 @@
 0.0.0.0 adexpo.tencentmusic.com
 0.0.0.0 adcdn.tencentmusic.com
 0.0.0.0 adclick.tencentmusic.com
+0.0.0.0 dc.sigmob.cn
 0.0.0.0 v1-lm.adukwai.com
 0.0.0.0 v2-lm.adukwai.com
 0.0.0.0 v4-lm.adukwai.com
@@ -108051,6 +108053,7 @@
 0.0.0.0 adsluna.com
 0.0.0.0 adsmarket.com
 0.0.0.0 adsmetadata.mobileadexchange.net
+0.0.0.0 adsmind.gdtimg.com
 0.0.0.0 adsmo.ru
 0.0.0.0 adsmobi.com
 0.0.0.0 adsmrapi.imbc.com
@@ -212774,6 +212777,7 @@
 0.0.0.0 t7bxx94y1teo387r7k9l5puqj3m.rest
 0.0.0.0 t7k3n9.micasa.ch
 0.0.0.0 t7x22m7c.com
+0.0.0.0 t7z.cupid.iqiyi.com
 0.0.0.0 t83my.m6l9ih1x259pzcv.cyou
 0.0.0.0 t84c3srgclc9.com
 0.0.0.0 t8i4.y6jp3thoxgz68qcu.cyou
@@ -232300,6 +232304,7 @@
 0.0.0.0 dl-adx.op-mobile.opera.com
 0.0.0.0 jjpp.lmtjapi.com
 0.0.0.0 kiesta.net
+0.0.0.0 open.e.kuaishou.cn
 0.0.0.0 mmp001.scalemonk.com
 0.0.0.0 krt.asycxtz.cn
 0.0.0.0 erg.ihclam.cn
@@ -243334,6 +243339,7 @@
 0.0.0.0 ipv6.shuzilm.cn
 0.0.0.0 tianxuan.gtimg.cn
 0.0.0.0 vatplat.gtimg.cn
+0.0.0.0 sdk.e.qq.com
 0.0.0.0 prewxacode.wxqcloud.qq.com.cn
 0.0.0.0 as.yyymvp.com
 0.0.0.0 adtest.tencentmusic.com
@@ -244043,6 +244049,7 @@
 0.0.0.0 vod-settings.volcvod.com
 0.0.0.0 auni.unioncom.cc
 0.0.0.0 events-cn.ads.vungle.com
+0.0.0.0 tk.anythinktech.com
 0.0.0.0 themis.hupu.com
 0.0.0.0 p3-stone-tv.byteimg.com
 0.0.0.0 bid-adx.vlion.cn
@@ -244097,6 +244104,7 @@
 0.0.0.0 ad-static.ssread.cn
 0.0.0.0 market.wsskj520.cn
 0.0.0.0 trrs-adp.2345.com
+0.0.0.0 adx-bj.anythinktech.com
 0.0.0.0 api-p4.yksdks.com
 0.0.0.0 usr-api.aiclk.com
 0.0.0.0 api-share.mob.com
@@ -244179,6 +244187,8 @@
 0.0.0.0 778538.com
 0.0.0.0 49789c.com
 0.0.0.0 188555.com
+0.0.0.0 adx-bj-req.anythinktech.com
+0.0.0.0 cn-api.anythinktech.com
 0.0.0.0 download.qidian.com
 0.0.0.0 ipinfo.io
 0.0.0.0 zpm-platform.cdnjtzy.com
@@ -244418,6 +244428,7 @@
 0.0.0.0 tap-dsp.iem.taptap.cn
 0.0.0.0 adx.dictapis.cn
 0.0.0.0 track.ranfenghd.com
+0.0.0.0 v.gdt.qq.com
 0.0.0.0 wejianzhan.com
 0.0.0.0 oschina.net
 0.0.0.0 proxy.svc.litv.tv
@@ -253395,6 +253406,7 @@
 0.0.0.0 adtrack.qianwen.com
 0.0.0.0 adtracking.quickjoy.com
 0.0.0.0 adv-font-pt.4366.com
+0.0.0.0 adx.anythinktech.com
 0.0.0.0 ae.tapdb.net
 0.0.0.0 ae1gw-i3g8b6v.ofjlj9t-tqb9zu1i.top
 0.0.0.0 aecexeobegab5sgn.0kkkkkt.com
@@ -254437,6 +254449,7 @@
 0.0.0.0 clusterdee1.56822017.com
 0.0.0.0 clutch.gdn
 0.0.0.0 cm-10-135.getui.com
+0.0.0.0 cm.bilibili.com
 0.0.0.0 cm.goumaoyuanny.com
 0.0.0.0 cm.he2d.com
 0.0.0.0 cm29.dustctr.cn
@@ -260990,3 +261003,4 @@
 0.0.0.0 zzxx97043.ww7e9.com
 0.0.0.0 zzzu.ag8.com
 0.0.0.0 zzzx1-862777969.ap-east-1.elb.amazonaws.com
+0.0.0.0 ad.bilibili.com

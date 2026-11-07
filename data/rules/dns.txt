@@ -3,21 +3,22 @@
 ! 📌 规则名称：天影规则聚合 · DNS 拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-07 18:53:15（北京时间）
-! 📊 有效规则：246598 条
+! ⏰ 更新时间：2026-11-07 19:10:58（北京时间）
+! 📊 有效规则：246616 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · DNS 拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-07 18:53:15 | ✅ 有效规则 246598 条
+! Description: ⏰ 更新时间 2026-11-07 19:10:58 | ✅ 有效规则 246616 条
 ! ────────────────── ☑ 规则来源统计 ──────────────────
-!  122,576 条  AdRules DNS List [AdRules DNS List]
+!  122,578 条  AdRules DNS List [AdRules DNS List]
 !   91,933 条  anti-ad 官方规则
-!    9,573 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
-!    9,133 条  海哥规则
-!    5,666 条  1007-Hosts
-!    4,737 条  5460 [酷安广告规则]
+!    9,574 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
+!    9,135 条  海哥规则
+!    5,671 条  1007-Hosts
+!    4,744 条  5460 [酷安广告规则]
 !    2,761 条  OISD 拦截规则 [oisd small]
 !      219 条  本地自定义规则
+!        1 条  本地自定义规则（data/mod/adblock.txt）
 ! ────────────────────────────────────────────────
 ! ======================================================================
 ! 本文件由 filter-dns.py 从 adblock.txt 提取（项目：天影规则聚合）
@@ -27,13 +28,14 @@
 
 ! ────────────── 来源汇总 ──────────────
 !       219 条  本地自定义规则
-!      5666 条  1007-Hosts
+!      5671 条  1007-Hosts
 !     91933 条  anti-ad 官方规则
-!    122576 条  AdRules DNS List [AdRules DNS List]
-!      9573 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
+!    122578 条  AdRules DNS List [AdRules DNS List]
+!      9574 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !      2761 条  OISD 拦截规则 [oisd small]
-!      4737 条  5460 [酷安广告规则]
-!      9133 条  海哥规则
+!      4744 条  5460 [酷安广告规则]
+!      9135 条  海哥规则
+!         1 条  本地自定义规则（data/mod/adblock.txt）
 ! ────────────────────────────────────────
 
 ! ==============================================
@@ -268,7 +270,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/lingeringsound/10007_auto/master/all
 ! ==============================================
-! 📊 本区规则：5666 条
+! 📊 本区规则：5671 条
 ! ==============================================
 ||1-free-share-buttons.com^
 ||100webads.com^
@@ -5929,13 +5931,18 @@
 ||zysybao.pro^
 ||zz.bdstatic.com^
 ||gw.365you.com^
+||pgdt.gtimg.cn^
+||pgdt.ugdtimg.com^
 ||nadvideo.baidu.com^
 ||nadvideo2.baidu.com^
 ||e.kuaishou.com^
+||api2.e.kuaishou.com^
+||api.e.kuaishou.com^
 ||ad.tencentmusic.com^
 ||adexpo.tencentmusic.com^
 ||adcdn.tencentmusic.com^
 ||adclick.tencentmusic.com^
+||dc.sigmob.cn^
 
 ! ==============================================
 ! 📋 规则来源：anti-ad 官方规则
@@ -97883,7 +97890,7 @@
 ! 📝 规则说明：List for blocking ads in the Chinese region. Block Ads, Trackers, Malware, HTTPDNS, PCDN.
 ! 🔗 原始地址：https://gp.adrules.top/dns.txt
 ! ==============================================
-! 📊 本区规则：122576 条
+! 📊 本区规则：122578 条
 ! ==============================================
 ||0.avmarket.rs^
 ||0.nextyourcontent.com^
@@ -101524,6 +101531,7 @@
 ||adsluna.com^
 ||adsmarket.com^
 ||adsmetadata.mobileadexchange.net^
+||adsmind.gdtimg.com^
 ||adsmo.ru^
 ||adsmobi.com^
 ||adsmrapi.imbc.com^
@@ -204219,6 +204227,7 @@
 ||t7bxx94y1teo387r7k9l5puqj3m.rest^
 ||t7k3n9.micasa.ch^
 ||t7x22m7c.com^
+||t7z.cupid.iqiyi.com^
 ||t83my.m6l9ih1x259pzcv.cyou^
 ||t84c3srgclc9.com^
 ||t8i4.y6jp3thoxgz68qcu.cyou^
@@ -220467,7 +220476,7 @@
 ! 📝 规则说明：Filter composed of several other filters (AdGuard Base filter, Tracking Protection filter, Mobile ads filter, EasyList, EasyPrivacy, etc) and simplified specifically to be better compatible with DNS-level ad blocking.
 ! 🔗 原始地址：https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 ! ==============================================
-! 📊 本区规则：9573 条
+! 📊 本区规则：9574 条
 ! ==============================================
 ||insightjs.com^
 ||insightjs.org^
@@ -222655,6 +222664,7 @@
 ||advert.punyu.com^
 ||gwrtdp-tn690bfadt.tclclouds.com^
 ||kiesta.net^
+||open.e.kuaishou.cn^
 ||painsko.com^
 ||adsmobila.com^
 ||adplex.co.kr^
@@ -232817,7 +232827,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/qq5460168/dangchu/main/black.txt
 ! ==============================================
-! 📊 本区规则：4737 条
+! 📊 本区规则：4744 条
 ! ==============================================
 ||ad.360.cn^
 ||ad.360safe.com^
@@ -232924,6 +232934,7 @@
 ||v2.oskwai.com^
 ||w2.eckwai.com^
 ||v6-gdvod.kwaicdn.com^
+||api.e.kuaishou.cn^
 ||ad.v6.kuaishou.cn^
 ||sentry.kuaishou.com^
 ||meta-cdn.video.iqiyi.com^
@@ -232981,6 +232992,7 @@
 ||qqpublic.qpic.cn^
 ||tianxuan.gtimg.cn^
 ||vatplat.gtimg.cn^
+||sdk.e.qq.com^
 ||prewxacode.wxqcloud.qq.com.cn^
 ||as.yyymvp.com^
 ||adtest.tencentmusic.com^
@@ -233432,6 +233444,7 @@
 ||a1.alibabausercontent.com^
 ||download1.vzuu.com^
 ||vod-settings.volcvod.com^
+||tk.anythinktech.com^
 ||themis.hupu.com^
 ||p3-stone-tv.byteimg.com^
 ||az2-api-js.gifshow.com^
@@ -233465,6 +233478,7 @@
 ||dzzt-video.cbread.cn^
 ||ad-static.ssread.cn^
 ||trrs-adp.2345.com^
+||adx-bj.anythinktech.com^
 ||upload-z0.qiniup.com^
 ||tx.a.kspkg.com^
 ||api.xahc971.com^
@@ -233526,6 +233540,8 @@
 ||778538.com^
 ||49789c.com^
 ||188555.com^
+||adx-bj-req.anythinktech.com^
+||cn-api.anythinktech.com^
 ||download.qidian.com^
 ||ipinfo.io^
 ||zpm-platform.cdnjtzy.com^
@@ -233710,6 +233726,7 @@
 ||tapad-platform.tapimg.com^
 ||tap-dsp.iem.taptap.cn^
 ||adx.dictapis.cn^
+||v.gdt.qq.com^
 ||wejianzhan.com^
 ||oschina.net^
 ||proxy.svc.litv.tv^
@@ -237562,7 +237579,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt
 ! ==============================================
-! 📊 本区规则：9133 条
+! 📊 本区规则：9135 条
 ! ==============================================
 ||img.kzfjjaox.cn^
 ||9000.nhwkj.com^
@@ -239683,6 +239700,7 @@
 ||adtech.pdd.link.hmgreat.com^
 ||adtrack.qianwen.com^
 ||adtracking.quickjoy.com^
+||adx.anythinktech.com^
 ||ae1gw-i3g8b6v.ofjlj9t-tqb9zu1i.top^
 ||aecudqvo.apzrugvfgbgvocd.top^
 ||aefe450.w5u9u8yb.top^
@@ -240612,6 +240630,7 @@
 ||cluster70d31fdc.74067120.com^
 ||cluster71e0b07a.jhydms12.com^
 ||clutch.gdn^
+||cm.bilibili.com^
 ||cm.goumaoyuanny.com^
 ||cm29.dustctr.cn^
 ||cmbi.s-qec.com^
@@ -246697,3 +246716,11 @@
 ||zzxx97043.ww7e9.com^
 ||zzzu.ag8.com^
 ||zzzx1-862777969.ap-east-1.elb.amazonaws.com^
+
+! ==============================================
+! 📋 规则来源：本地自定义规则（data/mod/adblock.txt）
+! ⚠️ 优先级：最高
+! ==============================================
+! 📊 本区规则：1 条
+! ==============================================
+||ad.bilibili.com^

@@ -3,19 +3,19 @@
 ! 📌 规则名称：天影规则聚合 · 广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-07 18:53:14（北京时间）
-! 📊 有效规则：274646 条
+! ⏰ 更新时间：2026-11-07 19:10:58（北京时间）
+! 📊 有效规则：274668 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-07 18:53:14 | ✅ 有效规则 274646 条
+! Description: ⏰ 更新时间 2026-11-07 19:10:58 | ✅ 有效规则 274668 条
 ! ────────────────── ☑ 规则来源统计 ──────────────────
-!  128,581 条  AdRules DNS List [AdRules DNS List]
-!   93,681 条  anti-ad 官方规则
-!   14,045 条  5460 [酷安广告规则]
-!   11,427 条  1007-Hosts
-!   11,183 条  海哥规则
-!   10,615 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
+!  128,583 条  AdRules DNS List [AdRules DNS List]
+!   93,682 条  anti-ad 官方规则
+!   14,055 条  5460 [酷安广告规则]
+!   11,430 条  1007-Hosts
+!   11,185 条  海哥规则
+!   10,617 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !    3,028 条  OISD 拦截规则 [oisd small]
 !    1,119 条  乘风通用规则 [乘风 广告过滤规则]
 !      583 条  酷安@大萌主 [轻量广告拦截规则]
@@ -23,6 +23,7 @@
 !      129 条  乘风视频规则 [乘风 视频过滤规则 uBlock Origin 1.56]
 !       32 条  abclq Hosts 拦截规则
 !        4 条  浮风拦截规则 [Merged Ad Rules (自动合并去重)]
+!        2 条  本地自定义规则（data/mod/adblock.txt）
 ! ────────────────────────────────────────────────
 ! ======================================================================
 ! ==============================================
@@ -11666,9 +11667,11 @@
 0.0.0.0 zysybao.pro
 0.0.0.0 zz.bdstatic.com
 0.0.0.0 gw.365you.com
+0.0.0.0 pgdt.gtimg.cn
 0.0.0.0 pgdt.ugdtimg.com
 0.0.0.0 nadvideo.baidu.com
 0.0.0.0 nadvideo2.baidu.com
+0.0.0.0 open.e.kuaishou.com
 0.0.0.0 e.kuaishou.com
 0.0.0.0 api2.e.kuaishou.com
 0.0.0.0 api.e.kuaishou.com
@@ -11678,6 +11681,7 @@
 0.0.0.0 adexpo.tencentmusic.com
 0.0.0.0 adcdn.tencentmusic.com
 0.0.0.0 adclick.tencentmusic.com
+0.0.0.0 dc.sigmob.cn
 0.0.0.0 v1-lm.adukwai.com
 0.0.0.0 v2-lm.adukwai.com
 0.0.0.0 v4-lm.adukwai.com
@@ -46696,6 +46700,7 @@
 ||gtfzlpzgoydqv.site^
 ||gtfzyeftkexvo.site^
 ||oldk.gtifund.cn^
+||pgdt.gtimg.cn^
 ||tianshu-x.gtimg.cn^
 ||beacon.gtimg.com^
 ||bla.gtimg.com^
@@ -110417,6 +110422,7 @@
 ||adsmart.net^
 ||adsmartracker.com^
 ||adsmetadata.mobileadexchange.net^
+||adsmind.gdtimg.com^
 ||adsmo.ru^
 ||adsmobi.com^
 ||adsmogo.com^
@@ -216465,6 +216471,7 @@
 ||t7bxx94y1teo387r7k9l5puqj3m.rest^
 ||t7k3n9.micasa.ch^
 ||t7x22m7c.com^
+||t7z.cupid.iqiyi.com^
 ||t83my.m6l9ih1x259pzcv.cyou^
 ||t84c3srgclc9.com^
 ||t8i4.y6jp3thoxgz68qcu.cyou^
@@ -236459,6 +236466,8 @@ vkcdnservice.appspot.com^
 ||jjpp.lmtjapi.com^
 -adx-*.rayjump.com^
 ||kiesta.net^
+||open.e.kuaishou.cn^
+||open.e.kuaishou.com^
 ||ads.adadapted.com^
 ||api-ad-callback.mobiuspace.net
 ||mmp001.scalemonk.com^
@@ -247888,6 +247897,7 @@ analytics-*.aasaam.com
 ||ipv6.shuzilm.cn^
 ||tianxuan.gtimg.cn^
 ||vatplat.gtimg.cn^
+||sdk.e.qq.com^
 ||prewxacode.wxqcloud.qq.com.cn^
 ||m.v.qq.com/activity/qqvideo/interact/gift.html^
 ||lives.l.qq.com/livemsg?&ad_type=*^
@@ -248690,6 +248700,7 @@ analytics-*.aasaam.com
 ||vod-settings.volcvod.com^
 ||auni.unioncom.cc^
 ||events-cn.ads.vungle.com^
+||tk.anythinktech.com^
 ||themis.hupu.com^
 ||p3-stone-tv.byteimg.com^
 ||bid-adx.vlion.cn^
@@ -248760,6 +248771,7 @@ analytics-*.aasaam.com
 ||ad-static.ssread.cn^
 ||market.wsskj520.cn^
 ||trrs-adp.2345.com^
+||adx-bj.anythinktech.com^
 ||api-p4.yksdks.com^
 ||usr-api.aiclk.com^
 ||sdkcfg.adintl.cn^
@@ -248862,6 +248874,8 @@ analytics-*.aasaam.com
 ||778538.com^
 ||49789c.com^
 ||188555.com^
+||adx-bj-req.anythinktech.com^
+||cn-api.anythinktech.com^
 ||pitk.birdgesdk.com^
 ||download.qidian.com^
 ||adx.zuoyebang.com^
@@ -249198,6 +249212,7 @@ analytics-*.aasaam.com
 ||statics.adanxing.com^
 ||adx.dictapis.cn^
 ||track.ranfenghd.com^
+||v.gdt.qq.com^
 ||wejianzhan.com^
 ||oschina.net^
 123pan.com##.slick-slider, .slick-initialized
@@ -250168,6 +250183,7 @@ play.google.com#@#a[href^="intent://"]
 ||cdn-f.adsmoloco.com^
 ||click.liftoff.io^
 ||d.applovin.com^
+||dc.sigmob.cn^
 ||de.tynt.com^
 ||e.ad.xiaomi.com^
 ||et-eus.w.inmobi.com^
@@ -250281,6 +250297,7 @@ play.google.com#@#a[href^="intent://"]
 127.0.0.1 update.duokan.com  #全民小说、多看阅读更新？
 127.0.0.1 api.qttunion.com  #趣盟广告
 127.0.0.1 static.mddlsa.com
+127.0.0.1 pgdt.gtimg.cn  #QQ音乐开屏
 127.0.0.1 lupic.cdn.bcebos.com  #新浪新闻首页资讯流广告图片
 127.0.0.1 apicloud.zol.com.cn #中关村开屏
 127.0.0.1 ca.zol.com.cn  #中关村手机网页主页信息流广告
@@ -251394,6 +251411,7 @@ play.google.com#@#a[href^="intent://"]
 127.0.0.1 p4-yx.adkwai.com
 127.0.0.1 p5-yx.adkwai.com
 127.0.0.1 p6-yx.adkwai.com
+127.0.0.1 open.e.kuaishou.com
 127.0.0.1 adukwai.com
 127.0.0.1 p1-jx.adukwai.com
 127.0.0.1 p2-jx.adukwai.com
@@ -253831,6 +253849,7 @@ play.google.com#@#a[href^="intent://"]
 127.0.0.1 adservice.sigmob.cn
 127.0.0.1 adstage.sigmob.cn
 127.0.0.1 api.ssp.sigmob.cn
+127.0.0.1 dc.sigmob.cn
 127.0.0.1 n.sigmob.cn
 127.0.0.1 rtbcallback.sigmob.cn
 127.0.0.1 tm.sigmob.cn
@@ -265623,6 +265642,7 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||adtrack.qianwen.com^
 ||adtracking.quickjoy.com^
 ||adv-font-pt.4366.com^
+||adx.anythinktech.com^
 ||ae.tapdb.net^
 ||ae1gw-i3g8b6v.ofjlj9t-tqb9zu1i.top^
 ||aecexeobegab5sgn.0kkkkkt.com^
@@ -266723,6 +266743,7 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||clusterdee1.56822017.com^
 ||clutch.gdn^
 ||cm-10-135.getui.com^
+||cm.bilibili.com^
 ||cm.goumaoyuanny.com^
 ||cm.he2d.com^
 ||cm.mediav.com^
@@ -274736,3 +274757,9 @@ www.zhzzx.com
 0.0.0.0 wuchuyun.com
 0.0.0.0 xinqiucc.com
 0.0.0.0 ydycdn.com
+! ==============================================
+! 📋 规则来源：本地自定义规则（data/mod/adblock.txt）
+! ⚠️ 优先级：最高
+! ==============================================
+||api2.e.kuaishou.com^
+||ad.bilibili.com^

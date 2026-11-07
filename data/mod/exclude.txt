@@ -89,3 +89,27 @@
 ! 仿冒面已由单列规则覆盖：||pinduoduo.cn^（NS 是 22.cn 停放平台）、
 ! ||myangkeduo.com^（仿冒 yangkeduo），不需要整品牌通配。
 ||pinduoduo.*^
+
+! ---------- 七、白名单里躺着的广告 SDK 服务器：拆掉放行侧 ----------
+! 这几条都是上游白名单原样合并进 data/mod/whitelist.txt 的，上游在拦截侧
+! 拦、本地在放行侧放，结果这批广告域从来没生效过（dns.txt 里 0 条）。
+! 与第五节同一性质，都是「白名单把广告服务器放行了」。
+!
+! 取证（2026-11-07，20 并发 DNS + HTTP 实测）：
+!   sdk.e.qq.com          200 stgw，优量汇 SDK 入口（激励视频/开屏请求发起点）
+!   v.gdt.qq.com          403 nginx，广点通曝光上报（v=view）
+!   pgdt.gtimg.cn         400 NWSs，广点通广告素材 CDN
+!   open.e.kuaishou.com   200 tengine，快手联盟广告接口
+!   dc.sigmob.cn          200 nginx，Sigmob 激励视频/插屏
+! 全部可解析、全部返回广告服务特征，无一是功能域。拦截后对应 App 的
+! 广告请求发不出去，登录/支付/内容加载不经这些域，不影响功能。
+!
+! 注意：@@||qq.com^ 不在此列，也不要动。本地 adblock.txt 的 134 条腾讯
+! 广告域已按「本地规则豁免白名单」机制精选生效（merge.py 第 311 行），
+! 拆掉整域放行会让上游 400+ 条未人工筛选的 qq.com 规则一起复活，
+! 其中有 cfg.imtt.qq.com（X5 配置下发）、configsvr.msf.3g.qq.com（推送通道）。
+@@||sdk.e.qq.com^
+@@||v.gdt.qq.com^
+@@||pgdt.gtimg.cn^
+@@||open.e.kuaishou.com^
+@@||dc.sigmob.cn^
