@@ -36,11 +36,22 @@ TYPE_MAP = {
     "🐛": "修复", "🔧": "修复", "🩹": "修复", "🩺": "修复", "🔍": "修复", "🎬": "修复",
     "💄": "优化", "🔗": "优化", "🌐": "格式", "📊": "功能", "🔕": "变更",
     "🎯": "规则调优", "🛑": "规则调优", "🧹": "清理", "🧽": "清理",
-    "📖": "文档", "📋": "文档",
+    "📖": "文档", "📋": "文档", "🧪": "测试", "🤖": "CI", "⏪": "回滚",
 }
 # 这些是 CI 例行提交，不写进更新历史
 SKIP_PATTERNS = (r"^✅\s*规则自动更新", r"^Update\s+\S+$", r"^Merge ")
 EMOJI_RE = re.compile(r"^([\U0001F300-\U0001FAFF\u2600-\u27BF\u2B00-\u2BFF]+)\s*")
+
+# Conventional Commits 前缀 → 类型标签，用于没带 emoji 的提交。
+# 以前没有 emoji 就一律归「其他」，于是 feat/fix 这类规范提交和真正的杂项
+# 混在一栏里分不出来。两种写法仓库里都存在，这里让它们都能正确归类，
+# 不必为了美观去改写已推送的提交信息。
+CONVENTIONAL_MAP = {
+    "feat": "✨", "fix": "🐛", "docs": "📖", "perf": "💄",
+    "refactor": "🧹", "style": "💄", "test": "🧪",
+    "build": "🤖", "ci": "🤖", "chore": "🧹", "revert": "⏪",
+}
+CONVENTIONAL_RE = re.compile(r"^([A-Za-z]+)(?:\([^)]*\))?!?:\s*")
 
 
 def git(*args):
@@ -72,13 +83,26 @@ def read_commits():
 
 
 def split_subject(subj):
-    """把 '🎯 修复三处过宽规则' 拆成 ('🎯', '规则调优', '修复三处过宽规则')。"""
+    """把 '🎯 修复三处过宽规则' 拆成 ('🎯', '规则调优', '修复三处过宽规则')。
+
+    没带 emoji 时再试 Conventional Commits 前缀（feat/fix/docs…），
+    仍认不出才归「其他」。
+    """
     m = EMOJI_RE.match(subj)
-    if not m:
-        return "🔹", "其他", subj
-    emoji = m.group(1)[0]
-    label = TYPE_MAP.get(emoji, "其他")
-    body = subj[m.end():].strip() or subj
+    if m:
+        emoji = m.group(1)[0]
+        label = TYPE_MAP.get(emoji, "其他")
+        body = subj[m.end():].strip() or subj
+    else:
+        cm = CONVENTIONAL_RE.match(subj)
+        emoji = CONVENTIONAL_MAP.get(cm.group(1).lower()) if cm else None
+        if not emoji:
+            return "🔹", "其他", subj
+        label = TYPE_MAP.get(emoji, "其他")
+        body = subj[cm.end():].strip() or subj
+    # 去掉残留的变体选择符（U+FE0F）。如 '♻️ P1 重构' 会被 EMOJI_RE 在 '♻'
+    # 处截断，剩下的 '️ P1' 带一个不可见字符，表格里看起来像多了个空格。
+    body = body.lstrip("\ufe0f\u200d ").strip() or body
     if len(body) > 90:
         body = body[:88].rstrip() + "…"
     return emoji, label, body

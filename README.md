@@ -550,13 +550,23 @@ python data/python/check-quality.py && python data/python/verify-fixes.py
 
 > 仅收录**功能性变更**；CI 每日的例行规则更新（`✅ 规则自动更新` 提交）不列出。完整记录见 [Commits](https://github.com/xiaolei7172/ADS/commits/master)。
 
-### 📅 2026-11-01
+### 📅 2026-11-07
+
+| 类型 | 变更内容 | 提交 |
+| :--- | :--- | :--- |
+| ✨ 新增 | 补全 APP 视频/开屏广告 SDK，拆掉 5 条放行广告服务器的白名单 | [`d3b306a`](https://github.com/xiaolei7172/ADS/commit/d3b306a) |
+| 🩺 修复 | 关键功能域体检：修 3 起整站误拦 + 新增「关键域不得被整域拦」闸门 | [`fcff0a8`](https://github.com/xiaolei7172/ADS/commit/fcff0a8) |
+| 📖 文档 | README 增加「必读」章节：拦截规则必须配合白名单使用 | [`bfadf4e`](https://github.com/xiaolei7172/ADS/commit/bfadf4e) |
+| 🐛 修复 | 修拼多多「多处异常」：4 条媒体 CDN 被误拦 + 白名单被父域架空 | [`2dd9cde`](https://github.com/xiaolei7172/ADS/commit/2dd9cde) |
+
+<details>
+<summary><b>📅 2026-11-01</b> · 19 项变更</summary>
 
 | 类型 | 变更内容 | 提交 |
 | :--- | :--- | :--- |
 | 🩹 修复 | 告警链路用真 gh 实测后修正：issue URL 打到日志、标题覆盖校验失败 | [`79a0a38`](https://github.com/xiaolei7172/ADS/commit/79a0a38) |
 | 🔧 修复 | 按第二轮审查落地：告警链路改 gh CLI、golden 字节锁、hosts 改内容指纹 | [`5f8d658`](https://github.com/xiaolei7172/ADS/commit/5f8d658) |
-| ♻ 其他 | ️ P1 重构：8 份格式脚本合成 formats.py + pipeline.py，产物逐字节一致 | [`5630a08`](https://github.com/xiaolei7172/ADS/commit/5630a08) |
+| ♻ 其他 | P1 重构：8 份格式脚本合成 formats.py + pipeline.py，产物逐字节一致 | [`5630a08`](https://github.com/xiaolei7172/ADS/commit/5630a08) |
 | 🔧 修复 | 按代码审查报告落地 P0 + P3：一致性校验进 CI、失败可见、语义层加固 | [`f11067a`](https://github.com/xiaolei7172/ADS/commit/f11067a) |
 | 🛠 其他 | 新增 dnsmasq 格式产物（dnsmasq.conf） | [`6d3c828`](https://github.com/xiaolei7172/ADS/commit/6d3c828) |
 | 🔹 其他 | ⏱️ 更新频率改为每日一次（北京时间 08:17） | [`e062ec1`](https://github.com/xiaolei7172/ADS/commit/e062ec1) |
@@ -573,6 +583,8 @@ python data/python/check-quality.py && python data/python/verify-fixes.py
 | 🩹 修复 | 白名单补 6 条功能域：DoH / 推送 HTTPDNS / 小米云 / 百度图床 / 淘宝鉴权 / Adobe 授权 | [`8d7cee8`](https://github.com/xiaolei7172/ADS/commit/8d7cee8) |
 | 🎯 规则调优 | 腾讯广告精确拦截：134 条广告域绕过 qq.com 整域放行 | [`3cdff84`](https://github.com/xiaolei7172/ADS/commit/3cdff84) |
 | 🔧 修复 | 修复海哥规则源：改用官方 GitHub 镜像 + 补齐国内 App 覆盖 | [`2a6cfff`](https://github.com/xiaolei7172/ADS/commit/2a6cfff) |
+
+</details>
 
 <details>
 <summary><b>📅 2026-10-29</b> · 1 项变更</summary>
