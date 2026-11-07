@@ -11,6 +11,7 @@
 """
 import os
 import glob
+import json
 import re
 import sys
 from itertools import islice
@@ -89,6 +90,35 @@ allow_files = sorted(glob.glob(os.path.join(TMP_DIR, "allow_*.txt")))
 local_white_path = os.path.join(MOD_DIR, "whitelist.txt")
 local_black_path = os.path.join(MOD_DIR, "adblock.txt")
 local_exclude_path = os.path.join(MOD_DIR, "exclude.txt")
+
+# ==========================================
+# 死规则清单：域名已不存在（NXDOMAIN）的上游规则不再写入产物
+# 由 probe-dead.py 生成（UDP 直连两台公共 DNS，都返回 RCODE=3 才判死）。
+# 只过滤上游规则：本地自定义规则是用户明确要拦的，不参与——
+# 即使域名暂时解析不出来，也不该由脚本替用户删掉。
+#
+# 安全阀：清单体量与当前拦截规模严重不成比例时整份忽略。
+# dead.txt 是「删除名单」，一旦被投毒/写坏，能把产物清空；
+# 正常水位约 11%，超过 35% 说明文件本身有问题，宁可这次不清理。
+# ==========================================
+dead_path = os.path.join(MOD_DIR, "dead.txt")
+dead_set = set()
+dead_skipped = 0
+if os.path.exists(dead_path):
+    with open(dead_path, "r", encoding="utf-8", errors="ignore") as _df:
+        for _line in _df:
+            _s = _line.strip()
+            if _s and not _s.startswith(("!", "#")):
+                dead_set.add(_s.lower())
+    _block_hint = sum(count_valid_lines(_p) for _p in ad_files)
+    if not dead_set:
+        print("☠️ 死规则清单为空，跳过")
+    elif _block_hint and len(dead_set) > max(_block_hint * 0.35, 1000):
+        print(f"⚠️ 死规则清单 {len(dead_set):,} 条 vs 上游拦截 {_block_hint:,} 条，"
+              f"占比 {len(dead_set) / _block_hint:.0%} 明显异常，本次忽略该清单（不删任何规则）")
+        dead_set = set()
+    else:
+        print(f"☠️ 已加载死规则清单：{len(dead_set):,} 条（data/mod/dead.txt），上游规则命中即剔除")
 
 # ==========================================
 # 精确剔除表：只删"过宽的那一条"规则，不做父子域折叠
@@ -183,7 +213,7 @@ bad_skipped = 0
 excluded_block = 0
 
 def append_black(path):
-    global junk_skipped, bad_skipped, excluded_block
+    global junk_skipped, bad_skipped, excluded_block, dead_skipped
     final_name, desc, url = get_rule_meta(path)
     new_rules = []
     with open(path, "r", encoding="utf-8", errors="ignore") as f:
@@ -207,6 +237,12 @@ def append_black(path):
                 _d = block_domain(line) or hosts_target(line)
                 if _d and _d in exclude_block_domains:
                     excluded_block += 1
+                    continue
+            # 死规则：域名已 NXDOMAIN（probe-dead.py 双服务器确认），不再写入
+            if dead_set:
+                _dd = block_domain(line) or hosts_target(line)
+                if _dd and _dd in dead_set:
+                    dead_skipped += 1
                     continue
             # 大小写不敏感去重：||Media.net^ 与 ||media.net^ 是同一条规则
             key = line.lower()
@@ -445,6 +481,25 @@ print(f"🚫 因白名单（父子域）放行而移除的拦截规则：{blocke
 if wildcard_whitelisted:
     print(f"🪄 其中通配规则（||*.domain^）按基域白名单放行：{wildcard_whitelisted} 条")
 print(f"🧯 因精确剔除表移除的过宽拦截规则：{excluded_block} 条（data/mod/exclude.txt）")
+print(f"☠️ 因域名已不存在（NXDOMAIN）移除：{dead_skipped} 条（data/mod/dead.txt）")
 print(f"🧹 丢弃回环/垃圾行：{junk_skipped} 条")
 print(f"🧽 丢弃无效/有害语法（$badfilter、尾点规则、IP 映射行）：{bad_skipped} 条")
 print("ℹ️  dns.txt 由 filter-dns.py 统一生成（原第 4 段会被它覆盖，已移除）")
+
+# ==========================================
+# 合并统计落盘
+# clean-readme.py 的「总量骤降」闸门要扣除「死规则清理」这种**计划内**的减少，
+# 否则第一次大规模清理（一次砍掉一成）会被判成上游腰斩，永远上不了线。
+# 白名单移除量一并落盘，方便事后核对熔断阈值是否合理。
+# ==========================================
+try:
+    with open(os.path.join(TMP_DIR, "merge-stats.json"), "w", encoding="utf-8") as _sf:
+        json.dump({
+            "dead_skipped": dead_skipped,
+            "dead_list_size": len(dead_set),
+            "blocked_by_white": blocked_by_white,
+            "excluded_block": excluded_block,
+            "kept_block_rules": kept_block_rules,
+        }, _sf, ensure_ascii=False, indent=1)
+except OSError as _e:
+    print(f"⚠️ 合并统计写入失败（不影响产物）：{_e}")

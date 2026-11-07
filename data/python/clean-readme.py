@@ -37,6 +37,23 @@ print(f"📊 当前统计：拦截 {adblock} | DNS {dns} | 白名单 {allow}")
 ABSOLUTE_FLOOR = 50000   # dns.txt 绝对下限
 DROP_RATIO = 0.90        # 不得低于上一版的 90%
 
+# ==========================================
+# 预期内的减少：死规则清理
+# probe-dead.py 把 NXDOMAIN 的域加进 dead.txt，merge.py 据此剔除上游规则。
+# 首次大规模清理会一次性砍掉一成规则——这是**有意为之**，不是上游故障。
+# 不扣除这块，闸门会把「按计划清理」误判成「上游腰斩」，清理永远上不了线。
+# ==========================================
+def dead_removed():
+    try:
+        with open(os.path.join(TMP_DIR, "merge-stats.json"), "r", encoding="utf-8") as f:
+            return int(json.load(f).get("dead_skipped", 0))
+    except (OSError, ValueError, TypeError, KeyError):
+        return 0
+
+DEAD_ALLOWANCE = dead_removed()
+if DEAD_ALLOWANCE:
+    print(f"☠️ 本次死规则清理剔除 {DEAD_ALLOWANCE:,} 条，闸门按「上一版 − 清理量」比对")
+
 def previous_count(path_in_repo):
     try:
         r = subprocess.run(
@@ -50,7 +67,7 @@ def previous_count(path_in_repo):
     except Exception:
         return None
 
-def gate(name, current, prev):
+def gate(name, current, prev, allowance=0):
     if prev is None:
         return  # 本地无 git 历史（首次运行），跳过
     if prev < ABSOLUTE_FLOOR:
@@ -58,13 +75,16 @@ def gate(name, current, prev):
     if current < ABSOLUTE_FLOOR:
         print(f"🚫 闸门拦截：{name} 仅剩 {current} 条，低于绝对下限 {ABSOLUTE_FLOOR}。")
         sys.exit(1)
-    if current < prev * DROP_RATIO:
-        pct = (1 - current / prev) * 100
-        print(f"🚫 闸门拦截：{name} 从 {prev} 条跌到 {current} 条（-{pct:.1f}%），疑似上游大面积故障。")
+    # 把「计划内的清理」加回去再比，比的是「没有清理时本该有的量」
+    adjusted = current + allowance
+    if adjusted < prev * DROP_RATIO:
+        pct = (1 - adjusted / prev) * 100
+        extra = f"（已计入死规则清理 {allowance:,} 条）" if allowance else ""
+        print(f"🚫 闸门拦截：{name} 从 {prev} 条跌到 {adjusted} 条（-{pct:.1f}%）{extra}，疑似上游大面积故障。")
         sys.exit(1)
 
-gate("adblock.txt", adblock, previous_count("data/rules/adblock.txt"))
-gate("dns.txt", dns, previous_count("data/rules/dns.txt"))
+gate("adblock.txt", adblock, previous_count("data/rules/adblock.txt"), DEAD_ALLOWANCE)
+gate("dns.txt", dns, previous_count("data/rules/dns.txt"), DEAD_ALLOWANCE)
 gate("allow.txt", allow, previous_count("data/rules/allow.txt"))
 print("✅ 发布闸门通过")
 

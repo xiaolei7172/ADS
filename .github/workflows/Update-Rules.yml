@@ -52,6 +52,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python ./data/python/dl.py
 
+      # ==============================================
+      # 📉 来源骤降熔断：某路上游「返回半截」时中止发布。
+      #    HTTP 200、dl.py 判成功、合并也看不出异常——AdRules 一家占
+      #    全量约一半，它半截就是十万条规则一夜蒸发，用户侧表现为
+      #    「广告突然全拦不住了」且毫无告警。这里与 7 日中位数比。
+      # ==============================================
+      - name: Source Guard
+        run: python ./data/python/source-guard.py
+
       - name: Merge Rules
         run: python ./data/python/merge.py
 
@@ -108,6 +117,30 @@ jobs:
           fi
 
       # ==============================================
+      # 🏷️ 版本标签：每天给成品打一个 vYYYY.MM.DD。
+      #    之前用户想「回滚到上周那版」没有版本号可依——raw 链接永远指向
+      #    master 最新，出误杀只能干等修复。有了 tag 就能锁版本、
+      #    也能 git diff v2026.11.01..v2026.11.07 直接看出哪天改坏的。
+      #    同日多次更新用 -2 / -3 递增（tag 不可重指，复用会失败）。
+      # ==============================================
+      - name: Tag Release
+        if: steps.push.outputs.changed == 'true'
+        run: |
+          set -eu
+          base="v$(TZ=Asia/Shanghai date +'%Y.%m.%d')"
+          tag="$base"
+          n=2
+          while git rev-parse -q --verify "refs/tags/$tag" >/dev/null 2>&1; do
+            tag="$base-$n"
+            n=$((n + 1))
+          done
+          dns=$(grep -vcE '^(#|!|\[|$)' data/rules/dns.txt)
+          git tag -a "$tag" -m "规则快照 $tag：DNS $dns 条（$(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M')）"
+          git push origin "$tag"
+          echo "🏷️ 已发布标签 $tag（DNS $dns 条）"
+          echo "TAG_NAME=$tag" >> "$GITHUB_ENV"
+
+      # ==============================================
       # 🏷️ 动态徽章：需配置仓库 Variable GIST_ID +
       #    Secret GIST_SECRET，未配置时自动跳过
       # ==============================================
@@ -145,6 +178,7 @@ jobs:
             # README 里的写法是「✅ **上游源状态**：20/20 全部下载成功」，
             # 状态与冒号之间夹着 **，旧正则 `上游源状态：[^<]*` 永远匹配不到，输出恒为空
             echo "上游源：$(grep -m1 '上游源状态' README.md 2>/dev/null | sed 's/.*\*\*：//')"
+            echo "版本标签：${TAG_NAME:-本次无变化，未打标签}"
           } >> "$GITHUB_STEP_SUMMARY"
 
       # ==============================================

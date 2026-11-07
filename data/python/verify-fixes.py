@@ -15,10 +15,28 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import RULES_DIR, block_domain  # noqa: E402
+from common import RULES_DIR, MOD_DIR, block_domain  # noqa: E402
 from formats import FORMATS, BY_NAME  # noqa: E402
 
 R = Path(RULES_DIR)
+
+# 死规则清单：域名已 NXDOMAIN（probe-dead.py 双服务器确认），merge.py 已把
+# 对应上游规则剔除。期望「拦」的用例若命中它，属于计划内清理而不是回归——
+# 跳过并在末尾列出。这不是放宽标准：留一条指向不存在域名的规则，
+# 拦截效果为零，断言它「必须被拦」只是在锁死一条死规则。
+DEAD = set()
+_dead_file = Path(MOD_DIR) / "dead.txt"
+if _dead_file.exists():
+    with open(_dead_file, "r", encoding="utf-8", errors="ignore") as _f:
+        for _line in _f:
+            _s = _line.strip()
+            if _s and not _s.startswith(("!", "#")):
+                DEAD.add(_s.lower())
+
+
+def in_dead(dom):
+    parts = dom.lower().split(".")
+    return any(".".join(parts[i:]) in DEAD for i in range(len(parts)))
 
 # 白名单产物（smartdns-whitelist.conf）语义相反，不参与一致性比对
 BLOCK_FORMATS = [f for f in FORMATS if f.source != "allow"]
@@ -195,7 +213,11 @@ print()
 print(f"{'域名':36s} {'期望':5s} {'各格式结果':46s} 判定")
 print("-" * 110)
 fails = 0
+skipped_dead = []
 for dom, exp, note in CASES:
+    if exp and in_dead(dom):
+        skipped_dead.append((dom, note))
+        continue
     suffix_res = []
     for f in SUFFIX_FILES:
         h, _ = hit(sets[f], dom)
@@ -219,7 +241,12 @@ for dom, exp, note in CASES:
 
 print("\n" + "=" * 110)
 print(f"产物 {len(FILES)} 个（后缀 {len(SUFFIX_FILES)} + 精确 {len(EXACT_FILES)}），"
-      f"用例 {len(CASES)} 个，失败 {fails} 个，无法解析行 {sum(bads.values())} 行")
+      f"用例 {len(CASES)} 个，失败 {fails} 个，"
+      f"死规则跳过 {len(skipped_dead)} 个，无法解析行 {sum(bads.values())} 行")
+if skipped_dead:
+    print(f"☠️ 以下用例期望「拦」，但域名已判死（data/mod/dead.txt），规则按计划清理：")
+    for dom, note in skipped_dead:
+        print(f"   {dom:36s} {note}")
 print("† = hosts 为精确匹配格式，只覆盖上游明确列出的域名（未列出的子域拦不到）")
 if bads:
     print("❌ 有产物存在无法解析的行：reader 与产物语法已不一致，判定结果不可信")

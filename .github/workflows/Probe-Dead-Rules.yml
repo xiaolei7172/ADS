@@ -1,0 +1,117 @@
+name: Probe Dead Rules
+# ============================================================
+# 死规则周期体检：把「域名已不存在」的拦截规则识别出来，
+# 写进 data/mod/dead.txt，日更流程会自动剔除它们。
+#
+# 为什么不放在日更工作流里：
+#   全量 24.6 万条探测约 33 分钟（限速 150 条/秒），日更本身已有 40 分钟上限，
+#   而域名消失是「周级」而不是「日级」变化。每周扫一遍够用，
+#   日更只读结果（merge.py 读 dead.txt），不承担探测成本。
+#
+# 探测方式：UDP 直连 223.5.5.5 / 119.29.29.29，两台都返回
+#   RCODE=3 才判死；网络错误率 >15% 或死域占比 >40% 自动中止
+#   且不写盘（避免链路故障造成批量误删）。
+# ============================================================
+on:
+  schedule:
+    # 每周日 03:17 UTC = 北京时间 11:17（避开日更 00:17 UTC，两条流程不抢 git）
+    - cron: '17 3 * * 0'
+  workflow_dispatch:
+    inputs:
+      qps:
+        description: '总请求速率上限（条/秒，默认 150；调高会被公共 DNS 限流，反而更慢）'
+        default: '150'
+      limit:
+        description: '只测前 N 条（留空 = 全量；调试用）'
+        default: ''
+
+concurrency:
+  group: probe-dead
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    permissions:
+      contents: write
+
+    steps:
+      # 需要完整历史：dead.txt 的变更要能正常 commit/push
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4
+        with:
+          fetch-depth: 0
+
+      # 产物缺失时探测无从下手（dead.txt 的输入是 dns.txt）
+      - name: Check Inputs
+        run: |
+          test -f data/rules/dns.txt || {
+            echo "::error::data/rules/dns.txt 不存在，先跑一次日更工作流"
+            exit 1
+          }
+          echo "待探测：$(grep -cE '^\|\|' data/rules/dns.txt) 条"
+
+      - name: Probe NXDOMAIN
+        # 输入通过 env 传入，不直接拼进 shell（避免空值把命令搞坏）
+        env:
+          QPS: ${{ inputs.qps }}
+          LIMIT: ${{ inputs.limit }}
+        run: |
+          set -eu
+          # 全量约 40 分钟。限速 + 分批冷却是硬性要求：不限速裸跑会触发公共 DNS
+          # 限流，实测 24.6 万条跑完错误率 63.9%（15.7 万条超时），整轮作废。
+          args=("--workers" "64" "--qps" "${QPS:-150}" "--batch" "30000" "--cooldown" "20")
+          if [ -n "${LIMIT:-}" ]; then args+=("--limit" "$LIMIT"); fi
+          # 一轮没跑完（错误率超限 / 配额耗尽）就先 continue 一轮：
+          # 进度已落盘，续传只补超时的那部分，不是从零重来。
+          if ! python ./data/python/probe-dead.py "${args[@]}"; then
+            echo "::warning::首轮未达标，自动续传一轮"
+            python ./data/python/probe-dead.py "${args[@]}"
+          fi
+
+      - name: Commit dead.txt
+        run: |
+          set -eu
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          if git diff --quiet -- data/mod/dead.txt; then
+            echo "⏭️ dead.txt 无变化，跳过提交"
+            exit 0
+          fi
+          git add data/mod/dead.txt
+          git commit -m "☠️ 死规则清单更新 $(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M')"
+          git push
+
+      - name: Job Summary
+        if: always()
+        run: |
+          {
+            echo "## ☠️ 死规则体检"
+            echo ""
+            if [ -f data/mod/dead.txt ]; then
+              echo "| 项目 | 值 |"
+              echo "| --- | ---: |"
+              echo "| dead.txt 条数 | $(grep -vcE '^(#|!|\[|$)' data/mod/dead.txt) |"
+              echo "| 当前 DNS 拦截 | $(grep -vcE '^(#|!|\[|$)' data/rules/dns.txt) |"
+              echo ""
+              echo "生成时间：$(grep -m1 '生成时间' data/mod/dead.txt | sed 's/^! //')"
+            else
+              echo "⚠️ 未生成 dead.txt"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Report Failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -eu
+          # body 用 printf 单行构造：多行字面量在 YAML 块标量里一旦缩进出错，
+          # 整份工作流会解析失败（比告警本身更糟）。同样避开 gh 的 --json
+          # （issue create 不支持），直接从 stdout 取 URL。
+          body=$(printf '死规则探测失败，dead.txt 未更新（日更流程继续使用上一次的清单）。\n\n运行记录：%s\n\n常见原因：\n- 出站 UDP 53 被拦截 → 错误率超阈值，脚本主动中止（这是保护，不是故障）\n- DNS 服务器抽风 → 死域占比超 40%，脚本主动中止\n- 规则文件缺失 → 先跑一次日更工作流' "$RUN_URL")
+          url=$(gh issue create --repo "${{ github.repository }}" \
+            --title "❌ 死规则体检失败（自动创建）" \
+            --body "$body")
+          echo "🆕 已创建 issue：$url"

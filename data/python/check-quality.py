@@ -12,7 +12,12 @@
   6. 跨文件父子域冲突：本地白名单被父域拦截架空即失败（存量登记基线）；
   7. 关键功能域（data/mod/critical-domains.txt）不得被整域拦截。
 任何一项失败 → exit 1 拦截 git push，问题不会流到线上。
+
+另附（只报告不拦）：死规则清单（data/mod/dead.txt）的条数与时效——
+清单是「已确认 NXDOMAIN」的域，超过 35 天没重跑探测就该更新了，
+域名会复活（上游换 CDN 重新启用），旧清单可能删掉已经能用的规则。
 """
+import datetime
 import os
 import re
 import sys
@@ -268,6 +273,24 @@ if broken_critical:
         f"处置：确认该域确属功能域后加进 data/mod/whitelist.txt 整域放行；"
         f"若只是单条精确规则过宽，用 data/mod/exclude.txt 拆那一条")
 
+# ---- 8. 死规则清单：条数与时效（只报告，不拦发布）----
+dead_path = os.path.join(MOD_DIR, "dead.txt")
+dead_n = 0
+dead_age = None
+if os.path.exists(dead_path):
+    with open(dead_path, "r", encoding="utf-8", errors="ignore") as f:
+        head = f.read(1500)
+        f.seek(0)
+        dead_n = sum(1 for line in f
+                     if line.strip() and not line.startswith(("!", "#")))
+    m = re.search(r"生成时间：(\d{4}-\d{2}-\d{2})", head)
+    if m:
+        try:
+            dead_age = (datetime.date.today()
+                        - datetime.date.fromisoformat(m.group(1))).days
+        except ValueError:
+            dead_age = None
+
 # ---- 结果 ----
 if errors:
     print("🚫 质量自检未通过：")
@@ -282,5 +305,13 @@ print(f"ℹ️ 本地白名单父子域冲突：{len(local_conflicts)} 条已登
 print(f"ℹ️ 上游白名单另有 {upstream_conflict_n} 条被父域架空"
       f"（分析/统计域为主，随上游每日漂移，仅统计不拦发布）")
 print(f"ℹ️ 关键功能域 {len(critical)} 个：0 个被整域拦截（data/mod/critical-domains.txt）")
+if dead_n:
+    if dead_age is None:
+        fresh = "生成时间未知"
+    elif dead_age > 35:
+        fresh = f"⚠️ 已 {dead_age} 天未更新，建议重跑 probe-dead.py（域名会复活）"
+    else:
+        fresh = f"{dead_age} 天前探测"
+    print(f"☠️ 死规则清单 {dead_n:,} 条已从上游规则中剔除（{fresh}，data/mod/dead.txt）")
 if stale_baseline:
     print(f"🧹 基线中 {len(stale_baseline)} 条冲突已消失，可从基线删除：{stale_baseline[:5]}")
