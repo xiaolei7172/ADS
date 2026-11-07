@@ -1,0 +1,211 @@
+! ============================================================
+! 关键功能域名单（发布闸门用）
+! ============================================================
+! check-quality.py 第 7 项：本文件里的域名**不允许被整域拦截**。
+!
+! 判定口径：域名本身被拦（如 ||bank.pingan.com^）或任一上级域被拦
+! （如 ||pingan.com^ 连带 bank.pingan.com）都算失败。因为 DNS 层是后缀匹配，
+! 上级域被拦等于整族不可用——2026-11 平安银行（父域 pingan.com 被海哥源整域端掉）
+! 和拼多多（父域 pddpic.com）都是这个形状，而 8 种格式会「一致地错」，
+! verify-fixes 的一致性闸门天然抓不到，必须用这份业务名单单独盯。
+!
+! 收录标准（宁缺勿滥，一旦收录就等于承诺「这个域不能拦」）：
+!   · 政务 / 银行 / 支付 / 运营商 / 交通 / 地图 / 系统更新 / 公共 CDN 等基础设施；
+!   · 大厂主力产品的登录、支付、内容 API 域名；
+!   · 拦掉会表现为「整个 App 白屏 / 图片裂图 / 无法登录」而非「少看一条广告」。
+! 不收录：广告投放域、埋点统计域、可被 App 降级绕过的次要域。
+!
+! 例外写法：行尾加 #exact-ok 表示「只允许这一条精确规则，父域不许拦」。
+!   例：`s.bdstatic.com  #exact-ok`
+! 新增/删除条目都要在提交信息里写清依据（实测证据，不要凭印象）。
+! ============================================================
+
+
+! ---------- 政务/公共服务 ----------
+www.gov.cn
+12306.cn
+www.12306.cn
+kyfw.12306.cn
+beijing.gov.cn
+shanghai.gov.cn
+si.12333.gov.cn
+etax.chinatax.gov.cn
+www.chinatax.gov.cn
+122.gov.cn
+fuwu.nhsa.gov.cn
+gjzwfw.www.gov.cn
+www.nhc.gov.cn
+chsi.com.cn
+www.chsi.com.cn
+
+! ---------- 银行/支付/证券 ----------
+www.icbc.com.cn
+m.icbc.com.cn
+www.ccb.com
+www.abchina.com
+www.boc.cn
+www.bankcomm.com
+www.cmbchina.com
+www.spdb.com.cn
+www.cib.com.cn
+www.psbc.com
+www.cmbc.com.cn
+www.citicbank.com
+bank.pingan.com
+www.alipay.com
+m.alipay.com
+openapi.alipay.com
+render.alipay.com
+pay.weixin.qq.com
+payapp.weixin.qq.com
+www.unionpay.com
+cn.unionpay.com
+www.95516.com
+www.eastmoney.com
+quote.eastmoney.com
+fund.eastmoney.com
+www.10jqka.com.cn
+
+! ---------- 运营商/宽带 ----------
+www.10086.cn
+www.189.cn
+www.10010.com
+www.chinaunicom.com.cn
+
+! ---------- 地图/出行 ----------
+www.amap.com
+restapi.amap.com
+webapi.amap.com
+map.baidu.com
+api.map.baidu.com
+www.ctrip.com
+m.ctrip.com
+www.qunar.com
+www.fliggy.com
+common.didiglobal.com
+www.xiaojukeji.com
+
+! ---------- 电商/生活 ----------
+www.taobao.com
+h5api.m.taobao.com
+detail.tmall.com
+www.jd.com
+api.m.jd.com
+www.meituan.com
+i.meituan.com
+www.dianping.com
+www.ele.me
+www.suning.com
+mobile.yangkeduo.com
+www.pinduoduo.com
+
+! ---------- 社交/内容 ----------
+weixin.qq.com
+mp.weixin.qq.com
+long.weixin.qq.com
+www.qq.com
+im.qq.com
+api.weibo.cn
+www.weibo.com
+www.douyin.com
+v.douyin.com
+api.amemv.com
+www.kuaishou.com
+www.xiaohongshu.com
+www.zhihu.com
+www.bilibili.com
+api.bilibili.com
+www.iqiyi.com
+www.youku.com
+v.qq.com
+music.163.com
+www.163.com
+y.qq.com
+
+! ---------- 云服务/开发 ----------
+www.aliyun.com
+ecs.aliyuncs.com
+cloud.tencent.com
+www.huaweicloud.com
+api.github.com
+raw.githubusercontent.com
+registry.npmjs.org
+pypi.org
+files.pythonhosted.org
+www.gitee.com
+stackoverflow.com
+www.csdn.net
+juejin.cn
+
+! ---------- 系统/应用商店/更新 ----------
+login.microsoftonline.com
+update.microsoft.com
+login.live.com
+outlook.office365.com
+www.apple.com
+iosapps.itunes.apple.com
+updates.cdn-apple.com
+accounts.google.com
+play.googleapis.com
+update.miui.com
+bigota.d.miui.com
+query.hicloud.com
+update.hicloud.com
+appgallery.huawei.com
+
+! ---------- 办公/协作 ----------
+www.feishu.cn
+open.feishu.cn
+oapi.dingtalk.com
+work.weixin.qq.com
+open.work.weixin.qq.com
+meeting.tencent.com
+wemeet.qq.com
+www.notion.so
+
+! ---------- 邮件/网盘 ----------
+mail.qq.com
+mail.163.com
+pan.baidu.com
+www.wps.cn
+www.weiyun.com
+
+! ---------- 教育/医疗/招聘 ----------
+www.cnki.net
+www.wanfangdata.com.cn
+www.chaoxing.com
+www.icourse163.org
+www.haodf.com
+www.dxy.cn
+www.zhaopin.com
+www.51job.com
+www.zhipin.com
+
+! ---------- 新闻资讯 ----------
+news.qq.com
+news.163.com
+news.sina.com.cn
+www.sohu.com
+www.ifeng.com
+www.thepaper.cn
+www.cctv.com
+www.people.com.cn
+www.xinhuanet.com
+
+! ---------- 共用 CDN/基础设施（拦了必大面积误伤） ----------
+g.alicdn.com
+img.alicdn.com
+i0.hdslb.com
+m.qpic.cn
+gchat.qpic.cn
+imgcache.qq.com
+p3.byteimg.com
+p0.qhimg.com
+wx1.sinaimg.cn
+cdn.jsdelivr.net
+unpkg.com
+ajax.googleapis.com
+fonts.googleapis.com
+cdnjs.cloudflare.com
+cos.ap-guangzhou.myqcloud.com
+p1.itc.cn

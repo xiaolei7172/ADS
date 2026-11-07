@@ -8,7 +8,9 @@
   3. dns.txt 分区自洽：每个 "! 📊 本区规则：N 条" 与该分区实际行数一致，
      分区总和 = 总行数；
   4. 规则量下限：dns.txt 不得低于 50000 条（防上游大面积故障后带病发布）；
-  5. adblock.txt 无脏语法：$badfilter / ||domain. 尾点 / 非回环 IP 映射行。
+  5. adblock.txt 无脏语法：$badfilter / ||domain. 尾点 / 非回环 IP 映射行；
+  6. 跨文件父子域冲突：本地白名单被父域拦截架空即失败（存量登记基线）；
+  7. 关键功能域（data/mod/critical-domains.txt）不得被整域拦截。
 任何一项失败 → exit 1 拦截 git push，问题不会流到线上。
 """
 import os
@@ -217,6 +219,55 @@ if new_conflicts:
 stale_baseline = [d for d in baseline if d in local_allow and d not in local_conflicts]
 upstream_conflict_n = sum(1 for d in upstream_allow if parent_in_blacklist(d))
 
+# ---- 7. 关键功能域不得被整域拦截 ----
+# 数据在 data/mod/critical-domains.txt，收录政务/银行/支付/运营商/交通/系统更新/公共 CDN
+# 等「拦了就是功能故障」的域。为什么需要这道闸门：
+#   · verify-fixes 只比对「8 种格式判得一样不一样」，一致地错它抓不到；
+#   · 白名单冲突闸门只管「我们主动写的白名单有没有失效」，管不到「上游新拦了一个不该拦的」；
+#   · 2026-11-07 平安银行（父域 pingan.com 被海哥源整域端掉）、拼多多（pddpic.com）、
+#     同花顺官网、微信群聊图片 CDN（gchat.qpic.cn）四起，全是靠人工体检才发现的。
+# 口径：域名自身被拦、或任一上级域被拦（后缀匹配连带），都算失败；
+# 行尾 `#exact-ok` 表示只允许这一条精确规则、父域不许拦（如 s.bdstatic.com）。
+critical_path = os.path.join(MOD_DIR, "critical-domains.txt")
+critical = []
+if os.path.exists(critical_path):
+    with open(critical_path, "r", encoding="utf-8", errors="ignore") as f:
+        for raw in f:
+            s = raw.split("!")[0].strip()
+            if not s:
+                continue
+            body, _, note = s.partition("#")
+            d = body.strip().lower()
+            if d:
+                critical.append((d, "exact-ok" in note))
+else:
+    errors.append("critical-domains.txt: 文件缺失（关键功能域闸门无法生效）")
+
+hosts_exact = set(rule_lines(os.path.join(RULES_DIR, "hosts.txt")))
+broken_critical = []
+for d, exact_ok in critical:
+    hits = []
+    if not exact_ok:
+        if d in suffix_union:
+            hits.append(f"自身被 ||{d}^ 拦")
+        elif d in hosts_exact:
+            hits.append("自身被 hosts 行拦")
+    parts = d.split(".")
+    for i in range(1, len(parts) - 1):
+        parent = ".".join(parts[i:])
+        if parent in suffix_union or parent in hosts_exact:
+            hits.append(f"父域 {parent} 被拦（后缀匹配连带）")
+            break
+    if hits:
+        broken_critical.append(f"{d}（{'；'.join(hits)}）")
+
+if broken_critical:
+    errors.append(
+        f"关键功能域 {len(broken_critical)} 个被整域拦截，如 {broken_critical[:3]}"
+        f" —— 这些域拦掉是功能故障（白屏/裂图/登录失败），不是少看一条广告。"
+        f"处置：确认该域确属功能域后加进 data/mod/whitelist.txt 整域放行；"
+        f"若只是单条精确规则过宽，用 data/mod/exclude.txt 拆那一条")
+
 # ---- 结果 ----
 if errors:
     print("🚫 质量自检未通过：")
@@ -230,5 +281,6 @@ print(f"ℹ️ 本地白名单父子域冲突：{len(local_conflicts)} 条已登
       f"（data/mod/allow-conflicts.baseline），本轮新增 {len(new_conflicts)} 条")
 print(f"ℹ️ 上游白名单另有 {upstream_conflict_n} 条被父域架空"
       f"（分析/统计域为主，随上游每日漂移，仅统计不拦发布）")
+print(f"ℹ️ 关键功能域 {len(critical)} 个：0 个被整域拦截（data/mod/critical-domains.txt）")
 if stale_baseline:
     print(f"🧹 基线中 {len(stale_baseline)} 条冲突已消失，可从基线删除：{stale_baseline[:5]}")

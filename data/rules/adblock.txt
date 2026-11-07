@@ -3,18 +3,18 @@
 ! 📌 规则名称：天影规则聚合 · 广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-07 18:34:52（北京时间）
-! 📊 有效规则：274653 条
+! ⏰ 更新时间：2026-11-07 18:53:14（北京时间）
+! 📊 有效规则：274646 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-07 18:34:52 | ✅ 有效规则 274653 条
+! Description: ⏰ 更新时间 2026-11-07 18:53:14 | ✅ 有效规则 274646 条
 ! ────────────────── ☑ 规则来源统计 ──────────────────
 !  128,581 条  AdRules DNS List [AdRules DNS List]
 !   93,681 条  anti-ad 官方规则
-!   14,046 条  5460 [酷安广告规则]
+!   14,045 条  5460 [酷安广告规则]
 !   11,427 条  1007-Hosts
-!   11,189 条  海哥规则
+!   11,183 条  海哥规则
 !   10,615 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !    3,028 条  OISD 拦截规则 [oisd small]
 !    1,119 条  乘风通用规则 [乘风 广告过滤规则]
@@ -260308,7 +260308,6 @@ play.google.com#@#a[href^="intent://"]
 ||geobanner.passion.com^
 ||yyb.pc6.com^
 ||creatives.pichunter.com^
-||events.pingan.com^
 ||pixel-hk.pixelinteractivemedia.com^
 ||banners.playocio.com^
 ||e.plerv.com^
@@ -266437,7 +266436,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||cap-rta-toc.wldmarket.com^
 ||capi.tianyancha.com^
 ||capmvb.net^
-||captcha-static.pingan.com^
 ||caqf.720lu.com^
 ||card-api.liulianglf.cn^
 ||card.jianlian.ink^
@@ -267224,7 +267222,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||dzdp.880.net^
 ||dzxxtdub.com^
 ||e-core2006.co^
-||e.pingan.com^
 ||e.uril6.com^
 ||e0ap.8890.com^
 ||e0b8c.club^
@@ -267786,7 +267783,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||gcali.cdn.al86989chatddfgfgbos.com^
 ||gcb40ce.cdn.skr001.cc^
 ||gcc.rbwljs.com^
-||gchat.qpic.cn^
 ||gci.a776e5dac47e839cb9ec.com^
 ||gci.bnm8585.com^
 ||gci.chdienc.com^
@@ -270227,7 +270223,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||osd1201020.xxfrn.cc^
 ||osieqxx-12pp.dnsjiasukuai803.com^
 ||osjg.jkjes85112.com^
-||osr.pingan.com^
 ||oss-9jjjjsss.cqgcywl.com^
 ||oss-api.kanbei01.top^
 ||oss-image2.quanmamaimg.com^
@@ -270448,7 +270443,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||picture.xx6658244.one^
 ||piggy.xyz^
 ||pinduoduo.cn^
-||pingan.com^
 ||pinglun2.chinadegi.com^
 ||pinyin.voicecloud.cn^
 ||pinyinsearch.voicecloud.cn^
@@ -272603,7 +272597,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||www-jsonqplsjr-com.imxvcz.com^
 ||www-q6945v7zy-com.xmp0ld.com^
 ||www.000aaaa.com^
-||www.10jqka.com.cn^
 ||www.17f038384.cc^
 ||www.17f506891.cc^
 ||www.1idr8a.vip^

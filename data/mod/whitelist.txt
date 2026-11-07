@@ -206,3 +206,19 @@
 ! 在 exclude.txt 里已拆掉那条通配；这里再点名放行，防其他上游有同款写法。
 ! 非官方 TLD 继续拦：pinduoduo.cn（22.cn 停放）、pinduoduo.org（afternic 待售）。
 @@||pinduoduo.net^
+!
+! ---------- 2026-11-07 关键功能域体检：三条整域/整站误拦 ----------
+! 平安集团主域被海哥源整域拦（||pingan.com^）。实测 bank.pingan.com 返回 200 正常
+! 银行页面（Server: loading，CDN 回源 pool-bank.pingan.com.cdngtm.com），
+! 拦掉等于平安银行 / 保险 / 好车主 / 口袋银行全线不可用。金融域没有「部分是广告」的
+! 判断余地，整域放行。
+@@||pingan.com^
+! 同花顺官网被海哥源精确拦（||www.10jqka.com.cn^）。实测 200，Server: Stargate，
+! 页面 CNAME 链 webcache.10jqka.com.cn → alydsyd.10jqka.com.cn，是券商标配行情站。
+! 只放行 www 这一条，站内其他子域（ad / log / tj 等）继续按上游拦截。
+@@||www.10jqka.com.cn^
+! 腾讯图片 CDN 被海哥源拦（||gchat.qpic.cn^）。gchat 是微信群聊图片与表情的图片宿主，
+! 实测 Server: NWSs（腾讯自研 web server，与 m.qpic.cn 同族）。
+! 拦掉表现为群聊图片全部裂图、表情发不出去。同族 m.qpic.cn / gchat.qpic.cn 在
+! 微信里属于纯媒体通道，无广告投放，故放行。
+@@||gchat.qpic.cn^

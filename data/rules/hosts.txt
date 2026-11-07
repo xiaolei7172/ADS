@@ -2,7 +2,7 @@
 # 由 dns.txt 折叠前的完整域名集转换，含全部子域，覆盖与 AdGuard 语义对齐
 # ⚠️ hosts 只能精确匹配，拦不到未列出的子域；需要完整子域覆盖请用 dns.txt / smartdns.conf / surge.list
 # 📌 项目地址：https://github.com/xiaolei7172/ADS
-# 🔖 内容指纹：aa83d738b1c1 | 📊 有效规则：260993 条 | ⏰ 变更时间见 git 提交记录
+# 🔖 内容指纹：08741a52c797 | 📊 有效规则：260986 条 | ⏰ 变更时间见 git 提交记录
 # 🔄 更新频率：每日自动更新（北京时间 08:00）
 0.0.0.0 ads3-normal-hl.zijieapi.com
 0.0.0.0 ads3-normal-lf.zijieapi.com
@@ -250096,7 +250096,6 @@
 0.0.0.0 geobanner.passion.com
 0.0.0.0 yyb.pc6.com
 0.0.0.0 creatives.pichunter.com
-0.0.0.0 events.pingan.com
 0.0.0.0 pixel-hk.pixelinteractivemedia.com
 0.0.0.0 banners.playocio.com
 0.0.0.0 e.plerv.com
@@ -254159,7 +254158,6 @@
 0.0.0.0 cap-rta-toc.wldmarket.com
 0.0.0.0 capi.tianyancha.com
 0.0.0.0 capmvb.net
-0.0.0.0 captcha-static.pingan.com
 0.0.0.0 caqf.720lu.com
 0.0.0.0 card-api.liulianglf.cn
 0.0.0.0 card.jianlian.ink
@@ -254914,7 +254912,6 @@
 0.0.0.0 dzdp.880.net
 0.0.0.0 dzxxtdub.com
 0.0.0.0 e-core2006.co
-0.0.0.0 e.pingan.com
 0.0.0.0 e.uril6.com
 0.0.0.0 e0ap.8890.com
 0.0.0.0 e0b8c.club
@@ -255464,7 +255461,6 @@
 0.0.0.0 gcali.cdn.al86989chatddfgfgbos.com
 0.0.0.0 gcb40ce.cdn.skr001.cc
 0.0.0.0 gcc.rbwljs.com
-0.0.0.0 gchat.qpic.cn
 0.0.0.0 gci.a776e5dac47e839cb9ec.com
 0.0.0.0 gci.bnm8585.com
 0.0.0.0 gci.chdienc.com
@@ -257861,7 +257857,6 @@
 0.0.0.0 osd1201020.xxfrn.cc
 0.0.0.0 osieqxx-12pp.dnsjiasukuai803.com
 0.0.0.0 osjg.jkjes85112.com
-0.0.0.0 osr.pingan.com
 0.0.0.0 oss-9jjjjsss.cqgcywl.com
 0.0.0.0 oss-api.kanbei01.top
 0.0.0.0 oss-image2.quanmamaimg.com
@@ -258075,7 +258070,6 @@
 0.0.0.0 picture.xx6658244.one
 0.0.0.0 piggy.xyz
 0.0.0.0 pinduoduo.cn
-0.0.0.0 pingan.com
 0.0.0.0 pinglun2.chinadegi.com
 0.0.0.0 pinyin.voicecloud.cn
 0.0.0.0 pinyinsearch.voicecloud.cn
@@ -260165,7 +260159,6 @@
 0.0.0.0 www-jsonqplsjr-com.imxvcz.com
 0.0.0.0 www-q6945v7zy-com.xmp0ld.com
 0.0.0.0 www.000aaaa.com
-0.0.0.0 www.10jqka.com.cn
 0.0.0.0 www.17f038384.cc
 0.0.0.0 www.17f506891.cc
 0.0.0.0 www.1idr8a.vip

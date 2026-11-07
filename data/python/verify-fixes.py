@@ -145,6 +145,10 @@ CASES = [
     ("m.pinduoduo.net", False, "拼多多移动端网关（CNAME → gw-c-sht-isp.pinduoduo.com）"),
     ("myangkeduo.com", True, "仿冒 yangkeduo.com（保持拦）"),
     ("pinduoduo.cn", True, "域名停放平台 22.cn，非官方（保持拦）"),
+    # —— 2026-11-07：关键功能域体检抓到的三起整域/整站误拦 ——
+    ("bank.pingan.com", False, "平安银行（海哥源整域拦了 pingan.com，实测 200 正常银行页）"),
+    ("www.10jqka.com.cn", False, "同花顺官网（被精确拦，实测 200 / Server: Stargate）"),
+    ("gchat.qpic.cn", False, "微信群聊图片 CDN（腾讯 NWSs，拦了群图全裂）"),
 ]
 
 missing = [f for f in FILES if not (R / f).exists()]

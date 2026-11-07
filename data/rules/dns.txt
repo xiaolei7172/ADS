@@ -3,17 +3,17 @@
 ! 📌 规则名称：天影规则聚合 · DNS 拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-07 18:34:53（北京时间）
-! 📊 有效规则：246601 条
+! ⏰ 更新时间：2026-11-07 18:53:15（北京时间）
+! 📊 有效规则：246598 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · DNS 拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-07 18:34:53 | ✅ 有效规则 246601 条
+! Description: ⏰ 更新时间 2026-11-07 18:53:15 | ✅ 有效规则 246598 条
 ! ────────────────── ☑ 规则来源统计 ──────────────────
 !  122,576 条  AdRules DNS List [AdRules DNS List]
 !   91,933 条  anti-ad 官方规则
 !    9,573 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
-!    9,136 条  海哥规则
+!    9,133 条  海哥规则
 !    5,666 条  1007-Hosts
 !    4,737 条  5460 [酷安广告规则]
 !    2,761 条  OISD 拦截规则 [oisd small]
@@ -33,7 +33,7 @@
 !      9573 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !      2761 条  OISD 拦截规则 [oisd small]
 !      4737 条  5460 [酷安广告规则]
-!      9136 条  海哥规则
+!      9133 条  海哥规则
 ! ────────────────────────────────────────
 
 ! ==============================================
@@ -237562,7 +237562,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt
 ! ==============================================
-! 📊 本区规则：9136 条
+! 📊 本区规则：9133 条
 ! ==============================================
 ||img.kzfjjaox.cn^
 ||9000.nhwkj.com^
@@ -241559,7 +241559,6 @@
 ||gcali.cdn.al86989chatddfgfgbos.com^
 ||gcb40ce.cdn.skr001.cc^
 ||gcc.rbwljs.com^
-||gchat.qpic.cn^
 ||gci.a776e5dac47e839cb9ec.com^
 ||gci.bnm8585.com^
 ||gci.chdienc.com^
@@ -244006,7 +244005,6 @@
 ||picture.xx6658244.one^
 ||piggy.xyz^
 ||pinduoduo.cn^
-||pingan.com^
 ||pinglun2.chinadegi.com^
 ||pinyin.voicecloud.cn^
 ||pinyinsearch.voicecloud.cn^
@@ -245913,7 +245911,6 @@
 ||www-jsonqplsjr-com.imxvcz.com^
 ||www-q6945v7zy-com.xmp0ld.com^
 ||www.000aaaa.com^
-||www.10jqka.com.cn^
 ||www.17f038384.cc^
 ||www.17f506891.cc^
 ||www.2hak45.vip^
