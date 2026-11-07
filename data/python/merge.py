@@ -97,6 +97,9 @@ local_exclude_path = os.path.join(MOD_DIR, "exclude.txt")
 # ==========================================
 exclude_block_domains = set()
 exclude_allow_domains = set()
+# 非常规形态的剔除（||pinduoduo.*^ 这类 TLD 通配、||*.domain^ 子域通配）：
+# 域名正则认不出来，但这类规则恰恰最需要拆——一条通配能把整个品牌端掉。
+exclude_block_raw = set()
 if os.path.exists(local_exclude_path):
     with open(local_exclude_path, "r", encoding="utf-8", errors="ignore") as _f:
         for _line in _f:
@@ -111,8 +114,13 @@ if os.path.exists(local_exclude_path):
                 _d = block_domain(_s) or hosts_target(_s)
                 if _d:
                     exclude_block_domains.add(_d)
+                else:
+                    _low = _s.lower()
+                    if _low.startswith("||") and _low.endswith("^"):
+                        exclude_block_raw.add(_low)
     print(f"🧯 已加载精确剔除表：data/mod/exclude.txt"
-          f"（拦截 {len(exclude_block_domains)} 条 / 放行 {len(exclude_allow_domains)} 条）")
+          f"（拦截 {len(exclude_block_domains)} 条 / 通配 {len(exclude_block_raw)} 条"
+          f" / 放行 {len(exclude_allow_domains)} 条）")
 
 def collect_white(path, convert_bare=False):
     """收集 @@ 白名单行；convert_bare=True 时把裸域名行转为 @@||domain^。
@@ -192,6 +200,9 @@ def append_black(path):
                 bad_skipped += 1
                 continue
             # 精确剔除：只拆过宽的那一条（如 ||bytedance.com^），子域规则保留
+            if exclude_block_raw and line.lower() in exclude_block_raw:
+                excluded_block += 1
+                continue
             if exclude_block_domains:
                 _d = block_domain(line) or hosts_target(line)
                 if _d and _d in exclude_block_domains:
@@ -296,6 +307,7 @@ if os.path.exists(wildcard_pat_path):
 final_black = []
 exempt = 0
 kept_block_rules = 0
+wildcard_whitelisted = 0
 for line in black_output:
     if line in local_rule_lines:
         final_black.append(line)
@@ -304,10 +316,27 @@ for line in black_output:
         continue
     if line.startswith("||") and line.endswith("^"):
         dom = line[2:-1].lower()
+        # 通配规则的放行判定以基域为准：||*.pddpic.com^ 的拦截对象是整个子域族，
+        # 白名单写 @@||pddpic.com^ 就该放行它。以前只认纯域名——block_domain 的正则不
+        # 含 '*'，通配行在第二步匹配不到 allow_domain_set，于是"白名单写了、DNS 产物也
+        # 干净，AdGuard 订阅里那条通配还在"，用户照样打不开图片/直播。
+        if dom.startswith("*.") and is_allowed(dom[2:], allow_domain_set):
+            wildcard_whitelisted += 1
+            blocked_by_white += 1
+            continue
         if is_allowed(dom, allow_domain_set):
             blocked_by_white += 1
             continue
         kept_block_rules += 1
+    elif not line.startswith(("@@")):
+        # hosts 行（0.0.0.0 domain）也要过白名单。以前只处理 ||domain^ 形态，
+        # 于是整域放行 pddpic.com 之后 adblock.txt 里仍留着 0.0.0.0 video-dsp.pddpic.com：
+        # dns.txt 靠 filter-dns 第二遍过滤是干净的，但直接订阅 adblock.txt、
+        # 或把 adblock.txt 转 hosts 的用户照样被拦——同一份规则自己跟自己打架。
+        hd = hosts_target(line)
+        if hd and is_allowed(hd, allow_domain_set):
+            blocked_by_white += 1
+            continue
     final_black.append(line)
 
 # ==========================================
@@ -324,7 +353,7 @@ if removed_ratio > 0.08:
           f"疑似某路白名单源被投毒或黑白错配，中止本次更新。")
     sys.exit(1)
 
-with open(os.path.join(RULES_DIR, "adblock.txt"), "w", encoding="utf-8") as f:
+with open(os.path.join(RULES_DIR, "adblock.txt"), "w", encoding="utf-8", newline="\n") as f:
     f.write("\n".join(final_black) + "\n")
 
 # ==========================================
@@ -403,7 +432,7 @@ if local_block_domains:
                    if not (l.startswith("@@") and is_allowed(allow_domain(l) or "", local_block_domains))]
     print(f"✂️  因本地自定义拦截域，从白名单剔除 {before - len(final_white)} 条放行规则")
 
-with open(os.path.join(RULES_DIR, "allow.txt"), "w", encoding="utf-8") as f:
+with open(os.path.join(RULES_DIR, "allow.txt"), "w", encoding="utf-8", newline="\n") as f:
     f.write("\n".join(final_white) + "\n")
 
 # ==========================================
@@ -413,6 +442,8 @@ print("\n✅ 全部合并完成！本地黑白名单均已完整写入！")
 print(f"📊 黑名单：{count_valid_lines(os.path.join(RULES_DIR, 'adblock.txt'))} 条")
 print(f"📊 白名单：{len(all_white_raw)} 条")
 print(f"🚫 因白名单（父子域）放行而移除的拦截规则：{blocked_by_white} 条（本地自定义规则豁免）")
+if wildcard_whitelisted:
+    print(f"🪄 其中通配规则（||*.domain^）按基域白名单放行：{wildcard_whitelisted} 条")
 print(f"🧯 因精确剔除表移除的过宽拦截规则：{excluded_block} 条（data/mod/exclude.txt）")
 print(f"🧹 丢弃回环/垃圾行：{junk_skipped} 条")
 print(f"🧽 丢弃无效/有害语法（$badfilter、尾点规则、IP 映射行）：{bad_skipped} 条")

@@ -130,6 +130,21 @@ CASES = [
     ("lf-fe.fqnovelstatic.com", False, "番茄 H5 前端静态资源"),
     ("lf3-reading.fqnovelstatic.com", False, "番茄阅读页静态资源"),
     ("v5-hl-ali-reading-video.fqnovelvod.com", True, "阅读页信息流广告视频（保持拦）"),
+    # —— 2026-11-07：拼多多「多处异常」排查 ——
+    # 海哥源把 pddpic.com / pddugc.com 当广告域整族拦。DNS 层后缀匹配吃掉全部子域，
+    # allow.txt 里原有点名的 7 条子域白名单在单文件格式客户端里不生效。
+    # 实测依据见 data/mod/whitelist.txt 对应分区块。
+    ("img.pddpic.com", False, "拼多多图片 CDN（cdn.dnsv1.com）"),
+    ("funimg.pddpic.com", False, "拼多多图片（CNAME 目标曾被单列拦截）"),
+    ("liveplay.pddpic.com", False, "拼多多直播播放（txlivecdn）"),
+    ("video4.pddpic.com", False, "拼多多视频分片"),
+    ("video-snapshot.pddpic.com", False, "拼多多视频封面"),
+    ("cfg-2.pddpic.com", False, "拼多多播放器配置下发"),
+    ("img.pddugc.com", False, "拼多多评价晒图 / UGC（pddlego-dk 调度）"),
+    ("opencdnpddpic2.cdn.vsjwtcdn.com", False, "拼多多图片备用接入域（与 funimg 同 IP）"),
+    ("m.pinduoduo.net", False, "拼多多移动端网关（CNAME → gw-c-sht-isp.pinduoduo.com）"),
+    ("myangkeduo.com", True, "仿冒 yangkeduo.com（保持拦）"),
+    ("pinduoduo.cn", True, "域名停放平台 22.cn，非官方（保持拦）"),
 ]
 
 missing = [f for f in FILES if not (R / f).exists()]

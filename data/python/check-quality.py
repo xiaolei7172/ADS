@@ -18,7 +18,7 @@ from collections import Counter
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
-from common import RULES_DIR, MOD_DIR, block_domain
+from common import RULES_DIR, MOD_DIR, block_domain, allow_domain
 from formats import BY_NAME
 
 DNS_FLOOR = 50000
@@ -147,6 +147,76 @@ for kind, n in dirty.items():
     if n:
         errors.append(f"adblock.txt: {n} 条 {kind}（应为 0，merge.py 清洗漏网）")
 
+# ---- 6. 跨文件父子域冲突：白名单子域被黑名单父域架空 ----
+# allow.txt 里 @@||img.pddpic.com^ 这类点名放行，若父域 pddpic.com 同时出现在
+# 后缀匹配产物里，这条白名单在生产环境等于没写：dnsmasq 的 address=/pddpic.com/0.0.0.0
+# 与 DOMAIN-SUFFIX,pddpic.com 都会吃掉全部子域，而这些单文件客户端根本不加载 allow.txt。
+# 2026-11-07 拼多多图片/直播/短视频同时挂掉就是这个形状——8 种格式判定完全一致，
+# verify-fixes 的一致性闸门天然抓不到"一致地错"，必须单独查黑白名单的父子域关系。
+SUFFIX_PRODUCTS = [n for n in DOMAIN_FILES if n not in COLLAPSE_EXEMPT]
+suffix_union = set()
+for name in SUFFIX_PRODUCTS:
+    suffix_union |= set(rule_lines(os.path.join(RULES_DIR, name)))
+
+
+def parent_in_blacklist(d):
+    """返回把 d 架空的父域；无冲突返回 None。本地明确要拦的父域不算冲突。"""
+    parts = d.split(".")
+    for i in range(1, len(parts) - 1):
+        parent = ".".join(parts[i:])
+        if parent in local_block:
+            return None
+        if parent in suffix_union:
+            return parent
+    return None
+
+
+def read_allow(path):
+    """只取 DNS 层可生效的纯域名白名单（@@||domain^）。
+
+    allow.txt 里另有约 3,267 条路径级 / $domain= / 正则规则，本来就只在浏览器版
+    AdGuard 里生效，拿它们比对"被父域架空"没有意义——会报一堆假冲突。
+    """
+    out = set()
+    with open(path, "r", encoding="utf-8", errors="ignore") as f:
+        for raw in f:
+            d = allow_domain(raw.strip())
+            if d:
+                out.add(d)
+    return out
+
+
+# 只对本地白名单（data/mod/whitelist.txt）严格：这些是我们主动写的，必须确保生效。
+# 上游白名单有 300+ 条历史失效项（多为分析/统计域，且随上游每日漂移），
+# 拿它当发布闸门会让 CI 天天红，故只统计不拦发布。
+local_allow = read_allow(os.path.join(MOD_DIR, "whitelist.txt"))
+upstream_allow = read_allow(os.path.join(RULES_DIR, "allow.txt")) - local_allow
+
+# 基线：已知且暂未处置的本地冲突，逐条清理后从本文件删除。
+# 新加的本地白名单若被父域架空，不在基线里 → 当场失败。
+baseline_path = os.path.join(MOD_DIR, "allow-conflicts.baseline")
+baseline = set()
+if os.path.exists(baseline_path):
+    with open(baseline_path, "r", encoding="utf-8", errors="ignore") as f:
+        for raw in f:
+            s = raw.split("!")[0].strip()
+            if s:
+                # 每行形如「域名<TAB>父域」，只取第一列做比对
+                baseline.add(s.split()[0])
+
+local_conflicts = {d: p for d in local_allow if (p := parent_in_blacklist(d))}
+new_conflicts = {d: p for d, p in local_conflicts.items() if d not in baseline}
+if new_conflicts:
+    sample = [f"{d} ⊂ {p}" for d, p in list(new_conflicts.items())[:3]]
+    errors.append(
+        f"whitelist.txt: {len(new_conflicts)} 条本地白名单被父域拦截架空，如 {sample}"
+        f" —— 子域放行在单文件格式（dnsmasq/qx/surge/mihomo）里不生效，"
+        f"要么整域放行、要么拆父域规则；确认可接受则登记到 "
+        f"data/mod/allow-conflicts.baseline")
+
+stale_baseline = [d for d in baseline if d in local_allow and d not in local_conflicts]
+upstream_conflict_n = sum(1 for d in upstream_allow if parent_in_blacklist(d))
+
 # ---- 结果 ----
 if errors:
     print("🚫 质量自检未通过：")
@@ -156,3 +226,9 @@ if errors:
 
 print(f"✅ 质量自检通过：全部文件 0 重复、0 脏语法，dns.txt {actual_total} 条，分区计数自洽"
       f"（hosts.txt 因需覆盖子域，父子域冗余检查豁免）")
+print(f"ℹ️ 本地白名单父子域冲突：{len(local_conflicts)} 条已登记基线"
+      f"（data/mod/allow-conflicts.baseline），本轮新增 {len(new_conflicts)} 条")
+print(f"ℹ️ 上游白名单另有 {upstream_conflict_n} 条被父域架空"
+      f"（分析/统计域为主，随上游每日漂移，仅统计不拦发布）")
+if stale_baseline:
+    print(f"🧹 基线中 {len(stale_baseline)} 条冲突已消失，可从基线删除：{stale_baseline[:5]}")

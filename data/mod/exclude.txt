@@ -79,3 +79,13 @@
 !                        正文 CDN 走 fqnovelvod.com，剔除放行不影响阅读
 @@||ad.doubleclick.net^
 @@||qznovelvod.com^
+
+! ---------- 六、拼多多全 TLD 通配：连带拦掉官方移动端接入域 ----------
+! 海哥源写 ||pinduoduo.*^，意图是防 pinduoduo.xyz / pinduoduo.top 这类仿冒 TLD，
+! 但 pinduoduo.net 是拼多多官方域：实测 m.pinduoduo.net 的 CNAME 是
+! gw-c-sht-isp.pinduoduo.com（拼多多网关），根域与 www 的 A 记录与 pinduoduo.com
+! 同 IP（150.158.224.195）。拦了它，微信/QQ 里打开的拼多多分享落地页直接打不开，
+! 且 @@||pinduoduo.com^ 是另一个域、救不到。
+! 仿冒面已由单列规则覆盖：||pinduoduo.cn^（NS 是 22.cn 停放平台）、
+! ||myangkeduo.com^（仿冒 yangkeduo），不需要整品牌通配。
+||pinduoduo.*^

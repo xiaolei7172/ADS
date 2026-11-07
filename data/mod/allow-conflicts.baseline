@@ -1,0 +1,31 @@
+! ============================================================
+! 本地白名单「父子域冲突」基线
+! ============================================================
+! 记录 data/mod/whitelist.txt 里已被父域拦截架空、但本轮暂不处置的条目。
+! 这些点名放行在 dnsmasq / qx / surge / mihomo 这类单文件格式里并不生效
+! （客户端不加载 allow.txt），只有 AdGuard 双订阅用户受 @@ 例外保护。
+!
+! 为什么暂不处置：多数是分析/统计域（umeng / volces / elemecdn / gdt），
+! 「放行子域」本身就可疑，需要逐条判断是该整域放行、还是干脆删掉白名单，
+! 属业务口径决策，不宜在一次 CDN 误拦修复里顺手改。
+!
+! 用法：check-quality.py 只对不在本表中的新增冲突报错。
+! 清理掉一条就把对应行删掉；全部清空后可删本文件。
+!
+! 格式：白名单域名<TAB>被哪个父域架空（TAB 后为说明，脚本只读第一列）
+! ============================================================
+apmplus.volces.com	volces.com
+assets.elemecdn.com	elemecdn.com
+b1-data.ads.heytapmobi.com	ads.heytapmobi.com
+cnlogs.umengcloud.com	umengcloud.com
+dc.sigmob.cn	sigmob.cn
+errlog.umeng.com	umeng.com
+errnewlog.umeng.com	umeng.com
+mssdk.volces.com	volces.com
+nr-op.elemecdn.com	elemecdn.com
+open.e.kuaishou.cn	e.kuaishou.cn
+open.e.kuaishou.com	e.kuaishou.com
+sso.oceanengine.com	oceanengine.com
+tobapplog.volceapplog.com	volceapplog.com
+toblog.volceapplog.com	volceapplog.com
+utoken.umeng.com	umeng.com

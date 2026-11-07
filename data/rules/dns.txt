@@ -3,19 +3,19 @@
 ! 📌 规则名称：天影规则聚合 · DNS 拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-07 13:57:53（北京时间）
-! 📊 有效规则：246515 条
+! ⏰ 更新时间：2026-11-07 18:34:53（北京时间）
+! 📊 有效规则：246601 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · DNS 拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-07 13:57:53 | ✅ 有效规则 246515 条
+! Description: ⏰ 更新时间 2026-11-07 18:34:53 | ✅ 有效规则 246601 条
 ! ────────────────── ☑ 规则来源统计 ──────────────────
 !  122,576 条  AdRules DNS List [AdRules DNS List]
 !   91,933 条  anti-ad 官方规则
-!    9,483 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
-!    9,139 条  海哥规则
+!    9,573 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
+!    9,136 条  海哥规则
 !    5,666 条  1007-Hosts
-!    4,738 条  5460 [酷安广告规则]
+!    4,737 条  5460 [酷安广告规则]
 !    2,761 条  OISD 拦截规则 [oisd small]
 !      219 条  本地自定义规则
 ! ────────────────────────────────────────────────
@@ -30,10 +30,10 @@
 !      5666 条  1007-Hosts
 !     91933 条  anti-ad 官方规则
 !    122576 条  AdRules DNS List [AdRules DNS List]
-!      9483 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
+!      9573 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !      2761 条  OISD 拦截规则 [oisd small]
-!      4738 条  5460 [酷安广告规则]
-!      9139 条  海哥规则
+!      4737 条  5460 [酷安广告规则]
+!      9136 条  海哥规则
 ! ────────────────────────────────────────
 
 ! ==============================================
@@ -220467,7 +220467,7 @@
 ! 📝 规则说明：Filter composed of several other filters (AdGuard Base filter, Tracking Protection filter, Mobile ads filter, EasyList, EasyPrivacy, etc) and simplified specifically to be better compatible with DNS-level ad blocking.
 ! 🔗 原始地址：https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 ! ==============================================
-! 📊 本区规则：9483 条
+! 📊 本区规则：9573 条
 ! ==============================================
 ||insightjs.com^
 ||insightjs.org^
@@ -222856,6 +222856,8 @@
 ||users.vidy.st^
 ||pvdpix.com^
 ||analytics.floris.amsterdam^
+||mkt.supercell.com^
+||collector.snowplow.supercell.com^
 ||tnc-sg.capcutapi.com^
 ||tnc-boot.capcutapi.com^
 ||adtasukaru.com^
@@ -223586,7 +223588,92 @@
 ||klik.top^
 ||klik.zeus.fun^
 ||nawala.my^
+||0lluihle.xyz^
+||49m2mwpb84qfctyk.cfd^
+||ahwgunvtlhefp.online^
+||alvmcwmdyspqc.site^
+||angasarum.cyou^
+||avouchlawsrethink.com^
+||ayyg.org^
+||azwktmcxzclyk.website^
+||bailervirtue.click^
+||barbatehabeas.rest^
+||betrayedjoltmethod.com^
+||breathsfoamed.com^
+||brevityfurs.rest^
+||consentrecruit.com^
+||couliertarotspariti.cfd^
+||crbetfcijuhtw.site^
+||creenborsht.cfd^
+||cresamylategoony.cyou^
+||cudgelgateau.click^
+||dhaagtotq.in^
+||dscqxvxlwbxpc.space^
+||dulvxkusxdcpc.online^
+||dutyfestivegrieve.com^
+||embusqugaumish.com^
+||evkpkbwwmnfgj.site^
+||fimxtefr.in^
+||fixagebiggety.rest^
+||fqxcrzj9r7kotjuvh84iyqjrir5917.cfd^
+||galahssucceedapraxia.cyou^
+||glnqkatlvqfzf.space^
+||gnopfoaddfxto.website^
+||gobelinlubbard.cfd^
+||grabsmpropea.org^
+||gristyupcurls.rest^
+||gypfdjupwdigr.website^
+||h1q2toonvbkfuf9lbpufre.rest^
+||heavengabbykatcina.cyou^
+||irmjefamskvpb.site^
+||jaiiezpgtdvcm.website^
+||jexywyneljzny.space^
+||jsoedbrzgxpqb.online^
+||kayeowitzxvas.website^
+||kjmeiivlmmygv.space^
+||kkdhbuydmbgyo.space^
+||kokrabirddom.qpon^
+||lardonsshahidirecited.cyou^
+||lcsdktmitfqlj.space^
+||ltwkibhnejbzw.space^
+||lzuhuevdmlsjx.space^
+||metabitbluffs.cyou^
+||mhstirljanfyy.website^
+||mjkynfbvbikpl.site^
+||mndftqopovamj.online^
+||mwuekzwqdrnan.online^
+||nkghwccxeymyp.site^
+||nodctzeikfjzt.online^
+||nonlifelunts.cyou^
+||nwbahytjigjky.site^
+||nzuzubewkirgz.site^
+||oqqzbccqxtfvf.online^
+||overprotectivecriticizearable.com^
+||pdynrtubqauer.site^
+||pitpitharbi.cfd^
+||pseudoinionnewcal.cfd^
+||qhuxuhlas.in^
 ||qneftuovurwsx.website^
+||riymolmuythwx.online^
+||rufflefireballcherries.com^
+||sljzidwidlgul.online^
+||snortsrasters.cyou^
+||softasitai.rest^
+||tonccw2o4fp729.rest^
+||ulfsgwtcrwgqm.online^
+||ummgfbvdwgrhl.site^
+||uqaymrtomzmfm.site^
+||uuozqpkdlqbkn.space^
+||vylivgbhjqkbl.online^
+||warslerufology.cyou^
+||wavedsuspect.click^
+||wmymtjaraeoxv.space^
+||wvyzrjkcwqfut.site^
+||xanthanraison.rest^
+||xgyhtexgsgvqt.site^
+||xxtzyeiujzlnz.space^
+||ykacgkgqmvxfn.site^
+||zextzccadpr.com^
 ||3ckz.com^
 ||3vetz.com^
 ||adblockermax.com^
@@ -223719,6 +223806,9 @@
 ||xmatch.com^
 ||widget.faphouse.com^
 ||widgets.guppy.live^
+||qde87pge0.com^
+||ps2nsp6nz.com^
+||23civw6cl.com^
 ||88p2p.com^
 ||aiwanma99.com^
 ||kuheju.com^
@@ -232727,7 +232817,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/qq5460168/dangchu/main/black.txt
 ! ==============================================
-! 📊 本区规则：4738 条
+! 📊 本区规则：4737 条
 ! ==============================================
 ||ad.360.cn^
 ||ad.360safe.com^
@@ -233514,7 +233604,6 @@
 ||ad.qingcigame.com^
 ||cross-ad-api.afunapp.com^
 ||t.jmads.net^
-||opencdnpddpic2.cdn.vsjwtcdn.com^
 ||uploads2.gifshow.com^
 ||o2o-ad-dev.oss-cn-shanghai.aliyuncs.com^
 ||auth-uploads.dhcc.wang^
@@ -237473,7 +237562,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt
 ! ==============================================
-! 📊 本区规则：9139 条
+! 📊 本区规则：9136 条
 ! ==============================================
 ||img.kzfjjaox.cn^
 ||9000.nhwkj.com^
@@ -241325,7 +241414,6 @@
 ||fullstack.vip^
 ||fun.91wwll.com^
 ||fund.10jqka.com.cn^
-||funimg.pddpic.com.a.bdydns.com^
 ||funnull01.vip^
 ||funnull33.com^
 ||funnullv26.com^
@@ -243867,8 +243955,6 @@
 ||pd2411f-site-02.gocname.com^
 ||pd88zw.dk.jhydns07.com^
 ||pd8ew.ncwks.com^
-||pddpic.com^
-||pddugc.com^
 ||pddz.xjy7dgwhr1dw.com^
 ||pdk.1823012.com^
 ||pdkwhk.openinstalll.com^

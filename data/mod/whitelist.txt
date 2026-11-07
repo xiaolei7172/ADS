@@ -177,3 +177,32 @@
 @@||livev.m.chenzhongtech.com^
 ! OPPO 下载 CDN（上游 *.heytapdownload.com 通配被忽略后暴露；mdp-usertrace 追踪域继续拦）
 @@||jits5.heytapdownload.com^
+
+! ========== 拼多多媒体 CDN 整域放行（2026-11-07 排查用户报"多处异常"）==========
+! 海哥源把 pddpic.com / pddugc.com 当广告域整族拦，实测 15 个子域全是媒体 CDN：
+!   img / commimg / static / mms-static → *.cdn.dnsv1.com（腾讯云 CDN）
+!   funimg        → funimg.pddpic.com.a.bdydns.com（CNAME 目标，上游单独列了一条拦截）
+!   liveplay / live-adapt / live04~12-adapt → txlivecdn.com + sched.l8-dk（直播调度）
+!   video2 / video3 / video3-2 / video4 / video4-4 → 天翼云 / 华为云 / gccdn 视频分片
+!   video-snapshot → 视频封面；cfg-2 → 播放器配置下发（华为云 CDN）
+!   pddugc.com    → img / video.pddugc.com 走 pddlego-dk 调度（评价晒图、UGC 视频）
+!   opencdnpddpic2.cdn.vsjwtcdn.com → A 记录与 funimg.pddpic.com 完全同 IP（备用接入域）
+!
+! 为什么必须整域放行而不是点名放行子域：DNS 层是后缀匹配，
+! address=/pddpic.com/0.0.0.0 与 DOMAIN-SUFFIX,pddpic.com 会吃掉全部子域，
+! allow.txt 里原有点名的 7 条子域白名单在 dnsmasq / smartdns / qx / surge / mihomo
+! 这些单文件格式里根本不生效（这些客户端不加载白名单文件）——用户那边就是
+! 图片白块、直播转圈、短视频打不开、评价晒图裂图同时出现。
+!
+! 整域放行的代价：上游将来若在此域新增广告子域会漏拦。该域为纯媒体 CDN，
+! 广告投放走 pinduoduo.com 侧，实测 15 个子域零广告，故按 u3.ucweb.com 先例
+! 判定为「正确的过宽」，不拆。
+@@||pddpic.com^
+@@||pddugc.com^
+@@||funimg.pddpic.com.a.bdydns.com^
+@@||opencdnpddpic2.cdn.vsjwtcdn.com^
+! pinduoduo.net 是官方移动端接入域：m.pinduoduo.net → gw-c-sht-isp.pinduoduo.com
+! （网关），根域 A 记录与 pinduoduo.com 同 IP。海哥源的 ||pinduoduo.*^ 会连它一起拦，
+! 在 exclude.txt 里已拆掉那条通配；这里再点名放行，防其他上游有同款写法。
+! 非官方 TLD 继续拦：pinduoduo.cn（22.cn 停放）、pinduoduo.org（afternic 待售）。
+@@||pinduoduo.net^
