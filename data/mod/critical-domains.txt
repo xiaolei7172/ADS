@@ -209,3 +209,16 @@ fonts.googleapis.com
 cdnjs.cloudflare.com
 cos.ap-guangzhou.myqcloud.com
 p1.itc.cn
+
+! ---------- 字节系内容 CDN（红果短剧 / 番茄小说 / 抖音 正片）----------
+! 依据：2026-11-07 实测。这些是「正片视频 / 正片图床 / 直播流」的根域，
+! 被整域拦掉的后果是 App 白屏、封面裂图、直播黑屏，而不是少看一条广告。
+! 广告侧走独立子域（v*-reading-ad / p*-ad-sign / p*-ad-aweme / *-ad.bytecdn），
+! 拦子域不受本清单限制——闸门只禁止「根域或上级域」被拦。
+qznovelvod.com
+fqnovelvod.com
+fqnovelpic.com
+byteimg.com
+douyinpic.com
+douyinvod.com
+douyincdn.com

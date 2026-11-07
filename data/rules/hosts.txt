@@ -2,7 +2,7 @@
 # 由 dns.txt 折叠前的完整域名集转换，含全部子域，覆盖与 AdGuard 语义对齐
 # ⚠️ hosts 只能精确匹配，拦不到未列出的子域；需要完整子域覆盖请用 dns.txt / smartdns.conf / surge.list
 # 📌 项目地址：https://github.com/xiaolei7172/ADS
-# 🔖 内容指纹：912b50b658d6 | 📊 有效规则：238814 条 | ⏰ 变更时间见 git 提交记录
+# 🔖 内容指纹：b3d0cbb5c0df | 📊 有效规则：238819 条 | ⏰ 变更时间见 git 提交记录
 # 🔄 更新频率：每日自动更新（北京时间 08:00）
 0.0.0.0 ads3-normal-hl.zijieapi.com
 0.0.0.0 ads3-normal-lf.zijieapi.com
@@ -76667,6 +76667,8 @@
 0.0.0.0 swa.snsbank.nl
 0.0.0.0 snsdvxsisyfep.space
 0.0.0.0 snsgdehocaeqh.website
+0.0.0.0 tnc3-aliec2.snssdk.com
+0.0.0.0 tnc3-alisc1.snssdk.com
 0.0.0.0 snsv.ru
 0.0.0.0 snta0034.com
 0.0.0.0 sntjim.com
@@ -237501,6 +237503,7 @@
 0.0.0.0 tmxs.143.cc
 0.0.0.0 tmxurd25.hmert.top
 0.0.0.0 tmzs.81788dh.com
+0.0.0.0 tnc11-bjlgy.zijieapi.com
 0.0.0.0 tnqoqnh.icu
 0.0.0.0 tocollect.egrowads.com
 0.0.0.0 tocwezsj.cc
@@ -238809,12 +238812,14 @@
 0.0.0.0 zzxx97043.ww7e9.com
 0.0.0.0 zzzu.ag8.com
 0.0.0.0 zzzx1-862777969.ap-east-1.elb.amazonaws.com
-0.0.0.0 ad.gt.qq.com
-0.0.0.0 ad.qun.qq.com
-0.0.0.0 adsmind.tc.qq.com
-0.0.0.0 adstestview.qq.com
-0.0.0.0 aotheve.beacon.qq.com
-0.0.0.0 cn.gdt.qq.com
-0.0.0.0 qzs.gdt.qq.com
-0.0.0.0 wbclick.qq.com
 0.0.0.0 ad.bilibili.com
+0.0.0.0 tnc11-aliec2.snssdk.com
+0.0.0.0 tnc11-alisc1.snssdk.com
+0.0.0.0 tnc11-bjlgy.snssdk.com
+0.0.0.0 p3-ad-sign.douyinpic.com
+0.0.0.0 p3-ad-aweme.byteimg.com
+0.0.0.0 p6-ad-aweme.byteimg.com
+0.0.0.0 p1-ad.bytecdn.cn
+0.0.0.0 p3-ad.bytecdn.cn
+0.0.0.0 p6-ad.bytecdn.cn
+0.0.0.0 v6-daily-reading-ad.qznovelvod.com

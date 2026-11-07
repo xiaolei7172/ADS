@@ -142,9 +142,7 @@
 ! 来源：汇总各上游 qq.com 拦截项后按广告特征筛出。
 !
 ||a.gdt.qq.com^
-||ad.gt.qq.com^
 ||ad.qq.com^
-||ad.qun.qq.com^
 ||ad.weixin.qq.com^
 ||adfilter.imtt.qq.com^
 ||adnet.qq.com^
@@ -162,13 +160,11 @@
 ||adslvfile.qq.com^
 ||adslvseed.qq.com^
 ||adsmind.apdcdn.tc.qq.com^
-||adsmind.tc.qq.com^
 ||adsmind.ugdtimg.com.tcdn.qq.com^
 ||adsolution.imtt.qq.com^
 ||adsqqclick.qq.com^
 ||adsrich.qq.com^
 ||adss.video.qq.com^
-||adstestview.qq.com^
 ||adstextview.qq.com^
 ||adsview.qq.com^
 ||adsview2.qq.com^
@@ -177,7 +173,6 @@
 ||advert-prod.hyrz.qq.com^
 ||agstat.html5.qq.com^
 ||analytics.map.qq.com^
-||aotheve.beacon.qq.com^
 ||applog.reader.qq.com^
 ||astat.bugly.qq.com^
 ||beacon.cdn.qq.com^
@@ -190,7 +185,6 @@
 ||canvas-cdn.gdt.qq.com^
 ||canvas.gdt.qq.com^
 ||cdn.read.html5.qq.com^
-||cn.gdt.qq.com^
 ||creport.start.qq.com^
 ||d.gdt.qq.com^
 ||dmplog.qq.com^
@@ -232,7 +226,6 @@
 ||q.i.gdt.qq.com^
 ||qbreport.html5.qq.com^
 ||qos.report.qq.com^
-||qzs.gdt.qq.com^
 ||rdelivery.qq.com^
 ||report.cms.qq.com^
 ||report.imtt.qq.com^
@@ -265,7 +258,6 @@
 ||v3.gdt.qq.com^
 ||v6ii.gdt.qq.com^
 ||vr.gdt.qq.com^
-||wbclick.qq.com^
 ||weblog.html5.qq.com^
 ||win.gdt.qq.com^
 ||wxsnsad.tc.qq.com^
@@ -338,3 +330,66 @@
 ! B 站：ad 是广告位投放，cm 是广告投放系统（CM=Commercial）
 ||ad.bilibili.com^
 ||cm.bilibili.com^
+
+! ============================================================
+! 红果短剧 / 番茄小说 / 抖音：遗漏补全 v4（2026-11-07）
+! ============================================================
+! 起因：三款 App 实测仍有广告。按命名空间枚举 + DNS/HTTP 实测，
+!       定位到三类真实缺口（不是"再加几条通用广告域"，而是本产品线专属的结构性遗漏）。
+!
+! 取证方法（可复现）：
+!   1) 枚举 ads{0..24}-normal-{hl,lf,lq} / tnc{0,1,2,3,11,12,16}-{alisc1,aliec1,aliec2,bjlgy}.*
+!      共 217 个候选，逐个 DNS 解析 → 只有 40 个存活（其余分片已下线）
+!   2) 对存活域名做 HTTP 探测：根路径 404 + Server: TLB/Tengine = 纯 API 服务；
+!      {"code":2000,"error":"invalid url"} = 带签名的素材 CDN
+!   3) 用 3 路 DoH（阿里/腾讯/360）复核，排除本地解析器假阳性
+!
+! 【缺口一】TNC 调度集群换了代，老规则只覆盖 tnc0/tnc3
+!   现状：本文件模块B 只有 tnc0/tnc3 的 6 条，tnc11 一条没有。
+!   实测：tnc11-aliec2 / tnc11-alisc1 / tnc11-bjlgy 六个组合全部存活，
+!         且 tnc3 的 .snssdk.com 变体也漏了。
+!   影响：tnc 是"这个广告位放哪条广告"的决策服务。拦不住 tnc11，
+!         等于广告照常被选中，只拦素材等于白拦。
+!   ⚠️ 已知副作用：番茄"小说评论区"可能空白（上游 changzhaoCZ 的规则集里
+!      有一条注释掉的 @@||tnc*-*.zijieapi.com^ 就是为此）。如遇到，删掉本节
+!      的 tnc11 六行即可恢复，广告会回来一部分。
+!
+! 【缺口二】抖音广告素材签名只拦了 byteimg，漏了 douyinpic
+!   抖音广告图走 p3-ad-sign.douyinpic.com（实测存活），
+!   本文件模块D 只有 p3/p6/p9-ad-sign.byteimg.com，抖音侧完全没拦。
+!
+! 【缺口三】广告视频/图片 CDN 整段没拦
+!   p*-ad.bytecdn.cn（广告视频）、p*-ad-aweme.byteimg.com（抖音广告图）
+!   与 DD-AD 源的 ||p*-ad.bytecdn.cn^ / ||p*-ad-aweme.byteimg.com^ 互相印证。
+!
+! 【禁拦清单 · 本版再次确认】（正片/功能，一字之差）
+!   p3.douyinpic.com / p3-novel-sign.byteimg.com / lf3-reading.fqnovelpic.com
+!   v11-reading-video.qznovelvod.com（正片）vs v11-reading-ad.qznovelvod.com（广告）
+!   p*-webcast-sign.douyinpic.com  直播流签名，拦了直播黑屏
+!   snssdk.com 根域 / gecko.zijieapi.com（热更新资源）/ security / verify / polaris
+! ============================================================
+
+! ---------- 模块L: TNC 广告调度集群补全（9 条）----------
+||tnc0-bjlgy.zijieapi.com^
+||tnc3-aliec2.snssdk.com^
+||tnc3-alisc1.snssdk.com^
+||tnc11-aliec2.snssdk.com^
+||tnc11-aliec2.zijieapi.com^
+||tnc11-alisc1.snssdk.com^
+||tnc11-alisc1.zijieapi.com^
+||tnc11-bjlgy.snssdk.com^
+||tnc11-bjlgy.zijieapi.com^
+
+! ---------- 模块M: 广告素材签名 / 素材 CDN（7 条）----------
+||p3-ad-sign.douyinpic.com^
+||p3-ad-aweme.byteimg.com^
+||p6-ad-aweme.byteimg.com^
+||p1-ad.bytecdn.cn^
+||p3-ad.bytecdn.cn^
+||p6-ad.bytecdn.cn^
+||v6-daily-reading-ad.qznovelvod.com^
+
+! 【本版放弃的一条】abtest3-misc-lf/lq.zijieapi.com
+! 它们是 A/B 实验配置下发，不是广告投放链路；上游 dangchu 白名单专门点名放行了
+! lf 分片，说明拦了会出问题（新功能推不下来）。按「只拦投放链路、不拦配置下发」
+! 的取舍放弃这两条，模块H 里既有的 abtest3-misc-hl 不动。

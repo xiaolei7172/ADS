@@ -3,22 +3,22 @@
 ! 📌 规则名称：天影规则聚合 · DNS 拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-07 21:24:27（北京时间）
-! 📊 有效规则：225107 条
+! ⏰ 更新时间：2026-11-07 21:37:00（北京时间）
+! 📊 有效规则：225112 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · DNS 拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-07 21:24:27 | ✅ 有效规则 225107 条
+! Description: ⏰ 更新时间 2026-11-07 21:37:00 | ✅ 有效规则 225112 条
 ! ────────────────── ☑ 规则来源统计 ──────────────────
 !  116,167 条  AdRules DNS List [AdRules DNS List]
-!   84,007 条  anti-ad 官方规则
-!    6,824 条  海哥规则
+!   84,009 条  anti-ad 官方规则
+!    6,825 条  海哥规则
 !    6,390 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !    4,950 条  1007-Hosts
 !    3,798 条  5460 [酷安广告规则]
 !    2,751 条  OISD 拦截规则 [oisd small]
 !      211 条  本地自定义规则
-!        9 条  本地自定义规则（data/mod/adblock.txt）
+!       11 条  本地自定义规则（data/mod/adblock.txt）
 ! ────────────────────────────────────────────────
 ! ======================================================================
 ! 本文件由 filter-dns.py 从 adblock.txt 提取（项目：天影规则聚合）
@@ -29,13 +29,13 @@
 ! ────────────── 来源汇总 ──────────────
 !       211 条  本地自定义规则
 !      4950 条  1007-Hosts
-!     84007 条  anti-ad 官方规则
+!     84009 条  anti-ad 官方规则
 !    116167 条  AdRules DNS List [AdRules DNS List]
 !      6390 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !      2751 条  OISD 拦截规则 [oisd small]
 !      3798 条  5460 [酷安广告规则]
-!      6824 条  海哥规则
-!         9 条  本地自定义规则（data/mod/adblock.txt）
+!      6825 条  海哥规则
+!        11 条  本地自定义规则（data/mod/adblock.txt）
 ! ────────────────────────────────────────
 
 ! ==============================================
@@ -5220,7 +5220,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://anti-ad.net/easylist.txt
 ! ==============================================
-! 📊 本区规则：84007 条
+! 📊 本区规则：84009 条
 ! ==============================================
 ||000491b06a.com^
 ||000dn.com^
@@ -70658,6 +70658,8 @@
 ||swa.snsbank.nl^
 ||snsdvxsisyfep.space^
 ||snsgdehocaeqh.website^
+||tnc3-aliec2.snssdk.com^
+||tnc3-alisc1.snssdk.com^
 ||snsv.ru^
 ||snta0034.com^
 ||sntjim.com^
@@ -218373,7 +218375,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt
 ! ==============================================
-! 📊 本区规则：6824 条
+! 📊 本区规则：6825 条
 ! ==============================================
 ||img.kzfjjaox.cn^
 ||9000.nhwkj.com^
@@ -224019,6 +224021,7 @@
 ||tm7yc.r8vi64.com^
 ||tmxurd25.hmert.top^
 ||tmzs.81788dh.com^
+||tnc11-bjlgy.zijieapi.com^
 ||tnqoqnh.icu^
 ||tocollect.egrowads.com^
 ||tocwezsj.cc^
@@ -225204,14 +225207,16 @@
 ! 📋 规则来源：本地自定义规则（data/mod/adblock.txt）
 ! ⚠️ 优先级：最高
 ! ==============================================
-! 📊 本区规则：9 条
+! 📊 本区规则：11 条
 ! ==============================================
-||ad.gt.qq.com^
-||ad.qun.qq.com^
-||adsmind.tc.qq.com^
-||adstestview.qq.com^
-||aotheve.beacon.qq.com^
-||cn.gdt.qq.com^
-||qzs.gdt.qq.com^
-||wbclick.qq.com^
 ||ad.bilibili.com^
+||tnc11-aliec2.snssdk.com^
+||tnc11-alisc1.snssdk.com^
+||tnc11-bjlgy.snssdk.com^
+||p3-ad-sign.douyinpic.com^
+||p3-ad-aweme.byteimg.com^
+||p6-ad-aweme.byteimg.com^
+||p1-ad.bytecdn.cn^
+||p3-ad.bytecdn.cn^
+||p6-ad.bytecdn.cn^
+||v6-daily-reading-ad.qznovelvod.com^

@@ -3,18 +3,18 @@
 ! 📌 规则名称：天影规则聚合 · 广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-07 21:24:26（北京时间）
-! 📊 有效规则：251885 条
+! ⏰ 更新时间：2026-11-07 21:37:00（北京时间）
+! 📊 有效规则：251892 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-07 21:24:26 | ✅ 有效规则 251885 条
+! Description: ⏰ 更新时间 2026-11-07 21:37:00 | ✅ 有效规则 251892 条
 ! ────────────────── ☑ 规则来源统计 ──────────────────
 !  121,796 条  AdRules DNS List [AdRules DNS List]
-!   85,605 条  anti-ad 官方规则
+!   85,607 条  anti-ad 官方规则
 !   12,623 条  5460 [酷安广告规则]
 !   10,527 条  1007-Hosts
-!    8,818 条  海哥规则
+!    8,819 条  海哥规则
 !    7,410 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !    3,018 条  OISD 拦截规则 [oisd small]
 !    1,119 条  乘风通用规则 [乘风 广告过滤规则]
@@ -22,7 +22,7 @@
 !      211 条  本地自定义规则
 !      129 条  乘风视频规则 [乘风 视频过滤规则 uBlock Origin 1.56]
 !       32 条  abclq Hosts 拦截规则
-!       10 条  本地自定义规则（data/mod/adblock.txt）
+!       14 条  本地自定义规则（data/mod/adblock.txt）
 !        4 条  浮风拦截规则 [Merged Ad Rules (自动合并去重)]
 ! ────────────────────────────────────────────────
 ! ======================================================================
@@ -77465,6 +77465,8 @@
 ||swa.snsbank.nl^
 ||snsdvxsisyfep.space^
 ||snsgdehocaeqh.website^
+||tnc3-aliec2.snssdk.com^
+||tnc3-alisc1.snssdk.com^
 ||snsv.ru^
 ||snta0034.com^
 ||sntjim.com^
@@ -249332,6 +249334,7 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||tmxurd25.hmert.top^
 ||tmzs.81788dh.com^
 ||tnc*-aliec*.zijieapi.com^
+||tnc11-bjlgy.zijieapi.com^
 ||tnqoqnh.icu^
 ||tobidad.*^
 ||tocollect.egrowads.com^
@@ -251970,13 +251973,17 @@ www.zhzzx.com
 ! 📋 规则来源：本地自定义规则（data/mod/adblock.txt）
 ! ⚠️ 优先级：最高
 ! ==============================================
-||ad.gt.qq.com^
-||ad.qun.qq.com^
-||adsmind.tc.qq.com^
-||adstestview.qq.com^
-||aotheve.beacon.qq.com^
-||cn.gdt.qq.com^
-||qzs.gdt.qq.com^
-||wbclick.qq.com^
 ||api2.e.kuaishou.com^
 ||ad.bilibili.com^
+||tnc11-aliec2.snssdk.com^
+||tnc11-aliec2.zijieapi.com^
+||tnc11-alisc1.snssdk.com^
+||tnc11-alisc1.zijieapi.com^
+||tnc11-bjlgy.snssdk.com^
+||p3-ad-sign.douyinpic.com^
+||p3-ad-aweme.byteimg.com^
+||p6-ad-aweme.byteimg.com^
+||p1-ad.bytecdn.cn^
+||p3-ad.bytecdn.cn^
+||p6-ad.bytecdn.cn^
+||v6-daily-reading-ad.qznovelvod.com^

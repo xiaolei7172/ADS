@@ -188,6 +188,20 @@ CASES = [
     ("vv.video.qq.com", False, "腾讯视频播放地址接口（200 返回 JSON）"),
     ("t5.a.yximgs.com", False, "快手图床（拦了碎图）"),
     ("adss.video.qq.com", True, "腾讯视频贴片广告（本地 134 条腾讯广告域里的一条，须保持拦）"),
+    # —— 2026-11-07：红果短剧 / 番茄小说 / 抖音 遗漏补全 v4 ——
+    ("tnc11-bjlgy.zijieapi.com", True, "TNC 广告调度新集群（老规则只覆盖 tnc0/tnc3，广告照选）"),
+    ("tnc11-alisc1.snssdk.com", True, "TNC 广告调度新集群（snssdk 变体）"),
+    ("tnc3-alisc1.snssdk.com", True, "TNC 广告调度（snssdk 变体，此前只拦了 .zijieapi.com）"),
+    ("p3-ad-sign.douyinpic.com", True, "抖音广告素材签名（此前只拦了 byteimg 侧）"),
+    ("p3-ad-aweme.byteimg.com", True, "抖音广告图 CDN"),
+    ("p3-ad.bytecdn.cn", True, "广告视频 CDN（p*-ad 前缀为广告专用）"),
+    ("v6-daily-reading-ad.qznovelvod.com", True, "红果每日切广告视频（v6 分片此前漏拦）"),
+    # 正片侧守卫：与上面广告域只差一个词，拦错就是白屏/裂图
+    ("v11-reading-video.qznovelvod.com", False, "番茄正片视频（与 v11-reading-ad 一字之差）"),
+    ("p3-novel-sign.byteimg.com", False, "番茄正片图签名（与 p3-ad-sign 一字之差）"),
+    ("p3.douyinpic.com", False, "抖音正片图床（上游有源在拦，须保持放行）"),
+    ("lf3-reading.fqnovelpic.com", False, "番茄阅读页图床"),
+    ("gecko.zijieapi.com", False, "字节热更新资源包（拦了页面白屏）"),
 ]
 
 missing = [f for f in FILES if not (R / f).exists()]

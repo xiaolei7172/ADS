@@ -10,7 +10,9 @@
   4. 规则量下限：dns.txt 不得低于 50000 条（防上游大面积故障后带病发布）；
   5. adblock.txt 无脏语法：$badfilter / ||domain. 尾点 / 非回环 IP 映射行；
   6. 跨文件父子域冲突：本地白名单被父域拦截架空即失败（存量登记基线）；
-  7. 关键功能域（data/mod/critical-domains.txt）不得被整域拦截。
+  7. 关键功能域（data/mod/critical-domains.txt）不得被整域拦截；
+  8. 本地 adblock.txt 里不得残留 dead.txt 已确认的域名
+     （本地规则豁免死规则过滤，删不掉也发现不了，只能在这道闸门里交叉核对）。
 任何一项失败 → exit 1 拦截 git push，问题不会流到线上。
 
 另附（只报告不拦）：死规则清单（data/mod/dead.txt）的条数与时效——
@@ -290,6 +292,20 @@ if os.path.exists(dead_path):
                         - datetime.date.fromisoformat(m.group(1))).days
         except ValueError:
             dead_age = None
+
+# ---- 8b. 本地自定义规则里的「死规则」（依赖上面已加载的 dead 清单）----
+# merge.py 的死规则过滤只作用于上游规则：本地 adblock.txt 是用户明确要拦的，
+# 即使域名已 NXDOMAIN 也不由脚本代删（防止脚本替人做主）。
+# 副作用是这些规则会永久残留、白占客户端解析开销，而且没人会发现。
+# 这里只做「本地规则 ∩ dead.txt」的交叉核对——两边数据都是现成的，零额外成本。
+if dead_n:
+    with open(dead_path, "r", encoding="utf-8", errors="ignore") as f:
+        dead_domains = {line.strip().lower() for line in f
+                        if line.strip() and not line.startswith(("!", "#"))}
+    dead_local = sorted(d for d in local_block if d in dead_domains)
+    if dead_local:
+        errors.append(f"adblock.txt: {len(dead_local)} 条本地规则指向 dead.txt 里的"
+                      f"已死域名（本地规则豁免死规则过滤，只能人工删）：{dead_local[:6]}")
 
 # ---- 结果 ----
 if errors:
