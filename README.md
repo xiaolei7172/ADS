@@ -49,8 +49,8 @@
 | 保障 | 说明 |
 | :--- | :--- |
 | 🧹 **真实去重** | 精确去重 + 大小写归一 + 父子域语义去重，0 冗余规则 |
-| 🛡️ **质量闸门** | 每次发布前自检重复/冗余/计数自洽，不合格自动拦截 |
-| 🔍 **格式一致** | 48 个用例 × 8 种拦截产物逐格式比对同一域名的判定，另有一层 golden 文件把产物语法逐字节锁死（改了写法却忘了改解析器，这里立刻红）；任何格式走偏当场拦下（历史上的 qx / hosts / dnsmasq 三次漏拦都是它抓出来的） |
+| 🛡️ **质量闸门** | 每次发布前自检重复/冗余/计数自洽，并专查**白名单有没有被父域拦截架空**（这类问题 8 种格式会「一致地错」，一致性校验天然抓不到），不合格自动拦截 |
+| 🔍 **格式一致** | 59 个用例 × 8 种拦截产物逐格式比对同一域名的判定，另有一层 golden 文件把产物语法逐字节锁死（改了写法却忘了改解析器，这里立刻红）；任何格式走偏当场拦下（历史上的 qx / hosts / dnsmasq 三次漏拦都是它抓出来的） |
 | 🚧 **发布护栏** | 规则量骤降 >10% 或低于 5 万条即中止发布，绝不带病上线 |
 | 🧯 **投毒熔断** | 白名单移除拦截规则 >8%（正常 ≈2%）即判定投毒/黑白错配，中止发布；下载阶段同步做黑白方向体检 |
 | 🎯 **精确剔除** | 上游把整个公司主域 / API 网关一锅端时，按域名逐条拆除，子域规则与白名单不受牵连 |
@@ -58,6 +58,57 @@
 | 🌐 **多源容灾** | GitHub API + 3 个 jsDelivr 子域 + gh-proxy 共 6 通道下载兜底 |
 | 🚨 **失败可见** | 更新失败自动开 issue + 写运行摘要 + 上传产物，规则不会静默停在几天前（可用 `workflow_dispatch` 勾选 `simulate_failure` 自测这条链路） |
 | 📋 **来源可溯** | 每条规则标注所属上游来源，排查误杀一步定位 |
+
+---
+
+## ⚠️ 必读：拦截规则必须配合白名单使用
+
+> **只订阅拦截规则，等于把误杀的概率全部收下。** 本仓库聚合 20 路上游，其中一部分源会按「公司主域」整族下发拦截。
+> 2026-11 就出过一次：拼多多的图片 / 视频 / 直播 CDN 根域 `pddpic.com` 被上游当成广告域拦掉，
+> 表现是图片白块、直播转圈、短视频打不开、评价晒图裂图——**放行的唯一手段就是白名单**。
+
+### 为什么单靠拦截规则一定会误杀
+
+| 环节 | 现实 |
+| :--- | :--- |
+| 上游粒度 | 上游常按公司主域下发（`\|\|pddpic.com^`），一条规则带走该域下所有子域 |
+| DNS 层匹配 | `address=/pddpic.com/0.0.0.0`、`DOMAIN-SUFFIX,pddpic.com`、`+.pddpic.com`、`\|\|pddpic.com^` 全是**后缀匹配** |
+| 白名单粒度 | 所以白名单必须**整域放行**（`@@\|\|pddpic.com^`）才有效；只写 `@@\|\|img.pddpic.com^` 这种子域会被父域规则直接吃掉 |
+
+### 各客户端怎么配（白名单是否生效）
+
+| 客户端 | 拦截规则 | 白名单 | 白名单是否生效 |
+| :--- | :--- | :--- | :--- |
+| AdGuard（Win / Mac / Android） | `adblock.txt`（可再加 `dns.txt`） | `allow.txt` | ✅ 两个都要订阅，`@@` 例外优先于拦截 |
+| AdGuard Home | `dns.txt` | `allow.txt`（自定义过滤规则 → 放行） | ✅ 同上 |
+| SmartDNS | `smartdns.conf` | `smartdns-whitelist.conf` | ✅ 配套文件，必须一起 `conf-file` |
+| dnsmasq / OpenWrt | `dnsmasq.conf` | 无对应白名单格式 | ⚠️ 见下方兜底说明 |
+| hosts / 系统 hosts | `hosts.txt` | 无对应白名单格式 | ⚠️ 同上 |
+| QX / Surge / Mihomo | `qx.list` / `surge.list` / `mihomo.yaml` | 单文件格式，不支持 `@@` 例外 | ⚠️ 同上 |
+
+> 单文件格式（dnsmasq / hosts / QX / Surge / Mihomo）一个文件就要装完所有规则，客户端根本不会去加载 `allow.txt`。
+> 所以在这些客户端上，**子域白名单等于没写**——这也是拼多多那次「白名单明明有，用户还是打不开」的真正原因。
+
+### 本仓库的兜底：让单文件格式不必自救
+
+`merge.py` 在合并阶段就按白名单做了**父子域剔除**：每次构建有七千余条拦截规则因白名单而移除，
+成品里不会出现「白名单域被父域拦」的死结。所以即使你的客户端不加载 `allow.txt`，
+`dnsmasq.conf` / `hosts.txt` / `qx.list` 这些单文件产物本身已经是「白名单已生效」的版本。
+
+但有三件事兜不住，需要你知道：
+
+1. **白名单里只有约一半能在 DNS 层生效**：`allow.txt` 共 6,773 条，纯域名 + 通配 3,504 条可直接生效，
+   其余 3,269 条是路径级 / `$domain=` / 正则，只有浏览器版 AdGuard 认。
+2. **上游白名单本身会失效**：约 287 条上游白名单已被父域架空，且随上游每日漂移，只能统计、不能当发布闸门。
+   本地白名单新出现的同类冲突会被 `check-quality.py` 当场拦住（存量 15 条登记在 `data/mod/allow-conflicts.baseline`）。
+3. **误杀可能是当天新出现的**：上游随时新增过宽规则，成品每日重建，问题也可能今天才有。
+
+### 遇到误杀怎么办
+
+1. **定位**：`grep -i 域名 data/rules/dns.txt`，命中行上方的分区注释直接告诉你是哪路上游拦的；
+2. **判定**：媒体 CDN / 支付 / 政务 / 登录 / 地图一般该放行；广告投放、统计上报、SDK 埋点该保留；
+3. **放行**：提到 [Issues](https://github.com/xiaolei7172/ADS/issues) 由仓库侧整域放行（推荐，一次修好所有人）；
+   急着用就先在客户端手动加一条 **整域** 例外 `@@||example.com^`——写成 `@@||img.example.com^` 在 DNS 层无效。
 
 ---
 
@@ -89,7 +140,7 @@
 2. 点击「添加过滤器」→「使用自定义过滤器」
 3. 粘贴订阅链接（国内网络选加速列）：
    `https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/adblock.txt`
-4. 建议同时启用白名单：`https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/allow.txt`
+4. **必须同时启用白名单**（不加会误杀，原理见上方「必读」）：`https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/allow.txt`
 
 </details>
 
@@ -101,7 +152,7 @@
 
 1. 管理后台 → 过滤器 → **DNS 拦截列表** → 添加拦截列表
 2. 粘贴：`https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/dns.txt`
-3. 白名单（自定义过滤规则 → 放行）：`https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/allow.txt`
+3. **必须加上白名单**（自定义过滤规则 → 放行），不加会误杀：`https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/allow.txt`
 
 </details>
 
@@ -120,6 +171,10 @@
 3. 重启服务：`/etc/init.d/dnsmasq restart`
 
 > `address=/域名/0.0.0.0` 会连同该域名的全部子域一起作答。想顺带拦 IPv6，可把 `0.0.0.0` 全局替换为 `#`（需 dnsmasq ≥ 2.86），或改用 `local=/域名/` 直接答 NXDOMAIN。
+>
+> ✅ **白名单不用另装**：dnsmasq 没有 `@@` 例外语法，一个文件装完。本仓库已在构建时按白名单剔除拦截规则
+> （见上方「必读」），所以这份 `dnsmasq.conf` 本身就是「白名单已生效」的版本。若仍误伤某个域名，
+> 在 `/etc/dnsmasq.d/` 下自建一个 `whitelist.conf` 写 `server=/域名/#` 覆盖即可，或提 issue 由仓库侧修复。
 
 **方式二：hosts（老固件兜底，无 conf-dir 时用）**
 
@@ -128,6 +183,8 @@
 3. 重启 dnsmasq：`/etc/init.d/dnsmasq restart`
 
 > ⚠️ **hosts 只能精确匹配**：`0.0.0.0 a.b.com` 拦不到 `x.a.b.com`。本仓库的 hosts.txt 已把 dns.txt 折叠掉的 1.4 万个子域补回（比 dns.txt 多约 1.4 万条，含上游明确列出的全部域名），但上游没列出的子域仍然拦不到。要彻底覆盖子域，请优先用 **dns.txt（AdGuard Home）/ dnsmasq.conf / smartdns.conf / surge.list / mihomo.yaml / qx.list** 这些后缀匹配格式。
+>
+> ⚠️ **hosts 同样没有白名单机制**：`/etc/hosts` 里写了 `0.0.0.0 x.com` 就没法用白名单放行。本仓库已在构建时按白名单剔除（见上方「必读」），所以这份 hosts.txt 不会出现「白名单域被拦」的条目；自己往 `/etc/hosts` 追加规则时要单独留意这一点。
 
 </details>
 
@@ -139,7 +196,7 @@
 
 1. 编辑 `smartdns.conf`，加入：`conf-file https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/smartdns.conf`
    （或下载后 `include` 到主配置）
-2. 误杀放行：`conf-file .../data/rules/smartdns-whitelist.conf`
+2. **必须一起加载白名单**（不加会误杀，见上方「必读」）：`conf-file .../data/rules/smartdns-whitelist.conf`
 3. 重启服务：`/etc/init.d/smartdns restart`
 
 </details>
@@ -162,6 +219,10 @@ rules:
   - RULE-SET,tianying-ad,REJECT
 ```
 
+> ✅ **白名单不用另配**：`behavior: domain` 规则集没有 `@@` 例外语法。本仓库已在构建时按白名单剔除拦截规则
+> （见上方「必读」），这份 `mihomo.yaml` 本身就是「白名单已生效」的版本。
+> 若仍误伤，可在 `rules` **最前面**加 `DOMAIN-SUFFIX,域名,DIRECT` 让该域走直连——顺序优先于 `REJECT`。
+
 </details>
 
 ---
@@ -170,6 +231,8 @@ rules:
 
 > 💡 国内网络推荐优先使用「国内加速链接」（jsDelivr，实测可用）；GitHub 直连不稳时再换直链。
 > PC 版 AdGuard 选 `adblock.txt`；AdGuard Home / OpenWrt 选 `dns.txt`。
+>
+> ⚠️ **无论选哪个拦截格式，都要配套加载白名单**（见下方「白名单规则」）。只装拦截不装白名单 = 没有误杀保护。
 
 <details open>
 <summary><b>🚫 广告拦截规则</b></summary>
@@ -243,13 +306,22 @@ rules:
 </details>
 
 
-<details>
-<summary><b>✅ 白名单规则</b></summary>
+<details open>
+<summary><b>✅ 白名单规则（必装 · 与拦截规则配套使用）</b></summary>
 <br>
+
+> ⚠️ **这不是可选项。** 只订阅拦截规则、不订阅白名单，等于放弃误杀保护——上游按主域整族下发时
+> 会把正常功能一起拦掉（拼多多 CDN 就是这么坏的，详见上方「必读」）。
+> 单文件格式（dnsmasq / hosts / QX / Surge / Mihomo）的白名单已在构建时剔除进成品，无需另装；
+> AdGuard 全家桶与 SmartDNS 必须自己加载下面这份。
 
 | 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接 |
 | :---- | :---- | :---- | :---- |
-| 白名单规则（误杀放行） | AdGuard 全家桶 | [allow.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/allow.txt) | [allow.txt](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/allow.txt) |
+| 白名单规则（误杀放行） | AdGuard 全家桶（**必装**） | [allow.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/allow.txt) | [allow.txt](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/allow.txt) |
+| SmartDNS 白名单 | SmartDNS（**必装**） | [smartdns-whitelist.conf](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns-whitelist.conf) | [smartdns-whitelist.conf](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/smartdns-whitelist.conf) |
+
+> 📌 白名单必须**整域**才有效：`@@||example.com^` 管用，`@@||img.example.com^` 在 DNS 层会被父域拦截规则吃掉。
+> 需要新增放行请在 [Issues](https://github.com/xiaolei7172/ADS/issues) 提出，仓库侧一次修好所有订阅者。
 
 </details>
 
@@ -354,7 +426,7 @@ rules:
 
 但**不能盲目展开**：实测展开全部 517 条会放行 76 条规则，其中近半是广告/埋点域（`ad.a.yximgs.com` 快手广告集群、`tipsdk.baidu.com` 百度推广追踪、`amdc.alipay.com` 调度埋点都在其中）。所以采用**可信模式表** `data/mod/wildcard_allow.txt`：只有整组确认都是功能/CDN 域的模式（抖音视频节点 `v*.douyinvod.com`、B站播放镜像 `upos-sz-*.bilivideo.com`、腾讯 hash 下载 CDN `*.dlied1.cdntips.net` 等 6 条）才会展开成具体放行条目；混着广告的通配继续忽略，改用白名单点名放行其中的功能域。展开结果写入 allow.txt 的「可信通配展开」独立分区，可溯源、可审计。
 
-`verify-fixes.py` 已接进 CI（`Verify Format Consistency` 步骤），用 48 个用例把 dns / qx / surge / smartdns / dnsmasq / mihomo / ad-domain 七种后缀匹配格式逐个比对，状态必须完全一致，任何格式走偏直接让工作流红掉；hosts 因只能精确匹配单独核对（已补回折叠前的子域，上游未列出的子域仍拦不到），相关用例标 `†`。改 `common.py` 的域名词法后，另有一层纯函数单测：`python -m unittest discover -s tests -v`。
+`verify-fixes.py` 已接进 CI（`Verify Format Consistency` 步骤），用 59 个用例把 dns / qx / surge / smartdns / dnsmasq / mihomo / ad-domain 七种后缀匹配格式逐个比对，状态必须完全一致，任何格式走偏直接让工作流红掉；hosts 因只能精确匹配单独核对（已补回折叠前的子域，上游未列出的子域仍拦不到），相关用例标 `†`。改 `common.py` 的域名词法后，另有一层纯函数单测：`python -m unittest discover -s tests -v`。
 
 ### 🧽 上游脏数据清洗
 
