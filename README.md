@@ -622,7 +622,8 @@ python data/python/check-quality.py && python data/python/verify-fixes.py
 
 | 类型 | 变更内容 | 提交 |
 | :--- | :--- | :--- |
-| ☠ 其他 | 死规则清理 + 来源骤降熔断 + 版本标签：治三件长期运行的慢性病 | [`41b2941`](https://github.com/xiaolei7172/ADS/commit/41b2941) |
+| 🎯 规则调优 | 红果/番茄/抖音 广告漏拦补全：TNC 调度换代 + 素材 CDN 缺失 | [`6ad12d4`](https://github.com/xiaolei7172/ADS/commit/6ad12d4) |
+| ☠ 清理 | 死规则清理 + 来源骤降熔断 + 版本标签：治三件长期运行的慢性病 | [`41b2941`](https://github.com/xiaolei7172/ADS/commit/41b2941) |
 | 🐛 修复 | 修复：更新历史漏生成 + 无 emoji 的提交被归入「其他」 | [`5641903`](https://github.com/xiaolei7172/ADS/commit/5641903) |
 | ✨ 新增 | 补全 APP 视频/开屏广告 SDK，拆掉 5 条放行广告服务器的白名单 | [`d3b306a`](https://github.com/xiaolei7172/ADS/commit/d3b306a) |
 | 🩺 修复 | 关键功能域体检：修 3 起整站误拦 + 新增「关键域不得被整域拦」闸门 | [`fcff0a8`](https://github.com/xiaolei7172/ADS/commit/fcff0a8) |
