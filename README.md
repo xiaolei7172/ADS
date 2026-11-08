@@ -21,13 +21,13 @@
 ### 🔮 天影规则聚合 · 实时规则规模
 
 
-🕒 **更新时间**：2026-11-07 21:37:01（北京时间）
+🕒 **更新时间**：2026-11-08 14:00:02（北京时间）
 
 
-🚫 **广告拦截规则**：251892 条
+🚫 **广告拦截规则**：252184 条
 
 
-🌐 **DNS 拦截域名**：225112 个
+🌐 **DNS 拦截域名**：225390 个
 
 
 ✅ **白名单放行规则**：6765 条（约半数可在 DNS 层直接生效，其余为浏览器版 AdGuard 的路径级 / `$domain=` 规则，DNS 层无效）
@@ -618,10 +618,18 @@ python data/python/check-quality.py && python data/python/verify-fixes.py
 
 > 仅收录**功能性变更**；CI 每日的例行规则更新（`✅ 规则自动更新` 提交）不列出。完整记录见 [Commits](https://github.com/xiaolei7172/ADS/commits/master)。
 
-### 📅 2026-11-07
+### 📅 2026-11-08
 
 | 类型 | 变更内容 | 提交 |
 | :--- | :--- | :--- |
+| 📖 文档 | 仓库体检修复：README 白名单数字改为现算 + 版本标签改轻量 | [`01a733a`](https://github.com/xiaolei7172/ADS/commit/01a733a) |
+
+<details>
+<summary><b>📅 2026-11-07</b> · 8 项变更</summary>
+
+| 类型 | 变更内容 | 提交 |
+| :--- | :--- | :--- |
+| 📖 文档 | 更新历史补录 + 死规则清理那条归到「☠ 清理」 | [`0e1f0fb`](https://github.com/xiaolei7172/ADS/commit/0e1f0fb) |
 | 🎯 规则调优 | 红果/番茄/抖音 广告漏拦补全：TNC 调度换代 + 素材 CDN 缺失 | [`6ad12d4`](https://github.com/xiaolei7172/ADS/commit/6ad12d4) |
 | ☠ 清理 | 死规则清理 + 来源骤降熔断 + 版本标签：治三件长期运行的慢性病 | [`41b2941`](https://github.com/xiaolei7172/ADS/commit/41b2941) |
 | 🐛 修复 | 修复：更新历史漏生成 + 无 emoji 的提交被归入「其他」 | [`5641903`](https://github.com/xiaolei7172/ADS/commit/5641903) |
@@ -629,6 +637,8 @@ python data/python/check-quality.py && python data/python/verify-fixes.py
 | 🩺 修复 | 关键功能域体检：修 3 起整站误拦 + 新增「关键域不得被整域拦」闸门 | [`fcff0a8`](https://github.com/xiaolei7172/ADS/commit/fcff0a8) |
 | 📖 文档 | README 增加「必读」章节：拦截规则必须配合白名单使用 | [`bfadf4e`](https://github.com/xiaolei7172/ADS/commit/bfadf4e) |
 | 🐛 修复 | 修拼多多「多处异常」：4 条媒体 CDN 被误拦 + 白名单被父域架空 | [`2dd9cde`](https://github.com/xiaolei7172/ADS/commit/2dd9cde) |
+
+</details>
 
 <details>
 <summary><b>📅 2026-11-01</b> · 19 项变更</summary>
