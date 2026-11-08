@@ -122,6 +122,10 @@ jobs:
       #    master 最新，出误杀只能干等修复。有了 tag 就能锁版本、
       #    也能 git diff v2026.11.01..v2026.11.07 直接看出哪天改坏的。
       #    同日多次更新用 -2 / -3 递增（tag 不可重指，复用会失败）。
+      #    用轻量 tag 而非 annotated：annotated 要多推一个 tag 对象，实测在
+      #    代理/权限受限时会被拒，而那时产物已经推上去了——tag 步骤一红就
+      #    成了「发布成功却报失败」的假告警。轻量 tag 指同一个 commit，
+      #    git diff v1..v2 一样能用。
       # ==============================================
       - name: Tag Release
         if: steps.push.outputs.changed == 'true'
@@ -134,8 +138,8 @@ jobs:
             tag="$base-$n"
             n=$((n + 1))
           done
-          dns=$(grep -vcE '^(#|!|\[|$)' data/rules/dns.txt)
-          git tag -a "$tag" -m "规则快照 $tag：DNS $dns 条（$(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M')）"
+          dns=$(grep -vcE '^(#|!|\[|$)' data/rules/dns.txt || true)
+          git tag "$tag"
           git push origin "$tag"
           echo "🏷️ 已发布标签 $tag（DNS $dns 条）"
           echo "TAG_NAME=$tag" >> "$GITHUB_ENV"

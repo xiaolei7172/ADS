@@ -106,6 +106,46 @@ updated = re.sub(r"🌐 \*\*DNS 拦截域名\*\*：\d+ 个", rf"🌐 **DNS 拦�
 updated = re.sub(r"✅ \*\*白名单放行规则\*\*：\d+ 条", rf"✅ **白名单放行规则**：{allow} 条", updated)
 
 # ==========================================
+# 白名单构成：正文里那几个数字过去是手写的，上游每天漂几十条，
+# 写死必然说谎（曾经 README 说 6,773 条、实际 6,765 条）。
+# 改成从产物现算——数字永远与 allow.txt 一致。
+# ==========================================
+def allow_breakdown():
+    """返回 (总数, DNS 层可直接生效数, 只能浏览器生效数)，算不出来返回 None。"""
+    plain = wild = other = 0
+    try:
+        with open(os.path.join(REPO_ROOT, "data", "rules", "allow.txt"),
+                  "r", encoding="utf-8", errors="ignore") as f:
+            for line in f:
+                line = line.strip()
+                if not line.startswith("@@"):
+                    continue
+                body = line[2:]
+                if (body.startswith("||") and body.endswith("^")
+                        and "/" not in body and "$" not in body and "=" not in body):
+                    if "*" in body:
+                        wild += 1
+                    else:
+                        plain += 1
+                else:
+                    other += 1
+    except OSError:
+        return None
+    if not (plain + wild + other):
+        return None
+    return plain + wild + other, plain + wild, other
+
+
+BD = allow_breakdown()
+if BD:
+    _total, _direct, _browser = BD
+    updated = re.sub(
+        r"`allow\.txt` 共 [\d,]+ 条，纯域名 \+ 通配 [\d,]+ 条可直接生效，\s*\n\s*其余 [\d,]+ 条",
+        f"`allow.txt` 共 {_total:,} 条，纯域名 + 通配 {_direct:,} 条可直接生效，\n   其余 {_browser:,} 条",
+        updated,
+    )
+
+# ==========================================
 # 源健康度：dl.py 落盘的下载状态渲染进 README
 # ==========================================
 def render_dl_status():
