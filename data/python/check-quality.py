@@ -220,7 +220,9 @@ if new_conflicts:
     errors.append(
         f"whitelist.txt: {len(new_conflicts)} 条本地白名单被父域拦截架空，如 {sample}"
         f" —— 子域放行在单文件格式（dnsmasq/qx/surge/mihomo）里不生效，"
-        f"要么整域放行、要么拆父域规则；确认可接受则登记到 "
+        f"处置三选一：父域下子域几乎全为广告时拆父域（登记到 "
+        f"data/mod/split-parents.txt，filter-dns.py 会以子域替代整域）；"
+        f"整域放行（改 whitelist.txt）；确认接受架空则登记到 "
         f"data/mod/allow-conflicts.baseline")
 
 stale_baseline = [d for d in baseline if d in local_allow and d not in local_conflicts]

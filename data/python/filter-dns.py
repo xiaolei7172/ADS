@@ -118,12 +118,29 @@ for name, sec in SECTIONS.items():
         kept += len(kept_here)
 
 # ==========================================
-# 第三遍：父子域语义去重
+# 第三遍：父子域语义去重（拆父域清单豁免）
 # ||parent^ 在 AdGuard/hosts 语义下覆盖全部子域，
 # 若父域本身已保留，其子域规则即冗余，剔除。
 # 注意必须在白名单过滤之后：若父域被白名单放行而子域没有，
 # 子域必须保留。本地自定义域（用户明确意图）始终保留原文。
 # ==========================================
+# 拆父域：data/mod/split-parents.txt 收录「被本地白名单点名放行功能子域」的父域。
+# 这类父域一旦整域进产物，单文件格式（dnsmasq/qx/surge/mihomo）无法表达
+# 「拦父域但放行某个子域」，白名单子域即被架空（check-quality 第 6 关会熔断）。
+# 处理：产物中不输出父域本身，其全部已收录子域照常保留（白名单子域已被
+# 第二遍剔除），拦截粒度从整域细化到子域。hosts.txt 走精确匹配不受影响。
+SPLIT_PATH = os.path.join(MOD_DIR, "split-parents.txt")
+split_parents = set()
+if os.path.exists(SPLIT_PATH):
+    with open(SPLIT_PATH, "r", encoding="utf-8", errors="ignore") as f:
+        for raw in f:
+            s = raw.split("!")[0].strip().lower()
+            if s:
+                split_parents.add(s)
+if split_parents:
+    print(f"🪓 拆父域清单：{len(split_parents)} 个（data/mod/split-parents.txt），"
+          f"产物中以子域替代整域")
+
 kept_all = set()
 for doms in filtered_sections.values():
     kept_all.update(doms)
@@ -156,6 +173,7 @@ def has_ancestor(d, pool):
     return False
 
 collapsed = 0
+split_out = 0
 per_source_kept = OrderedDict()
 chunks = []          # 分区正文先攒在内存里：5 MB 文字，换掉「写完读回再重写」的两轮 IO
 
@@ -167,9 +185,14 @@ HEAD_LINES = (
 
 for name, doms in filtered_sections.items():
     final_doms = []
+    # 拆父域的父域不参与折叠判定：其子域不再视为被覆盖，照常保留到各自来源分区
+    collapse_pool = kept_all - split_parents
     for d in doms:
-        if d not in local_block and has_ancestor(d, kept_all):
+        if d not in local_block and has_ancestor(d, collapse_pool):
             collapsed += 1
+            continue
+        if d in split_parents:
+            split_out += 1
             continue
         final_doms.append(d)
     if not final_doms:
@@ -202,6 +225,6 @@ with open(output_path, "w", encoding="utf-8", newline="\n") as f:
 
 kept_final = sum(per_source_kept.values())
 print(f"✅ DNS 规则提取完成！已生成 → {output_path}")
-print(f"📊 最终保留 {kept_final} 条（{len(per_source_kept)} 个来源）| 白名单放行 {by_white} 条 | 跨来源重复 {dup} 条 | 父子域冗余剔除 {collapsed} 条 | 非法/跳过 {invalid} 条")
+print(f"📊 最终保留 {kept_final} 条（{len(per_source_kept)} 个来源）| 白名单放行 {by_white} 条 | 跨来源重复 {dup} 条 | 父子域冗余剔除 {collapsed} 条 | 拆父域移除 {split_out} 条 | 非法/跳过 {invalid} 条")
 for name, n in per_source_kept.items():
     print(f"   · {n:>7} 条  {name}")
