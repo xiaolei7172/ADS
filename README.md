@@ -21,13 +21,13 @@
 ### 🔮 天影规则聚合 · 实时规则规模
 
 
-🕒 **更新时间**：2026-11-10 14:09:37（北京时间）
+🕒 **更新时间**：2026-11-10 15:17:53（北京时间）
 
 
-🚫 **广告拦截规则**：250148 条
+🚫 **广告拦截规则**：250188 条
 
 
-🌐 **DNS 拦截域名**：223605 个
+🌐 **DNS 拦截域名**：223645 个
 
 
 ✅ **白名单放行规则**：6771 条（约半数可在 DNS 层直接生效，其余为浏览器版 AdGuard 的路径级 / `$domain=` 规则，DNS 层无效）
@@ -622,6 +622,7 @@ python data/python/check-quality.py && python data/python/verify-fixes.py
 
 | 类型 | 变更内容 | 提交 |
 | :--- | :--- | :--- |
+| ⚡ 其他 | 死规则探测提速：4 台独立运营商 DNS 聚合 QPS 翻倍 + 浅克隆 checkout | [`1f4c659`](https://github.com/xiaolei7172/ADS/commit/1f4c659) |
 | 🪓 其他 | 拆父域机制：修复 1007-Hosts 新增 ads.heytapmobi.com 整域拦截架空白名单导致的熔断 | [`791fd39`](https://github.com/xiaolei7172/ADS/commit/791fd39) |
 
 <details>

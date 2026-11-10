@@ -3,17 +3,17 @@
 ! 📌 规则名称：天影规则聚合 · DNS 拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-10 14:09:36（北京时间）
-! 📊 有效规则：223605 条
+! ⏰ 更新时间：2026-11-10 15:17:53（北京时间）
+! 📊 有效规则：223645 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · DNS 拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-10 14:09:36 | ✅ 有效规则 223605 条
+! Description: ⏰ 更新时间 2026-11-10 15:17:53 | ✅ 有效规则 223645 条
 ! ────────────────── ☑ 规则来源统计 ──────────────────
 !  115,820 条  AdRules DNS List [AdRules DNS List]
 !   83,817 条  anti-ad 官方规则
 !    6,582 条  海哥规则
-!    6,042 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
+!    6,082 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !    4,771 条  1007-Hosts
 !    3,586 条  5460 [酷安广告规则]
 !    2,742 条  OISD 拦截规则 [oisd small]
@@ -30,7 +30,7 @@
 !      4771 条  1007-Hosts
 !     83817 条  anti-ad 官方规则
 !    115820 条  AdRules DNS List [AdRules DNS List]
-!      6042 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
+!      6082 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !      2742 条  OISD 拦截规则 [oisd small]
 !      3586 条  5460 [酷安广告规则]
 !      6582 条  海哥规则
@@ -204726,7 +204726,7 @@
 ! 📝 规则说明：Filter composed of several other filters (AdGuard Base filter, Tracking Protection filter, Mobile ads filter, EasyList, EasyPrivacy, etc) and simplified specifically to be better compatible with DNS-level ad blocking.
 ! 🔗 原始地址：https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 ! ==============================================
-! 📊 本区规则：6042 条
+! 📊 本区规则：6082 条
 ! ==============================================
 ||insightjs.org^
 ||inyourpocket.co.uk^
@@ -207441,48 +207441,85 @@
 ||nawala.my^
 ||1n2o5jcnh778xxqfz4.cfd^
 ||anptvosfntjlq.space^
+||arhhrgiwaecso.online^
+||assignlappet.click^
 ||aviatedmidair.com^
 ||babqhlapt.com^
 ||beltanekwarta.click^
 ||bkqvysqgajcgg.online^
+||botchssu.cyou^
+||cfmbroselispers.cyou^
+||cgcexsprstohm.online^
 ||chulpathrangreprise.cyou^
 ||cmcojoetqgtnq.space^
 ||colloidsaga.click^
 ||ctomffkdsonux.website^
 ||cxcskkwvghzvp.website^
+||eewqlmtwdsron.space^
+||ekifhvythtqjf.space^
 ||emrhqvlwxoojz.space^
+||epizoanvick.rest^
+||faisanbiotype.cfd^
+||fflieipbhlgtl.online^
 ||ffluhsrpb.com^
+||fomgggkpmzlxo.site^
 ||forbearfungoid.cyou^
+||frsamsxjlpfhv.site^
 ||ftkhknxsfimhp.site^
+||funkingdefat.rest^
+||genearcyanize.cfd^
+||giftedbuffet.info^
 ||hattiemobil.cfd^
 ||hestherwottestcunonia.cfd^
 ||hfblxccnycadt.website^
+||hokqcfvwwxlnr.online^
 ||hxypzksqmlnor.online^
+||hznmvulxesbuk.space^
 ||ijiyhavkjzvi.com^
 ||jbckwavvvsugv.space^
 ||jocelyntururi.rest^
+||jsipdfurro.com^
 ||jyiuvsfhmxkfa.online^
 ||kco3up8miwi1cqv.rest^
 ||kfrvhjpthtddk.site^
 ||kifdmjuphvbbt.site^
+||kpimprqvtilkp.space^
 ||ktfneeluuporm.space^
 ||likqeudvqlqxr.space^
+||limitedsnaffletrypan.cfd^
+||lnvvboafokvrq.website^
+||lrivyphequyco.space^
 ||luckfullacinia.com^
+||lzsbvojsaxzuy.website^
 ||mvemojfndjgyi.website^
 ||nftatpjjiaeqp.online^
+||nmscpuyhwzuyb.website^
+||oeedvqbkqgacy.space^
+||oemteckrcihsp.online^
 ||oxmanwashier.cyou^
 ||pardedthereonvirason.cyou^
+||pecticuganda.cyou^
+||plulwjtillajt.website^
+||psceiiwiwgswf.site^
 ||qmjkpfldtkvny.site^
 ||rabiseater.cfd^
+||reknitnacket.cfd^
+||revetetupik.click^
 ||rftjsuwyyzrjf.site^
+||rjynkgozmysuc.online^
 ||rlophkhxsdtma.online^
+||sapghpwbtrsjq.space^
 ||sericeamammas.click^
+||soxcuvcwsoccc.website^
 ||tdmkyczdoquwp.website^
+||tehsvboopmwfi.site^
+||toguefallace.cfd^
 ||tuivswlrvepxa.space^
 ||uodjkhuvxrdxz.space^
 ||upgaigawgffks.website^
 ||uplinksspindly.cyou^
 ||visionrundles.cfd^
+||wgenxjvutxyif.site^
 ||whgezpjzhlfnq.online^
 ||winvtpxbdwovc.website^
 ||wqtkrqohkuloe.website^
@@ -207625,6 +207662,8 @@
 ||widget.faphouse.com^
 ||widgets.guppy.live^
 ||zw17ig1gnw.com^
+||8c2sxamc6w.com^
+||r1owcxiy50.com^
 ||88p2p.com^
 ||aiwanma99.com^
 ||kuheju.com^
@@ -207985,6 +208024,7 @@
 ||worldfilia.net^
 ||yobee.it^
 ||yohtads.com^
+||reelcombat.com^
 ||relexpert.com^
 ||counter-go.de^
 ||counter-zaehler.de^

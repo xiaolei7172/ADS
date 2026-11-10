@@ -3,19 +3,19 @@
 ! 📌 规则名称：天影规则聚合 · 广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-10 14:09:36（北京时间）
-! 📊 有效规则：250148 条
+! ⏰ 更新时间：2026-11-10 15:17:53（北京时间）
+! 📊 有效规则：250188 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-10 14:09:36 | ✅ 有效规则 250148 条
+! Description: ⏰ 更新时间 2026-11-10 15:17:53 | ✅ 有效规则 250188 条
 ! ────────────────── ☑ 规则来源统计 ──────────────────
 !  121,360 条  AdRules DNS List [AdRules DNS List]
 !   85,400 条  anti-ad 官方规则
 !   12,315 条  5460 [酷安广告规则]
 !   10,336 条  1007-Hosts
 !    8,553 条  海哥规则
-!    7,064 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
+!    7,104 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !    3,008 条  OISD 拦截规则 [oisd small]
 !    1,119 条  乘风通用规则 [乘风 广告过滤规则]
 !      583 条  酷安@大萌主 [轻量广告拦截规则]
@@ -220965,49 +220965,86 @@ dlsdk.appsflyer.com^
 ||ad.linksynergy.com^
 ||ads.lemmatechnologies.com^
 ||anptvosfntjlq.space^
+||arhhrgiwaecso.online^
+||assignlappet.click^
 ||aviatedmidair.com^
 ||babqhlapt.com^
 ||beltanekwarta.click^
 ||bkqvysqgajcgg.online^
+||botchssu.cyou^
+||cfmbroselispers.cyou^
+||cgcexsprstohm.online^
 ||chulpathrangreprise.cyou^
 ||cmcojoetqgtnq.space^
 ||colloidsaga.click^
 ||ctomffkdsonux.website^
 ||cxcskkwvghzvp.website^
 ||daleelerah.info
+||eewqlmtwdsron.space^
+||ekifhvythtqjf.space^
 ||emrhqvlwxoojz.space^
+||epizoanvick.rest^
+||faisanbiotype.cfd^
+||fflieipbhlgtl.online^
 ||ffluhsrpb.com^
+||fomgggkpmzlxo.site^
 ||forbearfungoid.cyou^
+||frsamsxjlpfhv.site^
 ||ftkhknxsfimhp.site^
+||funkingdefat.rest^
+||genearcyanize.cfd^
+||giftedbuffet.info^
 ||hattiemobil.cfd^
 ||hestherwottestcunonia.cfd^
 ||hfblxccnycadt.website^
+||hokqcfvwwxlnr.online^
 ||hxypzksqmlnor.online^
+||hznmvulxesbuk.space^
 ||ijiyhavkjzvi.com^
 ||jbckwavvvsugv.space^
 ||jocelyntururi.rest^
+||jsipdfurro.com^
 ||jyiuvsfhmxkfa.online^
 ||kco3up8miwi1cqv.rest^
 ||kfrvhjpthtddk.site^
 ||kifdmjuphvbbt.site^
+||kpimprqvtilkp.space^
 ||ktfneeluuporm.space^
 ||likqeudvqlqxr.space^
+||limitedsnaffletrypan.cfd^
+||lnvvboafokvrq.website^
+||lrivyphequyco.space^
 ||luckfullacinia.com^
+||lzsbvojsaxzuy.website^
 ||mvemojfndjgyi.website^
 ||nftatpjjiaeqp.online^
+||nmscpuyhwzuyb.website^
+||oeedvqbkqgacy.space^
+||oemteckrcihsp.online^
 ||oxmanwashier.cyou^
 ||pardedthereonvirason.cyou^
+||pecticuganda.cyou^
+||plulwjtillajt.website^
+||psceiiwiwgswf.site^
 ||qmjkpfldtkvny.site^
 ||rabiseater.cfd^
+||reknitnacket.cfd^
+||revetetupik.click^
 ||rftjsuwyyzrjf.site^
+||rjynkgozmysuc.online^
 ||rlophkhxsdtma.online^
+||sapghpwbtrsjq.space^
 ||sericeamammas.click^
+||soxcuvcwsoccc.website^
 ||tdmkyczdoquwp.website^
+||tehsvboopmwfi.site^
+||toguefallace.cfd^
 ||tuivswlrvepxa.space^
 ||uodjkhuvxrdxz.space^
 ||upgaigawgffks.website^
 ||uplinksspindly.cyou^
 ||visionrundles.cfd^
+||wgenxjvutxyif.site^
 ||whgezpjzhlfnq.online^
 ||winvtpxbdwovc.website^
 ||wqtkrqohkuloe.website^
@@ -221164,6 +221201,8 @@ dlsdk.appsflyer.com^
 ||widget.faphouse.com^
 ||widgets.guppy.live^
 ||zw17ig1gnw.com^
+||8c2sxamc6w.com^
+||r1owcxiy50.com^
 ||cpro.baidustatic.com^
 ||farm-cn.plista.com^
 ||static-cn.plista.com^
@@ -221537,6 +221576,7 @@ dlsdk.appsflyer.com^
 ||beap.gemini.yahoo.com^
 ||n.gemini.yahoo.com^
 ||tpc.googlesyndication.com^
+||reelcombat.com^
 ||relexpert.com^
 ||counter-go.de^
 ||counter-zaehler.de^
