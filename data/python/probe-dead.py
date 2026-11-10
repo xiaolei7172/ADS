@@ -13,7 +13,7 @@
 
 判定口径（这是本脚本最关键的部分）
 ----------------------------------
-只认 **RCODE=3（NXDOMAIN）**，且必须**两台不同 DNS 服务器都返回 3**。
+只认 **RCODE=3（NXDOMAIN）**，且必须**全部应答 DNS 服务器（4 台独立运营商）都返回 3**。
 
 踩过的坑，别再走回去：
 1. `socket.getaddrinfo` 抛 11001（WSAHOST_NOT_FOUND）**不等于域名不存在**。
@@ -24,7 +24,8 @@
 3. 原生 UDP 直连公共 DNS：无握手、单包往返，短时能到 380 条/秒。
    但**必须限速**：裸跑十几分钟后公共解析器开始丢包，实测 24.6 万条
    跑完错误率 63.9%（15.7 万条超时），整轮作废。限到 150 条/秒
-   （两台各 75）实测错误率 <1%，全量约 33 分钟。
+   （两台各 75）实测错误率 <1%，全量约 33 分钟。后扩到 4 台独立运营商
+   （阿里/腾讯/114/百度），单台速率不变、聚合翻倍，全量约 20 分钟。
 
 所以：UDP 主探测（限速）+ 换服务器复核。复核用**另一台**服务器，
 避免「某台 DNS 抽风把整个 TLD 返回 NXDOMAIN」造成批量误删。
@@ -68,9 +69,12 @@ from common import RULES_DIR, MOD_DIR, TMP_DIR, beijing_now, block_domain, hosts
 SOURCE = os.path.join(RULES_DIR, "dns.txt")
 OUT = os.path.join(MOD_DIR, "dead.txt")
 
-# 两台独立公共 DNS：223.5.5.5（阿里）与 119.29.29.29（腾讯）。
-# 主探测在两台之间轮换，复核强制换一台——单台抽风不会造成批量判死。
-SERVERS = ["223.5.5.5", "119.29.29.29"]
+# 四台独立运营商的公共 DNS：阿里 / 腾讯 / 世纪互联(114) / 百度。
+# 主探测在四台之间轮换（每域一台），复核查其余三台——
+# 单台抽风不会造成批量判死；判死要求**全部应答服务器都返回 NXDOMAIN**，
+# 比早期两台口径更保守。每台承受速率不变（聚合 QPS ÷ 台数），
+# 加台数只为提高聚合吞吐：150→300 条/秒，全量探测 37→约 20 分钟。
+SERVERS = ["223.5.5.5", "119.29.29.29", "114.114.114.114", "180.76.76.76"]
 
 RCODE_NXDOMAIN = 3
 RCODE_NOERROR = 0
@@ -98,7 +102,7 @@ class RateLimiter:
     但持续十几分钟后公共 DNS 开始限流——实测 24.6 万条跑完，
     错误率 63.9%（15.7 万条超时），整个探测白跑。
     公共解析器对单 IP 的 QPS 有阈值，探得越快越不准。
-    限到 100 QPS（两台各 50）实测稳定，全量约 40 分钟。
+    限到低 QPS（单台 50~75 条/秒）实测稳定；加台数提聚合吞吐，不提单台速率。
     """
 
     def __init__(self, qps):
@@ -142,22 +146,19 @@ def query_rcode(sock, server, qname, qid, timeout):
     return data[3] & 0x0F
 
 
-def probe_batch(items, servers, timeout, retries, counter, lock, limiter):
-    """一个线程处理一批域名。
+def probe_batch(items, timeout, retries, counter, lock, limiter):
+    """一个线程处理一批 (域名, 服务器) 组合，逐条 yield (域名, 服务器, rcode)。
 
     socket 每 500 条重建一次：长时间复用同一个 UDP socket，中间设备的
     NAT 表项会老化，之后所有包都被丢弃（表现为「前面很快、后面全超时」）。
     """
     sock = None
-    idx = 0
     try:
-        for i, dom in enumerate(items):
+        for i, (dom, server) in enumerate(items):
             if sock is None or i % 500 == 0:
                 if sock:
                     sock.close()
                 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-            server = servers[idx % len(servers)]
-            idx += 1
             rcode = None
             for _ in range(retries):
                 limiter.acquire()
@@ -177,7 +178,7 @@ def probe_batch(items, servers, timeout, retries, counter, lock, limiter):
                     counter["nx"] += 1
                 else:
                     counter["ok"] += 1
-            yield dom, rcode
+            yield dom, server, rcode
     finally:
         if sock:
             sock.close()
@@ -194,6 +195,21 @@ def save_state(path, result):
     os.replace(tmp, path)
 
 
+def save_flat_state(path, first):
+    """把主探测结果 {域: {服务器: rcode}} 压扁成续传格式 {域: rcode} 再落盘。
+
+    续传只复用「有明确结果」的域（rcode 非 None），扁平格式即可表达；
+    当时用了哪台服务器不需要记——续传域复核时对全部服务器复测，口径只紧不松。
+    """
+    flat = {}
+    for d, srvs in first.items():
+        for rc in srvs.values():
+            if rc is not None:
+                flat[d] = rc
+                break
+    save_state(path, flat)
+
+
 def load_state(path):
     try:
         with open(path, "r", encoding="utf-8") as f:
@@ -203,34 +219,45 @@ def load_state(path):
         return {}
 
 
-def run_parallel(domains, servers, workers, timeout, retries, label, qps,
+def run_parallel(items, workers, timeout, retries, label, qps,
                  result=None, state_path=None, batch=30000, cooldown=15):
-    """并发探测，返回 {domain: rcode|None}。
+    """并发探测 items=[(域名, 服务器), ...]，返回 {域名: {服务器: rcode|None}}。
 
-    result 传入非空字典即「续传」：已有结果直接复用，只补未完成的域。
+    result 传入非空字典即「续传」：已有结果直接复用，只补缺失的 (域, 服务器) 组合。
     每 batch 条落盘一次并把全体暂停 cooldown 秒——持续打压会被限流，
-    而中断一次丢掉 40 分钟的探测结果，比重试更贵。
+    而中断一次丢掉几十分钟的探测结果，比重试更贵。
+    state_path 只在「每域一台服务器」的主探测场景使用，落盘格式为扁平 {域: rcode}。
     """
     result = result if result is not None else {}
     counter = {"total": 0, "nx": 0, "ok": 0, "err": 0}
     lock = threading.Lock()
     limiter = RateLimiter(qps)
-    chunks = [domains[i::workers] for i in range(workers)]
+    chunks = [items[i::workers] for i in range(workers)]
     started = time.time()
-    last_saved = [len(result)]
+    last_saved = [sum(1 for v in result.values() if v)]
+
+    def save_flat():
+        """主探测续传格式：{域: rcode}（每域只有一条结果时才成立）。"""
+        flat = {}
+        for d, srvs in result.items():
+            for rc in srvs.values():
+                if rc is not None:
+                    flat[d] = rc
+                    break
+        save_state(state_path, flat)
 
     def wrapped(chunk):
-        for dom, rcode in probe_batch(chunk, servers, timeout, retries, counter, lock, limiter):
+        for dom, server, rcode in probe_batch(chunk, timeout, retries, counter, lock, limiter):
             with lock:
-                result[dom] = rcode
-                done = len(result)
+                result.setdefault(dom, {})[server] = rcode
+                done = sum(1 for v in result.values() if v)
                 must_save = state_path and done - last_saved[0] >= batch
                 if must_save:
                     last_saved[0] = done
-                    save_state(state_path, result)
+                    save_flat()
             if done % 5000 == 0:
                 rate = done / max(time.time() - started, 1e-6)
-                print(f"   … {label} {done}/{len(domains)}  ({rate:.0f} 条/秒)", flush=True)
+                print(f"   … {label} {done}/{len(items)}  ({rate:.0f} 条/秒)", flush=True)
             if must_save:
                 limiter.pause(cooldown)
                 print(f"   ⏸️ 已落盘 {done:,} 条，冷却 {cooldown}s（缓解公共 DNS 配额压力）",
@@ -322,12 +349,15 @@ def main():
         print(f"♻️ 续传：已有 {len(prior):,} 条明确结果，本次补测 {len(todo):,} 条"
               f"（含上轮超时的 {len([d for d in targets if d not in prior]):,} 条）")
 
-    first = dict(prior)
+    # 主探测结果统一为 {域: {服务器: rcode}}；续传的旧格式（{域: rcode}）
+    # 没有「当时用了哪台服务器」的信息，占位 None——复核时对这类域全服务器复测。
+    first = {d: {None: rc} for d, rc in prior.items()}
     if todo:
+        items = [(d, SERVERS[i % len(SERVERS)]) for i, d in enumerate(todo)]
         print(f"🚀 主探测（UDP 直连 {', '.join(SERVERS)}，{args.workers} 线程，"
-              f"限速 {args.qps or '不限'} 条/秒，预计 {len(todo) / max(args.qps or 166, 1) / 60:.0f} 分钟）")
+              f"限速 {args.qps or '不限'} 条/秒，预计 {len(items) / max(args.qps or 333, 1) / 60:.0f} 分钟）")
         t0 = time.time()
-        first, c1 = run_parallel(todo, SERVERS, args.workers, args.timeout, args.retries,
+        first, c1 = run_parallel(items, args.workers, args.timeout, args.retries,
                                  "主探测", args.qps, result=first, state_path=args.state,
                                  batch=args.batch, cooldown=args.cooldown)
         print(f"   主探测完成：{c1['total']:,} 条 / {time.time() - t0:.0f}s  "
@@ -339,30 +369,47 @@ def main():
     err_ratio = c1["err"] / max(c1["total"], 1)
     if err_ratio > args.max_err_ratio:
         # 先落盘再退出：这一轮的成果下次可直接续传，不必从零重跑
-        save_state(args.state, first)
+        save_flat_state(args.state, first)
         print(f"🚫 本轮网络错误率 {err_ratio:.1%} > {args.max_err_ratio:.0%}"
               f"（{c1['err']:,}/{c1['total']:,} 条未判定），超出本次容忍上限，不写 dead.txt。")
-        print(f"   已完成的 {len([r for r in first.values() if r is not None]):,} 条结果已落盘，"
-              f"直接重跑同一命令即可续传（超时域会自动重测）。")
+        print(f"   已完成的 {sum(1 for v in first.values() if any(rc is not None for rc in v.values())):,} "
+              f"条结果已落盘，直接重跑同一命令即可续传（超时域会自动重测）。")
         print(f"   未判定不等于判死：这些域不会被删除，只是这轮没测出来。")
         sys.exit(1)
 
-    # 复核：NX 候选换一台服务器再查，两台都 3 才算死
-    candidates = sorted(d for d, rc in first.items() if rc == RCODE_NXDOMAIN)
-    print(f"\n🔁 复核 {len(candidates):,} 条 NXDOMAIN 候选（换服务器二次确认）")
-    second, c2 = run_parallel(candidates, list(reversed(SERVERS)), args.workers,
-                              args.timeout, args.retries, "复核", args.qps)
-    confirmed = sorted(d for d in candidates if second.get(d) == RCODE_NXDOMAIN)
-    disputed = len(candidates) - len(confirmed)
+    # 复核：NX 候选换到「主探测没用过的其余服务器」再查，
+    # 全部应答服务器都返回 NXDOMAIN 才判死（单台抽风不会造成批量误删）。
+    candidates = sorted(d for d, srvs in first.items()
+                        if any(rc == RCODE_NXDOMAIN for rc in srvs.values()))
+    confirm_items = []
+    for d in candidates:
+        used = set(first[d])
+        for s in SERVERS:
+            if s not in used:
+                confirm_items.append((d, s))
+    print(f"\n🔁 复核 {len(candidates):,} 条 NXDOMAIN 候选"
+          f"（{len(confirm_items):,} 条查询，其余 {len(SERVERS)}-1 台服务器逐台确认）")
+    second, c2 = run_parallel(confirm_items, args.workers, args.timeout, args.retries,
+                              "复核", args.qps)
+    confirmed = []
+    disputed = 0
+    for d in candidates:
+        srvs = second.get(d, {})
+        expected = len(SERVERS) - len(set(first[d]) & set(SERVERS))
+        answered = [rc for rc in srvs.values()]
+        if len(answered) == expected and all(rc == RCODE_NXDOMAIN for rc in answered):
+            confirmed.append(d)
+        else:
+            disputed += 1
 
     dead_in_live = [d for d in confirmed if d in live]
     revived = sorted(old_dead - set(confirmed))
     nx_ratio = len(dead_in_live) / max(len(live), 1)
 
     print(f"\n📊 结果")
-    print(f"   确认死域（双服务器 NXDOMAIN）：{len(confirmed):,} 条，"
+    print(f"   确认死域（全部应答服务器 NXDOMAIN）：{len(confirmed):,} 条，"
           f"占当前拦截域 {nx_ratio:.1%}")
-    print(f"   两次结果不一致（保守保留，不判死）：{disputed:,} 条")
+    print(f"   各台结果不一致/未答全（保守保留，不判死）：{disputed:,} 条")
     print(f"   本期复活（上次判死、本次可解析）：{len(revived):,} 条")
     print(f"   dead.txt 将记录 {len(confirmed):,} 条"
           f"（其中 {len(set(confirmed) - live):,} 条已不在当前产物，保留用于持续跟踪）")
@@ -380,7 +427,8 @@ def main():
         "! ==============================================",
         "! ☠️ 死规则清单（NXDOMAIN 确认）",
         f"! 🕒 生成时间：{beijing_now()}（北京时间）",
-        "! 🔬 探测方式：UDP 直连 " + " / ".join(SERVERS) + "，两台服务器均返回 RCODE=3 才判定",
+        ("! 🔬 探测方式：UDP 直连 " + " / ".join(SERVERS)
+         + f"，全部 {len(SERVERS)} 台均返回 RCODE=3 才判定"),
         f"! 📊 探测 {len(targets):,} 条 → 确认死域 {len(confirmed):,} 条"
         f"（占当前拦截域 {nx_ratio:.1%}）；结果不一致 {disputed:,} 条（保留）",
         f"! ♻️ 本期复活 {len(revived):,} 条（已从本清单移除，规则恢复拦截）",

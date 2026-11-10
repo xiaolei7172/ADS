@@ -19,8 +19,8 @@ on:
   workflow_dispatch:
     inputs:
       qps:
-        description: '总请求速率上限（条/秒，默认 150；调高会被公共 DNS 限流，反而更慢）'
-        default: '150'
+        description: '聚合请求速率上限（条/秒，默认 300 = 四台各 75；单台速率实测超过 ~150 会被公共 DNS 限流，反而更慢）'
+        default: '300'
       limit:
         description: '只测前 N 条（留空 = 全量；调试用）'
         default: ''
@@ -37,10 +37,11 @@ jobs:
       contents: write
 
     steps:
-      # 需要完整历史：dead.txt 的变更要能正常 commit/push
+      # 浅克隆即可：commit/push 只需远端已有父提交（本仓库始终满足），
+      # 本工作流不打 tag、不读 git log，完整历史纯属浪费 20 秒下载
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       # 产物缺失时探测无从下手（dead.txt 的输入是 dns.txt）
       - name: Check Inputs
@@ -58,9 +59,10 @@ jobs:
           LIMIT: ${{ inputs.limit }}
         run: |
           set -eu
-          # 全量约 40 分钟。限速 + 分批冷却是硬性要求：不限速裸跑会触发公共 DNS
-          # 限流，实测 24.6 万条跑完错误率 63.9%（15.7 万条超时），整轮作废。
-          args=("--workers" "64" "--qps" "${QPS:-150}" "--batch" "30000" "--cooldown" "20")
+          # 全量约 20 分钟（四台独立运营商各 75 条/秒，聚合 300；单台压力与
+          # 早期 150/两台 持平）。限速 + 分批冷却是硬性要求：不限速裸跑会触发
+          # 公共 DNS 限流，实测 24.6 万条跑完错误率 63.9%（15.7 万条超时）。
+          args=("--workers" "64" "--qps" "${QPS:-300}" "--batch" "30000" "--cooldown" "20")
           if [ -n "${LIMIT:-}" ]; then args+=("--limit" "$LIMIT"); fi
           # 一轮没跑完（错误率超限 / 配额耗尽）就先 continue 一轮：
           # 进度已落盘，续传只补超时的那部分，不是从零重来。
