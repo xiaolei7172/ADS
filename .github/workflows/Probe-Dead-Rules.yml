@@ -40,6 +40,7 @@ jobs:
     timeout-minutes: 100
     permissions:
       contents: write
+      issues: write   # Report Failure 步骤 gh issue create 需要；缺了它会静默失败（run#3 教训）
 
     steps:
       # 浅克隆即可：commit/push 只需远端已有父提交（本仓库始终满足），
