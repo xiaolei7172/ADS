@@ -3,19 +3,19 @@
 ! 📌 规则名称：天影规则聚合 · 广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-11 12:54:21（北京时间）
-! 📊 有效规则：252113 条
+! ⏰ 更新时间：2026-11-11 14:17:24（北京时间）
+! 📊 有效规则：252154 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-11 12:54:21 | ✅ 有效规则 252113 条
+! Description: ⏰ 更新时间 2026-11-11 14:17:24 | ✅ 有效规则 252154 条
 ! ────────────────── ☑ 规则来源统计 ──────────────────
 !  120,903 条  AdRules DNS List [AdRules DNS List]
 !   85,719 条  anti-ad 官方规则
 !   12,314 条  5460 [酷安广告规则]
 !   10,336 条  1007-Hosts
 !    8,553 条  海哥规则
-!    7,008 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
+!    7,049 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !    2,946 条  OISD 拦截规则 [oisd small]
 !    2,467 条  本地自定义规则
 !    1,119 条  乘风通用规则 [乘风 广告过滤规则]
@@ -223043,11 +223043,50 @@ dlsdk.appsflyer.com^
 -indo666.
 -pentaslot.
 -tototix.gif
+||9xhbw9ypbcn7biz.cfd^
 ||ad.linksynergy.com^
 ||ads.lemmatechnologies.com^
+||amdcrooc.in^
+||bakalbicarb.rest^
+||birotacours.click^
+||cerxwkmeywkdy.online^
+||coothcapling.cyou^
 ||daleelerah.info
+||dhovqdnulcadz.site^
+||embedararao.click^
+||evrpzvsplmwzt.site^
+||fancyotter.me^
+||geordieizchak.cyou^
+||gwdkavydmyuf.com^
+||hdbvlshiszaoa.space^
+||hwdfqfdu.com^
+||immitmalkite.click^
+||iqcjslriuumhs.space^
+||kfuthotjfeltq.site^
+||mandalamutt.cyou^
+||mfqvopghvhvtc.space^
+||nbtfdercvyyei.online^
+||pdfdoyrcfev.com^
+||personamaiefic.rest^
 ||ppqusrmsvpwoq.online^
+||ptelnqutbqhfx.site^
+||pxuxlswadjlfu.space^
+||qmtdazupilzyt.space^
+||qobqsakwxaqdn.website^
+||qwgnmethokkkg.site^
+||qyqtjsefhymde.online^
+||rmzjuwxxhocys.site^
+||sxgpxiijzklyi.site^
+||tabngnhobxpfh.online^
+||tckcirzwpwprd.website^
+||trilledlorummimbars.cfd^
 ||uterusarchgodardour.cyou^
+||vicbydnnqwzrv.online^
+||woxfpmjmlwkba.site^
+||xhbtuppqjdgpa.online^
+||xwzsvikozysmg.space^
+||yoofqpicuctgz.online^
+||ytuxglgoatece.website^
 ||3ckz.com^
 ||3vetz.com^
 ||adblockermax.com^
@@ -223193,6 +223232,8 @@ dlsdk.appsflyer.com^
 ||tools.bongacams.com^
 ||widget.faphouse.com^
 ||widgets.guppy.live^
+||a4k2h8jii.com^
+||htjkgmxcg.com^
 ||cpro.baidustatic.com^
 ||farm-cn.plista.com^
 ||static-cn.plista.com^

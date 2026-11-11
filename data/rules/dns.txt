@@ -3,17 +3,17 @@
 ! 📌 规则名称：天影规则聚合 · DNS 拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-11 12:54:22（北京时间）
-! 📊 有效规则：225572 条
+! ⏰ 更新时间：2026-11-11 14:17:24（北京时间）
+! 📊 有效规则：225613 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · DNS 拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-11 12:54:22 | ✅ 有效规则 225572 条
+! Description: ⏰ 更新时间 2026-11-11 14:17:24 | ✅ 有效规则 225613 条
 ! ────────────────── ☑ 规则来源统计 ──────────────────
 !  115,362 条  AdRules DNS List [AdRules DNS List]
 !   84,136 条  anti-ad 官方规则
 !    6,582 条  海哥规则
-!    5,987 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
+!    6,028 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !    4,771 条  1007-Hosts
 !    3,585 条  5460 [酷安广告规则]
 !    2,682 条  OISD 拦截规则 [oisd small]
@@ -30,7 +30,7 @@
 !      4771 条  1007-Hosts
 !     84136 条  anti-ad 官方规则
 !    115362 条  AdRules DNS List [AdRules DNS List]
-!      5987 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
+!      6028 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !      2682 条  OISD 拦截规则 [oisd small]
 !      3585 条  5460 [酷安广告规则]
 !      6582 条  海哥规则
@@ -206809,7 +206809,7 @@
 ! 📝 规则说明：Filter composed of several other filters (AdGuard Base filter, Tracking Protection filter, Mobile ads filter, EasyList, EasyPrivacy, etc) and simplified specifically to be better compatible with DNS-level ad blocking.
 ! 🔗 原始地址：https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 ! ==============================================
-! 📊 本区规则：5987 条
+! 📊 本区规则：6028 条
 ! ==============================================
 ||insightjs.org^
 ||inyourpocket.co.uk^
@@ -209521,8 +209521,47 @@
 ||klik.top^
 ||klik.zeus.fun^
 ||nawala.my^
+||9xhbw9ypbcn7biz.cfd^
+||amdcrooc.in^
+||bakalbicarb.rest^
+||birotacours.click^
+||cerxwkmeywkdy.online^
+||coothcapling.cyou^
+||dhovqdnulcadz.site^
+||embedararao.click^
+||evrpzvsplmwzt.site^
+||fancyotter.me^
+||geordieizchak.cyou^
+||gwdkavydmyuf.com^
+||hdbvlshiszaoa.space^
+||hwdfqfdu.com^
+||immitmalkite.click^
+||iqcjslriuumhs.space^
+||kfuthotjfeltq.site^
+||mandalamutt.cyou^
+||mfqvopghvhvtc.space^
+||nbtfdercvyyei.online^
+||pdfdoyrcfev.com^
+||personamaiefic.rest^
 ||ppqusrmsvpwoq.online^
+||ptelnqutbqhfx.site^
+||pxuxlswadjlfu.space^
+||qmtdazupilzyt.space^
+||qobqsakwxaqdn.website^
+||qwgnmethokkkg.site^
+||qyqtjsefhymde.online^
+||rmzjuwxxhocys.site^
+||sxgpxiijzklyi.site^
+||tabngnhobxpfh.online^
+||tckcirzwpwprd.website^
+||trilledlorummimbars.cfd^
 ||uterusarchgodardour.cyou^
+||vicbydnnqwzrv.online^
+||woxfpmjmlwkba.site^
+||xhbtuppqjdgpa.online^
+||xwzsvikozysmg.space^
+||yoofqpicuctgz.online^
+||ytuxglgoatece.website^
 ||3ckz.com^
 ||3vetz.com^
 ||adblockermax.com^
@@ -209654,6 +209693,8 @@
 ||xmatch.com^
 ||widget.faphouse.com^
 ||widgets.guppy.live^
+||a4k2h8jii.com^
+||htjkgmxcg.com^
 ||88p2p.com^
 ||aiwanma99.com^
 ||kuheju.com^

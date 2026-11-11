@@ -2,7 +2,7 @@
 # 由 dns.txt 折叠前的完整域名集转换，含全部子域，覆盖与 AdGuard 语义对齐
 # ⚠️ hosts 只能精确匹配，拦不到未列出的子域；需要完整子域覆盖请用 dns.txt / smartdns.conf / surge.list
 # 📌 项目地址：https://github.com/xiaolei7172/ADS
-# 🔖 内容指纹：de7a63c55913 | 📊 有效规则：239135 条 | ⏰ 变更时间见 git 提交记录
+# 🔖 内容指纹：69ee5dc23cb0 | 📊 有效规则：239176 条 | ⏰ 变更时间见 git 提交记录
 # 🔄 更新频率：每日自动更新（北京时间 08:00）
 0.0.0.0 ads3-normal-hl.zijieapi.com
 0.0.0.0 ads3-normal-lf.zijieapi.com
@@ -219117,9 +219117,48 @@
 0.0.0.0 klik.top
 0.0.0.0 klik.zeus.fun
 0.0.0.0 nawala.my
+0.0.0.0 9xhbw9ypbcn7biz.cfd
 0.0.0.0 ads.lemmatechnologies.com
+0.0.0.0 amdcrooc.in
+0.0.0.0 bakalbicarb.rest
+0.0.0.0 birotacours.click
+0.0.0.0 cerxwkmeywkdy.online
+0.0.0.0 coothcapling.cyou
+0.0.0.0 dhovqdnulcadz.site
+0.0.0.0 embedararao.click
+0.0.0.0 evrpzvsplmwzt.site
+0.0.0.0 fancyotter.me
+0.0.0.0 geordieizchak.cyou
+0.0.0.0 gwdkavydmyuf.com
+0.0.0.0 hdbvlshiszaoa.space
+0.0.0.0 hwdfqfdu.com
+0.0.0.0 immitmalkite.click
+0.0.0.0 iqcjslriuumhs.space
+0.0.0.0 kfuthotjfeltq.site
+0.0.0.0 mandalamutt.cyou
+0.0.0.0 mfqvopghvhvtc.space
+0.0.0.0 nbtfdercvyyei.online
+0.0.0.0 pdfdoyrcfev.com
+0.0.0.0 personamaiefic.rest
 0.0.0.0 ppqusrmsvpwoq.online
+0.0.0.0 ptelnqutbqhfx.site
+0.0.0.0 pxuxlswadjlfu.space
+0.0.0.0 qmtdazupilzyt.space
+0.0.0.0 qobqsakwxaqdn.website
+0.0.0.0 qwgnmethokkkg.site
+0.0.0.0 qyqtjsefhymde.online
+0.0.0.0 rmzjuwxxhocys.site
+0.0.0.0 sxgpxiijzklyi.site
+0.0.0.0 tabngnhobxpfh.online
+0.0.0.0 tckcirzwpwprd.website
+0.0.0.0 trilledlorummimbars.cfd
 0.0.0.0 uterusarchgodardour.cyou
+0.0.0.0 vicbydnnqwzrv.online
+0.0.0.0 woxfpmjmlwkba.site
+0.0.0.0 xhbtuppqjdgpa.online
+0.0.0.0 xwzsvikozysmg.space
+0.0.0.0 yoofqpicuctgz.online
+0.0.0.0 ytuxglgoatece.website
 0.0.0.0 3ckz.com
 0.0.0.0 3vetz.com
 0.0.0.0 adblockermax.com
@@ -219259,6 +219298,8 @@
 0.0.0.0 tools.bongacams.com
 0.0.0.0 widget.faphouse.com
 0.0.0.0 widgets.guppy.live
+0.0.0.0 a4k2h8jii.com
+0.0.0.0 htjkgmxcg.com
 0.0.0.0 farm-cn.plista.com
 0.0.0.0 static-cn.plista.com
 0.0.0.0 ubmcvideo.baidustatic.com
