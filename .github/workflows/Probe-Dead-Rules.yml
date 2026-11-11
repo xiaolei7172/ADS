@@ -123,11 +123,19 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -eu
-          # body 用 printf 单行构造：多行字面量在 YAML 块标量里一旦缩进出错，
-          # 整份工作流会解析失败（比告警本身更糟）。同样避开 gh 的 --json
-          # （issue create 不支持），直接从 stdout 取 URL。
-          body=$(printf '死规则探测失败，dead.txt 未更新（日更流程继续使用上一次的清单）。\n\n运行记录：%s\n\n常见原因：\n- 出站 UDP 53 被拦截 → 错误率超阈值，脚本主动中止（这是保护，不是故障）\n- DNS 服务器抽风 → 死域占比超 40%，脚本主动中止\n- 规则文件缺失 → 先跑一次日更工作流' "$RUN_URL")
+          # body 走临时文件：bash printf 的 format 参数遇到多字节中文会报
+          # "invalid format character"（run#4 实测），直接 printf 格式化不可靠。
+          cat > /tmp/issue-body.md <<EOF
+          死规则探测失败，dead.txt 未更新（日更流程继续使用上一次的清单）。
+
+          运行记录：$RUN_URL
+
+          常见原因：
+          - 出站 UDP 53 被拦截 → 错误率超阈值，脚本主动中止（这是保护，不是故障）
+          - DNS 服务器抽风 → 死域占比超 40%，脚本主动中止
+          - 规则文件缺失 → 先跑一次日更工作流
+          EOF
           url=$(gh issue create --repo "${{ github.repository }}" \
             --title "❌ 死规则体检失败（自动创建）" \
-            --body "$body")
+            --body-file /tmp/issue-body.md)
           echo "🆕 已创建 issue：$url"
