@@ -106,6 +106,10 @@ adblock_rules = [
     # 原址 hgzs.uunat.com 对海外 IP 返回 409（地域封锁），GitHub Actions 永远拿不到，
     # 改用海哥官方镜像（作者自建，Actions 每天 01:15 自动从源站同步，内容与源站一致）
     {"url": "https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt", "name": "海哥规则"},
+    {"url": "https://raw.githubusercontent.com/Kuroba-Sayuki/FuLing-AdRules/Develop/FuLingRules/FuLingBlockList.txt", "name": "茯苓拦截规则"},
+    # 2026-11-11 增量评估（对照 23.7 万拦截域 + 2.5 万死域清单）：
+    # 茯苓 664 条中 362 条未被收录，剔除死域后仍是全部候选上游里唯一有
+    # 实质有效增量（~162 条）的活跃源（当日仍在更新），故接入。
     {"url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt", "name": "秋风广告规则"},
     {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt", "name": "乘风视频规则"},
     {"url": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt", "name": "乘风通用规则"},

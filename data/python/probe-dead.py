@@ -43,14 +43,29 @@
 上游换 CDN 重新启用）。所以 dead.txt 永远是「截至本次探测的死域全集」，
 不需要人工清理。
 
+增量模式（--incremental）
+--------------------------
+全量 22 万+ 条每周重探一遍，探测时间全花在「上周就验过是活的」域上。
+增量模式引入快照文件（--snapshot，随 dead.txt 一起提交进仓库），
+每周只探三类：
+  1. **新增域**：当前产物 - 上周快照 → 全量探测（增量模式的主战场）
+  2. **抽样复核**：上上周验过活着的域，按域名哈希稳定抽 --recheck-ratio
+     （默认 10%）重验——稳定哈希保证中断续传时抽的是同一批；
+     每个活域平均 ≤10 周被轮到一次，新死域最迟 10 周内被清出
+  3. **旧死域全集**：dead.txt 全部重验（复活机制不受增量模式影响）
+预计运行时间从 35 分钟压到 10 分钟以内。
+首次以增量模式运行时快照不存在 → 自动退化为全量探测并生成快照。
+
 用法
 ----
   python probe-dead.py                 # 全量探测，写 data/mod/dead.txt
+  python probe-dead.py --incremental   # 增量探测（每周例行用这个）
   python probe-dead.py --limit 5000    # 只测前 5000 条（调试）
   python probe-dead.py --dry-run       # 只打印统计，不写盘
   python probe-dead.py --workers 192   # 调并发（默认 128）
 """
 import argparse
+import hashlib
 import json
 import os
 import random
@@ -298,6 +313,49 @@ def load_old_dead(path):
     return doms
 
 
+def load_snapshot(path):
+    """读上次探测时的产物快照（纯域名列表，可带注释头）。缺失返回 None。"""
+    if not os.path.exists(path):
+        return None
+    doms = set()
+    with open(path, "r", encoding="utf-8", errors="ignore") as f:
+        for line in f:
+            s = line.strip().lower()
+            if s and not s.startswith(("!", "#")):
+                doms.add(s)
+    return doms
+
+
+def stable_sample(doms, ratio):
+    """按域名 MD5 哈希稳定抽样。
+
+    为什么不用 random.sample：抽样结果必须跨次运行一致——
+    探测中断续传时 targets 要重算，哈希桶保证两次抽的是同一批域，
+    已落盘的进度不会作废（random.sample 每次换种子会抽到不同子集）。
+    """
+    threshold = round(ratio * 10000)
+    return {d for d in doms
+            if int(hashlib.md5(d.encode()).hexdigest()[:8], 16) % 10000 < threshold}
+
+
+def save_snapshot(path, doms):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    header = [
+        "! ==============================================",
+        "! 📸 死规则探测快照（上次探测时的拦截域全集）",
+        f"! 🕒 生成时间：{beijing_now()}（北京时间）",
+        "! 📌 用途：probe-dead.py --incremental 用它算「新增域」，",
+        "!         并对存量域做哈希稳定抽样复核。随 dead.txt 一起提交。",
+        "! ⚠️ 本文件由脚本自动生成，手动编辑会在下次探测时被覆盖。",
+        "! ==============================================",
+        "",
+    ]
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8", newline="\n") as f:
+        f.write("\n".join(header) + "\n".join(sorted(doms)) + "\n")
+    os.replace(tmp, path)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--source", default=SOURCE)
@@ -316,10 +374,16 @@ def main():
     ap.add_argument("--reset", action="store_true", help="丢弃上次进度，从零开始")
     ap.add_argument("--batch", type=int, default=30000, help="每 N 条落盘并冷却一次")
     ap.add_argument("--cooldown", type=int, default=15, help="每批之间暂停秒数")
+    ap.add_argument("--incremental", action="store_true",
+                    help="增量模式：只探新增域 + 哈希抽样复核存量 + 旧死域全集复验")
+    ap.add_argument("--snapshot", default=os.path.join(MOD_DIR, "probe-snapshot.txt"),
+                    help="增量模式快照文件（默认 data/mod/probe-snapshot.txt）")
+    ap.add_argument("--recheck-ratio", type=float, default=0.10,
+                    help="增量模式对存量活域的抽样复核比例（默认 0.10）")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
-    print(f"🔍 死规则探测  {beijing_now()}")
+    print(f"🔍 死规则探测  {beijing_now()}  {'（增量模式）' if args.incremental else '（全量模式）'}")
 
     if not os.path.exists(args.source):
         print(f"❌ 找不到 {args.source}，先跑 merge.py + filter-dns.py")
@@ -329,10 +393,28 @@ def main():
     old_dead = load_old_dead(args.out)
     print(f"📥 当前拦截域 {len(live):,} 条；上次 dead.txt {len(old_dead):,} 条（一并复验，防复活）")
 
-    # 探测全集 = 当前拦截域 ∪ 旧死域（旧的即使已不在产物里也要验，决定是否移出 dead.txt）
-    targets = sorted(live | old_dead)
+    if args.incremental:
+        snap = load_snapshot(args.snapshot)
+        if snap is None:
+            print("📸 快照不存在，本轮自动退化为全量探测，结束后生成快照")
+            targets = sorted(live | old_dead)
+            probed_live = set(live)
+        else:
+            new_doms = live - snap
+            common = live & snap
+            sampled = stable_sample(common, args.recheck_ratio)
+            probed_live = new_doms | sampled
+            targets = sorted(probed_live | old_dead)
+            print(f"📸 增量口径：新增 {len(new_doms):,} + 存量抽样 "
+                  f"{len(sampled):,}/{len(common):,}（{args.recheck_ratio:.0%}，哈希稳定）"
+                  f" + 旧死域复验 {len(old_dead):,}")
+    else:
+        targets = sorted(live | old_dead)
+        probed_live = set(live)
+
     if args.limit:
         targets = targets[:args.limit]
+        probed_live &= set(targets)
     if len(targets) < 1000 and not args.limit:
         print(f"🚫 待探测域名仅 {len(targets)} 条，输入异常，中止（不写盘）")
         sys.exit(1)
@@ -403,13 +485,16 @@ def main():
         else:
             disputed += 1
 
-    dead_in_live = [d for d in confirmed if d in live]
+    dead_in_live = [d for d in confirmed if d in probed_live]
     revived = sorted(old_dead - set(confirmed))
-    nx_ratio = len(dead_in_live) / max(len(live), 1)
+    # 增量模式下占比只对「本轮实际探测过的活域」计算——
+    # 未抽到的存量域没探过，把它们放进分母会把占比稀释得失真。
+    nx_ratio = len(dead_in_live) / max(len(probed_live), 1)
 
     print(f"\n📊 结果")
     print(f"   确认死域（全部应答服务器 NXDOMAIN）：{len(confirmed):,} 条，"
-          f"占当前拦截域 {nx_ratio:.1%}")
+          f"占本轮探测活域 {nx_ratio:.1%}"
+          + ("" if args.incremental else f"（占当前拦截域 {nx_ratio:.1%}）"))
     print(f"   各台结果不一致/未答全（保守保留，不判死）：{disputed:,} 条")
     print(f"   本期复活（上次判死、本次可解析）：{len(revived):,} 条")
     print(f"   dead.txt 将记录 {len(confirmed):,} 条"
@@ -429,9 +514,12 @@ def main():
         "! ☠️ 死规则清单（NXDOMAIN 确认）",
         f"! 🕒 生成时间：{beijing_now()}（北京时间）",
         ("! 🔬 探测方式：UDP 直连 " + " / ".join(SERVERS)
-         + f"，全部 {len(SERVERS)} 台均返回 RCODE=3 才判定"),
-        f"! 📊 探测 {len(targets):,} 条 → 确认死域 {len(confirmed):,} 条"
-        f"（占当前拦截域 {nx_ratio:.1%}）；结果不一致 {disputed:,} 条（保留）",
+         + f"，两台均返回 RCODE=3 才判定"),
+        ("! 🧭 探测口径：" + ("增量（新增域全探 + 存量哈希抽样 {}% + 旧死域复验）"
+                            .format(round(args.recheck_ratio * 100))
+                            if args.incremental else "全量")),
+        f"! 📊 本轮探测 {len(targets):,} 条 → 确认死域 {len(confirmed):,} 条"
+        f"（占本轮探测活域 {nx_ratio:.1%}）；结果不一致 {disputed:,} 条（保留）",
         f"! ♻️ 本期复活 {len(revived):,} 条（已从本清单移除，规则恢复拦截）",
         "! 📌 用途：merge.py 读取本文件，命中域名的**上游**拦截规则不再写入产物；",
         "!         本地自定义规则（data/mod/adblock.txt）豁免，用户明确要拦的照拦。",
@@ -444,10 +532,23 @@ def main():
     with open(args.out, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(header) + "\n".join(confirmed) + "\n")
 
-    print(f"\n✅ 已写入 {os.path.relpath(args.out, os.path.dirname(SCRIPT_DIR))}"
+    def _pretty(path):
+        """展示用相对路径；跨盘符（如 C: 输出、D: 脚本）时 relpath 会抛
+        ValueError，退回绝对路径——本地调试常用场景，不能让收尾打印崩掉。"""
+        try:
+            return os.path.relpath(path, os.path.dirname(SCRIPT_DIR))
+        except ValueError:
+            return path
+
+    print(f"\n✅ 已写入 {_pretty(args.out)}"
           f"（{len(confirmed):,} 条）")
     if revived:
         print(f"   ♻️ {len(revived):,} 条复活域名已恢复拦截")
+    # 快照在 dead.txt 写成功后更新：两者必须同代，否则下轮「新增域」会算错
+    if args.incremental:
+        save_snapshot(args.snapshot, live)
+        print(f"   📸 快照已更新 {_pretty(args.snapshot)}"
+              f"（{len(live):,} 条）")
     # 写盘成功即代表本轮闭环，清掉进度文件；下次是新一轮探测，不该复用旧结果
     if args.state and os.path.exists(args.state):
         os.remove(args.state)

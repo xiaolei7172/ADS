@@ -4,12 +4,17 @@ name: Probe Dead Rules
 # 写进 data/mod/dead.txt，日更流程会自动剔除它们。
 #
 # 为什么不放在日更工作流里：
-#   全量 24.6 万条探测约 33 分钟（限速 150 条/秒），日更本身已有 40 分钟上限，
-#   而域名消失是「周级」而不是「日级」变化。每周扫一遍够用，
+#   域名消失是「周级」而不是「日级」变化。每周扫一遍够用，
 #   日更只读结果（merge.py 读 dead.txt），不承担探测成本。
 #
+# 增量模式（2026-11-11 起）：
+#   全量 22 万+ 条每周重探，时间全花在「上周刚验过活着」的域上。
+#   改增量：新增域全探 + 存量按域名哈希稳定抽 10% 复核 + 旧死域全集复验，
+#   快照文件 data/mod/probe-snapshot.txt 随 dead.txt 一起提交。
+#   运行时间 35 分钟 → 10 分钟以内；首次运行快照缺失自动退化全量。
+#
 # 探测方式：UDP 直连 223.5.5.5 / 119.29.29.29，两台都返回
-#   RCODE=3 才判死；网络错误率 >15% 或死域占比 >40% 自动中止
+#   RCODE=3 才判死；网络错误率 >30% 或死域占比 >40% 自动中止
 #   且不写盘（避免链路故障造成批量误删）。
 # ============================================================
 on:
@@ -59,14 +64,14 @@ jobs:
           LIMIT: ${{ inputs.limit }}
         run: |
           set -eu
-          # 全量约 35 分钟（两台各 75 条/秒）。曾试 4 台提聚合吞吐，但 CI
-          # 出口在境外，到 114/百度延迟高丢包重，反而撞 100 分钟超时（run#2）。
+          # 增量模式：新增域全探 + 存量抽 10% + 旧死域复验，约 10 分钟内。
+          # 快照缺失时脚本自动退化全量（首次运行/快照丢失都不用手动干预）。
           # 限速 + 分批冷却是硬性要求：不限速裸跑会触发公共 DNS 限流，
           # 实测 24.6 万条跑完错误率 63.9%（15.7 万条超时）。
-          args=("--workers" "64" "--qps" "${QPS:-150}" "--batch" "30000" "--cooldown" "20")
+          args=("--workers" "64" "--qps" "${QPS:-150}" "--batch" "30000" "--cooldown" "20" "--incremental")
           if [ -n "${LIMIT:-}" ]; then args+=("--limit" "$LIMIT"); fi
           # 一轮没跑完（错误率超限 / 配额耗尽）就先 continue 一轮：
-          # 进度已落盘，续传只补超时的那部分，不是从零重来。
+          # 进度已落盘，抽样是域名哈希稳定的，续传抽的还是同一批，不浪费。
           if ! python ./data/python/probe-dead.py "${args[@]}"; then
             echo "::warning::首轮未达标，自动续传一轮"
             python ./data/python/probe-dead.py "${args[@]}"
@@ -77,11 +82,13 @@ jobs:
           set -eu
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
-          if git diff --quiet -- data/mod/dead.txt; then
-            echo "⏭️ dead.txt 无变化，跳过提交"
+          # 快照必须与 dead.txt 同代提交：快照决定下轮「新增域」的差集，
+          # 只提交一半会让下一次探测口径错乱
+          if git diff --quiet -- data/mod/dead.txt data/mod/probe-snapshot.txt; then
+            echo "⏭️ dead.txt 与快照均无变化，跳过提交"
             exit 0
           fi
-          git add data/mod/dead.txt
+          git add data/mod/dead.txt data/mod/probe-snapshot.txt
           git commit -m "☠️ 死规则清单更新 $(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M')"
           git push
 
@@ -95,9 +102,11 @@ jobs:
               echo "| 项目 | 值 |"
               echo "| --- | ---: |"
               echo "| dead.txt 条数 | $(grep -vcE '^(#|!|\[|$)' data/mod/dead.txt) |"
+              echo "| 快照域数 | $(grep -vcE '^(#|!|\[|$)' data/mod/probe-snapshot.txt 2>/dev/null || echo '—') |"
               echo "| 当前 DNS 拦截 | $(grep -vcE '^(#|!|\[|$)' data/rules/dns.txt) |"
               echo ""
               echo "生成时间：$(grep -m1 '生成时间' data/mod/dead.txt | sed 's/^! //')"
+              echo "探测口径：$(grep -m1 '探测口径' data/mod/dead.txt | sed 's/^! //')"
             else
               echo "⚠️ 未生成 dead.txt"
             fi
