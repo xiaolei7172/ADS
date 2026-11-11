@@ -21,10 +21,10 @@
 ### 🔮 天影规则聚合 · 实时规则规模
 
 
-🕒 **更新时间**：2026-11-11 14:17:24（北京时间）
+🕒 **更新时间**：2026-11-11 15:11:54（北京时间）
 
 
-🚫 **广告拦截规则**：252154 条
+🚫 **广告拦截规则**：252155 条
 
 
 🌐 **DNS 拦截域名**：225613 个
@@ -33,7 +33,7 @@
 ✅ **白名单放行规则**：6772 条（约半数可在 DNS 层直接生效，其余为浏览器版 AdGuard 的路径级 / `$domain=` 规则，DNS 层无效）
 
 <!-- DL_STATUS_START -->
-✅ **上游源状态**：20/20 全部下载成功
+✅ **上游源状态**：21/21 全部下载成功
 <!-- DL_STATUS_END -->
 
 ![规则量趋势](data/stats/trend.svg)
@@ -622,6 +622,7 @@ python data/python/check-quality.py && python data/python/verify-fixes.py
 
 | 类型 | 变更内容 | 提交 |
 | :--- | :--- | :--- |
+| ⚡ 其他 | 死规则探测改增量模式 + 🧩 接入茯苓上游 | [`51da94c`](https://github.com/xiaolei7172/ADS/commit/51da94c) |
 | 📦 其他 | AD-QGG 精选 2,222 条进本地自定义规则；探测回退双服务器 | [`e965ae8`](https://github.com/xiaolei7172/ADS/commit/e965ae8) |
 
 <details>
