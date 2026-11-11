@@ -90,6 +90,9 @@ jobs:
           fi
           git add data/mod/dead.txt data/mod/probe-snapshot.txt
           git commit -m "☠️ 死规则清单更新 $(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M')"
+          # 与日更工作流存在竞态（run#3 教训：日更先推了 master，这里 push 被拒）：
+          # push 前先 rebase 到远端最新，冲突概率极低（两流程写不同文件）
+          git pull --rebase origin master
           git push
 
       - name: Job Summary
