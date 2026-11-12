@@ -21,16 +21,16 @@
 ### 🔮 天影规则聚合 · 实时规则规模
 
 
-🕒 **更新时间**：2026-11-11 15:11:54（北京时间）
+🕒 **更新时间**：2026-11-12 18:11:14（北京时间）
 
 
-🚫 **广告拦截规则**：252155 条
+🚫 **广告拦截规则**：258340 条
 
 
-🌐 **DNS 拦截域名**：225613 个
+🌐 **DNS 拦截域名**：231575 个
 
 
-✅ **白名单放行规则**：6772 条（约半数可在 DNS 层直接生效，其余为浏览器版 AdGuard 的路径级 / `$domain=` 规则，DNS 层无效）
+✅ **白名单放行规则**：6773 条（约半数可在 DNS 层直接生效，其余为浏览器版 AdGuard 的路径级 / `$domain=` 规则，DNS 层无效）
 
 <!-- DL_STATUS_START -->
 ✅ **上游源状态**：21/21 全部下载成功
@@ -100,8 +100,8 @@
 
 但有三件事兜不住，需要你知道：
 
-1. **白名单里只有约一半能在 DNS 层生效**：`allow.txt` 共 6,772 条，纯域名 + 通配 3,497 条可直接生效，
-   其余 3,275 条是路径级 / `$domain=` / 正则，只有浏览器版 AdGuard 认。
+1. **白名单里只有约一半能在 DNS 层生效**：`allow.txt` 共 6,773 条，纯域名 + 通配 3,497 条可直接生效，
+   其余 3,276 条是路径级 / `$domain=` / 正则，只有浏览器版 AdGuard 认。
 2. **上游白名单本身会失效**：近三百条上游白名单已被父域架空，且随上游每日漂移，只能统计、不能当发布闸门。
    本地白名单新出现的同类冲突会被 `check-quality.py` 当场拦住（存量基线登记在 `data/mod/allow-conflicts.baseline`，每次运行会打印实际条数）。
 3. **误杀可能是当天新出现的**：上游随时新增过宽规则，成品每日重建，问题也可能今天才有。
@@ -618,12 +618,25 @@ python data/python/check-quality.py && python data/python/verify-fixes.py
 
 > 仅收录**功能性变更**；CI 每日的例行规则更新（`✅ 规则自动更新` 提交）不列出。完整记录见 [Commits](https://github.com/xiaolei7172/ADS/commits/master)。
 
-### 📅 2026-11-11
+### 📅 2026-11-12
 
 | 类型 | 变更内容 | 提交 |
 | :--- | :--- | :--- |
+| 🧹 清理 | 清理模块F(AD-QGG)指向死域的 262 条规则（run#5 探测确认 NXDOMAIN，质检熔断 run#438） | [`132ff8f`](https://github.com/xiaolei7172/ADS/commit/132ff8f) |
+
+<details>
+<summary><b>📅 2026-11-11</b> · 6 项变更</summary>
+
+| 类型 | 变更内容 | 提交 |
+| :--- | :--- | :--- |
+| ☠ 清理 | 死规则清单更新 2026-11-11 16:45 | [`566ff8a`](https://github.com/xiaolei7172/ADS/commit/566ff8a) |
+| 🩹 修复 | Report Failure 改用 body-file（bash printf 对多字节中文报 invalid format character，run#4 实测） | [`4ffa89b`](https://github.com/xiaolei7172/ADS/commit/4ffa89b) |
+| 🔐 其他 | Report Failure 步骤补 issues: write 权限（run#3 中 gh issue create 静默失败） | [`ef94e6d`](https://github.com/xiaolei7172/ADS/commit/ef94e6d) |
+| 🔧 修复 | 探测提交竞态修复 + 预置 11-08 快照 | [`e4712d8`](https://github.com/xiaolei7172/ADS/commit/e4712d8) |
 | ⚡ 其他 | 死规则探测改增量模式 + 🧩 接入茯苓上游 | [`51da94c`](https://github.com/xiaolei7172/ADS/commit/51da94c) |
 | 📦 其他 | AD-QGG 精选 2,222 条进本地自定义规则；探测回退双服务器 | [`e965ae8`](https://github.com/xiaolei7172/ADS/commit/e965ae8) |
+
+</details>
 
 <details>
 <summary><b>📅 2026-11-10</b> · 2 项变更</summary>
