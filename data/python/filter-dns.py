@@ -208,13 +208,10 @@ for name, doms in filtered_sections.items():
         buf.append(f"||{d}^\n")
     chunks.append("".join(buf))
 
-# 来源汇总（各区条数在第一遍循环里就已知，不必回读文件）
+# 来源统计不再写进文件：title.py 会在表头生成同内容的「☑ 规则来源统计」块
+# （降序 + 千分位），这里再写一份「来源汇总」会造成头部两段重复（2026-11-13 实测）。
+# 各来源条数仍打印到 CI 日志（见文件末尾），排查用途不受影响。
 summary_text = ""
-if per_source_kept:
-    summary_text = "\n! ────────────── 来源汇总 ──────────────\n"
-    for name, n in per_source_kept.items():
-        summary_text += f"!   {n:>7} 条  {name}\n"
-    summary_text += "! ────────────────────────────────────────\n\n"
 
 body = "".join(chunks)
 # 与旧版切分点对齐：旧实现把第一个分区的前导空行算进头部，这里显式补回
