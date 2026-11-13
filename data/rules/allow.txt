@@ -3,15 +3,15 @@
 ! 📌 规则名称：天影规则聚合 · 白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-12 18:11:14（北京时间）
-! 📊 有效规则：6773 条
+! ⏰ 更新时间：2026-11-13 14:44:59（北京时间）
+! 📊 有效规则：6777 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 白名单规则 📌
-! Description: ⏰ 更新时间 2026-11-12 18:11:14 | ✅ 有效规则 6773 条
-! 🧮 DNS 层可直接生效：3,504 条（纯域名 3,346 + 通配 158）；另有 3,269 条为路径级 / $domain= / 正则，仅浏览器版 AdGuard 有效
+! Description: ⏰ 更新时间 2026-11-13 14:44:59 | ✅ 有效规则 6777 条
+! 🧮 DNS 层可直接生效：3,508 条（纯域名 3,350 + 通配 158）；另有 3,269 条为路径级 / $domain= / 正则，仅浏览器版 AdGuard 有效
 ! ────────────────── ☑ 规则来源统计 ──────────────────
-!    3,089 条  5460 [酷安广告规则]（规则内置）
+!    3,093 条  5460 [酷安广告规则]（规则内置）
 !    2,634 条  AdGuard 跟踪白名单（远程白名单）
 !      306 条  李文杰白名单 [LWJ's white list]（远程白名单）
 !      216 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]（规则内置）
@@ -731,6 +731,7 @@
 @@||ddyunbo.com^
 @@||detail.meizu.com^
 @@||detail.zol.com.cn^
+@@||dev.mi.com^
 @@||dev.miuiflash.com^
 @@||developer.extscreen.com^
 @@||devuploads.com^
@@ -932,6 +933,7 @@
 @@||hub5idx.v6.shub.sandai.net^
 @@||hub5pn.wap.sandai.net^
 @@||huluxia.com^
+@@||hyperos.developer.xiaomi.com^
 @@||i.dell.com^
 @@||i.gtimg.cn^
 @@||i.imgur.com^
@@ -983,6 +985,7 @@
 @@||img.qidian.com^
 @@||img.siwazywimg.com^
 @@||img.sogoucdn.com^
+@@||img.ssl.msdk.qq.com^
 @@||img.tapimg.com^
 @@||img.youpin.mi-img.com^
 @@||img01.sogoucdn.com^
@@ -1007,6 +1010,7 @@
 @@||inporn.com^
 @@||instant.io^
 @@||intro.limestart.cn^
+@@||iot.mi.com^
 @@||ip*.ahcdn.com^
 @@||ip.900cha.com^
 @@||ip.cn^
@@ -1206,6 +1210,7 @@
 @@||message.bilibili.com^
 @@||mgbsdk.matrix.netease.com^
 @@||midas.gtimg.cn^
+@@||mimo.mi.com^
 @@||miniapp.gtimg.cn^
 @@||mip.xiachufang.com^
 @@||mirrors.163.com^
@@ -2759,7 +2764,6 @@
 @@||view.inews.qq.com^
 @@||livew.l.qq.com^
 @@||iwx.mail.qq.com^
-@@||img.ssl.msdk.qq.com^
 @@||api.unipay.qq.com^
 @@||cdn.yyb.gtimg.com^
 @@||cms.myapp.com^
@@ -6196,7 +6200,7 @@
 @@/cdn-cgi/pe/bag2?*yieldbot.intent.js$domain=droid-life.com
 @@/cdn-cgi/pe/bag2?*nr-data.net$domain=dailycaller.com|realhardwarereviews.com|thepoliticalinsider.com
 @@||bam.nr-data.net^$script,domain=play.spotify.com
-@@||google-analytics.com/ga.js$domain=7digital.com|account.hirezstudios.com|aebn.net|aftonbladet.se|alatest.com|americanapparel.net|apps.facebook.com|asus.com|avast.com|babylon.com|bangbros.com|banshee.fm|billabong.com|billboard.com|bolha.com|bookadumpster.com|boostmobile.com|break.com|brobible.com|change.org|cinemassacre.com|comingsoon.net|everydayhealth.com|dailysteals.com|echo.msk.ru|ehow.com|eonline.com|filmweb.pl|fora.tv|fossil.com|foxsports.com.au|frequency.com|gasbuddy.com|globaltv.com|google.com|gumtree.com.au|hoerzu.de|imageshack.us|intellicast.com|jetbrains.com|jobsite.co.uk|justjared.com|juxtapoz.com|kaspersky.pl|kleinanzeigen.ebay.de|latimes.com|lemonfree.com|liptonicetea.com|logitech.com|lucasarts.com|mashable.com|medonet.pl|meetme.com|mevio.com|mommyish.com|newyorker.com|nme.com|nuts.co.uk|opendns.com|oyster.com|philips.com|photobucket.com|priceme.co.nz|salon.com|search.diy.com|seekingalpha.com|sundance.org|techbargains.com|tempe12.com|theblaze.com|thegrindstone.com|thevine.com.au|theweek.com|threatfire.com|timberland.com|tomshardware.com|tube8.com|tvunetworks.com|tweetgrid.com|umbro.com|videochart.net|weeworld.com|wonka.com|xda-developers.com|yellow.co.nz|youtube.com|zoo.org.au
+@@||google-analytics.com/ga.js$domain=7digital.com|account.hirezstudios.com|aebn.net|aftonbladet.se|alatest.com|americanapparel.net|apps.facebook.com|asus.com|avast.com|babylon.com|bangbros.com|banshee.fm|billabong.com|billboard.com|bolha.com|bookadumpster.com|boostmobile.com|break.com|brobible.com|change.org|cinemassacre.com|comingsoon.net|everydayhealth.com|dailysteals.com|echo.msk.ru|ehow.com|eonline.com|filmweb.pl|fora.tv|fossil.com|frequency.com|gasbuddy.com|globaltv.com|google.com|gumtree.com.au|hoerzu.de|imageshack.us|intellicast.com|jetbrains.com|jobsite.co.uk|justjared.com|juxtapoz.com|kaspersky.pl|kleinanzeigen.ebay.de|latimes.com|lemonfree.com|liptonicetea.com|logitech.com|lucasarts.com|mashable.com|medonet.pl|meetme.com|mevio.com|mommyish.com|newyorker.com|nme.com|nuts.co.uk|opendns.com|oyster.com|philips.com|photobucket.com|priceme.co.nz|salon.com|search.diy.com|seekingalpha.com|sundance.org|techbargains.com|tempe12.com|theblaze.com|thegrindstone.com|thevine.com.au|theweek.com|threatfire.com|timberland.com|tomshardware.com|tube8.com|tvunetworks.com|tweetgrid.com|umbro.com|videochart.net|weeworld.com|wonka.com|xda-developers.com|yellow.co.nz|youtube.com|zoo.org.au
 @@||msn.com/c.gif?rid=$image,domain=my.msn.com
 @@||walmart.com/__ssobj/core.js
 @@||google.*/mapmaker/gen_204?$subdocument,xmlhttprequest
