@@ -21,13 +21,13 @@
 ### 🔮 天影规则聚合 · 实时规则规模
 
 
-🕒 **更新时间**：2026-11-13 14:44:59（北京时间）
+🕒 **更新时间**：2026-11-13 19:52:17（北京时间）
 
 
-🚫 **广告拦截规则**：258684 条
+🚫 **广告拦截规则**：258757 条
 
 
-🌐 **DNS 拦截域名**：231903 个
+🌐 **DNS 拦截域名**：231976 个
 
 
 ✅ **白名单放行规则**：6777 条（约半数可在 DNS 层直接生效，其余为浏览器版 AdGuard 的路径级 / `$domain=` 规则，DNS 层无效）
@@ -618,11 +618,20 @@ python data/python/check-quality.py && python data/python/verify-fixes.py
 
 > 仅收录**功能性变更**；CI 每日的例行规则更新（`✅ 规则自动更新` 提交）不列出。完整记录见 [Commits](https://github.com/xiaolei7172/ADS/commits/master)。
 
-### 📅 2026-11-12
+### 📅 2026-11-13
+
+| 类型 | 变更内容 | 提交 |
+| :--- | :--- | :--- |
+| 🧹 清理 | dns.txt 头部去掉「来源汇总」块——与 title.py 生成的「☑ 规则来源统计」完全重复 | [`1f6e501`](https://github.com/xiaolei7172/ADS/commit/1f6e501) |
+
+<details>
+<summary><b>📅 2026-11-12</b> · 1 项变更</summary>
 
 | 类型 | 变更内容 | 提交 |
 | :--- | :--- | :--- |
 | 🧹 清理 | 清理模块F(AD-QGG)指向死域的 262 条规则（run#5 探测确认 NXDOMAIN，质检熔断 run#438） | [`132ff8f`](https://github.com/xiaolei7172/ADS/commit/132ff8f) |
+
+</details>
 
 <details>
 <summary><b>📅 2026-11-11</b> · 6 项变更</summary>

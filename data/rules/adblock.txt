@@ -3,19 +3,19 @@
 ! 📌 规则名称：天影规则聚合 · 广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-13 14:44:59（北京时间）
-! 📊 有效规则：258684 条
+! ⏰ 更新时间：2026-11-13 19:52:17（北京时间）
+! 📊 有效规则：258757 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-13 14:44:59 | ✅ 有效规则 258684 条
+! Description: ⏰ 更新时间 2026-11-13 19:52:17 | ✅ 有效规则 258757 条
 ! ────────────────── ☑ 规则来源统计 ──────────────────
 !  124,605 条  AdRules DNS List [AdRules DNS List]
 !   87,022 条  anti-ad 官方规则
 !   12,615 条  5460 [酷安广告规则]
 !   10,553 条  1007-Hosts
 !    9,035 条  海哥规则
-!    7,794 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
+!    7,867 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !    2,987 条  OISD 拦截规则 [oisd small]
 !    2,205 条  本地自定义规则
 !    1,119 条  乘风通用规则 [乘风 广告过滤规则]
@@ -224436,6 +224436,7 @@
 ! 📝 规则说明：Filter composed of several other filters (AdGuard Base filter, Tracking Protection filter, Mobile ads filter, EasyList, EasyPrivacy, etc) and simplified specifically to be better compatible with DNS-level ad blocking.
 ! 🔗 原始地址：https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 ! ==============================================
+||royalbluefireplace.com^
 ||9hito.com^
 ||insightjs.org^
 ||89.127.233.127^
@@ -227178,6 +227179,7 @@ dlsdk.appsflyer.com^
 -ulogl2.kwaipros.com^
 ||upoll.umengcloud.com^
 ||utop.umengcloud.com^
+||viewanalitycs.org^
 ||apmginternational.matomo.cloud^
 ||adtasukaru.com^
 ||did.kr^
@@ -228127,41 +228129,110 @@ dlsdk.appsflyer.com^
 -indo666.
 -pentaslot.
 -tototix.gif
+||abgixxupwhfnem.com^
 ||ad.linksynergy.com^
 ||ads.lemmatechnologies.com^
 ||alifthymoma.cyou^
 ||auritewrager.cyou^
 ||awvvvtvvwgvbj.site^
+||axozfywvzgzxb.space^
 ||bleakerspace.rest^
+||bogcojvexhjfw.website^
+||bxnxktodzsdom.space^
+||calmjacket.com^
 ||cftntyhj8gy1n9p62k.rest^
+||chimneycowyardanoints.cfd^
+||comptlychopped.cfd^
 ||czhvtunletinj.space^
 ||daleelerah.info
+||djzdmuwaomkaw.website^
+||dljacjdzmqgiq.site^
+||dsbktckfycinl.online^
 ||dvwswfnjcntgz.online^
+||ej3vqlrfilo8i2.cfd^
+||epkhqrffmrrif.website^
 ||erasertiwaz.cfd^
+||fagidsflbophd.site^
+||far-great.com^
 ||fbqoszqvdeamz.space^
+||feezedmundalalces.cfd^
+||fiedctgudxctv.space^
+||fozebuxbnimhh.online^
 ||greatkitten.biz^
 ||hbibtkmqvicic.online^
 ||hovelstarboy.rest^
 ||illsmegswzciw.space^
 ||jrnkhzymtxqhk.website^
+||kgqczcgegwiho.space^
+||kjunugorpqejn.online^
+||knollsstepups.cfd^
 ||kraokjdma.in^
+||ljhieelsnvsgk.space^
+||lyefmxeaaqkoi.site^
+||mhmmsypdyiuqo.site^
 ||minoragamist.cfd^
+||mjmhsbnuiengm.com^
+||mjnfpqvynmrte.website^
+||mjqzscwaifuaz.website^
+||nenhvuckfoqrm.space^
+||nlvqtzbjgtvdh.online^
+||nnakbqdeqeqyv.site^
 ||nutwoodsobolessillily.cyou^
+||nzmzseltmfytx.space^
 ||oatseedpugaree.cyou^
 ||ogvxkccnmltkz.online^
+||oimywcipilemcn.com^
+||oytjgrmglhegv.site^
 ||pmbjjsarqkjpr.site^
 ||pqyymxntahxwm.space^
+||qhjrduurziolg.online^
+||qjqllbshdxeqq.space^
+||reaayjjljjgaw.space^
+||rhythmeirene.com^
+||rivrpvcrflpta.website^
 ||rllemdepxuozn.space^
+||roamerprutoth.com^
+||rrajnswxofzmf.online^
+||sablycandide.click^
 ||sfnqwdczblgnt.online^
+||skelpcherts.cfd^
+||skulpgodlikeagamous.cyou^
+||smilepubes.click^
 ||soarerlintier.click^
+||tassardbasenet.cyou^
+||tgvrpepuulrav.site^
+||tifvhsegxxlxf.space^
+||tingesfretum.com^
+||tinvshqgogwhm.online^
+||tvvrrateqfvep.online^
+||tzyndqgiczmus.space^
 ||uabvfvyfpawye.site^
+||unsweatquintar.cfd^
+||usfpeusrzbcfo.website^
 ||vcmgodxrmxidh.site^
+||vcnecasmrzrne.space^
+||veyzjyazfksxj.site^
+||vfnyvizdsdwtw.site^
 ||vimmajbrih.in^
+||vrbcauaviehga.space^
+||vskwjfjromhuo.website^
+||vwfmulz6xkovbl.rest^
+||vyzemvehgesza.site^
 ||wamusesleapszarnich.cyou^
+||wbjtrpqikumpp.site^
+||wistskhulaalea.cyou^
 ||wuudbopbvctce.online^
+||wvhnmgwytrfsd.site^
 ||wxxvwyesytzrh.website^
+||xasfsktzrmrbz.online^
+||xmuurcgrdjufl.website^
+||xtvbzaajgzyro.website^
 ||xtxzcgnuvdwrg.site^
+||yipeslallans.click^
 ||ymjmhzbf96ol4mn.cfd^
+||yodsvexer.cyou^
+||zlettlrdieark.website^
+||zomnkbohityxo.site^
 ||zvwsybhjnurrc.online^
 ||3ckz.com^
 ||3vetz.com^
@@ -228309,6 +228380,7 @@ dlsdk.appsflyer.com^
 ||tools.bongacams.com^
 ||widget.faphouse.com^
 ||widgets.guppy.live^
+||atl0g02nj.com^
 ||cpro.baidustatic.com^
 ||farm-cn.plista.com^
 ||static-cn.plista.com^
@@ -228689,6 +228761,7 @@ dlsdk.appsflyer.com^
 ||beap.gemini.yahoo.com^
 ||n.gemini.yahoo.com^
 ||tpc.googlesyndication.com^
+||spasmgame.com^
 ||counter-go.de^
 ||counter-zaehler.de^
 ||counter.de^
