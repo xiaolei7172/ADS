@@ -2,7 +2,7 @@
 # 由 dns.txt 折叠前的完整域名集转换，含全部子域，覆盖与 AdGuard 语义对齐
 # ⚠️ hosts 只能精确匹配，拦不到未列出的子域；需要完整子域覆盖请用 dns.txt / smartdns.conf / surge.list
 # 📌 项目地址：https://github.com/xiaolei7172/ADS
-# 🔖 内容指纹：7d3219aa0a36 | 📊 有效规则：247415 条 | ⏰ 变更时间见 git 提交记录
+# 🔖 内容指纹：7941183874f7 | 📊 有效规则：247416 条 | ⏰ 变更时间见 git 提交记录
 # 🔄 更新频率：每日自动更新（北京时间 08:00）
 0.0.0.0 ads3-normal-hl.zijieapi.com
 0.0.0.0 ads3-normal-lf.zijieapi.com
@@ -249,6 +249,24 @@
 0.0.0.0 p3-ad.bytecdn.cn
 0.0.0.0 p6-ad.bytecdn.cn
 0.0.0.0 v6-daily-reading-ad.qznovelvod.com
+0.0.0.0 log.qishui.com
+0.0.0.0 ajgvkj1jsv.shenglinyiyang.cn
+0.0.0.0 hljbrsn1gj.qiaozhixuexiao.com
+0.0.0.0 ingest.lputol.com
+0.0.0.0 ad.s.kuaishou.com
+0.0.0.0 taku.io
+0.0.0.0 adscope.cn
+0.0.0.0 gdtimg.com
+0.0.0.0 30868739.com
+0.0.0.0 24165943.com
+0.0.0.0 41255903.com
+0.0.0.0 13204530.com
+0.0.0.0 15273347.com
+0.0.0.0 64158573.com
+0.0.0.0 bihe276.com
+0.0.0.0 beijing2.xstore.qihu.com
+0.0.0.0 eliteres.fanruan.com
+0.0.0.0 ddjzis.cn
 0.0.0.0 ad.12306.com
 0.0.0.0 ad.163.com
 0.0.0.0 ad.1688.com
@@ -2209,24 +2227,6 @@
 0.0.0.0 tracklog.yangkeduo.com
 0.0.0.0 tracklog.yy.com
 0.0.0.0 tracklog.zhaopin.com
-0.0.0.0 log.qishui.com
-0.0.0.0 ajgvkj1jsv.shenglinyiyang.cn
-0.0.0.0 hljbrsn1gj.qiaozhixuexiao.com
-0.0.0.0 ingest.lputol.com
-0.0.0.0 ad.s.kuaishou.com
-0.0.0.0 taku.io
-0.0.0.0 adscope.cn
-0.0.0.0 gdtimg.com
-0.0.0.0 30868739.com
-0.0.0.0 24165943.com
-0.0.0.0 41255903.com
-0.0.0.0 13204530.com
-0.0.0.0 15273347.com
-0.0.0.0 64158573.com
-0.0.0.0 bihe276.com
-0.0.0.0 beijing2.xstore.qihu.com
-0.0.0.0 eliteres.fanruan.com
-0.0.0.0 ddjzis.cn
 0.0.0.0 0.r.msn.com
 0.0.0.0 0latfee.ero-advertising.com
 0.0.0.0 1.ad-locus.com
@@ -12740,6 +12740,7 @@
 0.0.0.0 gw.365you.com
 0.0.0.0 nadvideo.baidu.com
 0.0.0.0 nadvideo2.baidu.com
+0.0.0.0 open.e.kuaishou.com
 0.0.0.0 e.kuaishou.com
 0.0.0.0 api-access.pangolin-sdk-toutiao-b.com
 0.0.0.0 ad.tencentmusic.com

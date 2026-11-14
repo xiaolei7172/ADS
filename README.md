@@ -637,6 +637,7 @@ python data/python/check-quality.py && python data/python/verify-fixes.py
 
 | 类型 | 变更内容 | 提交 |
 | :--- | :--- | :--- |
+| 🧹 清理 | 体检收尾：模块重编号 F→Q、补本地规则维护口径、清两条广告 SDK 白名单 | [`687c686`](https://github.com/xiaolei7172/ADS/commit/687c686) |
 | 🔧 修复 | 体检修复：放行快手登录/私信图片 3 域 + 工作流加 push 触发 | [`984facb`](https://github.com/xiaolei7172/ADS/commit/984facb) |
 | ➕ 新增源 | 新增懂片帝模块：赌博落地页 7 条 + 借壳素材图床 2 条 + 埋点 1 条 | [`1c1b699`](https://github.com/xiaolei7172/ADS/commit/1c1b699) |
 | ➕ 新增源 | 新增 555 电影模块：发布页统计 3 条 + 影视 App 广告 SDK 缺口 4 条 | [`55678d5`](https://github.com/xiaolei7172/ADS/commit/55678d5) |

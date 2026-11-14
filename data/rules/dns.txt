@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影规则聚合 · DNS 拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-14 20:55:33（北京时间）
+! ⏰ 更新时间：2026-11-14 21:06:00（北京时间）
 ! 📊 有效规则：233723 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · DNS 拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-14 20:55:33 | ✅ 有效规则 233723 条
+! Description: ⏰ 更新时间 2026-11-14 21:06:00 | ✅ 有效规则 233723 条
 ! ────────────────── ☑ 规则来源统计 ──────────────────
 !  118,236 条  AdRules DNS List [AdRules DNS List]
 !   86,558 条  anti-ad 官方规则
@@ -283,6 +283,24 @@
 ||p3-ad.bytecdn.cn^
 ||p6-ad.bytecdn.cn^
 ||v6-daily-reading-ad.qznovelvod.com^
+||log.qishui.com^
+||ajgvkj1jsv.shenglinyiyang.cn^
+||hljbrsn1gj.qiaozhixuexiao.com^
+||ingest.lputol.com^
+||ad.s.kuaishou.com^
+||taku.io^
+||adscope.cn^
+||gdtimg.com^
+||30868739.com^
+||24165943.com^
+||41255903.com^
+||13204530.com^
+||15273347.com^
+||64158573.com^
+||bihe276.com^
+||beijing2.xstore.qihu.com^
+||eliteres.fanruan.com^
+||ddjzis.cn^
 ||ad.12306.com^
 ||ad.163.com^
 ||ad.1688.com^
@@ -2243,24 +2261,6 @@
 ||tracklog.yangkeduo.com^
 ||tracklog.yy.com^
 ||tracklog.zhaopin.com^
-||log.qishui.com^
-||ajgvkj1jsv.shenglinyiyang.cn^
-||hljbrsn1gj.qiaozhixuexiao.com^
-||ingest.lputol.com^
-||ad.s.kuaishou.com^
-||taku.io^
-||adscope.cn^
-||gdtimg.com^
-||30868739.com^
-||24165943.com^
-||41255903.com^
-||13204530.com^
-||15273347.com^
-||64158573.com^
-||bihe276.com^
-||beijing2.xstore.qihu.com^
-||eliteres.fanruan.com^
-||ddjzis.cn^
 
 ! ==============================================
 ! 📋 规则来源：1007-Hosts
