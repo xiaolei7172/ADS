@@ -2366,3 +2366,28 @@
 ||tracklog.yangkeduo.com^
 ||tracklog.yy.com^
 ||tracklog.zhaopin.com^
+
+! ========== 模块N: 汽水音乐（com.luna.music / 字节 Luna）==========
+! 2026-11-14 专项核查。汽水音乐的广告有三条链路，可拦性差别很大，本模块只收
+! 真正拦得住、且不会把 App 拦坏的部分：
+!
+! ① 第三方广告 SDK（「看广告听歌」的激励视频走穿山甲 / gromore）
+!    → 模块C / 模块F 已全覆盖（pangolin-sdk-toutiao 系 43 条、gromore 24 条），此处不重复。
+! ② 广告落地页 / 点击跳转（DGA 随机域）
+!    → 模块K 已覆盖，汽水音乐实际用到 cjjd14.com / vegslb.com / ydycdn.com 三条，全在拦。
+! ③ App 自有广告接口（开屏 / 信息流 / VIP 弹窗 / 听歌赚金币）
+!    路径是 api.qishui.com/luna/ads、/luna/media_ads、beta-luna.douyin.com/luna/ads、
+!    /luna/commerce/upsells、/luna/treasure —— 与播放、登录共用同一个 host。
+!    DNS 层拦 host 等于把 App 端掉；路径级规则（||api.qishui.com/luna/ads/）只有
+!    AdGuard / 浏览器扩展认，dnsmasq / smartdns / surge / mihomo 一律不认，
+!    写进来是假规则，还会让 verify-fixes 判「无法解析行」当场熔断。
+!    → 这部分只能靠 rewrite（QuantumultX / Surge / Loon 模块），DNS 规则不承诺。
+!
+! 所以本模块只收一条：埋点与广告曝光/点击回传域。
+! 实测（2026-11-14 双 DNS 223.5.5.5 / 119.29.29.29）：qishui.com 下仅 7 个存活子域
+!   api / api3 / www / lf-luna / lf-luna-release / log / open
+! api*、lf-luna* 是主 API（已在 whitelist.txt 保护），www 是官网，open 是开放平台，
+! 唯一属上报通道的是 log：广告曝光、点击回传和归因上报都走它。
+! 副作用说明：拦它不影响播放与登录，但「看广告听歌」的时长校验可能因回传失败而卡住；
+! 真遇到领不到时长，把下面这一行注释掉即可。
+||log.qishui.com^

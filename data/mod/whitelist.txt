@@ -301,3 +301,18 @@
 @@||uk-timesync.vivoglobal.com^
 @@||zasc-timesync.vivoglobal.com^
 ! 继续拦：*-vpushonrt-stsdk / *-vpushort-stsdk（vivo 推送统计 SDK，不影响送达）
+
+! ---------- 汽水音乐（com.luna.music）主 API ----------
+! 上游「个人合并规则」只放行了 lf-luna / lf-luna-release / www，
+! 真正承载播放与登录的 api / api3 没人护：一旦有源按 qishui.com 主域下发，
+! 整个 App 白屏（连歌都放不出来）。本地点名放行，广告侧交给模块N 拦上报域。
+@@||api.qishui.com^
+@@||api3.qishui.com^
+
+! ---------- 应用市场 / 查找设备（hagezi 七列表体检遗留项，2026-11-14）----------
+! native.huawei 把「应用市场连接网关」、native.xiaomi 把「查找设备」接口
+! 一并当 tracker 拦了。拦掉分别表现为：应用市场登录/下载失败、查找设备打不开。
+! 商店的统计、推荐、画像子域继续拦（只在 hagezi 分区里，不在此放行）。
+@@||connect-drru.hispace.dbankcloud.cn^
+@@||connect-drru.hispace.dbankcloud.ru^
+@@||findapi.micloud.xiaomi.net^
