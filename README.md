@@ -21,19 +21,19 @@
 ### 🔮 天影规则聚合 · 实时规则规模
 
 
-🕒 **更新时间**：2026-11-14 14:22:12（北京时间）
+🕒 **更新时间**：2026-11-14 15:45:15（北京时间）
 
 
-🚫 **广告拦截规则**：259019 条
+🚫 **广告拦截规则**：260526 条
 
 
-🌐 **DNS 拦截域名**：232226 个
+🌐 **DNS 拦截域名**：233593 个
 
 
 ✅ **白名单放行规则**：6777 条（约半数可在 DNS 层直接生效，其余为浏览器版 AdGuard 的路径级 / `$domain=` 规则，DNS 层无效）
 
 <!-- DL_STATUS_START -->
-✅ **上游源状态**：21/21 全部下载成功
+✅ **上游源状态**：28/28 全部下载成功
 <!-- DL_STATUS_END -->
 
 ![规则量趋势](data/stats/trend.svg)
@@ -629,6 +629,7 @@ python data/python/check-quality.py && python data/python/verify-fixes.py
 
 | 类型 | 变更内容 | 提交 |
 | :--- | :--- | :--- |
+| ➕ 新增源 | 接入 hagezi 厂商原生 7 列表：小米/华为/OPPO/vivo/字节/三星/苹果 | [`7563b10`](https://github.com/xiaolei7172/ADS/commit/7563b10) |
 | 🔗 优化 | 国内加速链接改为 gh-proxy（data/rules 产物超 64MB，jsDelivr 50MB 包体上限导致全目录 404） | [`1cff529`](https://github.com/xiaolei7172/ADS/commit/1cff529) |
 
 <details>
