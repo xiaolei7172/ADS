@@ -99,6 +99,20 @@ adblock_rules = [
     {"url": "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt", "name": "AdGuard DNS Filter 官方"},
     {"url": "https://small.oisd.nl/", "name": "OISD 拦截规则"},
 
+    #厂商原生遥测/开屏广告（hagezi 按设备厂商拆分的独立小列表）：
+    # 2026-11-14 全量评估：7 个列表合计 2,235 域，对现有 23.2 万域库净增 1,396 条，
+    # 双 DNS 抽样存活 90%~100%（合计约 98%），总体积仅 76 KB，产物膨胀 0.6%。
+    # 国内同类源 ADgk 已于 2023-03 停更（现存规则净增仅 31 条、63% 存活），
+    # 这 7 个列表是目前国内 OEM 广告/遥测覆盖的唯一活跃来源。
+    # 源内若有域被 probe-dead 判死，merge.py 会自动剔除，不需人工维护。
+    {"url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.xiaomi.txt", "name": "hagezi 小米原生"},
+    {"url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.huawei.txt", "name": "hagezi 华为原生"},
+    {"url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.oppo-realme.txt", "name": "hagezi OPPO 原生"},
+    {"url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.vivo.txt", "name": "hagezi vivo 原生"},
+    {"url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.tiktok.txt", "name": "hagezi 字节原生"},
+    {"url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.samsung.txt", "name": "hagezi 三星原生"},
+    {"url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.apple.txt", "name": "hagezi 苹果原生"},
+
     #AdGurad：
     {"url": "https://raw.githubusercontent.com/qq5460168/666/master/rules.txt", "name": "个人合并规则"},
     {"url": "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt", "name": "酷安@大萌主"},
