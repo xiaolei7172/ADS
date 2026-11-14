@@ -111,6 +111,9 @@ www.douyin.com
 v.douyin.com
 api.amemv.com
 www.kuaishou.com
+passport.kuaishou.com    ! 快手登录（2026-11-14 实测存活，曾被 5460 整条拦下）
+sixinpic.kuaishou.com    ! 快手私信图片（拦了私信图全裂）
+img-w.kuaishou.com       ! 快手图片 CDN
 www.xiaohongshu.com
 www.zhihu.com
 www.bilibili.com

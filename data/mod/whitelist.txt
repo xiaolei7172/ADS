@@ -47,7 +47,6 @@
 @@||mum.alibabachengdun.com^
 @@||nr-op.elemecdn.com^
 @@||nstool.netease.com^
-@@||open.e.kuaishou.cn^
 @@||open.e.kuaishou.com^
 @@||oth.eve.mdt.qq.com^
 @@||oth.str.mdt.qq.com^
@@ -364,3 +363,13 @@
 @@||allcdn.china.qiniu.qnydns.com^
 @@||api-e189.21cn.com^
 @@||hub5emu.sandai.net^
+
+! ---------- 快手：登录 / 私信图片 / 图片 CDN ----------
+! 2026-11-14 体检发现：5460（酷安广告规则）把这三个域整条拦下，双 DNS
+! （223.5.5.5 / 119.29.29.29）实测全部返回 OK，均非死域。症状是
+! 「快手登录转圈」「私信里的图片裂图」，不是少看一条广告。
+! 父域 kuaishou.com 本身未被拦，因此无需登记 split-parents.txt，点名放行即可。
+! 快手联盟广告侧另有 ||ad.s.kuaishou.com^ / ||e.kuaishou.com^ 在拦，不受影响。
+@@||passport.kuaishou.com^
+@@||sixinpic.kuaishou.com^
+@@||img-w.kuaishou.com^

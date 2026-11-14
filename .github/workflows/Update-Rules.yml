@@ -10,6 +10,19 @@ on:
     # 每日一次：UTC 00:17 = 北京时间 08:17
     # 用 17 分而非整点，避开 GitHub 调度高峰（整点前后定时任务常被推迟十几分钟）
     - cron: '17 0 * * *'
+  # 手工改规则后立即重建产物。
+  # 背景：此前只有 cron + dispatch，改完 data/mod/*.txt 要等次日 08:17 才上线，
+  #   期间产物与规则文件不一致（2026-11-14 体检时 17 条新规则卡在未发布状态），
+  #   用户体验就是「规则明明加了却没生效」。
+  # ⚠️ 只监听 mod / python / tests：本工作流的自动提交只碰 data/rules、README、
+  #   data/stats，不在监听范围内，因此不会自我触发形成循环。
+  #   探测工作流提交 dead.txt / probe-snapshot.txt 会触发一次重建，这是期望行为。
+  push:
+    paths:
+      - 'data/mod/**'
+      - 'data/python/**'
+      - 'tests/**'
+      - '.github/workflows/Update-Rules.yml'
 
 # 定时与手动触发可能重叠，两个实例同时 push 会互相顶掉
 concurrency:
