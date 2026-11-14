@@ -206,8 +206,8 @@ v.qq.com / y.qq.com     腾讯视频 / QQ音乐主站
 1. 打开 AdGuard → 设置 → **内容拦截**（Windows 为「过滤器」）
 2. 点击「添加过滤器」→「使用自定义过滤器」
 3. 粘贴订阅链接（国内网络选加速列）：
-   `https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/adblock.txt`
-4. **必须同时启用白名单**（不加会误杀，原理见上方「必读」）：`https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/allow.txt`
+   `https://gh-proxy.com/https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/adblock.txt`
+4. **必须同时启用白名单**（不加会误杀，原理见上方「必读」）：`https://gh-proxy.com/https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/allow.txt`
 
 </details>
 
@@ -218,8 +218,8 @@ v.qq.com / y.qq.com     腾讯视频 / QQ音乐主站
 > 📥 下载：[GitHub Releases](https://github.com/AdguardTeam/AdGuardHome/releases) · 也支持 Docker（`docker run -p 53:53/tcp -p 53:53/udp -p 3000:3000 adguard/adguardhome`）
 
 1. 管理后台 → 过滤器 → **DNS 拦截列表** → 添加拦截列表
-2. 粘贴：`https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/dns.txt`
-3. **必须加上白名单**（自定义过滤规则 → 放行），不加会误杀：`https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/allow.txt`
+2. 粘贴：`https://gh-proxy.com/https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/dns.txt`
+3. **必须加上白名单**（自定义过滤规则 → 放行），不加会误杀：`https://gh-proxy.com/https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/allow.txt`
 
 </details>
 
@@ -232,7 +232,9 @@ v.qq.com / y.qq.com     腾讯视频 / QQ音乐主站
 **方式一：dnsmasq 规则（推荐，后缀匹配，子域一起拦）**
 
 1. SSH 登录路由器，把规则下到 dnsmasq 配置目录：
-   `wget -O /etc/dnsmasq.d/tianying.conf https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/dnsmasq.conf`
+   `wget -O /etc/dnsmasq.d/tianying.conf https://gh-proxy.com/https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/dnsmasq.conf`
+   （没有 wget 的固件改用：`curl -L -o /etc/dnsmasq.d/tianying.conf <同一链接>`；
+   链接拉不动就把开头的 `https://gh-proxy.com/` 换成 `https://ghproxy.net/`）
 2. 让 dnsmasq 加载它：主配置 `/etc/dnsmasq.conf` 里若有 `conf-dir=/etc/dnsmasq.d` 即可直接生效；没有就追加一行
    `echo 'conf-file=/etc/dnsmasq.d/tianying.conf' >> /etc/dnsmasq.conf`
 3. 重启服务：`/etc/init.d/dnsmasq restart`
@@ -245,7 +247,7 @@ v.qq.com / y.qq.com     腾讯视频 / QQ音乐主站
 
 **方式二：hosts（老固件兜底，无 conf-dir 时用）**
 
-1. 下载 hosts 文件：`https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/hosts.txt`
+1. 下载 hosts 文件：`https://gh-proxy.com/https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/hosts.txt`
 2. 覆盖到 `/etc/hosts` 末尾（或配合 dnsmasq 的 `addn-hosts` 引用）
 3. 重启 dnsmasq：`/etc/init.d/dnsmasq restart`
 
@@ -261,7 +263,7 @@ v.qq.com / y.qq.com     腾讯视频 / QQ音乐主站
 
 > 📥 下载：[GitHub Releases](https://github.com/pymumu/smartdns/releases)（OpenWrt 可直接 `opkg install smartdns`）
 
-1. 编辑 `smartdns.conf`，加入：`conf-file https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/smartdns.conf`
+1. 编辑 `smartdns.conf`，加入：`conf-file https://gh-proxy.com/https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns.conf`
    （或下载后 `include` 到主配置）
 2. **必须一起加载白名单**（不加会误杀，见上方「必读」）：`conf-file .../data/rules/smartdns-whitelist.conf`
 3. 重启服务：`/etc/init.d/smartdns restart`
@@ -279,7 +281,7 @@ rule-providers:
   tianying-ad:
     type: http
     behavior: domain
-    url: "https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/mihomo.yaml"
+    url: "https://gh-proxy.com/https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/mihomo.yaml"
     path: ./rules/tianying-ad.yaml
     interval: 43200
 rules:
@@ -296,8 +298,13 @@ rules:
 
 ## 📥 规则订阅中心
 
-> 💡 国内网络推荐优先使用「国内加速链接」（jsDelivr，实测可用）；GitHub 直连不稳时再换直链。
+> 💡 国内网络推荐优先使用「国内加速链接」（gh-proxy 反代，实测可用，内容与官方逐字节一致）。
 > PC 版 AdGuard 选 `adblock.txt`；AdGuard Home / OpenWrt 选 `dns.txt`。
+>
+> 📡 **加速通道说明**：`gh-proxy.com` 为主用（实测 3.6s/267KB，缓存 60 秒不拖旧规则）；
+> 若主用不可达，把链接开头的 `https://gh-proxy.com/` 换成 `https://ghproxy.net/` 即可，其余部分不变。
+> ⚠️ 已停用 jsDelivr：本仓库 `data/rules` 产物已超 64 MB，超过其 50 MB 包体上限，
+> 该路径下**所有文件**（含仅 260 KB 的 allow.txt）都会返回 Package size exceeded 报错。
 >
 > ⚠️ **无论选哪个拦截格式，都要配套加载白名单**（见下方「白名单规则」）。只装拦截不装白名单 = 没有误杀保护。
 
@@ -305,10 +312,10 @@ rules:
 <summary><b>🚫 广告拦截规则</b></summary>
 <br>
 
-| 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接 |
+| 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接（gh-proxy） |
 | :---- | :---- | :---- | :---- |
-| AdGuard 拦截规则 | AdGuard 全家桶 | [adblock.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/adblock.txt) | [adblock.txt](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/adblock.txt) |
-| AdGuard Home DNS拦截规则 | AdGuard Home / OpenWrt | [dns.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/dns.txt) | [dns.txt](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/dns.txt) |
+| AdGuard 拦截规则 | AdGuard 全家桶 | [adblock.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/adblock.txt) | [adblock.txt](https://gh-proxy.com/https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/adblock.txt) |
+| AdGuard Home DNS拦截规则 | AdGuard Home / OpenWrt | [dns.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/dns.txt) | [dns.txt](https://gh-proxy.com/https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/dns.txt) |
 
 </details>
 
@@ -317,9 +324,9 @@ rules:
 <summary><b>📋 仅域名规则</b></summary>
 <br>
 
-| 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接 |
+| 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接（gh-proxy） |
 | :---- | :---- | :---- | :---- |
-| 黑名单域名列表 | 通用（可自行转换） | [ad-domain.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/ad-domain.txt) | [ad-domain.txt](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/ad-domain.txt) |
+| 黑名单域名列表 | 通用（可自行转换） | [ad-domain.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/ad-domain.txt) | [ad-domain.txt](https://gh-proxy.com/https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/ad-domain.txt) |
 
 </details>
 
@@ -330,9 +337,9 @@ rules:
 
 > 📥 客户端：[Quantumult X（App Store，付费）](https://apps.apple.com/app/quantumult-x/id1443988620)　|　导入位置：配置文件 →「引用」的 `[filter_remote]` 段
 
-| 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接 |
+| 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接（gh-proxy） |
 | :---- | :---- | :---- | :---- |
-| Quantumult X 规则 | Quantumult X | [qx.list](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/qx.list) | [qx.list](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/qx.list) |
+| Quantumult X 规则 | Quantumult X | [qx.list](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/qx.list) | [qx.list](https://gh-proxy.com/https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/qx.list) |
 
 </details>
 
@@ -341,10 +348,10 @@ rules:
 <summary><b>🔍 SmartDNS 规则</b></summary>
 <br>
 
-| 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接 |
+| 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接（gh-proxy） |
 | :---- | :---- | :---- | :---- |
-| SmartDNS 拦截规则 | SmartDNS | [smartdns.conf](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns.conf) | [smartdns.conf](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/smartdns.conf) |
-| SmartDNS 白名单 | SmartDNS | [smartdns-whitelist.conf](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns-whitelist.conf) | [smartdns-whitelist.conf](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/smartdns-whitelist.conf) |
+| SmartDNS 拦截规则 | SmartDNS | [smartdns.conf](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns.conf) | [smartdns.conf](https://gh-proxy.com/https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns.conf) |
+| SmartDNS 白名单 | SmartDNS | [smartdns-whitelist.conf](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns-whitelist.conf) | [smartdns-whitelist.conf](https://gh-proxy.com/https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns-whitelist.conf) |
 
 </details>
 
@@ -355,9 +362,9 @@ rules:
 
 > 后缀匹配：`address=/域名/0.0.0.0` 连同该域名的全部子域一起拦截，比 hosts 的精确匹配更彻底，也是家用路由最省事的方案。
 
-| 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接 |
+| 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接（gh-proxy） |
 | :---- | :---- | :---- | :---- |
-| dnsmasq 拦截规则 | OpenWrt / Pi-hole / 梅林 / 爱快（dnsmasq 后端） | [dnsmasq.conf](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/dnsmasq.conf) | [dnsmasq.conf](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/dnsmasq.conf) |
+| dnsmasq 拦截规则 | OpenWrt / Pi-hole / 梅林 / 爱快（dnsmasq 后端） | [dnsmasq.conf](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/dnsmasq.conf) | [dnsmasq.conf](https://gh-proxy.com/https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/dnsmasq.conf) |
 
 </details>
 
@@ -366,9 +373,9 @@ rules:
 <summary><b>📛 HOSTS 拦截规则</b></summary>
 <br>
 
-| 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接 |
+| 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接（gh-proxy） |
 | :---- | :---- | :---- | :---- |
-| HOSTS 格式（0.0.0.0） | 路由器 / 系统 hosts / 无 root 安卓 | [hosts.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/hosts.txt) | [hosts.txt](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/hosts.txt) |
+| HOSTS 格式（0.0.0.0） | 路由器 / 系统 hosts / 无 root 安卓 | [hosts.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/hosts.txt) | [hosts.txt](https://gh-proxy.com/https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/hosts.txt) |
 
 </details>
 
@@ -382,10 +389,10 @@ rules:
 > 单文件格式（dnsmasq / hosts / QX / Surge / Mihomo）的白名单已在构建时剔除进成品，无需另装；
 > AdGuard 全家桶与 SmartDNS 必须自己加载下面这份。
 
-| 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接 |
+| 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接（gh-proxy） |
 | :---- | :---- | :---- | :---- |
-| 白名单规则（误杀放行） | AdGuard 全家桶（**必装**） | [allow.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/allow.txt) | [allow.txt](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/allow.txt) |
-| SmartDNS 白名单 | SmartDNS（**必装**） | [smartdns-whitelist.conf](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns-whitelist.conf) | [smartdns-whitelist.conf](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/smartdns-whitelist.conf) |
+| 白名单规则（误杀放行） | AdGuard 全家桶（**必装**） | [allow.txt](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/allow.txt) | [allow.txt](https://gh-proxy.com/https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/allow.txt) |
+| SmartDNS 白名单 | SmartDNS（**必装**） | [smartdns-whitelist.conf](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns-whitelist.conf) | [smartdns-whitelist.conf](https://gh-proxy.com/https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/smartdns-whitelist.conf) |
 
 > 📌 白名单必须**整域**才有效：`@@||example.com^` 管用，`@@||img.example.com^` 在 DNS 层会被父域拦截规则吃掉。
 > 需要新增放行请在 [Issues](https://github.com/xiaolei7172/ADS/issues) 提出，仓库侧一次修好所有订阅者。
@@ -399,10 +406,10 @@ rules:
 
 > 📥 客户端：[Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev/releases) · [Mihomo Party](https://github.com/mihomo-party-org/mihomo-party/releases) · [Surge](https://nssurge.com)（付费，官网需自备网络）
 
-| 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接 |
+| 规则类型 | 适用平台 | 📥 GitHub直链 | 🚀 国内加速链接（gh-proxy） |
 | :---- | :---- | :---- | :---- |
-| Mihomo 域名集 | Clash / Mihomo / Stash（behavior: domain） | [mihomo.yaml](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/mihomo.yaml) | [mihomo.yaml](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/mihomo.yaml) |
-| Surge 规则集 | Surge / Loon（RULE-SET） | [surge.list](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/surge.list) | [surge.list](https://testingcf.jsdelivr.net/gh/xiaolei7172/ADS@master/data/rules/surge.list) |
+| Mihomo 域名集 | Clash / Mihomo / Stash（behavior: domain） | [mihomo.yaml](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/mihomo.yaml) | [mihomo.yaml](https://gh-proxy.com/https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/mihomo.yaml) |
+| Surge 规则集 | Surge / Loon（RULE-SET） | [surge.list](https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/surge.list) | [surge.list](https://gh-proxy.com/https://raw.githubusercontent.com/xiaolei7172/ADS/master/data/rules/surge.list) |
 
 </details>
 
