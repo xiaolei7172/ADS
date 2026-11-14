@@ -323,13 +323,15 @@
 ! 背景：hg1.txt 是「故意拦得激进」的拦截单，作者配了 hg2.txt 做放行补偿，
 ! 但 ADS 只接了拦截单、没接放行单，于是海哥认为该放行的那部分被原样拦掉。
 ! 全量 hg2 有 322 条可解析规则，其中 241 条 ADS 白名单没有，60 条仍处于被拦状态。
-! 这里只挑「拦了会真坏功能」的 21 条；另外 39 条是遥测/广告 SDK，继续拦：
+! 这里只挑「拦了会真坏功能」的 20 条；另外 40 条是遥测/广告 SDK 与本地模块主动拦截项，继续拦：
 !   api2.e.kuaishou.com（快手联盟广告 API）、tnc3-alisc1/bjlgy.zijieapi.com（广告调度）、
 !   applog.uc.cn、othstr.beacon.qq.com、ads.privacy.qq.com、h-adashx.ut.ele.me、
 !   umeng / cnzz / wrating 系、srtb.msn.com、contile.services.mozilla.com、
 !   telemetry.mozilla.org、collector.githubapp.com、cc-api-data.adobe.io、
 !   sentry.kuaishou.com、*-ssl.xunlei.com、ynuf.aliapp.org 等。
-! 依据：2026-11-14 双 DNS（223.5.5.5 / 119.29.29.29）实测 21 条全部解析成功。
+! 依据：2026-11-14 双 DNS（223.5.5.5 / 119.29.29.29）实测 21 条全部解析成功；
+! open.snssdk.com 虽存活，但属本地模块H「埋点/归因上报」主动拦截项（白名单盖不住
+! 本地规则，写了也是空转），故不收录，保持拦截。
 ! ============================================================
 
 ! ---------- 快手：推送 / 视频拉流 / API / 极速版金币 ----------
@@ -342,7 +344,6 @@
 ! ---------- 字节：头条 API 集群 / 站长平台 / 开放平台授权 ----------
 @@||api5-normal-lq.toutiaoapi.com^
 @@||zhanzhang.toutiao.com^
-@@||open.snssdk.com^
 
 ! ---------- 推送通道：百度推送 / 极光 Push / 花生壳内网穿透 ----------
 @@||sa.tuisong.baidu.com^
