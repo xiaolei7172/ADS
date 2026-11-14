@@ -21,13 +21,13 @@
 ### 🔮 天影规则聚合 · 实时规则规模
 
 
-🕒 **更新时间**：2026-11-14 18:07:03（北京时间）
+🕒 **更新时间**：2026-11-14 18:09:27（北京时间）
 
 
-🚫 **广告拦截规则**：260472 条
+🚫 **广告拦截规则**：260502 条
 
 
-🌐 **DNS 拦截域名**：233641 个
+🌐 **DNS 拦截域名**：233671 个
 
 
 ✅ **白名单放行规则**：6846 条（约半数可在 DNS 层直接生效，其余为浏览器版 AdGuard 的路径级 / `$domain=` 规则，DNS 层无效）
@@ -637,6 +637,7 @@ python data/python/check-quality.py && python data/python/verify-fixes.py
 
 | 类型 | 变更内容 | 提交 |
 | :--- | :--- | :--- |
+| 🔧 修复 | 移除 open.snssdk.com 放行（属模块H 埋点/归因，白名单盖不住本地规则，写了空转） | [`fc84b78`](https://github.com/xiaolei7172/ADS/commit/fc84b78) |
 | ➕ 新增源 | 引入海哥配套放行单精选 21 条 + 4 个父域拆域 | [`77c2365`](https://github.com/xiaolei7172/ADS/commit/77c2365) |
 | ➕ 新增源 | 汽水音乐广告规则（模块N）+ 放行华为应用市场连接与小米查找设备 | [`4c96707`](https://github.com/xiaolei7172/ADS/commit/4c96707) |
 | 🚑 其他 | 修正 hagezi 七列表误伤：放行厂商推送/OTA/校时系统域 + 推送竞态重试 + README 计数同步 | [`7994e92`](https://github.com/xiaolei7172/ADS/commit/7994e92) |

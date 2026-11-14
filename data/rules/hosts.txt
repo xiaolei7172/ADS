@@ -2,7 +2,7 @@
 # 由 dns.txt 折叠前的完整域名集转换，含全部子域，覆盖与 AdGuard 语义对齐
 # ⚠️ hosts 只能精确匹配，拦不到未列出的子域；需要完整子域覆盖请用 dns.txt / smartdns.conf / surge.list
 # 📌 项目地址：https://github.com/xiaolei7172/ADS
-# 🔖 内容指纹：0fbca15e000e | 📊 有效规则：247333 条 | ⏰ 变更时间见 git 提交记录
+# 🔖 内容指纹：958c71820651 | 📊 有效规则：247363 条 | ⏰ 变更时间见 git 提交记录
 # 🔄 更新频率：每日自动更新（北京时间 08:00）
 0.0.0.0 ads3-normal-hl.zijieapi.com
 0.0.0.0 ads3-normal-lf.zijieapi.com
@@ -224432,12 +224432,20 @@
 0.0.0.0 nawala.my
 0.0.0.0 8jftmxewqw72jnu.rest
 0.0.0.0 ads.lemmatechnologies.com
+0.0.0.0 aehtinscsktda.space
 0.0.0.0 anzbzifzusi.in
+0.0.0.0 battingambages.com
 0.0.0.0 bedsockfebrile.cyou
+0.0.0.0 begraindodder.cyou
 0.0.0.0 biqyxmqdyvkfz.website
+0.0.0.0 boldpasta.me
+0.0.0.0 bovldsneaps.com
 0.0.0.0 bqyprflukjrci.space
+0.0.0.0 bubalecatbird.cfd
 0.0.0.0 cgknxinrt.com
+0.0.0.0 darbymetepa.com
 0.0.0.0 designsrecedesheroics.cyou
+0.0.0.0 eekpiaqf.com
 0.0.0.0 finishedcamp.pro
 0.0.0.0 fmfonavgkdvfo.site
 0.0.0.0 foxwvfkyfhwjp.com
@@ -224445,27 +224453,45 @@
 0.0.0.0 gimperminicab.cfd
 0.0.0.0 gonamalayunstrap.cyou
 0.0.0.0 hpnrxxsymyekp.online
+0.0.0.0 hurtfulseries.com
+0.0.0.0 jsaxrujgecvtq.website
 0.0.0.0 kackqswjnkeab.space
 0.0.0.0 kdhjrqanauqzu.online
+0.0.0.0 kickupschape.com
+0.0.0.0 kiwanisosamin.com
+0.0.0.0 kojirireckla.rest
 0.0.0.0 lhivvxyqzddyr.website
 0.0.0.0 lhzulviipmufi.online
 0.0.0.0 linnetsairns.cfd
 0.0.0.0 lraujinoltnfj.site
+0.0.0.0 m2q9p51vrxo4q476lp5nor7f.rest
+0.0.0.0 matarseining.cfd
 0.0.0.0 mewsgeckoid.click
 0.0.0.0 nlrusyldghpqh.site
+0.0.0.0 nvceveycbhohj.space
 0.0.0.0 omjaxrhtiq.in
 0.0.0.0 pandieslekach.cyou
+0.0.0.0 parrotforest.biz
 0.0.0.0 passmanbelanda.click
+0.0.0.0 privatecondition.com
+0.0.0.0 pyjfyuvzcpblu.space
+0.0.0.0 q7eygilxltqtk9hzq.cfd
 0.0.0.0 qcgvpfizclttu.space
+0.0.0.0 reoilgarbler.cfd
+0.0.0.0 riprapyunca.click
 0.0.0.0 sozinesscrawnyfaquirs.cfd
 0.0.0.0 teucrisiwashhasten.cfd
+0.0.0.0 tootersdarwin.com
+0.0.0.0 tulaentasia.cfd
 0.0.0.0 undopedesture.rest
+0.0.0.0 urushicazoresdarns.cfd
 0.0.0.0 uzebvjfvnmdke.space
 0.0.0.0 vsottbykmvlzx.space
 0.0.0.0 w8j3w3vz7ymbtxmgfr13lqubz6yz8nr31k.cfd
 0.0.0.0 woomdurham.com
 0.0.0.0 xcwnfgoenzuno.space
 0.0.0.0 xpobvymhwyuux.online
+0.0.0.0 zvmtmbdailzfe.space
 0.0.0.0 3ckz.com
 0.0.0.0 3vetz.com
 0.0.0.0 adblockermax.com
@@ -224608,6 +224634,9 @@
 0.0.0.0 widgets.guppy.live
 0.0.0.0 ntpyrbdgxzpjxy.com
 0.0.0.0 fpz4gr87mq.com
+0.0.0.0 uyux77jurw.com
+0.0.0.0 r12ukq68l8.com
+0.0.0.0 q1v2f4.com
 0.0.0.0 farm-cn.plista.com
 0.0.0.0 static-cn.plista.com
 0.0.0.0 ubmcvideo.baidustatic.com
@@ -224985,6 +225014,7 @@
 0.0.0.0 yohtads.com
 0.0.0.0 beap.gemini.yahoo.com
 0.0.0.0 n.gemini.yahoo.com
+0.0.0.0 tagloyalty.com
 0.0.0.0 counter-go.de
 0.0.0.0 counter-zaehler.de
 0.0.0.0 counter.de

@@ -3,19 +3,19 @@
 ! 📌 规则名称：天影规则聚合 · 广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-14 18:07:02（北京时间）
-! 📊 有效规则：260472 条
+! ⏰ 更新时间：2026-11-14 18:09:27（北京时间）
+! 📊 有效规则：260502 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-14 18:07:02 | ✅ 有效规则 260472 条
+! Description: ⏰ 更新时间 2026-11-14 18:09:27 | ✅ 有效规则 260502 条
 ! ────────────────── ☑ 规则来源统计 ──────────────────
 !  123,801 条  AdRules DNS List [AdRules DNS List]
 !   88,151 条  anti-ad 官方规则
 !   12,596 条  5460 [酷安广告规则]
 !   10,555 条  1007-Hosts
 !    9,031 条  海哥规则
-!    7,795 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
+!    7,825 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !    2,986 条  OISD 拦截规则 [oisd small]
 !    2,206 条  本地自定义规则
 !    1,119 条  乘风通用规则 [乘风 广告过滤规则]
@@ -228463,13 +228463,21 @@ dlsdk.appsflyer.com^
 ||8jftmxewqw72jnu.rest^
 ||ad.linksynergy.com^
 ||ads.lemmatechnologies.com^
+||aehtinscsktda.space^
 ||anzbzifzusi.in^
+||battingambages.com^
 ||bedsockfebrile.cyou^
+||begraindodder.cyou^
 ||biqyxmqdyvkfz.website^
+||boldpasta.me^
+||bovldsneaps.com^
 ||bqyprflukjrci.space^
+||bubalecatbird.cfd^
 ||cgknxinrt.com^
 ||daleelerah.info
+||darbymetepa.com^
 ||designsrecedesheroics.cyou^
+||eekpiaqf.com^
 ||finishedcamp.pro^
 ||fmfonavgkdvfo.site^
 ||foxwvfkyfhwjp.com^
@@ -228477,27 +228485,45 @@ dlsdk.appsflyer.com^
 ||gimperminicab.cfd^
 ||gonamalayunstrap.cyou^
 ||hpnrxxsymyekp.online^
+||hurtfulseries.com^
+||jsaxrujgecvtq.website^
 ||kackqswjnkeab.space^
 ||kdhjrqanauqzu.online^
+||kickupschape.com^
+||kiwanisosamin.com^
+||kojirireckla.rest^
 ||lhivvxyqzddyr.website^
 ||lhzulviipmufi.online^
 ||linnetsairns.cfd^
 ||lraujinoltnfj.site^
+||m2q9p51vrxo4q476lp5nor7f.rest^
+||matarseining.cfd^
 ||mewsgeckoid.click^
 ||nlrusyldghpqh.site^
+||nvceveycbhohj.space^
 ||omjaxrhtiq.in^
 ||pandieslekach.cyou^
+||parrotforest.biz^
 ||passmanbelanda.click^
+||privatecondition.com^
+||pyjfyuvzcpblu.space^
+||q7eygilxltqtk9hzq.cfd^
 ||qcgvpfizclttu.space^
+||reoilgarbler.cfd^
+||riprapyunca.click^
 ||sozinesscrawnyfaquirs.cfd^
 ||teucrisiwashhasten.cfd^
+||tootersdarwin.com^
+||tulaentasia.cfd^
 ||undopedesture.rest^
+||urushicazoresdarns.cfd^
 ||uzebvjfvnmdke.space^
 ||vsottbykmvlzx.space^
 ||w8j3w3vz7ymbtxmgfr13lqubz6yz8nr31k.cfd^
 ||woomdurham.com^
 ||xcwnfgoenzuno.space^
 ||xpobvymhwyuux.online^
+||zvmtmbdailzfe.space^
 ||3ckz.com^
 ||3vetz.com^
 ||adblockermax.com^
@@ -228646,6 +228672,9 @@ dlsdk.appsflyer.com^
 ||widgets.guppy.live^
 ||ntpyrbdgxzpjxy.com^
 ||fpz4gr87mq.com^
+||uyux77jurw.com^
+||r12ukq68l8.com^
+||q1v2f4.com^
 ||cpro.baidustatic.com^
 ||farm-cn.plista.com^
 ||static-cn.plista.com^
@@ -229026,6 +229055,7 @@ dlsdk.appsflyer.com^
 ||beap.gemini.yahoo.com^
 ||n.gemini.yahoo.com^
 ||tpc.googlesyndication.com^
+||tagloyalty.com^
 ||counter-go.de^
 ||counter-zaehler.de^
 ||counter.de^
