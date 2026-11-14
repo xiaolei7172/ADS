@@ -3,19 +3,19 @@
 ! 📌 规则名称：天影规则聚合 · 白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-14 18:09:27（北京时间）
-! 📊 有效规则：6846 条
+! ⏰ 更新时间：2026-11-14 20:55:33（北京时间）
+! 📊 有效规则：6847 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 白名单规则 📌
-! Description: ⏰ 更新时间 2026-11-14 18:09:27 | ✅ 有效规则 6846 条
-! 🧮 DNS 层可直接生效：3,577 条（纯域名 3,419 + 通配 158）；另有 3,269 条为路径级 / $domain= / 正则，仅浏览器版 AdGuard 有效
+! Description: ⏰ 更新时间 2026-11-14 20:55:33 | ✅ 有效规则 6847 条
+! 🧮 DNS 层可直接生效：3,578 条（纯域名 3,420 + 通配 158）；另有 3,269 条为路径级 / $domain= / 正则，仅浏览器版 AdGuard 有效
 ! ────────────────── ☑ 规则来源统计 ──────────────────
-!    3,093 条  5460 [酷安广告规则]（规则内置）
+!    3,091 条  5460 [酷安广告规则]（规则内置）
 !    2,634 条  AdGuard 跟踪白名单（远程白名单）
 !      306 条  李文杰白名单 [LWJ's white list]（远程白名单）
 !      216 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]（规则内置）
-!      182 条  本地白名单（远程白名单）
+!      185 条  本地白名单（远程白名单）
 !      167 条  BlueSkyXN 白名单（远程白名单）
 !      109 条  anti-ad 官方规则（规则内置）
 !       76 条  AdGuard 中文白名单（远程白名单）
@@ -2755,7 +2755,6 @@
 @@||yunjiasu.com^
 @@||c.y.qq.com^
 @@||isure.stream.qqmusic.qq.com^
-@@||public.gdtimg.com^
 @@||*.lol.qq.com^
 @@||lol.qq.com^
 @@||lpl.qq.com^
@@ -2820,7 +2819,6 @@
 @@||appsupport.qq.com^
 @@||aegis.qq.com^
 @@||dldir3.qq.com^
-@@||gdtimg.com^
 @@||ios.bugly.qq.com^
 @@||tangram.e.qq.com^
 @@||upage.imtt.qq.com^
@@ -3692,6 +3690,9 @@
 @@||allcdn.china.qiniu.qnydns.com^
 @@||api-e189.21cn.com^
 @@||hub5emu.sandai.net^
+@@||passport.kuaishou.com^
+@@||sixinpic.kuaishou.com^
+@@||img-w.kuaishou.com^
 ! 📋 白名单来源：当初白名单 [广告白名单规则，反馈🐧群]（远程白名单）
 ! 📋 白名单来源：李文杰白名单 [LWJ's white list]（远程白名单）
 @@goo.gl
