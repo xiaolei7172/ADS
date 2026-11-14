@@ -3,19 +3,19 @@
 ! 📌 规则名称：天影规则聚合 · DNS 拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-14 17:23:34（北京时间）
-! 📊 有效规则：233559 条
+! ⏰ 更新时间：2026-11-14 18:07:02（北京时间）
+! 📊 有效规则：233641 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · DNS 拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-14 17:23:34 | ✅ 有效规则 233559 条
+! Description: ⏰ 更新时间 2026-11-14 18:07:02 | ✅ 有效规则 233641 条
 ! ────────────────── ☑ 规则来源统计 ──────────────────
-!  118,127 条  AdRules DNS List [AdRules DNS List]
-!   86,561 条  anti-ad 官方规则
-!    7,059 条  海哥规则
+!  118,131 条  AdRules DNS List [AdRules DNS List]
+!   86,558 条  anti-ad 官方规则
+!    7,069 条  海哥规则
 !    6,773 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
-!    4,970 条  1007-Hosts
-!    3,761 条  5460 [酷安广告规则]
+!    4,988 条  1007-Hosts
+!    3,814 条  5460 [酷安广告规则]
 !    2,722 条  OISD 拦截规则 [oisd small]
 !    2,206 条  本地自定义规则
 !      485 条  hagezi OPPO 原生 [HaGeZi's OPPO & Realme Tracker - blocks built-in trackers from devices, apps, and OSes!]
@@ -2250,7 +2250,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/lingeringsound/10007_auto/master/all
 ! ==============================================
-! 📊 本区规则：4970 条
+! 📊 本区规则：4988 条
 ! ==============================================
 ||100webads.com^
 ||11bet.mobi^
@@ -2520,6 +2520,7 @@
 ||ad.janalta.com^
 ||ad.jetsoftware.com^
 ||ad.jiemian.com^
+||ad.jiguang.cn^
 ||ad.jokeroo.com^
 ||ad.jorte.com^
 ||ad.jorudan.co.jp^
@@ -4982,7 +4983,16 @@
 ||api.wx.my7v.com^
 ||api.yidaomobi.com^
 ||api.zol.com^
+||api0.tuisong.baidu.com^
+||api1.tuisong.baidu.com^
 ||api2.boclinkads.com^
+||api2.tuisong.baidu.com^
+||api3.tuisong.baidu.com^
+||api5.tuisong.baidu.com^
+||api6.tuisong.baidu.com^
+||api7.tuisong.baidu.com^
+||api8.tuisong.baidu.com^
+||api9.tuisong.baidu.com^
 ||apicosdk.onemt.co^
 ||apicssdk.onemt.co^
 ||apidns.kwd.inkuai.com^
@@ -5850,6 +5860,7 @@
 ||ifa.camads.net^
 ||ifacelog.iqiyi.com^
 ||ikhgg.snalkdl.top^
+||im.jiguang.cn^
 ||imageads.codoon.com^
 ||imagedvdreview.analytics.qlook.net^
 ||images.edgeads.org^
@@ -6520,6 +6531,10 @@
 ||s0-2mdn-net.l.google.com^
 ||s3-analytics-events.easybrain.com^
 ||s3.pfp.sina.net^
+||sa0.tuisong.baidu.com^
+||sa1.tuisong.baidu.com^
+||sa3.tuisong.baidu.com^
+||sa8.tuisong.baidu.com^
 ||sadc1.outbrain.org^
 ||sadfasdfa962.com^
 ||safe.res.meizu.com^
@@ -6552,6 +6567,7 @@
 ||sdk.iappgame.com^
 ||sdk.ibm.xtify.com^
 ||sdk.inlocomedia.com^
+||sdk.jiguang.cn^
 ||sdk.look.360.cn^
 ||sdk.loveota.net^
 ||sdk.markmedia.com.cn^
@@ -6566,6 +6582,7 @@
 ||sdk.yolanda.hk^
 ||sdk.youappi.com^
 ||sdk.zsdfm.com^
+||sdkapi-smartop.jiguang.cn^
 ||sdkconfig.play.aiseet.atianqi.com^
 ||sdkserver-drcn.op.dbankcloud.cn^
 ||searchadv.com^
@@ -6623,6 +6640,7 @@
 ||smartadserver.com^
 ||smartlock.google.com^
 ||smartnews-ads.com^
+||smartop-sdkapi-ipv6.jiguang.cn^
 ||smartspout.pro^
 ||smartxads.com^
 ||smartyads.com^
@@ -6958,6 +6976,7 @@
 ||vcdn.subiz-cdn.com^
 ||vdapprecv.app.cntvwb.cn^
 ||veltronaxis-click.pages.dev^
+||verification.jiguang.cn^
 ||vibestop.pro^
 ||victoriaexecutive.pro^
 ||video-ads-module.ad-tech.nbcuni.com^
@@ -7206,7 +7225,6 @@
 ||zelioraprotocen-click.pages.dev^
 ||zentravo.pro^
 ||zeus.ad.xiaomi.com^
-||zhanzhang.toutiao.com^
 ||zhihu-web-analytics.zhihu.com^
 ||zhushou.2345.com^
 ||zion-telemetry.api.cnn.io^
@@ -7228,7 +7246,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://anti-ad.net/easylist.txt
 ! ==============================================
-! 📊 本区规则：86561 条
+! 📊 本区规则：86558 条
 ! ==============================================
 ||000491b06a.com^
 ||000dn.com^
@@ -16723,7 +16741,6 @@
 ||xsolid.baidu.com^
 ||znsv.baidu.com^
 ||afdconf.baidu.com^
-||tuisong.baidu.com^
 ||appc.baidu.com^
 ||as.baidu.com^
 ||banlv.baidu.com^
@@ -18251,7 +18268,6 @@
 ||bildirnet.com^
 ||bildirt.com^
 ||tracking.health.bilh.org^
-||miniapp.bilibili.com^
 ||line1-log.biligame.net^
 ||bilingualgeek.com^
 ||descargar.billeteramango.com^
@@ -46591,7 +46607,6 @@
 ||jigsawharmony.com^
 ||jigsawlucky.com^
 ||jigsawthirsty.com^
-||jiguang.cn^
 ||jiguangzhuisu.com^
 ||jihaxrndufelb.online^
 ||jihehuaban.com^
@@ -49363,6 +49378,7 @@
 ||ssp.kssws.ks-cdn.com^
 ||stats.ks-labs.de^
 ||slb-p2p.vcloud.ks-live.com^
+||web-trace.ksapisrv.com^
 ||ksceuuupvjpes.space^
 ||ksdamndwucubm.online^
 ||ywrcqa.ksdk.com^
@@ -71711,7 +71727,6 @@
 ||sancontr.com^
 ||sanctifyracesleech.com^
 ||biz5.sandai.net^
-||hub5emu.sandai.net^
 ||liveupdate.mac.sandai.net^
 ||mcfg.sandai.net^
 ||cpm.cm.sandai.net^
@@ -93797,7 +93812,7 @@
 ! 📝 规则说明：List for blocking ads in the Chinese region. Block Ads, Trackers, Malware, HTTPDNS, PCDN.
 ! 🔗 原始地址：https://gp.adrules.top/dns.txt
 ! ==============================================
-! 📊 本区规则：118127 条
+! 📊 本区规则：118131 条
 ! ==============================================
 ||0.avmarket.rs^
 ||0.nextyourcontent.com^
@@ -203850,10 +203865,14 @@
 ||ulljqegjdoqmt.store^
 ||ullps.simplynootropics.com.au^
 ||ulndk.shopyogastrong.com^
+||ulog.ksapisrv.com^
 ||ulog.kwai-pro.com^
 ||ulog.kwaipros.com^
 ||ulog1-us.kwai-pro.com^
 ||ulog2-us.kwaipros.com^
+||ulogjs.ksapisrv.com^
+||ulogs1.ksapisrv.com^
+||ulogs2.ksapisrv.com^
 ||ulojlvmejkaem.xyz^
 ||ulptq.1mbreakthrough.com^
 ||ulrro.cleanskinclub.com^
@@ -207246,6 +207265,7 @@
 ||wlkkta.lifewarehouse.net^
 ||wlmwkz.adrop.sk^
 ||wlog.ifdo.co.kr^
+||wlog.ksapisrv.com^
 ||wlpdfo.choicefurnituresuperstore.co.uk^
 ||wlrfgb.green-acres.co.il^
 ||wlrmzcfmrg2it9koclnc.63hgwmuu5ozlxornytw.cyou^
@@ -207422,7 +207442,6 @@
 ||ws-p2p-pull.live-voip.com^
 ||ws-p2p-pull.video-voip.com^
 ||ws-p2p-v2.pull.yximgs.com^
-||ws-p2p.pull.yximgs.com^
 ||ws.agecapsule.com^
 ||ws.herbtantra.com^
 ||ws.winningstate.com^
@@ -222879,7 +222898,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/qq5460168/dangchu/main/black.txt
 ! ==============================================
-! 📊 本区规则：3761 条
+! 📊 本区规则：3814 条
 ! ==============================================
 ||ad.360.cn^
 ||adlog.360.cn^
@@ -222907,6 +222926,7 @@
 ||apidns-js.kwd.inkuai.com^
 ||httpdns.calorietech.com^
 ||hd.xiaojukeji.com^
+||impression.biligame.com^
 ||jzts.cmpassport.com^
 ||ug-data.mihoyo.com^
 ||gaoneng.bilibili.com^
@@ -222966,12 +222986,15 @@
 ||www.yunzhanxinxi.com^
 ||www.sufeinet.com^
 ||yunhyapp.com^
+||push.ksapisrv.com^
 ||ppg.viviv.com^
 ||passport.kuaishou.com^
 ||g-zt.kwai-pro.com^
 ||v2.oskwai.com^
 ||w2.eckwai.com^
 ||v6-gdvod.kwaicdn.com^
+||upload.ksapisrv.com^
+||ulog-sdk.ksapisrv.com^
 ||ad.v6.kuaishou.cn^
 ||sentry.kuaishou.com^
 ||meta-cdn.video.iqiyi.com^
@@ -223071,6 +223094,7 @@
 ||sptest.baidu.com^
 ||sofire-dr.baidu.com^
 ||fclickv4.baidu.com^
+||ack.tuisong.baidu.com^
 ||error.baidu.com^
 ||wanba.baidu.com^
 ||youxi.baidu.com^
@@ -223099,7 +223123,6 @@
 ||stp.vivo.com.cn^
 ||p.vivo.com.cn^
 ||zhan-test.vivo.com.cn^
-||h5.vivo.com.cn^
 ||zhan-pre.vivo.com.cn^
 ||browserbook.vivo.com.cn^
 ||kernelstatic.vivo.com.cn^
@@ -223322,6 +223345,7 @@
 ||loan-stat.com^
 ||shturl.cc^
 ||loanlink.cn^
+||push.jiguang.cn^
 ||k3l.cn^
 ||vip.7j0.cn^
 ||szaction.cc^
@@ -223460,6 +223484,7 @@
 ||z268.cc^
 ||fans.91selfie.com^
 ||trackbeat.xiachufang.com^
+||az4-upload.ksapisrv.com^
 ||d.url.cn^
 ||vod-settings.bytedanceapi.com^
 ||img5.chkaja.com^
@@ -223474,6 +223499,7 @@
 ||az2-upload-js.gifshow.com^
 ||beta2-ad-open-api.test.gifshow.com^
 ||style-browse-openapi.test.gifshow.com^
+||uploads2.ksapisrv.com^
 ||zhcm.gocdna.cn^
 ||optimus-ads-ykx.amap.com^
 ||assets.zhutile.com^
@@ -223481,10 +223507,12 @@
 ||rapi.cmgadx.com^
 ||cdn.cmgadx.com^
 ||api.juliangcili.com^
+||apihb6.ksapisrv.com^
 ||apijsv6.gifshow.com^
 ||xscdn-gdt.play.aiseet.atianqi.com^
 ||xsgdt.play.aiseet.atianqi.com^
 ||h5vv.play.aiseet.atianqi.com^
+||uploads1.ksapisrv.com^
 ||sg.ylhglobal.com^
 ||zt.gifshow.com^
 ||ext-adv.kaixinyf.cn^
@@ -223496,6 +223524,7 @@
 ||kuais.mryhq1.cn^
 ||saas-static.yiye.ai^
 ||cdn-asp.yiye.ai^
+||apijsv6.ksapisrv.com^
 ||lx-upload-log.go2yd.com^
 ||www.bytedance.com.w.cdngslb.com^
 ||www.bytedance.com.queniurc.com^
@@ -223520,16 +223549,18 @@
 ||lf-leads-fe-scm.bytecdn.com^
 ||lf-reward-video.bytedcdn.com^
 ||ks-adaptive.pull.yximgs.com^
-||api-e189.21cn.com^
 ||viav-cse.avlyun.com^
 ||cloud.shtac.cn^
 ||partner.uc.cn^
+||gdfp.ksapisrv.com^
+||gdfpsec.ksapisrv.com^
 ||marketing.wsljf.xyz^
 ||misc.weshineapp.com^
 ||ad.zhuanzhuan.com^
 ||gw-w.jiaoliuqu.com^
 ||down.paperyy.com^
 ||gdfpsec.gifshow.com^
+||slink.ksapisrv.com^
 ||slink.gifshow.com^
 ||ad.api.zaibiao.cn^
 ||admore.cps.zaibiao.cn^
@@ -223702,6 +223733,7 @@
 ||sysdesc.vivo.com.cn^
 ||vivotest.oss-cn-beijing.aliyuncs.com^
 ||admin-app.edifier.com^
+||game-attribute.biligame.com^
 ||ad.hzyoka.com^
 ||ads.morefreegame.com^
 ||ad-api.morefreegame.com^
@@ -224618,6 +224650,45 @@
 ||ad-host-backup-asia.s3.ap-southeast-1.amazonaws.com^
 ||ad-host-backup-europe.s3.eu-central-1.amazonaws.com^
 ||log.sgsnssdk.com^
+||action.service.user.jiguang.cn^
+||ad.open.jiguang.cn^
+||api.jiguang.cn^
+||api.data.jiguang.cn^
+||apidy.vaas.jiguang.cn^
+||api.iot.jiguang.cn^
+||api.yun.jiguang.cn^
+||blog.jiguang.cn^
+||cdp.jiguang.cn^
+||community.jiguang.cn^
+||data.vaas.jiguang.cn^
+||docs.jiguang.cn^
+||funds.iapp.jiguang.cn^
+||hawk-arvpn.jiguang.cn^
+||img.jiguang.cn^
+||ir.jiguang.cn^
+||janalytics.jiguang.cn^
+||jg-cms.jiguang.cn^
+||jverification.jiguang.cn^
+||kepler-pick.jiguang.cn^
+||m.jiguang.cn^
+||mlinks.jiguang.cn^
+||polar-sdk-api.jiguang.cn^
+||pop.jiguang.cn^
+||rewards.jiguang.cn^
+||sdkfiledl.jiguang.cn^
+||sis.iot.jiguang.cn^
+||smtp.jiguang.cn^
+||ssp-sdk-api.jiguang.cn^
+||ssp-sdk-status.jiguang.cn^
+||stat-srv.jiguang.cn^
+||svpn-hawk.jiguang.cn^
+||svpn-szlg.jiguang.cn^
+||test.jiguang.cn^
+||test.data.jiguang.cn^
+||test-kepler-pick.jiguang.cn^
+||vaas.junion.jiguang.cn^
+||web-stat.jiguang.cn^
+||www.jiguang.cn^
 ||umeng.cn^
 ||umeng.cc^
 ||ad-asm.tianmu.mobi^
@@ -224945,13 +225016,14 @@
 ||alimov2.a.yximgs.com^
 ||apissl.gifshow.com^
 ||upload.gifshow.com^
+||api.ksapisrv.com^
 ||sf2018-api.gifshow.com^
 ||ntp.nc.gifshow.com^
 ||bd-livemate.pull.yximgs.com^
 ||etoote.com^
 ||ulog.gifshow.com^
 ||apinew.gifshow.com^
-||ksapisrv.com^
+||apihn1.ksapisrv.com^
 ||corp.kuaishou.com^
 ||kwaizt.com^
 ||chinanetcenter.com^
@@ -226648,7 +226720,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt
 ! ==============================================
-! 📊 本区规则：7059 条
+! 📊 本区规则：7069 条
 ! ==============================================
 ||8k3340.com^
 ||20281097.com^
@@ -228108,6 +228180,7 @@
 ||acuh567.com^
 ||acv3.co^
 ||ad-api.996hezi.com^
+||ad-bili-data.biligame.com^
 ||ad-ggtg-kuaishou-api.37.com.cn^
 ||ad-lele-q3gx.youxinhuyu.cn^
 ||ad-logs.seeyouyima.com^
@@ -228208,7 +228281,6 @@
 ||all.vpgbfx.com.w.cdngslb.com^
 ||all.xn--ruq140e43cj1d.com.accelerate.bli.cdngslb.cc^
 ||all.ytbdmhy.com.a1.initaf.com^
-||allcdn.china.qiniu.qnydns.com^
 ||alldomain.aoshl.com.a.bdydns.com^
 ||alldomain.bqeks.com.a.bdydns.com^
 ||alldomain.fckfyu.com.a.bdydns.com^
@@ -228254,6 +228326,7 @@
 ||api-my-api-5hw5ou-b810d8-80-75-218-107.traefik.me^
 ||api-sdk.clickwifi.net^
 ||api-startup-gateway.gifshow.com^
+||api-startup-gateway.ksapisrv.com^
 ||api-tjqy.shzbkj.com^
 ||api.1tghspc.com^
 ||api.2255uukk.com^
@@ -228343,7 +228416,6 @@
 ||api2.immersivetranslate.com^
 ||api2.srbs35.com^
 ||api3.matangame.com^
-||api5-normal-lq.toutiaoapi.com^
 ||api88.shananfen.com^
 ||api8800.swarnor.com^
 ||apiapm.gz4399.com^
@@ -228351,7 +228423,9 @@
 ||apiazhd-azure20hd6-cc-f7evdrfzdxgwaybm.a02.azurefd.net^
 ||apidt.my91app.com^
 ||apijs.gifshow.com^
+||apijs.ksapisrv.com^
 ||apijs1.gifshow.com^
+||apijs1.ksapisrv.com^
 ||apik1vfyjpcz.wmdxwjd.com^
 ||apilu7.cdn.lyfsp.cn^
 ||apithird.hzwxbz3.cn^
@@ -228466,7 +228540,13 @@
 ||axyqd.cn^
 ||ayqd29m.ng.impervadns.net^
 ||ayxb.t4m.cn^
+||az1-api-idc.ksapisrv.com^
+||az1-startup-gateway.ksapisrv.com^
+||az2-startup-gateway.ksapisrv.com^
+||az3-startup-gateway.ksapisrv.com^
+||az4-api-idc.ksapisrv.com^
 ||az4-api-js.gifshow.com^
+||az4-startup-gateway.ksapisrv.com^
 ||az4-upload-js.gifshow.com^
 ||azer991.92kun.com^
 ||azhd-azure20hd12-cc-cfc5f3ebh7arhyck.a02.azurefd.net^
@@ -228516,6 +228596,7 @@
 ||b9k.cn^
 ||b9ndb.top^
 ||b9no6.yqgh65cba.top^
+||ba.biligame.com^
 ||bacceptou.xyz^
 ||backend.gravity-engine.com^
 ||baidu.rbbjan.com^
@@ -228564,7 +228645,6 @@
 ||bics.8890.com^
 ||bifrost.oddin.gg^
 ||bignqzm.cn^
-||biligame.com^
 ||bimariobot.com^
 ||binfenli.cn^
 ||biz-live-ssl.xunlei.com^
@@ -229783,6 +229863,7 @@
 ||gz.gzyunguo.com^
 ||gz360.tv^
 ||gzhxjiaoyu.com^
+||gzone.ksapisrv.com^
 ||h.huabianyl.com^
 ||h.safe.360.cn^
 ||h07.yytxqcy.com^
@@ -229853,6 +229934,7 @@
 ||haplat.net^
 ||hawkeye.10jqka.com.cn^
 ||hb.hbtyjnbgg.vip^
+||hb.ksapisrv.com^
 ||hb1695.com^
 ||hb211310.cc.bshslb.com^
 ||hb211310.cc^
@@ -229980,8 +230062,6 @@
 ||hshd.hsy20hd1.cc^
 ||hshd.hsy20hd7.cc^
 ||hshkn.vqwjucmfdsqznfn.in^
-||hsk-api-v2.oray.com^
-||hsk-api.oray.com^
 ||hsld271.forceffort.top^
 ||hszhu5.vip^
 ||ht.nextclass.com^
@@ -230608,7 +230688,6 @@
 ||krmi.880.net^
 ||ks-xpc5.xpccdn.com^
 ||ks.haozanw.com^
-||ks.push.yximgs.com^
 ||ks.shijiaostudy.com^
 ||ks18.ygcname2009.com^
 ||ks1cq6668.vgwwddz.com^
@@ -230784,7 +230863,10 @@
 ||live.video.iqiyi.com^
 ||livehelp100-file.com^
 ||livejs.gifshow.com^
+||livejs.ksapisrv.com^
 ||livelyhelp.chat^
+||livep2p.ksapisrv.com^
+||livep2pjs.ksapisrv.com^
 ||liwbei.cn^
 ||lix.haoka69.cn^
 ||liyingshidai.cn^
@@ -231930,7 +232012,6 @@
 ||resource.jianli.com^
 ||resources.easy-h5.com^
 ||resq.cmsv5.iyunzk.com^
-||restsdk.amap.com^
 ||reszqzs.xw66.top^
 ||reuw.7790.com^
 ||rg14j9c2wk.mfstzy.com^
@@ -232736,6 +232817,7 @@
 ||upload.jinyi999.cn^
 ||upload.kuaishouzt.com^
 ||upload3.gifshow.com^
+||upload3.ksapisrv.com^
 ||upushv6.qidian.com^
 ||upymjbv.j8y2r7y1.work^
 ||uqaswxey.pelcxxw.com.ctadns.cn^

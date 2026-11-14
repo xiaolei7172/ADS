@@ -3,19 +3,19 @@
 ! 📌 规则名称：天影规则聚合 · 广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-14 17:23:33（北京时间）
-! 📊 有效规则：260492 条
+! ⏰ 更新时间：2026-11-14 18:07:02（北京时间）
+! 📊 有效规则：260472 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-14 17:23:33 | ✅ 有效规则 260492 条
+! Description: ⏰ 更新时间 2026-11-14 18:07:02 | ✅ 有效规则 260472 条
 ! ────────────────── ☑ 规则来源统计 ──────────────────
-!  123,802 条  AdRules DNS List [AdRules DNS List]
-!   88,154 条  anti-ad 官方规则
-!   12,602 条  5460 [酷安广告规则]
-!   10,558 条  1007-Hosts
-!    9,037 条  海哥规则
-!    7,796 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
+!  123,801 条  AdRules DNS List [AdRules DNS List]
+!   88,151 条  anti-ad 官方规则
+!   12,596 条  5460 [酷安广告规则]
+!   10,555 条  1007-Hosts
+!    9,031 条  海哥规则
+!    7,795 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !    2,986 条  OISD 拦截规则 [oisd small]
 !    2,206 条  本地自定义规则
 !    1,119 条  乘风通用规则 [乘风 广告过滤规则]
@@ -6568,7 +6568,6 @@
 0.0.0.0 api2.boclinkads.com
 0.0.0.0 api2.tuisong.baidu.com
 0.0.0.0 api3.tuisong.baidu.com
-0.0.0.0 api4.tuisong.baidu.com
 0.0.0.0 api5.tuisong.baidu.com
 0.0.0.0 api6.tuisong.baidu.com
 0.0.0.0 api7.tuisong.baidu.com
@@ -10350,7 +10349,6 @@
 0.0.0.0 s97.cnzz.com
 0.0.0.0 s98.cnzz.com
 0.0.0.0 s99.cnzz.com
-0.0.0.0 sa.tuisong.baidu.com
 0.0.0.0 sa0.tuisong.baidu.com
 0.0.0.0 sa1.tuisong.baidu.com
 0.0.0.0 sa3.tuisong.baidu.com
@@ -12758,7 +12756,6 @@
 0.0.0.0 zeus.ad.intl.xiaomi.com
 0.0.0.0 zeus.ad.xiaomi.com
 0.0.0.0 zgsdk.zhugeio.com
-0.0.0.0 zhanzhang.toutiao.com
 0.0.0.0 zhihu-web-analytics.zhihu.com
 0.0.0.0 zhushou.2345.com
 0.0.0.0 zion-telemetry.api.cnn.io
@@ -24296,7 +24293,6 @@
 ||bildirt.com^
 ||tracking.health.bilh.org^
 ||dataflow.biliapi.com^
-||miniapp.bilibili.com^
 ||line1-log.biligame.net^
 ||bilingualgeek.com^
 ||descargar.billeteramango.com^
@@ -55875,7 +55871,6 @@
 ||ssp.kssws.ks-cdn.com^
 ||stats.ks-labs.de^
 ||slb-p2p.vcloud.ks-live.com^
-||log-sdk.ksapisrv.com^
 ||web-trace.ksapisrv.com^
 ||ksceuuupvjpes.space^
 ||ksdamndwucubm.online^
@@ -78497,7 +78492,6 @@
 ||sanctifyracesleech.com^
 ||biz5.sandai.net^
 ||etl.xlmc.sandai.net^
-||hub5emu.sandai.net^
 ||liveupdate.mac.sandai.net^
 ||mcfg.sandai.net^
 ||cpm.cm.sandai.net^
@@ -219448,7 +219442,6 @@
 ||ws-p2p-pull.live-voip.com^
 ||ws-p2p-pull.video-voip.com^
 ||ws-p2p-v2.pull.yximgs.com^
-||ws-p2p.pull.yximgs.com^
 ||ws.agecapsule.com^
 ||ws.herbtantra.com^
 ||ws.winningstate.com^
@@ -227623,7 +227616,6 @@ dlsdk.appsflyer.com^
 ||wiseref.com^
 ||site24x7rum.in^
 ||cdn.tercept.com^
-||zhanzhang.toutiao.com^
 ||trueroas.io^
 ||t.adcell.com^
 ||iplogger.co^
@@ -237453,7 +237445,6 @@ analytics-*.aasaam.com
 ||stp.vivo.com.cn^
 ||p.vivo.com.cn^
 ||zhan-test.vivo.com.cn^
-||h5.vivo.com.cn^
 ||zhan-pre.vivo.com.cn^
 ||browserbook.vivo.com.cn^
 ||kernelstatic.vivo.com.cn^
@@ -238216,7 +238207,6 @@ analytics-*.aasaam.com
 ||lf-leads-fe-scm.bytecdn.com^
 ||lf-reward-video.bytedcdn.com^
 ||ks-adaptive.pull.yximgs.com^
-||api-e189.21cn.com^
 ||msch.f.360.cn^
 ||viav-cse.avlyun.com^
 ||smvconf.f.360.cn^
@@ -238474,7 +238464,6 @@ analytics-*.aasaam.com
 ||6osurvos.fn.bytedance.net^
 ||bdxiguaimg.com^
 ||sdk.verification.jiguang.cn^
-||smartop-sdkapi.jiguang.cn^
 ||license.vod2.myqcloud.com^
 ||bwy1.pupuapi.com^
 ||push.pupuapi.com^
@@ -240513,7 +240502,6 @@ play.google.com#@#a[href^="intent://"]
 127.0.0.1 mon.toutiaocloud.com
 127.0.0.1 mon.toutiaocloud.net
 127.0.0.1 zlink.toutiao.com
-127.0.0.1 zhanzhang.toutiao.com
 127.0.0.1 imp-toutiao-data.37.com.cn
 127.0.0.1 www.pangolin-dsp-toutiao.com
 127.0.0.1 toutiao.jxnews.com.cn
@@ -241832,7 +241820,6 @@ play.google.com#@#a[href^="intent://"]
 127.0.0.1 sdkapi-smartop.jiguang.cn
 127.0.0.1 sdkfiledl.jiguang.cn
 127.0.0.1 sis.iot.jiguang.cn
-127.0.0.1 smartop-sdkapi.jiguang.cn
 127.0.0.1 smartop-sdkapi-ipv6.jiguang.cn
 127.0.0.1 smtp.jiguang.cn
 127.0.0.1 ssp.jiguang.cn
@@ -245780,7 +245767,6 @@ play.google.com#@#a[href^="intent://"]
 0.0.0.0 slink.ksapisrv.com
 0.0.0.0 sm.easysale.domobcdn.com
 0.0.0.0 smad.ms.zhangyue.net
-0.0.0.0 smartop-sdkapi.jiguang.cn
 0.0.0.0 smtp.getui.com
 0.0.0.0 smtp.jiguang.cn
 0.0.0.0 snippet.pos.baidu.com
@@ -253097,7 +253083,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||all.vpgbfx.com.w.cdngslb.com^
 ||all.xn--ruq140e43cj1d.com.accelerate.bli.cdngslb.cc^
 ||all.ytbdmhy.com.a1.initaf.com^
-||allcdn.china.qiniu.qnydns.com^
 ||alldomain.aoshl.com.a.bdydns.com^
 ||alldomain.bqeks.com.a.bdydns.com^
 ||alldomain.fckfyu.com.a.bdydns.com^
@@ -253265,7 +253250,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||api2.openinstall.io^
 ||api2.srbs35.com^
 ||api3.matangame.com^
-||api5-normal-lq.toutiaoapi.com^
 ||api88.shananfen.com^
 ||api8800.swarnor.com^
 ||apiapm.gz4399.com^
@@ -255146,8 +255130,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||hshd.hsy20hd1.cc^
 ||hshd.hsy20hd7.cc^
 ||hshkn.vqwjucmfdsqznfn.in^
-||hsk-api-v2.oray.com^
-||hsk-api.oray.com^
 ||hsld271.forceffort.top^
 ||hszhu5.vip^
 ||ht.nextclass.com^
@@ -255822,7 +255804,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||ks-market.520yidui.com^
 ||ks-xpc5.xpccdn.com^
 ||ks.haozanw.com^
-||ks.push.yximgs.com^
 ||ks.shijiaostudy.com^
 ||ks18.ygcname2009.com^
 ||ks1cq6668.vgwwddz.com^
@@ -257290,7 +257271,6 @@ ikan6.vip,www.1111modruba.cc##IMG[src$='.gif']
 ||resource.oss.yatiku.com^
 ||resources.easy-h5.com^
 ||resq.cmsv5.iyunzk.com^
-||restsdk.amap.com^
 ||reszqzs.xw66.top^
 ||reuw.7790.com^
 ||rg14j9c2wk.mfstzy.com^

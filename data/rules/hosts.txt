@@ -2,7 +2,7 @@
 # 由 dns.txt 折叠前的完整域名集转换，含全部子域，覆盖与 AdGuard 语义对齐
 # ⚠️ hosts 只能精确匹配，拦不到未列出的子域；需要完整子域覆盖请用 dns.txt / smartdns.conf / surge.list
 # 📌 项目地址：https://github.com/xiaolei7172/ADS
-# 🔖 内容指纹：73474703a741 | 📊 有效规则：247349 条 | ⏰ 变更时间见 git 提交记录
+# 🔖 内容指纹：0fbca15e000e | 📊 有效规则：247333 条 | ⏰ 变更时间见 git 提交记录
 # 🔄 更新频率：每日自动更新（北京时间 08:00）
 0.0.0.0 ads3-normal-hl.zijieapi.com
 0.0.0.0 ads3-normal-lf.zijieapi.com
@@ -6515,7 +6515,6 @@
 0.0.0.0 api2.boclinkads.com
 0.0.0.0 api2.tuisong.baidu.com
 0.0.0.0 api3.tuisong.baidu.com
-0.0.0.0 api4.tuisong.baidu.com
 0.0.0.0 api5.tuisong.baidu.com
 0.0.0.0 api6.tuisong.baidu.com
 0.0.0.0 api7.tuisong.baidu.com
@@ -10288,7 +10287,6 @@
 0.0.0.0 s97.cnzz.com
 0.0.0.0 s98.cnzz.com
 0.0.0.0 s99.cnzz.com
-0.0.0.0 sa.tuisong.baidu.com
 0.0.0.0 sa0.tuisong.baidu.com
 0.0.0.0 sa1.tuisong.baidu.com
 0.0.0.0 sa3.tuisong.baidu.com
@@ -12693,7 +12691,6 @@
 0.0.0.0 zeus.ad.intl.xiaomi.com
 0.0.0.0 zeus.ad.xiaomi.com
 0.0.0.0 zgsdk.zhugeio.com
-0.0.0.0 zhanzhang.toutiao.com
 0.0.0.0 zhihu-web-analytics.zhihu.com
 0.0.0.0 zhushou.2345.com
 0.0.0.0 zion-telemetry.api.cnn.io
@@ -23836,7 +23833,6 @@
 0.0.0.0 bildirt.com
 0.0.0.0 tracking.health.bilh.org
 0.0.0.0 dataflow.biliapi.com
-0.0.0.0 miniapp.bilibili.com
 0.0.0.0 line1-log.biligame.net
 0.0.0.0 bilingualgeek.com
 0.0.0.0 descargar.billeteramango.com
@@ -55223,7 +55219,6 @@
 0.0.0.0 ssp.kssws.ks-cdn.com
 0.0.0.0 stats.ks-labs.de
 0.0.0.0 slb-p2p.vcloud.ks-live.com
-0.0.0.0 log-sdk.ksapisrv.com
 0.0.0.0 web-trace.ksapisrv.com
 0.0.0.0 ksceuuupvjpes.space
 0.0.0.0 ksdamndwucubm.online
@@ -77692,7 +77687,6 @@
 0.0.0.0 sanctifyracesleech.com
 0.0.0.0 biz5.sandai.net
 0.0.0.0 etl.xlmc.sandai.net
-0.0.0.0 hub5emu.sandai.net
 0.0.0.0 liveupdate.mac.sandai.net
 0.0.0.0 mcfg.sandai.net
 0.0.0.0 cpm.cm.sandai.net
@@ -215928,7 +215922,6 @@
 0.0.0.0 ws-p2p-pull.live-voip.com
 0.0.0.0 ws-p2p-pull.video-voip.com
 0.0.0.0 ws-p2p-v2.pull.yximgs.com
-0.0.0.0 ws-p2p.pull.yximgs.com
 0.0.0.0 ws.agecapsule.com
 0.0.0.0 ws.herbtantra.com
 0.0.0.0 ws.winningstate.com
@@ -233139,7 +233132,6 @@
 0.0.0.0 stp.vivo.com.cn
 0.0.0.0 p.vivo.com.cn
 0.0.0.0 zhan-test.vivo.com.cn
-0.0.0.0 h5.vivo.com.cn
 0.0.0.0 zhan-pre.vivo.com.cn
 0.0.0.0 browserbook.vivo.com.cn
 0.0.0.0 kernelstatic.vivo.com.cn
@@ -233808,7 +233800,6 @@
 0.0.0.0 lf-leads-fe-scm.bytecdn.com
 0.0.0.0 lf-reward-video.bytedcdn.com
 0.0.0.0 ks-adaptive.pull.yximgs.com
-0.0.0.0 api-e189.21cn.com
 0.0.0.0 msch.f.360.cn
 0.0.0.0 viav-cse.avlyun.com
 0.0.0.0 smvconf.f.360.cn
@@ -234002,7 +233993,6 @@
 0.0.0.0 adeng.lebo.cn
 0.0.0.0 6osurvos.fn.bytedance.net
 0.0.0.0 bdxiguaimg.com
-0.0.0.0 smartop-sdkapi.jiguang.cn
 0.0.0.0 license.vod2.myqcloud.com
 0.0.0.0 bwy1.pupuapi.com
 0.0.0.0 push.pupuapi.com
@@ -241335,7 +241325,6 @@
 0.0.0.0 all.vpgbfx.com.w.cdngslb.com
 0.0.0.0 all.xn--ruq140e43cj1d.com.accelerate.bli.cdngslb.cc
 0.0.0.0 all.ytbdmhy.com.a1.initaf.com
-0.0.0.0 allcdn.china.qiniu.qnydns.com
 0.0.0.0 alldomain.aoshl.com.a.bdydns.com
 0.0.0.0 alldomain.bqeks.com.a.bdydns.com
 0.0.0.0 alldomain.fckfyu.com.a.bdydns.com
@@ -241475,7 +241464,6 @@
 0.0.0.0 api2.immersivetranslate.com
 0.0.0.0 api2.srbs35.com
 0.0.0.0 api3.matangame.com
-0.0.0.0 api5-normal-lq.toutiaoapi.com
 0.0.0.0 api88.shananfen.com
 0.0.0.0 api8800.swarnor.com
 0.0.0.0 apiapm.gz4399.com
@@ -243283,8 +243271,6 @@
 0.0.0.0 hshd.hsy20hd1.cc
 0.0.0.0 hshd.hsy20hd7.cc
 0.0.0.0 hshkn.vqwjucmfdsqznfn.in
-0.0.0.0 hsk-api-v2.oray.com
-0.0.0.0 hsk-api.oray.com
 0.0.0.0 hsld271.forceffort.top
 0.0.0.0 hszhu5.vip
 0.0.0.0 ht.nextclass.com
@@ -243947,7 +243933,6 @@
 0.0.0.0 ks-market.520yidui.com
 0.0.0.0 ks-xpc5.xpccdn.com
 0.0.0.0 ks.haozanw.com
-0.0.0.0 ks.push.yximgs.com
 0.0.0.0 ks.shijiaostudy.com
 0.0.0.0 ks18.ygcname2009.com
 0.0.0.0 ks1cq6668.vgwwddz.com
@@ -245382,7 +245367,6 @@
 0.0.0.0 resource.oss.yatiku.com
 0.0.0.0 resources.easy-h5.com
 0.0.0.0 resq.cmsv5.iyunzk.com
-0.0.0.0 restsdk.amap.com
 0.0.0.0 reszqzs.xw66.top
 0.0.0.0 reuw.7790.com
 0.0.0.0 rg14j9c2wk.mfstzy.com
