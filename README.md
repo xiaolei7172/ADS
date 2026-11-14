@@ -625,11 +625,20 @@ python data/python/check-quality.py && python data/python/verify-fixes.py
 
 > 仅收录**功能性变更**；CI 每日的例行规则更新（`✅ 规则自动更新` 提交）不列出。完整记录见 [Commits](https://github.com/xiaolei7172/ADS/commits/master)。
 
-### 📅 2026-11-13
+### 📅 2026-11-14
+
+| 类型 | 变更内容 | 提交 |
+| :--- | :--- | :--- |
+| 🔗 优化 | 国内加速链接改为 gh-proxy（data/rules 产物超 64MB，jsDelivr 50MB 包体上限导致全目录 404） | [`1cff529`](https://github.com/xiaolei7172/ADS/commit/1cff529) |
+
+<details>
+<summary><b>📅 2026-11-13</b> · 1 项变更</summary>
 
 | 类型 | 变更内容 | 提交 |
 | :--- | :--- | :--- |
 | 🧹 清理 | dns.txt 头部去掉「来源汇总」块——与 title.py 生成的「☑ 规则来源统计」完全重复 | [`1f6e501`](https://github.com/xiaolei7172/ADS/commit/1f6e501) |
+
+</details>
 
 <details>
 <summary><b>📅 2026-11-12</b> · 1 项变更</summary>
