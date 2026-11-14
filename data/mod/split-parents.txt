@@ -19,3 +19,7 @@
 ! ======================================================================
 
 ads.heytapmobi.com   ! OPPO 广告集群（adx-*/ssp-adx/data/sms/uapi 等 25 个子域全为广告），白名单点名放行商店功能域 b1-data.ads.heytapmobi.com；2026-11-09 1007-Hosts 新增整域拦截后与白名单冲突，熔断了 11-09/11-10 两轮更新
+tuisong.baidu.com    ! 百度推送通道（api / api3 / api4 / sa 全为推送网关，非广告聚合域）；2026-11-14 引入海哥 hg2 放行单，白名单点名放行 api4 / sa 被整域架空。父域剔除后推送恢复，上游若新增广告推送子域仍按子域拦
+ksapisrv.com         ! 快手 API 网关（5460 酷安广告规则整域拦）；白名单点名放行 miniapi（接口）/ log-sdk（极速版金币）被架空，且整域拦会让快手主体接口不可用。父域剔除后按子域粒度拦截，广告侧仍由 kuaishouad / kuaishouzt 系负责
+biligame.com         ! B 站游戏域（登录 passport / SDK uosdk / 配置 game-infoc / 白山 CDN），非广告聚合域；海哥拦截单整域拦下但自己在放行单里点名放行三个子域，自相矛盾。父域剔除后三个功能子域恢复
+jiguang.cn           ! 极光推送（JPush）整域，父域下已有广告 SSP 子域 ssp.jiguang.cn 单独收录；白名单点名放行 smartop-sdkapi（推送 SDK）被架空。拆父域后 ssp.jiguang.cn 继续拦，推送 SDK 恢复
