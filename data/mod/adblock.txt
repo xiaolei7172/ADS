@@ -2391,3 +2391,47 @@
 ! 副作用说明：拦它不影响播放与登录，但「看广告听歌」的时长校验可能因回传失败而卡住；
 ! 真遇到领不到时长，把下面这一行注释掉即可。
 ||log.qishui.com^
+
+! ========== 模块O: 555电影（555dy 系 / 55dyNN / 5kanN）==========
+! 2026-11-14 专项核查。先给结论：555 电影早已没有网页播放页。
+! 实测 555dy.com / 555dy.tv / 555dy.app / 55dy29.com / 55dy96.com / 5kan1.com
+! 六个域名全部返回同一张「APP 下载 + 永久发布页」（42,754 字节 SPA，标题
+! 「555电影APP下载-555电影官网永久发布页」），/index.php/vod/*、/vodtype/* 也一律
+! 落到这张发布页 —— 网页端无片可看，自然也没有网页广告可拦。
+!
+! ① 发布页 / 下载页上真正在跑的第三方脚本（本模块 A 段）
+!    下载页 /d1/ 挂了两个统计 SDK，脚本地址与上报端点故意分在不同「教育类」父域：
+!      · Countly 统计：脚本 ajgvkj1jsv.shenglinyiyang.cn，上报 hljbrsn1gj.qiaozhixuexiao.com
+!      · DF Analytics：ingest.lputol.com（SDK 与 /api/v1/ingest/events 同域）
+!    拦掉不影响下载和安装，只是运营方收不到你的埋点。
+!    只拦随机子域、不拦父域：shenglinyiyang.cn / qiaozhixuexiao.com 疑似是
+!    被黑产借壳的真实站点，整域拦会误伤正经站点。
+!
+! ② App 内广告（B 段）
+!    APK 分发域 app.static01.com:26687 已双 DNS NXDOMAIN，官网下载入口本身是死的，
+!    拿不到安装包就无法逐域核验 —— 本模块不编造「555 专属广告接口」。
+!    这类聚合影视 App 的广告来自第三方聚合 SDK，模块C / 模块F（AD-QGG 1,960 条）
+!    已覆盖穿山甲 / gromore / 优量汇 / 百度 / Sigmob / Mintegral 主域，此处不重复。
+!    B 段只补「实测仍缺、双 DNS 确认存活、用途单一」的 4 条通用广告域。
+!
+! 【禁拦清单】（拦了要么下不了包，要么页面变白板）
+!   55dy29.com / 55dy96.com / 5kan1.com / 555dy.com / 555dy.tv / 555dy.app  ← 站点本体
+!   app.static01.com（APK 分发；现已 NXDOMAIN，若恢复也不能拦）
+!   vpic.cms.qq.com / gimg0.baidu.com / awp-assets.meituan.net / www.i4.cn
+!   cdnjs.cloudflare.com（jQuery、clipboard.js 全从这来）
+!
+! ---------- 模块O-A: 发布页 / 下载页统计与上报（实测，555 专属）----------
+||ajgvkj1jsv.shenglinyiyang.cn^
+||hljbrsn1gj.qiaozhixuexiao.com^
+||ingest.lputol.com^
+!
+! ---------- 模块O-B: 聚合影视 App 广告 SDK 缺口（通用补全，非 555 专属）----------
+! 快手联盟广告：只补 ad.s（素材/上报）。ad.e（广告接口）已被上游父域
+! e.kuaishou.com 整域覆盖，写进来是冗余行，故不重复。
+! 快手主 App 的 passport / api / live 等域不在此列，不影响登录与私信。
+||ad.s.kuaishou.com^
+! TopOn(Taku) 聚合 SDK 与 AdScope 广告平台主域
+||taku.io^
+||adscope.cn^
+! 优量汇(广点通)广告素材 CDN，只出广告图，拦了是广告位空图而非破版
+||gdtimg.com^
