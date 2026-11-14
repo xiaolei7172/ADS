@@ -22,6 +22,28 @@
 !   api{3,5}-normal-sinfonlinea.fqnovel.com（反作弊风控）
 ! ============================================================
 
+! ============================================================
+! 【本地规则构成与维护口径】2026-11-14 体检实测
+! ============================================================
+! 本文件共 2,223 条规则，按「和上游产物 + 白名单的关系」分三类：
+!
+!   352 条  必需：上游白名单（含父域整域放行，如 @@||qq.com^）会把这些域放掉，
+!           只能靠本地规则豁免白名单的机制压住。删一条 = 该域广告立刻复活。
+! 1,871 条  冗余保险：上游拦截表里本来就有，且没有白名单冲突。留着的作用是
+!           「上游哪天删了这条，我们这边照旧拦」。这是刻意保留，不是漏清理。
+!    17 条  独有：上游完全没有，只有本文件有（555 电影统计域、懂片帝落地页与
+!           借壳图床、快手联盟 ad.s、TopOn/AdScope 等）。
+!
+! 清理原则：冗余保险条目不主动删——删了当下无感，出事时才发现少一层。
+! 仅两种情况清理：① 被 data/mod/dead.txt 判定 NXDOMAIN（check-quality 第 8 项会拦）；
+! ② 确认上游已永久移除且该域确无广告价值。
+! 复核方法：把 2,223 条与本文件外层的 data/rules/ad-domain.txt、allow.txt 逐条比对，
+!   或直接跑 check-quality.py（含死域交叉核对与关键功能域闸门）。
+!
+! 模块编号：A→Q 连续、无重号（本版把原「模块F: AD-QGG」改为模块Q 并移至文件末尾，
+! 解决 F 被「直播广告」与「AD-QGG」同时占用的历史遗留）。
+! ============================================================
+
 ! ========== 模块A: 广告计费接口（核心，拦掉=广告请求发不出去）==========
 ||ads3-normal-hl.zijieapi.com^
 ||ads3-normal-lf.zijieapi.com^
@@ -394,7 +416,124 @@
 ! lf 分片，说明拦了会出问题（新功能推不下来）。按「只拦投放链路、不拦配置下发」
 ! 的取舍放弃这两条，模块H 里既有的 abtest3-misc-hl 不动。
 
-! ========== 模块F: AD-QGG 国内App广告精选（2026-11-11）==========
+! ========== 模块N: 汽水音乐（com.luna.music / 字节 Luna）==========
+! 2026-11-14 专项核查。汽水音乐的广告有三条链路，可拦性差别很大，本模块只收
+! 真正拦得住、且不会把 App 拦坏的部分：
+!
+! ① 第三方广告 SDK（「看广告听歌」的激励视频走穿山甲 / gromore）
+!    → 模块C / 模块Q 已全覆盖（pangolin-sdk-toutiao 系 43 条、gromore 24 条），此处不重复。
+! ② 广告落地页 / 点击跳转（DGA 随机域）
+!    → 模块K 已覆盖，汽水音乐实际用到 cjjd14.com / vegslb.com / ydycdn.com 三条，全在拦。
+! ③ App 自有广告接口（开屏 / 信息流 / VIP 弹窗 / 听歌赚金币）
+!    路径是 api.qishui.com/luna/ads、/luna/media_ads、beta-luna.douyin.com/luna/ads、
+!    /luna/commerce/upsells、/luna/treasure —— 与播放、登录共用同一个 host。
+!    DNS 层拦 host 等于把 App 端掉；路径级规则（||api.qishui.com/luna/ads/）只有
+!    AdGuard / 浏览器扩展认，dnsmasq / smartdns / surge / mihomo 一律不认，
+!    写进来是假规则，还会让 verify-fixes 判「无法解析行」当场熔断。
+!    → 这部分只能靠 rewrite（QuantumultX / Surge / Loon 模块），DNS 规则不承诺。
+!
+! 所以本模块只收一条：埋点与广告曝光/点击回传域。
+! 实测（2026-11-14 双 DNS 223.5.5.5 / 119.29.29.29）：qishui.com 下仅 7 个存活子域
+!   api / api3 / www / lf-luna / lf-luna-release / log / open
+! api*、lf-luna* 是主 API（已在 whitelist.txt 保护），www 是官网，open 是开放平台，
+! 唯一属上报通道的是 log：广告曝光、点击回传和归因上报都走它。
+! 副作用说明：拦它不影响播放与登录，但「看广告听歌」的时长校验可能因回传失败而卡住；
+! 真遇到领不到时长，把下面这一行注释掉即可。
+||log.qishui.com^
+
+! ========== 模块O: 555电影（555dy 系 / 55dyNN / 5kanN）==========
+! 2026-11-14 专项核查。先给结论：555 电影早已没有网页播放页。
+! 实测 555dy.com / 555dy.tv / 555dy.app / 55dy29.com / 55dy96.com / 5kan1.com
+! 六个域名全部返回同一张「APP 下载 + 永久发布页」（42,754 字节 SPA，标题
+! 「555电影APP下载-555电影官网永久发布页」），/index.php/vod/*、/vodtype/* 也一律
+! 落到这张发布页 —— 网页端无片可看，自然也没有网页广告可拦。
+!
+! ① 发布页 / 下载页上真正在跑的第三方脚本（本模块 A 段）
+!    下载页 /d1/ 挂了两个统计 SDK，脚本地址与上报端点故意分在不同「教育类」父域：
+!      · Countly 统计：脚本 ajgvkj1jsv.shenglinyiyang.cn，上报 hljbrsn1gj.qiaozhixuexiao.com
+!      · DF Analytics：ingest.lputol.com（SDK 与 /api/v1/ingest/events 同域）
+!    拦掉不影响下载和安装，只是运营方收不到你的埋点。
+!    只拦随机子域、不拦父域：shenglinyiyang.cn / qiaozhixuexiao.com 疑似是
+!    被黑产借壳的真实站点，整域拦会误伤正经站点。
+!
+! ② App 内广告（B 段）
+!    APK 分发域 app.static01.com:26687 已双 DNS NXDOMAIN，官网下载入口本身是死的，
+!    拿不到安装包就无法逐域核验 —— 本模块不编造「555 专属广告接口」。
+!    这类聚合影视 App 的广告来自第三方聚合 SDK，模块C / 模块Q（AD-QGG 1,960 条）
+!    已覆盖穿山甲 / gromore / 优量汇 / 百度 / Sigmob / Mintegral 主域，此处不重复。
+!    B 段只补「实测仍缺、双 DNS 确认存活、用途单一」的 4 条通用广告域。
+!
+! 【禁拦清单】（拦了要么下不了包，要么页面变白板）
+!   55dy29.com / 55dy96.com / 5kan1.com / 555dy.com / 555dy.tv / 555dy.app  ← 站点本体
+!   app.static01.com（APK 分发；现已 NXDOMAIN，若恢复也不能拦）
+!   vpic.cms.qq.com / gimg0.baidu.com / awp-assets.meituan.net / www.i4.cn
+!   cdnjs.cloudflare.com（jQuery、clipboard.js 全从这来）
+!
+! ---------- 模块O-A: 发布页 / 下载页统计与上报（实测，555 专属）----------
+||ajgvkj1jsv.shenglinyiyang.cn^
+||hljbrsn1gj.qiaozhixuexiao.com^
+||ingest.lputol.com^
+!
+! ---------- 模块O-B: 聚合影视 App 广告 SDK 缺口（通用补全，非 555 专属）----------
+! 快手联盟广告：只补 ad.s（素材/上报）。ad.e（广告接口）已被上游父域
+! e.kuaishou.com 整域覆盖，写进来是冗余行，故不重复。
+! 快手主 App 的 passport / api / live 等域不在此列，不影响登录与私信。
+||ad.s.kuaishou.com^
+! TopOn(Taku) 聚合 SDK 与 AdScope 广告平台主域
+||taku.io^
+||adscope.cn^
+! 优量汇(广点通)广告素材 CDN，只出广告图，拦了是广告位空图而非破版
+||gdtimg.com^
+
+! ========== 模块P: 懂片帝 / 懂片帝AI（dongpian.ai）==========
+! 2026-11-14 实测。抓取路径与 555 电影完全不同：dongpian.ai 本身只是一张
+! 「线路分配」跳转页（CSP default-src 'self'，无任何外链），真正的站点是 www.dongpian.ai。
+!
+! 站点是纯 Vue/React SPA，首页 HTML 只有 3.5 KB，广告既不在 HTML 也不在 JS 里，
+! 而是由 /v1/runtime/bootstrap 接口下发的 app_experience.placements 决定：
+!   splash_screen（开屏，当前 items 为空）
+!   showcase_grid（首页信息流，calendar/search 位）
+!   home_top_carousel（顶部轮播，当前为空）
+!   player_info（播放页 banner + 宫格，auto_flip 10 秒轮换）
+! 每条广告两个字段：media_url（素材）+ target_url（落地页）。实测落地页全是
+! 数字域名赌博/直播站，广告标签直接写着：开元娱乐、开元棋牌、王者棋牌、
+! 白虎棋牌、V88体育、PG电子、小猫直播、午夜蓝光。
+!
+! 结论：bootstrap 与站点同源，拦不得（拦了整站变白板）。DNS 层能做的只有两件事——
+! 拦落地页（点了打不开）、拦素材图床（广告位直接空）。
+!
+! 【禁拦清单】
+!   dongpian.ai / www.dongpian.ai  ← 站点本体，也是 bootstrap 接口所在
+!   m.taopiaopiao.com / www.maoyan.com ← 影院/票务数据，站点功能依赖
+!
+! ---------- 模块P-A: 广告落地页（赌博/直播，实测现役 7 条）----------
+! 会漂移：这类数字域名一换一批，建议每月按 /v1/runtime/bootstrap 的 target_url 复核一次。
+||30868739.com^
+||24165943.com^
+||41255903.com^
+||13204530.com^
+||15273347.com^
+||64158573.com^
+||bihe276.com^
+!
+! ---------- 模块P-B: 广告素材图床（借壳大厂 CDN，2 条）----------
+! 这两条是「广告图到底还显不显示」的分水岭：不加，广告位仍会显示赌博横幅，
+! 只是点击无反应；加了，广告位直接空图/空白。
+! 代价（实测确认，均为借壳滥用，非站方）：beijing2.xstore.qihu.com 是 360 手机助手
+! 的反馈图床，拦掉后 360 商店的反馈截图不显示；eliteres.fanruan.com 是帆软的资源 CDN，
+! 拦掉后帆软官网/文档的图片可能裂。两者都是子域，不涉及其主域。
+! 如果发现帆软或 360 商店图片异常，把下面两行删掉即可，A 段照常生效。
+||beijing2.xstore.qihu.com^
+||eliteres.fanruan.com^
+!
+! ---------- 模块P-C: 埋点上报（DF Analytics 同款 SDK）----------
+! bootstrap 里 analytics.tracker 指向 m5.ddjzis.cn（sdk.min.js + /api/v1/ingest/events），
+! 与 555 电影下载页那套 lputol.com 是同一个统计 SDK 的不同马甲。
+! 拦父域覆盖 m1~m9 轮换；只影响埋点，不影响播放与登录。
+||ddjzis.cn^
+
+
+! ========== 模块Q: AD-QGG 国内App广告精选（2026-11-11，原编号 F，与「直播广告」重号已改）==========
 ! 来源：gitee.com/zhao-8023/ad-qgg（domains.txt 50,967 条，主打国内大厂 App 广告 SDK）
 ! 筛选流水线：
 !   50,967 → 与现有拦截表比对，重复仅 0.3%（133 条），增量 50,834
@@ -2366,119 +2505,3 @@
 ||tracklog.yangkeduo.com^
 ||tracklog.yy.com^
 ||tracklog.zhaopin.com^
-
-! ========== 模块N: 汽水音乐（com.luna.music / 字节 Luna）==========
-! 2026-11-14 专项核查。汽水音乐的广告有三条链路，可拦性差别很大，本模块只收
-! 真正拦得住、且不会把 App 拦坏的部分：
-!
-! ① 第三方广告 SDK（「看广告听歌」的激励视频走穿山甲 / gromore）
-!    → 模块C / 模块F 已全覆盖（pangolin-sdk-toutiao 系 43 条、gromore 24 条），此处不重复。
-! ② 广告落地页 / 点击跳转（DGA 随机域）
-!    → 模块K 已覆盖，汽水音乐实际用到 cjjd14.com / vegslb.com / ydycdn.com 三条，全在拦。
-! ③ App 自有广告接口（开屏 / 信息流 / VIP 弹窗 / 听歌赚金币）
-!    路径是 api.qishui.com/luna/ads、/luna/media_ads、beta-luna.douyin.com/luna/ads、
-!    /luna/commerce/upsells、/luna/treasure —— 与播放、登录共用同一个 host。
-!    DNS 层拦 host 等于把 App 端掉；路径级规则（||api.qishui.com/luna/ads/）只有
-!    AdGuard / 浏览器扩展认，dnsmasq / smartdns / surge / mihomo 一律不认，
-!    写进来是假规则，还会让 verify-fixes 判「无法解析行」当场熔断。
-!    → 这部分只能靠 rewrite（QuantumultX / Surge / Loon 模块），DNS 规则不承诺。
-!
-! 所以本模块只收一条：埋点与广告曝光/点击回传域。
-! 实测（2026-11-14 双 DNS 223.5.5.5 / 119.29.29.29）：qishui.com 下仅 7 个存活子域
-!   api / api3 / www / lf-luna / lf-luna-release / log / open
-! api*、lf-luna* 是主 API（已在 whitelist.txt 保护），www 是官网，open 是开放平台，
-! 唯一属上报通道的是 log：广告曝光、点击回传和归因上报都走它。
-! 副作用说明：拦它不影响播放与登录，但「看广告听歌」的时长校验可能因回传失败而卡住；
-! 真遇到领不到时长，把下面这一行注释掉即可。
-||log.qishui.com^
-
-! ========== 模块O: 555电影（555dy 系 / 55dyNN / 5kanN）==========
-! 2026-11-14 专项核查。先给结论：555 电影早已没有网页播放页。
-! 实测 555dy.com / 555dy.tv / 555dy.app / 55dy29.com / 55dy96.com / 5kan1.com
-! 六个域名全部返回同一张「APP 下载 + 永久发布页」（42,754 字节 SPA，标题
-! 「555电影APP下载-555电影官网永久发布页」），/index.php/vod/*、/vodtype/* 也一律
-! 落到这张发布页 —— 网页端无片可看，自然也没有网页广告可拦。
-!
-! ① 发布页 / 下载页上真正在跑的第三方脚本（本模块 A 段）
-!    下载页 /d1/ 挂了两个统计 SDK，脚本地址与上报端点故意分在不同「教育类」父域：
-!      · Countly 统计：脚本 ajgvkj1jsv.shenglinyiyang.cn，上报 hljbrsn1gj.qiaozhixuexiao.com
-!      · DF Analytics：ingest.lputol.com（SDK 与 /api/v1/ingest/events 同域）
-!    拦掉不影响下载和安装，只是运营方收不到你的埋点。
-!    只拦随机子域、不拦父域：shenglinyiyang.cn / qiaozhixuexiao.com 疑似是
-!    被黑产借壳的真实站点，整域拦会误伤正经站点。
-!
-! ② App 内广告（B 段）
-!    APK 分发域 app.static01.com:26687 已双 DNS NXDOMAIN，官网下载入口本身是死的，
-!    拿不到安装包就无法逐域核验 —— 本模块不编造「555 专属广告接口」。
-!    这类聚合影视 App 的广告来自第三方聚合 SDK，模块C / 模块F（AD-QGG 1,960 条）
-!    已覆盖穿山甲 / gromore / 优量汇 / 百度 / Sigmob / Mintegral 主域，此处不重复。
-!    B 段只补「实测仍缺、双 DNS 确认存活、用途单一」的 4 条通用广告域。
-!
-! 【禁拦清单】（拦了要么下不了包，要么页面变白板）
-!   55dy29.com / 55dy96.com / 5kan1.com / 555dy.com / 555dy.tv / 555dy.app  ← 站点本体
-!   app.static01.com（APK 分发；现已 NXDOMAIN，若恢复也不能拦）
-!   vpic.cms.qq.com / gimg0.baidu.com / awp-assets.meituan.net / www.i4.cn
-!   cdnjs.cloudflare.com（jQuery、clipboard.js 全从这来）
-!
-! ---------- 模块O-A: 发布页 / 下载页统计与上报（实测，555 专属）----------
-||ajgvkj1jsv.shenglinyiyang.cn^
-||hljbrsn1gj.qiaozhixuexiao.com^
-||ingest.lputol.com^
-!
-! ---------- 模块O-B: 聚合影视 App 广告 SDK 缺口（通用补全，非 555 专属）----------
-! 快手联盟广告：只补 ad.s（素材/上报）。ad.e（广告接口）已被上游父域
-! e.kuaishou.com 整域覆盖，写进来是冗余行，故不重复。
-! 快手主 App 的 passport / api / live 等域不在此列，不影响登录与私信。
-||ad.s.kuaishou.com^
-! TopOn(Taku) 聚合 SDK 与 AdScope 广告平台主域
-||taku.io^
-||adscope.cn^
-! 优量汇(广点通)广告素材 CDN，只出广告图，拦了是广告位空图而非破版
-||gdtimg.com^
-
-! ========== 模块P: 懂片帝 / 懂片帝AI（dongpian.ai）==========
-! 2026-11-14 实测。抓取路径与 555 电影完全不同：dongpian.ai 本身只是一张
-! 「线路分配」跳转页（CSP default-src 'self'，无任何外链），真正的站点是 www.dongpian.ai。
-!
-! 站点是纯 Vue/React SPA，首页 HTML 只有 3.5 KB，广告既不在 HTML 也不在 JS 里，
-! 而是由 /v1/runtime/bootstrap 接口下发的 app_experience.placements 决定：
-!   splash_screen（开屏，当前 items 为空）
-!   showcase_grid（首页信息流，calendar/search 位）
-!   home_top_carousel（顶部轮播，当前为空）
-!   player_info（播放页 banner + 宫格，auto_flip 10 秒轮换）
-! 每条广告两个字段：media_url（素材）+ target_url（落地页）。实测落地页全是
-! 数字域名赌博/直播站，广告标签直接写着：开元娱乐、开元棋牌、王者棋牌、
-! 白虎棋牌、V88体育、PG电子、小猫直播、午夜蓝光。
-!
-! 结论：bootstrap 与站点同源，拦不得（拦了整站变白板）。DNS 层能做的只有两件事——
-! 拦落地页（点了打不开）、拦素材图床（广告位直接空）。
-!
-! 【禁拦清单】
-!   dongpian.ai / www.dongpian.ai  ← 站点本体，也是 bootstrap 接口所在
-!   m.taopiaopiao.com / www.maoyan.com ← 影院/票务数据，站点功能依赖
-!
-! ---------- 模块P-A: 广告落地页（赌博/直播，实测现役 7 条）----------
-! 会漂移：这类数字域名一换一批，建议每月按 /v1/runtime/bootstrap 的 target_url 复核一次。
-||30868739.com^
-||24165943.com^
-||41255903.com^
-||13204530.com^
-||15273347.com^
-||64158573.com^
-||bihe276.com^
-!
-! ---------- 模块P-B: 广告素材图床（借壳大厂 CDN，2 条）----------
-! 这两条是「广告图到底还显不显示」的分水岭：不加，广告位仍会显示赌博横幅，
-! 只是点击无反应；加了，广告位直接空图/空白。
-! 代价（实测确认，均为借壳滥用，非站方）：beijing2.xstore.qihu.com 是 360 手机助手
-! 的反馈图床，拦掉后 360 商店的反馈截图不显示；eliteres.fanruan.com 是帆软的资源 CDN，
-! 拦掉后帆软官网/文档的图片可能裂。两者都是子域，不涉及其主域。
-! 如果发现帆软或 360 商店图片异常，把下面两行删掉即可，A 段照常生效。
-||beijing2.xstore.qihu.com^
-||eliteres.fanruan.com^
-!
-! ---------- 模块P-C: 埋点上报（DF Analytics 同款 SDK）----------
-! bootstrap 里 analytics.tracker 指向 m5.ddjzis.cn（sdk.min.js + /api/v1/ingest/events），
-! 与 555 电影下载页那套 lputol.com 是同一个统计 SDK 的不同马甲。
-! 拦父域覆盖 m1~m9 轮换；只影响埋点，不影响播放与登录。
-||ddjzis.cn^
