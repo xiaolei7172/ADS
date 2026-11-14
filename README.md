@@ -462,7 +462,7 @@ https://raw.githubusercontent.com/xiaolei7172/ADS/v2026.11.07/data/rules/dns.txt
 <summary><b>点击查看全部数据来源</b></summary>
 <br>
 
-### 🔴 拦截规则（14 路）
+### 🔴 拦截规则（22 路）
 
 | 来源 | 侧重 | 原始地址 |
 | :--- | :--- | :--- |
@@ -471,10 +471,18 @@ https://raw.githubusercontent.com/xiaolei7172/ADS/v2026.11.07/data/rules/dns.txt
 | 📛 **AdRules DNS List** | DNS 专用 | [gp.adrules.top/dns.txt](https://gp.adrules.top/dns.txt) |
 | 📛 **AdGuard DNS Filter 官方** | DNS 专用（官方维护） | [AdGuardSDNSFilter](https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt) |
 | 📛 **OISD 拦截规则** | DNS 专用，低误杀 | [small.oisd.nl](https://small.oisd.nl/) |
+| 📛 **hagezi 小米原生** | 小米设备/系统遥测与开屏广告 | [native.xiaomi.txt](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.xiaomi.txt) |
+| 📛 **hagezi 华为原生** | 华为设备/系统遥测 | [native.huawei.txt](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.huawei.txt) |
+| 📛 **hagezi OPPO 原生** | OPPO / realme 设备遥测 | [native.oppo-realme.txt](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.oppo-realme.txt) |
+| 📛 **hagezi vivo 原生** | vivo 设备遥测 | [native.vivo.txt](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.vivo.txt) |
+| 📛 **hagezi 字节原生** | 字节系 App（抖音/番茄）追踪 | [native.tiktok.txt](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.tiktok.txt) |
+| 📛 **hagezi 三星原生** | 三星设备/系统遥测 | [native.samsung.txt](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.samsung.txt) |
+| 📛 **hagezi 苹果原生** | iAd / Apple 归因与遥测 | [native.apple.txt](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.apple.txt) |
 | 📛 **个人合并规则** | 合并源（群主维护） | [666/rules.txt](https://raw.githubusercontent.com/qq5460168/666/master/rules.txt) |
 | 📛 **酷安@大萌主** | 接口 / SDK 广告 | [banad/jiekouAD.txt](https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt) |
 | 📛 **浮风拦截规则** | 合并源 | [ad-rules-merged](https://raw.githubusercontent.com/Thelongdarkorg/ad-rules-merged/main/merged.txt) |
 | 📛 **海哥规则** | 国内 App 专项（腾讯/字节/小米/番茄系） | [HG/hg1.txt 官方镜像](https://github.com/2771936993/HG/blob/main/hg1.txt) |
+| 📛 **茯苓拦截规则** | 国内综合拦截（日更） | [FuLingBlockList.txt](https://raw.githubusercontent.com/Kuroba-Sayuki/FuLing-AdRules/Develop/FuLingRules/FuLingBlockList.txt) |
 | 📛 **秋风广告规则** | 综合拦截 | [AWAvenue-Ads-Rule](https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt) |
 | 📛 **乘风视频规则** | 视频贴片广告 | [Adblock-Plus-Rule/mv.txt](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt) |
 | 📛 **乘风通用规则** | 通用拦截 | [Adblock-Plus-Rule/rule.txt](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt) |
