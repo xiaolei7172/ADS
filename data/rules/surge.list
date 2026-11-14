@@ -2205,6 +2205,7 @@ DOMAIN-SUFFIX,tracklog.vivoglobal.com
 DOMAIN-SUFFIX,tracklog.yangkeduo.com
 DOMAIN-SUFFIX,tracklog.yy.com
 DOMAIN-SUFFIX,tracklog.zhaopin.com
+DOMAIN-SUFFIX,log.qishui.com
 DOMAIN-SUFFIX,100webads.com
 DOMAIN-SUFFIX,11bet.mobi
 DOMAIN-SUFFIX,11bet.pro
@@ -221505,7 +221506,6 @@ DOMAIN-SUFFIX,sys.intl.xiaomi.com
 DOMAIN-SUFFIX,video.intl.xiaomi.com
 DOMAIN-SUFFIX,secure.report.iss.xiaomi.com
 DOMAIN-SUFFIX,resolver.mi.xiaomi.com
-DOMAIN-SUFFIX,findapi.micloud.xiaomi.net
 DOMAIN-SUFFIX,app.migc.xiaomi.com
 DOMAIN-SUFFIX,invoice.netroam.mihome.xiaomi.net
 DOMAIN-SUFFIX,file.cdn.mvideo.xiaomi.com
@@ -221606,8 +221606,6 @@ DOMAIN-SUFFIX,metrics-dra.dt.dbankcloud.cn
 DOMAIN-SUFFIX,metrics-dra.dt.dbankcloud.com
 DOMAIN-SUFFIX,metrics-drcn.dt.dbankcloud.cn
 DOMAIN-SUFFIX,metrics-dre.dt.dbankcloud.cn
-DOMAIN-SUFFIX,connect-drru.hispace.dbankcloud.cn
-DOMAIN-SUFFIX,connect-drru.hispace.dbankcloud.ru
 DOMAIN-SUFFIX,connect-dra.map.dbankcloud.com
 DOMAIN-SUFFIX,connect-dre.map.dbankcloud.com
 DOMAIN-SUFFIX,ad-drcn.media.dbankcloud.cn

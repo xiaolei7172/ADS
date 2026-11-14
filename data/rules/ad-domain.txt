@@ -2208,6 +2208,7 @@ tracklog.vivoglobal.com
 tracklog.yangkeduo.com
 tracklog.yy.com
 tracklog.zhaopin.com
+log.qishui.com
 100webads.com
 11bet.mobi
 11bet.pro
@@ -221508,7 +221509,6 @@ sys.intl.xiaomi.com
 video.intl.xiaomi.com
 secure.report.iss.xiaomi.com
 resolver.mi.xiaomi.com
-findapi.micloud.xiaomi.net
 app.migc.xiaomi.com
 invoice.netroam.mihome.xiaomi.net
 file.cdn.mvideo.xiaomi.com
@@ -221609,8 +221609,6 @@ metrics-dra.dt.dbankcloud.cn
 metrics-dra.dt.dbankcloud.com
 metrics-drcn.dt.dbankcloud.cn
 metrics-dre.dt.dbankcloud.cn
-connect-drru.hispace.dbankcloud.cn
-connect-drru.hispace.dbankcloud.ru
 connect-dra.map.dbankcloud.com
 connect-dre.map.dbankcloud.com
 ad-drcn.media.dbankcloud.cn

@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影规则聚合 · DNS 拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-14 17:12:23（北京时间）
-! 📊 有效规则：233561 条
+! ⏰ 更新时间：2026-11-14 17:23:34（北京时间）
+! 📊 有效规则：233559 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · DNS 拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-14 17:12:23 | ✅ 有效规则 233561 条
+! Description: ⏰ 更新时间 2026-11-14 17:23:34 | ✅ 有效规则 233559 条
 ! ────────────────── ☑ 规则来源统计 ──────────────────
 !  118,127 条  AdRules DNS List [AdRules DNS List]
 !   86,561 条  anti-ad 官方规则
@@ -17,12 +17,12 @@
 !    4,970 条  1007-Hosts
 !    3,761 条  5460 [酷安广告规则]
 !    2,722 条  OISD 拦截规则 [oisd small]
-!    2,205 条  本地自定义规则
+!    2,206 条  本地自定义规则
 !      485 条  hagezi OPPO 原生 [HaGeZi's OPPO & Realme Tracker - blocks built-in trackers from devices, apps, and OSes!]
 !      255 条  hagezi vivo 原生 [HaGeZi's Vivo Tracker - blocks built-in trackers from devices, apps, and OSes!]
-!      233 条  hagezi 小米原生 [HaGeZi's Xiaomi Tracker - blocks built-in trackers from devices, apps, and OSes!]
+!      232 条  hagezi 小米原生 [HaGeZi's Xiaomi Tracker - blocks built-in trackers from devices, apps, and OSes!]
 !      202 条  hagezi 字节原生 [HaGeZi's TikTok Tracker - blocks built-in trackers from devices, apps, and OSes!]
-!      110 条  hagezi 华为原生 [HaGeZi's Huawei Tracker - blocks built-in trackers from devices, apps, and OSes!]
+!      108 条  hagezi 华为原生 [HaGeZi's Huawei Tracker - blocks built-in trackers from devices, apps, and OSes!]
 !       57 条  hagezi 三星原生 [HaGeZi's Samsung Tracker - blocks built-in trackers from devices, apps, and OSes!]
 !       41 条  hagezi 苹果原生 [HaGeZi's Apple Tracker - blocks built-in trackers from devices, apps, and OSes!]
 ! ────────────────────────────────────────────────
@@ -36,7 +36,7 @@
 ! 📝 规则说明：广告拦截规则
 ! 🔗 原始地址：本地文件
 ! ==============================================
-! 📊 本区规则：2205 条
+! 📊 本区规则：2206 条
 ! ==============================================
 ||ads3-normal-hl.zijieapi.com^
 ||ads3-normal-lf.zijieapi.com^
@@ -2243,6 +2243,7 @@
 ||tracklog.yangkeduo.com^
 ||tracklog.yy.com^
 ||tracklog.zhaopin.com^
+||log.qishui.com^
 
 ! ==============================================
 ! 📋 规则来源：1007-Hosts
@@ -221442,7 +221443,7 @@
 ! 📝 规则说明：Blocks the Xiaomi native trackers baked into devices, services, and operating systems that quietly track what you do.
 ! 🔗 原始地址：https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.xiaomi.txt
 ! ==============================================
-! 📊 本区规则：233 条
+! 📊 本区规则：232 条
 ! ==============================================
 ||mistat.xiaomi.com.download.ks-cdn.com^
 ||mistat.india.xiaomi.com.ksyna.net^
@@ -221591,7 +221592,6 @@
 ||video.intl.xiaomi.com^
 ||secure.report.iss.xiaomi.com^
 ||resolver.mi.xiaomi.com^
-||findapi.micloud.xiaomi.net^
 ||app.migc.xiaomi.com^
 ||invoice.netroam.mihome.xiaomi.net^
 ||file.cdn.mvideo.xiaomi.com^
@@ -221683,7 +221683,7 @@
 ! 📝 规则说明：Blocks the Huawei native trackers baked into devices, services, and operating systems that quietly track what you do.
 ! 🔗 原始地址：https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.huawei.txt
 ! ==============================================
-! 📊 本区规则：110 条
+! 📊 本区规则：108 条
 ! ==============================================
 ||ubacollect-drcn.cloud.dbankcloud.cn^
 ||metrics-dre.data.dbankcloud.cn^
@@ -221700,8 +221700,6 @@
 ||metrics-dra.dt.dbankcloud.com^
 ||metrics-drcn.dt.dbankcloud.cn^
 ||metrics-dre.dt.dbankcloud.cn^
-||connect-drru.hispace.dbankcloud.cn^
-||connect-drru.hispace.dbankcloud.ru^
 ||connect-dra.map.dbankcloud.com^
 ||connect-dre.map.dbankcloud.com^
 ||ad-drcn.media.dbankcloud.cn^

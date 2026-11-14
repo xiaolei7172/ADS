@@ -2,7 +2,7 @@
 # 由 dns.txt 折叠前的完整域名集转换，含全部子域，覆盖与 AdGuard 语义对齐
 # ⚠️ hosts 只能精确匹配，拦不到未列出的子域；需要完整子域覆盖请用 dns.txt / smartdns.conf / surge.list
 # 📌 项目地址：https://github.com/xiaolei7172/ADS
-# 🔖 内容指纹：bc354e60071f | 📊 有效规则：247351 条 | ⏰ 变更时间见 git 提交记录
+# 🔖 内容指纹：73474703a741 | 📊 有效规则：247349 条 | ⏰ 变更时间见 git 提交记录
 # 🔄 更新频率：每日自动更新（北京时间 08:00）
 0.0.0.0 ads3-normal-hl.zijieapi.com
 0.0.0.0 ads3-normal-lf.zijieapi.com
@@ -2209,6 +2209,7 @@
 0.0.0.0 tracklog.yangkeduo.com
 0.0.0.0 tracklog.yy.com
 0.0.0.0 tracklog.zhaopin.com
+0.0.0.0 log.qishui.com
 0.0.0.0 0.r.msn.com
 0.0.0.0 0latfee.ero-advertising.com
 0.0.0.0 1.ad-locus.com
@@ -231546,7 +231547,6 @@
 0.0.0.0 video.intl.xiaomi.com
 0.0.0.0 secure.report.iss.xiaomi.com
 0.0.0.0 resolver.mi.xiaomi.com
-0.0.0.0 findapi.micloud.xiaomi.net
 0.0.0.0 app.migc.xiaomi.com
 0.0.0.0 invoice.netroam.mihome.xiaomi.net
 0.0.0.0 file.cdn.mvideo.xiaomi.com
@@ -231647,8 +231647,6 @@
 0.0.0.0 metrics-dra.dt.dbankcloud.com
 0.0.0.0 metrics-drcn.dt.dbankcloud.cn
 0.0.0.0 metrics-dre.dt.dbankcloud.cn
-0.0.0.0 connect-drru.hispace.dbankcloud.cn
-0.0.0.0 connect-drru.hispace.dbankcloud.ru
 0.0.0.0 connect-dra.map.dbankcloud.com
 0.0.0.0 connect-dre.map.dbankcloud.com
 0.0.0.0 ad-drcn.media.dbankcloud.cn
