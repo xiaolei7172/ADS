@@ -100,6 +100,11 @@ jobs:
       # ==============================================
       # 无变化不提交（否则定时运行的 git commit 会因
       # nothing to commit 退出码 1 把整个工作流判为失败）
+      #
+      # ⚠️ 与探测工作流（Probe-Dead-Rules）存在竞态：它每天也会提交
+      #    data/mod/dead.txt / probe-snapshot.txt。两边撞车时直接 push 会被
+      #    拒（non-fast-forward），产物明明算好了却整个工作流判红。
+      #    处置：push 失败就 rebase 远端再重试，最多 3 次；仍失败才真报错。
       # ==============================================
       - name: Git Push
         id: push
@@ -112,7 +117,21 @@ jobs:
             echo "⏭️ 规则无变化，跳过提交"
           else
             git commit -m "✅ 规则自动更新 $(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M:%S')"
-            git push
+            branch="${GITHUB_REF_NAME:-master}"
+            pushed=false
+            for i in 1 2 3; do
+              if git push origin "HEAD:$branch"; then
+                pushed=true
+                break
+              fi
+              echo "⚠️ push 被拒（第 $i 次），rebase 远端后重试"
+              git pull --rebase --autostash origin "$branch" || {
+                echo "❌ rebase 失败，需人工介入"; exit 1; }
+              sleep 5
+            done
+            if [ "$pushed" != "true" ]; then
+              echo "❌ 重试 3 次仍未能推送，本次产物未发布"; exit 1
+            fi
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 

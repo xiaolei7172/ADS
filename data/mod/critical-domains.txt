@@ -222,3 +222,16 @@ byteimg.com
 douyinpic.com
 douyinvod.com
 douyincdn.com
+
+! ---------- 手机厂商系统级：推送 / OTA / 校时 ----------
+! 依据：2026-11-14 接入 hagezi native.* 七列表后体检。这些域被拦不是「少看广告」，
+! 而是推送全断 / 系统更新失败 / 时间漂移导致证书校验失败。已在 whitelist.txt 放行，
+! 此处登记为发布闸门，防止上游改名单或有人误删白名单条目后悄悄复发。
+api.xmpush.xiaomi.com
+upgrade.pandora.xiaomi.com
+asia-cota.vivoglobal.com
+in-cota.vivoglobal.com
+asia-timesync.vivoglobal.com
+icota-service-in.allawnos.com
+cota-service-sg.allawnos.com
+device-ups.push.heytapmobi.com

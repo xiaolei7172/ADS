@@ -222,3 +222,82 @@
 ! 拦掉表现为群聊图片全部裂图、表情发不出去。同族 m.qpic.cn / gchat.qpic.cn 在
 ! 微信里属于纯媒体通道，无广告投放，故放行。
 @@||gchat.qpic.cn^
+
+! ============================================================
+! 手机厂商系统级域名放行（2026-11-14 接入 hagezi 厂商原生列表后体检发现）
+! ------------------------------------------------------------
+! 背景：hagezi 的 native.* 列表把「推送通道 / OTA 升级 / 时间同步」一并归为
+! tracker 拦掉。这三类在厂商设计里确实带遥测，但同时是系统功能本身：
+!   · 推送主接口被拦 → 该品牌手机所有 App 的推送全部收不到（不止广告推送）；
+!   · OTA / 固件升级被拦 → 系统更新卡在「检查更新」或下载中断；
+!   · 时间同步被拦 → 设备时间漂移，进而引发 HTTPS 证书校验失败、验证码失效。
+! 拦掉的代价是手机变砖式体验，而收益只是少几条厂商遥测，不值得。
+!
+! 处置口径：只放行「主接口 / 注册 / 升级 / 校时」这几类端点，
+! 厂商的广告推送、用户画像、统计上报（push-ads-cn / userprofile.push /
+! *-stsdk 等）继续拦，见下方的对照说明。
+! 依据：2026-11-14 双 DNS（223.5.5.5 / 119.29.29.29）实测 46 条候选，
+! 44 条存活并放行；ota.foreign.coloros.com、push.heytapmobile.com 已 NXDOMAIN，
+! 不予收录（留着只会白占白名单额度）。
+! ============================================================
+
+! ---------- 小米：推送主接口（MiPush，国内大量第三方 App 共用同一通道）----------
+@@||api.xmpush.xiaomi.com^
+@@||api.xmpush.global.xiaomi.com^
+@@||vip-api.xmpush.xiaomi.com^
+@@||vip-api.xmpush.global.xiaomi.com^
+@@||fr-api.xmpush.global.xiaomi.com^
+@@||ru-api.xmpush.global.xiaomi.com^
+@@||sgp-api.xmpush.global.xiaomi.com^
+@@||fr-register.xmpush.global.xiaomi.com^
+@@||ru-register.xmpush.global.xiaomi.com^
+! 继续拦（遥测/回执/测试环境）：callback / emq / console.admin / test.admin / sandbox /
+!   idmb-* / *.feedback.xmpush.* —— 少这几个不影响推送到达
+
+! ---------- 小米：电视端 OTA（pandora = 小米电视 / 盒子系统服务）----------
+@@||upgrade.pandora.xiaomi.com^
+@@||3rdupgrade.pandora.xiaomi.com^
+! 继续拦：pandora 下的 gstat / shop / mob / tvboss / box 等广告与埋点子域
+
+! ---------- OPPO / realme：OTA 升级 ----------
+@@||cota-service-sg.allawnos.com^
+@@||icota-service-in.allawnos.com^
+@@||icota-service-eu.allawnos.com^
+@@||icota-eu.coloros.com^
+
+! ---------- OPPO / realme：推送主通道 ----------
+@@||dcintl.push.heytapmobi.com^
+@@||device-ups.push.heytapmobi.com^
+@@||id.push.heytapmobi.com^
+@@||file-intl-push.heytapdl.com^
+! 继续拦：push-ads-cn.heytapmobi.com（广告推送专用）、userprofile.push.heytapmobi.com（画像）
+
+! ---------- vivo / iQOO：OTA 与固件升级 ----------
+@@||asia-cota.vivoglobal.com^
+@@||co-cota.vivoglobal.com^
+@@||eu-cota.vivoglobal.com^
+@@||in-cota.vivoglobal.com^
+@@||kz-cota.vivoglobal.com^
+@@||mx-cota.vivoglobal.com^
+@@||ru-cota.vivoglobal.com^
+@@||tr-cota.vivoglobal.com^
+@@||asia-st-exappupgrade.vivoglobal.com^
+@@||cname-asia-st-exappupgrade.vivoglobal.com^
+@@||kz-st-exappupgrade.vivoglobal.com^
+@@||ru-st-exappupgrade.vivoglobal.com^
+@@||kz-st-sysupgrade.vivoglobal.com^
+@@||tr-st-sysupgrade.vivoglobal.com^
+@@||tr-sysupgrade-api.vivoglobal.com^
+
+! ---------- vivo / iQOO：时间同步（拦了会时间漂移 → 证书校验失败）----------
+@@||asia-timesync.vivoglobal.com^
+@@||co-timesync.vivoglobal.com^
+@@||eu-timesync.vivoglobal.com^
+@@||in-timesync.vivoglobal.com^
+@@||kz-timesync.vivoglobal.com^
+@@||mx-timesync.vivoglobal.com^
+@@||ru-timesync.vivoglobal.com^
+@@||tr-timesync.vivoglobal.com^
+@@||uk-timesync.vivoglobal.com^
+@@||zasc-timesync.vivoglobal.com^
+! 继续拦：*-vpushonrt-stsdk / *-vpushort-stsdk（vivo 推送统计 SDK，不影响送达）

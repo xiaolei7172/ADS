@@ -6,7 +6,7 @@
 
 **⚡ 强力去广告 · 每日自动更新 · 全平台适配 ⚡**
 
-> 干净的网络，从一条订阅开始 —— 20 路数据源聚合 · 三层真实去重 · 每日自动更新，一套规则覆盖 11 种格式
+> 干净的网络，从一条订阅开始 —— 28 路数据源聚合 · 三层真实去重 · 每日自动更新，一套规则覆盖 11 种格式
 
 [![CI 状态](https://github.com/xiaolei7172/ADS/actions/workflows/Update-Rules.yml/badge.svg)](https://github.com/xiaolei7172/ADS/actions/workflows/Update-Rules.yml)
 [![最近提交](https://img.shields.io/github/last-commit/xiaolei7172/ADS/master?label=%E6%9C%80%E8%BF%91%E6%9B%B4%E6%96%B0&color=success)](https://github.com/xiaolei7172/ADS/commits/master)
@@ -66,7 +66,7 @@
 
 ## ⚠️ 必读：拦截规则必须配合白名单使用
 
-> **只订阅拦截规则，等于把误杀的概率全部收下。** 本仓库聚合 20 路上游，其中一部分源会按「公司主域」整族下发拦截。
+> **只订阅拦截规则，等于把误杀的概率全部收下。** 本仓库聚合 22 路拦截上游，其中一部分源会按「公司主域」整族下发拦截。
 > 2026-11 就出过一次：拼多多的图片 / 视频 / 直播 CDN 根域 `pddpic.com` 被上游当成广告域拦掉，
 > 表现是图片白块、直播转圈、短视频打不开、评价晒图裂图——**放行的唯一手段就是白名单**。
 
@@ -454,7 +454,7 @@ https://raw.githubusercontent.com/xiaolei7172/ADS/v2026.11.07/data/rules/dns.txt
 
 ## 📚 上游规则数据源
 
-> 管线实际下载 **20 路源**（14 个拦截 + 6 个白名单），另有 6 个本仓库自定义文件（黑名单 / 白名单 / 精确剔除表 / 可信通配表 / 白名单冲突基线 / 关键功能域名单）。
+> 管线实际下载 **28 路源**（22 个拦截 + 6 个白名单），另有 6 个本仓库自定义文件（黑名单 / 白名单 / 精确剔除表 / 可信通配表 / 白名单冲突基线 / 关键功能域名单）。
 > 其中「合并源」本身已聚合多个二级上游，因此实际覆盖的项目数量多于 19。
 > 每个来源在成品中都有分区标注，误拦可直接定位到源。
 
@@ -611,7 +611,7 @@ python data/python/probe_source.py <规则源URL> block    # 已知是黑名单�
 **本地跑一遍完整管线**（顺序不能乱）：
 
 ```bash
-python data/python/dl.py           # 下载 20 路上游（六通道容灾）
+python data/python/dl.py           # 下载 28 路上游（六通道容灾）
 python data/python/merge.py        # 合并 + 白名单过滤（含投毒熔断）
 python data/python/filter-dns.py   # 生成 dns.txt + 折叠前域名集
 python data/python/pipeline.py     # 一次生成 8 种派生格式
