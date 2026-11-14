@@ -2435,3 +2435,50 @@
 ||adscope.cn^
 ! 优量汇(广点通)广告素材 CDN，只出广告图，拦了是广告位空图而非破版
 ||gdtimg.com^
+
+! ========== 模块P: 懂片帝 / 懂片帝AI（dongpian.ai）==========
+! 2026-11-14 实测。抓取路径与 555 电影完全不同：dongpian.ai 本身只是一张
+! 「线路分配」跳转页（CSP default-src 'self'，无任何外链），真正的站点是 www.dongpian.ai。
+!
+! 站点是纯 Vue/React SPA，首页 HTML 只有 3.5 KB，广告既不在 HTML 也不在 JS 里，
+! 而是由 /v1/runtime/bootstrap 接口下发的 app_experience.placements 决定：
+!   splash_screen（开屏，当前 items 为空）
+!   showcase_grid（首页信息流，calendar/search 位）
+!   home_top_carousel（顶部轮播，当前为空）
+!   player_info（播放页 banner + 宫格，auto_flip 10 秒轮换）
+! 每条广告两个字段：media_url（素材）+ target_url（落地页）。实测落地页全是
+! 数字域名赌博/直播站，广告标签直接写着：开元娱乐、开元棋牌、王者棋牌、
+! 白虎棋牌、V88体育、PG电子、小猫直播、午夜蓝光。
+!
+! 结论：bootstrap 与站点同源，拦不得（拦了整站变白板）。DNS 层能做的只有两件事——
+! 拦落地页（点了打不开）、拦素材图床（广告位直接空）。
+!
+! 【禁拦清单】
+!   dongpian.ai / www.dongpian.ai  ← 站点本体，也是 bootstrap 接口所在
+!   m.taopiaopiao.com / www.maoyan.com ← 影院/票务数据，站点功能依赖
+!
+! ---------- 模块P-A: 广告落地页（赌博/直播，实测现役 7 条）----------
+! 会漂移：这类数字域名一换一批，建议每月按 /v1/runtime/bootstrap 的 target_url 复核一次。
+||30868739.com^
+||24165943.com^
+||41255903.com^
+||13204530.com^
+||15273347.com^
+||64158573.com^
+||bihe276.com^
+!
+! ---------- 模块P-B: 广告素材图床（借壳大厂 CDN，2 条）----------
+! 这两条是「广告图到底还显不显示」的分水岭：不加，广告位仍会显示赌博横幅，
+! 只是点击无反应；加了，广告位直接空图/空白。
+! 代价（实测确认，均为借壳滥用，非站方）：beijing2.xstore.qihu.com 是 360 手机助手
+! 的反馈图床，拦掉后 360 商店的反馈截图不显示；eliteres.fanruan.com 是帆软的资源 CDN，
+! 拦掉后帆软官网/文档的图片可能裂。两者都是子域，不涉及其主域。
+! 如果发现帆软或 360 商店图片异常，把下面两行删掉即可，A 段照常生效。
+||beijing2.xstore.qihu.com^
+||eliteres.fanruan.com^
+!
+! ---------- 模块P-C: 埋点上报（DF Analytics 同款 SDK）----------
+! bootstrap 里 analytics.tracker 指向 m5.ddjzis.cn（sdk.min.js + /api/v1/ingest/events），
+! 与 555 电影下载页那套 lputol.com 是同一个统计 SDK 的不同马甲。
+! 拦父域覆盖 m1~m9 轮换；只影响埋点，不影响播放与登录。
+||ddjzis.cn^
