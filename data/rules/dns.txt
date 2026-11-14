@@ -3,24 +3,24 @@
 ! 📌 规则名称：天影规则聚合 · DNS 拦截规则
 ! 📝 规则说明：DNS级广告域名屏蔽，支持AdGuard Home / OpenWrt
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-14 15:45:15（北京时间）
-! 📊 有效规则：233593 条
+! ⏰ 更新时间：2026-11-14 17:12:23（北京时间）
+! 📊 有效规则：233561 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · DNS 拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-14 15:45:15 | ✅ 有效规则 233593 条
+! Description: ⏰ 更新时间 2026-11-14 17:12:23 | ✅ 有效规则 233561 条
 ! ────────────────── ☑ 规则来源统计 ──────────────────
 !  118,127 条  AdRules DNS List [AdRules DNS List]
 !   86,561 条  anti-ad 官方规则
 !    7,059 条  海哥规则
-!    6,761 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
+!    6,773 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !    4,970 条  1007-Hosts
 !    3,761 条  5460 [酷安广告规则]
 !    2,722 条  OISD 拦截规则 [oisd small]
 !    2,205 条  本地自定义规则
-!      493 条  hagezi OPPO 原生 [HaGeZi's OPPO & Realme Tracker - blocks built-in trackers from devices, apps, and OSes!]
-!      280 条  hagezi vivo 原生 [HaGeZi's Vivo Tracker - blocks built-in trackers from devices, apps, and OSes!]
-!      244 条  hagezi 小米原生 [HaGeZi's Xiaomi Tracker - blocks built-in trackers from devices, apps, and OSes!]
+!      485 条  hagezi OPPO 原生 [HaGeZi's OPPO & Realme Tracker - blocks built-in trackers from devices, apps, and OSes!]
+!      255 条  hagezi vivo 原生 [HaGeZi's Vivo Tracker - blocks built-in trackers from devices, apps, and OSes!]
+!      233 条  hagezi 小米原生 [HaGeZi's Xiaomi Tracker - blocks built-in trackers from devices, apps, and OSes!]
 !      202 条  hagezi 字节原生 [HaGeZi's TikTok Tracker - blocks built-in trackers from devices, apps, and OSes!]
 !      110 条  hagezi 华为原生 [HaGeZi's Huawei Tracker - blocks built-in trackers from devices, apps, and OSes!]
 !       57 条  hagezi 三星原生 [HaGeZi's Samsung Tracker - blocks built-in trackers from devices, apps, and OSes!]
@@ -211931,7 +211931,7 @@
 ! 📝 规则说明：Filter composed of several other filters (AdGuard Base filter, Tracking Protection filter, Mobile ads filter, EasyList, EasyPrivacy, etc) and simplified specifically to be better compatible with DNS-level ad blocking.
 ! 🔗 原始地址：https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 ! ==============================================
-! 📊 本区规则：6761 条
+! 📊 本区规则：6773 条
 ! ==============================================
 ||9hito.com^
 ||insightjs.org^
@@ -214766,22 +214766,32 @@
 ||bedsockfebrile.cyou^
 ||biqyxmqdyvkfz.website^
 ||bqyprflukjrci.space^
+||cgknxinrt.com^
 ||designsrecedesheroics.cyou^
+||finishedcamp.pro^
 ||fmfonavgkdvfo.site^
+||foxwvfkyfhwjp.com^
 ||gczavfjzqmhdz.space^
 ||gimperminicab.cfd^
 ||gonamalayunstrap.cyou^
+||hpnrxxsymyekp.online^
 ||kackqswjnkeab.space^
 ||kdhjrqanauqzu.online^
 ||lhivvxyqzddyr.website^
 ||lhzulviipmufi.online^
 ||linnetsairns.cfd^
 ||lraujinoltnfj.site^
+||mewsgeckoid.click^
 ||nlrusyldghpqh.site^
+||omjaxrhtiq.in^
 ||pandieslekach.cyou^
+||passmanbelanda.click^
 ||qcgvpfizclttu.space^
+||sozinesscrawnyfaquirs.cfd^
+||teucrisiwashhasten.cfd^
 ||undopedesture.rest^
 ||uzebvjfvnmdke.space^
+||vsottbykmvlzx.space^
 ||w8j3w3vz7ymbtxmgfr13lqubz6yz8nr31k.cfd^
 ||woomdurham.com^
 ||xcwnfgoenzuno.space^
@@ -214918,6 +214928,8 @@
 ||xmatch.com^
 ||widget.faphouse.com^
 ||widgets.guppy.live^
+||ntpyrbdgxzpjxy.com^
+||fpz4gr87mq.com^
 ||88p2p.com^
 ||aiwanma99.com^
 ||kuheju.com^
@@ -221430,7 +221442,7 @@
 ! 📝 规则说明：Blocks the Xiaomi native trackers baked into devices, services, and operating systems that quietly track what you do.
 ! 🔗 原始地址：https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.xiaomi.txt
 ! ==============================================
-! 📊 本区规则：244 条
+! 📊 本区规则：233 条
 ! ==============================================
 ||mistat.xiaomi.com.download.ks-cdn.com^
 ||mistat.india.xiaomi.com.ksyna.net^
@@ -221548,15 +221560,8 @@
 ||fr.feedback.xmpush.global.xiaomi.com^
 ||idmb.feedback.xmpush.global.xiaomi.com^
 ||ru.feedback.xmpush.global.xiaomi.com^
-||api.xmpush.global.xiaomi.com^
-||fr-api.xmpush.global.xiaomi.com^
-||fr-register.xmpush.global.xiaomi.com^
 ||idmb-api.xmpush.global.xiaomi.com^
-||ru-api.xmpush.global.xiaomi.com^
 ||ru-feedback.xmpush.global.xiaomi.com^
-||ru-register.xmpush.global.xiaomi.com^
-||sgp-api.xmpush.global.xiaomi.com^
-||vip-api.xmpush.global.xiaomi.com^
 ||ad.quickapp.hybrid.xiaomi.com^
 ||activity.hybrid.xiaomi.com^
 ||api.hybrid.xiaomi.com^
@@ -221612,7 +221617,6 @@
 ||dvb.pre.pandora.xiaomi.com^
 ||media.pre.pandora.xiaomi.com^
 ||bsp.sasdc.pandora.xiaomi.com^
-||3rdupgrade.pandora.xiaomi.com^
 ||bossadmin.pandora.xiaomi.com^
 ||box.pandora.xiaomi.com^
 ||c3-bgp.pandora.xiaomi.com^
@@ -221630,7 +221634,6 @@
 ||rtmpott.pandora.xiaomi.com^
 ||shop.pandora.xiaomi.com^
 ||tvboss.pandora.xiaomi.com^
-||upgrade.pandora.xiaomi.com^
 ||tj1.staging.pay.xiaomi.com^
 ||tj1.stagingouter.pay.xiaomi.com^
 ||tj1.test.pay.xiaomi.com^
@@ -221658,11 +221661,9 @@
 ||stat.www.xiaomi.com^
 ||console.admin.xmpush.xiaomi.com^
 ||test.admin.xmpush.xiaomi.com^
-||api.xmpush.xiaomi.com^
 ||callback.xmpush.xiaomi.com^
 ||emq.xmpush.xiaomi.com^
 ||sandbox.xmpush.xiaomi.com^
-||vip-api.xmpush.xiaomi.com^
 ||bugreport.xiaomi.net^
 ||d.xiaomi.com^
 ||hd.xiaomi.com^
@@ -221800,7 +221801,7 @@
 ! 📝 规则说明：Blocks the OPPO & Realme native trackers baked into devices, services, and operating systems that quietly track what you do.
 ! 🔗 原始地址：https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.oppo-realme.txt
 ! ==============================================
-! 📊 本区规则：493 条
+! 📊 本区规则：485 条
 ! ==============================================
 ||classify-app-eu.allawnos.com^
 ||classify-app-in.allawnos.com^
@@ -221821,7 +221822,6 @@
 ||conn-service-us-05.allawnos.com^
 ||conn-service-us-07.allawnos.com^
 ||conn-service-us-08.allawnos.com^
-||cota-service-sg.allawnos.com^
 ||crypto-dsf-fr.allawnos.com^
 ||crypto-dsf-in.allawnos.com^
 ||crypto-dsf-sg.allawnos.com^
@@ -221852,8 +221852,6 @@
 ||icosa-service-sg-02.allawnos.com^
 ||icosa-service-sg-03.allawnos.com^
 ||icosa-service-us.allawnos.com^
-||icota-service-eu.allawnos.com^
-||icota-service-in.allawnos.com^
 ||lockcard-service-in.allawnos.com^
 ||moa-upload-in.allawnos.com^
 ||moa-upload-sg.allawnos.com^
@@ -221892,7 +221890,6 @@
 ||conn5.coloros.com^
 ||guif.coloros.com^
 ||guif-eu.coloros.com^
-||icota-eu.coloros.com^
 ||ifrus.coloros.com^
 ||ifrus-eu.coloros.com^
 ||ifrus-in.coloros.com^
@@ -221927,7 +221924,6 @@
 ||appconf-sgp.heytapdl.com^
 ||conf-in-dc.heytapdl.com^
 ||conf-sg-dc.heytapdl.com^
-||file-intl-push.heytapdl.com^
 ||mdp-appconf-ae.heytapdl.com^
 ||mdp-appconf-af.heytapdl.com^
 ||mdp-appconf-apc.heytapdl.com^
@@ -222041,9 +222037,6 @@
 ||album-sg01a.ocloud.heytapmobi.com^
 ||i-cn01a.ocloud.heytapmobi.com^
 ||i-sg01a.ocloud.heytapmobi.com^
-||dcintl.push.heytapmobi.com^
-||device-ups.push.heytapmobi.com^
-||id.push.heytapmobi.com^
 ||userprofile.push.heytapmobi.com^
 ||api-id.theme.heytapmobi.com^
 ||adm-smc-cn.heytapmobi.com^
@@ -222301,7 +222294,7 @@
 ! 📝 规则说明：Blocks the Vivo native trackers baked into devices, services, and operating systems that quietly track what you do.
 ! 🔗 原始地址：https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.vivo.txt
 ! ==============================================
-! 📊 本区规则：280 条
+! 📊 本区规则：255 条
 ! ==============================================
 ||vhs.wwstat.com.eo.unicomcdn.com.cn^
 ||az.appstore.vivo.com.cn^
@@ -222328,7 +222321,6 @@
 ||asia-commonitor-stsdk.vivoglobal.com^
 ||asia-compnrt-stsdk.vivoglobal.com^
 ||asia-comprt-stsdk.vivoglobal.com^
-||asia-cota.vivoglobal.com^
 ||asia-err-up.vivoglobal.com^
 ||asia-ex-adlog.vivoglobal.com^
 ||asia-news-abroad-backstage-interface.vivoglobal.com^
@@ -222337,10 +222329,8 @@
 ||asia-p.vivoglobal.com^
 ||asia-romsp-unifyconfig.vivoglobal.com^
 ||asia-rt-stsdk.vivoglobal.com^
-||asia-st-exappupgrade.vivoglobal.com^
 ||asia-st-sl.vivoglobal.com^
 ||asia-third-appstore.vivoglobal.com^
-||asia-timesync.vivoglobal.com^
 ||asia-vcode-api.vivoglobal.com^
 ||asia-vcode-od.vivoglobal.com^
 ||asia-vcode-or.vivoglobal.com^
@@ -222365,7 +222355,6 @@
 ||cl-vcode-api.vivoglobal.com^
 ||cname-ali-asia-stsdk.vivoglobal.com^
 ||cname-asia-comonrt-stsdk.vivoglobal.com^
-||cname-asia-st-exappupgrade.vivoglobal.com^
 ||cname-asia-stsdk09.vivoglobal.com^
 ||cname-asia02-stsdk.vivoglobal.com^
 ||cname-de-stsdk.vivoglobal.com^
@@ -222375,7 +222364,6 @@
 ||cname-sin01-stsdk09.vivoglobal.com^
 ||co-album-api.vivoglobal.com^
 ||co-api-stsdk.vivoglobal.com^
-||co-cota.vivoglobal.com^
 ||co-domaincfg.vivoglobal.com^
 ||co-monitor-stsdk.vivoglobal.com^
 ||co-nrt-stsdk.vivoglobal.com^
@@ -222386,7 +222374,6 @@
 ||co-romsp-unifyconfig.vivoglobal.com^
 ||co-st-sl.vivoglobal.com^
 ||co-stsdk.vivoglobal.com^
-||co-timesync.vivoglobal.com^
 ||co-vcode-api.vivoglobal.com^
 ||co-vcode-od.vivoglobal.com^
 ||co-vcode-or.vivoglobal.com^
@@ -222396,7 +222383,6 @@
 ||eu-album-api.vivoglobal.com^
 ||eu-api-stsdk.vivoglobal.com^
 ||eu-cfg-stsdk.vivoglobal.com^
-||eu-cota.vivoglobal.com^
 ||eu-domaincfg.vivoglobal.com^
 ||eu-errup.vivoglobal.com^
 ||eu-monitor-stsdk.vivoglobal.com^
@@ -222406,7 +222392,6 @@
 ||eu-prt-stsdk.vivoglobal.com^
 ||eu-romsp-unifyconfig.vivoglobal.com^
 ||eu-st-sl.vivoglobal.com^
-||eu-timesync.vivoglobal.com^
 ||eu-vcode-api.vivoglobal.com^
 ||eu-vcode-od.vivoglobal.com^
 ||eu-vcode-or.vivoglobal.com^
@@ -222430,7 +222415,6 @@
 ||in-apppnrt-stsdk.vivoglobal.com^
 ||in-appprt-stsdk.vivoglobal.com^
 ||in-cfg-stsdk.vivoglobal.com^
-||in-cota.vivoglobal.com^
 ||in-ctdbonrt-stsdk.vivoglobal.com^
 ||in-ctdbort-stsdk.vivoglobal.com^
 ||in-ctdbpnrt-stsdk.vivoglobal.com^
@@ -222447,7 +222431,6 @@
 ||in-pnrt-stsdk.vivoglobal.com^
 ||in-prt-stsdk.vivoglobal.com^
 ||in-third-appstore.vivoglobal.com^
-||in-timesync.vivoglobal.com^
 ||in-vcode-api.vivoglobal.com^
 ||in-vcode-od.vivoglobal.com^
 ||in-vcode-or.vivoglobal.com^
@@ -222456,7 +222439,6 @@
 ||kz-analyzer-appstore.vivoglobal.com^
 ||kz-api-stsdk.vivoglobal.com^
 ||kz-cname-sin01-bigdata.vivoglobal.com^
-||kz-cota.vivoglobal.com^
 ||kz-err-up.vivoglobal.com^
 ||kz-monitor-stsdk.vivoglobal.com^
 ||kz-onrt-stsdk.vivoglobal.com^
@@ -222465,18 +222447,14 @@
 ||kz-pnrt-stsdk.vivoglobal.com^
 ||kz-prt-stsdk.vivoglobal.com^
 ||kz-romsp-unifyconfig.vivoglobal.com^
-||kz-st-exappupgrade.vivoglobal.com^
 ||kz-st-sl.vivoglobal.com^
-||kz-st-sysupgrade.vivoglobal.com^
 ||kz-stsdk.vivoglobal.com^
-||kz-timesync.vivoglobal.com^
 ||kz-vcode-api.vivoglobal.com^
 ||kz-vcode-od.vivoglobal.com^
 ||kz-vcode-or.vivoglobal.com^
 ||monitor-stsdk.vivoglobal.com^
 ||mx-album-api.vivoglobal.com^
 ||mx-api-stsdk.vivoglobal.com^
-||mx-cota.vivoglobal.com^
 ||mx-domaincfg.vivoglobal.com^
 ||mx-err-up.vivoglobal.com^
 ||mx-nrt-stsdk.vivoglobal.com^
@@ -222487,7 +222465,6 @@
 ||mx-romsp-unifyconfig.vivoglobal.com^
 ||mx-st-sl.vivoglobal.com^
 ||mx-stsdk.vivoglobal.com^
-||mx-timesync.vivoglobal.com^
 ||mx-vcode-api.vivoglobal.com^
 ||mx-vcode-od.vivoglobal.com^
 ||mx-vcode-or.vivoglobal.com^
@@ -222515,7 +222492,6 @@
 ||ru-comort-stsdk.vivoglobal.com^
 ||ru-compnrt-stsdk.vivoglobal.com^
 ||ru-comprt-stsdk.vivoglobal.com^
-||ru-cota.vivoglobal.com^
 ||ru-ctdbonrt-stsdk.vivoglobal.com^
 ||ru-ctdbort-stsdk.vivoglobal.com^
 ||ru-ctdbpnrt-stsdk.vivoglobal.com^
@@ -222531,11 +222507,9 @@
 ||ru-pnrt-stsdk.vivoglobal.com^
 ||ru-prt-stsdk.vivoglobal.com^
 ||ru-romsp-unifyconfig.vivoglobal.com^
-||ru-st-exappupgrade.vivoglobal.com^
 ||ru-st-sl.vivoglobal.com^
 ||ru-stsdk.vivoglobal.com^
 ||ru-third-appstore.vivoglobal.com^
-||ru-timesync.vivoglobal.com^
 ||ru-vcode-api.vivoglobal.com^
 ||ru-vcode-od.vivoglobal.com^
 ||ru-vcode-or.vivoglobal.com^
@@ -222543,7 +222517,6 @@
 ||st-sl.vivoglobal.com^
 ||tr-album-api.vivoglobal.com^
 ||tr-api-stsdk.vivoglobal.com^
-||tr-cota.vivoglobal.com^
 ||tr-domaincfg.vivoglobal.com^
 ||tr-err-up.vivoglobal.com^
 ||tr-gdpr-vgc-datacenter.vivoglobal.com^
@@ -222555,17 +222528,13 @@
 ||tr-prt-stsdk.vivoglobal.com^
 ||tr-romsp-unifyconfig.vivoglobal.com^
 ||tr-st-sl.vivoglobal.com^
-||tr-st-sysupgrade.vivoglobal.com^
 ||tr-stsdk.vivoglobal.com^
-||tr-sysupgrade-api.vivoglobal.com^
-||tr-timesync.vivoglobal.com^
 ||tr-vcode-od.vivoglobal.com^
 ||tr-vcode-or.vivoglobal.com^
 ||tr-weather.vivoglobal.com^
 ||uk-monitor-stsdk.vivoglobal.com^
 ||uk-nrt-stsdk.vivoglobal.com^
 ||uk-prt-stsdk.vivoglobal.com^
-||uk-timesync.vivoglobal.com^
 ||xn-ex-adreq-asa-c5b.vivoglobal.com^
 ||za-p.vivoglobal.com^
 ||zasc-cota.vivoglobal.com^
@@ -222577,7 +222546,6 @@
 ||zasc-romsp-unifyconfig.vivoglobal.com^
 ||zasc-st-sl.vivoglobal.com^
 ||zasc-stsdk.vivoglobal.com^
-||zasc-timesync.vivoglobal.com^
 ||zasc-vcode-api.vivoglobal.com^
 ||zasc-vcode-od.vivoglobal.com^
 ||zasc-vcode-or.vivoglobal.com^

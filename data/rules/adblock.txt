@@ -3,26 +3,26 @@
 ! 📌 规则名称：天影规则聚合 · 广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-14 15:45:14（北京时间）
-! 📊 有效规则：260526 条
+! ⏰ 更新时间：2026-11-14 17:12:23（北京时间）
+! 📊 有效规则：260494 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-14 15:45:14 | ✅ 有效规则 260526 条
+! Description: ⏰ 更新时间 2026-11-14 17:12:23 | ✅ 有效规则 260494 条
 ! ────────────────── ☑ 规则来源统计 ──────────────────
 !  123,802 条  AdRules DNS List [AdRules DNS List]
 !   88,154 条  anti-ad 官方规则
 !   12,602 条  5460 [酷安广告规则]
 !   10,558 条  1007-Hosts
 !    9,037 条  海哥规则
-!    7,784 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
+!    7,796 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]
 !    2,986 条  OISD 拦截规则 [oisd small]
 !    2,205 条  本地自定义规则
 !    1,119 条  乘风通用规则 [乘风 广告过滤规则]
 !      583 条  酷安@大萌主 [轻量广告拦截规则]
-!      500 条  hagezi OPPO 原生 [HaGeZi's OPPO & Realme Tracker - blocks built-in trackers from devices, apps, and OSes!]
-!      292 条  hagezi vivo 原生 [HaGeZi's Vivo Tracker - blocks built-in trackers from devices, apps, and OSes!]
-!      244 条  hagezi 小米原生 [HaGeZi's Xiaomi Tracker - blocks built-in trackers from devices, apps, and OSes!]
+!      492 条  hagezi OPPO 原生 [HaGeZi's OPPO & Realme Tracker - blocks built-in trackers from devices, apps, and OSes!]
+!      267 条  hagezi vivo 原生 [HaGeZi's Vivo Tracker - blocks built-in trackers from devices, apps, and OSes!]
+!      233 条  hagezi 小米原生 [HaGeZi's Xiaomi Tracker - blocks built-in trackers from devices, apps, and OSes!]
 !      202 条  hagezi 字节原生 [HaGeZi's TikTok Tracker - blocks built-in trackers from devices, apps, and OSes!]
 !      129 条  hagezi 三星原生 [HaGeZi's Samsung Tracker - blocks built-in trackers from devices, apps, and OSes!]
 !      129 条  乘风视频规则 [乘风 视频过滤规则 uBlock Origin 1.56]
@@ -228474,23 +228474,33 @@ dlsdk.appsflyer.com^
 ||bedsockfebrile.cyou^
 ||biqyxmqdyvkfz.website^
 ||bqyprflukjrci.space^
+||cgknxinrt.com^
 ||daleelerah.info
 ||designsrecedesheroics.cyou^
+||finishedcamp.pro^
 ||fmfonavgkdvfo.site^
+||foxwvfkyfhwjp.com^
 ||gczavfjzqmhdz.space^
 ||gimperminicab.cfd^
 ||gonamalayunstrap.cyou^
+||hpnrxxsymyekp.online^
 ||kackqswjnkeab.space^
 ||kdhjrqanauqzu.online^
 ||lhivvxyqzddyr.website^
 ||lhzulviipmufi.online^
 ||linnetsairns.cfd^
 ||lraujinoltnfj.site^
+||mewsgeckoid.click^
 ||nlrusyldghpqh.site^
+||omjaxrhtiq.in^
 ||pandieslekach.cyou^
+||passmanbelanda.click^
 ||qcgvpfizclttu.space^
+||sozinesscrawnyfaquirs.cfd^
+||teucrisiwashhasten.cfd^
 ||undopedesture.rest^
 ||uzebvjfvnmdke.space^
+||vsottbykmvlzx.space^
 ||w8j3w3vz7ymbtxmgfr13lqubz6yz8nr31k.cfd^
 ||woomdurham.com^
 ||xcwnfgoenzuno.space^
@@ -228641,6 +228651,8 @@ dlsdk.appsflyer.com^
 ||tools.bongacams.com^
 ||widget.faphouse.com^
 ||widgets.guppy.live^
+||ntpyrbdgxzpjxy.com^
+||fpz4gr87mq.com^
 ||cpro.baidustatic.com^
 ||farm-cn.plista.com^
 ||static-cn.plista.com^
@@ -235673,15 +235685,8 @@ analytics-*.aasaam.com
 ||fr.feedback.xmpush.global.xiaomi.com^
 ||idmb.feedback.xmpush.global.xiaomi.com^
 ||ru.feedback.xmpush.global.xiaomi.com^
-||api.xmpush.global.xiaomi.com^
-||fr-api.xmpush.global.xiaomi.com^
-||fr-register.xmpush.global.xiaomi.com^
 ||idmb-api.xmpush.global.xiaomi.com^
-||ru-api.xmpush.global.xiaomi.com^
 ||ru-feedback.xmpush.global.xiaomi.com^
-||ru-register.xmpush.global.xiaomi.com^
-||sgp-api.xmpush.global.xiaomi.com^
-||vip-api.xmpush.global.xiaomi.com^
 ||ad.quickapp.hybrid.xiaomi.com^
 ||activity.hybrid.xiaomi.com^
 ||api.hybrid.xiaomi.com^
@@ -235737,7 +235742,6 @@ analytics-*.aasaam.com
 ||dvb.pre.pandora.xiaomi.com^
 ||media.pre.pandora.xiaomi.com^
 ||bsp.sasdc.pandora.xiaomi.com^
-||3rdupgrade.pandora.xiaomi.com^
 ||bossadmin.pandora.xiaomi.com^
 ||box.pandora.xiaomi.com^
 ||c3-bgp.pandora.xiaomi.com^
@@ -235755,7 +235759,6 @@ analytics-*.aasaam.com
 ||rtmpott.pandora.xiaomi.com^
 ||shop.pandora.xiaomi.com^
 ||tvboss.pandora.xiaomi.com^
-||upgrade.pandora.xiaomi.com^
 ||tj1.staging.pay.xiaomi.com^
 ||tj1.stagingouter.pay.xiaomi.com^
 ||tj1.test.pay.xiaomi.com^
@@ -235783,11 +235786,9 @@ analytics-*.aasaam.com
 ||stat.www.xiaomi.com^
 ||console.admin.xmpush.xiaomi.com^
 ||test.admin.xmpush.xiaomi.com^
-||api.xmpush.xiaomi.com^
 ||callback.xmpush.xiaomi.com^
 ||emq.xmpush.xiaomi.com^
 ||sandbox.xmpush.xiaomi.com^
-||vip-api.xmpush.xiaomi.com^
 ||bugreport.xiaomi.net^
 ||d.xiaomi.com^
 ||hd.xiaomi.com^
@@ -235952,7 +235953,6 @@ analytics-*.aasaam.com
 ||conn-service-us-05.allawnos.com^
 ||conn-service-us-07.allawnos.com^
 ||conn-service-us-08.allawnos.com^
-||cota-service-sg.allawnos.com^
 ||crypto-dsf-fr.allawnos.com^
 ||crypto-dsf-in.allawnos.com^
 ||crypto-dsf-sg.allawnos.com^
@@ -235983,8 +235983,6 @@ analytics-*.aasaam.com
 ||icosa-service-sg-02.allawnos.com^
 ||icosa-service-sg-03.allawnos.com^
 ||icosa-service-us.allawnos.com^
-||icota-service-eu.allawnos.com^
-||icota-service-in.allawnos.com^
 ||lockcard-service-in.allawnos.com^
 ||moa-upload-in.allawnos.com^
 ||moa-upload-sg.allawnos.com^
@@ -236029,7 +236027,6 @@ analytics-*.aasaam.com
 ||conn5.coloros.com^
 ||guif.coloros.com^
 ||guif-eu.coloros.com^
-||icota-eu.coloros.com^
 ||ifrus.coloros.com^
 ||ifrus-eu.coloros.com^
 ||ifrus-in.coloros.com^
@@ -236064,7 +236061,6 @@ analytics-*.aasaam.com
 ||appconf-sgp.heytapdl.com^
 ||conf-in-dc.heytapdl.com^
 ||conf-sg-dc.heytapdl.com^
-||file-intl-push.heytapdl.com^
 ||mdp-appconf-ae.heytapdl.com^
 ||mdp-appconf-af.heytapdl.com^
 ||mdp-appconf-apc.heytapdl.com^
@@ -236179,9 +236175,6 @@ analytics-*.aasaam.com
 ||album-sg01a.ocloud.heytapmobi.com^
 ||i-cn01a.ocloud.heytapmobi.com^
 ||i-sg01a.ocloud.heytapmobi.com^
-||dcintl.push.heytapmobi.com^
-||device-ups.push.heytapmobi.com^
-||id.push.heytapmobi.com^
 ||userprofile.push.heytapmobi.com^
 ||api-id.theme.heytapmobi.com^
 ||adm-smc-cn.heytapmobi.com^
@@ -236466,7 +236459,6 @@ analytics-*.aasaam.com
 ||asia-comort-stsdk.vivoglobal.com^
 ||asia-compnrt-stsdk.vivoglobal.com^
 ||asia-comprt-stsdk.vivoglobal.com^
-||asia-cota.vivoglobal.com^
 ||asia-err-up.vivoglobal.com^
 ||asia-ex-adlog.vivoglobal.com^
 ||asia-exstsdk.vivoglobal.com^
@@ -236481,11 +236473,9 @@ analytics-*.aasaam.com
 ||asia-prt-stsdk.vivoglobal.com^
 ||asia-romsp-unifyconfig.vivoglobal.com^
 ||asia-rt-stsdk.vivoglobal.com^
-||asia-st-exappupgrade.vivoglobal.com^
 ||asia-st-sl.vivoglobal.com^
 ||asia-stsdk.vivoglobal.com^
 ||asia-third-appstore.vivoglobal.com^
-||asia-timesync.vivoglobal.com^
 ||asia-vcode-api.vivoglobal.com^
 ||asia-vcode-od.vivoglobal.com^
 ||asia-vcode-or.vivoglobal.com^
@@ -236510,7 +236500,6 @@ analytics-*.aasaam.com
 ||cl-vcode-api.vivoglobal.com^
 ||cname-ali-asia-stsdk.vivoglobal.com^
 ||cname-asia-comonrt-stsdk.vivoglobal.com^
-||cname-asia-st-exappupgrade.vivoglobal.com^
 ||cname-asia-stsdk09.vivoglobal.com^
 ||cname-asia02-stsdk.vivoglobal.com^
 ||cname-de-stsdk.vivoglobal.com^
@@ -236520,7 +236509,6 @@ analytics-*.aasaam.com
 ||cname-sin01-stsdk09.vivoglobal.com^
 ||co-album-api.vivoglobal.com^
 ||co-api-stsdk.vivoglobal.com^
-||co-cota.vivoglobal.com^
 ||co-domaincfg.vivoglobal.com^
 ||co-monitor-stsdk.vivoglobal.com^
 ||co-nrt-stsdk.vivoglobal.com^
@@ -236531,7 +236519,6 @@ analytics-*.aasaam.com
 ||co-romsp-unifyconfig.vivoglobal.com^
 ||co-st-sl.vivoglobal.com^
 ||co-stsdk.vivoglobal.com^
-||co-timesync.vivoglobal.com^
 ||co-vcode-api.vivoglobal.com^
 ||co-vcode-od.vivoglobal.com^
 ||co-vcode-or.vivoglobal.com^
@@ -236541,7 +236528,6 @@ analytics-*.aasaam.com
 ||eu-album-api.vivoglobal.com^
 ||eu-api-stsdk.vivoglobal.com^
 ||eu-cfg-stsdk.vivoglobal.com^
-||eu-cota.vivoglobal.com^
 ||eu-domaincfg.vivoglobal.com^
 ||eu-errup.vivoglobal.com^
 ||eu-monitor-stsdk.vivoglobal.com^
@@ -236551,7 +236537,6 @@ analytics-*.aasaam.com
 ||eu-prt-stsdk.vivoglobal.com^
 ||eu-romsp-unifyconfig.vivoglobal.com^
 ||eu-st-sl.vivoglobal.com^
-||eu-timesync.vivoglobal.com^
 ||eu-vcode-api.vivoglobal.com^
 ||eu-vcode-od.vivoglobal.com^
 ||eu-vcode-or.vivoglobal.com^
@@ -236575,7 +236560,6 @@ analytics-*.aasaam.com
 ||in-apppnrt-stsdk.vivoglobal.com^
 ||in-appprt-stsdk.vivoglobal.com^
 ||in-cfg-stsdk.vivoglobal.com^
-||in-cota.vivoglobal.com^
 ||in-ctdbonrt-stsdk.vivoglobal.com^
 ||in-ctdbort-stsdk.vivoglobal.com^
 ||in-ctdbpnrt-stsdk.vivoglobal.com^
@@ -236592,7 +236576,6 @@ analytics-*.aasaam.com
 ||in-pnrt-stsdk.vivoglobal.com^
 ||in-prt-stsdk.vivoglobal.com^
 ||in-third-appstore.vivoglobal.com^
-||in-timesync.vivoglobal.com^
 ||in-vcode-api.vivoglobal.com^
 ||in-vcode-od.vivoglobal.com^
 ||in-vcode-or.vivoglobal.com^
@@ -236601,7 +236584,6 @@ analytics-*.aasaam.com
 ||kz-analyzer-appstore.vivoglobal.com^
 ||kz-api-stsdk.vivoglobal.com^
 ||kz-cname-sin01-bigdata.vivoglobal.com^
-||kz-cota.vivoglobal.com^
 ||kz-err-up.vivoglobal.com^
 ||kz-monitor-stsdk.vivoglobal.com^
 ||kz-onrt-stsdk.vivoglobal.com^
@@ -236610,18 +236592,14 @@ analytics-*.aasaam.com
 ||kz-pnrt-stsdk.vivoglobal.com^
 ||kz-prt-stsdk.vivoglobal.com^
 ||kz-romsp-unifyconfig.vivoglobal.com^
-||kz-st-exappupgrade.vivoglobal.com^
 ||kz-st-sl.vivoglobal.com^
-||kz-st-sysupgrade.vivoglobal.com^
 ||kz-stsdk.vivoglobal.com^
-||kz-timesync.vivoglobal.com^
 ||kz-vcode-api.vivoglobal.com^
 ||kz-vcode-od.vivoglobal.com^
 ||kz-vcode-or.vivoglobal.com^
 ||monitor-stsdk.vivoglobal.com^
 ||mx-album-api.vivoglobal.com^
 ||mx-api-stsdk.vivoglobal.com^
-||mx-cota.vivoglobal.com^
 ||mx-domaincfg.vivoglobal.com^
 ||mx-err-up.vivoglobal.com^
 ||mx-nrt-stsdk.vivoglobal.com^
@@ -236632,7 +236610,6 @@ analytics-*.aasaam.com
 ||mx-romsp-unifyconfig.vivoglobal.com^
 ||mx-st-sl.vivoglobal.com^
 ||mx-stsdk.vivoglobal.com^
-||mx-timesync.vivoglobal.com^
 ||mx-vcode-api.vivoglobal.com^
 ||mx-vcode-od.vivoglobal.com^
 ||mx-vcode-or.vivoglobal.com^
@@ -236661,7 +236638,6 @@ analytics-*.aasaam.com
 ||ru-comort-stsdk.vivoglobal.com^
 ||ru-compnrt-stsdk.vivoglobal.com^
 ||ru-comprt-stsdk.vivoglobal.com^
-||ru-cota.vivoglobal.com^
 ||ru-ctdbonrt-stsdk.vivoglobal.com^
 ||ru-ctdbort-stsdk.vivoglobal.com^
 ||ru-ctdbpnrt-stsdk.vivoglobal.com^
@@ -236677,11 +236653,9 @@ analytics-*.aasaam.com
 ||ru-pnrt-stsdk.vivoglobal.com^
 ||ru-prt-stsdk.vivoglobal.com^
 ||ru-romsp-unifyconfig.vivoglobal.com^
-||ru-st-exappupgrade.vivoglobal.com^
 ||ru-st-sl.vivoglobal.com^
 ||ru-stsdk.vivoglobal.com^
 ||ru-third-appstore.vivoglobal.com^
-||ru-timesync.vivoglobal.com^
 ||ru-vcode-api.vivoglobal.com^
 ||ru-vcode-od.vivoglobal.com^
 ||ru-vcode-or.vivoglobal.com^
@@ -236689,7 +236663,6 @@ analytics-*.aasaam.com
 ||st-sl.vivoglobal.com^
 ||tr-album-api.vivoglobal.com^
 ||tr-api-stsdk.vivoglobal.com^
-||tr-cota.vivoglobal.com^
 ||tr-domaincfg.vivoglobal.com^
 ||tr-err-up.vivoglobal.com^
 ||tr-gdpr-vgc-datacenter.vivoglobal.com^
@@ -236701,10 +236674,7 @@ analytics-*.aasaam.com
 ||tr-prt-stsdk.vivoglobal.com^
 ||tr-romsp-unifyconfig.vivoglobal.com^
 ||tr-st-sl.vivoglobal.com^
-||tr-st-sysupgrade.vivoglobal.com^
 ||tr-stsdk.vivoglobal.com^
-||tr-sysupgrade-api.vivoglobal.com^
-||tr-timesync.vivoglobal.com^
 ||tr-vcode-api.vivoglobal.com^
 ||tr-vcode-od.vivoglobal.com^
 ||tr-vcode-or.vivoglobal.com^
@@ -236712,7 +236682,6 @@ analytics-*.aasaam.com
 ||uk-monitor-stsdk.vivoglobal.com^
 ||uk-nrt-stsdk.vivoglobal.com^
 ||uk-prt-stsdk.vivoglobal.com^
-||uk-timesync.vivoglobal.com^
 ||xn-ex-adreq-asa-c5b.vivoglobal.com^
 ||za-p.vivoglobal.com^
 ||zasc-cota.vivoglobal.com^
@@ -236724,7 +236693,6 @@ analytics-*.aasaam.com
 ||zasc-romsp-unifyconfig.vivoglobal.com^
 ||zasc-st-sl.vivoglobal.com^
 ||zasc-stsdk.vivoglobal.com^
-||zasc-timesync.vivoglobal.com^
 ||zasc-vcode-api.vivoglobal.com^
 ||zasc-vcode-od.vivoglobal.com^
 ||zasc-vcode-or.vivoglobal.com^

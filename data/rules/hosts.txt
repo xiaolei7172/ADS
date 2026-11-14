@@ -2,7 +2,7 @@
 # 由 dns.txt 折叠前的完整域名集转换，含全部子域，覆盖与 AdGuard 语义对齐
 # ⚠️ hosts 只能精确匹配，拦不到未列出的子域；需要完整子域覆盖请用 dns.txt / smartdns.conf / surge.list
 # 📌 项目地址：https://github.com/xiaolei7172/ADS
-# 🔖 内容指纹：8f6985e95c63 | 📊 有效规则：247383 条 | ⏰ 变更时间见 git 提交记录
+# 🔖 内容指纹：bc354e60071f | 📊 有效规则：247351 条 | ⏰ 变更时间见 git 提交记录
 # 🔄 更新频率：每日自动更新（北京时间 08:00）
 0.0.0.0 ads3-normal-hl.zijieapi.com
 0.0.0.0 ads3-normal-lf.zijieapi.com
@@ -224442,22 +224442,32 @@
 0.0.0.0 bedsockfebrile.cyou
 0.0.0.0 biqyxmqdyvkfz.website
 0.0.0.0 bqyprflukjrci.space
+0.0.0.0 cgknxinrt.com
 0.0.0.0 designsrecedesheroics.cyou
+0.0.0.0 finishedcamp.pro
 0.0.0.0 fmfonavgkdvfo.site
+0.0.0.0 foxwvfkyfhwjp.com
 0.0.0.0 gczavfjzqmhdz.space
 0.0.0.0 gimperminicab.cfd
 0.0.0.0 gonamalayunstrap.cyou
+0.0.0.0 hpnrxxsymyekp.online
 0.0.0.0 kackqswjnkeab.space
 0.0.0.0 kdhjrqanauqzu.online
 0.0.0.0 lhivvxyqzddyr.website
 0.0.0.0 lhzulviipmufi.online
 0.0.0.0 linnetsairns.cfd
 0.0.0.0 lraujinoltnfj.site
+0.0.0.0 mewsgeckoid.click
 0.0.0.0 nlrusyldghpqh.site
+0.0.0.0 omjaxrhtiq.in
 0.0.0.0 pandieslekach.cyou
+0.0.0.0 passmanbelanda.click
 0.0.0.0 qcgvpfizclttu.space
+0.0.0.0 sozinesscrawnyfaquirs.cfd
+0.0.0.0 teucrisiwashhasten.cfd
 0.0.0.0 undopedesture.rest
 0.0.0.0 uzebvjfvnmdke.space
+0.0.0.0 vsottbykmvlzx.space
 0.0.0.0 w8j3w3vz7ymbtxmgfr13lqubz6yz8nr31k.cfd
 0.0.0.0 woomdurham.com
 0.0.0.0 xcwnfgoenzuno.space
@@ -224602,6 +224612,8 @@
 0.0.0.0 tools.bongacams.com
 0.0.0.0 widget.faphouse.com
 0.0.0.0 widgets.guppy.live
+0.0.0.0 ntpyrbdgxzpjxy.com
+0.0.0.0 fpz4gr87mq.com
 0.0.0.0 farm-cn.plista.com
 0.0.0.0 static-cn.plista.com
 0.0.0.0 ubmcvideo.baidustatic.com
@@ -231503,15 +231515,8 @@
 0.0.0.0 fr.feedback.xmpush.global.xiaomi.com
 0.0.0.0 idmb.feedback.xmpush.global.xiaomi.com
 0.0.0.0 ru.feedback.xmpush.global.xiaomi.com
-0.0.0.0 api.xmpush.global.xiaomi.com
-0.0.0.0 fr-api.xmpush.global.xiaomi.com
-0.0.0.0 fr-register.xmpush.global.xiaomi.com
 0.0.0.0 idmb-api.xmpush.global.xiaomi.com
-0.0.0.0 ru-api.xmpush.global.xiaomi.com
 0.0.0.0 ru-feedback.xmpush.global.xiaomi.com
-0.0.0.0 ru-register.xmpush.global.xiaomi.com
-0.0.0.0 sgp-api.xmpush.global.xiaomi.com
-0.0.0.0 vip-api.xmpush.global.xiaomi.com
 0.0.0.0 ad.quickapp.hybrid.xiaomi.com
 0.0.0.0 activity.hybrid.xiaomi.com
 0.0.0.0 api.hybrid.xiaomi.com
@@ -231567,7 +231572,6 @@
 0.0.0.0 dvb.pre.pandora.xiaomi.com
 0.0.0.0 media.pre.pandora.xiaomi.com
 0.0.0.0 bsp.sasdc.pandora.xiaomi.com
-0.0.0.0 3rdupgrade.pandora.xiaomi.com
 0.0.0.0 bossadmin.pandora.xiaomi.com
 0.0.0.0 box.pandora.xiaomi.com
 0.0.0.0 c3-bgp.pandora.xiaomi.com
@@ -231585,7 +231589,6 @@
 0.0.0.0 rtmpott.pandora.xiaomi.com
 0.0.0.0 shop.pandora.xiaomi.com
 0.0.0.0 tvboss.pandora.xiaomi.com
-0.0.0.0 upgrade.pandora.xiaomi.com
 0.0.0.0 tj1.staging.pay.xiaomi.com
 0.0.0.0 tj1.stagingouter.pay.xiaomi.com
 0.0.0.0 tj1.test.pay.xiaomi.com
@@ -231613,11 +231616,9 @@
 0.0.0.0 stat.www.xiaomi.com
 0.0.0.0 console.admin.xmpush.xiaomi.com
 0.0.0.0 test.admin.xmpush.xiaomi.com
-0.0.0.0 api.xmpush.xiaomi.com
 0.0.0.0 callback.xmpush.xiaomi.com
 0.0.0.0 emq.xmpush.xiaomi.com
 0.0.0.0 sandbox.xmpush.xiaomi.com
-0.0.0.0 vip-api.xmpush.xiaomi.com
 0.0.0.0 bugreport.xiaomi.net
 0.0.0.0 d.xiaomi.com
 0.0.0.0 hd.xiaomi.com
@@ -231763,7 +231764,6 @@
 0.0.0.0 conn-service-us-05.allawnos.com
 0.0.0.0 conn-service-us-07.allawnos.com
 0.0.0.0 conn-service-us-08.allawnos.com
-0.0.0.0 cota-service-sg.allawnos.com
 0.0.0.0 crypto-dsf-fr.allawnos.com
 0.0.0.0 crypto-dsf-in.allawnos.com
 0.0.0.0 crypto-dsf-sg.allawnos.com
@@ -231794,8 +231794,6 @@
 0.0.0.0 icosa-service-sg-02.allawnos.com
 0.0.0.0 icosa-service-sg-03.allawnos.com
 0.0.0.0 icosa-service-us.allawnos.com
-0.0.0.0 icota-service-eu.allawnos.com
-0.0.0.0 icota-service-in.allawnos.com
 0.0.0.0 lockcard-service-in.allawnos.com
 0.0.0.0 moa-upload-in.allawnos.com
 0.0.0.0 moa-upload-sg.allawnos.com
@@ -231840,7 +231838,6 @@
 0.0.0.0 conn5.coloros.com
 0.0.0.0 guif.coloros.com
 0.0.0.0 guif-eu.coloros.com
-0.0.0.0 icota-eu.coloros.com
 0.0.0.0 ifrus.coloros.com
 0.0.0.0 ifrus-eu.coloros.com
 0.0.0.0 ifrus-in.coloros.com
@@ -231875,7 +231872,6 @@
 0.0.0.0 appconf-sgp.heytapdl.com
 0.0.0.0 conf-in-dc.heytapdl.com
 0.0.0.0 conf-sg-dc.heytapdl.com
-0.0.0.0 file-intl-push.heytapdl.com
 0.0.0.0 mdp-appconf-ae.heytapdl.com
 0.0.0.0 mdp-appconf-af.heytapdl.com
 0.0.0.0 mdp-appconf-apc.heytapdl.com
@@ -231989,9 +231985,6 @@
 0.0.0.0 album-sg01a.ocloud.heytapmobi.com
 0.0.0.0 i-cn01a.ocloud.heytapmobi.com
 0.0.0.0 i-sg01a.ocloud.heytapmobi.com
-0.0.0.0 dcintl.push.heytapmobi.com
-0.0.0.0 device-ups.push.heytapmobi.com
-0.0.0.0 id.push.heytapmobi.com
 0.0.0.0 userprofile.push.heytapmobi.com
 0.0.0.0 api-id.theme.heytapmobi.com
 0.0.0.0 adm-smc-cn.heytapmobi.com
@@ -232268,7 +232261,6 @@
 0.0.0.0 asia-commonitor-stsdk.vivoglobal.com
 0.0.0.0 asia-compnrt-stsdk.vivoglobal.com
 0.0.0.0 asia-comprt-stsdk.vivoglobal.com
-0.0.0.0 asia-cota.vivoglobal.com
 0.0.0.0 asia-err-up.vivoglobal.com
 0.0.0.0 asia-ex-adlog.vivoglobal.com
 0.0.0.0 asia-news-abroad-backstage-interface.vivoglobal.com
@@ -232277,10 +232269,8 @@
 0.0.0.0 asia-p.vivoglobal.com
 0.0.0.0 asia-romsp-unifyconfig.vivoglobal.com
 0.0.0.0 asia-rt-stsdk.vivoglobal.com
-0.0.0.0 asia-st-exappupgrade.vivoglobal.com
 0.0.0.0 asia-st-sl.vivoglobal.com
 0.0.0.0 asia-third-appstore.vivoglobal.com
-0.0.0.0 asia-timesync.vivoglobal.com
 0.0.0.0 asia-vcode-api.vivoglobal.com
 0.0.0.0 asia-vcode-od.vivoglobal.com
 0.0.0.0 asia-vcode-or.vivoglobal.com
@@ -232305,7 +232295,6 @@
 0.0.0.0 cl-vcode-api.vivoglobal.com
 0.0.0.0 cname-ali-asia-stsdk.vivoglobal.com
 0.0.0.0 cname-asia-comonrt-stsdk.vivoglobal.com
-0.0.0.0 cname-asia-st-exappupgrade.vivoglobal.com
 0.0.0.0 cname-asia-stsdk09.vivoglobal.com
 0.0.0.0 cname-asia02-stsdk.vivoglobal.com
 0.0.0.0 cname-de-stsdk.vivoglobal.com
@@ -232315,7 +232304,6 @@
 0.0.0.0 cname-sin01-stsdk09.vivoglobal.com
 0.0.0.0 co-album-api.vivoglobal.com
 0.0.0.0 co-api-stsdk.vivoglobal.com
-0.0.0.0 co-cota.vivoglobal.com
 0.0.0.0 co-domaincfg.vivoglobal.com
 0.0.0.0 co-monitor-stsdk.vivoglobal.com
 0.0.0.0 co-nrt-stsdk.vivoglobal.com
@@ -232326,7 +232314,6 @@
 0.0.0.0 co-romsp-unifyconfig.vivoglobal.com
 0.0.0.0 co-st-sl.vivoglobal.com
 0.0.0.0 co-stsdk.vivoglobal.com
-0.0.0.0 co-timesync.vivoglobal.com
 0.0.0.0 co-vcode-api.vivoglobal.com
 0.0.0.0 co-vcode-od.vivoglobal.com
 0.0.0.0 co-vcode-or.vivoglobal.com
@@ -232336,7 +232323,6 @@
 0.0.0.0 eu-album-api.vivoglobal.com
 0.0.0.0 eu-api-stsdk.vivoglobal.com
 0.0.0.0 eu-cfg-stsdk.vivoglobal.com
-0.0.0.0 eu-cota.vivoglobal.com
 0.0.0.0 eu-domaincfg.vivoglobal.com
 0.0.0.0 eu-errup.vivoglobal.com
 0.0.0.0 eu-monitor-stsdk.vivoglobal.com
@@ -232346,7 +232332,6 @@
 0.0.0.0 eu-prt-stsdk.vivoglobal.com
 0.0.0.0 eu-romsp-unifyconfig.vivoglobal.com
 0.0.0.0 eu-st-sl.vivoglobal.com
-0.0.0.0 eu-timesync.vivoglobal.com
 0.0.0.0 eu-vcode-api.vivoglobal.com
 0.0.0.0 eu-vcode-od.vivoglobal.com
 0.0.0.0 eu-vcode-or.vivoglobal.com
@@ -232370,7 +232355,6 @@
 0.0.0.0 in-apppnrt-stsdk.vivoglobal.com
 0.0.0.0 in-appprt-stsdk.vivoglobal.com
 0.0.0.0 in-cfg-stsdk.vivoglobal.com
-0.0.0.0 in-cota.vivoglobal.com
 0.0.0.0 in-ctdbonrt-stsdk.vivoglobal.com
 0.0.0.0 in-ctdbort-stsdk.vivoglobal.com
 0.0.0.0 in-ctdbpnrt-stsdk.vivoglobal.com
@@ -232387,7 +232371,6 @@
 0.0.0.0 in-pnrt-stsdk.vivoglobal.com
 0.0.0.0 in-prt-stsdk.vivoglobal.com
 0.0.0.0 in-third-appstore.vivoglobal.com
-0.0.0.0 in-timesync.vivoglobal.com
 0.0.0.0 in-vcode-api.vivoglobal.com
 0.0.0.0 in-vcode-od.vivoglobal.com
 0.0.0.0 in-vcode-or.vivoglobal.com
@@ -232396,7 +232379,6 @@
 0.0.0.0 kz-analyzer-appstore.vivoglobal.com
 0.0.0.0 kz-api-stsdk.vivoglobal.com
 0.0.0.0 kz-cname-sin01-bigdata.vivoglobal.com
-0.0.0.0 kz-cota.vivoglobal.com
 0.0.0.0 kz-err-up.vivoglobal.com
 0.0.0.0 kz-monitor-stsdk.vivoglobal.com
 0.0.0.0 kz-onrt-stsdk.vivoglobal.com
@@ -232405,18 +232387,14 @@
 0.0.0.0 kz-pnrt-stsdk.vivoglobal.com
 0.0.0.0 kz-prt-stsdk.vivoglobal.com
 0.0.0.0 kz-romsp-unifyconfig.vivoglobal.com
-0.0.0.0 kz-st-exappupgrade.vivoglobal.com
 0.0.0.0 kz-st-sl.vivoglobal.com
-0.0.0.0 kz-st-sysupgrade.vivoglobal.com
 0.0.0.0 kz-stsdk.vivoglobal.com
-0.0.0.0 kz-timesync.vivoglobal.com
 0.0.0.0 kz-vcode-api.vivoglobal.com
 0.0.0.0 kz-vcode-od.vivoglobal.com
 0.0.0.0 kz-vcode-or.vivoglobal.com
 0.0.0.0 monitor-stsdk.vivoglobal.com
 0.0.0.0 mx-album-api.vivoglobal.com
 0.0.0.0 mx-api-stsdk.vivoglobal.com
-0.0.0.0 mx-cota.vivoglobal.com
 0.0.0.0 mx-domaincfg.vivoglobal.com
 0.0.0.0 mx-err-up.vivoglobal.com
 0.0.0.0 mx-nrt-stsdk.vivoglobal.com
@@ -232427,7 +232405,6 @@
 0.0.0.0 mx-romsp-unifyconfig.vivoglobal.com
 0.0.0.0 mx-st-sl.vivoglobal.com
 0.0.0.0 mx-stsdk.vivoglobal.com
-0.0.0.0 mx-timesync.vivoglobal.com
 0.0.0.0 mx-vcode-api.vivoglobal.com
 0.0.0.0 mx-vcode-od.vivoglobal.com
 0.0.0.0 mx-vcode-or.vivoglobal.com
@@ -232455,7 +232432,6 @@
 0.0.0.0 ru-comort-stsdk.vivoglobal.com
 0.0.0.0 ru-compnrt-stsdk.vivoglobal.com
 0.0.0.0 ru-comprt-stsdk.vivoglobal.com
-0.0.0.0 ru-cota.vivoglobal.com
 0.0.0.0 ru-ctdbonrt-stsdk.vivoglobal.com
 0.0.0.0 ru-ctdbort-stsdk.vivoglobal.com
 0.0.0.0 ru-ctdbpnrt-stsdk.vivoglobal.com
@@ -232471,11 +232447,9 @@
 0.0.0.0 ru-pnrt-stsdk.vivoglobal.com
 0.0.0.0 ru-prt-stsdk.vivoglobal.com
 0.0.0.0 ru-romsp-unifyconfig.vivoglobal.com
-0.0.0.0 ru-st-exappupgrade.vivoglobal.com
 0.0.0.0 ru-st-sl.vivoglobal.com
 0.0.0.0 ru-stsdk.vivoglobal.com
 0.0.0.0 ru-third-appstore.vivoglobal.com
-0.0.0.0 ru-timesync.vivoglobal.com
 0.0.0.0 ru-vcode-api.vivoglobal.com
 0.0.0.0 ru-vcode-od.vivoglobal.com
 0.0.0.0 ru-vcode-or.vivoglobal.com
@@ -232483,7 +232457,6 @@
 0.0.0.0 st-sl.vivoglobal.com
 0.0.0.0 tr-album-api.vivoglobal.com
 0.0.0.0 tr-api-stsdk.vivoglobal.com
-0.0.0.0 tr-cota.vivoglobal.com
 0.0.0.0 tr-domaincfg.vivoglobal.com
 0.0.0.0 tr-err-up.vivoglobal.com
 0.0.0.0 tr-gdpr-vgc-datacenter.vivoglobal.com
@@ -232495,17 +232468,13 @@
 0.0.0.0 tr-prt-stsdk.vivoglobal.com
 0.0.0.0 tr-romsp-unifyconfig.vivoglobal.com
 0.0.0.0 tr-st-sl.vivoglobal.com
-0.0.0.0 tr-st-sysupgrade.vivoglobal.com
 0.0.0.0 tr-stsdk.vivoglobal.com
-0.0.0.0 tr-sysupgrade-api.vivoglobal.com
-0.0.0.0 tr-timesync.vivoglobal.com
 0.0.0.0 tr-vcode-od.vivoglobal.com
 0.0.0.0 tr-vcode-or.vivoglobal.com
 0.0.0.0 tr-weather.vivoglobal.com
 0.0.0.0 uk-monitor-stsdk.vivoglobal.com
 0.0.0.0 uk-nrt-stsdk.vivoglobal.com
 0.0.0.0 uk-prt-stsdk.vivoglobal.com
-0.0.0.0 uk-timesync.vivoglobal.com
 0.0.0.0 xn-ex-adreq-asa-c5b.vivoglobal.com
 0.0.0.0 za-p.vivoglobal.com
 0.0.0.0 zasc-cota.vivoglobal.com
@@ -232517,7 +232486,6 @@
 0.0.0.0 zasc-romsp-unifyconfig.vivoglobal.com
 0.0.0.0 zasc-st-sl.vivoglobal.com
 0.0.0.0 zasc-stsdk.vivoglobal.com
-0.0.0.0 zasc-timesync.vivoglobal.com
 0.0.0.0 zasc-vcode-api.vivoglobal.com
 0.0.0.0 zasc-vcode-od.vivoglobal.com
 0.0.0.0 zasc-vcode-or.vivoglobal.com
