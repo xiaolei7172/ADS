@@ -221977,12 +221977,10 @@ DOMAIN-SUFFIX,d.xiaomi.com,reject
 DOMAIN-SUFFIX,hd.xiaomi.com,reject
 DOMAIN-SUFFIX,heyue.xiaomi.com,reject
 DOMAIN-SUFFIX,huosai.xiaomi.com,reject
-DOMAIN-SUFFIX,i.xiaomi.com,reject
 DOMAIN-SUFFIX,mibi.xiaomi.com,reject
 DOMAIN-SUFFIX,preload.xiaomi.com,reject
 DOMAIN-SUFFIX,qiye.xiaomi.com,reject
 DOMAIN-SUFFIX,sdkconfig.xiaomi.com,reject
-DOMAIN-SUFFIX,userid.xiaomi.com,reject
 DOMAIN-SUFFIX,xiazai.xiaomi.com,reject
 DOMAIN-SUFFIX,miui.net,reject
 DOMAIN-SUFFIX,ubacollect-drcn.cloud.dbankcloud.cn,reject

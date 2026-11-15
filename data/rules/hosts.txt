@@ -2,7 +2,7 @@
 # 由 dns.txt 折叠前的完整域名集转换，含全部子域，覆盖与 AdGuard 语义对齐
 # ⚠️ hosts 只能精确匹配，拦不到未列出的子域；需要完整子域覆盖请用 dns.txt / smartdns.conf / surge.list
 # 📌 项目地址：https://github.com/xiaolei7172/ADS
-# 🔖 内容指纹：4733fb669b06 | 📊 有效规则：247711 条 | ⏰ 变更时间见 git 提交记录
+# 🔖 内容指纹：1ae846527a62 | 📊 有效规则：247709 条 | ⏰ 变更时间见 git 提交记录
 # 🔄 更新频率：每日自动更新（北京时间 08:00）
 0.0.0.0 ads3-normal-hl.zijieapi.com
 0.0.0.0 ads3-normal-lf.zijieapi.com
@@ -231992,12 +231992,10 @@
 0.0.0.0 hd.xiaomi.com
 0.0.0.0 heyue.xiaomi.com
 0.0.0.0 huosai.xiaomi.com
-0.0.0.0 i.xiaomi.com
 0.0.0.0 mibi.xiaomi.com
 0.0.0.0 preload.xiaomi.com
 0.0.0.0 qiye.xiaomi.com
 0.0.0.0 sdkconfig.xiaomi.com
-0.0.0.0 userid.xiaomi.com
 0.0.0.0 xiazai.xiaomi.com
 0.0.0.0 miui.net
 0.0.0.0 ubacollect-drcn.cloud.dbankcloud.cn

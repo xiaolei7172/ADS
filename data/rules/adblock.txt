@@ -3,12 +3,12 @@
 ! 📌 规则名称：天影规则聚合 · 广告拦截规则
 ! 📝 规则说明：屏蔽全网广告、弹窗、跟踪、恶意域名
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-15 14:30:33（北京时间）
-! 📊 有效规则：260849 条
+! ⏰ 更新时间：2026-11-15 15:59:49（北京时间）
+! 📊 有效规则：260847 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 广告拦截规则 📌
-! Description: ⏰ 更新时间 2026-11-15 14:30:33 | ✅ 有效规则 260849 条
+! Description: ⏰ 更新时间 2026-11-15 15:59:49 | ✅ 有效规则 260847 条
 ! ────────────────── ☑ 规则来源统计 ──────────────────
 !  124,148 条  AdRules DNS List [AdRules DNS List]
 !   88,151 条  anti-ad 官方规则
@@ -22,7 +22,7 @@
 !      583 条  酷安@大萌主 [轻量广告拦截规则]
 !      499 条  hagezi OPPO 原生 [HaGeZi's OPPO & Realme Tracker - blocks built-in trackers from devices, apps, and OSes!]
 !      267 条  hagezi vivo 原生 [HaGeZi's Vivo Tracker - blocks built-in trackers from devices, apps, and OSes!]
-!      232 条  hagezi 小米原生 [HaGeZi's Xiaomi Tracker - blocks built-in trackers from devices, apps, and OSes!]
+!      230 条  hagezi 小米原生 [HaGeZi's Xiaomi Tracker - blocks built-in trackers from devices, apps, and OSes!]
 !      202 条  hagezi 字节原生 [HaGeZi's TikTok Tracker - blocks built-in trackers from devices, apps, and OSes!]
 !      129 条  hagezi 三星原生 [HaGeZi's Samsung Tracker - blocks built-in trackers from devices, apps, and OSes!]
 !      129 条  乘风视频规则 [乘风 视频过滤规则 uBlock Origin 1.56]
@@ -236161,12 +236161,10 @@ analytics-*.aasaam.com
 ||hd.xiaomi.com^
 ||heyue.xiaomi.com^
 ||huosai.xiaomi.com^
-||i.xiaomi.com^
 ||mibi.xiaomi.com^
 ||preload.xiaomi.com^
 ||qiye.xiaomi.com^
 ||sdkconfig.xiaomi.com^
-||userid.xiaomi.com^
 ||xiazai.xiaomi.com^
 ||miui.net^
 ! ==============================================

@@ -21,16 +21,16 @@
 ### 🔮 天影规则聚合 · 实时规则规模
 
 
-🕒 **更新时间**：2026-11-15 14:30:33（北京时间）
+🕒 **更新时间**：2026-11-15 15:59:49（北京时间）
 
 
-🚫 **广告拦截规则**：260849 条
+🚫 **广告拦截规则**：260847 条
 
 
-🌐 **DNS 拦截域名**：234018 个
+🌐 **DNS 拦截域名**：234016 个
 
 
-✅ **白名单放行规则**：6847 条（约半数可在 DNS 层直接生效，其余为浏览器版 AdGuard 的路径级 / `$domain=` 规则，DNS 层无效）
+✅ **白名单放行规则**：6849 条（约半数可在 DNS 层直接生效，其余为浏览器版 AdGuard 的路径级 / `$domain=` 规则，DNS 层无效）
 
 <!-- DL_STATUS_START -->
 ✅ **上游源状态**：28/28 全部下载成功
@@ -100,7 +100,7 @@
 
 但有三件事兜不住，需要你知道：
 
-1. **白名单里只有约一半能在 DNS 层生效**：`allow.txt` 共 6,847 条，纯域名 + 通配 3,571 条可直接生效，
+1. **白名单里只有约一半能在 DNS 层生效**：`allow.txt` 共 6,849 条，纯域名 + 通配 3,573 条可直接生效，
    其余 3,276 条是路径级 / `$domain=` / 正则，只有浏览器版 AdGuard 认。
 2. **上游白名单本身会失效**：近三百条上游白名单已被父域架空，且随上游每日漂移，只能统计、不能当发布闸门。
    本地白名单新出现的同类冲突会被 `check-quality.py` 当场拦住（存量基线登记在 `data/mod/allow-conflicts.baseline`，每次运行会打印实际条数）。
@@ -633,7 +633,14 @@ python data/python/check-quality.py && python data/python/verify-fixes.py
 
 > 仅收录**功能性变更**；CI 每日的例行规则更新（`✅ 规则自动更新` 提交）不列出。完整记录见 [Commits](https://github.com/xiaolei7172/ADS/commits/master)。
 
-### 📅 2026-11-14
+### 📅 2026-11-15
+
+| 类型 | 变更内容 | 提交 |
+| :--- | :--- | :--- |
+| 🔧 修复 | 修复小米账号登录失败：放行 userid.xiaomi.com + i.xiaomi.com | [`adb988d`](https://github.com/xiaolei7172/ADS/commit/adb988d) |
+
+<details>
+<summary><b>📅 2026-11-14</b> · 11 项变更</summary>
 
 | 类型 | 变更内容 | 提交 |
 | :--- | :--- | :--- |
@@ -648,6 +655,8 @@ python data/python/check-quality.py && python data/python/verify-fixes.py
 | 📝 其他 | README 补齐上游清单：补茯苓（11-11 漏记）+ hagezi 厂商原生 7 路 | [`db426a2`](https://github.com/xiaolei7172/ADS/commit/db426a2) |
 | ➕ 新增源 | 接入 hagezi 厂商原生 7 列表：小米/华为/OPPO/vivo/字节/三星/苹果 | [`7563b10`](https://github.com/xiaolei7172/ADS/commit/7563b10) |
 | 🔗 优化 | 国内加速链接改为 gh-proxy（data/rules 产物超 64MB，jsDelivr 50MB 包体上限导致全目录 404） | [`1cff529`](https://github.com/xiaolei7172/ADS/commit/1cff529) |
+
+</details>
 
 <details>
 <summary><b>📅 2026-11-13</b> · 1 项变更</summary>
