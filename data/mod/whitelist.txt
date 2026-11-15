@@ -238,6 +238,18 @@
 ! 不予收录（留着只会白占白名单额度）。
 ! ============================================================
 
+! ---------- 小米：账号登录（2026-11-15 用户反馈「小米账号登录不上」后定位）----------
+! 根因：hagezi native.xiaomi.txt 第 419 行 ||userid.xiaomi.com^ 把账号登录页当 tracker 拦了。
+! 实测 userid.xiaomi.com/pass/serviceLogin 返回 200（gzip HTML），路径结构与
+! account.xiaomi.com/pass/serviceLogin 完全一致 —— 这是小米账号登录域本身，不是埋点。
+! userid 是账号服务的另一入口（小米 ID / 一键登录 / 第三方授权都走它），
+! 被拦的症状正是「登录页转圈 / 一直提示密码错误 / 一键登录失败」。
+! i.xiaomi.com 同样返回 200 正常页面（账号个人中心短链），一并放行。
+! 注意：登录后若仍异常，下一顺位嫌疑是 secure.report.iss.xiaomi.com（安全上报，
+! 风控环境判定依赖它），目前保留拦截，待复现再定。
+@@||userid.xiaomi.com^
+@@||i.xiaomi.com^
+
 ! ---------- 小米：推送主接口（MiPush，国内大量第三方 App 共用同一通道）----------
 @@||api.xmpush.xiaomi.com^
 @@||api.xmpush.global.xiaomi.com^
