@@ -21,13 +21,13 @@
 ### 🔮 天影规则聚合 · 实时规则规模
 
 
-🕒 **更新时间**：2026-11-15 15:59:49（北京时间）
+🕒 **更新时间**：2026-11-16 14:34:20（北京时间）
 
 
-🚫 **广告拦截规则**：260847 条
+🚫 **广告拦截规则**：266563 条
 
 
-🌐 **DNS 拦截域名**：234016 个
+🌐 **DNS 拦截域名**：239413 个
 
 
 ✅ **白名单放行规则**：6849 条（约半数可在 DNS 层直接生效，其余为浏览器版 AdGuard 的路径级 / `$domain=` 规则，DNS 层无效）
@@ -633,11 +633,21 @@ python data/python/check-quality.py && python data/python/verify-fixes.py
 
 > 仅收录**功能性变更**；CI 每日的例行规则更新（`✅ 规则自动更新` 提交）不列出。完整记录见 [Commits](https://github.com/xiaolei7172/ADS/commits/master)。
 
-### 📅 2026-11-15
+### 📅 2026-11-16
 
 | 类型 | 变更内容 | 提交 |
 | :--- | :--- | :--- |
+| 🧹 清理 | 清理 10 条已失效本地规则（质检熔断修复） | [`8d7aa07`](https://github.com/xiaolei7172/ADS/commit/8d7aa07) |
+
+<details>
+<summary><b>📅 2026-11-15</b> · 2 项变更</summary>
+
+| 类型 | 变更内容 | 提交 |
+| :--- | :--- | :--- |
+| ☠ 清理 | 死规则清单更新 2026-11-15 19:09 | [`35a0139`](https://github.com/xiaolei7172/ADS/commit/35a0139) |
 | 🔧 修复 | 修复小米账号登录失败：放行 userid.xiaomi.com + i.xiaomi.com | [`adb988d`](https://github.com/xiaolei7172/ADS/commit/adb988d) |
+
+</details>
 
 <details>
 <summary><b>📅 2026-11-14</b> · 11 项变更</summary>
