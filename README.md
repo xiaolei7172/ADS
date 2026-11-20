@@ -21,19 +21,19 @@
 ### 🔮 天影规则聚合 · 实时规则规模
 
 
-🕒 **更新时间**：2026-11-19 15:24:43（北京时间）
+🕒 **更新时间**：2026-11-20 10:13:25（北京时间）
 
 
-🚫 **广告拦截规则**：266477 条
+🚫 **广告拦截规则**：268309 条
 
 
-🌐 **DNS 拦截域名**：239302 个
+🌐 **DNS 拦截域名**：241079 个
 
 
 ✅ **白名单放行规则**：6848 条（约半数可在 DNS 层直接生效，其余为浏览器版 AdGuard 的路径级 / `$domain=` 规则，DNS 层无效）
 
 <!-- DL_STATUS_START -->
-✅ **上游源状态**：28/28 全部下载成功
+✅ **上游源状态**：29/29 全部下载成功
 <!-- DL_STATUS_END -->
 
 ![规则量趋势](data/stats/trend.svg)
@@ -634,11 +634,20 @@ python data/python/check-quality.py && python data/python/verify-fixes.py
 
 > 仅收录**功能性变更**；CI 每日的例行规则更新（`✅ 规则自动更新` 提交）不列出。完整记录见 [Commits](https://github.com/xiaolei7172/ADS/commits/master)。
 
-### 📅 2026-11-16
+### 📅 2026-11-20
+
+| 类型 | 变更内容 | 提交 |
+| :--- | :--- | :--- |
+| ➕ 新增源 | 新增上游源：URLhaus 恶意域名黑名单（filter_11） | [`4dfe31e`](https://github.com/xiaolei7172/ADS/commit/4dfe31e) |
+
+<details>
+<summary><b>📅 2026-11-16</b> · 1 项变更</summary>
 
 | 类型 | 变更内容 | 提交 |
 | :--- | :--- | :--- |
 | 🧹 清理 | 清理 10 条已失效本地规则（质检熔断修复） | [`8d7aa07`](https://github.com/xiaolei7172/ADS/commit/8d7aa07) |
+
+</details>
 
 <details>
 <summary><b>📅 2026-11-15</b> · 2 项变更</summary>
