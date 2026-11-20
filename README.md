@@ -66,7 +66,7 @@
 
 ## ⚠️ 必读：拦截规则必须配合白名单使用
 
-> **只订阅拦截规则，等于把误杀的概率全部收下。** 本仓库聚合 22 路拦截上游，其中一部分源会按「公司主域」整族下发拦截。
+> **只订阅拦截规则，等于把误杀的概率全部收下。** 本仓库聚合 23 路拦截上游，其中一部分源会按「公司主域」整族下发拦截。
 > 2026-11 就出过一次：拼多多的图片 / 视频 / 直播 CDN 根域 `pddpic.com` 被上游当成广告域拦掉，
 > 表现是图片白块、直播转圈、短视频打不开、评价晒图裂图——**放行的唯一手段就是白名单**。
 
@@ -462,7 +462,7 @@ https://raw.githubusercontent.com/xiaolei7172/ADS/v2026.11.07/data/rules/dns.txt
 <summary><b>点击查看全部数据来源</b></summary>
 <br>
 
-### 🔴 拦截规则（22 路）
+### 🔴 拦截规则（23 路）
 
 | 来源 | 侧重 | 原始地址 |
 | :--- | :--- | :--- |
@@ -471,6 +471,7 @@ https://raw.githubusercontent.com/xiaolei7172/ADS/v2026.11.07/data/rules/dns.txt
 | 📛 **AdRules DNS List** | DNS 专用 | [gp.adrules.top/dns.txt](https://gp.adrules.top/dns.txt) |
 | 📛 **AdGuard DNS Filter 官方** | DNS 专用（官方维护） | [AdGuardSDNSFilter](https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt) |
 | 📛 **OISD 拦截规则** | DNS 专用，低误杀 | [small.oisd.nl](https://small.oisd.nl/) |
+| 📛 **URLhaus 恶意域名黑名单** | 恶意软件分发/C2（abuse.ch 数据，AdGuard 官方编译） | [HostlistsRegistry filter_11](https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt) |
 | 📛 **hagezi 小米原生** | 小米设备/系统遥测与开屏广告 | [native.xiaomi.txt](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.xiaomi.txt) |
 | 📛 **hagezi 华为原生** | 华为设备/系统遥测 | [native.huawei.txt](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.huawei.txt) |
 | 📛 **hagezi OPPO 原生** | OPPO / realme 设备遥测 | [native.oppo-realme.txt](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.oppo-realme.txt) |

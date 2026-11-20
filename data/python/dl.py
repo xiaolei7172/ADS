@@ -99,6 +99,14 @@ adblock_rules = [
     {"url": "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt", "name": "AdGuard DNS Filter 官方"},
     {"url": "https://small.oisd.nl/", "name": "OISD 拦截规则"},
 
+    #恶意软件分发/C2（abuse.ch URLhaus 官方数据，AdGuard HostlistsRegistry 编译版 filter_11）：
+    # 2026-11-20 增量评估：2,090 条全为 ||domain^，零脏行零加速映射，语法最干净的候选源；
+    # 对 23.9 万域库直接重复 476 条（22.8%），父域覆盖 56 条，净新增 1,558 条（74.5%）。
+    # 与 allow.txt 冲突 27 条（滥用云存储桶/COS 等），由白名单扣减层自动剔除，无副作用。
+    # URLhaus 生态特性：恶意基础设施被安全厂商快速 Sinkhole，抽样判死率约 32%，
+    # 由每周日死域探测自动清理（probe-dead 只滤上游规则，不会触发质检熔断）。
+    {"url": "https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt", "name": "URLhaus 恶意域名黑名单"},
+
     #厂商原生遥测/开屏广告（hagezi 按设备厂商拆分的独立小列表）：
     # 2026-11-14 全量评估：7 个列表合计 2,235 域，对现有 23.2 万域库净增 1,396 条，
     # 双 DNS 抽样存活 90%~100%（合计约 98%），总体积仅 76 KB，产物膨胀 0.6%。
