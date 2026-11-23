@@ -23,3 +23,5 @@ tuisong.baidu.com    ! 百度推送通道（api / api3 / api4 / sa 全为推送�
 ksapisrv.com         ! 快手 API 网关（5460 酷安广告规则整域拦）；白名单点名放行 miniapi（接口）/ log-sdk（极速版金币）被架空，且整域拦会让快手主体接口不可用。父域剔除后按子域粒度拦截，广告侧仍由 kuaishouad / kuaishouzt 系负责
 biligame.com         ! B 站游戏域（登录 passport / SDK uosdk / 配置 game-infoc / 白山 CDN），非广告聚合域；海哥拦截单整域拦下但自己在放行单里点名放行三个子域，自相矛盾。父域剔除后三个功能子域恢复
 jiguang.cn           ! 极光推送（JPush）整域，父域下已有广告 SSP 子域 ssp.jiguang.cn 单独收录；白名单点名放行 smartop-sdkapi（推送 SDK）被架空。拆父域后 ssp.jiguang.cn 继续拦，推送 SDK 恢复
+
+pull.yximgs.com      ! 快手直播/视频拉流 CDN（ali-p2p / hw-p2p / ks-p2p / tx-kmpaudio / ks-adaptive 等子域有广告与上报，但同域下大量播放功能域）；2026-11-23 个人合并规则与浮风拦截规则整域下发后，白名单点名放行的 ws-p2p.pull.yximgs.com（P2P 拉流信令）被架空，熔断本轮日更。父域剔除后按子域粒度拦截，广告侧仍由各 p2p/ad 子域规则负责
