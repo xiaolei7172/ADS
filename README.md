@@ -21,13 +21,13 @@
 ### 🔮 天影规则聚合 · 实时规则规模
 
 
-🕒 **更新时间**：2026-11-22 14:46:35（北京时间）
+🕒 **更新时间**：2026-11-23 15:54:02（北京时间）
 
 
-🚫 **广告拦截规则**：269069 条
+🚫 **广告拦截规则**：269046 条
 
 
-🌐 **DNS 拦截域名**：241938 个
+🌐 **DNS 拦截域名**：241910 个
 
 
 ✅ **白名单放行规则**：6848 条（约半数可在 DNS 层直接生效，其余为浏览器版 AdGuard 的路径级 / `$domain=` 规则，DNS 层无效）
@@ -634,11 +634,30 @@ python data/python/check-quality.py && python data/python/verify-fixes.py
 
 > 仅收录**功能性变更**；CI 每日的例行规则更新（`✅ 规则自动更新` 提交）不列出。完整记录见 [Commits](https://github.com/xiaolei7172/ADS/commits/master)。
 
-### 📅 2026-11-20
+### 📅 2026-11-23
+
+| 类型 | 变更内容 | 提交 |
+| :--- | :--- | :--- |
+| 🪓 其他 | 拆父域：pull.yximgs.com（快手拉流 CDN，质检熔断修复） | [`900729f`](https://github.com/xiaolei7172/ADS/commit/900729f) |
+| 🧹 清理 | 清理 6 条已失效本地规则（质检熔断修复） | [`291a89c`](https://github.com/xiaolei7172/ADS/commit/291a89c) |
+
+<details>
+<summary><b>📅 2026-11-22</b> · 1 项变更</summary>
+
+| 类型 | 变更内容 | 提交 |
+| :--- | :--- | :--- |
+| ☠ 清理 | 死规则清单更新 2026-11-22 19:35 | [`1b7facb`](https://github.com/xiaolei7172/ADS/commit/1b7facb) |
+
+</details>
+
+<details>
+<summary><b>📅 2026-11-20</b> · 1 项变更</summary>
 
 | 类型 | 变更内容 | 提交 |
 | :--- | :--- | :--- |
 | ➕ 新增源 | 新增上游源：URLhaus 恶意域名黑名单（filter_11） | [`4dfe31e`](https://github.com/xiaolei7172/ADS/commit/4dfe31e) |
+
+</details>
 
 <details>
 <summary><b>📅 2026-11-16</b> · 1 项变更</summary>
