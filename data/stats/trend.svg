@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="280" viewBox="0 0 760 280" role="img" aria-label="规则量趋势图">
-<text x="64" y="18" font-family="sans-serif" font-size="14" fill="#7d8590">📊 规则量趋势（最近 28 次更新）</text>
+<text x="64" y="18" font-family="sans-serif" font-size="14" fill="#7d8590">📊 规则量趋势（最近 29 次更新）</text>
 <rect x="546" y="8" width="14" height="4" rx="2" fill="#3fb950"/>
 <text x="566" y="14" font-family="sans-serif" font-size="12" fill="#7d8590">拦截规则</text>
 <rect x="636" y="8" width="14" height="4" rx="2" fill="#58a6ff"/>
@@ -14,13 +14,13 @@
 <text x="56" y="84.5" text-anchor="end" font-family="sans-serif" font-size="11" fill="#7d8590">273k</text>
 <line x1="64" y1="28.0" x2="736" y2="28.0" stroke="rgba(125,134,150,0.25)" stroke-width="1"/>
 <text x="56" y="32.0" text-anchor="end" font-family="sans-serif" font-size="11" fill="#7d8590">294k</text>
-<polyline fill="none" stroke="#3fb950" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" points="64.0,70.0 88.9,98.2 113.8,110.6 138.7,79.3 163.6,78.5 188.4,74.3 213.3,73.8 238.2,73.2 263.1,69.7 288.0,133.5 312.9,132.8 337.8,137.8 362.7,132.9 387.6,117.4 412.4,116.3 437.3,111.8 462.2,111.1 487.1,96.8 512.0,99.6 536.9,97.9 561.8,97.0 586.7,92.2 611.6,91.2 636.4,90.5 661.3,90.5 686.2,81.5 711.1,79.3 736.0,81.5"/>
-<polyline fill="none" stroke="#58a6ff" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" points="64.0,149.0 88.9,170.4 113.8,182.9 138.7,157.2 163.6,156.5 188.4,152.4 213.3,151.9 238.2,151.2 263.1,147.8 288.0,200.7 312.9,200.0 337.8,204.4 362.7,199.4 387.6,184.5 412.4,183.5 437.3,179.1 462.2,178.4 487.1,164.8 512.0,167.7 536.9,166.1 561.8,165.1 586.7,160.5 611.6,159.5 636.4,158.5 661.3,158.6 686.2,149.5 711.1,148.0 736.0,150.2"/>
-<circle cx="736.0" cy="81.5" r="3.5" fill="#3fb950"/>
-<text x="730.0" y="73.5" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="bold" fill="#3fb950">272,646</text>
-<circle cx="736.0" cy="150.2" r="3.5" fill="#58a6ff"/>
-<text x="730.0" y="142.2" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="bold" fill="#58a6ff">245,269</text>
+<polyline fill="none" stroke="#3fb950" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" points="64.0,70.0 88.0,98.2 112.0,110.6 136.0,79.3 160.0,78.5 184.0,74.3 208.0,73.8 232.0,73.2 256.0,69.7 280.0,133.5 304.0,132.8 328.0,137.8 352.0,132.9 376.0,117.4 400.0,116.3 424.0,111.8 448.0,111.1 472.0,96.8 496.0,99.6 520.0,97.9 544.0,97.0 568.0,92.2 592.0,91.2 616.0,90.5 640.0,90.5 664.0,81.5 688.0,79.3 712.0,81.5 736.0,79.9"/>
+<polyline fill="none" stroke="#58a6ff" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" points="64.0,149.0 88.0,170.4 112.0,182.9 136.0,157.2 160.0,156.5 184.0,152.4 208.0,151.9 232.0,151.2 256.0,147.8 280.0,200.7 304.0,200.0 328.0,204.4 352.0,199.4 376.0,184.5 400.0,183.5 424.0,179.1 448.0,178.4 472.0,164.8 496.0,167.7 520.0,166.1 544.0,165.1 568.0,160.5 592.0,159.5 616.0,158.5 640.0,158.6 664.0,149.5 688.0,148.0 712.0,150.2 736.0,148.6"/>
+<circle cx="736.0" cy="79.9" r="3.5" fill="#3fb950"/>
+<text x="730.0" y="71.9" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="bold" fill="#3fb950">273,284</text>
+<circle cx="736.0" cy="148.6" r="3.5" fill="#58a6ff"/>
+<text x="730.0" y="140.6" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="bold" fill="#58a6ff">245,906</text>
 <text x="64.0" y="268" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#7d8590">2026-10-27</text>
-<text x="387.6" y="268" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#7d8590">2026-11-12</text>
-<text x="736.0" y="268" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#7d8590">2026-11-26</text>
+<text x="400.0" y="268" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#7d8590">2026-11-13</text>
+<text x="736.0" y="268" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#7d8590">2026-11-27</text>
 </svg>
