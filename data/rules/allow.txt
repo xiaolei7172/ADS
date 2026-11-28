@@ -3,16 +3,16 @@
 ! 📌 规则名称：天影规则聚合 · 白名单规则
 ! 📝 规则说明：误杀网址放行，保证正常网站正常访问
 ! 🌐 项目地址：https://github.com/xiaolei7172/ADS
-! ⏰ 更新时间：2026-11-27 16:30:57（北京时间）
-! 📊 有效规则：6850 条
+! ⏰ 更新时间：2026-11-28 15:47:52（北京时间）
+! 📊 有效规则：6851 条
 ! 🔄 更新频率：每日自动更新（北京时间 08:00）
 ! ======================================================================
 ! Title: 📌 天影规则聚合 · 白名单规则 📌
-! Description: ⏰ 更新时间 2026-11-27 16:30:57 | ✅ 有效规则 6850 条
-! 🧮 DNS 层可直接生效：3,581 条（纯域名 3,423 + 通配 158）；另有 3,269 条为路径级 / $domain= / 正则，仅浏览器版 AdGuard 有效
+! Description: ⏰ 更新时间 2026-11-28 15:47:52 | ✅ 有效规则 6851 条
+! 🧮 DNS 层可直接生效：3,581 条（纯域名 3,423 + 通配 158）；另有 3,270 条为路径级 / $domain= / 正则，仅浏览器版 AdGuard 有效
 ! ────────────────── ☑ 规则来源统计 ──────────────────
 !    3,094 条  5460 [酷安广告规则]（规则内置）
-!    2,634 条  AdGuard 跟踪白名单（远程白名单）
+!    2,635 条  AdGuard 跟踪白名单（远程白名单）
 !      306 条  李文杰白名单 [LWJ's white list]（远程白名单）
 !      215 条  AdGuard DNS Filter 官方 [AdGuard DNS filter]（规则内置）
 !      186 条  本地白名单（远程白名单）
@@ -4083,6 +4083,7 @@
 @@||wkstatic.bdimg.com/static/wkcore/widget/commerce/fengchao/*$domain=wenku.baidu.com
 ! 📋 白名单来源：AdGuard 跟踪白名单（远程白名单）
 @@||st-*.dynamicyield.com/st*&inHead=true&id=*&jsession=*scriptVersion=*&noConsent=
+@@||ekitan.com/transit/js/ticket-analytics.js$~third-party
 @@||fp.yangcong345.com/*/webTrack.js$domain=school.yangcongxueyuan.com
 @@||googletagmanager.com/gtag/js$domain=5ch.io
 @@||googletagmanager.com/gtm.js$domain=support.brother.com
